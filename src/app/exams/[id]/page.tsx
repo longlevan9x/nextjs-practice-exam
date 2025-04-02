@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Exam } from "@/types/exam";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{id: string}>(); // Get the "id" parameter from the URL
@@ -121,12 +122,12 @@ export default function ExamDetailPage() {
 
       {/* Back Button */}
       <div className="mt-8 text-center">
-        <a
+        <Link
           href="/"
           className="inline-block bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
         >
           Back to Exams
-        </a>
+        </Link>
       </div>
     </>
   );

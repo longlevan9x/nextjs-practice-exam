@@ -32,7 +32,7 @@ export default function ExamModePage() {
   useEffect(() => {
     // Load questions from the JSON file
     const fetchQuestions = async () => {
-      const loadedQuestions: Question[] = questionsData.map((q: any) => ({
+      const loadedQuestions: Question[] = questionsData.map((q: Question) => ({
         id: q.id,
         question: q.question,
         answers: q.answers,
