@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "name": "Associate Cloud Engineer",
+        "imageUrl": "/images/GCP-ACE-LOGO.png",
+        "description": "Associate Cloud Engineer Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Training with Topics",
+                "path": "topics"
+            },
+            {
+                "name": "Practice",
+                "path": "/practice"
+            },
+            {
+                "name": "Practice with 266 Questions",
+                "path": "/practices"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "AWS Certified Solutions Architect Associate 2023 1",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "AWS Certified Solutions Architect Associate 2023 2",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "AWS Certified Solutions Architect Associate 2023 3",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "AWS Certified Solutions Architect Associate 2023 4",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "AWS Certified Solutions Architect Associate 2023 5",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "AWS Certified Solutions Architect Associate 2023 6",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "categories": [
+            {
+                "name": "Practice all questions",
+                "path": "quiz"
+            }
+        ]
+    }
+]
