@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import { BookmarkIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import questionsData from "@/data/questions/aws_saa_2023_1.json"; // Import the JSON file
 
@@ -19,13 +19,13 @@ interface Question {
   answered?: boolean;
   correct?: boolean;
   incorrect?: boolean;
+  selectedAnswer?: number | null; // Track selected answer for each question
+  showExplanation?: boolean; // Track explanation visibility for each question
 }
 
 export default function ExamModePage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); // Track selected answer
-  const [showExplanation, setShowExplanation] = useState(false); // State to toggle explanation visibility
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<number[]>([]); // Track bookmarked questions
   const [filter, setFilter] = useState<string>("all"); // Track the selected filter
 
@@ -38,6 +38,8 @@ export default function ExamModePage() {
         answers: q.answers,
         explanation: q.explanation,
         domain: q.domain,
+        selectedAnswer: null, // Track selected answer for each question
+        showExplanation: false, // Track explanation visibility for each question
       }));
       setQuestions(loadedQuestions);
       setSelectedQuestion(loadedQuestions[0]); // Default to the first question
@@ -49,35 +51,46 @@ export default function ExamModePage() {
   const handleQuestionSelect = (questionId: number) => {
     const question = questions.find((q) => q.id === questionId);
     setSelectedQuestion(question || null);
-    setSelectedAnswer(null); // Reset selected answer when a new question is selected
-    setShowExplanation(false); // Reset explanation visibility
+  };
+
+  const handleAnswerSelect = (answerId: number) => {
+    if (!selectedQuestion) return;
+
+    const updatedQuestions = questions.map((q) =>
+      q.id === selectedQuestion.id ? { ...q, selectedAnswer: answerId } : q
+    );
+    setQuestions(updatedQuestions);
+    setSelectedQuestion({ ...selectedQuestion, selectedAnswer: answerId });
   };
 
   const handleCheckAnswer = () => {
-    setShowExplanation(true); // Show explanation and highlight answers
-    if (selectedQuestion && selectedAnswer !== null) {
-      const updatedQuestions = questions.map((q) =>
-        q.id === selectedQuestion.id
-          ? {
+    if (!selectedQuestion) return;
+
+    const updatedQuestions = questions.map((q) =>
+      q.id === selectedQuestion.id
+        ? {
             ...q,
+            showExplanation: true,
             answered: true,
-            correct: q.answers.some((a) => a.id === selectedAnswer && a.correct),
-            incorrect: !q.answers.some((a) => a.id === selectedAnswer && a.correct),
+            correct: q.answers.some((a) => a.id === q.selectedAnswer && a.correct),
+            incorrect: !q.answers.some((a) => a.id === q.selectedAnswer && a.correct),
           }
-          : q
-      );
-      setQuestions(updatedQuestions);
-    }
+        : q
+    );
+    setQuestions(updatedQuestions);
+    setSelectedQuestion({
+      ...selectedQuestion,
+      showExplanation: true,
+    });
   };
 
   const handleNextQuestion = () => {
     if (!selectedQuestion) return;
+
     const currentIndex = questions.findIndex((q) => q.id === selectedQuestion.id);
     const nextQuestion = questions[currentIndex + 1];
     if (nextQuestion) {
       setSelectedQuestion(nextQuestion);
-      setSelectedAnswer(null); // Reset selected answer
-      setShowExplanation(false); // Reset explanation visibility
     }
   };
 
@@ -199,10 +212,10 @@ export default function ExamModePage() {
               {selectedQuestion.answers.map((answer) => (
                 <li
                   key={answer.id}
-                  className={`p-3 border rounded-lg flex items-center transition-all duration-300 ${showExplanation
+                  className={`p-3 border rounded-lg flex items-center transition-all duration-300 ${selectedQuestion.showExplanation
                     ? answer.correct
                       ? "bg-green-100 border-green-500"
-                      : selectedAnswer === answer.id
+                      : selectedQuestion.selectedAnswer === answer.id
                         ? "bg-red-100 border-red-500"
                         : "border-gray-300"
                     : "hover:bg-gray-100 border-gray-300"
@@ -213,27 +226,27 @@ export default function ExamModePage() {
                     type="radio"
                     name="answer"
                     value={answer.id}
-                    checked={selectedAnswer === answer.id}
-                    onChange={() => setSelectedAnswer(answer.id)}
-                    disabled={showExplanation} // Disable selection after checking the answer
+                    checked={selectedQuestion.selectedAnswer === answer.id}
+                    onChange={() => handleAnswerSelect(answer.id)}
+                    disabled={selectedQuestion.showExplanation} // Disable selection after checking the answer
                     className="mr-3 w-6 h-6 cursor-pointer"
                   />
                   <span className="flex-1">{answer.answer}</span>
                   {/* Icons for Correct/Incorrect */}
-                  {showExplanation && answer.correct && (
+                  {selectedQuestion.showExplanation && answer.correct && (
                     <CheckCircleIcon className="w-5 h-5 text-green-500 ml-3" />
                   )}
-                  {showExplanation && selectedAnswer === answer.id && !answer.correct && (
+                  {selectedQuestion.showExplanation && selectedQuestion.selectedAnswer === answer.id && !answer.correct && (
                     <XCircleIcon className="w-5 h-5 text-red-500 ml-3" />
                   )}
                 </li>
               ))}
             </ul>
-            {!showExplanation ? (
+            {!selectedQuestion.showExplanation ? (
               <button
                 onClick={handleCheckAnswer}
-                disabled={selectedAnswer === null} // Disable button if no answer is selected
-                className={`cursor-pointer mt-6 px-4 py-2 rounded-lg transition duration-300 ${selectedAnswer === null
+                disabled={selectedQuestion.selectedAnswer === null} // Disable button if no answer is selected
+                className={`cursor-pointer mt-6 px-4 py-2 rounded-lg transition duration-300 ${selectedQuestion.selectedAnswer === null
                   ? "bg-gray-400 text-gray-200 cursor-not-allowed"
                   : "bg-blue-600 text-white hover:bg-blue-700"
                   }`}
@@ -248,7 +261,7 @@ export default function ExamModePage() {
                 Next Question
               </button>
             )}
-            {showExplanation && (
+            {selectedQuestion.showExplanation && (
               <div
                 className="mt-6 p-4 bg-gray-100 border border-gray-300 rounded-lg transition-all duration-300"
               >
