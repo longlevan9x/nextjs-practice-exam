@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { Exam } from "@/types/exam";
 import { useParams, useRouter } from "next/navigation";
 
@@ -59,7 +60,9 @@ export default function ExamDetailPage() {
       <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
         {/* Exam Logo */}
         <div className="flex justify-center mb-6">
-          <img
+          <Image
+            width={128}
+            height={128}
             src={exam.imageUrl}
             alt={exam.name}
             className="w-32 h-32 rounded-full object-cover"

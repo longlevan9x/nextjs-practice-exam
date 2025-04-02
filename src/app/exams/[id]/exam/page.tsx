@@ -22,7 +22,6 @@ interface Question {
 }
 
 export default function ExamModePage() {
-  const { examId } = useParams(); // Get the examId from the URL
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); // Track selected answer
