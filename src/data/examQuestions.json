@@ -1,0 +1,29 @@
+[
+    {
+        "examId": 1
+    },
+    {
+        "examId": 2,
+        "questionFile": "aws_saa_2023_1.json"
+    },
+    {
+        "examId": 3,
+        "questionFile": "aws_saa_2023_2.json"
+    },
+    {
+        "examId": 4,
+        "questionFile": "aws_saa_2023_3.json"
+    },
+    {
+        "examId": 5,
+        "questionFile": "aws_saa_2023_4.json"
+    },
+    {
+        "examId": 6,
+        "questionFile": "aws_saa_2023_5.json"
+    },
+    {
+        "examId": 7,
+        "questionFile": "aws_saa_2023_6.json"
+    }
+]
