@@ -35,6 +35,16 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                     />
                     <p className="text-base font-bold">Câu hỏi {question.id}</p>
                 </div>
+
+                {/* Answer Status */}
+                {question.answered && (
+                    <span
+                        className={`text-sm font-bold ${question.correct ? "text-green-600" : "text-red-600"
+                            }`}
+                    >
+                        {question.correct ? "Chính xác" : "Không chính xác"}
+                    </span>
+                )}
             </div>
 
             {/* Question Content */}
