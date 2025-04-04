@@ -32,7 +32,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
       case "correct":
         return question.correct;
       case "incorrect":
-        return question.incorrect;
+        return !question.correct;
       default:
         return true;
     }
