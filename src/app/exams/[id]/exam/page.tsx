@@ -4,8 +4,9 @@ import { useParams } from "next/navigation";
 import QuestionList from "@/components/QuestionList";
 import QuestionDetail from "@/components/QuestionDetail";
 import Timer from "@/components/Timer";
+import ProgressBar from "@/components/ProgressBar";
 import { Question } from "@/types/question";
-import { fetchQuestionsByExamId } from "@/services/questionService";
+import { fetchQuestionsByExamId } from "../../../../../services/questionService";
 
 export default function ExamModePage() {
   const { id: examId } = useParams<{id: string}>();
@@ -114,9 +115,15 @@ export default function ExamModePage() {
         onQuestionSelect={handleQuestionSelect}
         onToggleBookmark={toggleBookmark}
       />
-      <div className="flex-1 bg-white p-6">
-        <div className="flex items-center justify-between mb-6">
-          <Timer remainingTime={remainingTime} />
+      <div className="flex-1 bg-white px-12 py-6">
+        <div className="w-full flex items-center justify-between mb-6">
+          {/* Progress Bar and Timer */}
+          <div className="flex items-center space-x-4">
+            <ProgressBar current={questions.filter((q) => q.answered).length} total={questions.length} />
+            <Timer remainingTime={remainingTime} />
+          </div>
+
+          {/* Finish Exam Button */}
           <button
             onClick={() => setTestEnded(true)}
             className="px-4 py-2 border-2 border-blue-600 rounded-sm hover:bg-blue-600 hover:text-white transition duration-300"
@@ -124,17 +131,21 @@ export default function ExamModePage() {
             Kết thúc bài kiểm tra
           </button>
         </div>
-        {selectedQuestion && (
-          <QuestionDetail
-            question={selectedQuestion}
-            isBookmarked={bookmarkedQuestions.includes(selectedQuestion.id)}
-            onToggleBookmark={() => toggleBookmark(selectedQuestion.id)}
-            onAnswerSelect={handleAnswerSelect}
-            onCheckAnswer={handleCheckAnswer}
-            onNextQuestion={handleNextQuestion}
-            testEnded={testEnded}
-          />
-        )}
+
+        {/* Main Content */}
+        <div className="flex-1">
+          {selectedQuestion && (
+            <QuestionDetail
+              question={selectedQuestion}
+              isBookmarked={bookmarkedQuestions.includes(selectedQuestion.id)}
+              onToggleBookmark={() => toggleBookmark(selectedQuestion.id)}
+              onAnswerSelect={handleAnswerSelect}
+              onCheckAnswer={handleCheckAnswer}
+              onNextQuestion={handleNextQuestion}
+              testEnded={testEnded}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
