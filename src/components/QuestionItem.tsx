@@ -1,5 +1,5 @@
 import React from "react";
-import { BookmarkIcon } from "@heroicons/react/24/solid";
+import BookmarkButton from "./BookmarkButton";
 import { Question } from "@/types/question";
 
 interface QuestionItemProps {
@@ -20,18 +20,16 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
     return (
         <li
             onClick={onSelect}
-            className={`flex flex-col p-3 rounded-sm cursor-pointer transition-all duration-300 ${isSelected ? "bg-blue-100 text-blue-800 hover:bg-blue-200" : " hover:bg-gray-200"
+            className={`flex flex-col p-3 rounded-sm cursor-pointer transition-all duration-300 ${isSelected ? "bg-blue-100 text-blue-800 hover:bg-blue-200" : "hover:bg-gray-200"
                 }`}
         >
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                    <BookmarkIcon
-                        className={`w-5 h-5 mr-2 cursor-pointer ${isBookmarked ? "text-blue-500" : "text-gray-500"
-                            }`}
-                        onClick={(e) => {
-                            e.stopPropagation(); // Prevent triggering the onSelect event
-                            onToggleBookmark();
-                        }}
+                    <BookmarkButton
+                        isBookmarked={isBookmarked}
+                        onToggle={onToggleBookmark}
+                        size="w-5 h-5" // Smaller size for QuestionItem
+                        className="mr-2" // Additional margin
                     />
                     <p className="text-base font-bold">Câu hỏi {question.id}</p>
                 </div>
