@@ -2,6 +2,10 @@ import React from "react";
 import { Question } from "@/types/question";
 import BookmarkButton from "./BookmarkButton";
 import AnswerOptions from "./AnswerOptions";
+import CorrectOptions from "./CorrectOptions";
+import IncorrectOptions from "./IncorrectOptions";
+import References from "./References";
+import ActionButtons from "./ActionButtons";
 
 interface QuestionDetailProps {
     question: Question;
@@ -40,7 +44,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
             {/* Answer Options */}
             <AnswerOptions
                 answers={question.answers}
-                selectedAnswer={question.selectedAnswer ?? null}
+                selectedAnswer={Array.isArray(question.selectedAnswer) ? null : question.selectedAnswer ?? null}
                 showExplanation={question.showExplanation ?? false}
                 correctAnswer={question.answers.find((a) => a.correct)?.id}
                 onAnswerSelect={onAnswerSelect}
@@ -48,25 +52,34 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
             />
 
             {/* Action Buttons */}
-            {!question.showExplanation ? (
-                <button
-                    onClick={onCheckAnswer}
-                    disabled={question.selectedAnswer === null || testEnded}
-                    className={`cursor-pointer mt-6 px-4 py-2 rounded-sm transition duration-300 ${question.selectedAnswer === null || testEnded
-                        ? "bg-gray-400 text-gray-200 cursor-not-allowed"
-                        : "bg-blue-600 text-white hover:bg-blue-700"
-                        }`}
-                >
-                    Kiểm tra đáp án
-                </button>
-            ) : (
-                <button
-                    onClick={onNextQuestion}
-                    disabled={testEnded}
-                    className="cursor-pointer mt-6 px-4 py-2 bg-green-600 text-white rounded-sm hover:bg-green-700 transition duration-300"
-                >
-                    Câu hỏi tiếp theo
-                </button>
+            <ActionButtons
+                showExplanation={question.showExplanation ?? false}
+                onCheckAnswer={onCheckAnswer}
+                onNextQuestion={onNextQuestion}
+                selectedAnswer={question.selectedAnswer ?? null}
+                testEnded={testEnded}
+            />
+
+            {/* Explanation Section */}
+            {question.showExplanation && (
+                <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Giải thích tổng thể</h3>
+
+                    {question.correctAnswerExplanation && (
+                        <CorrectOptions
+                            answer={question.correctAnswerExplanation.answer}
+                            explanation={question.correctAnswerExplanation.explanation}
+                        />
+                    )}
+
+                    {question.incorrectAnswerExplanations && question.incorrectAnswerExplanations.length > 0 && (
+                        <IncorrectOptions incorrectAnswerExplanations={question.incorrectAnswerExplanations} />
+                    )}
+
+                    {question.references && question.references.length > 0 && (
+                        <References references={question.references} />
+                    )}
+                </div>
             )}
         </div>
     );
