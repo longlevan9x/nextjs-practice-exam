@@ -1,12 +1,13 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import QuestionList from "@/components/QuestionList";
 import QuestionDetail from "@/components/QuestionDetail";
 import Timer from "@/components/Timer";
 import ProgressBar from "@/components/ProgressBar";
 import { Question } from "@/types/question";
-import { fetchQuestionsByExamId } from "../../../../../services/questionService";
+import { fetchQuestionsByExamId } from "../../../../services/questionService";
+import { saveTestResults } from "@/services/localStorageService";
 
 export default function ExamModePage() {
   const { id: examId } = useParams<{ id: string }>();
@@ -16,6 +17,7 @@ export default function ExamModePage() {
   const [filter, setFilter] = useState<string>("all");
   const [remainingTime, setRemainingTime] = useState<number>(600);
   const [testEnded, setTestEnded] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -104,6 +106,28 @@ export default function ExamModePage() {
     }
   };
 
+  const handleFinishTest = () => {
+    // Prepare test data
+    const testData = {
+      examId,
+      startTime: new Date().toISOString(), // Assuming you track the start time elsewhere
+      endTime: new Date().toISOString(),
+      questions: questions.map((q) => ({
+        id: q.id,
+        question: q.question,
+        selectedAnswer: q.selectedAnswer,
+        correctAnswer: q.answers.find((a) => a.correct)?.id,
+        isCorrect: q.correct,
+      })),
+    };
+
+    // Save test data using the centralized service
+    saveTestResults(examId, testData);
+
+    // Redirect to the results page
+    router.push(`result`);
+  };
+
   return (
     <div className="min-h-screen text-gray-900 grid grid-cols-12">
       <div className="lg:col-span-3 overflow-y-auto max-h-[calc(100vh-140px)] col-span-12">
@@ -129,7 +153,7 @@ export default function ExamModePage() {
 
             {/* Finish Exam Button */}
             <button
-              onClick={() => setTestEnded(true)}
+              onClick={handleFinishTest}
               className="cursor-pointer whitespace-pre px-4 py-2 border-2 border-blue-600 rounded-sm hover:bg-blue-600 hover:text-white transition duration-300"
             >
               Kết thúc bài kiểm tra
