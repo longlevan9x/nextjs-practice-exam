@@ -25,21 +25,21 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50">
         {/* Menu */}
-        <header className="bg-blue-600 text-white shadow-md">
-          <div className="container mx-auto px-4 py-4">
+        <header className="bg-blue-600 text-white shadow-md px-4">
+          <div className="mx-auto px-4 py-4">
             <Menu />
           </div>
         </header>
 
         {/* Breadcrumb */}
-        <div className="bg-gray-100 py-2 shadow-sm">
-          <div className="container mx-auto px-4">
+        <div className="bg-gray-100 py-2 shadow-sm px-4">
+          <div className=" mx-auto px-4">
             <Breadcrumb />
           </div>
         </div>
 
         {/* Main Content */}
-        <main className="container mx-auto px-4 py-8">{children}</main>
+        <main className="mx-auto px-4 py-8">{children}</main>
       </body>
     </html>
   );

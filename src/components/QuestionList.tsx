@@ -39,7 +39,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
   });
 
   return (
-    <div className="bg-white w-full md:w-1/3 p-4 overflow-y-auto max-h-screen">
+    <>
       <h2 className="text-xl font-bold text-gray-800 mb-4">Danh sách câu hỏi</h2>
       <div className="mb-4">
         <label htmlFor="filter" className="block text-sm font-medium text-gray-700 mb-2">
@@ -71,7 +71,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
           />
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

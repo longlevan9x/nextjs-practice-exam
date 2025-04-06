@@ -27,7 +27,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   testEnded,
 }) => {
   return (
-    <div className="flex-1">
+    <div className="flex flex-col">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div>

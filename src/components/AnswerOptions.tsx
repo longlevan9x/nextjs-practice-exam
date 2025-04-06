@@ -43,7 +43,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
             disabled={showExplanation || testEnded}
             className="mr-3 w-6 h-6 cursor-pointer"
           />
-          <span className="flex-1">{answer.answer}</span>
+          <span className="flex cursor-pointer" onClick={() => onAnswerSelect(answer.id)}>{answer.answer}</span>
           {showExplanation && answer.id === correctAnswer && (
             <CheckCircleIcon className="w-5 h-5 text-green-500 ml-3" />
           )}

@@ -17,16 +17,19 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
       : "bg-blue-600";
 
   return (
-    <div className="w-full flex items-center space-x-4">
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
+    <div className="w-full flex items-center">
+      {/* Progress Bar */}
+      <div className="w-full bg-gray-200 h-2.5 mr-4">
         <div
-          className={`${progressColor} h-2.5 rounded-full`}
+          className={`${progressColor} h-2.5`}
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
-      <span className="text-sm font-medium text-gray-700">
-        {current}/{total} ({percentage}%)
-      </span>
+
+      {/* Progress Text */}
+      <div className="text-sm font-medium text-gray-700 text-center whitespace-nowrap">
+        {current} / {total}
+      </div>
     </div>
   );
 };
