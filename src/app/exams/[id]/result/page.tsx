@@ -16,7 +16,11 @@ export default function ResultPage() {
   useEffect(() => {
     if (examId) {
       const data = getExamResult(examId); // Fetch data from localStorage
-      setResultData(data);
+      if (Array.isArray(data) && data.length > 0) {
+        setResultData(data[0]); // Use the first result if it's an array
+      } else {
+        setResultData(null); // Handle case where no valid data exists
+      }
     }
   }, [examId]);
 
@@ -37,10 +41,11 @@ export default function ResultPage() {
       <div className="space-y-6">
         {examResults.map((result, index) => (
           <ExamResultCard
-            key={result.examId}
+            key={index}
             result={result}
             attemptNumber={index + 1}
             passPercentage={passPercentage}
+            isExpanded={index !== 0}
           />
         ))}
       </div>

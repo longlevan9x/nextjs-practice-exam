@@ -6,8 +6,6 @@ interface DonutChartWithLegendProps {
 }
 
 const DonutChartWithLegend: React.FC<DonutChartWithLegendProps> = ({ data }) => {
-  const total = data.reduce((sum, entry) => sum + entry.value, 0);
-
   return (
     <div className="w-full flex flex-col items-center space-y-2">
       {/* Donut Chart */}

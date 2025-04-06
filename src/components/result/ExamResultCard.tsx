@@ -8,14 +8,16 @@ interface ExamResultCardProps {
     result: ExamResult;
     attemptNumber: number;
     passPercentage: number;
+    isExpanded: boolean;
 }
 
 const ExamResultCard: React.FC<ExamResultCardProps> = ({
     result,
     attemptNumber,
     passPercentage,
+    isExpanded,
 }) => {
-    const [isCollapsed, setIsCollapsed] = useState(false); // State to toggle collapse
+    const [isCollapsed, setIsCollapsed] = useState(isExpanded); // State to toggle collapse
 
     const totalQuestions = result.questions.length;
     const correctAnswers = result.questions.filter((q) => q.isCorrect).length;
@@ -56,7 +58,7 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
             {/* Collapse Button */}
             <button
                 onClick={() => setIsCollapsed(!isCollapsed)}
-                className="absolute top-2 right-2 text-sm text-blue-500 hover:underline flex items-center hover:text-blue-700 cursor-pointer hover:bg-blue-100 p-1 rounded"
+                className="absolute top-10 right-2 text-sm text-blue-500 hover:underline flex items-center hover:text-blue-700 cursor-pointer hover:bg-blue-100 p-1 rounded"
             >
                 {isCollapsed ? (
                     <ChevronDownIcon className="w-5 h-5 text-blue-500 hover:text-blue-700" /> // Icon for "Expand"
@@ -67,7 +69,7 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
 
             {/* Collapsed Content */}
             {isCollapsed && (
-                <div className="flex items-center justify-between space-x-4">
+                <div className="flex items-center justify-between space-x-4 pr-6">
                     {/* Small Donut Chart */}
                     <div className="w-24 h-24">
                         <DonutChart data={chartData} />
@@ -89,7 +91,6 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
                         </p>
                     </div>
 
-
                     {/* Time and Date */}
                     <div className="flex flex-col items-end text-base text-gray-700">
                         <p>
@@ -98,7 +99,6 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
                     </div>
                     {/* Time and Date */}
                     <div className="flex flex-col items-end text-base text-gray-700">
-
                         <p>{startTime.toLocaleDateString()}</p>
                     </div>
                 </div>
@@ -149,6 +149,17 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
                                 lúc {startTime.toLocaleTimeString()} -{" "}
                                 {startTime.toLocaleDateString()}
                             </p>
+
+                            <div>
+                                {/* Review Questions Button */}
+                                <button
+                                    onClick={() => console.log("Reviewing questions...")}
+                                    className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600"
+                                >
+                                    Xem lại câu hỏi
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
