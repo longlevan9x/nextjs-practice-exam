@@ -12,6 +12,7 @@ import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
 import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
+import LoadingIcon from "../common/LoadingIcon";
 
 interface ExamPracticeLayoutProps {
     examType: ExamType;
@@ -28,6 +29,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [domains, setDomains] = useState<ExamDomain[]>([]);
     const [remainingTime, setRemainingTime] = useState<number>(TIMER_INITIAL_VALUE);
     const [testEnded, setTestEnded] = useState<boolean>(false);
+    const [isFinishing, setIsFinishing] = useState<boolean>(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -121,8 +123,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             if (q.id === selectedQuestion.id) {
                 const isCorrect = q.multiple
                     ? Array.isArray(q.selectedAnswer) &&
-                        q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
-                        q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
+                    q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
+                    q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
                     : q.answers.some((a) => a.id === q.selectedAnswer && a.correct);
 
                 return {
@@ -152,8 +154,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 if (q.id === selectedQuestion.id) {
                     const isCorrect = q.multiple
                         ? Array.isArray(q.selectedAnswer) &&
-                            q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
-                            q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
+                        q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
+                        q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
                         : q.answers.some((a) => a.id === q.selectedAnswer && a.correct);
 
                     return {
@@ -190,34 +192,41 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         handleNextQuestion();
     };
 
-    const handleFinishTest = () => {
-        if (examType === EXAM_TYPES.PRACTICE || displayMode === DISPLAY_MODES.REVIEW) return;
+    const handleFinishTest = async () => {
+        if (displayMode === DISPLAY_MODES.REVIEW) return;
 
-        const testData = {
-            examId,
-            startTime: new Date().toISOString(),
-            endTime: new Date().toISOString(),
-            questions: questions.map((q) => ({
-                id: q.id,
-                question: q.question,
-                selectedAnswer: q.selectedAnswer,
-                correctAnswer: q.answers.find((a) => a.correct)?.id,
-                isCorrect: q.correct,
-                domain: q.domain,
-            })),
-        };
+        try {
+            setIsFinishing(true);
+            const testData = {
+                examId,
+                examType,
+                startTime: new Date().toISOString(),
+                endTime: new Date().toISOString(),
+                questions: questions.map((q) => ({
+                    id: q.id,
+                    question: q.question,
+                    selectedAnswer: q.selectedAnswer,
+                    correctAnswer: q.answers.find((a) => a.correct)?.id,
+                    isCorrect: q.correct,
+                    domain: q.domain,
+                })),
+            };
 
-        saveTestResults(examId, testData);
-        router.push('result');
+            await saveTestResults(examId, testData);
+            await router.push('result');
+        } catch (error) {
+            console.error('Error finishing test:', error);
+            setIsFinishing(false);
+        }
     };
 
     const isFirstQuestion = questions.length > 0 && selectedQuestion?.id === questions[0].id;
 
     return (
-        <div className="text-gray-900 grid grid-cols-12 gap-4">
+        <div className="text-gray-900 grid grid-cols-12 gap-4 mt-4">
             {/* Question List Section */}
             <div className="lg:col-span-3 col-span-12">
-                <div className="overflow-y-auto max-h-[calc(100vh-165px)] pb-10">
+                <div className="overflow-y-auto max-h-[calc(100vh-140px)] pb-10">
                     <QuestionList
                         questions={questions}
                         selectedQuestionId={selectedQuestion?.id || null}
@@ -246,12 +255,18 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         )}
 
                         {displayMode === DISPLAY_MODES.EXECUTE && (
-                            <button
-                                onClick={handleFinishTest}
-                                className="cursor-pointer whitespace-pre px-4 py-2 border-2 border-blue-600 rounded-sm hover:bg-blue-600 hover:text-white transition duration-300"
-                            >
-                                Kết thúc bài kiểm tra
-                            </button>
+                            <div className="flex justify-end">
+                                <button
+                                    onClick={handleFinishTest}
+                                    disabled={isFinishing}
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-6 py-2 rounded-sm transition duration-300 flex items-center justify-center ${
+                                        isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
+                                    }`}
+                                >
+                                    <span>Kết thúc bài kiểm tra</span>
+                                    {isFinishing && <LoadingIcon />}
+                                </button>
+                            </div>
                         )}
                     </div>
 

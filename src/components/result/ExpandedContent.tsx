@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import DonutChartWithLegend from "@/components/charts/DonutChartWithLegend";
 import TopicsSection from "./TopicsSection";
 import { useRouter } from "next/navigation";
 import { ExamDomain } from "@/types/exam";
 import HorizontalLegend from "../charts/HorizontalLegend";
+import LoadingIcon from "../common/LoadingIcon";
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 interface ExpandedContentProps {
     chartData: { name: string; value: number; color: string }[];
@@ -32,11 +34,17 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
     domains,
     resultId,
 }) => {
-    const router = useRouter(); // Initialize Next.js router
+    const router = useRouter();
+    const [isReviewing, setIsReviewing] = useState<boolean>(false);
 
-    const handleReviewQuestions = () => {
-        // Navigate to the result overview page
-          router.push(`result/${resultId}`);
+    const handleReviewQuestions = async () => {
+        try {
+            setIsReviewing(true);
+            await router.push(`result/${resultId}`);
+        } catch (error) {
+            console.error('Error reviewing questions:', error);
+            setIsReviewing(false);
+        }
     };
 
     return (
@@ -87,10 +95,14 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                     <div>
                         {/* Review Questions Button */}
                         <button
-                            className="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600"
+                            className={`px-4 py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center ${
+                                isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+                            }`}
                             onClick={handleReviewQuestions}
+                            disabled={isReviewing}
                         >
-                            Xem lại câu hỏi
+                            <span>Xem lại câu hỏi</span>
+                            {isReviewing && <LoadingIcon />}
                         </button>
                     </div>
 

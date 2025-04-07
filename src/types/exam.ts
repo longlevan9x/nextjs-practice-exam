@@ -9,6 +9,9 @@ export interface Exam {
     path: string;
   }[];
   domains?: ExamDomain[]; // Added property
+  questionCount: number;
+  duration: number;
+  passScore: number;  
 }
 
 export interface ExamDomain {

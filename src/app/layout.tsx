@@ -39,7 +39,7 @@ export default function RootLayout({
         </div>
 
         {/* Main Content */}
-        <main className="mx-auto px-4 py-8">{children}</main>
+        <main className="mx-auto px-4 py-4">{children}</main>
       </body>
     </html>
   );

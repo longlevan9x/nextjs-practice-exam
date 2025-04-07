@@ -1,3 +1,4 @@
+import { ExamType } from "@/constants/exam";
 
 export interface Question {
     id: number;
@@ -9,6 +10,7 @@ export interface Question {
 }
 
 export interface ExamResult {
+    examType: ExamType;
     examId: string;
     resultId: string;
     startTime: string;

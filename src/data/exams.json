@@ -18,7 +18,16 @@
                 "name": "Practice with 266 Questions",
                 "path": "/practices"
             }
-        ]
+        ],
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 2,
@@ -49,7 +58,10 @@
                 "name": "Design Cost-Optimized Architectures",
                 "questionCount": 9
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 3,
@@ -80,7 +92,10 @@
                 "name": "Design Secure Architectures",
                 "questionCount": 15
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 4,
@@ -111,7 +126,10 @@
                 "name": "Design Secure Architectures",
                 "questionCount": 23
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 5,
@@ -142,7 +160,10 @@
                 "name": "Design Cost-Optimized Architectures",
                 "questionCount": 12
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 6,
@@ -173,7 +194,10 @@
                 "name": "Design High-Performing Architectures",
                 "questionCount": 13
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     },
     {
         "id": 7,
@@ -204,6 +228,9 @@
                 "name": "Design High-Performing Architectures",
                 "questionCount": 18
             }
-        ]
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     }
 ]

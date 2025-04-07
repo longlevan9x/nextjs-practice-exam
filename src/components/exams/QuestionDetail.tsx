@@ -11,7 +11,7 @@ import {
   EXPLANATION_SECTION_TITLE,
   HEADER_TITLE_PREFIX,
 } from "@/constants/constants";
-import { DISPLAY_MODES, DisplayMode } from "@/constants/exam";
+import { DISPLAY_MODES, DisplayMode, ExamType } from "@/constants/exam";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
 
 interface QuestionDetailProps {
@@ -26,7 +26,7 @@ interface QuestionDetailProps {
   testEnded?: boolean;
   isFirstQuestion?: boolean;
   displayMode: DisplayMode;
-  examType: "exam" | "practice";
+  examType: ExamType;
 }
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({

@@ -10,6 +10,7 @@ import ResultHeader from '@/components/result/ResultHeader';
 import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // Import Heroicons
+import { DISPLAY_MODES, EXAM_TYPES } from '@/constants/exam';
 
 interface MappedQuestion {
     id: number;
@@ -24,6 +25,7 @@ const ResultOverviewPage: React.FC = () => {
     const [resultData, setResultData] = useState<Exam | null>(null);
     const [filteredQuestions, setFilteredQuestions] = useState<MappedQuestion[]>([]);
     const [filterMode, setFilterMode] = useState<string>('all');
+    const [examResult, setExamResult] = useState<any>(null);
 
     // Fetch result and map data
     useEffect(() => {
@@ -37,6 +39,8 @@ const ResultOverviewPage: React.FC = () => {
                 setLoading(false);
                 return;
             }
+
+            setExamResult(result);
 
             // Lấy danh sách câu hỏi gốc từ localStorage
             const originalQuestions = await fetchQuestionsByExamId(result.examId);
@@ -171,7 +175,8 @@ const ResultOverviewPage: React.FC = () => {
                             question={question.question}
                             isBookmarked={false}
                             testEnded={true}
-                            mode='review'
+                            displayMode={DISPLAY_MODES.REVIEW}
+                            examType={examResult?.examType}
                         />
                     </div>
                 ))}
