@@ -26,7 +26,7 @@ export default function ExamsPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center">
         <p className="text-red-500 text-lg">Failed to load exams. Please try again later.</p>
       </div>
     );

@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
+      <body className="bg-white antialiased">
         {/* Menu */}
         <header className="bg-blue-600 text-white shadow-md px-4">
           <div className="mx-auto px-4 py-4">

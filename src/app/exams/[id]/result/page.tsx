@@ -6,20 +6,20 @@ import { ExamResult } from "@/types/ExamResult";
 import ResultHeader from "@/components/result/ResultHeader";
 import { getAllExamResults } from "@/services/localStorageService";
 import ExamResultCard from "@/components/result/ExamResultCard";
+import { getExamById } from "@/services/examService";
+import { Exam } from "@/types/exam";
 
 export default function ResultPage() {
   const { id: examId } = useParams<{ id: string }>();
-  const [resultData, setResultData] = useState<ExamResult | null>(null);
+  const [resultData, setResultData] = useState<Exam | null>(null);
   const [examResults, setExamResults] = useState<ExamResult[]>([]);
   const passPercentage = 72; // Example pass percentage
 
   useEffect(() => {
     if (examId) {
-      const data = getExamResult(examId); // Fetch data from localStorage
-      if (Array.isArray(data) && data.length > 0) {
-        setResultData(data[0]); // Use the first result if it's an array
-      } else {
-        setResultData(null); // Handle case where no valid data exists
+      const data = getExamById(examId); // Fetch data from localStorage
+      if (data) {
+        setResultData(data);
       }
     }
   }, [examId]);

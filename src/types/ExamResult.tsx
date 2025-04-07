@@ -1,3 +1,5 @@
+import { Topic } from "./topic";
+
 export interface Question {
     id: number;
     question: string;
@@ -8,7 +10,9 @@ export interface Question {
 
 export interface ExamResult {
     examId: string;
+    resultId: string;
     startTime: string;
     endTime: string;
     questions: Question[];
+    topics?: Topic[];
 }

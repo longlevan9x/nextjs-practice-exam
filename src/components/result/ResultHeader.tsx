@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getExamById } from "@/services/examService";
-import { ExamResult } from "@/types/ExamResult";
 import { Exam } from "@/types/exam";
 
 interface ResultHeaderProps {
-  resultData: ExamResult;
+  resultData: Exam;
   examId: string; // Pass the examId to fetch the title dynamically
 }
 
@@ -19,8 +18,8 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ resultData, examId }) => {
   }, [examId]);
 
   // Extract the total number of questions
-  const totalQuestions = resultData.questions.length;
-  const percentageToPass = 72; 
+  const totalQuestions = 65;
+  const percentageToPass = 72;
   // Convert total time (in minutes) to hours and minutes
   const hours = 2;
   const minutes = 10;

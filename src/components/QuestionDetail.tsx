@@ -10,10 +10,10 @@ import ActionButtons from "./ActionButtons";
 interface QuestionDetailProps {
   question: Question;
   isBookmarked: boolean;
-  onToggleBookmark: () => void;
-  onAnswerSelect: (answerId: number) => void;
-  onCheckAnswer: () => void;
-  onNextQuestion: () => void;
+  onToggleBookmark?: () => void;
+  onAnswerSelect?: (answerId: number) => void;
+  onCheckAnswer?: () => void;
+  onNextQuestion?: () => void;
   testEnded: boolean;
 }
 
@@ -32,7 +32,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark} />
+            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
             <h2 className="text-lg font-semibold text-gray-800">
               Câu hỏi {question.id}
             </h2>
@@ -47,15 +47,15 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         selectedAnswer={Array.isArray(question.selectedAnswer) ? null : question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
         correctAnswer={question.answers.find((a) => a.correct)?.id}
-        onAnswerSelect={onAnswerSelect}
+        onAnswerSelect={onAnswerSelect ?? (() => {})}
         testEnded={testEnded}
       />
 
       {/* Action Buttons */}
       <ActionButtons
         showExplanation={question.showExplanation ?? false}
-        onCheckAnswer={onCheckAnswer}
-        onNextQuestion={onNextQuestion}
+        onCheckAnswer={onCheckAnswer ?? (() => {})}
+        onNextQuestion={onNextQuestion ?? (() => {})}
         selectedAnswer={question.selectedAnswer ?? null}
         testEnded={testEnded}
       />
