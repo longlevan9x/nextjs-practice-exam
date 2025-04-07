@@ -46,6 +46,7 @@ export default function ResultPage() {
             attemptNumber={index + 1}
             passPercentage={passPercentage}
             isExpanded={index !== 0}
+            domains={resultData.domains || []} 
           />
         ))}
       </div>

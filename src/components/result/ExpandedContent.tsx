@@ -1,8 +1,9 @@
 import React from "react";
 import DonutChartWithLegend from "@/components/charts/DonutChartWithLegend";
 import TopicsSection from "./TopicsSection";
-import { Topic } from "@/types/topic";
 import { useRouter } from "next/navigation";
+import { ExamDomain } from "@/types/exam";
+import HorizontalLegend from "../charts/HorizontalLegend";
 
 interface ExpandedContentProps {
     chartData: { name: string; value: number; color: string }[];
@@ -14,7 +15,7 @@ interface ExpandedContentProps {
     totalQuestions: number;
     totalTime: number;
     startTime: Date;
-    topics: Topic[];
+    domains: ExamDomain[];
     resultId: string; 
 }
 
@@ -28,7 +29,7 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
     totalQuestions,
     totalTime,
     startTime,
-    topics,
+    domains,
     resultId,
 }) => {
     const router = useRouter(); // Initialize Next.js router
@@ -97,7 +98,8 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
             </div>
 
             {/* Topics Section */}
-            <TopicsSection topics={topics} />
+            <TopicsSection topics={domains} />
+            <HorizontalLegend data={chartData}></HorizontalLegend>
         </>
     );
 };

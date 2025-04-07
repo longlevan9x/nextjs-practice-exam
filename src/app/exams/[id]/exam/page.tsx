@@ -1,10 +1,10 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import QuestionList from "@/components/QuestionList";
-import QuestionDetail from "@/components/QuestionDetail";
-import Timer from "@/components/Timer";
-import ProgressBar from "@/components/ProgressBar";
+import QuestionList from "@/components/exams/QuestionList";
+import QuestionDetail from "@/components/exams/QuestionDetail";
+import Timer from "@/components/exams/Timer";
+import ProgressBar from "@/components/exams/ProgressBar";
 import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "../../../../services/questionService";
 import { saveTestResults } from "@/services/localStorageService";
@@ -118,6 +118,7 @@ export default function ExamModePage() {
         selectedAnswer: q.selectedAnswer,
         correctAnswer: q.answers.find((a) => a.correct)?.id,
         isCorrect: q.correct,
+        domain: q.domain,
       })),
     };
 
@@ -129,8 +130,8 @@ export default function ExamModePage() {
   };
 
   return (
-    <div className="min-h-screen text-gray-900 grid grid-cols-12">
-      <div className="lg:col-span-3 overflow-y-auto max-h-[calc(100vh-140px)] col-span-12">
+    <div className=" text-gray-900 grid grid-cols-12">
+      <div className="lg:col-span-3 overflow-y-auto max-h-[calc(100vh-165px)] col-span-12 pb-10">
         <QuestionList
           questions={questions}
           selectedQuestionId={selectedQuestion?.id || null}

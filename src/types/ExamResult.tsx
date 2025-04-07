@@ -1,4 +1,3 @@
-import { Topic } from "./topic";
 
 export interface Question {
     id: number;
@@ -6,6 +5,7 @@ export interface Question {
     selectedAnswer: number;
     correctAnswer: number;
     isCorrect: boolean;
+    domain: string;
 }
 
 export interface ExamResult {
@@ -14,5 +14,4 @@ export interface ExamResult {
     startTime: string;
     endTime: string;
     questions: Question[];
-    topics?: Topic[];
 }

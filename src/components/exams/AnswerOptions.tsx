@@ -42,7 +42,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
             />
           </div>
 
-          <span className=" cursor-pointer w-full" onClick={() => onAnswerSelect(answer.id)}>{answer.answer}</span>
+          <span className=" cursor-pointer w-11/12" onClick={() => onAnswerSelect(answer.id)}>{answer.answer}</span>
           <div>
             {showExplanation && answer.id === correctAnswer && (
               <CheckCircleIcon className="w-7 h-7 text-green-500 ml-3" />

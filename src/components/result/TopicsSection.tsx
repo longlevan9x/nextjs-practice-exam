@@ -1,8 +1,8 @@
-import { Topic } from "@/types/topic";
+import { ExamDomain } from "@/types/exam";
 import React from "react";
 
 interface TopicsSectionProps {
-  topics: Topic[];
+  topics: ExamDomain[];
 }
 
 const TopicsSection: React.FC<TopicsSectionProps> = ({ topics }) => {
@@ -13,7 +13,7 @@ const TopicsSection: React.FC<TopicsSectionProps> = ({ topics }) => {
         <div key={index} className="space-y-2">
           {/* Topic Name */}
           <p className="text-sm font-semibold text-gray-700">
-            {topic.name} ({topic.totalQuestions} câu hỏi)
+            {topic.name} ({topic.questionCount} câu hỏi)
           </p>
 
           {/* Horizontal Bar */}
@@ -21,19 +21,19 @@ const TopicsSection: React.FC<TopicsSectionProps> = ({ topics }) => {
             <div
               className="bg-green-500 h-4"
               style={{
-                width: `${(topic.correct / topic.totalQuestions) * 100}%`,
+                width: `${((topic.correct ?? 0) / topic.questionCount) * 100}%`,
               }}
             ></div>
             <div
               className="bg-red-500 h-4"
               style={{
-                width: `${(topic.incorrect / topic.totalQuestions) * 100}%`,
+                width: `${((topic.incorrect ?? 0) / topic.questionCount) * 100}%`,
               }}
             ></div>
             <div
               className="bg-gray-400 h-4"
               style={{
-                width: `${(topic.skipped / topic.totalQuestions) * 100}%`,
+                width: `${((topic.skipped ?? 0) / topic.questionCount) * 100}%`,
               }}
             ></div>
           </div>

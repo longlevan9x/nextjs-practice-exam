@@ -26,9 +26,8 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
       {/* Status */}
       <div className="flex flex-col items-start">
         <p
-          className={`text-base font-semibold ${
-            isPassed ? "text-green-600" : "text-red-600"
-          }`}
+          className={`text-base font-semibold ${isPassed ? "text-green-600" : "text-red-600"
+            }`}
         >
           {isPassed ? "Thành công" : "Không thành công"}
         </p>
@@ -43,6 +42,11 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
         <p>
           {Math.floor(totalTime / 60)} giờ {totalTime % 60} phút
         </p>
+      </div>
+
+      {/* Time and Date */}
+      <div className="flex flex-col items-end text-base text-gray-700">
+
         <p>{startTime.toLocaleDateString()}</p>
       </div>
     </div>

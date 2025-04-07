@@ -8,4 +8,13 @@ export interface Exam {
     name: string;
     path: string;
   }[];
+  domains?: ExamDomain[]; // Added property
+}
+
+export interface ExamDomain {
+  name: string;
+  questionCount: number;
+  correct?: number;
+  incorrect?: number;
+  skipped?: number;
 }

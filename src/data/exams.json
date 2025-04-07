@@ -31,6 +31,24 @@
                 "name": "Practice all questions",
                 "path": "quiz"
             }
+        ],
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            }
         ]
     },
     {
@@ -43,6 +61,24 @@
             {
                 "name": "Practice all questions",
                 "path": "quiz"
+            }
+        ],
+        "domains": [
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 17
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 19
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 15
             }
         ]
     },
@@ -57,6 +93,24 @@
                 "name": "Practice all questions",
                 "path": "quiz"
             }
+        ],
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 19
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 23
+            }
         ]
     },
     {
@@ -69,6 +123,24 @@
             {
                 "name": "Practice all questions",
                 "path": "quiz"
+            }
+        ],
+        "domains": [
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 21
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 19
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 13
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 12
             }
         ]
     },
@@ -83,6 +155,24 @@
                 "name": "Practice all questions",
                 "path": "quiz"
             }
+        ],
+        "domains": [
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 23
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 17
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 12
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 13
+            }
         ]
     },
     {
@@ -95,6 +185,24 @@
             {
                 "name": "Practice all questions",
                 "path": "quiz"
+            }
+        ],
+        "domains": [
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 21
+            },
+            {
+                "name": "Design Secure Applications and Architectures",
+                "questionCount": 16
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 10
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 18
             }
         ]
     }
