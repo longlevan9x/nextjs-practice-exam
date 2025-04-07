@@ -8,6 +8,7 @@ import ProgressBar from "@/components/exams/ProgressBar";
 import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "../../../../services/questionService";
 import { saveTestResults } from "@/services/localStorageService";
+import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 
 export default function ExamModePage() {
   const { id: examId } = useParams<{ id: string }>();
@@ -15,7 +16,7 @@ export default function ExamModePage() {
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<number[]>([]);
   const [filter, setFilter] = useState<string>("all");
-  const [remainingTime, setRemainingTime] = useState<number>(600);
+  const [remainingTime, setRemainingTime] = useState<number>(TIMER_INITIAL_VALUE);
   const [testEnded, setTestEnded] = useState<boolean>(false);
   const router = useRouter();
 
@@ -126,7 +127,7 @@ export default function ExamModePage() {
     saveTestResults(examId, testData);
 
     // Redirect to the results page
-    router.push(`result`);
+    router.push('result');
   };
 
   return (

@@ -6,6 +6,12 @@ import CorrectOptions from "./CorrectOptions";
 import IncorrectOptions from "./IncorrectOptions";
 import References from "./References";
 import ActionButtons from "./ActionButtons";
+import {
+  EXAM_DEFAULT_MODE,
+  DEFAULT_TEST_ENDED,
+  EXPLANATION_SECTION_TITLE,
+  HEADER_TITLE_PREFIX,
+} from "@/constants/constants";
 
 interface QuestionDetailProps {
   question: Question;
@@ -19,14 +25,14 @@ interface QuestionDetailProps {
 }
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({
-  mode = "exam",
+  mode = EXAM_DEFAULT_MODE,
   question,
   isBookmarked,
   onToggleBookmark,
   onAnswerSelect,
   onCheckAnswer,
   onNextQuestion,
-  testEnded=false,
+  testEnded = DEFAULT_TEST_ENDED,
 }) => {
   return (
     <div className="flex flex-col">
@@ -34,9 +40,9 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
+            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
             <h2 className="text-lg font-semibold text-gray-800">
-              Câu hỏi {question.id}
+              {HEADER_TITLE_PREFIX} {question.id}
             </h2>
           </div>
           <p className="text-base mt-1">{question.question}</p>
@@ -49,14 +55,14 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         selectedAnswer={Array.isArray(question.selectedAnswer) ? null : question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
         correctAnswer={question.answers.find((a) => a.correct)?.id}
-        onAnswerSelect={onAnswerSelect ?? (() => { })}
+        onAnswerSelect={onAnswerSelect ?? (() => {})}
       />
 
       {mode === "exam" && (
-        < ActionButtons
+        <ActionButtons
           showExplanation={question.showExplanation ?? false}
-          onCheckAnswer={onCheckAnswer ?? (() => { })}
-          onNextQuestion={onNextQuestion ?? (() => { })}
+          onCheckAnswer={onCheckAnswer ?? (() => {})}
+          onNextQuestion={onNextQuestion ?? (() => {})}
           selectedAnswer={question.selectedAnswer ?? null}
           testEnded={testEnded}
         />
@@ -65,7 +71,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       {/* Explanation Section */}
       {question.showExplanation && (
         <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-sm">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Giải thích tổng thể</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
 
           {question.correctAnswerExplanation && (
             <CorrectOptions

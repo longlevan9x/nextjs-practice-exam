@@ -1,6 +1,7 @@
 import React from "react";
 import { Question } from "@/types/question";
 import QuestionItem from "./QuestionItem";
+import { FILTER_OPTION_VALUE, FILTER_OPTIONS } from "@/constants/constants";
 
 interface QuestionListProps {
   questions: Question[];
@@ -23,15 +24,15 @@ const QuestionList: React.FC<QuestionListProps> = ({
 }) => {
   const filteredQuestions = questions.filter((question) => {
     switch (filter) {
-      case "unanswered":
+      case FILTER_OPTION_VALUE.UNANSWERED:
         return !question.answered;
-      case "answered":
+      case FILTER_OPTION_VALUE.ANSWERED:
         return question.answered;
-      case "bookmarked":
+      case FILTER_OPTION_VALUE.BOOKMARKED:
         return bookmarkedQuestions.includes(question.id);
-      case "correct":
+      case FILTER_OPTION_VALUE.CORRECT:
         return question.correct;
-      case "incorrect":
+      case FILTER_OPTION_VALUE.INCORRECT:
         return !question.correct;
       default:
         return true;
@@ -51,12 +52,11 @@ const QuestionList: React.FC<QuestionListProps> = ({
           onChange={(e) => onFilterChange(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
-          <option value="all">Tất cả</option>
-          <option value="answered">Đã trả lời</option>
-          <option value="unanswered">Chưa trả lời</option>
-          <option value="bookmarked">Đã đánh dấu</option>
-          <option value="correct">Trả lời đúng</option>
-          <option value="incorrect">Trả lời sai</option>
+          {FILTER_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
       </div>
       <ul className="space-y-0">
