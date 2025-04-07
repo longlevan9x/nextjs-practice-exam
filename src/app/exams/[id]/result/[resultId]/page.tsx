@@ -22,6 +22,8 @@ const ResultOverviewPage: React.FC = () => {
     const [mappedQuestions, setMappedQuestions] = useState<MappedQuestion[]>([]);
     const [loading, setLoading] = useState(true);
     const [resultData, setResultData] = useState<Exam | null>(null);
+    const [filteredQuestions, setFilteredQuestions] = useState<MappedQuestion[]>([]);
+    const [filterMode, setFilterMode] = useState<string>('all');
 
     // Fetch result and map data
     useEffect(() => {
@@ -52,6 +54,7 @@ const ResultOverviewPage: React.FC = () => {
 
                 if (userQuestion) {
                     originalQuestion.selectedAnswer = userQuestion.selectedAnswer;
+                    originalQuestion.isCorrect = userQuestion.isCorrect;
                 }
 
                 originalQuestion.showExplanation = true; // Hiển thị lời giải
@@ -63,6 +66,7 @@ const ResultOverviewPage: React.FC = () => {
             });
 
             setMappedQuestions(mapped);
+            setFilteredQuestions(mapped);
             setLoading(false);
         };
 
@@ -83,6 +87,12 @@ const ResultOverviewPage: React.FC = () => {
         return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     }
 
+    const totalQuestions = mappedQuestions.length;
+    const correctQuestions = mappedQuestions.filter((q) => q.question.isCorrect === true).length;
+    const incorrectQuestions = mappedQuestions.filter((q) => q.question.isCorrect === false).length;
+    const skippedQuestions = mappedQuestions.filter((q) => q.question.selectedAnswer === null).length;
+    const bookmarkedQuestions = mappedQuestions.filter((q) => q.question.isBookmarked).length;
+
     return (
         <div className="p-6 lg:max-w-4xl mx-auto">
             {resultData &&
@@ -96,13 +106,66 @@ const ResultOverviewPage: React.FC = () => {
                     onClick={() => window.history.back()}
                     className="flex items-center px-1 py-2 text-blue-700 rounded-sm cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold"
                 >
-                    <ChevronLeftIcon className="w-5 h-5 mr-2" /> 
+                    <ChevronLeftIcon className="w-5 h-5 mr-2" />
                     Quay lại phần tổng quan kết quả
                 </button>
             </div>
-            
+
+            <div className="flex space-x-4 mb-6">
+                <button
+                    onClick={() => {
+                        setFilterMode('all');
+                        setFilteredQuestions(mappedQuestions);
+                    }}
+                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                        }`}
+                >
+                    Tất cả ({totalQuestions})
+                </button>
+                <button
+                    onClick={() => {
+                        setFilterMode('correct');
+                        setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === true));
+                    }}
+                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'correct' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                        }`}
+                >
+                    Chính xác ({correctQuestions})
+                </button>
+                <button
+                    onClick={() => {
+                        setFilterMode('incorrect');
+                        setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === false));
+                    }}
+                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'incorrect' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                        }`}
+                >
+                    Không chính xác ({incorrectQuestions})
+                </button>
+                <button
+                    onClick={() => {
+                        setFilterMode('skipped');
+                        setFilteredQuestions(mappedQuestions.filter((q) => q.question.selectedAnswer === null));
+                    }}
+                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'skipped' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                        }`}
+                >
+                    Đã bỏ qua ({skippedQuestions})
+                </button>
+                <button
+                    onClick={() => {
+                        setFilterMode('bookmarked');
+                        setFilteredQuestions(mappedQuestions.filter((q) => q.question.isBookmarked));
+                    }}
+                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'bookmarked' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                        }`}
+                >
+                    Đã đánh dấu ({bookmarkedQuestions})
+                </button>
+            </div>
+
             <div className="space-y-6">
-                {mappedQuestions.map((question) => (
+                {filteredQuestions.map((question) => (
                     <div className="border border-blue-200 p-4" key={question.id}>
                         <QuestionDetail
                             question={question.question}
