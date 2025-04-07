@@ -15,7 +15,6 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
   answers,
   selectedAnswer,
   showExplanation,
-  correctAnswer,
   onAnswerSelect,
   multiple,
 }) => {

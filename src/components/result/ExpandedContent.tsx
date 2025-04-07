@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { ExamDomain } from "@/types/exam";
 import HorizontalLegend from "../charts/HorizontalLegend";
 import LoadingIcon from "../common/LoadingIcon";
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 interface ExpandedContentProps {
     chartData: { name: string; value: number; color: string }[];

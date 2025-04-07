@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { EXAM_TYPES, ExamType } from "@/constants/exam";
 
 interface ActionButtonsProps {
@@ -11,7 +11,7 @@ interface ActionButtonsProps {
   selectedAnswer: number | number[] | null;
   testEnded: boolean;
   isFirstQuestion: boolean;
-  examType: ExamType;
+  examType?: ExamType;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({

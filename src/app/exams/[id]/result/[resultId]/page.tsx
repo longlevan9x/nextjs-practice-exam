@@ -10,8 +10,8 @@ import ResultHeader from '@/components/result/ResultHeader';
 import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // Import Heroicons
-import { DISPLAY_MODES, EXAM_TYPES } from '@/constants/exam';
-
+import { DISPLAY_MODES } from '@/constants/exam';
+import { ExamResult } from '@/types/ExamResult';
 interface MappedQuestion {
     id: number;
     question: Question;
@@ -25,7 +25,7 @@ const ResultOverviewPage: React.FC = () => {
     const [resultData, setResultData] = useState<Exam | null>(null);
     const [filteredQuestions, setFilteredQuestions] = useState<MappedQuestion[]>([]);
     const [filterMode, setFilterMode] = useState<string>('all');
-    const [examResult, setExamResult] = useState<any>(null);
+    const [examResult, setExamResult] = useState<ExamResult | null>(null);
 
     // Fetch result and map data
     useEffect(() => {
