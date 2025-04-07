@@ -20,8 +20,11 @@ interface QuestionDetailProps {
   onAnswerSelect?: (answerId: number) => void;
   onCheckAnswer?: () => void;
   onNextQuestion?: () => void;
+  onPreviousQuestion?: () => void;
+  onSkipQuestion?: () => void;
   testEnded?: boolean;
   mode?: "exam" | "review";
+  isFirstQuestion?: boolean;
 }
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({
@@ -32,7 +35,10 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onAnswerSelect,
   onCheckAnswer,
   onNextQuestion,
+  onPreviousQuestion,
+  onSkipQuestion,
   testEnded = DEFAULT_TEST_ENDED,
+  isFirstQuestion,
 }) => {
   return (
     <div className="flex flex-col">
@@ -63,8 +69,11 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           showExplanation={question.showExplanation ?? false}
           onCheckAnswer={onCheckAnswer ?? (() => {})}
           onNextQuestion={onNextQuestion ?? (() => {})}
+          onPreviousQuestion={onPreviousQuestion ?? (() => {})}
+          onSkipQuestion={onSkipQuestion ?? (() => {})}
           selectedAnswer={question.selectedAnswer ?? null}
           testEnded={testEnded}
+          isFirstQuestion={isFirstQuestion ?? false}
         />
       )}
 

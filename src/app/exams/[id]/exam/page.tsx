@@ -120,6 +120,24 @@ export default function ExamModePage() {
     }
   };
 
+  const handlePreviousQuestion = () => {
+    if (!selectedQuestion || testEnded) return;
+
+    const currentIndex = questions.findIndex((q) => q.id === selectedQuestion.id);
+    const previousQuestion = questions[currentIndex - 1];
+    if (previousQuestion) {
+      setSelectedQuestion(previousQuestion);
+    }
+  };
+
+  const handleSkipQuestion = () => {
+    if (!selectedQuestion || testEnded) return;
+    handleNextQuestion();
+  };
+
+  // Kiểm tra xem có phải câu hỏi đầu tiên không
+  const isFirstQuestion = questions.length > 0 && selectedQuestion?.id === questions[0].id;
+
   const handleFinishTest = () => {
     // Prepare test data
     const testData = {
@@ -188,7 +206,10 @@ export default function ExamModePage() {
                 onAnswerSelect={handleAnswerSelect}
                 onCheckAnswer={handleCheckAnswer}
                 onNextQuestion={handleNextQuestion}
+                onPreviousQuestion={handlePreviousQuestion}
+                onSkipQuestion={handleSkipQuestion}
                 testEnded={testEnded}
+                isFirstQuestion={isFirstQuestion}
               />
             )}
           </div>
