@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { getExamResult } from "@/services/localStorageService";
 import { ExamResult } from "@/types/ExamResult";
 import ResultHeader from "@/components/result/ResultHeader";
 import { getAllExamResults } from "@/services/localStorageService";
@@ -35,8 +34,9 @@ export default function ResultPage() {
 
   return (
     <div className="lg:w-1/2 mx-auto">
-      {/* Result Header */}
-      <ResultHeader resultData={resultData} examId={examId} />
+      <div className="mb-6">
+        <ResultHeader resultData={resultData} examId={examId} />
+      </div>
 
       <div className="space-y-6">
         {examResults.map((result, index) => (

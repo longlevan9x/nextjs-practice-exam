@@ -6,6 +6,10 @@ import { getExamResultById } from '@/services/localStorageService'; // Service �
 import { fetchQuestionsByExamId } from '@/services/questionService'; // Service để lấy danh sách câu hỏi gốc
 import QuestionDetail from '@/components/QuestionDetail'; // Import QuestionDetail component
 import { Question } from '@/types/question';
+import ResultHeader from '@/components/result/ResultHeader';
+import { Exam } from '@/types/exam';
+import { getExamById } from '@/services/examService';
+import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // Import Heroicons
 
 interface MappedQuestion {
     id: number;
@@ -13,9 +17,11 @@ interface MappedQuestion {
 }
 
 const ResultOverviewPage: React.FC = () => {
+    const { id: examId } = useParams<{ id: string }>();
     const { resultId } = useParams<{ resultId: string }>(); // Lấy resultId từ URL
     const [mappedQuestions, setMappedQuestions] = useState<MappedQuestion[]>([]);
     const [loading, setLoading] = useState(true);
+    const [resultData, setResultData] = useState<Exam | null>(null);
 
     // Fetch result and map data
     useEffect(() => {
@@ -63,22 +69,47 @@ const ResultOverviewPage: React.FC = () => {
         fetchData();
     }, [resultId]);
 
+
+    useEffect(() => {
+        if (examId) {
+            const data = getExamById(examId); // Fetch data from localStorage
+            if (data) {
+                setResultData(data);
+            }
+        }
+    }, [examId]);
+
     if (loading) {
         return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     }
 
     return (
         <div className="p-6 lg:max-w-4xl mx-auto">
-            <h1 className="text-2xl font-bold text-center mb-6">Chi Tiết Kết Quả Thi</h1>
+            {resultData &&
+                <div className="mb-6">
+                    <ResultHeader resultData={resultData} examId={examId} />
+                </div>
+            }
+
+            <div className="mb-4">
+                <button
+                    onClick={() => window.history.back()}
+                    className="flex items-center px-1 py-2 text-blue-700 rounded-sm cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold"
+                >
+                    <ChevronLeftIcon className="w-5 h-5 mr-2" /> 
+                    Quay lại phần tổng quan kết quả
+                </button>
+            </div>
+            
             <div className="space-y-6">
                 {mappedQuestions.map((question) => (
-                    <div className=" border border-blue-200 p-4">
+                    <div className="border border-blue-200 p-4" key={question.id}>
                         <QuestionDetail
-                            key={question.id}
                             question={question.question}
                             isBookmarked={false}
-                            testEnded={true} // Assuming the test has ended in this context
-                        ></QuestionDetail>
+                            testEnded={true}
+                            mode='review'
+                        />
                     </div>
                 ))}
             </div>

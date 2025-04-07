@@ -14,17 +14,19 @@ interface QuestionDetailProps {
   onAnswerSelect?: (answerId: number) => void;
   onCheckAnswer?: () => void;
   onNextQuestion?: () => void;
-  testEnded: boolean;
+  testEnded?: boolean;
+  mode?: "exam" | "review";
 }
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({
+  mode = "exam",
   question,
   isBookmarked,
   onToggleBookmark,
   onAnswerSelect,
   onCheckAnswer,
   onNextQuestion,
-  testEnded,
+  testEnded=false,
 }) => {
   return (
     <div className="flex flex-col">
@@ -32,7 +34,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
+            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
             <h2 className="text-lg font-semibold text-gray-800">
               Câu hỏi {question.id}
             </h2>
@@ -47,22 +49,22 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         selectedAnswer={Array.isArray(question.selectedAnswer) ? null : question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
         correctAnswer={question.answers.find((a) => a.correct)?.id}
-        onAnswerSelect={onAnswerSelect ?? (() => {})}
-        testEnded={testEnded}
+        onAnswerSelect={onAnswerSelect ?? (() => { })}
       />
 
-      {/* Action Buttons */}
-      <ActionButtons
-        showExplanation={question.showExplanation ?? false}
-        onCheckAnswer={onCheckAnswer ?? (() => {})}
-        onNextQuestion={onNextQuestion ?? (() => {})}
-        selectedAnswer={question.selectedAnswer ?? null}
-        testEnded={testEnded}
-      />
+      {mode === "exam" && (
+        < ActionButtons
+          showExplanation={question.showExplanation ?? false}
+          onCheckAnswer={onCheckAnswer ?? (() => { })}
+          onNextQuestion={onNextQuestion ?? (() => { })}
+          selectedAnswer={question.selectedAnswer ?? null}
+          testEnded={testEnded}
+        />
+      )}
 
       {/* Explanation Section */}
       {question.showExplanation && (
-        <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-lg">
+        <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-sm">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Giải thích tổng thể</h3>
 
           {question.correctAnswerExplanation && (

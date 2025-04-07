@@ -1,4 +1,4 @@
-import { ExamResult, Question } from "@/types/ExamResult";
+import { ExamResult } from "@/types/ExamResult";
 
 export const saveTestResults = (examId: string, data: object) => {
     try {

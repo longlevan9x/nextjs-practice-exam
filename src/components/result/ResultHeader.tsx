@@ -7,7 +7,7 @@ interface ResultHeaderProps {
   examId: string; // Pass the examId to fetch the title dynamically
 }
 
-const ResultHeader: React.FC<ResultHeaderProps> = ({ resultData, examId }) => {
+const ResultHeader: React.FC<ResultHeaderProps> = ({ examId }) => {
   const [examData, setExamData] = useState<Exam | null>(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ resultData, examId }) => {
   const minutes = 10;
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="space-y-4">
       {/* Exam Title */}
       <h1 className="text-2xl font-bold text-center">
         {examData ? `${examData.name} - Kết quả` : "Loading..."}
