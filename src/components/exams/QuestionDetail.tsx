@@ -7,11 +7,12 @@ import IncorrectOptions from "./IncorrectOptions";
 import References from "./References";
 import ActionButtons from "./ActionButtons";
 import {
-  EXAM_DEFAULT_MODE,
   DEFAULT_TEST_ENDED,
   EXPLANATION_SECTION_TITLE,
   HEADER_TITLE_PREFIX,
 } from "@/constants/constants";
+import { DISPLAY_MODES, DisplayMode } from "@/constants/exam";
+import { BookmarkIcon } from "@heroicons/react/24/solid";
 
 interface QuestionDetailProps {
   question: Question;
@@ -23,12 +24,12 @@ interface QuestionDetailProps {
   onPreviousQuestion?: () => void;
   onSkipQuestion?: () => void;
   testEnded?: boolean;
-  mode?: "exam" | "review";
   isFirstQuestion?: boolean;
+  displayMode: DisplayMode;
+  examType: "exam" | "practice";
 }
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({
-  mode = EXAM_DEFAULT_MODE,
   question,
   isBookmarked,
   onToggleBookmark,
@@ -39,6 +40,8 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onSkipQuestion,
   testEnded = DEFAULT_TEST_ENDED,
   isFirstQuestion,
+  displayMode,
+  examType,
 }) => {
   return (
     <div className="flex flex-col">
@@ -47,7 +50,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         <div>
           <div className="flex items-center space-x-1">
             <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-lg font-normal">
               {HEADER_TITLE_PREFIX} {question.id}
             </h2>
           </div>
@@ -58,13 +61,14 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       {/* Answer Options */}
       <AnswerOptions
         answers={question.answers}
-        selectedAnswer={Array.isArray(question.selectedAnswer) ? null : question.selectedAnswer ?? null}
+        selectedAnswer={question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
         correctAnswer={question.answers.find((a) => a.correct)?.id}
         onAnswerSelect={onAnswerSelect ?? (() => {})}
+        multiple={question.multiple ?? false}
       />
 
-      {mode === "exam" && (
+      {displayMode === DISPLAY_MODES.EXECUTE && (
         <ActionButtons
           showExplanation={question.showExplanation ?? false}
           onCheckAnswer={onCheckAnswer ?? (() => {})}
@@ -74,6 +78,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           selectedAnswer={question.selectedAnswer ?? null}
           testEnded={testEnded}
           isFirstQuestion={isFirstQuestion ?? false}
+          examType={examType}
         />
       )}
 

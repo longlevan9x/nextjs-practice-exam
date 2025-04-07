@@ -1,34 +1,23 @@
 import React from "react";
-import { BookmarkIcon as BookmarkSolidIcon } from "@heroicons/react/24/solid";
-import { BookmarkIcon as BookmarkOutlineIcon} from "@heroicons/react/24/outline";
+import { BookmarkIcon } from "@heroicons/react/24/solid";
 
 interface BookmarkButtonProps {
   isBookmarked: boolean;
   onToggle: () => void;
-  size?: string; // Tailwind size classes (e.g., "w-5 h-5")
-  className?: string; // Additional custom styles
 }
 
-const BookmarkButton: React.FC<BookmarkButtonProps> = ({
-  isBookmarked,
-  onToggle,
-  size = "w-6 h-6", // Default size
-  className = "", // Default to no additional styles
-}) => {
+const BookmarkButton: React.FC<BookmarkButtonProps> = ({ isBookmarked, onToggle }) => {
   return (
-    <>
-      {isBookmarked ? (
-        <BookmarkSolidIcon title="Đã đánh dấu" className={`${size} cursor-pointer text-orange-500 ${className}`} onClick={(e) => {
-          e.stopPropagation(); // Prevent triggering parent click events
-          onToggle();
-        }}/>
-      ) : (
-        <BookmarkOutlineIcon title="Đánh dấu" className={`${size} cursor-pointer text-gray-500 ${className}`} onClick={(e) => {
-          e.stopPropagation(); // Prevent triggering parent click events
-          onToggle();
-        }}/>
-      )}
-    </>
+    <button
+      onClick={onToggle}
+      className={`rounded-full transition-all duration-200 ${
+        isBookmarked 
+          ? "text-yellow-500 hover:bg-yellow-50 hover:text-yellow-600" 
+          : "text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+      }`}
+    >
+      <BookmarkIcon className="w-5 h-5" />
+    </button>
   );
 };
 

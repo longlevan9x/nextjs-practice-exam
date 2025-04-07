@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import { EXAM_TYPES, ExamType } from "@/constants/exam";
 
 interface ActionButtonsProps {
   showExplanation: boolean;
@@ -10,6 +11,7 @@ interface ActionButtonsProps {
   selectedAnswer: number | number[] | null;
   testEnded: boolean;
   isFirstQuestion: boolean;
+  examType: ExamType;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({
@@ -21,6 +23,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   selectedAnswer,
   testEnded,
   isFirstQuestion,
+  examType,
 }) => {
   return (
     <div className="flex justify-end mt-6">
@@ -45,7 +48,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
           </button>
         )}
 
-        {selectedAnswer && !showExplanation && (
+        {selectedAnswer && !showExplanation && examType === EXAM_TYPES.PRACTICE && (
           <button
             onClick={onCheckAnswer}
             disabled={testEnded}
@@ -55,7 +58,8 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
             <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
           </button>
         )}
-        {showExplanation && (
+
+        {(showExplanation || (selectedAnswer && examType === EXAM_TYPES.EXAM)) && (
           <button
             onClick={onNextQuestion}
             disabled={testEnded}

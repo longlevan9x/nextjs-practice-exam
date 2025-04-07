@@ -3,6 +3,7 @@ import { Question } from "@/types/question";
 import QuestionItem from "./QuestionItem";
 import { FILTER_OPTION_VALUE, FILTER_OPTIONS } from "@/constants/constants";
 import { ExamDomain } from "@/types/exam";
+import { ExamType } from "@/constants/exam";
 
 interface QuestionListProps {
   questions: Question[];
@@ -15,6 +16,7 @@ interface QuestionListProps {
   onDomainFilterChange: (domainFilter: string) => void;
   onQuestionSelect: (questionId: number) => void;
   onToggleBookmark: (questionId: number) => void;
+  examType: ExamType;
 }
 
 const QuestionList: React.FC<QuestionListProps> = ({
@@ -28,6 +30,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
   onDomainFilterChange,
   onQuestionSelect,
   onToggleBookmark,
+  examType,
 }) => {
   const filteredQuestions = questions.filter((question) => {
     // Apply status filter
@@ -94,6 +97,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
             isBookmarked={bookmarkedQuestions.includes(question.id)}
             onSelect={() => onQuestionSelect(question.id)}
             onToggleBookmark={() => onToggleBookmark(question.id)}
+            examType={examType}
           />
         ))}
       </ul>

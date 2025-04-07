@@ -1,13 +1,14 @@
 import React from "react";
 import BookmarkButton from "./BookmarkButton";
 import { Question } from "@/types/question";
-
+import { EXAM_TYPES, ExamType } from "@/constants/exam";
 interface QuestionItemProps {
     question: Question;
     isSelected: boolean;
     isBookmarked: boolean;
     onSelect: () => void;
     onToggleBookmark: () => void;
+    examType: ExamType;
 }
 
 const QuestionItem: React.FC<QuestionItemProps> = ({
@@ -16,6 +17,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
     isBookmarked,
     onSelect,
     onToggleBookmark,
+    examType,
 }) => {
     return (
         <li
@@ -28,14 +30,12 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                     <BookmarkButton
                         isBookmarked={isBookmarked}
                         onToggle={onToggleBookmark}
-                        size="w-5 h-5" // Smaller size for QuestionItem
-                        className="mr-2" // Additional margin
                     />
-                    <p className="text-base font-bold">Câu hỏi {question.id}</p>
+                    <p className="text-base font-bold ml-1">Câu hỏi {question.id}</p>
                 </div>
 
                 {/* Answer Status */}
-                {question.answered && (
+                {question.answered && examType === EXAM_TYPES.PRACTICE && (
                     <span
                         className={`text-sm font-bold ${question.correct ? "text-green-600" : "text-red-600"
                             }`}
