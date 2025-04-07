@@ -18,12 +18,12 @@ const BookmarkButton: React.FC<BookmarkButtonProps> = ({
   return (
     <>
       {isBookmarked ? (
-        <BookmarkSolidIcon className={`${size} cursor-pointer text-orange-500 ${className}`} onClick={(e) => {
+        <BookmarkSolidIcon title="Đã đánh dấu" className={`${size} cursor-pointer text-orange-500 ${className}`} onClick={(e) => {
           e.stopPropagation(); // Prevent triggering parent click events
           onToggle();
         }}/>
       ) : (
-        <BookmarkOutlineIcon className={`${size} cursor-pointer text-gray-500 ${className}`} onClick={(e) => {
+        <BookmarkOutlineIcon title="Đánh dấu" className={`${size} cursor-pointer text-gray-500 ${className}`} onClick={(e) => {
           e.stopPropagation(); // Prevent triggering parent click events
           onToggle();
         }}/>

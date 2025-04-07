@@ -9,6 +9,8 @@ import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "../../../../services/questionService";
 import { saveTestResults } from "@/services/localStorageService";
 import { TIMER_INITIAL_VALUE } from "@/constants/constants";
+import { getExamById } from "@/services/examService";
+import { ExamDomain } from "@/types/exam";
 
 export default function ExamModePage() {
   const { id: examId } = useParams<{ id: string }>();
@@ -16,6 +18,8 @@ export default function ExamModePage() {
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<number[]>([]);
   const [filter, setFilter] = useState<string>("all");
+  const [domainFilter, setDomainFilter] = useState<string>("all");
+  const [domains, setDomains] = useState<ExamDomain[]>([]);
   const [remainingTime, setRemainingTime] = useState<number>(TIMER_INITIAL_VALUE);
   const [testEnded, setTestEnded] = useState<boolean>(false);
   const router = useRouter();
@@ -33,6 +37,15 @@ export default function ExamModePage() {
     };
 
     fetchQuestions();
+  }, [examId]);
+
+  useEffect(() => {
+    if (examId) {
+      const exam = getExamById(examId);
+      if (exam?.domains) {
+        setDomains(exam.domains);
+      }
+    }
   }, [examId]);
 
   useEffect(() => {
@@ -138,7 +151,10 @@ export default function ExamModePage() {
           selectedQuestionId={selectedQuestion?.id || null}
           bookmarkedQuestions={bookmarkedQuestions}
           filter={filter}
+          domainFilter={domainFilter}
+          domains={domains}
           onFilterChange={setFilter}
+          onDomainFilterChange={setDomainFilter}
           onQuestionSelect={handleQuestionSelect}
           onToggleBookmark={toggleBookmark}
         />

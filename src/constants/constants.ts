@@ -9,13 +9,14 @@ export const FILTER_OPTION_VALUE = {
 };
 
 export const FILTER_OPTIONS = [
-    { value: FILTER_OPTION_VALUE.ALL, label: "Tất cả" },
+    { value: FILTER_OPTION_VALUE.ALL, label: "Tất cả câu hỏi" },
     { value: FILTER_OPTION_VALUE.ANSWERED, label: "Đã trả lời" },
     { value: FILTER_OPTION_VALUE.UNANSWERED, label: "Chưa trả lời" },
     { value: FILTER_OPTION_VALUE.BOOKMARKED, label: "Đã đánh dấu" },
     { value: FILTER_OPTION_VALUE.CORRECT, label: "Trả lời đúng" },
     { value: FILTER_OPTION_VALUE.INCORRECT, label: "Trả lời sai" },
 ];
+
 export const DEFAULT_DOMAIN = "General";
 
 export const EXAM_MODE = {
