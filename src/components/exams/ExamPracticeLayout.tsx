@@ -223,7 +223,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const isFirstQuestion = questions.length > 0 && selectedQuestion?.id === questions[0].id;
 
     return (
-        <div className="text-gray-900 grid grid-cols-12 gap-4 mt-4">
+        <div className="text-gray-900 grid grid-cols-12 -mr-4">
             {/* Question List Section */}
             <div className="lg:col-span-3 col-span-12">
                 <div className="overflow-y-auto max-h-[calc(100vh-140px)] pb-10">
@@ -244,7 +244,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             </div>
 
             {/* Question Detail Section */}
-            <div className="lg:col-span-9 col-span-12">
+            <div className="lg:col-span-9 col-span-12 overflow-auto max-h-[calc(100vh-170px)]">
                 <div className="w-full lg:max-w-4xl mx-auto">
                     <div className="w-full flex items-center mb-6">
                         {displayMode === DISPLAY_MODES.EXECUTE && (

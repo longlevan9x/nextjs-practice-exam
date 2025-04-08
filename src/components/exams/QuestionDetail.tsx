@@ -86,10 +86,9 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-sm">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
 
-          {question.correctAnswerExplanation && (
+          {question.correctAnswerExplanations && (
             <CorrectOptions
-              answer={question.correctAnswerExplanation.answer}
-              explanation={question.correctAnswerExplanation.explanation}
+              answerExplanations={question.correctAnswerExplanations}
             />
           )}
 

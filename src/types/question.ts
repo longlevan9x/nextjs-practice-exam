@@ -4,10 +4,11 @@ export interface Answer {
   correct: boolean;
 }
 
-export interface IncorrectAnswerExplanation {
+export interface AnswerExplanation {
   answer: string;
   explanation: string;
 }
+
 
 export interface Question {
   id: number;
@@ -15,11 +16,8 @@ export interface Question {
   corrects: number[]; // IDs of the correct answers
   answers: Answer[]; // List of all possible answers
   explanation: string; // Detailed explanation for the correct answers
-  correctAnswerExplanation?: {
-    answer: string;
-    explanation: string;
-  }; // Optional detailed explanation for correct answers
-  incorrectAnswerExplanations?: IncorrectAnswerExplanation[]; // Optional explanations for incorrect answers
+  correctAnswerExplanations: AnswerExplanation[];
+  incorrectAnswerExplanations?: AnswerExplanation[]; // Optional explanations for incorrect answers
   references?: string[]; // Optional list of reference links
   multiple?: boolean; // Indicates if multiple answers are correct
   domain?: string; // Domain or category of the question
@@ -29,4 +27,5 @@ export interface Question {
   correct?: boolean; // Whether the user's answer is correct
   isCorrect?: boolean; // Whether the question is correct
   isBookmarked?: boolean; // Added property
+  incorrect?: boolean;
 }
