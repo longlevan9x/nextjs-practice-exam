@@ -1,8 +1,10 @@
 import React from "react";
+import { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import Breadcrumb from "@/components/Breadcrumb";
 import Menu from "@/components/Menu";
 import ExamRedirect from "@/components/ExamRedirect";
+import Image from "next/image";
 
 import "./globals.css";
 
@@ -16,13 +18,30 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
+export const metadata: Metadata = {
+  title: "Exam Practice - Luyện thi trực tuyến",
+  description: "Hệ thống luyện thi trực tuyến với đa dạng đề thi và bài kiểm tra thực hành",
+  keywords: ["luyện thi", "thi trực tuyến", "kiểm tra", "thực hành", "exam", "practice"],
+  authors: [{ name: "Exam Practice Team" }],
+  openGraph: {
+    title: "Exam Practice - Luyện thi trực tuyến",
+    description: "Hệ thống luyện thi trực tuyến với đa dạng đề thi và bài kiểm tra thực hành",
+    type: "website",
+    locale: "vi_VN",
+    siteName: "Exam Practice",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="bg-white antialiased">
         <ExamRedirect />
         {/* Menu */}
@@ -34,7 +53,7 @@ export default function RootLayout({
 
         {/* Breadcrumb */}
         <div className="bg-gray-100 py-2 shadow-sm px-4">
-          <div className=" mx-auto px-4">
+          <div className="mx-auto px-4">
             <Breadcrumb />
           </div>
         </div>
