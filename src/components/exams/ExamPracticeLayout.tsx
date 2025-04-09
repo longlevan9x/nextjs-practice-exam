@@ -70,7 +70,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         };
 
         fetchQuestions();
-    }, [examId, examType, displayMode]);
+    }, [examId, examType, displayMode, router]);
 
     useEffect(() => {
         if (examId) {
