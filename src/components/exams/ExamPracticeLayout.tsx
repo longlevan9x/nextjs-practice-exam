@@ -56,6 +56,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             selectedAnswer: converted?.selectedAnswer,
                             isCorrect: converted?.isCorrect,
                             answered: converted?.selectedAnswer !== null,
+                            showExplanation: examType === EXAM_TYPES.PRACTICE && converted?.selectedAnswer !== null
                         };
                     });
 
