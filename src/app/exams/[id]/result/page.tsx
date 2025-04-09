@@ -24,8 +24,8 @@ export default function ResultPage() {
   }, [examId]);
 
   useEffect(() => {
-    const results = getAllExamResults(); // Fetch all exam results
-    setExamResults(results);
+    const results = getAllExamResults(examId); // Fetch all exam results
+    setExamResults(results.filter((result) => result.isCompleted));
   }, []);
 
   if (!resultData) {

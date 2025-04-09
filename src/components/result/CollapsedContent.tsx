@@ -5,7 +5,7 @@ interface CollapsedContentProps {
   chartData: { name: string; value: number; color: string }[];
   isPassed: boolean;
   correctPercentage: number;
-  totalTime: number;
+  totalTime: number | undefined;
   startTime: Date;
 }
 

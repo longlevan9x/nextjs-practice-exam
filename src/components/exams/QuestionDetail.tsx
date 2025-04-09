@@ -62,7 +62,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         answers={question.answers}
         selectedAnswer={question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
-        correctAnswer={question.answers.find((a) => a.correct)?.id}
         onAnswerSelect={onAnswerSelect ?? (() => {})}
         multiple={question.multiple ?? false}
       />

@@ -6,7 +6,6 @@ interface AnswerOptionsProps {
   answers: Answer[];
   selectedAnswer: number | number[] | null;
   showExplanation: boolean;
-  correctAnswer: number | undefined;
   onAnswerSelect: (answerId: number) => void;
   multiple: boolean;
 }

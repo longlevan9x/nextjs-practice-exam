@@ -1,8 +1,8 @@
-'use client';
 import React from "react";
 // import { Geist, Geist_Mono } from "next/font/google";
 import Breadcrumb from "@/components/Breadcrumb";
 import Menu from "@/components/Menu";
+import ExamRedirect from "@/components/ExamRedirect";
 
 import "./globals.css";
 
@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white antialiased">
+        <ExamRedirect />
         {/* Menu */}
         <header className="bg-blue-600 text-white shadow-md px-4">
           <div className="mx-auto px-4 py-4">

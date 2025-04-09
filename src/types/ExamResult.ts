@@ -3,8 +3,8 @@ import { ExamType } from "@/constants/exam";
 export interface Question {
     id: number;
     question: string;
-    selectedAnswer: number;
-    correctAnswer: number;
+    selectedAnswer?: number | number[] | null;
+    corrects: number[];
     isCorrect: boolean;
     domain: string;
 }
@@ -12,8 +12,9 @@ export interface Question {
 export interface ExamResult {
     examType: ExamType;
     examId: string;
-    resultId: string;
+    resultId?: string;
     startTime: string;
-    endTime: string;
+    endTime?: string;
     questions: Question[];
+    isCompleted?: boolean;
 }

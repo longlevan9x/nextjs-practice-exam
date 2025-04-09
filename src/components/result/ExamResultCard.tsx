@@ -29,8 +29,8 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
     const isPassed = correctPercentage >= passPercentage;
 
     const startTime = new Date(result.startTime);
-    const endTime = new Date(result.endTime);
-    const totalTime = Math.round((endTime.getTime() - startTime.getTime()) / 60000);
+    const endTime = result.endTime ? new Date(result.endTime) : undefined;
+    const totalTime = endTime ? Math.round((endTime.getTime() - startTime.getTime()) / 60000) : undefined;
 
     const chartData = [
         { name: "Chính xác", value: correctAnswers, color: "#22c55e" }, // Green

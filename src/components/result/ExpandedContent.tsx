@@ -14,10 +14,10 @@ interface ExpandedContentProps {
     correctPercentage: number;
     correctAnswers: number;
     totalQuestions: number;
-    totalTime: number;
+    totalTime: number | undefined;
     startTime: Date;
     domains: ExamDomain[];
-    resultId: string; 
+    resultId: string | undefined; 
 }
 
 const ExpandedContent: React.FC<ExpandedContentProps> = ({
@@ -81,7 +81,7 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                     {/* Total Time */}
                     <p className="">
                         <span className="">
-                            {Math.floor(totalTime / 60)} giờ {totalTime % 60} phút
+                            {totalTime ? `${Math.floor(totalTime / 60)} giờ ${totalTime % 60} phút` : 'Không có thời gian'}
                         </span>
                     </p>
 

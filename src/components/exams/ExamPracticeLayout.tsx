@@ -7,12 +7,14 @@ import Timer from "./Timer";
 import ProgressBar from "./ProgressBar";
 import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "@/services/questionService";
-import { saveTestResults } from "@/services/localStorageService";
+import { saveExamResultByResultId } from "@/services/localStorageService";
 import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
 import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "../common/LoadingIcon";
+import { getAllExamResults } from "@/services/localStorageService";
+import { ExamResult } from "@/types/ExamResult";
 
 interface ExamPracticeLayoutProps {
     examType: ExamType;
@@ -30,18 +32,43 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [remainingTime, setRemainingTime] = useState<number>(TIMER_INITIAL_VALUE);
     const [testEnded, setTestEnded] = useState<boolean>(false);
     const [isFinishing, setIsFinishing] = useState<boolean>(false);
+    const [currentExam, setCurrentExam] = useState<ExamResult | null>(null);
     const router = useRouter();
 
     useEffect(() => {
         const fetchQuestions = async () => {
-            const loadedQuestions = await fetchQuestionsByExamId(examId);
-            const initializedQuestions = loadedQuestions.map((q) => ({
-                ...q,
-                selectedAnswer: null,
-                showExplanation: false,
-            }));
-            setQuestions(initializedQuestions);
-            setSelectedQuestion(initializedQuestions[0]);
+            try {
+                // Get incomplete exam result
+                const results = getAllExamResults(examId);
+                const incompleteExam = results.find(result => result.isCompleted === false);
+
+                if (incompleteExam) {
+                    setCurrentExam(incompleteExam);
+                    // Convert ExamResult.Question to questionService.Question
+                    const convertedQuestions = incompleteExam.questions;
+
+                    // Fetch original questions to get answers and explanations
+                    const originalQuestions = await fetchQuestionsByExamId(examId);
+                    const questionsWithDetails = originalQuestions.map(originalQuestion => {
+                        const converted = convertedQuestions.find(q => q.id === originalQuestion.id);
+                        return {
+                            ...originalQuestion,
+                            selectedAnswer: converted?.selectedAnswer,
+                            isCorrect: converted?.isCorrect,
+                            answered: converted?.selectedAnswer !== null,
+                        };
+                    });
+
+                    console.log(questionsWithDetails);
+                    setQuestions(questionsWithDetails);
+                    setSelectedQuestion(questionsWithDetails[0]);
+                } else {
+                    // This here redirect to the exam page
+                    router.push(`/exams/${examId}`);
+                }
+            } catch (error) {
+                console.error("Error loading questions:", error);
+            }
         };
 
         fetchQuestions();
@@ -116,6 +143,24 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         }
     };
 
+    const saveExamData = (updatedQuestions: Question[]) => {
+        if (currentExam?.resultId) {
+            const examResultData = {
+                ...currentExam,
+                questions: updatedQuestions.map((q) => ({
+                    id: q.id,
+                    question: q.question,
+                    selectedAnswer: q.selectedAnswer,
+                    corrects: q.corrects,
+                    isCorrect: q.isCorrect,
+                    domain: q.domain,
+                }))
+            };
+
+            saveExamResultByResultId(parseInt(examId), currentExam.resultId, examResultData);
+        }
+    };
+
     const handleCheckAnswer = () => {
         if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
 
@@ -131,7 +176,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     ...q,
                     showExplanation: true,
                     answered: true,
-                    correct: isCorrect,
+                    isCorrect: isCorrect,
                     incorrect: !isCorrect,
                 };
             }
@@ -143,6 +188,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         if (updatedQuestion) {
             setSelectedQuestion(updatedQuestion);
         }
+
+        saveExamData(updatedQuestions);
     };
 
     const handleNextQuestion = () => {
@@ -161,13 +208,14 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     return {
                         ...q,
                         answered: true,
-                        correct: isCorrect,
+                        isCorrect: isCorrect,
                         incorrect: !isCorrect,
                     };
                 }
                 return q;
             });
             setQuestions(updatedQuestions);
+            saveExamData(updatedQuestions);
         }
 
         const currentIndex = questions.findIndex((q) => q.id === selectedQuestion.id);
@@ -197,22 +245,23 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
         try {
             setIsFinishing(true);
-            const testData = {
-                examId,
-                examType,
-                startTime: new Date().toISOString(),
-                endTime: new Date().toISOString(),
+            const examResultData = {
+                ...currentExam,
                 questions: questions.map((q) => ({
                     id: q.id,
                     question: q.question,
                     selectedAnswer: q.selectedAnswer,
-                    correctAnswer: q.answers.find((a) => a.correct)?.id,
-                    isCorrect: q.correct,
+                    corrects: q.corrects,
+                    isCorrect: q.isCorrect,
                     domain: q.domain,
                 })),
+                isCompleted: true
             };
 
-            await saveTestResults(examId, testData);
+            if (currentExam?.resultId) {
+                await saveExamResultByResultId(parseInt(examId), currentExam.resultId, examResultData);
+            }
+
             await router.push('result');
         } catch (error) {
             console.error('Error finishing test:', error);
@@ -259,9 +308,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-6 py-2 rounded-sm transition duration-300 flex items-center justify-center ${
-                                        isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
-                                    }`}
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-6 py-2 rounded-sm transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
+                                        }`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>
                                     {isFinishing && <LoadingIcon />}

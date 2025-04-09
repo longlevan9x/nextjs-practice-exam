@@ -618,8 +618,7 @@
       "question": "An organization is planning to move its on-premises MySQL database to Amazon RDS MySQL. The on-premises database needs to be fully functional and reachable during the migration. Moreover, the RDS database has to stay synchronized with the on-premises database.\n\nWhat combination of steps must a solutions architect execute to meet these requirements? (Select TWO.)",
       "corrects": [
         2,
-        3,
-        4
+        3
       ],
       "answers": [
         {
@@ -640,7 +639,7 @@
         {
           "id": 4,
           "answer": "Use the AWS Schema Conversion Tool (AWS SCT) to alter the database schema.",
-          "correct": true
+          "correct": false
         },
         {
           "id": 5,
@@ -659,16 +658,16 @@
         {
           "answer": "Create an AWS Database Migration Service (AWS DMS) replication instance.",
           "explanation": "AWS DMS provides a managed service for database migration and replication. By setting up an AWS DMS replication instance, you can replicate data from the on-premises MySQL database to the Amazon RDS MySQL database. This ensures that the RDS database stays synchronized with the on-premises database."
-        },
-        {
-          "answer": "Use the AWS Schema Conversion Tool (AWS SCT) to alter the database schema.",
-          "explanation": "This tool is usually used when migrating between different database engines, not for the same database engines like MySQL to MySQL."
         }
       ],
       "incorrectAnswerExplanations": [
         {
           "answer": "Generate a backup of the on-premises database.",
           "explanation": "While creating a backup is a good practice, it does not address the requirement of keeping the on-premises database operational and synchronized with the RDS instance during the migration."
+        },
+        {
+          "answer": "Use the AWS Schema Conversion Tool (AWS SCT) to alter the database schema.",
+          "explanation": "This tool is usually used when migrating between different database engines, not for the same database engines like MySQL to MySQL."
         },
         {
           "answer": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to supervise the database synchronization.",

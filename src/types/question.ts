@@ -24,7 +24,6 @@ export interface Question {
   selectedAnswer?: number | number[] | null; // User's selected answer(s)
   showExplanation?: boolean; // Whether to show the explanation
   answered?: boolean; // Whether the question has been answered
-  correct?: boolean; // Whether the user's answer is correct
   isCorrect?: boolean; // Whether the question is correct
   isBookmarked?: boolean; // Added property
   incorrect?: boolean;

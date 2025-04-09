@@ -6,6 +6,10 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon } from '@heroicons/react/24/outline';
 import LoadingIcon from "@/components/common/LoadingIcon";
+import { createExamResult } from "@/services/localStorageService";
+import { fetchQuestionsByExamId } from "@/services/questionService";
+import { ExamResult } from "@/types/ExamResult";
+import { ExamType } from "@/constants/exam";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{id: string}>(); // Get the "id" parameter from the URL
@@ -19,7 +23,34 @@ export default function ExamDetailPage() {
   const handleStartExam = async (mode: string) => {
     setIsStarting(true);
     setSelectedMode(mode);
-    await router.push(`${id}/${mode}`);
+    
+    try {
+      // Fetch questions for the exam
+      const questions = await fetchQuestionsByExamId(id);
+      
+      // Save initial exam result with isCompleted = false
+      const initialResult: ExamResult = {
+        examId: id,
+        examType: mode as ExamType,
+        startTime: new Date().toISOString(),
+        isCompleted: false,
+        questions: questions.map(q => ({
+          id: q.id,
+          question: q.question,
+          selectedAnswer: null,
+          corrects: q.corrects,
+          isCorrect: false,
+          domain: q.domain || ''
+        }))
+      };
+      
+      createExamResult(id, initialResult);
+      await router.push(`${id}/${mode}`);
+    } catch (error) {
+      console.error("Error starting exam:", error);
+      setIsStarting(false);
+      setSelectedMode(null);
+    }
   };
 
   useEffect(() => {
