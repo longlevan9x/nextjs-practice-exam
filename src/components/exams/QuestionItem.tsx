@@ -2,7 +2,6 @@ import React from "react";
 import BookmarkButton from "./BookmarkButton";
 import { Question } from "@/types/question";
 import { EXAM_TYPES, ExamType } from "@/constants/exam";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 interface QuestionItemProps {
     question: Question;

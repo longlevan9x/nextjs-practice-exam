@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { ExamResult } from "@/types/ExamResult";
 import ResultHeader from "@/components/result/ResultHeader";
-import { getAllExamResults } from "@/services/localStorageService";
 import ExamResultCard from "@/components/result/ExamResultCard";
 import { getExamById } from "@/services/examService";
 import { Exam } from "@/types/exam";
+import { getExamResults } from "@/services/examResultService";
 
 export default function ResultPage() {
   const { id: examId } = useParams<{ id: string }>();
@@ -16,7 +16,7 @@ export default function ResultPage() {
 
   useEffect(() => {
     if (examId) {
-      const data = getExamById(examId); // Fetch data from localStorage
+      const data = getExamById(examId);
       if (data) {
         setResultData(data);
       }
@@ -24,9 +24,14 @@ export default function ResultPage() {
   }, [examId]);
 
   useEffect(() => {
-    const results = getAllExamResults(examId); // Fetch all exam results
-    setExamResults(results.filter((result) => result.isCompleted));
-  }, []);
+    if (examId) { 
+      const fetchResults = async () => {
+        const results = await getExamResults(examId); // Fetch all exam results
+        setExamResults(results);
+      };
+      fetchResults();
+    }
+  }, [examId]);
 
   if (!resultData) {
     return <div>Loading...</div>;

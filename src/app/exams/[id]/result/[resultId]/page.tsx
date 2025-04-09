@@ -33,7 +33,7 @@ const ResultOverviewPage: React.FC = () => {
             if (!resultId) return;
 
             // Lấy kết quả thi từ localStorage
-            const result = getExamResultById(resultId);
+            const result = getExamResultById(examId, resultId);
             if (!result) {
                 console.error('Không tìm thấy kết quả thi.');
                 setLoading(false);
@@ -75,7 +75,7 @@ const ResultOverviewPage: React.FC = () => {
         };
 
         fetchData();
-    }, [resultId]);
+    }, [resultId, examId]);
 
 
     useEffect(() => {

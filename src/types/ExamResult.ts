@@ -2,14 +2,15 @@ import { ExamType } from "@/constants/exam";
 
 export interface Question {
     id: number;
-    question: string;
+    // question: string;
     selectedAnswer?: number | number[] | null;
-    corrects: number[];
+    // corrects: number[];
     isCorrect: boolean;
-    domain: string;
+    // domain: string;
 }
 
 export interface ExamResult {
+    userId?: string;
     examType: ExamType;
     examId: string;
     resultId?: string;

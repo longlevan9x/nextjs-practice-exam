@@ -7,14 +7,13 @@ import Timer from "./Timer";
 import ProgressBar from "./ProgressBar";
 import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "@/services/questionService";
-import { saveExamResultByResultId } from "@/services/localStorageService";
 import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
 import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "../common/LoadingIcon";
-import { getAllExamResults } from "@/services/localStorageService";
 import { ExamResult } from "@/types/ExamResult";
+import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
 
 interface ExamPracticeLayoutProps {
     examType: ExamType;
@@ -39,13 +38,12 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         const fetchQuestions = async () => {
             try {
                 // Get incomplete exam result
-                const results = getAllExamResults(examId);
-                const incompleteExam = results.find(result => result.isCompleted === false);
+                const incompleteExam = await getIncompleteExamResult(examId);
 
                 if (incompleteExam) {
                     setCurrentExam(incompleteExam);
                     // Convert ExamResult.Question to questionService.Question
-                    const convertedQuestions = incompleteExam.questions;
+                    const convertedQuestions = incompleteExam.questions as Question[];
 
                     // Fetch original questions to get answers and explanations
                     const originalQuestions = await fetchQuestionsByExamId(examId);
@@ -60,7 +58,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         };
                     });
 
-                    console.log(questionsWithDetails);
                     setQuestions(questionsWithDetails);
                     setSelectedQuestion(questionsWithDetails[0]);
                 } else {
@@ -73,7 +70,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         };
 
         fetchQuestions();
-    }, [examId]);
+    }, [examId, examType, displayMode]);
 
     useEffect(() => {
         if (examId) {
@@ -144,21 +141,21 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         }
     };
 
-    const saveExamData = (updatedQuestions: Question[]) => {
+    const saveExamData = async (updatedQuestions: Question[]) => {
         if (currentExam?.resultId) {
             const examResultData = {
                 ...currentExam,
                 questions: updatedQuestions.map((q) => ({
                     id: q.id,
-                    question: q.question,
+                    // question: q.question,
                     selectedAnswer: q.selectedAnswer,
-                    corrects: q.corrects,
+                    // corrects: q.corrects,
                     isCorrect: q.isCorrect,
-                    domain: q.domain,
+                    // domain: q.domain,
                 }))
             };
 
-            saveExamResultByResultId(parseInt(examId), currentExam.resultId, examResultData);
+            await updateExamResultData(currentExam.resultId, examResultData as ExamResult);
         }
     };
 
@@ -242,30 +239,28 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     };
 
     const handleFinishTest = async () => {
-        if (displayMode === DISPLAY_MODES.REVIEW) return;
-
+        setIsFinishing(true);
         try {
-            setIsFinishing(true);
+            const endTime = new Date().toISOString();
             const examResultData = {
                 ...currentExam,
+                endTime,
+                isCompleted: true,
                 questions: questions.map((q) => ({
                     id: q.id,
-                    question: q.question,
+                    // question: q.question,
                     selectedAnswer: q.selectedAnswer,
-                    corrects: q.corrects,
+                    // corrects: q.corrects,
                     isCorrect: q.isCorrect,
-                    domain: q.domain,
-                })),
-                isCompleted: true
+                    // domain: q.domain,
+                }))
             };
 
-            if (currentExam?.resultId) {
-                await saveExamResultByResultId(parseInt(examId), currentExam.resultId, examResultData);
-            }
-
-            await router.push('result');
+            await updateExamResultData(currentExam?.resultId || '', examResultData as ExamResult);
+            router.push(`/exams/${examId}/result`);
         } catch (error) {
             console.error('Error finishing test:', error);
+        } finally {
             setIsFinishing(false);
         }
     };

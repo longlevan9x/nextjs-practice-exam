@@ -40,7 +40,7 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
       {/* Time and Date */}
       <div className="flex flex-col items-end text-base text-gray-700">
         <p>
-          {Math.floor(totalTime / 60)} giờ {totalTime % 60} phút
+          {totalTime ? `${Math.floor(totalTime / 60)} giờ ${totalTime % 60} phút` : '0 giờ 0 phút'}
         </p>
       </div>
 

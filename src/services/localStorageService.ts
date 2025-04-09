@@ -31,9 +31,9 @@ export const getAllExamResults = (examId: string): ExamResult[] => {
     }
 };
 
-export const getExamResultById = (resultId: string): ExamResult | null => {
+export const getExamResultById = (examId: string, resultId: string): ExamResult | null => {
     try {
-        const result = localStorage.getItem(`examResults-${resultId}`);
+        const result = localStorage.getItem(`examResults-${examId}-${resultId}`);
         return result ? JSON.parse(result) as ExamResult : null;
     } catch (error) {
         console.error("Error retrieving exam result by ID from localStorage:", error);

@@ -43,9 +43,9 @@ const QuestionList: React.FC<QuestionListProps> = ({
         case FILTER_OPTION_VALUE.BOOKMARKED:
           return bookmarkedQuestions.includes(question.id);
         case FILTER_OPTION_VALUE.CORRECT:
-          return question.correct;
+          return question.isCorrect;
         case FILTER_OPTION_VALUE.INCORRECT:
-          return !question.correct;
+          return !question.isCorrect;
         default:
           return true;
       }

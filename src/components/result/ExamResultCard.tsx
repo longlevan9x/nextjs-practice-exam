@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ExamResult } from "@/types/ExamResult";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import CollapsedContent from "./CollapsedContent";
 import ExpandedContent from "./ExpandedContent";
 import { ExamDomain } from "@/types/exam";
+import { fetchQuestionsByExamId } from "@/services/questionService";
+import { Question } from "@/types/question";
+
+interface MappedQuestion extends Question {
+    selectedAnswer: number | number[] | null;
+    isCorrect: boolean;
+    answered: boolean;
+    showExplanation: boolean;
+}
 
 interface ExamResultCardProps {
     result: ExamResult;
     attemptNumber: number;
     passPercentage: number;
     isExpanded: boolean;
-    domains: ExamDomain[]; // Added property for domains
+    domains: ExamDomain[];
 }
 
 const ExamResultCard: React.FC<ExamResultCardProps> = ({
@@ -20,11 +29,41 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
     isExpanded,
     domains,
 }) => {
-    const [isCollapsed, setIsCollapsed] = useState(isExpanded); // State to toggle collapse
-    const totalQuestions = result.questions.length;
-    const correctAnswers = result.questions.filter((q) => q.isCorrect).length;
+    const [isCollapsed, setIsCollapsed] = useState(isExpanded);
+    const [mappedQuestions, setMappedQuestions] = useState<MappedQuestion[]>([]);
+
+    useEffect(() => {
+        const fetchAndMapQuestions = async () => {
+            try {
+                // Fetch original questions
+                const questions = await fetchQuestionsByExamId(result.examId);
+
+                // Map result questions with original questions
+                const mapped = result.questions.map(resultQuestion => {
+                    const originalQuestion = questions.find(q => q.id === resultQuestion.id);
+                    
+                    return {
+                        ...originalQuestion,
+                        selectedAnswer: resultQuestion.selectedAnswer,
+                        isCorrect: resultQuestion.isCorrect,
+                        answered: resultQuestion.selectedAnswer !== null,
+                        showExplanation: true
+                    };
+                }) as MappedQuestion[];
+
+                setMappedQuestions(mapped);
+            } catch (error) {
+                console.error('Error fetching and mapping questions:', error);
+            }
+        };
+
+        fetchAndMapQuestions();
+    }, [result.examId, result.questions]);
+
+    const totalQuestions = mappedQuestions.length;
+    const correctAnswers = mappedQuestions.filter((q) => q.isCorrect).length;
     const incorrectAnswers = totalQuestions - correctAnswers;
-    const skippedAnswers = result.questions.filter((q) => q.selectedAnswer === null).length;
+    const skippedAnswers = mappedQuestions.filter((q) => q.selectedAnswer === null).length;
     const correctPercentage = Math.round((correctAnswers / totalQuestions) * 100);
     const isPassed = correctPercentage >= passPercentage;
 
@@ -33,14 +72,14 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
     const totalTime = endTime ? Math.round((endTime.getTime() - startTime.getTime()) / 60000) : undefined;
 
     const chartData = [
-        { name: "Chính xác", value: correctAnswers, color: "#22c55e" }, // Green
-        { name: "Không chính xác", value: incorrectAnswers, color: "#ef4444" }, // Red
-        { name: "Đã bỏ qua/Chưa có đáp án", value: skippedAnswers, color: "#9ca3af" }, // Gray
+        { name: "Chính xác", value: correctAnswers, color: "#22c55e" },
+        { name: "Không chính xác", value: incorrectAnswers, color: "#ef4444" },
+        { name: "Đã bỏ qua/Chưa có đáp án", value: skippedAnswers, color: "#9ca3af" },
     ];
 
-    // Map questions to domains
+    // Map questions to domains using mapped questions
     const domainStats = domains.map((domain) => {
-        const domainQuestions = result.questions.filter((q) => q.domain === domain.name);
+        const domainQuestions = mappedQuestions.filter((q) => q.domain === domain.name);
         const correct = domainQuestions.filter((q) => q.isCorrect).length;
         const incorrect = domainQuestions.filter((q) => !q.isCorrect && q.selectedAnswer !== null).length;
         const skipped = domainQuestions.filter((q) => q.selectedAnswer === null).length;

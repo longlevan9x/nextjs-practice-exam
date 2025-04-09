@@ -6,10 +6,10 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon } from '@heroicons/react/24/outline';
 import LoadingIcon from "@/components/common/LoadingIcon";
-import { createExamResult } from "@/services/localStorageService";
 import { fetchQuestionsByExamId } from "@/services/questionService";
 import { ExamResult } from "@/types/ExamResult";
 import { ExamType } from "@/constants/exam";
+import { saveExamResultData } from "@/services/examResultService";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{id: string}>(); // Get the "id" parameter from the URL
@@ -36,15 +36,15 @@ export default function ExamDetailPage() {
         isCompleted: false,
         questions: questions.map(q => ({
           id: q.id,
-          question: q.question,
+          // question: q.question,
           selectedAnswer: null,
-          corrects: q.corrects,
+          // corrects: q.corrects,
           isCorrect: false,
-          domain: q.domain || ''
+          // domain: q.domain || ''
         }))
       };
       
-      createExamResult(id, initialResult);
+      await saveExamResultData(initialResult);
       await router.push(`${id}/${mode}`);
     } catch (error) {
       console.error("Error starting exam:", error);
