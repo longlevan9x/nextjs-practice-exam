@@ -34,7 +34,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                         isBookmarked={isBookmarked}
                         onToggle={onToggleBookmark}
                     />
-                    <p className="text-base font-bold ml-1">Câu hỏi {question.id}</p>
+                    <p className="text-base font-bold ml-1">Câu hỏi {(question.questionIndex !== undefined) && question.questionIndex + 1}</p>
                 </div>
 
                 {/* Answer Status */}

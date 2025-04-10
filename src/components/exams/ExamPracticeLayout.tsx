@@ -12,7 +12,7 @@ import { getExamById } from "@/services/examService";
 import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "../common/LoadingIcon";
-import { ExamResult } from "@/types/ExamResult";
+import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
 import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
 
 interface ExamPracticeLayoutProps {
@@ -43,18 +43,21 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 if (incompleteExam) {
                     setCurrentExamResult(incompleteExam);
                     // Convert ExamResult.Question to questionService.Question
-                    const convertedQuestions = incompleteExam.questions as Question[];
+                    const convertedQuestions = incompleteExam.questions;
 
                     // Fetch original questions to get answers and explanations
                     const originalQuestions = await fetchQuestionsByExamId(examId);
-                    const questionsWithDetails = originalQuestions.map(originalQuestion => {
-                        const converted = convertedQuestions.find(q => q.id === originalQuestion.id);
+                   
+                    const questionsWithDetails = convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
+                        const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
+                        
                         return {
                             ...originalQuestion,
-                            selectedAnswer: converted?.selectedAnswer,
-                            isCorrect: converted?.isCorrect,
-                            answered: converted?.selectedAnswer !== null,
-                            showExplanation: examType === EXAM_TYPES.PRACTICE && converted?.selectedAnswer !== null
+                            questionIndex: convertedQuestion.questionIndex,  
+                            selectedAnswer: convertedQuestion.selectedAnswer,
+                            isCorrect: convertedQuestion.isCorrect,
+                            answered: convertedQuestion.selectedAnswer !== null,
+                            showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null
                         };
                     });
 
@@ -110,6 +113,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     ...currentExamResult,
                     currentQuestionIndex: currentIndex
                 };
+                setCurrentExamResult(updatedResult);
                 updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
@@ -156,21 +160,14 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         if (currentExamResult?.resultId) {
             const examResultData = {
                 ...currentExamResult,
-                questions: updatedQuestions.map((q) => ({
-                    id: q.id,
-                    // question: q.question,
-                    selectedAnswer: q.selectedAnswer,
-                    // corrects: q.corrects,
-                    isCorrect: q.isCorrect,
-                    // domain: q.domain,
-                }))
+                questions: updatedQuestions
             };
 
             await updateExamResultData(currentExamResult.resultId, examResultData as ExamResult);
         }
     };
 
-    const handleCheckAnswer = () => {
+    const handleCheckAnswer = async () => {
         if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
 
         const updatedQuestions = questions.map((q) => {
@@ -198,15 +195,17 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             setSelectedQuestion(updatedQuestion);
         }
 
-        saveExamData(updatedQuestions);
+        await saveExamData(updatedQuestions);
     };
 
-    const handleNextQuestion = () => {
+    const handleNextQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
+        
+        let updatedQuestions = questions;
 
         // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
         if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
-            const updatedQuestions = questions.map((q) => {
+            updatedQuestions = questions.map((q) => {
                 if (q.id === selectedQuestion.id) {
                     const isCorrect = q.multiple
                         ? Array.isArray(q.selectedAnswer) &&
@@ -223,8 +222,10 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 }
                 return q;
             });
+
             setQuestions(updatedQuestions);
-            saveExamData(updatedQuestions);
+            
+            // await saveExamData(updatedQuestions);
         }
 
         const currentIndex = questions.findIndex((q) => q.id === selectedQuestion.id);
@@ -235,9 +236,13 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             if (currentExamResult?.resultId) {
                 const updatedResult = {
                     ...currentExamResult,
-                    currentQuestionIndex: currentIndex + 1
+                    currentQuestionIndex: currentIndex + 1,
+                    questions: updatedQuestions as ExamResultQuestion[]
                 };
-                updateExamResultData(currentExamResult.resultId, updatedResult);
+
+                setCurrentExamResult(updatedResult);
+                
+                await updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
     };
@@ -273,14 +278,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 ...currentExamResult,
                 endTime,
                 isCompleted: true,
-                questions: questions.map((q) => ({
-                    id: q.id,
-                    // question: q.question,
-                    selectedAnswer: q.selectedAnswer,
-                    // corrects: q.corrects,
-                    isCorrect: q.isCorrect,
-                    // domain: q.domain,
-                }))
+                questions: questions
             };
 
             await updateExamResultData(currentExamResult?.resultId || '', examResultData as ExamResult);

@@ -1,12 +1,10 @@
 import { ExamType } from "@/constants/exam";
 
-export interface Question {
+export interface ExamResultQuestion {
     id: number;
-    // question: string;
     selectedAnswer?: number | number[] | null;
-    // corrects: number[];
     isCorrect: boolean;
-    // domain: string;
+    questionIndex: number;
 }
 
 export interface ExamResult {
@@ -16,7 +14,7 @@ export interface ExamResult {
     resultId?: string;
     startTime?: string;
     endTime?: string;
-    questions: Question[];
+    questions: ExamResultQuestion[];
     isCompleted?: boolean;
     currentQuestionIndex?: number;
 }

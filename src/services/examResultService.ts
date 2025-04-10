@@ -55,6 +55,15 @@ export const getExamResult = async (examId: string, resultId: string) => {
 export const updateExamResultData = async (resultId: string, examResult: ExamResult) => {
     const isUserAuthenticated = await isAuthenticated();
 
+    if (examResult.questions) {
+        examResult.questions = examResult.questions.map((question, index) => ({
+            id: question.id,
+            selectedAnswer: question.selectedAnswer,
+            isCorrect: question.isCorrect,
+            questionIndex: question.questionIndex
+        }));
+    }  
+
     if (isUserAuthenticated) {
         // Update in database
         return await updateExamResult(resultId, examResult);
@@ -75,5 +84,10 @@ export const initializeExamResult = async (examResult: ExamResult) => {
     examResult.startTime = new Date().toISOString();
     examResult.isCompleted = false;
     
+    examResult.questions = examResult.questions.map((question, index) => ({
+        ...question,
+        questionIndex: index
+    }));
+
     return saveExamResultData(examResult);
 };

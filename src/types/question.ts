@@ -21,10 +21,13 @@ export interface Question {
   references?: string[]; // Optional list of reference links
   multiple?: boolean; // Indicates if multiple answers are correct
   domain?: string; // Domain or category of the question
+
+  // Properties for exam practice
   selectedAnswer?: number | number[] | null; // User's selected answer(s)
   showExplanation?: boolean; // Whether to show the explanation
   answered?: boolean; // Whether the question has been answered
   isCorrect?: boolean; // Whether the question is correct
   isBookmarked?: boolean; // Added property
   incorrect?: boolean;
+  questionIndex?: number;
 }

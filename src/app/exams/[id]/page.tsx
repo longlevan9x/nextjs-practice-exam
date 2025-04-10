@@ -10,6 +10,7 @@ import { fetchQuestionsByExamId } from "@/services/questionService";
 import { ExamResult } from "@/types/ExamResult";
 import { ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
+import { shuffleArray } from "@/services/utilService";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{ id: string }>(); // Get the "id" parameter from the URL
@@ -28,15 +29,20 @@ export default function ExamDetailPage() {
       // Fetch questions for the exam
       const questions = await fetchQuestionsByExamId(id);
 
+      const cloneQuestions = questions.map((q) => ({
+        id: q.id,
+        selectedAnswer: null,
+        isCorrect: false,
+      }));
+
+      // Shuffle questions
+      const shuffledQuestions = shuffleArray(cloneQuestions);
+
       // Save initial exam result with isCompleted = false
       const initialResult: ExamResult = {
         examId: id,
         examType: mode as ExamType,
-        questions: questions.map(q => ({
-          id: q.id,
-          selectedAnswer: null,
-          isCorrect: false,
-        }))
+        questions: shuffledQuestions
       };
 
       await initializeExamResult(initialResult);
@@ -222,19 +228,19 @@ export default function ExamDetailPage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-2 sm:gap-6 text-sm text-gray-600 mb-2 sm:mb-4">
-                  <div className="flex items-center">
-                    <ClipboardDocumentIcon className="w-4 h-4 mr-1 text-green-500" />
-                    <span>{exam.questionCount} câu</span>
-                  </div>
-                  <div className="flex items-center">
-                    <ClockIcon className="w-4 h-4 mr-1 text-green-500" />
-                    <span>Không có</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircleIcon className="w-4 h-4 mr-1 text-green-500" />
-                    <span>Không có</span>
-                  </div>
+                <div className="flex items-center">
+                  <ClipboardDocumentIcon className="w-4 h-4 mr-1 text-green-500" />
+                  <span>{exam.questionCount} câu</span>
                 </div>
+                <div className="flex items-center">
+                  <ClockIcon className="w-4 h-4 mr-1 text-green-500" />
+                  <span>Không có</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="w-4 h-4 mr-1 text-green-500" />
+                  <span>Không có</span>
+                </div>
+              </div>
 
               <div className="flex-grow">
                 <ul className="space-y-2 sm:space-y-3 text-gray-600 mb-4 sm:mb-6">

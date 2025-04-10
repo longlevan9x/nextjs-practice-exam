@@ -10,11 +10,7 @@ export const saveExamResult = async (examResult: ExamResult, userId: string) => 
                 examType: examResult.examType,
                 startTime: examResult.startTime,
                 endTime: examResult.endTime,
-                questions: examResult.questions.map(question => ({
-                    id: question.id,
-                    selectedAnswer: question.selectedAnswer,
-                    isCorrect: question.isCorrect,
-                })),
+                questions: examResult.questions,
                 isCompleted: examResult.isCompleted,
                 currentQuestionIndex: examResult.currentQuestionIndex,
                 userId: userId
