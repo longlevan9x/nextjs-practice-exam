@@ -69,3 +69,11 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
         return examResult;
     }
 }; 
+
+export const initializeExamResult = async (examResult: ExamResult) => {
+    examResult.currentQuestionIndex = 0;
+    examResult.startTime = new Date().toISOString();
+    examResult.isCompleted = false;
+    
+    return saveExamResultData(examResult);
+};

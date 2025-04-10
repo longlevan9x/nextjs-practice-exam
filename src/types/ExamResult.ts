@@ -14,8 +14,9 @@ export interface ExamResult {
     examType: ExamType;
     examId: string;
     resultId?: string;
-    startTime: string;
+    startTime?: string;
     endTime?: string;
     questions: Question[];
     isCompleted?: boolean;
+    currentQuestionIndex?: number;
 }

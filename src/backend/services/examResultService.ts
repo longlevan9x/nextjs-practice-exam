@@ -12,13 +12,11 @@ export const saveExamResult = async (examResult: ExamResult, userId: string) => 
                 endTime: examResult.endTime,
                 questions: examResult.questions.map(question => ({
                     id: question.id,
-                    // question: question.question,
                     selectedAnswer: question.selectedAnswer,
-                    // corrects: question.corrects,
                     isCorrect: question.isCorrect,
-                    // domain: question.domain
                 })),
                 isCompleted: examResult.isCompleted,
+                currentQuestionIndex: examResult.currentQuestionIndex,
                 userId: userId
             }])
             .select();
@@ -60,7 +58,7 @@ export const getIncompleteExamResult = async (examId: string, userId: string) =>
         if (error) throw error;
         return data;
     } catch (error) {
-        console.error('Error getting incomplete exam result:', error);
+        // console.log('Error getting incomplete exam result:', error);
         // throw error;
         return null;
     }
@@ -91,7 +89,8 @@ export const updateExamResult = async (resultId: string, examResult: Partial<Exa
             .update({
                 questions: examResult.questions,
                 endTime: examResult.endTime,
-                isCompleted: examResult.isCompleted
+                isCompleted: examResult.isCompleted,
+                currentQuestionIndex: examResult.currentQuestionIndex
             })
             .eq('resultId', resultId)
             .select();
