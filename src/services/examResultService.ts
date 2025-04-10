@@ -56,7 +56,7 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
     const isUserAuthenticated = await isAuthenticated();
 
     if (examResult.questions) {
-        examResult.questions = examResult.questions.map((question, index) => ({
+        examResult.questions = examResult.questions.map((question) => ({
             id: question.id,
             selectedAnswer: question.selectedAnswer,
             isCorrect: question.isCorrect,

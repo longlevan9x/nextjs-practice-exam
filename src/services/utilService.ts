@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function shuffleArray(array: any[]) {
     const result = array.slice(); // tạo bản sao mảng để không thay đổi mảng gốc
     for (let i = result.length - 1; i > 0; i--) {

@@ -54,7 +54,7 @@ export const getIncompleteExamResult = async (examId: string, userId: string) =>
         if (error) throw error;
         return data;
     } catch (error) {
-        // console.log('Error getting incomplete exam result:', error);
+        console.log('Error getting incomplete exam result:', error);
         // throw error;
         return null;
     }

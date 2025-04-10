@@ -6,7 +6,7 @@ interface CollapsedContentProps {
   isPassed: boolean;
   correctPercentage: number;
   totalTime: number | undefined;
-  startTime: Date;
+  startTime: Date | undefined;
 }
 
 const CollapsedContent: React.FC<CollapsedContentProps> = ({
@@ -47,7 +47,7 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
       {/* Time and Date */}
       <div className="flex flex-col items-end text-base text-gray-700">
 
-        <p>{startTime.toLocaleDateString()}</p>
+        <p>{startTime ? startTime.toLocaleDateString() : ''}</p>
       </div>
     </div>
   );

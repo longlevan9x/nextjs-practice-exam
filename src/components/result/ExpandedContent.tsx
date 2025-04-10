@@ -15,7 +15,7 @@ interface ExpandedContentProps {
     correctAnswers: number;
     totalQuestions: number;
     totalTime: number | undefined;
-    startTime: Date;
+    startTime: Date | undefined;
     domains: ExamDomain[];
     resultId: string | undefined; 
 }
@@ -87,8 +87,8 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
 
                     {/* Timestamp */}
                     <p className="">
-                        lúc {startTime.toLocaleTimeString()} -{" "}
-                        {startTime.toLocaleDateString()}
+                        lúc {startTime ? startTime.toLocaleTimeString() : ''} -{" "}
+                        {startTime ? startTime.toLocaleDateString() : ''}
                     </p>
 
                     <div>
