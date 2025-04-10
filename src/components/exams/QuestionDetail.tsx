@@ -50,7 +50,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           <div className="flex items-center space-x-1">
             <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
             <h2 className="text-lg font-normal">
-              {HEADER_TITLE_PREFIX} {question.id}
+              {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
             </h2>
           </div>
           <p className="text-base mt-1">{question.question}</p>

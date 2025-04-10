@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getExamResultById } from '@/services/localStorageService'; // Service để lấy kết quả thi
 import { fetchQuestionsByExamId } from '@/services/questionService'; // Service để lấy danh sách câu hỏi gốc
 import QuestionDetail from '@/components/exams/QuestionDetail'; // Import QuestionDetail component
 import { Question } from '@/types/question';
@@ -11,7 +10,8 @@ import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
 import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // Import Heroicons
 import { DISPLAY_MODES } from '@/constants/exam';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult, ExamResultQuestion } from '@/types/ExamResult';
+import { getExamResult } from '@/services/examResultService';
 interface MappedQuestion {
     id: number;
     question: Question;
@@ -32,8 +32,7 @@ const ResultOverviewPage: React.FC = () => {
         const fetchData = async () => {
             if (!resultId) return;
 
-            // Lấy kết quả thi từ localStorage
-            const result = getExamResultById(examId, resultId);
+            const result = await getExamResult(examId, resultId);
             if (!result) {
                 console.error('Không tìm thấy kết quả thi.');
                 setLoading(false);
@@ -44,33 +43,28 @@ const ResultOverviewPage: React.FC = () => {
 
             // Lấy danh sách câu hỏi gốc từ localStorage
             const originalQuestions = await fetchQuestionsByExamId(result.examId);
+            
             if (!originalQuestions || originalQuestions.length === 0) {
                 console.error('Không tìm thấy danh sách câu hỏi gốc.');
                 setLoading(false);
                 return;
             }
 
-            // Map dữ liệu giữa câu hỏi gốc và câu trả lời của người dùng
-            const mapped = originalQuestions.map((originalQuestion) => {
-                const userQuestion = result.questions.find(
-                    (q) => q.id === originalQuestion.id
-                );
-
-                if (userQuestion) {
-                    originalQuestion.selectedAnswer = userQuestion.selectedAnswer;
-                    originalQuestion.isCorrect = userQuestion.isCorrect;
-                }
-
-                originalQuestion.showExplanation = true; // Hiển thị lời giải
+            const mappedQuestions = result.questions.map((mappedQuestion: ExamResultQuestion) => {
+                const originalQuestion = originalQuestions.find((q) => q.id === mappedQuestion.id);
 
                 return {
-                    id: originalQuestion.id,
-                    question: originalQuestion,
+                    id: originalQuestion?.id,
+                    question: {
+                        ...originalQuestion,
+                        ...mappedQuestion,
+                        showExplanation: true
+                    }
                 };
             });
 
-            setMappedQuestions(mapped);
-            setFilteredQuestions(mapped);
+            setMappedQuestions(mappedQuestions);
+            setFilteredQuestions(mappedQuestions);
             setLoading(false);
         };
 
