@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 import Menu from "@/components/Menu";
 import ExamRedirect from "@/components/ExamRedirect";
-import Image from "next/image";
 
 import "./globals.css";
 
