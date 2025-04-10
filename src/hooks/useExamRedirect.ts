@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { getExamResults } from '@/services/examResultService';
+import { getIncompleteExamResult } from '@/services/examResultService';
 
 export const useExamRedirect = () => {
     const router = useRouter();
@@ -18,8 +18,7 @@ export const useExamRedirect = () => {
             }
 
             // Check for incomplete exams
-            const results = await getExamResults(examId);
-            const incompleteExam = results.find(result => result.isCompleted === false);
+            const incompleteExam = await getIncompleteExamResult(examId);
             
             if (incompleteExam) {
                 // Redirect to the appropriate mode based on examType
