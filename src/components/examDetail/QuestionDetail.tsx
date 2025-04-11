@@ -86,25 +86,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           )}
         </div>
       )}
-
-      {/* Fixed Action Buttons */}
-      {displayMode === DISPLAY_MODES.EXECUTE && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
-          <div className="w-full py-2 pr-16">
-            <ActionButtons
-              showExplanation={question.showExplanation ?? false}
-              onCheckAnswer={onCheckAnswer ?? (() => {})}
-              onNextQuestion={onNextQuestion ?? (() => {})}
-              onPreviousQuestion={onPreviousQuestion ?? (() => {})}
-              onSkipQuestion={onSkipQuestion ?? (() => {})}
-              selectedAnswer={question.selectedAnswer ?? null}
-              testEnded={testEnded}
-              isFirstQuestion={isFirstQuestion ?? false}
-              examType={examType}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

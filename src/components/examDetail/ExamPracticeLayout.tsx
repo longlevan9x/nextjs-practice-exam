@@ -14,7 +14,7 @@ import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/ex
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
 import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
-
+import ActionButtons from "@/components/examDetail/ActionButtons";
 interface ExamPracticeLayoutProps {
     examType: ExamType;
     displayMode: DisplayMode;
@@ -47,13 +47,13 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
                     // Fetch original questions to get answers and explanations
                     const originalQuestions = await fetchQuestionsByExamId(parseInt(examId));
-                   
+
                     const questionsWithDetails = convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
                         const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
-                        
+
                         return {
                             ...originalQuestion,
-                            questionIndex: convertedQuestion.questionIndex,  
+                            questionIndex: convertedQuestion.questionIndex,
                             selectedAnswer: convertedQuestion.selectedAnswer,
                             isCorrect: convertedQuestion.isCorrect,
                             answered: convertedQuestion.selectedAnswer !== null,
@@ -200,7 +200,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
     const handleNextQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
-        
+
         let updatedQuestions = questions;
 
         // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
@@ -224,7 +224,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             });
 
             setQuestions(updatedQuestions);
-            
+
             // await saveExamData(updatedQuestions);
         }
 
@@ -241,7 +241,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 };
 
                 setCurrentExamResult(updatedResult);
-                
+
                 await updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
@@ -314,7 +314,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             </div>
 
             {/* Question Detail Section */}
-            <div className="lg:col-span-8 xl:col-span-9 col-span-12 overflow-auto max-h-[calc(100vh-170px)]">
+            <div className="lg:col-span-8 xl:col-span-9 col-span-12 lg:pr-auto pr-4 lg:overflow-auto lg:max-h-[calc(100vh-170px)]">
                 <div className="w-full  xl:max-w-4xl mx-auto xl:px-auto lg:px-4">
                     <div className="w-full flex items-center mb-6">
                         {displayMode === DISPLAY_MODES.EXECUTE && (
@@ -329,7 +329,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-6 py-2 rounded-sm transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-6 lg:py-2 rounded-sm transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
                                         }`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>
@@ -359,6 +359,25 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     </div>
                 </div>
             </div>
+
+            {/* Fixed Action Buttons */}
+            {displayMode === DISPLAY_MODES.EXECUTE && (
+                <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+                    <div className="w-full py-2 pr-4 lg:pr-16">
+                        <ActionButtons
+                            showExplanation={selectedQuestion?.showExplanation ?? false}
+                            onCheckAnswer={handleCheckAnswer ?? (() => { })}
+                            onNextQuestion={handleNextQuestion ?? (() => { })}
+                            onPreviousQuestion={handlePreviousQuestion ?? (() => { })}
+                            onSkipQuestion={handleSkipQuestion ?? (() => { })}
+                            selectedAnswer={selectedQuestion?.selectedAnswer ?? null}
+                            testEnded={testEnded}
+                            isFirstQuestion={isFirstQuestion ?? false}
+                            examType={examType}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
