@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Exam } from "@/types/exam";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon } from '@heroicons/react/24/outline';
+import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { fetchQuestionsByExamId } from "@/services/questionService";
 import { ExamResult } from "@/types/ExamResult";
@@ -27,7 +27,7 @@ export default function ExamDetailPage() {
 
     try {
       // Fetch questions for the exam
-      const questions = await fetchQuestionsByExamId(id);
+      const questions = await fetchQuestionsByExamId(parseInt(id));
 
       const cloneQuestions = questions.map((q) => ({
         id: q.id,
@@ -40,7 +40,7 @@ export default function ExamDetailPage() {
 
       // Save initial exam result with isCompleted = false
       const initialResult: ExamResult = {
-        examId: id,
+        examId: parseInt(id),
         examType: mode as ExamType,
         questions: shuffledQuestions
       };
@@ -100,7 +100,7 @@ export default function ExamDetailPage() {
   return (
     <>
       {/* Back Button */}
-      <div className="mb-3">
+      <div className="mb-3 flex justify-between items-center">
         <Link
           href="/"
           className="inline-flex items-center text-gray-600 hover:text-gray-800 transition duration-300"
@@ -109,6 +109,15 @@ export default function ExamDetailPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           <span>Back to Exams</span>
+        </Link>
+
+        {/* Result Link */}
+        <Link
+          href={`/exams/${id}/result`}
+          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
+        >
+          <ChartBarIcon className="w-5 h-5 mr-2" />
+          <span>Xem kết quả</span>
         </Link>
       </div>
 

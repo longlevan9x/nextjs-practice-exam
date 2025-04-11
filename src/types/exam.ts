@@ -1,3 +1,5 @@
+import { ExamType } from "@/constants/exam";
+
 export interface Exam {
   id: number;
   name: string;
@@ -12,6 +14,10 @@ export interface Exam {
   questionCount: number;
   duration: number;
   passScore: number;  
+
+  // For exam list
+  incomplete?: boolean;
+  examType?: ExamType;
 }
 
 export interface ExamDomain {

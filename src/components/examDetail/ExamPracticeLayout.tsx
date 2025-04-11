@@ -1,17 +1,17 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import QuestionList from "./QuestionList";
-import QuestionDetail from "./QuestionDetail";
-import Timer from "./Timer";
-import ProgressBar from "./ProgressBar";
+import QuestionList from "@/components/examDetail/QuestionList";
+import QuestionDetail from "@/components/examDetail/QuestionDetail";
+import Timer from "@/components/examDetail/Timer";
+import ProgressBar from "@/components/examDetail/ProgressBar";
 import { Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "@/services/questionService";
 import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
 import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
-import LoadingIcon from "../common/LoadingIcon";
+import LoadingIcon from "@/components/common/LoadingIcon";
 import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
 import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
 
@@ -46,7 +46,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     const convertedQuestions = incompleteExam.questions;
 
                     // Fetch original questions to get answers and explanations
-                    const originalQuestions = await fetchQuestionsByExamId(examId);
+                    const originalQuestions = await fetchQuestionsByExamId(parseInt(examId));
                    
                     const questionsWithDetails = convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
                         const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);

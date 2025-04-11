@@ -49,7 +49,7 @@ export const getIncompleteExamResult = async (examId: string, userId: string) =>
             .eq('examId', examId)
             .eq('userId', userId)
             .eq('isCompleted', false)
-            .single();  
+            .single();
 
         if (error) throw error;
         return data;
@@ -58,7 +58,25 @@ export const getIncompleteExamResult = async (examId: string, userId: string) =>
         // throw error;
         return null;
     }
-};  
+};
+
+export const getIncompleteExamResults = async (userId: string): Promise<ExamResult[]> => {
+    try {
+        const { data, error } = await supabase
+            .from('examResults')
+            .select('*')
+            .eq('userId', userId)
+            .eq('isCompleted', false);
+
+        if (error) throw error;
+        return data;
+    } catch (error) {
+        console.log('Error getting incomplete exam results:', error);
+        // throw error;
+
+        return [];
+    }
+};
 
 export const getExamResultsByExamId = async (examId: string, userId: string) => {
     try {

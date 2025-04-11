@@ -10,7 +10,7 @@ export interface ExamResultQuestion {
 export interface ExamResult {
     userId?: string;
     examType: ExamType;
-    examId: string;
+    examId: number;
     resultId?: string;
     startTime?: string;
     endTime?: string;

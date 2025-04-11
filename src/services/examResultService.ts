@@ -1,5 +1,5 @@
-import { createExamResult, getAllExamResults, getExamResultById as getLocalExamResultById, saveExamResultByResultId } from './localStorageService';
-import { saveExamResult, getExamResultById, getExamResultsByExamId, getIncompleteExamResult as getBackendIncompleteExamResult, updateExamResult } from '@/backend/services/examResultService';
+import { createExamResult, getAllExamResults, getAllExamResultsByExamId, getExamResultById as getLocalExamResultById, saveExamResultByResultId } from './localStorageService';
+import { saveExamResult, getExamResultById, getExamResultsByExamId, getIncompleteExamResults as getBackendIncompleteExamResults, getIncompleteExamResult as getBackendIncompleteExamResult, updateExamResult } from '@/backend/services/examResultService';
 import { getCurrentUser, isAuthenticated } from '../backend/services/authService';
 import { ExamResult } from '@/types/ExamResult';
 
@@ -24,7 +24,7 @@ export const getExamResults = async (examId: string) => {
         return await getExamResultsByExamId(examId, currentUser.id);
     } else {
         // Get from localStorage
-        return getAllExamResults(examId).filter(result => result.isCompleted);
+        return getAllExamResultsByExamId(examId).filter(result => result.isCompleted);
     }
 };
 
@@ -36,7 +36,7 @@ export const getIncompleteExamResult = async (examId: string) => {
         return await getBackendIncompleteExamResult(examId, currentUser.id);
     } else {
         // Get from localStorage
-        return getAllExamResults(examId).find(result => !result.isCompleted);
+        return getAllExamResultsByExamId(examId).find(result => !result.isCompleted);
     }
 };
 
@@ -73,7 +73,7 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
             return null;
         }
 
-        saveExamResultByResultId(parseInt(examResult.examId), examResult.resultId, examResult);
+        saveExamResultByResultId(examResult.examId, examResult.resultId, examResult);
        
         return examResult;
     }
@@ -90,4 +90,17 @@ export const initializeExamResult = async (examResult: ExamResult) => {
     }));
 
     return saveExamResultData(examResult);
+};
+
+// Function to get exams with their progress status
+export const getIncompleteExamResults = async (): Promise<ExamResult[]> => {
+    const currentUser = await getCurrentUser();
+
+    if (currentUser) {
+        // Get from database
+        return await getBackendIncompleteExamResults(currentUser.id);
+    } else {
+        // Get from localStorage
+        return getAllExamResults().filter(result => !result.isCompleted);
+    }
 };

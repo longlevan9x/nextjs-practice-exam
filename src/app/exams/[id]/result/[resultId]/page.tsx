@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchQuestionsByExamId } from '@/services/questionService'; // Service để lấy danh sách câu hỏi gốc
-import QuestionDetail from '@/components/exams/QuestionDetail'; // Import QuestionDetail component
+import QuestionDetail from '@/components/examDetail/QuestionDetail'; // Import QuestionDetail component
 import { Question } from '@/types/question';
 import ResultHeader from '@/components/result/ResultHeader';
 import { Exam } from '@/types/exam';

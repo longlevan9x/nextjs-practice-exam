@@ -1,6 +1,6 @@
 import { ExamResult } from "@/types/ExamResult";
 
-export const createExamResult = (examId: string, data: object) => {
+export const createExamResult = (examId: number, data: object) => {
     try {
         const uniqueId = crypto.randomUUID(); // Generate a unique ID
         const timestamp = new Date().toISOString();
@@ -19,7 +19,7 @@ export const saveExamResultByResultId = (examId: number, resultId: string, data:
     }
 };  
 
-export const getAllExamResults = (examId: string): ExamResult[] => {
+export const getAllExamResultsByExamId = (examId: string): ExamResult[] => {
     try {
         const keys = Object.keys(localStorage).filter((key) =>
             key.startsWith(`examResults-${examId}-`)
@@ -30,6 +30,19 @@ export const getAllExamResults = (examId: string): ExamResult[] => {
         return [];
     }
 };
+
+export const getAllExamResults = (): ExamResult[] => {
+    try {
+        const keys = Object.keys(localStorage).filter((key) =>
+            key.startsWith(`examResults-`)
+        );  
+        return keys.map((key) => JSON.parse(localStorage.getItem(key) || "{}") as ExamResult);
+    } catch (error) {
+        console.error("Error fetching all exam results:", error);
+        return [];
+    }
+};
+
 
 export const getExamResultById = (examId: string, resultId: string): ExamResult | null => {
     try {
