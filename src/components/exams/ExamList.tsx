@@ -57,7 +57,7 @@ export default function ExamList() {
           <p className="text-blue-600 text-lg">Loading exams...</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
           {exams.map((exam) => (
             <ExamCard
               key={exam.id}
