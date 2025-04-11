@@ -296,7 +296,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         <div className="text-gray-900 grid grid-cols-12 -mr-4">
             {/* Question List Section */}
             <div className="lg:col-span-3 col-span-12">
-                <div className="overflow-y-auto max-h-[calc(100vh-140px)] pb-10">
+                <div className="overflow-y-auto max-h-[calc(100vh-140px)] pb-10 z-20 relative bg-white">
                     <QuestionList
                         questions={questions}
                         selectedQuestionId={selectedQuestion?.id || null}

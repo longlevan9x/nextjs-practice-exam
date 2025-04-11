@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Question } from "@/types/question";
 import QuestionItem from "./QuestionItem";
 import { FILTER_OPTION_VALUE, FILTER_OPTIONS } from "@/constants/constants";
@@ -32,6 +32,18 @@ const QuestionList: React.FC<QuestionListProps> = ({
   onToggleBookmark,
   examType,
 }) => {
+
+  const selectedQuestionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (selectedQuestionId && selectedQuestionRef.current) {
+      selectedQuestionRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  }, [selectedQuestionId]);
+
   const filteredQuestions = questions.filter((question) => {
     // Apply status filter
     const statusMatch = (() => {
@@ -52,8 +64,8 @@ const QuestionList: React.FC<QuestionListProps> = ({
     })();
 
     // Apply domain filter
-    const domainMatch = domainFilter === "all" || 
-                       question.domain === domainFilter;
+    const domainMatch = domainFilter === "all" ||
+      question.domain === domainFilter;
 
     return statusMatch && domainMatch;
   });
@@ -90,15 +102,19 @@ const QuestionList: React.FC<QuestionListProps> = ({
       </div>
       <ul className="space-y-0">
         {filteredQuestions.map((question) => (
-          <QuestionItem
-            key={question.id}
-            question={question}
-            isSelected={selectedQuestionId === question.id}
-            isBookmarked={bookmarkedQuestions.includes(question.id)}
-            onSelect={() => onQuestionSelect(question.id)}
-            onToggleBookmark={() => onToggleBookmark(question.id)}
-            examType={examType}
-          />
+          <div ref={question.id === selectedQuestionId ? selectedQuestionRef : null} key={question.id}
+            className="cursor-pointer transition-colors duration-200"
+          >
+            <QuestionItem
+              key={question.id}
+              question={question}
+              isSelected={selectedQuestionId === question.id}
+              isBookmarked={bookmarkedQuestions.includes(question.id)}
+              onSelect={() => onQuestionSelect(question.id)}
+              onToggleBookmark={() => onToggleBookmark(question.id)}
+              examType={examType}
+            />
+          </div>
         ))}
       </ul>
     </>

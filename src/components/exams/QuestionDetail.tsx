@@ -43,7 +43,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   examType,
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-20">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div>
@@ -66,20 +66,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         multiple={question.multiple ?? false}
       />
 
-      {displayMode === DISPLAY_MODES.EXECUTE && (
-        <ActionButtons
-          showExplanation={question.showExplanation ?? false}
-          onCheckAnswer={onCheckAnswer ?? (() => {})}
-          onNextQuestion={onNextQuestion ?? (() => {})}
-          onPreviousQuestion={onPreviousQuestion ?? (() => {})}
-          onSkipQuestion={onSkipQuestion ?? (() => {})}
-          selectedAnswer={question.selectedAnswer ?? null}
-          testEnded={testEnded}
-          isFirstQuestion={isFirstQuestion ?? false}
-          examType={examType}
-        />
-      )}
-
       {/* Explanation Section */}
       {question.showExplanation && (
         <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-sm">
@@ -98,6 +84,25 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           {question.references && question.references.length > 0 && (
             <References references={question.references} />
           )}
+        </div>
+      )}
+
+      {/* Fixed Action Buttons */}
+      {displayMode === DISPLAY_MODES.EXECUTE && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+          <div className="w-full py-2 pr-16">
+            <ActionButtons
+              showExplanation={question.showExplanation ?? false}
+              onCheckAnswer={onCheckAnswer ?? (() => {})}
+              onNextQuestion={onNextQuestion ?? (() => {})}
+              onPreviousQuestion={onPreviousQuestion ?? (() => {})}
+              onSkipQuestion={onSkipQuestion ?? (() => {})}
+              selectedAnswer={question.selectedAnswer ?? null}
+              testEnded={testEnded}
+              isFirstQuestion={isFirstQuestion ?? false}
+              examType={examType}
+            />
+          </div>
         </div>
       )}
     </div>

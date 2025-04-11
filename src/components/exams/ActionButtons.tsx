@@ -26,7 +26,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   examType,
 }) => {
   return (
-    <div className="flex justify-end mt-6">
+    <div className="flex justify-end ">
       <div className="flex space-x-4">
         {!isFirstQuestion && (
           <button
