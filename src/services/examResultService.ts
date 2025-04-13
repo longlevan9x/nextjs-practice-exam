@@ -1,5 +1,19 @@
-import { createExamResult, getAllExamResults, getAllExamResultsByExamId, getExamResultById as getLocalExamResultById, saveExamResultByResultId } from './localStorageService';
-import { saveExamResult, getExamResultById, getExamResultsByExamId, getIncompleteExamResults as getBackendIncompleteExamResults, getIncompleteExamResult as getBackendIncompleteExamResult, updateExamResult } from '@/backend/services/examResultService';
+import {
+    createExamResult,
+    getAllExamResults,
+    getAllExamResultsByExamId,
+    getExamResultById as getLocalExamResultById,
+    saveExamResultByResultId
+} from './localStorageService';
+import {
+    saveExamResult,
+    getExamResultById,
+    getExamResultsByExamId as getBackendExamResultsByExamId,
+    getIncompleteExamResults as getBackendIncompleteExamResults,
+    getIncompleteExamResult as getBackendIncompleteExamResult,
+    updateExamResult,
+    getExamResults as getBackendExamResults
+} from '@/backend/services/examResultService';
 import { getCurrentUser, isAuthenticated } from '../backend/services/authService';
 import { ExamResult } from '@/types/ExamResult';
 
@@ -16,15 +30,27 @@ export const saveExamResultData = async (examResult: ExamResult) => {
     }
 };
 
-export const getExamResults = async (examId: string) => {
+export const getExamResultsByExamId = async (examId: string) => {
     const currentUser = await getCurrentUser();
 
     if (currentUser) {
         // Get from database
-        return await getExamResultsByExamId(examId, currentUser.id);
+        return await getBackendExamResultsByExamId(examId, currentUser.id);
     } else {
         // Get from localStorage
         return getAllExamResultsByExamId(examId).filter(result => result.isCompleted);
+    }
+};
+
+export const getExamResults = async () => {
+    const currentUser = await getCurrentUser();
+
+    if (currentUser) {
+        // Get from database    
+        return await getBackendExamResults(currentUser.id);
+    } else {
+        // Get from localStorage
+        return getAllExamResults();
     }
 };
 
@@ -62,7 +88,7 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
             isCorrect: question.isCorrect,
             questionIndex: question.questionIndex
         }));
-    }  
+    }
 
     if (isUserAuthenticated) {
         // Update in database
@@ -74,16 +100,16 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
         }
 
         saveExamResultByResultId(examResult.examId, examResult.resultId, examResult);
-       
+
         return examResult;
     }
-}; 
+};
 
 export const initializeExamResult = async (examResult: ExamResult) => {
     examResult.currentQuestionIndex = 0;
     examResult.startTime = new Date().toISOString();
     examResult.isCompleted = false;
-    
+
     examResult.questions = examResult.questions.map((question, index) => ({
         ...question,
         questionIndex: index

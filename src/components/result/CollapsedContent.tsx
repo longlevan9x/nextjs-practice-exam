@@ -1,5 +1,6 @@
 import React from "react";
 import DonutChart from "@/components/charts/DonutChart";
+import { EXAM_TYPES } from "@/constants/exam";
 
 interface CollapsedContentProps {
   chartData: { name: string; value: number; color: string }[];
@@ -7,6 +8,7 @@ interface CollapsedContentProps {
   correctPercentage: number;
   totalTime: number | undefined;
   startTime: Date | undefined;
+  examType: string;
 }
 
 const CollapsedContent: React.FC<CollapsedContentProps> = ({
@@ -15,6 +17,7 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
   correctPercentage,
   totalTime,
   startTime,
+  examType,
 }) => {
   return (
     <div className="flex items-center justify-between space-x-4 pr-6">
@@ -25,8 +28,15 @@ const CollapsedContent: React.FC<CollapsedContentProps> = ({
 
       {/* Status */}
       <div className="flex flex-col items-start">
+
+        {examType === EXAM_TYPES.PRACTICE && (
+          <p className="text-sm bg-blue-600 px-3 rounded-full text-white">Luyện tập</p>
+        )}
+        {examType === EXAM_TYPES.EXAM && (
+          <p className="text-sm bg-green-600 px-3 rounded-full text-white">Thực hành</p>
+        )}
         <p
-          className={`text-base font-semibold ${isPassed ? "text-green-600" : "text-red-600"
+          className={`text-base font-semibold mt-1 ${isPassed ? "text-green-600" : "text-red-600"
             }`}
         >
           {isPassed ? "Thành công" : "Không thành công"}

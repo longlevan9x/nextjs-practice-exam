@@ -17,4 +17,7 @@ export interface ExamResult {
     questions: ExamResultQuestion[];
     isCompleted?: boolean;
     currentQuestionIndex?: number;
+
+    // Statistics
+    passScore?: number;
 }

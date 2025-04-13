@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { ExamDomain } from "@/types/exam";
 import HorizontalLegend from "../charts/HorizontalLegend";
 import LoadingIcon from "../common/LoadingIcon";
-
+import { EXAM_TYPES } from "@/constants/exam";
 interface ExpandedContentProps {
     chartData: { name: string; value: number; color: string }[];
     attemptNumber: number;
@@ -17,7 +17,8 @@ interface ExpandedContentProps {
     totalTime: number | undefined;
     startTime: Date | undefined;
     domains: ExamDomain[];
-    resultId: string | undefined; 
+    resultId: string | undefined;
+    examType: string;
 }
 
 const ExpandedContent: React.FC<ExpandedContentProps> = ({
@@ -32,6 +33,7 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
     startTime,
     domains,
     resultId,
+    examType,
 }) => {
     const router = useRouter();
     const [isReviewing, setIsReviewing] = useState<boolean>(false);
@@ -78,6 +80,15 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                         ({correctAnswers}/{totalQuestions})
                     </p>
 
+                    <div className="flex items-center">
+                        {examType === EXAM_TYPES.PRACTICE && (
+                            <p className="text-sm bg-blue-600 px-3 rounded-full text-white">Luyện tập</p>
+                        )}
+                        {examType === EXAM_TYPES.EXAM && (
+                            <p className="text-sm bg-green-600 px-3 rounded-full text-white">Thực hành</p>
+                        )}
+                    </div>
+
                     {/* Total Time */}
                     <p className="">
                         <span className="">
@@ -94,9 +105,8 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                     <div>
                         {/* Review Questions Button */}
                         <button
-                            className={`px-4 py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center ${
-                                isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
-                            }`}
+                            className={`px-4 py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center ${isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+                                }`}
                             onClick={handleReviewQuestions}
                             disabled={isReviewing}
                         >

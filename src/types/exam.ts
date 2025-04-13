@@ -14,6 +14,7 @@ export interface Exam {
   questionCount: number;
   duration: number;
   passScore: number;  
+  courseId: number; // Added property
 
   // For exam list
   incomplete?: boolean;

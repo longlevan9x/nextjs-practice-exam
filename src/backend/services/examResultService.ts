@@ -116,3 +116,20 @@ export const updateExamResult = async (resultId: string, examResult: Partial<Exa
         throw error;
     }
 }; 
+
+export const getExamResults = async (userId: string) => {
+    try {
+        const { data, error } = await supabase
+            .from('examResults')
+            .select('*')
+            .eq('userId', userId)
+            .order('createdAt', { ascending: false });
+
+        if (error) throw error;
+
+        return data;
+    } catch (error) {
+        console.error('Error getting exam results:', error);
+        return [];
+    }
+};

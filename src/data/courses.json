@@ -4,6 +4,62 @@
         "name": "AWS Certified Solutions Architect Associate 2023",
         "questionCount": 65,
         "duration": 130,
-        "passScore": 72 
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "AWS Certified Solutions Architect Associate 2025",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Associate Cloud Engineer",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            }
+        ]
     }
 ]

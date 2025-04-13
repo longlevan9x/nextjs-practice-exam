@@ -118,6 +118,7 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
                     correctPercentage={correctPercentage}
                     totalTime={totalTime}
                     startTime={startTime}
+                    examType={result.examType}
                 />
             )}
 
@@ -135,6 +136,7 @@ const ExamResultCard: React.FC<ExamResultCardProps> = ({
                     startTime={startTime}
                     domains={domainStats} // Pass updated domains with stats
                     resultId={result.resultId}
+                    examType={result.examType}
                 />
             )}
         </div>

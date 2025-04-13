@@ -25,5 +25,29 @@
     {
         "examId": 7,
         "questionFile": "aws_saa_2023_6.json"
+    },
+    {
+        "examId": 8,
+        "questionFile": "aws_saa_2025_1.json"
+    },
+    {
+        "examId": 9,
+        "questionFile": "aws_saa_2025_2.json"
+    },
+    {
+        "examId": 10,
+        "questionFile": "aws_saa_2025_3.json"
+    },
+    {
+        "examId": 11,
+        "questionFile": "aws_saa_2025_4.json"
+    },
+    {
+        "examId": 12,
+        "questionFile": "aws_saa_2025_5.json"
+    },
+    {
+        "examId": 13,
+        "questionFile": "aws_saa_2025_6.json"
     }
 ]

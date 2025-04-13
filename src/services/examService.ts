@@ -5,9 +5,19 @@ export const getExamById = (examId: string): Exam | null => {
   try {
     // Find the exam data by examId
     const exam = examData.find((exam) => exam.id === parseInt(examId));
-    return exam || null; // Return the exam data or null if not found
+    return exam || null;
   } catch (error) {
     console.error("Error fetching exam data:", error);
     return null;
   }
 };
+
+export const getAllExams = (): Exam[] => {
+  try {
+    return examData;
+  } catch (error) {
+    console.error("Error fetching exam data:", error);
+    return [];
+  }
+};
+

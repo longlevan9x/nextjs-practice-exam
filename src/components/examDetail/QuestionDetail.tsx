@@ -5,13 +5,12 @@ import AnswerOptions from "./AnswerOptions";
 import CorrectOptions from "./CorrectOptions";
 import IncorrectOptions from "./IncorrectOptions";
 import References from "./References";
-import ActionButtons from "./ActionButtons";
+
 import {
-  DEFAULT_TEST_ENDED,
   EXPLANATION_SECTION_TITLE,
   HEADER_TITLE_PREFIX,
 } from "@/constants/constants";
-import { DISPLAY_MODES, DisplayMode, ExamType } from "@/constants/exam";
+import { DisplayMode, ExamType } from "@/constants/exam";
 
 interface QuestionDetailProps {
   question: Question;
@@ -33,14 +32,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   isBookmarked,
   onToggleBookmark,
   onAnswerSelect,
-  onCheckAnswer,
-  onNextQuestion,
-  onPreviousQuestion,
-  onSkipQuestion,
-  testEnded = DEFAULT_TEST_ENDED,
-  isFirstQuestion,
-  displayMode,
-  examType,
 }) => {
   return (
     <div className="flex flex-col pb-20">

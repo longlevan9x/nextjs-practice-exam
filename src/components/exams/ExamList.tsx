@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import ExamCard from "@/components/exams/ExamCard";
 import { Exam } from "@/types/exam";
 import { getIncompleteExamResults } from "@/services/examResultService";
-
+import Link from "next/link";
+import { ChartBarIcon } from "@heroicons/react/24/solid";
 export default function ExamList() {
   const [exams, setExams] = useState<Exam[]>([]);
   const [loading, setLoading] = useState(true);
@@ -16,14 +17,14 @@ export default function ExamList() {
         const incompleteExamResults = await getIncompleteExamResults();
 
         const _exams = response.default.map(exam => {
-            const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
-            const examType = incompleteExam?.examType;
+          const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
+          const examType = incompleteExam?.examType;
 
-            return {
-                ...exam,
-                incomplete: incompleteExam?.isCompleted === false,
-                examType
-            };
+          return {
+            ...exam,
+            incomplete: incompleteExam?.isCompleted === false,
+            examType
+          };
         });
 
         setExams(_exams);
@@ -48,9 +49,16 @@ export default function ExamList() {
 
   return (
     <>
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">
-        Available Exam Sets
-      </h2>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+          Available Exam Sets
+        </h2>
+
+        <Link href="/statistics" className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center gap-1 hover:bg-blue-700 transition-all duration-300">
+          Xem thống kê
+          <ChartBarIcon className="w-4 h-4" />
+        </Link>
+      </div>
 
       {loading ? (
         <div className="flex justify-center items-center">
