@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "courseId": 2,
+        "courseId": 3,
         "name": "Associate Cloud Engineer",
         "imageUrl": "/images/GCP-ACE-LOGO.png",
         "description": "Associate Cloud Engineer Study Guide",
