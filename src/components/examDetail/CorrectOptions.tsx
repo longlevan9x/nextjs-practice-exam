@@ -123,9 +123,11 @@ const CorrectOptions: React.FC<CorrectOptionsProps> = ({ answerExplanations }) =
               className="relative max-w-full max-h-full transition-transform duration-200 ease-in-out"
               style={{ transform: `scale(${scale})` }}
             >
-              <img
+              <Image
                 src={selectedImage}
                 alt="Zoomed explanation image"
+                width={1200}
+                height={800}
                 className="max-w-full max-h-[90vh] object-contain"
                 onClick={(e) => e.stopPropagation()}
               />
