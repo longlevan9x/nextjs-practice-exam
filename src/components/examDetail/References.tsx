@@ -15,7 +15,7 @@ const References: React.FC<ReferencesProps> = ({ references }) => {
               href={reference}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline break-all whitespace-pre-wrap"
             >
               {reference}
             </a>

@@ -33,16 +33,41 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onToggleBookmark,
   onAnswerSelect,
 }) => {
+  const getQuestionStatus = () => {
+    if (!question.selectedAnswer) {
+      return "Chưa trả lời";
+    }
+    if (question.showExplanation) {
+      return question.isCorrect ? "Chính xác" : "Không chính xác";
+    }
+    return "Đã trả lời";
+  };
+
+  const getStatusColor = () => {
+    if (!question.selectedAnswer) {
+      return "text-gray-500";
+    }
+    if (question.showExplanation) {
+      return question.isCorrect ? "text-green-600" : "text-red-600";
+    }
+    return "text-blue-600";
+  };
+
   return (
     <div className="flex flex-col">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
-            <h2 className="text-lg font-normal">
-              {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
-            </h2>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-1">
+              <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
+              <h2 className="text-lg font-normal">
+                {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
+              </h2>
+            </div>
+            <span className={`text-base font-bold ${getStatusColor()}`}>
+              {getQuestionStatus()}
+            </span>
           </div>
           <p className="text-base mt-1">{question.question}</p>
         </div>
@@ -79,7 +104,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       )}
 
       {/* Domain Section */}
-      {question.domain && (
+      {(question.showExplanation && question.domain) && (
         <div className="mt-4 p-3 border border-gray-300 rounded-xs bg-white">
           <div className="flex flex-col space-y-2">
             <span className="font-bold text-lg">
