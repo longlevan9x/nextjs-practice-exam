@@ -30,7 +30,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
         return (
           <li
             key={answer.id}
-            className={`p-3 border rounded-sm flex items-center transition-all duration-300 ${
+            className={`p-3 border cursor-pointer  rounded-sm flex items-center transition-all duration-300 ${
               showExplanation
                 ? isCorrect
                   ? "bg-green-100 border-green-500"
@@ -41,6 +41,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
                   ? "bg-blue-50 border-blue-500"
                   : "hover:bg-gray-100 border-gray-500"
             }`}
+            onClick={() => onAnswerSelect(answer.id)}
           >
             <div className="flex items-center w-6 h-6 mr-3">
               <input
@@ -53,7 +54,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
               />
             </div>
 
-            <span className="cursor-pointer font-bold w-11/12" onClick={() => onAnswerSelect(answer.id)}>
+            <span className="font-bold w-11/12">
               {answer.answer}
             </span>
             <div>

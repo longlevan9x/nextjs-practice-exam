@@ -34,12 +34,12 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onAnswerSelect,
 }) => {
   return (
-    <div className="flex flex-col pb-20">
+    <div className="flex flex-col">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div>
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
+            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
             <h2 className="text-lg font-normal">
               {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
             </h2>
@@ -53,13 +53,13 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         answers={question.answers}
         selectedAnswer={question.selectedAnswer ?? null}
         showExplanation={question.showExplanation ?? false}
-        onAnswerSelect={onAnswerSelect ?? (() => {})}
+        onAnswerSelect={onAnswerSelect ?? (() => { })}
         multiple={question.multiple ?? false}
       />
 
       {/* Explanation Section */}
       {question.showExplanation && (
-        <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-sm">
+        <div className="mt-6 p-4 bg-gray-50 border border-gray-300 rounded-xs">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
 
           {question.correctAnswerExplanations && (
@@ -75,6 +75,20 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           {question.references && question.references.length > 0 && (
             <References references={question.references} />
           )}
+        </div>
+      )}
+
+      {/* Domain Section */}
+      {question.domain && (
+        <div className="mt-4 p-3 border border-gray-300 rounded-xs bg-white">
+          <div className="flex flex-col space-y-2">
+            <span className="font-bold text-lg">
+              Lĩnh vực
+            </span>
+            <span className="font-medium">
+              {question.domain}
+            </span>
+          </div>
         </div>
       )}
     </div>

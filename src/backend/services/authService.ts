@@ -6,7 +6,7 @@ export const getCurrentUser = async () => {
         if (error) throw error;
         return user;
     } catch (error) {
-        console.error('Error getting current user:', error);
+        console.log('Error getting current user:', error);
         return null;
     }
 };

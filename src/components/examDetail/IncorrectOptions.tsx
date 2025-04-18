@@ -16,8 +16,14 @@ const IncorrectOptions: React.FC<IncorrectOptionsProps> = ({ incorrectAnswerExpl
       <ul className="text-gray-700 space-y-4">
         {incorrectAnswerExplanations.map((incorrect, index) => (
           <li key={index} className="space-y-2">
-            <p className="font-bold">{incorrect.answer}</p>
-            <p>{incorrect.explanation}</p>
+            { 
+              (incorrect.answer) &&
+              <p className="font-bold whitespace-pre-line" dangerouslySetInnerHTML={{ __html: incorrect.answer }} />
+            }
+            {
+              (incorrect.explanation) &&
+              <p className="whitespace-pre-line" dangerouslySetInnerHTML={{ __html: incorrect.explanation }} />
+            }
           </li>
         ))}
       </ul>
