@@ -121,8 +121,7 @@
         "explanation": "KDS provides the ability for multiple applications to consume the same stream concurrently"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -204,8 +203,7 @@
         "explanation": "VPC architecture with NAT:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -353,8 +351,7 @@
         "explanation": "If cross-zone load balancing is enabled, each of the 10 targets receives 10% of the traffic. This is because each load balancer node can route its 50% of the client traffic to all 10 targets."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html"
       },
       {
         "answer": "",
@@ -373,8 +370,7 @@
         "explanation": "This is because each load balancer node can route its 50% of the client traffic only to targets in its Availability Zone"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -447,8 +443,7 @@
         "explanation": "AWS CloudFormation StackSets:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -597,8 +592,7 @@
         "explanation": "How Amazon FSx for Windows File Server works:"
       },
       {
-        "explanation": "https://aws.amazon.com/fsx/windows/",
-        "isLink": true
+        "link": "https://aws.amazon.com/fsx/windows/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -751,8 +745,7 @@
         "explanation": "Internet Gateway Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -829,8 +822,7 @@
         "explanation": "AWS VPN CloudHub:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPN_CloudHub.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPN_CloudHub.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -903,8 +895,7 @@
         "explanation": "Please review the major differences between CNAME and Alias Records:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1048,8 +1039,7 @@
         "explanation": "Aurora Replicas:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/aurora/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/aurora/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1176,8 +1166,7 @@
         "explanation": "Kinesis Data Streams Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1199,8 +1188,7 @@
         "explanation": "Amazon Kinesis Data Firehose Overview"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-firehose/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-firehose/"
       }
     ],
     "references": [
@@ -1327,8 +1315,7 @@
         "explanation": "How NAT gateway works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1396,8 +1383,7 @@
         "explanation": "How Elastic Fabric Adapter Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/hpc/efa/",
-        "isLink": true
+        "link": "https://aws.amazon.com/hpc/efa/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1466,8 +1452,7 @@
         "explanation": "Continuous Data Replication"
       },
       {
-        "explanation": "https://aws.amazon.com/dms/",
-        "isLink": true
+        "link": "https://aws.amazon.com/dms/"
       },
       {
         "answer": "",
@@ -1819,8 +1804,7 @@
         "explanation": "Amazon ElastiCache allows you to run in-memory data stores in the AWS cloud. Amazon ElastiCache is a popular choice for real-time use cases like Caching, Session Stores, Gaming, Geospatial Services, Real-Time Analytics, and Queuing."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/elasticache-use-cases.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/elasticache-use-cases.html"
       },
       {
         "answer": "",
@@ -1832,8 +1816,7 @@
         "explanation": "Overview of Amazon ElastiCache features:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/features/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/features/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2090,8 +2073,7 @@
         "explanation": "When you provision an RDS Multi-AZ DB Instance, Amazon RDS automatically creates a primary DB Instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ). Each AZ runs on its own physically distinct, independent infrastructure, and is engineered to be highly reliable. Running a DB instance with high availability can enhance availability during planned system maintenance, and help protect your databases against DB instance failure and Availability Zone disruption. In the event of a planned or unplanned outage of your DB instance, Amazon RDS automatically switches to a standby replica in another Availability Zone if you have enabled Multi-AZ. The time it takes for the failover to complete depends on the database activity and other conditions at the time the primary DB instance became unavailable. Failover times are typically 60–120 seconds."
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/multi-az/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/multi-az/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2112,8 +2094,7 @@
         "explanation": "Both these options talk about creating a read replica that <strong>synchronously</strong> replicates the data, but in reality, any updates made to the primary DB instance are <strong>asynchronously</strong> copied to the read replica. So both these options are incorrect."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
       },
       {
         "answer": "",
@@ -2256,8 +2237,7 @@
         "explanation": "How Spot requests work:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"
       },
       {
         "answer": "Spot Fleets can maintain target capacity by launching replacement instances after Spot Instances in the fleet are terminated",
@@ -2350,8 +2330,7 @@
         "explanation": "KDS provides the ability to consume records in the same order a few hours later"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2433,8 +2412,7 @@
         "explanation": "How AWS DataSync Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/datasync/",
-        "isLink": true
+        "link": "https://aws.amazon.com/datasync/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2507,8 +2485,7 @@
         "explanation": "When the average CPU utilization of your service rises above 75% (meaning that more than 75% of the CPU that is reserved for the service is being used), a scale out alarm triggers Service Auto Scaling to add another task to your service to help out with the increased load. Conversely, when the average CPU utilization of your service drops below the target utilization for a sustained period, a scale-in alarm triggers a decrease in the service's desired count to free up those cluster resources for other tasks and services."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-configure-auto-scaling.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-configure-auto-scaling.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2580,8 +2557,7 @@
         "explanation": "Delay queues let you postpone the delivery of new messages to a queue for several seconds, for example, when your consumer application needs additional time to process messages. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period. The default (minimum) delay for a queue is 0 seconds. The maximum is 15 minutes."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-delay-queues.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-delay-queues.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2902,8 +2878,7 @@
         "explanation": "Resolver Inbound Endpoint:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html"
       },
       {
         "answer": "",
@@ -2915,8 +2890,7 @@
         "explanation": "Resolver Outbound Endpoint:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2992,8 +2966,7 @@
         "explanation": "Each Amazon EC2 instance that you launch into a VPC has a tenancy attribute. This attribute has the following values."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html"
       },
       {
         "answer": "",
@@ -3224,8 +3197,7 @@
         "explanation": "Short Polling vs Long Polling:"
       },
       {
-        "explanation": "https://aws.amazon.com/sqs/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/sqs/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3294,8 +3266,7 @@
         "explanation": "How AWS Config Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/config/",
-        "isLink": true
+        "link": "https://aws.amazon.com/config/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3390,8 +3361,7 @@
         "explanation": "How Data Streams work:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/?nc=sn&loc=2&dn=2",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/?nc=sn&loc=2&dn=2"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3479,8 +3449,7 @@
         "explanation": "AWS Managed IPSec VPN"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-managed-vpn-network-to-amazon.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-managed-vpn-network-to-amazon.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3752,8 +3721,7 @@
         "explanation": "The VPC endpoint policy for the gateway endpoint controls access to Amazon S3 from the VPC through the endpoint. The default policy allows full access."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
       },
       {
         "answer": "",
@@ -3907,8 +3875,7 @@
         "explanation": "How AWS Global Accelerator Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/global-accelerator/",
-        "isLink": true
+        "link": "https://aws.amazon.com/global-accelerator/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4019,8 +3986,7 @@
         "explanation": "Heterogeneous Database Migrations:"
       },
       {
-        "explanation": "https://aws.amazon.com/dms/",
-        "isLink": true
+        "link": "https://aws.amazon.com/dms/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4165,8 +4131,7 @@
         "explanation": "How Amazon GuardDuty works:"
       },
       {
-        "explanation": "https://aws.amazon.com/guardduty/",
-        "isLink": true
+        "link": "https://aws.amazon.com/guardduty/"
       },
       {
         "answer": "",
@@ -4178,8 +4143,7 @@
         "explanation": "How Amazon Macie works:"
       },
       {
-        "explanation": "https://aws.amazon.com/macie/",
-        "isLink": true
+        "link": "https://aws.amazon.com/macie/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4324,8 +4288,7 @@
         "explanation": "Scaling Based on Amazon SQS:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4397,8 +4360,7 @@
         "explanation": "Simplified and resilient traffic routing for multi-Region applications:"
       },
       {
-        "explanation": "https://aws.amazon.com/global-accelerator/",
-        "isLink": true
+        "link": "https://aws.amazon.com/global-accelerator/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4503,16 +4465,14 @@
         "explanation": "Copying AMIs across regions:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"
       },
       {
         "answer": "",
         "explanation": "The following table shows encryption support for various AMI-copying scenarios. While it is possible to copy an unencrypted snapshot to yield an encrypted snapshot, you cannot copy an encrypted snapshot to yield an unencrypted one. Therefore, the option - \"Copying an AMI backed by an encrypted snapshot cannot result in an unencrypted target snapshot\" is correct."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"
       },
       {
         "answer": "",
@@ -4602,8 +4562,7 @@
         "explanation": "Disaster Recovery in Aurora Global Databases:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4684,8 +4643,7 @@
         "explanation": "Comparing Read Replicas with Multi-AZ and Multi-Region Amazon RDS deployments:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/read-replicas/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/read-replicas/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4753,8 +4711,7 @@
         "explanation": "Please see this list of allowed source or destination for security group rules:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html"
       },
       {
         "answer": "",
@@ -4839,8 +4796,7 @@
         "explanation": "<strong>Use Amazon S3 for hosting the web application and use Amazon CloudFront for faster distribution of content to geographically dispersed users</strong> - Amazon S3 with Amazon CloudFront is a very powerful way of distributing static content to geographically dispersed users with low latency speeds. If you have objects that are smaller than 1GB or if the data set is less than 1GB in size, you should consider using Amazon CloudFront's PUT/POST commands for optimal performance. The given use case has data larger than 1GB and hence S3 Transfer Acceleration is a better option."
       },
       {
-        "explanation": "https://aws.amazon.com/s3/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/faqs/"
       },
       {
         "answer": "",
@@ -5058,8 +5014,7 @@
         "explanation": "How NAT Gateway works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
       },
       {
         "image": "https://docs.aws.amazon.com/vpc/latest/userguide/images/nat-instance-diagram.png",
@@ -5067,16 +5022,14 @@
         "explanation": "How NAT Instance works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html"
       },
       {
         "answer": "",
         "explanation": "Please see this high-level summary of the differences between NAT instances and NAT gateways relevant to the options described in the question:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html"
       }
     ],
     "incorrectAnswerExplanations": [

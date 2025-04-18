@@ -35,25 +35,25 @@ const CorrectOptions: React.FC<CorrectOptionsProps> = ({ answerExplanations }) =
       <ul className="text-gray-700 space-y-4">
         {answerExplanations.map((answerExplanation, index) => (
           <li key={index} className="space-y-2">
-            {(!answerExplanation.isLink && answerExplanation.answer) &&
+            {(answerExplanation.answer) &&
               <p className="font-bold whitespace-pre-line" dangerouslySetInnerHTML={{ __html: answerExplanation.answer }} />
             }
             {
-              (!answerExplanation.isLink && answerExplanation.explanation) &&
+              ( answerExplanation.explanation) &&
               <p className="whitespace-pre-line" dangerouslySetInnerHTML={{ __html: answerExplanation.explanation }} />
             }
 
             {
-              (answerExplanation.isLink) &&
+              (answerExplanation.link) &&
               <>
                 <span className="mr-1">Via:</span>
                 <Link
-                  href={answerExplanation.explanation || ''}
+                  href={answerExplanation.link || ''}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 hover:underline"
                 >
-                  {answerExplanation.explanation}
+                  {answerExplanation.link}
                 </Link>
               </>
             }

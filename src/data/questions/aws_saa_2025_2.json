@@ -45,8 +45,7 @@
         "explanation": "Permissions boundaries for IAM entities:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -128,8 +127,7 @@
         "explanation": "Please review these three options for Server Side Encryption on Amazon S3:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -278,8 +276,7 @@
         "explanation": "Differences between Dedicated Hosts and Dedicated Instances:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html#dedicated-hosts-dedicated-instances",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html#dedicated-hosts-dedicated-instances"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -301,8 +298,7 @@
         "explanation": "High Level Overview of Amazon EC2 Instance Purchase Options:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/pricing/"
       }
     ],
     "references": [
@@ -357,8 +353,7 @@
         "explanation": "Instead, you should use an IAM role to manage temporary credentials for applications that run on an Amazon EC2 instance. When you use a role, you don't have to distribute long-term credentials (such as a username and password or access keys) to an Amazon EC2 instance. The role supplies temporary permissions that applications can use when they make calls to other AWS resources. When you launch an Amazon EC2 instance, you specify an IAM role to associate with the instance. Applications that run on the instance can then use the role-supplied temporary credentials to sign API requests. Therefore, this option is correct."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -429,8 +424,7 @@
         "explanation": "A read replica is billed as a standard DB Instance and at the same rates. You are not charged for the data transfer incurred in replicating data between your source DB instance and read replica within the same AWS Region."
       },
       {
-        "explanation": "https://aws.amazon.com/rds/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -719,8 +713,7 @@
         "explanation": "Amazon S3 server-side encryption"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html"
       },
       {
         "answer": "",
@@ -741,8 +734,7 @@
         "explanation": "AWS KMS keys:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
       },
       {
         "answer": "",
@@ -995,8 +987,7 @@
         "explanation": "Application Load Balancer can be used to securely authenticate users for accessing your applications. This enables you to offload the work of authenticating users to your load balancer so that your applications can focus on their business logic. You can use Cognito User Pools to authenticate users through well-known social IdPs, such as Amazon, Facebook, or Google, through the user pools supported by Amazon Cognito or through corporate identities, using SAML, LDAP, or Microsoft AD, through the user pools supported by Amazon Cognito. You configure user authentication by creating an authenticate action for one or more listener rules."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html"
       },
       {
         "answer": "",
@@ -1008,8 +999,7 @@
         "explanation": "Please review the following note to understand the differences between Amazon Cognito User Pools and Amazon Cognito Identity Pools:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1079,8 +1069,7 @@
         "explanation": "If your primary Region suffers a performance degradation or outage, you can promote one of the secondary Regions to take read/write responsibilities. An Aurora cluster can recover in less than 1 minute, even in the event of a complete Regional outage. This provides your application with an effective recovery point objective (RPO) of 1 second and a recovery time objective (RTO) of less than 1 minute, providing a strong foundation for a global business continuity plan."
       },
       {
-        "explanation": "https://aws.amazon.com/rds/aurora/global-database/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/aurora/global-database/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1162,8 +1151,7 @@
         "explanation": "How Amazon Kinesis Firehose works:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-firehose/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-firehose/"
       },
       {
         "answer": "",
@@ -1222,16 +1210,14 @@
         "explanation": "AWS Config provides a detailed view of the configuration of AWS resources in your AWS account. This includes how the resources are related to one another and how they were configured in the past so that you can see how the configurations and relationships change over time."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html"
       },
       {
         "answer": "",
         "explanation": "AWS Config provides AWS-managed rules, which are predefined, customizable rules that AWS Config uses to evaluate whether your AWS resources comply with common best practices. You can leverage an AWS Config managed rule to check if any ACM certificates in your account are marked for expiration within the specified number of days. Certificates provided by ACM are automatically renewed. ACM does not automatically renew the certificates that you import. The rule is NON_COMPLIANT if your certificates are about to expire."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html"
       },
       {
         "answer": "",
@@ -1316,8 +1302,7 @@
         "explanation": "How AWS WAF Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/waf/",
-        "isLink": true
+        "link": "https://aws.amazon.com/waf/"
       },
       {
         "answer": "",
@@ -1582,8 +1567,7 @@
         "explanation": "Please see this note for a deep-dive on the default termination policy:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1659,8 +1643,7 @@
         "explanation": "Key Spot Instance Concepts:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1729,8 +1712,7 @@
         "explanation": "Please see this overview of how Kinesis Firehose works:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-firehose/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-firehose/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1865,16 +1847,14 @@
         "explanation": "Amazon Aurora Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/aurora/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/aurora/"
       },
       {
         "answer": "",
         "explanation": "Aurora backs up your cluster volume automatically and retains restore data for the length of the backup retention period. Aurora backups are continuous and incremental so you can quickly restore to any point within the backup retention period. No performance impact or interruption of database service occurs as backup data is being written."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html"
       },
       {
         "answer": "",
@@ -2119,8 +2099,7 @@
         "explanation": "Amazon Route 53 Routing Policy Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html"
       },
       {
         "answer": "Create Amazon Aurora read replicas in the eu-west-1 region",
@@ -2223,8 +2202,7 @@
         "explanation": "Please review this comparison vis-a-vis Multi-AZ vs Read Replica for Amazon RDS:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/multi-az/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/multi-az/"
       },
       {
         "answer": "",
@@ -2290,8 +2268,7 @@
         "explanation": "Hosting a static website on Amazon S3:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2432,8 +2409,7 @@
         "explanation": "Partition placement group – spreads your instances across logical partitions such that groups of instances in one partition do not share the underlying hardware with groups of instances in different partitions. This strategy is typically used by large distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka. Therefore, this is the correct option for the given use-case."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2446,8 +2422,7 @@
         "explanation": "Cluster Placement Group – packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications. This is not suited for distributed and replicated workloads such as Hadoop."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "answer": "Spread placement group",
@@ -2458,8 +2433,7 @@
         "explanation": "Spread Placement Group – strictly places a small group of instances across distinct underlying hardware to reduce correlated failures. This is not suited for distributed and replicated workloads such as Hadoop."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "answer": "",
@@ -2522,8 +2496,7 @@
         "explanation": "Aurora Replica – Connects to the same storage volume as the primary DB instance and supports only read operations. Each Aurora DB cluster can have up to 15 Aurora Replicas in addition to the primary DB instance. Aurora automatically fails over to an Aurora Replica in case the primary DB instance becomes unavailable. You can specify the failover priority for Aurora Replicas. Aurora Replicas can also offload read workloads from the primary DB instance."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html"
       },
       {
         "answer": "",
@@ -2543,8 +2516,7 @@
         "explanation": "You use the reader endpoint for read-only connections for your Aurora cluster. This endpoint uses a load-balancing mechanism to help your cluster handle a query-intensive workload. The reader endpoint is the endpoint that you supply to applications that do reporting or other read-only operations on the cluster. The reader endpoint load-balances connections to available Aurora Replicas in an Aurora DB cluster."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2620,8 +2592,7 @@
         "explanation": "Without AWS Transit Gateway"
       },
       {
-        "explanation": "https://aws.amazon.com/transit-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/transit-gateway/"
       },
       {
         "image": "https://d1.awsstatic.com/product-marketing/transit-gateway/tgw-after.d85d3e2cb67fd2ed1a3be645d443e9f5910409fd.png",
@@ -2629,8 +2600,7 @@
         "explanation": "With AWS Transit Gateway"
       },
       {
-        "explanation": "https://aws.amazon.com/transit-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/transit-gateway/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2808,8 +2778,7 @@
         "explanation": "Amazon Aurora Global Database Features:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/aurora/global-database/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/aurora/global-database/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2827,8 +2796,7 @@
         "explanation": "Amazon DynamoDB Global Tables Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/dynamodb/global-tables/",
-        "isLink": true
+        "link": "https://aws.amazon.com/dynamodb/global-tables/"
       },
       {
         "answer": "",
@@ -2896,8 +2864,7 @@
         "explanation": "How AWS Resource Access Manager (AWS RAM) Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/ram/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ram/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2972,8 +2939,7 @@
         "explanation": "How Amazon EFS works:"
       },
       {
-        "explanation": "https://aws.amazon.com/efs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/efs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3126,8 +3092,7 @@
         "explanation": "Centralized VPC Endpoints (multiple VPCs):"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/architecture/reduce-cost-and-increase-security-with-amazon-vpc-endpoints/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/architecture/reduce-cost-and-increase-security-with-amazon-vpc-endpoints/"
       },
       {
         "answer": "",
@@ -3149,8 +3114,7 @@
         "explanation": "More on Transit VPC:"
       },
       {
-        "explanation": "https://d0.awsstatic.com/aws-answers/AWS_Single_Region_Multi_VPC_Connectivity.pdf",
-        "isLink": true
+        "link": "https://d0.awsstatic.com/aws-answers/AWS_Single_Region_Multi_VPC_Connectivity.pdf"
       },
       {
         "answer": "",
@@ -3162,8 +3126,7 @@
         "explanation": "More on Fully meshed VPC Peers:"
       },
       {
-        "explanation": "https://d0.awsstatic.com/aws-answers/AWS_Single_Region_Multi_VPC_Connectivity.pdf",
-        "isLink": true
+        "link": "https://d0.awsstatic.com/aws-answers/AWS_Single_Region_Multi_VPC_Connectivity.pdf"
       },
       {
         "answer": "",
@@ -3228,8 +3191,7 @@
         "explanation": "Multi-region AWS KMS keys:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html"
       },
       {
         "answer": "",
@@ -3495,8 +3457,7 @@
         "explanation": "Please see this detailed overview of various types of Amazon EC2 instances from a pricing perspective:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/pricing/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3633,8 +3594,7 @@
         "explanation": "Amazon RDS Read Replica Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/read-replicas/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/read-replicas/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3716,8 +3676,7 @@
         "explanation": "Please read more about Amazon S3 Object Lifecycle Management:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"
       },
       {
         "answer": "Use AWS Glue ETL job to write the transformed data in the refined zone using a compressed file format",
@@ -3733,8 +3692,7 @@
         "explanation": "Please see this example for a AWS Glue ETL Pipeline:"
       },
       {
-        "explanation": "https://aws.amazon.com/glue/",
-        "isLink": true
+        "link": "https://aws.amazon.com/glue/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3824,8 +3782,7 @@
         "explanation": "Overview of Amazon EC2 hibernation:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html"
       },
       {
         "answer": "",
@@ -3911,8 +3868,7 @@
         "explanation": "Amazon Cognito User Pools:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/identity-and-access-management.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/identity-and-access-management.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3998,8 +3954,7 @@
         "explanation": "How Amazon FSx for Windows Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/fsx/windows/",
-        "isLink": true
+        "link": "https://aws.amazon.com/fsx/windows/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4065,16 +4020,14 @@
         "explanation": "How Amazon EFS Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/efs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/efs/"
       },
       {
         "answer": "",
         "explanation": "Max I/O performance mode is used to scale to higher levels of aggregate throughput and operations per second. This scaling is done with a tradeoff of slightly higher latencies for file metadata operations. Highly parallelized applications and workloads, such as big data analysis, media processing, and genomic analysis, can benefit from this mode."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/efs/latest/ug/performance.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/efs/latest/ug/performance.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4216,8 +4169,7 @@
         "explanation": "Complete list of steps to be followed:"
       },
       {
-        "explanation": "https://aws.amazon.com/premiumsupport/knowledge-center/lambda-execution-role-s3-bucket/",
-        "isLink": true
+        "link": "https://aws.amazon.com/premiumsupport/knowledge-center/lambda-execution-role-s3-bucket/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4285,8 +4237,7 @@
         "explanation": "Please see this detailed overview of various types of Amazon EC2 instances from a pricing perspective:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/pricing/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4491,8 +4442,7 @@
         "explanation": "Types of access control in Amazon S3:"
       },
       {
-        "explanation": "https://d1.awsstatic.com/whitepapers/aws-security-whitepaper.pdf",
-        "isLink": true
+        "link": "https://d1.awsstatic.com/whitepapers/aws-security-whitepaper.pdf"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4949,8 +4899,7 @@
         "explanation": "More on Health check grace period:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
       },
       {
         "answer": "The instance maybe in Impaired status",
@@ -5110,8 +5059,7 @@
         "explanation": "AWS DataSync:"
       },
       {
-        "explanation": "https://aws.amazon.com/datasync/",
-        "isLink": true
+        "link": "https://aws.amazon.com/datasync/"
       },
       {
         "answer": "",
@@ -5127,8 +5075,7 @@
         "explanation": "AWS Direct Connect VIFs:"
       },
       {
-        "explanation": "https://aws.amazon.com/premiumsupport/knowledge-center/public-private-interface-dx/",
-        "isLink": true
+        "link": "https://aws.amazon.com/premiumsupport/knowledge-center/public-private-interface-dx/"
       },
       {
         "answer": "",

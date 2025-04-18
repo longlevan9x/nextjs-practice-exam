@@ -268,8 +268,7 @@
         "explanation": "How AWS WAF Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/waf/",
-        "isLink": true
+        "link": "https://aws.amazon.com/waf/"
       },
       {
         "answer": "",
@@ -945,8 +944,7 @@
         "explanation": "Amazon EC2 Instance Store:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1016,8 +1014,7 @@
         "explanation": "How cross-zone load balancing works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1092,12 +1089,10 @@
         "explanation": "You cannot clone databases across AWS regions. The clone databases must be created in the same region as the source databases. Currently, you are limited to 15 clones based on a copy, including clones based on other clones. After that, only copies can be created. However, each copy can also have up to 15 clones."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1110,8 +1105,7 @@
         "explanation": "However, as the given use-case is around pre-release testing, it does not make sense to use production DB itself for testing even if backtracking is enabled. The right solution is to use clones of the production DB for testing."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html"
       },
       {
         "answer": "",
@@ -1242,8 +1236,7 @@
         "explanation": "How Amazon API Gateway Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/api-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/api-gateway/"
       },
       {
         "answer": "",
@@ -1255,8 +1248,7 @@
         "explanation": "How AWS Lambda function works:"
       },
       {
-        "explanation": "https://aws.amazon.com/lambda/",
-        "isLink": true
+        "link": "https://aws.amazon.com/lambda/"
       },
       {
         "answer": "",
@@ -1398,8 +1390,7 @@
         "explanation": "AWS Global Accelerator for Multi-Region applications:"
       },
       {
-        "explanation": "https://aws.amazon.com/global-accelerator/",
-        "isLink": true
+        "link": "https://aws.amazon.com/global-accelerator/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1615,8 +1606,7 @@
         "explanation": "Comparison of NAT instances and NAT gateways:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1685,8 +1675,7 @@
         "explanation": "Auto Scaling Group Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
       },
       {
         "answer": "",
@@ -1855,8 +1844,7 @@
         "explanation": "Spread placement group overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1984,20 +1972,17 @@
         "explanation": "Amazon S3 Standard-IA class is for data that is accessed less frequently but requires rapid access when needed. Amazon S3 Standard-IA offers the high durability, high throughput, and low latency of S3 Standard, with a low per gigabyte storage price and per GB retrieval charge."
       },
       {
-        "explanation": "https://aws.amazon.com/s3/storage-classes/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/storage-classes/"
       },
       {
         "answer": "",
         "explanation": "For the given use case, you can set up an Amazon S3 lifecycle configuration and create a transition action to move objects from Amazon S3 Standard to Amazon S3 Standard-IA 30 days after object creation. You can set up an expiration action to delete the object 5 years after object creation."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2069,8 +2054,7 @@
         "explanation": "For the given use case, the main pricing parameter while using the AWS Direct Connect connection is the Data Transfer Out (DTO) from AWS to the on-premises data center. DTO refers to the cumulative network traffic that is sent through AWS Direct Connect to destinations outside of AWS. This is charged per gigabyte (GB), and unlike capacity measurements, DTO refers to the amount of data transferred, not the speed."
       },
       {
-        "explanation": "https://aws.amazon.com/directconnect/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/directconnect/pricing/"
       },
       {
         "answer": "",
@@ -2560,8 +2544,7 @@
         "explanation": "Amazon Kinesis Data Streams Fanout:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2590,8 +2573,7 @@
         "explanation": "Please understand the differences between the capabilities of Amazon Kinesis Data Streams vs Amazon SQS, as you may be asked scenario-based questions on this topic in the exam."
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/faqs/"
       }
     ],
     "references": [
@@ -2799,8 +2781,7 @@
         "explanation": "AWS Transit Gateway Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
       },
       {
         "answer": "",
@@ -2812,8 +2793,7 @@
         "explanation": "VPC Peering Connections Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2879,8 +2859,7 @@
         "explanation": "Amazon ElastiCache Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis-vs-memcached/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis-vs-memcached/"
       },
       {
         "answer": "",
@@ -2904,8 +2883,7 @@
         "explanation": "Please review this comparison sheet for Redis vs Memcached features:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis-vs-memcached/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis-vs-memcached/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3045,8 +3023,7 @@
         "explanation": "Analyzing multi-speaker audio files using Amazon Transcribe and Amazon Athena:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/machine-learning/automating-the-analysis-of-multi-speaker-audio-files-using-amazon-transcribe-and-amazon-athena",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/machine-learning/automating-the-analysis-of-multi-speaker-audio-files-using-amazon-transcribe-and-amazon-athena"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3124,8 +3101,7 @@
         "explanation": "<strong>Use Amazon ElastiCache for Memcached</strong> - Both Redis and MemCached are in-memory, open-source data stores. Memcached, a high-performance distributed memory cache service, is designed for simplicity while Redis offers a rich set of features that make it effective for a wide range of use cases. Memcached does not offer support for geospatial data."
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis-vs-memcached/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis-vs-memcached/"
       },
       {
         "answer": "",
@@ -3187,8 +3163,7 @@
         "explanation": "How AWS Trusted Advisor Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
-        "isLink": true
+        "link": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3270,8 +3245,7 @@
         "explanation": "AWS WAF - How it Works?:"
       },
       {
-        "explanation": "https://aws.amazon.com/waf/",
-        "isLink": true
+        "link": "https://aws.amazon.com/waf/"
       },
       {
         "answer": "",
@@ -3352,8 +3326,7 @@
         "explanation": "Amazon Athena Benefits:"
       },
       {
-        "explanation": "https://aws.amazon.com/athena/",
-        "isLink": true
+        "link": "https://aws.amazon.com/athena/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3421,8 +3394,7 @@
         "explanation": "Amazon Cognito Features:"
       },
       {
-        "explanation": "https://aws.amazon.com/cognito/details/",
-        "isLink": true
+        "link": "https://aws.amazon.com/cognito/details/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3490,8 +3462,7 @@
         "explanation": "How do dead-letter queues work?:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3563,8 +3534,7 @@
         "explanation": "How Amazon Kinesis Data Streams Work:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/"
       },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt5-q35-i1.jpg",
@@ -3572,8 +3542,7 @@
         "explanation": "Amazon Kinesis Data Streams Key Concepts:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html"
       },
       {
         "answer": "",
@@ -3590,8 +3559,7 @@
         "explanation": "<strong>Feed the streaming transactions into Amazon Kinesis Data Firehose. Leverage AWS Lambda integration to remove sensitive data from every transaction and then store the cleansed transactions in Amazon DynamoDB. The internal applications can consume the raw transactions off the Amazon Kinesis Data Firehose</strong> - Amazon Kinesis Data Firehose is an extract, transform, and load (ETL) service that reliably captures, transforms, and delivers streaming data to data lakes, data stores, and analytics services."
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-firehose/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-firehose/"
       },
       {
         "answer": "",
@@ -3662,6 +3630,7 @@
         "explanation": "Following is a good reference blog for a deep-dive:"
       },
       {
+        "link": "https://aws.amazon.com/blogs/aws/amazon-cloudfront-content-uploads-post-put-other-methods/",
         "answer": "",
         "explanation": "<a href=\"https://aws.amazon.com/blogs/aws/amazon-cloudfront-content-uploads-post-put-other-methods/\">https://aws.amazon.com/blogs/aws/amazon-cloudfront-content-uploads-post-put-other-methods/</a>"
       },
@@ -3679,8 +3648,7 @@
         "explanation": "Amazon S3TA:"
       },
       {
-        "explanation": "https://aws.amazon.com/s3/transfer-acceleration/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/transfer-acceleration/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3764,8 +3732,7 @@
         "explanation": "How Amazon ElastiCache Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3846,8 +3813,7 @@
         "explanation": "Amazon S3 Glacier vs Amazon S3 Glacier Deep Archive:"
       },
       {
-        "explanation": "https://aws.amazon.com/s3/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3991,8 +3957,7 @@
         "explanation": "Aurora Replicas have two main purposes. You can issue queries to them to scale the read operations for your application. You typically do so by connecting to the reader endpoint of the cluster. That way, Aurora can spread the load for read-only connections across as many Aurora Replicas as you have in the cluster. Aurora Replicas also help to increase availability. If the writer instance in a cluster becomes unavailable, Aurora automatically promotes one of the reader instances to take its place as the new writer."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html"
       },
       {
         "answer": "Create a replica Aurora instance in another Availability Zone to improve the availability as the replica can serve as a failover target",
@@ -4007,8 +3972,7 @@
         "explanation": "By promoting an existing Aurora Replica to the new primary instance\nBy creating a new primary instance"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4022,8 +3986,7 @@
         "explanation": "Read replicas, Multi-AZ deployments, and multi-region deployments:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/read-replicas/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/read-replicas/"
       },
       {
         "answer": "",
@@ -4214,8 +4177,7 @@
         "explanation": "You should use security groups to control the inbound and outbound traffic for your database instance. For your application servers, create a security group with inbound rules that use the IP addresses of the client application as the source. This security group allows your client application to connect to your application servers. Then create a second security group for your database instance and create a new rule by specifying the security group that you created earlier as the source for this database-specific security group."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4296,8 +4258,7 @@
         "explanation": "How AWS DataSync Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/datasync/",
-        "isLink": true
+        "link": "https://aws.amazon.com/datasync/"
       },
       {
         "answer": "",
@@ -4643,8 +4604,7 @@
         "explanation": "Redshift Spectrum Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4815,8 +4775,7 @@
         "explanation": "Please see this detailed overview of the volume types for Amazon EBS volumes."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4967,8 +4926,7 @@
         "explanation": "Amazon Kinesis Data Streams Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-streams/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-streams/"
       },
       {
         "answer": "",

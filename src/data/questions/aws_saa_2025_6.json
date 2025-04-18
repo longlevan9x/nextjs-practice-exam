@@ -225,8 +225,7 @@
         "explanation": "How virtual private gateway works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html"
       },
       {
         "answer": "",
@@ -238,8 +237,7 @@
         "explanation": "How AWS transit gateway works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -746,8 +744,7 @@
         "explanation": "Please note that with Amazon S3 Select, you can scan a subset of an object by specifying a range of bytes to query using the ScanRange parameter. This capability lets you parallelize scanning the whole object by splitting the work into separate Amazon S3 Select requests for a series of non-overlapping scan ranges. Use the Amazon S3 Select ScanRange parameter and Start at (Byte) and End at (Byte)."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html"
       }
     ],
     "references": [
@@ -879,8 +876,7 @@
         "explanation": "If your file system is in the Provisioned Throughput mode, you can increase the Provisioned Throughput of your file system as often as you want. You can decrease your file system throughput in Provisioned Throughput mode as long as it's been more than 24 hours since the last decrease. Additionally, you can change between Provisioned Throughput mode and the default Bursting Throughput mode as long as it’s been more than 24 hours since the last throughput mode change."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/efs/latest/ug/performance.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/efs/latest/ug/performance.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1043,8 +1039,7 @@
         "explanation": "File Gateway Architecture:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/whitepapers/latest/file-gateway-hybrid-cloud-storage-architectures/file-gateway-architecture.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/whitepapers/latest/file-gateway-hybrid-cloud-storage-architectures/file-gateway-architecture.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1189,8 +1184,7 @@
         "explanation": "A Spot fleet is a collection, or fleet, of Spot Instances, and optionally On-Demand Instances. The Spot fleet attempts to launch the number of Spot Instances and On-Demand Instances to meet the target capacity that you specified in the Spot fleet request. A Spot fleet allows you to automatically request and manage multiple Spot instances that provide the lowest price per unit of capacity for your cluster or application, like a batch processing job, a Hadoop workflow, or an HPC grid computing job."
       },
       {
-        "explanation": "https://docs.amazonaws.cn/en_us/AWSEC2/latest/UserGuide/how-spot-fleet-works.html",
-        "isLink": true
+        "link": "https://docs.amazonaws.cn/en_us/AWSEC2/latest/UserGuide/how-spot-fleet-works.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1267,8 +1261,7 @@
         "explanation": "Differences between Dedicated Hosts and Dedicated Instances:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html#dedicated-hosts-dedicated-instances",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html#dedicated-hosts-dedicated-instances"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1290,8 +1283,7 @@
         "explanation": "High Level Overview of Amazon EC2 Instance Purchase Options:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/pricing/"
       }
     ],
     "references": [
@@ -1497,8 +1489,7 @@
         "explanation": "End-to-end process for sending messages through virtual queues:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/compute/simple-two-way-messaging-using-the-amazon-sqs-temporary-queue-client/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/compute/simple-two-way-messaging-using-the-amazon-sqs-temporary-queue-client/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1571,8 +1562,7 @@
         "explanation": "Please review this comparison sheet for Redis vs Memcached features:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis-vs-memcached/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis-vs-memcached/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1700,24 +1690,21 @@
         "explanation": "Amazon EC2 Auto Scaling is a fully managed service designed to launch or terminate Amazon EC2 instances automatically to help ensure you have the correct number of Amazon EC2 instances available to handle the load for your application."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
       },
       {
         "answer": "",
         "explanation": "Application Load Balancer automatically distributes your incoming traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
       },
       {
         "answer": "",
         "explanation": "In a multi-AZ deployment, Amazon RDS automatically provisions and maintains a synchronous “standby” replica in a different Availability Zone. Updates to your DB Instance are synchronously replicated across Availability Zones to the standby to keep both in sync and protect your latest database updates against DB instance failure."
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/multi-az/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/multi-az/"
       },
       {
         "answer": "",
@@ -1865,8 +1852,7 @@
         "explanation": "If you have resources in multiple Availability Zones and they share one NAT gateway, and if the NAT gateway’s Availability Zone is down, resources in the other Availability Zones lose internet access. To create a highly available or an Availability Zone independent architecture, create a NAT gateway in each Availability Zone and configure your routing to ensure that resources use the NAT gateway in the same Availability Zone."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1946,8 +1932,7 @@
         "explanation": "Partition placement groups:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1961,8 +1946,7 @@
         "explanation": "Cluster placement groups:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition"
       },
       {
         "answer": "",
@@ -1982,8 +1966,7 @@
         "explanation": "Spread placement groups:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-partition"
       },
       {
         "answer": "",
@@ -2043,12 +2026,10 @@
         "explanation": "Amazon RDS Read Replicas:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
       },
       {
         "answer": "",
@@ -2059,8 +2040,7 @@
         "explanation": "You can create up to five read replicas from one DB instance. For replication to operate effectively, each read replica should have the same amount of compute and storage resources as the source database instance. If you scale the source database instance, also scale the read replicas."
       },
       {
-        "explanation": "https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.ReadReplicas.html",
-        "isLink": true
+        "link": "https://docs.amazonaws.cn/en_us/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.ReadReplicas.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2283,8 +2263,7 @@
         "explanation": "How Amazon EFS Infrequent Access Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/efs/features/infrequent-access/",
-        "isLink": true
+        "link": "https://aws.amazon.com/efs/features/infrequent-access/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2410,6 +2389,7 @@
         "explanation": "Amazon FSx for NetApp ONTAP is a storage service that allows customers to launch and run fully managed ONTAP file systems in the cloud. ONTAP is NetApp’s file system technology that provides a widely adopted set of data access and data management capabilities."
       },
       {
+        "link": "https://d1.awsstatic.com/FSXN%402x.72d7f1b119ec9438a370775830648c5f1f362db7.png",
         "answer": "",
         "explanation": "<a href=\"https://d1.awsstatic.com/FSXN%402x.72d7f1b119ec9438a370775830648c5f1f362db7.png\">Amazon FSx for NetApp ONTAP Overview</a>\nvia - <a href=\"https://aws.amazon.com/fsx/netapp-ontap/\">https://aws.amazon.com/fsx/netapp-ontap/</a>"
       },
@@ -2418,8 +2398,7 @@
         "explanation": "The given use case mandates that the storage on AWS will be accessed by Windows, Mac, and Linux-based Amazon EC2 instances within the same AWS region using both SMB and NFS protocols. Amongst the Amazon FSx family, FSx for ONTAP is the only file system that supports this key requirement."
       },
       {
-        "explanation": "https://aws.amazon.com/fsx/when-to-choose-fsx/",
-        "isLink": true
+        "link": "https://aws.amazon.com/fsx/when-to-choose-fsx/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2834,8 +2813,7 @@
         "explanation": "Create a unified catalog to find data across multiple data stores using AWS Glue:"
       },
       {
-        "explanation": "https://aws.amazon.com/glue/",
-        "isLink": true
+        "link": "https://aws.amazon.com/glue/"
       },
       {
         "answer": "",
@@ -2850,8 +2828,7 @@
         "explanation": "AWS Glue is the right fit since the company is looking at a managed ETL service without having the overhead of configuring, maintaining, or managing any servers."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/load-data-from-amazon-s3-to-amazon-redshift-using-aws-glue.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/load-data-from-amazon-s3-to-amazon-redshift-using-aws-glue.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3078,8 +3055,7 @@
         "explanation": "AWS recommends using separate queues to provide prioritization of work. Therefore, for the given use case, you need to create an Amazon SQS standard queue for processing pro users' photos and another Amazon SQS standard queue for processing lite users' photos. Then you can configure Amazon EC2 instances to prioritize polling for the pro queue over the lite queue."
       },
       {
-        "explanation": "https://aws.amazon.com/sqs/features/",
-        "isLink": true
+        "link": "https://aws.amazon.com/sqs/features/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3100,8 +3076,7 @@
         "explanation": "<strong>Create one Amazon SQS standard queue. Set the visibility timeout of the pro photos to zero. Set up Amazon EC2 instances to prioritize visibility settings so pro photos are processed first</strong> - To prevent other consumers from processing the message again, Amazon SQS sets a visibility timeout, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message. The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. Setting visibility timeout to zero can result in the same pro photo being processed by more than one consumer. This does not help in prioritizing the processing of pro photos over the lite photos."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
       }
     ],
     "references": [
@@ -3315,8 +3290,7 @@
         "explanation": "Using AWS Firewall Manager, you can centrally configure AWS WAF rules, AWS Shield Advanced protection, Amazon Virtual Private Cloud (VPC) security groups, AWS Network Firewalls, and Amazon Route 53 Resolver DNS Firewall rules across accounts and resources in your organization. It does not support Network ACLs as of today."
       },
       {
-        "explanation": "https://aws.amazon.com/firewall-manager/faqs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/firewall-manager/faqs/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4062,8 +4036,7 @@
         "explanation": "Please review this comparison vis-a-vis Multi-AZ vs Read Replica for Amazon RDS:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/multi-az/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/multi-az/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4211,8 +4184,7 @@
         "explanation": "Maximum Resiliency for Critical Workloads:"
       },
       {
-        "explanation": "https://aws.amazon.com/directconnect/resiliency-recommendation/",
-        "isLink": true
+        "link": "https://aws.amazon.com/directconnect/resiliency-recommendation/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4226,8 +4198,7 @@
         "explanation": "High Resiliency for Critical Workloads:"
       },
       {
-        "explanation": "https://aws.amazon.com/directconnect/resiliency-recommendation/",
-        "isLink": true
+        "link": "https://aws.amazon.com/directconnect/resiliency-recommendation/"
       },
       {
         "answer": "",
@@ -4239,8 +4210,7 @@
         "explanation": "Non Critical Production Workloads or Development Workloads:"
       },
       {
-        "explanation": "https://aws.amazon.com/directconnect/resiliency-recommendation/",
-        "isLink": true
+        "link": "https://aws.amazon.com/directconnect/resiliency-recommendation/"
       },
       {
         "answer": "",
@@ -4319,8 +4289,7 @@
         "explanation": "You need to cache objects."
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis-vs-memcached/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis-vs-memcached/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4398,8 +4367,7 @@
         "explanation": "Amazon RDS DB Engine Maintenance:"
       },
       {
-        "explanation": "https://aws.amazon.com/premiumsupport/knowledge-center/rds-required-maintenance/",
-        "isLink": true
+        "link": "https://aws.amazon.com/premiumsupport/knowledge-center/rds-required-maintenance/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4705,8 +4673,7 @@
         "explanation": "Availability Zone Rebalancing Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html"
       },
       {
         "answer": "Amazon EC2 Auto Scaling creates a new scaling activity for terminating the unhealthy instance and then terminates it. Later, another scaling activity launches a new instance to replace the terminated instance",

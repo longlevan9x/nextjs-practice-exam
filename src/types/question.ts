@@ -7,7 +7,7 @@ export interface Answer {
 export interface AnswerExplanation {
   answer: string;
   explanation: string;
-  isLink?: boolean;
+  link?: string;
   image?: string;
 }
 

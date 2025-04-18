@@ -45,8 +45,7 @@
         "explanation": "Benefits of AWS Secrets Manager:"
       },
       {
-        "explanation": "https://aws.amazon.com/secrets-manager/",
-        "isLink": true
+        "link": "https://aws.amazon.com/secrets-manager/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -115,8 +114,7 @@
         "explanation": "Sample Amazon DynamoDB solution for Real time applications:"
       },
       {
-        "explanation": "https://aws.amazon.com/dynamodb/",
-        "isLink": true
+        "link": "https://aws.amazon.com/dynamodb/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -130,8 +128,7 @@
         "explanation": "How Amazon ElastiCache works:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/"
       },
       {
         "answer": "",
@@ -147,8 +144,7 @@
         "explanation": "Example Use cases of Amazon Neptune:"
       },
       {
-        "explanation": "https://aws.amazon.com/neptune/",
-        "isLink": true
+        "link": "https://aws.amazon.com/neptune/"
       }
     ],
     "references": [
@@ -427,8 +423,7 @@
         "explanation": "You can use Secure Socket Layer / Transport Layer Security (SSL/TLS) connections to encrypt data in transit. Amazon RDS creates an SSL certificate and installs the certificate on the DB instance when the instance is provisioned. For MySQL, you launch the MySQL client using the --ssl_ca parameter to reference the public key to encrypt connections. Using SSL, you can encrypt a PostgreSQL connection between your applications and your PostgreSQL DB instances. You can also force all connections to your PostgreSQL DB instance to use SSL."
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/security/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/security/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -502,8 +497,7 @@
         "explanation": "A bucket policy is a type of resource-based policy that can be used to grant permissions to the principal that is specified in the policy. Principals can be in the same account as the resource or in other accounts. For cross-account permissions to other AWS accounts or users in another account, you must use a bucket policy."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -524,8 +518,7 @@
         "explanation": "<strong>Use permissions boundary to grant permission to users in its account as well as to users in another account</strong> - Use a managed policy as the permissions boundary for an IAM entity (user or role). That policy defines the maximum permissions that the identity-based policies can grant to an entity, but does not grant permissions, so this option is not correct for the given use case."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
       }
     ],
     "references": [
@@ -680,8 +673,7 @@
         "explanation": "Example Bucket policies:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -753,8 +745,7 @@
         "explanation": "Four Disaster Recovery scenarios:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -829,8 +820,7 @@
         "explanation": "More on Cluster placement groups:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1043,8 +1033,7 @@
         "explanation": "More on how bias works in Geoproximity routing:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1213,8 +1202,7 @@
         "explanation": "How Amazon CloudFront delivers content to your users:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowCloudFrontWorks.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowCloudFrontWorks.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1346,8 +1334,7 @@
         "explanation": "Amazon Kinesis Data Analytics:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/"
       },
       {
         "answer": "",
@@ -1363,8 +1350,7 @@
         "explanation": "Amazon Kinesis Data Firehose:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1477,8 +1463,7 @@
         "explanation": "You can forecast capacity requirements to control costs."
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/database/amazon-dynamodb-auto-scaling-performance-and-cost-optimization-at-any-scale/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/database/amazon-dynamodb-auto-scaling-performance-and-cost-optimization-at-any-scale/"
       },
       {
         "answer": "",
@@ -1516,8 +1501,7 @@
         "explanation": "Amazon DynamoDB global tables:"
       },
       {
-        "explanation": "https://aws.amazon.com/dynamodb/global-tables/",
-        "isLink": true
+        "link": "https://aws.amazon.com/dynamodb/global-tables/"
       },
       {
         "answer": "",
@@ -1732,8 +1716,7 @@
         "explanation": "Therefore, both AWS Snowball Edge Storage Optimized and AWS Snowball Edge Compute Optimized offer the storage clustering feature."
       },
       {
-        "explanation": "https://aws.amazon.com/snow/#Feature_comparison",
-        "isLink": true
+        "link": "https://aws.amazon.com/snow/#Feature_comparison"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1820,8 +1803,7 @@
         "explanation": "Application Load Balancer Configuration for Security Groups and Health Check Routes:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2068,8 +2050,7 @@
         "explanation": "AMIs Cross-Region copying:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2154,8 +2135,7 @@
         "explanation": "When to VPC-Enable an AWS Lambda Function:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/architecture/best-practices-for-developing-on-aws-lambda/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/architecture/best-practices-for-developing-on-aws-lambda/"
       },
       {
         "answer": "Since AWS Lambda functions can scale extremely quickly, it's a good idea to deploy a Amazon CloudWatch Alarm that notifies your team when function metrics such as ConcurrentExecutions or Invocations exceeds the expected threshold",
@@ -2479,8 +2459,7 @@
         "explanation": "Tape Gateway Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/storagegateway/vtl/",
-        "isLink": true
+        "link": "https://aws.amazon.com/storagegateway/vtl/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2743,8 +2722,7 @@
         "explanation": "Gateway VPC endpoints:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/userguide/vpce-gateway.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpce-gateway.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3116,8 +3094,7 @@
         "explanation": "Amazon EC2 Instance purchasing options:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html"
       },
       {
         "answer": "Amazon Simple Queue Service (Amazon SQS)",
@@ -3198,8 +3175,7 @@
         "explanation": "More on VPC Peering:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3412,8 +3388,7 @@
         "explanation": "AWS Transit Gateway:"
       },
       {
-        "explanation": "https://aws.amazon.com/transit-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/transit-gateway/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3427,8 +3402,7 @@
         "explanation": "Transit VPC:"
       },
       {
-        "explanation": "https://aws.amazon.com/transit-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/transit-gateway/"
       },
       {
         "answer": "",
@@ -3456,8 +3430,7 @@
         "explanation": "Network setup using VPC Peering:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/vpc-peering.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/vpc-peering.html"
       },
       {
         "answer": "",
@@ -3608,8 +3581,7 @@
         "explanation": "To set up origin failover, you must have a distribution with at least two origins. Next, you create an origin group for your distribution that includes two origins, setting one as the primary. Finally, you create or update a cache behavior to use the origin group."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html"
       },
       {
         "answer": "Use field level encryption in Amazon CloudFront to protect sensitive data for specific content",
@@ -3624,8 +3596,7 @@
         "explanation": "To use field-level encryption, when you configure your Amazon CloudFront distribution, specify the set of fields in POST requests that you want to be encrypted, and the public key to use to encrypt them. You can encrypt up to 10 data fields in a request. (You can’t encrypt all of the data in a request with field-level encryption; you must specify individual fields to encrypt.)"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3910,8 +3881,7 @@
         "explanation": "More on Amazon RDS Read Replicas:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/read-replicas/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/read-replicas/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4000,8 +3970,7 @@
         "explanation": "Default Termination policy:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4072,8 +4041,7 @@
         "explanation": "With AWS Transit Gateway, you can simplify the connectivity between multiple VPCs and also connect to any VPC attached to AWS Transit Gateway with a single VPN connection. AWS Transit Gateway also enables you to scale the IPsec VPN throughput with equal cost multi-path (ECMP) routing support over multiple VPN tunnels. A single VPN tunnel still has a maximum throughput of 1.25 Gbps. If you establish multiple VPN tunnels to an ECMP-enabled transit gateway, it can scale beyond the default maximum limit of 1.25 Gbps.  You also must enable the dynamic routing option on your transit gateway to be able to take advantage of ECMP for scalability."
       },
       {
-        "explanation": "https://aws.amazon.com/premiumsupport/knowledge-center/transit-gateway-ecmp-multiple-tunnels/",
-        "isLink": true
+        "link": "https://aws.amazon.com/premiumsupport/knowledge-center/transit-gateway-ecmp-multiple-tunnels/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4174,8 +4142,7 @@
         "explanation": "Image of Cluster placement group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt3-q20-i2.jpg",
@@ -4183,8 +4150,7 @@
         "explanation": "Image of Partition placement group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt3-q20-i3.jpg",
@@ -4192,8 +4158,7 @@
         "explanation": "Image of Spread placement group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4334,8 +4299,7 @@
         "explanation": "How Amazon EventBridge works:"
       },
       {
-        "explanation": "https://aws.amazon.com/eventbridge/",
-        "isLink": true
+        "link": "https://aws.amazon.com/eventbridge/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4669,8 +4633,7 @@
         "explanation": "Architecture of the proposed solution:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/big-data/streaming-data-from-amazon-s3-to-amazon-kinesis-data-streams-using-aws-dms/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/big-data/streaming-data-from-amazon-s3-to-amazon-kinesis-data-streams-using-aws-dms/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4980,8 +4943,7 @@
         "explanation": "Simplified and resilient traffic routing for multi-Region applications using AWS Global Accelerator:"
       },
       {
-        "explanation": "https://aws.amazon.com/global-accelerator/",
-        "isLink": true
+        "link": "https://aws.amazon.com/global-accelerator/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -5057,8 +5019,7 @@
         "explanation": "Social Networking example with Amazon Neptune:"
       },
       {
-        "explanation": "https://aws.amazon.com/neptune/",
-        "isLink": true
+        "link": "https://aws.amazon.com/neptune/"
       },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt3-q11-i2.jpg",
@@ -5066,8 +5027,7 @@
         "explanation": "Identity graphs example with Amazon Neptune:"
       },
       {
-        "explanation": "https://aws.amazon.com/neptune/",
-        "isLink": true
+        "link": "https://aws.amazon.com/neptune/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -5190,12 +5150,10 @@
         "explanation": "Amazon S3 Object Lock is an Amazon S3 feature that allows you to store objects using a write once, read many (WORM) model. You can use WORM protection for scenarios where it is imperative that data is not changed or deleted after it has been written. Whether your business has a requirement to satisfy compliance regulations in the financial or healthcare sector, or you simply want to capture a golden copy of business records for later auditing and reconciliation, Amazon S3 Object Lock is the right tool for you. Object Lock can help prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/storage/protecting-data-with-amazon-s3-object-lock/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/storage/protecting-data-with-amazon-s3-object-lock/"
       }
     ],
     "incorrectAnswerExplanations": [

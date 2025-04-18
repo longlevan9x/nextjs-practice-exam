@@ -49,8 +49,7 @@
         "explanation": "Amazon API Gateway:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/aws/amazon-rds-custom-for-oracle-new-control-capabilities-in-database-environment/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/aws/amazon-rds-custom-for-oracle-new-control-capabilities-in-database-environment/"
       },
       {
         "answer": "",
@@ -62,8 +61,7 @@
         "explanation": "Amazon Kinesis Data Analytics:"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-analytics/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-analytics/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -207,8 +205,7 @@
         "explanation": "How Amazon FSx for Windows File Server Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/fsx/windows/",
-        "isLink": true
+        "link": "https://aws.amazon.com/fsx/windows/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -288,8 +285,7 @@
         "explanation": "Versioning Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -361,8 +357,7 @@
         "explanation": "Amazon Machine Image (AMI) Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -466,8 +461,7 @@
         "explanation": "Amazon S3 supports a waterfall model for transitioning between storage classes, as shown in the diagram below:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html"
       }
     ],
     "references": [
@@ -521,8 +515,7 @@
         "explanation": "How Amazon GuardDuty works:"
       },
       {
-        "explanation": "https://aws.amazon.com/guardduty/",
-        "isLink": true
+        "link": "https://aws.amazon.com/guardduty/"
       },
       {
         "answer": "",
@@ -603,8 +596,7 @@
         "explanation": "Amazon RDS Custom for Oracle:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/aws/amazon-rds-custom-for-oracle-new-control-capabilities-in-database-environment/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/aws/amazon-rds-custom-for-oracle-new-control-capabilities-in-database-environment/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -681,8 +673,7 @@
         "explanation": "File Gateway Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -813,8 +804,7 @@
         "explanation": "Amazon S3 Transfer Acceleration (S3TA) Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/s3/transfer-acceleration/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/transfer-acceleration/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1058,8 +1048,7 @@
         "explanation": "Amazon ElastiCache for Redis Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/elasticache/redis/",
-        "isLink": true
+        "link": "https://aws.amazon.com/elasticache/redis/"
       },
       {
         "answer": "",
@@ -1135,8 +1124,7 @@
         "explanation": "How Amazon SNS Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/sns/",
-        "isLink": true
+        "link": "https://aws.amazon.com/sns/"
       },
       {
         "answer": "",
@@ -1218,8 +1206,7 @@
         "explanation": "Babelfish allows Aurora PostgreSQL to understand T-SQL (Microsoft SQL Server's query language) and SQL Server wire protocol, enabling applications to communicate with Aurora using SQL Server-style queries with minimal code changes. This is ideal for minimizing application code refactoring."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"
       },
       {
         "answer": "Use AWS Schema Conversion Tool (AWS SCT) along with AWS Database Migration Service (AWS DMS) to migrate the schema and data",
@@ -1296,8 +1283,7 @@
         "explanation": "How Amazon API Gateway Works:"
       },
       {
-        "explanation": "https://aws.amazon.com/api-gateway/",
-        "isLink": true
+        "link": "https://aws.amazon.com/api-gateway/"
       },
       {
         "answer": "",
@@ -1556,8 +1542,7 @@
         "explanation": "How Amazon GuardDuty works:"
       },
       {
-        "explanation": "https://aws.amazon.com/guardduty/",
-        "isLink": true
+        "link": "https://aws.amazon.com/guardduty/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1631,8 +1616,7 @@
         "explanation": "How Standby State Works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html"
       },
       {
         "answer": "",
@@ -1714,8 +1698,7 @@
         "explanation": "Optimizing Amazon S3 Performance:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/optimizing-performance.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/optimizing-performance.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1787,8 +1770,7 @@
         "explanation": "More info on Application Load Balancer:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/aws/new-aws-application-load-balancer/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/aws/new-aws-application-load-balancer/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1818,16 +1800,14 @@
         "explanation": "More info on Elastic Load Balancing (ELB):"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/whitepapers/latest/fault-tolerant-components/fault-tolerant-components.pdf",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/whitepapers/latest/fault-tolerant-components/fault-tolerant-components.pdf"
       },
       {
         "answer": "",
         "explanation": "You can span your Auto Scaling group across multiple Availability Zones (AZs) within an AWS Region and then attaching a load balancer to distribute incoming traffic across those zones."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-add-availability-zone.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-add-availability-zone.html"
       }
     ],
     "references": [
@@ -1885,8 +1865,7 @@
         "explanation": "Amazon S3 Storage Classes Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/s3/storage-classes/",
-        "isLink": true
+        "link": "https://aws.amazon.com/s3/storage-classes/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -1903,6 +1882,7 @@
         "explanation": "<strong>Amazon S3 Glacier Deep Archive</strong> - Amazon S3 Glacier Deep Archive is a secure, durable, and low-cost storage class for data archiving. Amazon S3 Glacier Deep Archive does not support millisecond latency, so this option is ruled out."
       },
       {
+        "link": "https://aws.amazon.com/s3/storage-classes",
         "answer": "",
         "explanation": "For more details on the durability, availability, cost and access latency - please review this reference link:\n<a href=\"https://aws.amazon.com/s3/storage-classes\">https://aws.amazon.com/s3/storage-classes</a>"
       }
@@ -2046,8 +2026,7 @@
         "explanation": "AWS Direct Connect Plus VPN:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-vpn.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-vpn.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2116,16 +2095,14 @@
         "explanation": "Amazon CloudFront:"
       },
       {
-        "explanation": "https://aws.amazon.com/cloudfront/",
-        "isLink": true
+        "link": "https://aws.amazon.com/cloudfront/"
       },
       {
         "answer": "",
         "explanation": "An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; these servers are also known as custom origins."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
       },
       {
         "answer": "",
@@ -2346,8 +2323,7 @@
         "explanation": "FIFO Queues Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2416,8 +2392,7 @@
         "explanation": "Server Side Encryption in S3:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2581,8 +2556,7 @@
         "explanation": "Amazon EC2 Instance Store Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2664,8 +2638,7 @@
         "explanation": "Amazon Route 53 Routing Policy Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -2739,8 +2712,7 @@
         "explanation": "Amazon ECS Overview:"
       },
       {
-        "explanation": "https://aws.amazon.com/ecs/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ecs/"
       },
       {
         "answer": "",
@@ -3046,8 +3018,7 @@
         "explanation": "Amazon FSx File Gateway:"
       },
       {
-        "explanation": "https://aws.amazon.com/storagegateway/file/",
-        "isLink": true
+        "link": "https://aws.amazon.com/storagegateway/file/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3130,8 +3101,7 @@
         "explanation": "Permission Boundary Example:"
       },
       {
-        "explanation": "https://aws.amazon.com/blogs/security/delegate-permission-management-to-developers-using-iam-permissions-boundaries/",
-        "isLink": true
+        "link": "https://aws.amazon.com/blogs/security/delegate-permission-management-to-developers-using-iam-permissions-boundaries/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3221,8 +3191,7 @@
         "explanation": "Please see this detailed overview of the volume types for Amazon EBS volumes."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3296,8 +3265,7 @@
         "explanation": "Cluster Placement Group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3311,8 +3279,7 @@
         "explanation": "Partition Placement Group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "answer": "",
@@ -3324,8 +3291,7 @@
         "explanation": "Spread Placement Group:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
       },
       {
         "answer": "",
@@ -3453,8 +3419,7 @@
         "explanation": "Constraints for Lifecycle storage class transitions:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html"
       },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt1-q8-i2.jpg",
@@ -3462,8 +3427,7 @@
         "explanation": "Supported Amazon S3 lifecycle transitions:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3541,8 +3505,7 @@
         "explanation": "How Deleting AWS KMS keys Works:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3610,8 +3573,7 @@
         "explanation": "Amazon EC2 instance types:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/pricing/"
       },
       {
         "answer": "",
@@ -3639,8 +3601,7 @@
         "explanation": "Spot instance pricing:"
       },
       {
-        "explanation": "https://aws.amazon.com/ec2/spot/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/ec2/spot/pricing/"
       },
       {
         "answer": "",
@@ -3652,8 +3613,7 @@
         "explanation": "AWS Lambda function pricing:"
       },
       {
-        "explanation": "https://aws.amazon.com/lambda/pricing/",
-        "isLink": true
+        "link": "https://aws.amazon.com/lambda/pricing/"
       },
       {
         "answer": "",
@@ -3805,8 +3765,7 @@
         "explanation": "Target Tracking Policy Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -3892,8 +3851,7 @@
         "explanation": "Please review this comparison vis-a-vis Multi-AZ vs Read Replica for Amazon RDS:"
       },
       {
-        "explanation": "https://aws.amazon.com/rds/features/multi-az/",
-        "isLink": true
+        "link": "https://aws.amazon.com/rds/features/multi-az/"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4429,8 +4387,7 @@
         "explanation": "AWS Root Account Security Best Practices:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -4859,8 +4816,7 @@
         "explanation": "Amazon Kinesis Data Firehose Overview"
       },
       {
-        "explanation": "https://aws.amazon.com/kinesis/data-firehose/",
-        "isLink": true
+        "link": "https://aws.amazon.com/kinesis/data-firehose/"
       },
       {
         "answer": "",
@@ -4872,8 +4828,7 @@
         "explanation": "Amazon Kinesis Data Firehose to Amazon S3:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -5006,8 +4961,7 @@
         "explanation": "The path pattern is applied only to the path of the URL, not to its query parameters."
       },
       {
-        "explanation": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#path-conditions",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#path-conditions"
       }
     ],
     "incorrectAnswerExplanations": [
@@ -5085,8 +5039,7 @@
         "explanation": "DAX Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html"
       },
       {
         "answer": "Amazon ElastiCache",
@@ -5177,8 +5130,7 @@
         "explanation": "Versioning Overview:"
       },
       {
-        "explanation": "https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html",
-        "isLink": true
+        "link": "https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html"
       },
       {
         "answer": "Enable multi-factor authentication (MFA) delete on the Amazon S3 bucket",
