@@ -82,14 +82,18 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => {})} />
+            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
             <h2 className="text-lg font-normal">
               {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
             </h2>
           </div>
-          <span className={`text-base font-bold ${getStatusColor()}`}>
-            {getQuestionStatus()}
-          </span>
+          {
+            question.showExplanation && (
+              <span className={`text-base font-bold ${getStatusColor()}`}>
+                {getQuestionStatus()}
+              </span>
+            )
+          }
         </div>
         {question.showExplanation && (
           <button
@@ -114,7 +118,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
             answers={question.answers}
             selectedAnswer={question.selectedAnswer ?? null}
             showExplanation={question.showExplanation ?? false}
-            onAnswerSelect={onAnswerSelect ?? (() => {})}
+            onAnswerSelect={onAnswerSelect ?? (() => { })}
             multiple={question.multiple ?? false}
           />
         </div>
