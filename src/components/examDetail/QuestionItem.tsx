@@ -71,7 +71,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
             {/* Question Content */}
             <div className="mt-2 text-gray-700">
                 <div
-                    className="text-base line-clamp-1 leading-normal overflow-hidden"
+                    className="text-base leading-normal overflow-hidden max-h-[1.5em] whitespace-nowrap text-ellipsis"
                     dangerouslySetInnerHTML={{ __html: question.question }}
                 />
             </div>
