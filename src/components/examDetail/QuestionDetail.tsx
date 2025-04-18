@@ -79,7 +79,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   return (
     <div className="flex flex-col w-full">
       {/* Question Section */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+      <div className="flex flex-row sm:items-center justify-between mb-4 gap-2">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
             <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />

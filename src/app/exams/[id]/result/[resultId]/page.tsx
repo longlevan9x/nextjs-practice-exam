@@ -45,7 +45,7 @@ const ResultOverviewPage: React.FC = () => {
 
             // Lấy danh sách câu hỏi gốc từ localStorage
             const originalQuestions = await fetchQuestionsByExamId(result.examId);
-            
+
             if (!originalQuestions || originalQuestions.length === 0) {
                 console.error('Không tìm thấy danh sách câu hỏi gốc.');
                 setLoading(false);
@@ -86,8 +86,10 @@ const ResultOverviewPage: React.FC = () => {
     const scrollToQuestion = (questionId: number) => {
         const element = questionRefs.current.get(questionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setActiveQuestion(questionId);
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setActiveQuestion(questionId);
+            }, 50);
         }
     };
 
@@ -173,13 +175,13 @@ const ResultOverviewPage: React.FC = () => {
             </div>
 
             {/* Quick Navigation Sidebar */}
-            <div className="fixed md:right-4 bottom-4 right-0 left-0 md:left-auto md:top-1/2 md:-translate-y-1/2 z-10 bg-white shadow-lg p-2 md:p-3 rounded-lg md:max-h-[80vh] overflow-x-auto md:overflow-y-auto md:overflow-x-hidden">
-                <div className="flex md:flex-col gap-2 justify-center md:justify-start">
+            <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
+                <div className="flex lg:flex-col gap-2 lg:max-w-none">
                     {filteredQuestions.map((question) => (
                         <button
                             key={question.id}
                             onClick={() => scrollToQuestion(question.id)}
-                            className={`cursor-pointer w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${
+                            className={`cursor-pointer w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${
                                 activeQuestion === question.id
                                     ? 'bg-blue-600 text-white scale-110'
                                     : question.question.isCorrect
@@ -199,11 +201,11 @@ const ResultOverviewPage: React.FC = () => {
                             {(question.question.questionIndex ?? 0) + 1}
                             <span className="absolute -right-1 -top-1">
                                 {question.question.isCorrect ? (
-                                    <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
+                                    <CheckCircleIcon className="w-3 h-3 lg:w-4 lg:h-4 text-green-600" />
                                 ) : question.question.selectedAnswer === null ? (
-                                    <MinusCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
+                                    <MinusCircleIcon className="w-3 h-3 lg:w-4 lg:h-4 text-gray-400" />
                                 ) : (
-                                    <XCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-red-600" />
+                                    <XCircleIcon className="w-3 h-3 lg:w-4 lg:h-4 text-red-600" />
                                 )}
                             </span>
                         </button>
@@ -213,13 +215,13 @@ const ResultOverviewPage: React.FC = () => {
 
             <div className="space-y-6">
                 {filteredQuestions.map((question) => (
-                    <div 
+                    <div
                         ref={(el) => {
                             if (el) {
                                 questionRefs.current.set(question.id, el);
                             }
                         }}
-                        className="border border-blue-200 p-4 rounded-xs h-auto" 
+                        className="border border-blue-200 p-4 rounded-xs h-auto"
                         key={question.id}
                     >
                         <QuestionDetail
