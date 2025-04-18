@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "The engineering team at a company wants to use Amazon Simple Queue Service (Amazon SQS) to decouple components of the underlying application architecture. However, the team is concerned about the VPC-bound components accessing Amazon Simple Queue Service (Amazon SQS) over the public internet.\n\nAs a solutions architect, which of the following solutions would you recommend to address this use-case?",
+    "question": "<p>The engineering team at a company wants to use Amazon Simple Queue Service (Amazon SQS) to decouple components of the underlying application architecture. However, the team is concerned about the VPC-bound components accessing Amazon Simple Queue Service (Amazon SQS) over the public internet.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend to address this use-case?</p>",
     "corrects": [
       3
     ],
@@ -69,7 +69,7 @@
   },
   {
     "id": 2,
-    "question": "Which of the following AWS services provides a highly available and fault-tolerant solution to capture the clickstream events from the source and then provide a concurrent feed of the data stream to the downstream applications?",
+    "question": "<p>Which of the following AWS services provides a highly available and fault-tolerant solution to capture the clickstream events from the source and then provide a concurrent feed of the data stream to the downstream applications?</p>",
     "corrects": [
       4
     ],
@@ -155,7 +155,7 @@
   },
   {
     "id": 3,
-    "question": "A company has its application servers in the public subnet that connect to the Amazon RDS instances in the private subnet. For regular maintenance, the Amazon RDS instances need patch fixes that need to be downloaded from the internet.\n\nConsidering the company uses only IPv4 addressing and is looking for a fully managed service, which of the following would you suggest as an optimal solution?",
+    "question": "<p>A company has its application servers in the public subnet that connect to the Amazon RDS instances in the private subnet. For regular maintenance, the Amazon RDS instances need patch fixes that need to be downloaded from the internet.</p>\n\n<p>Considering the company uses only IPv4 addressing and is looking for a fully managed service, which of the following would you suggest as an optimal solution?</p>",
     "corrects": [
       3
     ],
@@ -229,7 +229,7 @@
   },
   {
     "id": 4,
-    "question": "A developer has configured inbound traffic for the relevant ports in both the Security Group of the Amazon EC2 instance as well as the Network Access Control List (Network ACL) of the subnet for the Amazon EC2 instance. The developer is, however, unable to connect to the service running on the Amazon EC2 instance.\n\nAs a solutions architect, how will you fix this issue?",
+    "question": "<p>A developer has configured inbound traffic for the relevant ports in both the Security Group of the Amazon EC2 instance as well as the Network Access Control List (Network ACL) of the subnet for the Amazon EC2 instance. The developer is, however, unable to connect to the service running on the Amazon EC2 instance.</p>\n\n<p>As a solutions architect, how will you fix this issue?</p>",
     "corrects": [
       2
     ],
@@ -304,7 +304,7 @@
   },
   {
     "id": 5,
-    "question": "An e-commerce company is using Elastic Load Balancing (ELB) for its fleet of Amazon EC2 instances spread across two Availability Zones (AZs), with one instance as a target in Availability Zone A and four instances as targets in Availability Zone B. The company is doing benchmarking for server performance when cross-zone load balancing is enabled compared to the case when cross-zone load balancing is disabled.\n\nAs a solutions architect, which of the following traffic distribution outcomes would you identify as correct?",
+    "question": "<p>An e-commerce company is using Elastic Load Balancing (ELB) for its fleet of Amazon EC2 instances spread across two Availability Zones (AZs), with one instance as a target in Availability Zone A and four instances as targets in Availability Zone B. The company is doing benchmarking for server performance when cross-zone load balancing is enabled compared to the case when cross-zone load balancing is disabled.</p>\n\n<p>As a solutions architect, which of the following traffic distribution outcomes would you identify as correct?</p>",
     "corrects": [
       2
     ],
@@ -399,7 +399,7 @@
   },
   {
     "id": 6,
-    "question": "A company has set up AWS Organizations to manage several departments running their own AWS accounts. The departments operate from different countries and are spread across various AWS Regions. The company wants to set up a consistent resource provisioning process across departments so that each resource follows pre-defined configurations such as using a specific type of Amazon EC2 instances, specific IAM roles for AWS Lambda functions, etc.\n\nAs a solutions architect, which of the following options would you recommend for this use-case?",
+    "question": "<p>A company has set up AWS Organizations to manage several departments running their own AWS accounts. The departments operate from different countries and are spread across various AWS Regions. The company wants to set up a consistent resource provisioning process across departments so that each resource follows pre-defined configurations such as using a specific type of Amazon EC2 instances, specific IAM roles for AWS Lambda functions, etc.</p>\n\n<p>As a solutions architect, which of the following options would you recommend for this use-case?</p>",
     "corrects": [
       1
     ],
@@ -468,7 +468,7 @@
   },
   {
     "id": 7,
-    "question": "An IT consultant is helping a small business revamp their technology infrastructure on the AWS Cloud. The business has two AWS accounts and all resources are provisioned in the us-west-2 region. The IT consultant is trying to launch an Amazon EC2 instance in each of the two AWS accounts such that the instances are in the same Availability Zone (AZ) of the us-west-2 region. Even after selecting the same default subnet (us-west-2a) while launching the instances in each of the AWS accounts, the IT consultant notices that the Availability Zones (AZs) are still different.\n\nAs a solutions architect, which of the following would you suggest resolving this issue?",
+    "question": "<p>An IT consultant is helping a small business revamp their technology infrastructure on the AWS Cloud. The business has two AWS accounts and all resources are provisioned in the <code>us-west-2</code> region. The IT consultant is trying to launch an Amazon EC2 instance in each of the two AWS accounts such that the instances are in the same Availability Zone (AZ) of the <code>us-west-2</code> region. Even after selecting the same default subnet (us-west-2a) while launching the instances in each of the AWS accounts, the IT consultant notices that the Availability Zones (AZs) are still different.</p>\n\n<p>As a solutions architect, which of the following would you suggest resolving this issue?</p>",
     "corrects": [
       3
     ],
@@ -544,7 +544,7 @@
   },
   {
     "id": 8,
-    "question": "An IT company hosts windows based applications on its on-premises data center. The company is looking at moving the business to the AWS Cloud. The cloud solution should offer shared storage space that multiple applications can access without a need for replication. Also, the solution should integrate with the company's self-managed Active Directory domain.\n\nWhich of the following solutions addresses these requirements with the minimal integration effort?",
+    "question": "<p>An IT company hosts windows based applications on its on-premises data center. The company is looking at moving the business to the AWS Cloud. The cloud solution should offer shared storage space that multiple applications can access without a need for replication. Also, the solution should integrate with the company's self-managed Active Directory domain.</p>\n\n<p>Which of the following solutions addresses these requirements with the minimal integration effort?</p>",
     "corrects": [
       4
     ],
@@ -616,7 +616,7 @@
   },
   {
     "id": 9,
-    "question": "A DevOps engineer at an IT company just upgraded an Amazon EC2 instance type from t2.nano (0.5G of RAM, 1 vCPU) to u-12tb1.metal (12.3 TB of RAM, 448 vCPUs). How would you categorize this upgrade?",
+    "question": "<p>A DevOps engineer at an IT company just upgraded an Amazon EC2 instance type from t2.nano (0.5G of RAM, 1 vCPU) to u-12tb1.metal (12.3 TB of RAM, 448 vCPUs). How would you categorize this upgrade?</p>",
     "corrects": [
       1
     ],
@@ -673,7 +673,7 @@
   },
   {
     "id": 10,
-    "question": "The DevOps team at an IT company has created a custom VPC (V1) and attached an Internet Gateway (I1) to the VPC. The team has also created a subnet (S1) in this custom VPC and added a route to this subnet's route table (R1) that directs internet-bound traffic to the Internet Gateway. Now the team launches an Amazon EC2 instance (E1) in the subnet S1 and assigns a public IPv4 address to this instance. Next the team also launches a Network Address Translation (NAT) instance (N1) in the subnet S1.\n\nUnder the given infrastructure setup, which of the following entities is doing the Network Address Translation for the Amazon EC2 instance E1?",
+    "question": "<p>The DevOps team at an IT company has created a custom VPC (V1) and attached an Internet Gateway (I1) to the VPC. The team has also created a subnet (S1) in this custom VPC and added a route to this subnet's route table (R1) that directs internet-bound traffic to the Internet Gateway. Now the team launches an Amazon EC2 instance (E1) in the subnet S1 and assigns a public IPv4 address to this instance. Next the team also launches a Network Address Translation (NAT) instance (N1) in the subnet S1.</p>\n\n<p>Under the given infrastructure setup, which of the following entities is doing the Network Address Translation for the Amazon EC2 instance E1?</p>",
     "corrects": [
       4
     ],
@@ -774,7 +774,7 @@
   },
   {
     "id": 11,
-    "question": "A media company has its corporate headquarters in Los Angeles with an on-premises data center using an AWS Direct Connect connection to the AWS VPC. The branch offices in San Francisco and Miami use AWS Site-to-Site VPN connections to connect to the AWS VPC. The company is looking for a solution to have the branch offices send and receive data with each other as well as with their corporate headquarters.\n\nAs a solutions architect, which of the following AWS services would you recommend addressing this use-case?",
+    "question": "<p>A media company has its corporate headquarters in Los Angeles with an on-premises data center using an AWS Direct Connect connection to the AWS VPC. The branch offices in San Francisco and Miami use AWS Site-to-Site VPN connections to connect to the AWS VPC. The company is looking for a solution to have the branch offices send and receive data with each other as well as with their corporate headquarters.</p>\n\n<p>As a solutions architect, which of the following AWS services would you recommend addressing this use-case?</p>",
     "corrects": [
       3
     ],
@@ -847,7 +847,7 @@
   },
   {
     "id": 12,
-    "question": "Your application is hosted by a provider on yourapp.provider.com. You would like to have your users access your application using www.your-domain.com, which you own and manage under Amazon Route 53.\n\nWhich Amazon Route 53 record should you create?",
+    "question": "<p>Your application is hosted by a provider on yourapp.provider.com. You would like to have your users access your application using www.your-domain.com, which you own and manage under Amazon Route 53.</p>\n\n<p>Which Amazon Route 53 record should you create?</p>",
     "corrects": [
       4
     ],
@@ -919,7 +919,7 @@
   },
   {
     "id": 13,
-    "question": "A leading online gaming company is migrating its flagship application to AWS Cloud for delivering its online games to users across the world. The company would like to use a Network Load Balancer to handle millions of requests per second. The engineering team has provisioned multiple instances in a public subnet and specified these instance IDs as the targets for the NLB.\n\nAs a solutions architect, can you help the engineering team understand the correct routing mechanism for these target instances?",
+    "question": "<p>A leading online gaming company is migrating its flagship application to AWS Cloud for delivering its online games to users across the world. The company would like to use a Network Load Balancer to handle millions of requests per second. The engineering team has provisioned multiple instances in a public subnet and specified these instance IDs as the targets for the NLB.</p>\n\n<p>As a solutions architect, can you help the engineering team understand the correct routing mechanism for these target instances?</p>",
     "corrects": [
       1
     ],
@@ -991,7 +991,7 @@
   },
   {
     "id": 14,
-    "question": "The database backend for a retail company's website is hosted on Amazon RDS for MySQL having a primary instance and three read replicas to support read scalability. The company has mandated that the read replicas should lag no more than 1 second behind the primary instance to provide the best possible user experience. The read replicas are falling further behind during periods of peak traffic spikes, resulting in a bad user experience as the searches produce inconsistent results.\n\nYou have been hired as an AWS Certified Solutions Architect - Associate to reduce the replication lag as much as possible with minimal changes to the application code or the effort required to manage the underlying resources.\n\nWhich of the following will you recommend?",
+    "question": "<p>The database backend for a retail company's website is hosted on Amazon RDS for MySQL having a primary instance and three read replicas to support read scalability. The company has mandated that the read replicas should lag no more than 1 second behind the primary instance to provide the best possible user experience. The read replicas are falling further behind during periods of peak traffic spikes, resulting in a bad user experience as the searches produce inconsistent results.</p>\n\n<p>You have been hired as an AWS Certified Solutions Architect - Associate to reduce the replication lag as much as possible with minimal changes to the application code or the effort required to manage the underlying resources.</p>\n\n<p>Which of the following will you recommend?</p>",
     "corrects": [
       2
     ],
@@ -1063,7 +1063,7 @@
   },
   {
     "id": 15,
-    "question": "A media streaming company is looking to migrate its on-premises infrastructure into the AWS Cloud. The engineering team is looking for a fully managed NoSQL persistent data store with in-memory caching to maintain low latency that is critical for real-time scenarios such as video streaming and interactive content. The team expects the number of concurrent users to touch up to a million so the database should be able to scale elastically.\n\nAs a solutions architect, which of the following AWS services would you recommend for this use-case?",
+    "question": "<p>A media streaming company is looking to migrate its on-premises infrastructure into the AWS Cloud. The engineering team is looking for a fully managed NoSQL persistent data store with in-memory caching to maintain low latency that is critical for real-time scenarios such as video streaming and interactive content. The team expects the number of concurrent users to touch up to a million so the database should be able to scale elastically.</p>\n\n<p>As a solutions architect, which of the following AWS services would you recommend for this use-case?</p>",
     "corrects": [
       1
     ],
@@ -1122,7 +1122,7 @@
   },
   {
     "id": 16,
-    "question": "A company has hired you as an AWS Certified Solutions Architect – Associate to help with redesigning a real-time data processor. The company wants to build custom applications that process and analyze the streaming data for its specialized needs.\n\nWhich solution will you recommend to address this use-case?",
+    "question": "<p>A company has hired you as an AWS Certified Solutions Architect – Associate to help with redesigning a real-time data processor. The company wants to build custom applications that process and analyze the streaming data for its specialized needs.</p>\n\n<p>Which solution will you recommend to address this use-case?</p>",
     "corrects": [
       1
     ],
@@ -1200,7 +1200,7 @@
   },
   {
     "id": 17,
-    "question": "A small business has been running its IT systems on the on-premises infrastructure but the business now plans to migrate to AWS Cloud for operational efficiencies.\n\nAs a Solutions Architect, can you suggest a cost-effective serverless solution for its flagship application that has both static and dynamic content?",
+    "question": "<p>A small business has been running its IT systems on the on-premises infrastructure but the business now plans to migrate to AWS Cloud for operational efficiencies.</p>\n\n<p>As a Solutions Architect, can you suggest a cost-effective serverless solution for its flagship application that has both static and dynamic content?</p>",
     "corrects": [
       3
     ],
@@ -1259,7 +1259,7 @@
   },
   {
     "id": 18,
-    "question": "An engineering lead is designing a VPC with public and private subnets. The VPC and subnets use IPv4 CIDR blocks. There is one public subnet and one private subnet in each of three Availability Zones (AZs) for high availability. An internet gateway is used to provide internet access for the public subnets. The private subnets require access to the internet to allow Amazon EC2 instances to download software updates.\n\nWhich of the following options represents the correct solution to set up internet access for the private subnets?",
+    "question": "<p>An engineering lead is designing a VPC with public and private subnets. The VPC and subnets use IPv4 CIDR blocks. There is one public subnet and one private subnet in each of three Availability Zones (AZs) for high availability. An internet gateway is used to provide internet access for the public subnets. The private subnets require access to the internet to allow Amazon EC2 instances to download software updates.</p>\n\n<p>Which of the following options represents the correct solution to set up internet access for the private subnets?</p>",
     "corrects": [
       3
     ],
@@ -1339,7 +1339,7 @@
   },
   {
     "id": 19,
-    "question": "A biotechnology company has multiple High Performance Computing (HPC) workflows that quickly and accurately process and analyze genomes for hereditary diseases. The company is looking to migrate these workflows from their on-premises infrastructure to AWS Cloud.\n\nAs a solutions architect, which of the following networking components would you recommend on the Amazon EC2 instances running these HPC workflows?",
+    "question": "<p>A biotechnology company has multiple High Performance Computing (HPC) workflows that quickly and accurately process and analyze genomes for hereditary diseases. The company is looking to migrate these workflows from their on-premises infrastructure to AWS Cloud.</p>\n\n<p>As a solutions architect, which of the following networking components would you recommend on the Amazon EC2 instances running these HPC workflows?</p>",
     "corrects": [
       1
     ],
@@ -1408,7 +1408,7 @@
   },
   {
     "id": 20,
-    "question": "The business analytics team at a company has been running ad-hoc queries on Oracle and PostgreSQL services on Amazon RDS to prepare daily reports for senior management. To facilitate the business analytics reporting, the engineering team now wants to continuously replicate this data and consolidate these databases into a petabyte-scale data warehouse by streaming data to Amazon Redshift.\n\nAs a solutions architect, which of the following would you recommend as the MOST resource-efficient solution that requires the LEAST amount of development time without the need to manage the underlying infrastructure?",
+    "question": "<p>The business analytics team at a company has been running ad-hoc queries on Oracle and PostgreSQL services on Amazon RDS to prepare daily reports for senior management. To facilitate the business analytics reporting, the engineering team now wants to continuously replicate this data and consolidate these databases into a petabyte-scale data warehouse by streaming data to Amazon Redshift.</p>\n\n<p>As a solutions architect, which of the following would you recommend as the MOST resource-efficient solution that requires the LEAST amount of development time without the need to manage the underlying infrastructure?</p>",
     "corrects": [
       1
     ],
@@ -1497,7 +1497,7 @@
   },
   {
     "id": 21,
-    "question": "An AWS Organization is using Service Control Policies (SCPs) for central control over the maximum available permissions for all accounts in their organization. This allows the organization to ensure that all accounts stay within the organization’s access control guidelines.\n\nWhich of the given scenarios are correct regarding the permissions described below? (Select three)",
+    "question": "<p>An AWS Organization is using Service Control Policies (SCPs) for central control over the maximum available permissions for all accounts in their organization. This allows the organization to ensure that all accounts stay within the organization’s access control guidelines.</p>\n\n<p>Which of the given scenarios are correct regarding the permissions described below? (Select three)</p>",
     "corrects": [
       1,
       3,
@@ -1600,7 +1600,7 @@
   },
   {
     "id": 22,
-    "question": "A financial services company is looking to move its on-premises IT infrastructure to AWS Cloud. The company has multiple long-term server bound licenses across the application stack and the CTO wants to continue to utilize those licenses while moving to AWS.\n\nAs a solutions architect, which of the following would you recommend as the MOST cost-effective solution?",
+    "question": "<p>A financial services company is looking to move its on-premises IT infrastructure to AWS Cloud. The company has multiple long-term server bound licenses across the application stack and the CTO wants to continue to utilize those licenses while moving to AWS.</p>\n\n<p>As a solutions architect, which of the following would you recommend as the MOST cost-effective solution?</p>",
     "corrects": [
       2
     ],
@@ -1681,7 +1681,7 @@
   },
   {
     "id": 23,
-    "question": "A financial services company wants to move the Windows file server clusters out of their datacenters. They are looking for cloud file storage offerings that provide full Windows compatibility. Can you identify the AWS storage services that provide highly reliable file storage that is accessible over the industry-standard Server Message Block (SMB) protocol compatible with Windows systems? (Select two)",
+    "question": "<p>A financial services company wants to move the Windows file server clusters out of their datacenters. They are looking for cloud file storage offerings that provide full Windows compatibility. Can you identify the AWS storage services that provide highly reliable file storage that is accessible over the industry-standard Server Message Block (SMB) protocol compatible with Windows systems? (Select two)</p>",
     "corrects": [
       1,
       4
@@ -1755,7 +1755,7 @@
   },
   {
     "id": 24,
-    "question": "A company wants to improve its gaming application by adding a leaderboard that uses a complex proprietary algorithm based on the participating user's performance metrics to identify the top users on a real-time basis. The technical requirements mandate high elasticity, low latency, and real-time processing to deliver customizable user data for the community of users. The leaderboard would be accessed by millions of users simultaneously.\n\nWhich of the following options support the case for using Amazon ElastiCache to meet the given requirements? (Select two)",
+    "question": "<p>A company wants to improve its gaming application by adding a leaderboard that uses a complex proprietary algorithm based on the participating user's performance metrics to identify the top users on a real-time basis. The technical requirements mandate high elasticity, low latency, and real-time processing to deliver customizable user data for the community of users. The leaderboard would be accessed by millions of users simultaneously.</p>\n\n<p>Which of the following options support the case for using Amazon ElastiCache to meet the given requirements? (Select two)</p>",
     "corrects": [
       1,
       4
@@ -1842,7 +1842,7 @@
   },
   {
     "id": 25,
-    "question": "A retail company uses AWS Cloud to manage its IT infrastructure. The company has set up AWS Organizations to manage several departments running their AWS accounts and using resources such as Amazon EC2 instances and Amazon RDS databases. The company wants to provide shared and centrally-managed VPCs to all departments using applications that need a high degree of interconnectivity.\n\nAs a solutions architect, which of the following options would you choose to facilitate this use-case?",
+    "question": "<p>A retail company uses AWS Cloud to manage its IT infrastructure. The company has set up AWS Organizations to manage several departments running their AWS accounts and using resources such as Amazon EC2 instances and Amazon RDS databases. The company wants to provide shared and centrally-managed VPCs to all departments using applications that need a high degree of interconnectivity.</p>\n\n<p>As a solutions architect, which of the following options would you choose to facilitate this use-case?</p>",
     "corrects": [
       1
     ],
@@ -1906,7 +1906,7 @@
   },
   {
     "id": 26,
-    "question": "A leading bank has moved its IT infrastructure to AWS Cloud and they have been using Amazon EC2 Auto Scaling for their web servers. This has helped them deal with traffic spikes effectively. But, their MySQL relational database has now become a bottleneck and they urgently need a fully managed auto scaling solution for their relational database to address any unpredictable changes in the traffic.\n\nCan you identify the AWS service that is best suited for this use-case?",
+    "question": "<p>A leading bank has moved its IT infrastructure to AWS Cloud and they have been using Amazon EC2 Auto Scaling for their web servers. This has helped them deal with traffic spikes effectively. But, their MySQL relational database has now become a bottleneck and they urgently need a fully managed auto scaling solution for their relational database to address any unpredictable changes in the traffic.</p>\n\n<p>Can you identify the AWS service that is best suited for this use-case?</p>",
     "corrects": [
       2
     ],
@@ -1965,7 +1965,7 @@
   },
   {
     "id": 27,
-    "question": "The engineering team at a social media company wants to use Amazon CloudWatch alarms to automatically recover Amazon EC2 instances if they become impaired. The team has hired you as a solutions architect to provide subject matter expertise.\n\nAs a solutions architect, which of the following statements would you identify as CORRECT regarding this automatic recovery process? (Select two)",
+    "question": "<p>The engineering team at a social media company wants to use Amazon CloudWatch alarms to automatically recover Amazon EC2 instances if they become impaired. The team has hired you as a solutions architect to provide subject matter expertise.</p>\n\n<p>As a solutions architect, which of the following statements would you identify as CORRECT regarding this automatic recovery process? (Select two)</p>",
     "corrects": [
       1,
       4
@@ -2034,7 +2034,7 @@
   },
   {
     "id": 28,
-    "question": "A company recently experienced a database outage in its on-premises data center. The company now wants to migrate to a reliable database solution on AWS that minimizes data loss and stores every transaction on at least two nodes.\n\nWhich of the following solutions meets these requirements?",
+    "question": "<p>A company recently experienced a database outage in its on-premises data center. The company now wants to migrate to a reliable database solution on AWS that minimizes data loss and stores every transaction on at least two nodes.</p>\n\n<p>Which of the following solutions meets these requirements?</p>",
     "corrects": [
       3
     ],
@@ -2110,7 +2110,7 @@
   },
   {
     "id": 29,
-    "question": "A startup has recently moved their monolithic web application to AWS Cloud. The application runs on a single Amazon EC2 instance. Currently, the user base is small and the startup does not want to spend effort on elaborate disaster recovery strategies or Auto Scaling Group. The application can afford a maximum downtime of 10 minutes.\n\nIn case of a failure, which of these options would you suggest as a cost-effective and automatic recovery procedure for the instance?",
+    "question": "<p>A startup has recently moved their monolithic web application to AWS Cloud. The application runs on a single Amazon EC2 instance. Currently, the user base is small and the startup does not want to spend effort on elaborate disaster recovery strategies or Auto Scaling Group. The application can afford a maximum downtime of 10 minutes.</p>\n\n<p>In case of a failure, which of these options would you suggest as a cost-effective and automatic recovery procedure for the instance?</p>",
     "corrects": [
       2
     ],
@@ -2177,7 +2177,7 @@
   },
   {
     "id": 30,
-    "question": "The development team at a retail company wants to optimize the cost of Amazon EC2 instances. The team wants to move certain nightly batch jobs to spot instances. The team has hired you as a solutions architect to provide the initial guidance.\n\nWhich of the following would you identify as CORRECT regarding the capabilities of spot instances? (Select three)",
+    "question": "<p>The development team at a retail company wants to optimize the cost of Amazon EC2 instances. The team wants to move certain nightly batch jobs to spot instances. The team has hired you as a solutions architect to provide the initial guidance.</p>\n\n<p>Which of the following would you identify as CORRECT regarding the capabilities of spot instances? (Select three)</p>",
     "corrects": [
       1,
       4,
@@ -2278,7 +2278,7 @@
   },
   {
     "id": 31,
-    "question": "A leading news aggregation company offers hundreds of digital products and services for customers ranging from law firms to banks to consumers. The company bills its clients based on per unit of clickstream data provided to the clients. As the company operates in a regulated industry, it needs to have the same ordered clickstream data available for auditing within a window of 7 days.\n\nAs a solutions architect, which of the following AWS services provides the ability to run the billing process and auditing process on the given clickstream data in the same order?",
+    "question": "<p>A leading news aggregation company offers hundreds of digital products and services for customers ranging from law firms to banks to consumers. The company bills its clients based on per unit of clickstream data provided to the clients. As the company operates in a regulated industry, it needs to have the same ordered clickstream data available for auditing within a window of 7 days.</p>\n\n<p>As a solutions architect, which of the following AWS services provides the ability to run the billing process and auditing process on the given clickstream data in the same order?</p>",
     "corrects": [
       4
     ],
@@ -2356,7 +2356,7 @@
   },
   {
     "id": 32,
-    "question": "A global pharmaceutical company wants to move most of the on-premises data into Amazon S3, Amazon Elastic File System (Amazon EFS), and Amazon FSx for Windows File Server easily, quickly, and cost-effectively.\n\nAs a solutions architect, which of the following solutions would you recommend as the BEST fit to automate and accelerate online data transfers to these AWS storage services?",
+    "question": "<p>A global pharmaceutical company wants to move most of the on-premises data into Amazon S3, Amazon Elastic File System (Amazon EFS), and Amazon FSx for Windows File Server easily, quickly, and cost-effectively.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend as the BEST fit to automate and accelerate online data transfers to these AWS storage services?</p>",
     "corrects": [
       3
     ],
@@ -2442,7 +2442,7 @@
   },
   {
     "id": 33,
-    "question": "A healthcare company has deployed its web application on Amazon Elastic Container Service (Amazon ECS) container instances running behind an Application Load Balancer. The website slows down when the traffic spikes and the website availability is also reduced. The development team has configured Amazon CloudWatch alarms to receive notifications whenever there is an availability constraint so the team can scale out resources. The company wants an automated solution to respond to such events.\n\nWhich of the following addresses the given use case?",
+    "question": "<p>A healthcare company has deployed its web application on Amazon Elastic Container Service (Amazon ECS) container instances running behind an Application Load Balancer. The website slows down when the traffic spikes and the website availability is also reduced. The development team has configured Amazon CloudWatch alarms to receive notifications whenever there is an availability constraint so the team can scale out resources. The company wants an automated solution to respond to such events.</p>\n\n<p>Which of the following addresses the given use case?</p>",
     "corrects": [
       3
     ],
@@ -2514,7 +2514,7 @@
   },
   {
     "id": 34,
-    "question": "An IT company is using Amazon Simple Queue Service (Amazon SQS) queues for decoupling the various components of application architecture. As the consuming components need additional time to process Amazon Simple Queue Service (Amazon SQS) messages, the company wants to postpone the delivery of new messages to the queue for a few seconds.\n\nAs a solutions architect, which of the following solutions would you suggest to the company?",
+    "question": "<p>An IT company is using Amazon Simple Queue Service (Amazon SQS) queues for decoupling the various components of application architecture. As the consuming components need additional time to process Amazon Simple Queue Service (Amazon SQS) messages, the company wants to postpone the delivery of new messages to the queue for a few seconds.</p>\n\n<p>As a solutions architect, which of the following solutions would you suggest to the company?</p>",
     "corrects": [
       4
     ],
@@ -2581,7 +2581,7 @@
   },
   {
     "id": 35,
-    "question": "An e-commerce company uses Microsoft Active Directory to provide users and groups with access to resources on the on-premises infrastructure. The company has extended its IT infrastructure to AWS in the form of a hybrid cloud. The engineering team at the company wants to run directory-aware workloads on AWS for a SQL Server-based application. The team also wants to configure a trust relationship to enable single sign-on (SSO) for its users to access resources in either domain.\n\nAs a solutions architect, which of the following AWS services would you recommend for this use-case?",
+    "question": "<p>An e-commerce company uses Microsoft Active Directory to provide users and groups with access to resources on the on-premises infrastructure. The company has extended its IT infrastructure to AWS in the form of a hybrid cloud. The engineering team at the company wants to run directory-aware workloads on AWS for a SQL Server-based application. The team also wants to configure a trust relationship to enable single sign-on (SSO) for its users to access resources in either domain.</p>\n\n<p>As a solutions architect, which of the following AWS services would you recommend for this use-case?</p>",
     "corrects": [
       4
     ],
@@ -2652,7 +2652,7 @@
   },
   {
     "id": 36,
-    "question": "The engineering team at an e-commerce company wants to migrate from Amazon Simple Queue Service (Amazon SQS) Standard queues to FIFO (First-In-First-Out) queues with batching.\n\nAs a solutions architect, which of the following steps would you have in the migration checklist? (Select three)",
+    "question": "<p>The engineering team at an e-commerce company wants to migrate from Amazon Simple Queue Service (Amazon SQS) Standard queues to FIFO (First-In-First-Out) queues with batching.</p>\n\n<p>As a solutions architect, which of the following steps would you have in the migration checklist? (Select three)</p>",
     "corrects": [
       1,
       4,
@@ -2748,7 +2748,7 @@
   },
   {
     "id": 37,
-    "question": "A startup has created a new web application for users to complete a risk assessment survey for COVID-19 symptoms via a self-administered questionnaire. The startup has purchased the domain covid19survey.com using Amazon Route 53. The web development team would like to create Amazon Route 53 record so that all traffic for covid19survey.com is routed to www.covid19survey.com.\n\nAs a solutions architect, which of the following is the MOST cost-effective solution that you would recommend to the web development team?",
+    "question": "<p>A startup has created a new web application for users to complete a risk assessment survey for COVID-19 symptoms via a self-administered questionnaire. The startup has purchased the domain covid19survey.com using Amazon Route 53. The web development team would like to create Amazon Route 53 record so that all traffic for covid19survey.com is routed to www.covid19survey.com.</p>\n\n<p>As a solutions architect, which of the following is the MOST cost-effective solution that you would recommend to the web development team?</p>",
     "corrects": [
       3
     ],
@@ -2820,7 +2820,7 @@
   },
   {
     "id": 38,
-    "question": "A retail company has connected its on-premises data center to the AWS Cloud via AWS Direct Connect. The company wants to be able to resolve Domain Name System (DNS) queries for any resources in the on-premises network from the AWS VPC and also resolve any DNS queries for resources in the AWS VPC from the on-premises network.\n\nAs a solutions architect, which of the following solutions can be combined to address the given use case? (Select two)",
+    "question": "<p>A retail company has connected its on-premises data center to the AWS Cloud via AWS Direct Connect. The company wants to be able to resolve Domain Name System (DNS) queries for any resources in the on-premises network from the AWS VPC and also resolve any DNS queries for resources in the AWS VPC from the on-premises network.</p>\n\n<p>As a solutions architect, which of the following solutions can be combined to address the given use case? (Select two)</p>",
     "corrects": [
       2,
       5
@@ -2916,7 +2916,7 @@
   },
   {
     "id": 39,
-    "question": "An IT company is looking to move its on-premises infrastructure to AWS Cloud. The company has a portfolio of applications with a few of them using server bound licenses that are valid for the next year. To utilize the licenses, the CTO wants to use dedicated hosts for a one year term and then migrate the given instances to default tenancy thereafter.\n\nAs a solutions architect, which of the following options would you identify as CORRECT for changing the tenancy of an instance after you have launched it? (Select two)",
+    "question": "<p>An IT company is looking to move its on-premises infrastructure to AWS Cloud. The company has a portfolio of applications with a few of them using server bound licenses that are valid for the next year. To utilize the licenses, the CTO wants to use dedicated hosts for a one year term and then migrate the given instances to default tenancy thereafter.</p>\n\n<p>As a solutions architect, which of the following options would you identify as CORRECT for changing the tenancy of an instance after you have launched it? (Select two)</p>",
     "corrects": [
       2,
       4
@@ -3002,7 +3002,7 @@
   },
   {
     "id": 40,
-    "question": "The engineering team at a company is moving the static content from the company's logistics website hosted on Amazon EC2 instances to an Amazon S3 bucket. The team wants to use an Amazon CloudFront distribution to deliver the static content. The security group used by the Amazon EC2 instances allows the website to be accessed by a limited set of IP ranges from the company's suppliers. Post-migration to Amazon CloudFront, access to the static content should only be allowed from the aforementioned IP addresses.\n\nWhich options would you combine to build a solution to meet these requirements? (Select two)",
+    "question": "<p>The engineering team at a company is moving the static content from the company's logistics website hosted on Amazon EC2 instances to an Amazon S3 bucket. The team wants to use an Amazon CloudFront distribution to deliver the static content. The security group used by the Amazon EC2 instances allows the website to be accessed by a limited set of IP ranges from the company's suppliers. Post-migration to Amazon CloudFront, access to the static content should only be allowed from the aforementioned IP addresses.</p>\n\n<p>Which options would you combine to build a solution to meet these requirements? (Select two)</p>",
     "corrects": [
       2,
       5
@@ -3145,7 +3145,7 @@
   },
   {
     "id": 41,
-    "question": "A financial services company is migrating their messaging queues from self-managed message-oriented middleware systems to Amazon Simple Queue Service (Amazon SQS). The development team at the company wants to minimize the costs of using Amazon SQS.\n\nAs a solutions architect, which of the following options would you recommend for the given use-case?",
+    "question": "<p>A financial services company is migrating their messaging queues from self-managed message-oriented middleware systems to Amazon Simple Queue Service (Amazon SQS). The development team at the company wants to minimize the costs of using Amazon SQS.</p>\n\n<p>As a solutions architect, which of the following options would you recommend for the given use-case?</p>",
     "corrects": [
       4
     ],
@@ -3222,7 +3222,7 @@
   },
   {
     "id": 42,
-    "question": "A financial services company has recently migrated from on-premises infrastructure to AWS Cloud. The DevOps team wants to implement a solution that allows all resource configurations to be reviewed and make sure that they meet compliance guidelines. Also, the solution should be able to offer the capability to look into the resource configuration history across the application stack.\n\nAs a solutions architect, which of the following solutions would you recommend to the team?",
+    "question": "<p>A financial services company has recently migrated from on-premises infrastructure to AWS Cloud. The DevOps team wants to implement a solution that allows all resource configurations to be reviewed and make sure that they meet compliance guidelines. Also, the solution should be able to offer the capability to look into the resource configuration history across the application stack.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend to the team?</p>",
     "corrects": [
       1
     ],
@@ -3313,7 +3313,7 @@
   },
   {
     "id": 43,
-    "question": "A health care application processes the real-time health data of the patients into an analytics workflow. With a sharp increase in the number of users, the system has become slow and sometimes even unresponsive as it does not have a retry mechanism. The startup is looking at a scalable solution that has minimal implementation overhead.\n\nWhich of the following would you recommend as a scalable alternative to the current solution?",
+    "question": "<p>A health care application processes the real-time health data of the patients into an analytics workflow. With a sharp increase in the number of users, the system has become slow and sometimes even unresponsive as it does not have a retry mechanism. The startup is looking at a scalable solution that has minimal implementation overhead.</p>\n\n<p>Which of the following would you recommend as a scalable alternative to the current solution?</p>",
     "corrects": [
       2
     ],
@@ -3385,7 +3385,7 @@
   },
   {
     "id": 44,
-    "question": "A retail organization is moving some of its on-premises data to AWS Cloud. The DevOps team at the organization has set up an AWS Managed IPSec VPN Connection between their remote on-premises network and their Amazon VPC over the internet.\n\nWhich of the following represents the correct configuration for the IPSec VPN Connection?",
+    "question": "<p>A retail organization is moving some of its on-premises data to AWS Cloud. The DevOps team at the organization has set up an AWS Managed IPSec VPN Connection between their remote on-premises network and their Amazon VPC over the internet.</p>\n\n<p>Which of the following represents the correct configuration for the IPSec VPN Connection?</p>",
     "corrects": [
       2
     ],
@@ -3474,7 +3474,7 @@
   },
   {
     "id": 45,
-    "question": "A data analytics company manages an application that stores user data in a Amazon DynamoDB table. The development team has observed that once in a while, the application writes corrupted data in the Amazon DynamoDB table. As soon as the issue is detected, the team needs to remove the corrupted data at the earliest.\n\nWhat do you recommend?",
+    "question": "<p>A data analytics company manages an application that stores user data in a Amazon DynamoDB table. The development team has observed that once in a while, the application writes corrupted data in the Amazon DynamoDB table. As soon as the issue is detected, the team needs to remove the corrupted data at the earliest.</p>\n\n<p>What do you recommend?</p>",
     "corrects": [
       3
     ],
@@ -3560,7 +3560,7 @@
   },
   {
     "id": 46,
-    "question": "A company has a hybrid cloud structure for its on-premises data center and AWS Cloud infrastructure. The company wants to build a web log archival solution such that only the most frequently accessed logs are available as cached data locally while backing up all logs on Amazon S3.\n\nAs a solutions architect, which of the following solutions would you recommend for this use-case?",
+    "question": "<p>A company has a hybrid cloud structure for its on-premises data center and AWS Cloud infrastructure. The company wants to build a web log archival solution such that only the most frequently accessed logs are available as cached data locally while backing up all logs on Amazon S3.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend for this use-case?</p>",
     "corrects": [
       1
     ],
@@ -3619,7 +3619,7 @@
   },
   {
     "id": 47,
-    "question": "A retail company has its flagship application running on a fleet of Amazon EC2 instances behind Elastic Load Balancing (ELB). The engineering team has been seeing recurrent issues wherein the in-flight requests from the ELB to the Amazon EC2 instances are getting dropped when an instance becomes unhealthy.\n\nWhich of the following features can be used to address this issue?",
+    "question": "<p>A retail company has its flagship application running on a fleet of Amazon EC2 instances behind Elastic Load Balancing (ELB). The engineering team has been seeing recurrent issues wherein the in-flight requests from the ELB to the Amazon EC2 instances are getting dropped when an instance becomes unhealthy.</p>\n\n<p>Which of the following features can be used to address this issue?</p>",
     "corrects": [
       1
     ],
@@ -3678,7 +3678,7 @@
   },
   {
     "id": 48,
-    "question": "An e-commerce company has deployed its application on several Amazon EC2 instances that are configured in a private subnet using IPv4. These Amazon EC2 instances read and write a huge volume of data to and from Amazon S3 in the same AWS region. The company has set up subnet routing to direct all the internet-bound traffic through a Network Address Translation gateway (NAT gateway). The company wants to build the most cost-optimal solution without impacting the application's ability to communicate with Amazon S3 or the internet.\n\nAs an AWS Certified Solutions Architect Associate, which of the following would you recommend?",
+    "question": "<p>An e-commerce company has deployed its application on several Amazon EC2 instances that are configured in a private subnet using IPv4. These Amazon EC2 instances read and write a huge volume of data to and from Amazon S3 in the same AWS region. The company has set up subnet routing to direct all the internet-bound traffic through a Network Address Translation gateway (NAT gateway). The company wants to build the most cost-optimal solution without impacting the application's ability to communicate with Amazon S3 or the internet.</p>\n\n<p>As an AWS Certified Solutions Architect Associate, which of the following would you recommend?</p>",
     "corrects": [
       1
     ],
@@ -3752,7 +3752,7 @@
   },
   {
     "id": 49,
-    "question": "A video conferencing application is hosted on a fleet of EC2 instances which are part of an Auto Scaling group. The Auto Scaling group uses a Launch Template (LT1) with \"dedicated\" instance tenancy but the VPC (V1) used by the Launch Template LT1 has the instance tenancy set to default. Later the DevOps team creates a new Launch Template (LT2) with shared (default) instance tenancy but the VPC (V2) used by the Launch Template LT2 has the instance tenancy set to dedicated.\n\nWhich of the following is correct regarding the instances launched via Launch Template LT1 and Launch Template LT2?",
+    "question": "<p>A video conferencing application is hosted on a fleet of EC2 instances which are part of an Auto Scaling group. The Auto Scaling group uses a Launch Template (LT1) with \"dedicated\" instance tenancy but the VPC (V1) used by the Launch Template LT1 has the instance tenancy set to default. Later the DevOps team creates a new Launch Template (LT2) with shared (default) instance tenancy but the VPC (V2) used by the Launch Template LT2 has the instance tenancy set to dedicated.</p>\n\n<p>Which of the following is correct regarding the instances launched via Launch Template LT1 and Launch Template LT2?</p>",
     "corrects": [
       3
     ],
@@ -3831,7 +3831,7 @@
   },
   {
     "id": 50,
-    "question": "A media company wants a low-latency way to distribute live sports results which are delivered via a proprietary application using UDP protocol.\n\nAs a solutions architect, which of the following solutions would you recommend such that it offers the BEST performance for this use case?",
+    "question": "<p>A media company wants a low-latency way to distribute live sports results which are delivered via a proprietary application using UDP protocol.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend such that it offers the BEST performance for this use case?</p>",
     "corrects": [
       2
     ],
@@ -3920,7 +3920,7 @@
   },
   {
     "id": 51,
-    "question": "A company has a license-based, expensive, legacy commercial database solution deployed at its on-premises data center. The company wants to migrate this database to a more efficient, open-source, and cost-effective option on AWS Cloud. The CTO at the company wants a solution that can handle complex database configurations such as secondary indexes, foreign keys, and stored procedures.\n\nAs a solutions architect, which of the following AWS services should be combined to handle this use-case? (Select two)",
+    "question": "<p>A company has a license-based, expensive, legacy commercial database solution deployed at its on-premises data center. The company wants to migrate this database to a more efficient, open-source, and cost-effective option on AWS Cloud. The CTO at the company wants a solution that can handle complex database configurations such as secondary indexes, foreign keys, and stored procedures.</p>\n\n<p>As a solutions architect, which of the following AWS services should be combined to handle this use-case? (Select two)</p>",
     "corrects": [
       1,
       2
@@ -4012,7 +4012,7 @@
   },
   {
     "id": 52,
-    "question": "An IT training company hosted its website on Amazon S3 a couple of years ago. Due to COVID-19 related travel restrictions, the training website has suddenly gained traction. With an almost 300% increase in the requests served per day, the company's AWS costs have sky-rocketed for just the Amazon S3 outbound data costs.\n\nAs a Solutions Architect, can you suggest an alternate method to reduce costs while keeping the latency low?",
+    "question": "<p>An IT training company hosted its website on Amazon S3 a couple of years ago. Due to COVID-19 related travel restrictions, the training website has suddenly gained traction. With an almost 300% increase in the requests served per day, the company's AWS costs have sky-rocketed for just the Amazon S3 outbound data costs.</p>\n\n<p>As a Solutions Architect, can you suggest an alternate method to reduce costs while keeping the latency low?</p>",
     "corrects": [
       3
     ],
@@ -4087,7 +4087,7 @@
   },
   {
     "id": 53,
-    "question": "A financial services company wants to identify any sensitive data stored on its Amazon S3 buckets. The company also wants to monitor and protect all data stored on Amazon S3 against any malicious activity.\n\nAs a solutions architect, which of the following solutions would you recommend to help address the given requirements?",
+    "question": "<p>A financial services company wants to identify any sensitive data stored on its Amazon S3 buckets. The company also wants to monitor and protect all data stored on Amazon S3 against any malicious activity.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend to help address the given requirements?</p>",
     "corrects": [
       3
     ],
@@ -4173,7 +4173,7 @@
   },
   {
     "id": 54,
-    "question": "A legacy application is built using a tightly-coupled monolithic architecture. Due to a sharp increase in the number of users, the application performance has degraded. The company now wants to decouple the architecture and adopt AWS microservices architecture. Some of these microservices need to handle fast running processes whereas other microservices need to handle slower processes.\n\nWhich of these options would you identify as the right way of connecting these microservices?",
+    "question": "<p>A legacy application is built using a tightly-coupled monolithic architecture. Due to a sharp increase in the number of users, the application performance has degraded. The company now wants to decouple the architecture and adopt AWS microservices architecture. Some of these microservices need to handle fast running processes whereas other microservices need to handle slower processes.</p>\n\n<p>Which of these options would you identify as the right way of connecting these microservices?</p>",
     "corrects": [
       1
     ],
@@ -4236,7 +4236,7 @@
   },
   {
     "id": 55,
-    "question": "An e-commerce company runs its web application on Amazon EC2 instances in an Auto Scaling group and it's configured to handle consumer orders in an Amazon Simple Queue Service (Amazon SQS) queue for downstream processing. The DevOps team has observed that the performance of the application goes down in case of a sudden spike in orders received.\n\nAs a solutions architect, which of the following solutions would you recommend to address this use-case?",
+    "question": "<p>An e-commerce company runs its web application on Amazon EC2 instances in an Auto Scaling group and it's configured to handle consumer orders in an Amazon Simple Queue Service (Amazon SQS) queue for downstream processing. The DevOps team has observed that the performance of the application goes down in case of a sudden spike in orders received.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend to address this use-case?</p>",
     "corrects": [
       1
     ],
@@ -4312,7 +4312,7 @@
   },
   {
     "id": 56,
-    "question": "A gaming company uses Application Load Balancers in front of Amazon EC2 instances for different services and microservices. The architecture has now become complex with too many Application Load Balancers in multiple AWS Regions. Security updates, firewall configurations, and traffic routing logic have become complex with too many IP addresses and configurations.\n\nThe company is looking at an easy and effective way to bring down the number of IP addresses allowed by the firewall and easily manage the entire network infrastructure. Which of these options represents an appropriate solution for this requirement?",
+    "question": "<p>A gaming company uses Application Load Balancers in front of Amazon EC2 instances for different services and microservices. The architecture has now become complex with too many Application Load Balancers in multiple AWS Regions. Security updates, firewall configurations, and traffic routing logic have become complex with too many IP addresses and configurations.</p>\n\n<p>The company is looking at an easy and effective way to bring down the number of IP addresses allowed by the firewall and easily manage the entire network infrastructure. Which of these options represents an appropriate solution for this requirement?</p>",
     "corrects": [
       2
     ],
@@ -4385,7 +4385,7 @@
   },
   {
     "id": 57,
-    "question": "The DevOps team at a multi-national company is helping its subsidiaries standardize Amazon EC2 instances by using the same Amazon Machine Image (AMI). Some of these subsidiaries are in the same AWS region but use different AWS accounts whereas others are in different AWS regions but use the same AWS account as the parent company. The DevOps team has hired you as a solutions architect for this project.\n\nWhich of the following would you identify as CORRECT regarding the capabilities of an Amazon Machine Image (AMI)? (Select three)",
+    "question": "<p>The DevOps team at a multi-national company is helping its subsidiaries standardize Amazon EC2 instances by using the same Amazon Machine Image (AMI). Some of these subsidiaries are in the same AWS region but use different AWS accounts whereas others are in different AWS regions but use the same AWS account as the parent company. The DevOps team has hired you as a solutions architect for this project.</p>\n\n<p>Which of the following would you identify as CORRECT regarding the capabilities of an Amazon Machine Image (AMI)? (Select three)</p>",
     "corrects": [
       1,
       3,
@@ -4505,7 +4505,7 @@
   },
   {
     "id": 58,
-    "question": "A global manufacturing company with facilities in the US, Europe, and Asia is designing a new distributed application to optimize its procurement workflow. The orders booked in one AWS Region should be visible to all AWS Regions in a second or less. The database should be able to facilitate failover with a short Recovery Time Objective (RTO). The uptime of the application is critical to ensure that the manufacturing processes are not impacted.\n\nAs a solutions architect, which of the following will you recommend as the MOST cost-effective solution?",
+    "question": "<p>A global manufacturing company with facilities in the US, Europe, and Asia is designing a new distributed application to optimize its procurement workflow. The orders booked in one AWS Region should be visible to all AWS Regions in a second or less. The database should be able to facilitate failover with a short Recovery Time Objective (RTO). The uptime of the application is critical to ensure that the manufacturing processes are not impacted.</p>\n\n<p>As a solutions architect, which of the following will you recommend as the MOST cost-effective solution?</p>",
     "corrects": [
       1
     ],
@@ -4555,7 +4555,10 @@
         "answer": "",
         "explanation": "With an Aurora global database, you can choose from two different approaches to failover:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Managed planned failover – This feature is intended for controlled environments, such as disaster recovery (DR) testing scenarios, operational maintenance, and other planned operational procedures. Managed planned failover allows you to relocate the primary DB cluster of your Aurora global database to one of the secondary Regions. Because this feature synchronizes secondary DB clusters with the primary before making any other changes, RPO is 0 (no data loss).</p></li>\n<li><p>Unplanned failover (\"detach and promote\") – To recover from an unplanned outage, you can perform a cross-Region failover to one of the secondaries in your Aurora global database. The RTO for this manual process depends on how quickly you can perform the tasks listed in Recovering an Amazon Aurora global database from an unplanned outage. The RPO is typically measured in seconds, but this depends on the Aurora storage replication lag across the network at the time of the failure.</p></li>\n</ol>"
+      },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt4-q61-i1.jpg",
         "answer": "",
@@ -4594,7 +4597,7 @@
   },
   {
     "id": 59,
-    "question": "The application maintenance team at a company has noticed that the production application is very slow when the business reports are run on the Amazon RDS database. These reports fetch a large amount of data and have complex queries with multiple joins, spanning across multiple business-critical core tables. CPU, memory, and storage metrics are around 50% of the total capacity.\n\nCan you recommend an improved and cost-effective way of generating the business reports while keeping the production application unaffected?",
+    "question": "<p>The application maintenance team at a company has noticed that the production application is very slow when the business reports are run on the Amazon RDS database. These reports fetch a large amount of data and have complex queries with multiple joins, spanning across multiple business-critical core tables. CPU, memory, and storage metrics are around 50% of the total capacity.</p>\n\n<p>Can you recommend an improved and cost-effective way of generating the business reports while keeping the production application unaffected?</p>",
     "corrects": [
       3
     ],
@@ -4636,7 +4639,10 @@
         "answer": "",
         "explanation": "There are a variety of scenarios where deploying one or more read replicas for a given source DB instance may make sense. Common reasons for deploying a read replica include:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Scaling beyond the compute or I/O capacity of a single DB instance for read-heavy database workloads. This excess read traffic can be directed to one or more read replicas.</li>\n<li>Serving read traffic while the source DB instance is unavailable. If your source DB Instance cannot take I/O requests (e.g. due to I/O suspension for backups or scheduled maintenance), you can direct read traffic to your read replica(s). For this use case, keep in mind that the data on the read replica may be “stale” since the source DB Instance is unavailable.</li>\n<li>Business reporting or data warehousing scenarios; you may want business reporting queries to run against a read replica, rather than your primary, production DB Instance.</li>\n<li>You may use a read replica for disaster recovery of the source DB instance, either in the same AWS Region or in another Region.</li>\n</ol>"
+      },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt4-q41-i1.jpg",
         "answer": "",
@@ -4667,7 +4673,7 @@
   },
   {
     "id": 60,
-    "question": "The DevOps team at an IT company has recently migrated to AWS and they are configuring security groups for their two-tier application with public web servers and private database servers. The team wants to understand the allowed configuration options for an inbound rule for a security group.\n\nAs a solutions architect, which of the following would you identify as an INVALID option for setting up such a configuration?",
+    "question": "<p>The DevOps team at an IT company has recently migrated to AWS and they are configuring security groups for their two-tier application with public web servers and private database servers. The team wants to understand the allowed configuration options for an inbound rule for a security group.</p>\n\n<p>As a solutions architect, which of the following would you identify as an INVALID option for setting up such a configuration?</p>",
     "corrects": [
       1
     ],
@@ -4743,7 +4749,7 @@
   },
   {
     "id": 61,
-    "question": "A media startup is looking at hosting their web application on AWS Cloud. The application will be accessed by users from different geographic regions of the world to upload and download video files that can reach a maximum size of 10 gigabytes. The startup wants the solution to be cost-effective and scalable with the lowest possible latency for a great user experience.\n\nAs a Solutions Architect, which of the following will you suggest as an optimal solution to meet the given requirements?",
+    "question": "<p>A media startup is looking at hosting their web application on AWS Cloud. The application will be accessed by users from different geographic regions of the world to upload and download video files that can reach a maximum size of 10 gigabytes. The startup wants the solution to be cost-effective and scalable with the lowest possible latency for a great user experience.</p>\n\n<p>As a Solutions Architect, which of the following will you suggest as an optimal solution to meet the given requirements?</p>",
     "corrects": [
       2
     ],
@@ -4814,7 +4820,7 @@
   },
   {
     "id": 62,
-    "question": "An online gaming application has a large chunk of its traffic coming from users who download static assets such as historic leaderboard reports and the game tactics for various games. The current infrastructure and design are unable to cope up with the traffic and application freezes on most of the pages.\n\nWhich of the following is a cost-optimal solution that does not need provisioning of infrastructure?",
+    "question": "<p>An online gaming application has a large chunk of its traffic coming from users who download static assets such as historic leaderboard reports and the game tactics for various games. The current infrastructure and design are unable to cope up with the traffic and application freezes on most of the pages.</p>\n\n<p>Which of the following is a cost-optimal solution that does not need provisioning of infrastructure?</p>",
     "corrects": [
       3
     ],
@@ -4885,7 +4891,7 @@
   },
   {
     "id": 63,
-    "question": "A social media startup uses AWS Cloud to manage its IT infrastructure. The engineering team at the startup wants to perform weekly database rollovers for a MySQL database server using a serverless cron job that typically takes about 5 minutes to execute the database rollover script written in Python. The database rollover will archive the past week’s data from the production database to keep the database small while still keeping its data accessible.\n\nAs a solutions architect, which of the following would you recommend as the MOST cost-efficient and reliable solution?",
+    "question": "<p>A social media startup uses AWS Cloud to manage its IT infrastructure. The engineering team at the startup wants to perform weekly database rollovers for a MySQL database server using a serverless cron job that typically takes about 5 minutes to execute the database rollover script written in Python. The database rollover will archive the past week’s data from the production database to keep the database small while still keeping its data accessible.</p>\n\n<p>As a solutions architect, which of the following would you recommend as the MOST cost-efficient and reliable solution?</p>",
     "corrects": [
       4
     ],
@@ -4950,7 +4956,7 @@
   },
   {
     "id": 64,
-    "question": "The DevOps team at an IT company is provisioning a two-tier application in a VPC with a public subnet and a private subnet. The team wants to use either a Network Address Translation (NAT) instance or a Network Address Translation (NAT) gateway in the public subnet to enable instances in the private subnet to initiate outbound IPv4 traffic to the internet but needs some technical assistance in terms of the configuration options available for the Network Address Translation (NAT) instance and the Network Address Translation (NAT) gateway.\n\nAs a solutions architect, which of the following options would you identify as CORRECT? (Select three)",
+    "question": "<p>The DevOps team at an IT company is provisioning a two-tier application in a VPC with a public subnet and a private subnet. The team wants to use either a Network Address Translation (NAT) instance or a Network Address Translation (NAT) gateway in the public subnet to enable instances in the private subnet to initiate outbound IPv4 traffic to the internet but needs some technical assistance in terms of the configuration options available for the Network Address Translation (NAT) instance and the Network Address Translation (NAT) gateway.</p>\n\n<p>As a solutions architect, which of the following options would you identify as CORRECT? (Select three)</p>",
     "corrects": [
       1,
       2,
@@ -5059,7 +5065,7 @@
   },
   {
     "id": 65,
-    "question": "A big data analytics company is working on a real-time vehicle tracking solution. The data processing workflow involves both I/O intensive and throughput intensive database workloads. The development team needs to store this real-time data in a NoSQL database hosted on an Amazon EC2 instance and needs to support up to 25,000 IOPS per volume.\n\nAs a solutions architect, which of the following Amazon Elastic Block Store (Amazon EBS) volume types would you recommend for this use-case?",
+    "question": "<p>A big data analytics company is working on a real-time vehicle tracking solution. The data processing workflow involves both I/O intensive and throughput intensive database workloads. The development team needs to store this real-time data in a NoSQL database hosted on an Amazon EC2 instance and needs to support up to 25,000 IOPS per volume.</p>\n\n<p>As a solutions architect, which of the following Amazon Elastic Block Store (Amazon EBS) volume types would you recommend for this use-case?</p>",
     "corrects": [
       4
     ],

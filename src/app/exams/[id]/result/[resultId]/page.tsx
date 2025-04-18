@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchQuestionsByExamId } from '@/services/questionService'; // Service để lấy danh sách câu hỏi gốc
 import QuestionDetail from '@/components/examDetail/QuestionDetail'; // Import QuestionDetail component
@@ -8,7 +8,7 @@ import { Question } from '@/types/question';
 import ResultHeader from '@/components/result/ResultHeader';
 import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
-import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // Import Heroicons
+import { ChevronLeftIcon, CheckCircleIcon, XCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid"; // Import Heroicons
 import { DISPLAY_MODES } from '@/constants/exam';
 import { ExamResult, ExamResultQuestion } from '@/types/ExamResult';
 import { getExamResult } from '@/services/examResultService';
@@ -26,6 +26,8 @@ const ResultOverviewPage: React.FC = () => {
     const [filteredQuestions, setFilteredQuestions] = useState<MappedQuestion[]>([]);
     const [filterMode, setFilterMode] = useState<string>('all');
     const [examResult, setExamResult] = useState<ExamResult | null>(null);
+    const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
+    const questionRefs = useRef<Map<number, HTMLDivElement>>(new Map());
 
     // Fetch result and map data
     useEffect(() => {
@@ -81,6 +83,14 @@ const ResultOverviewPage: React.FC = () => {
         }
     }, [examId]);
 
+    const scrollToQuestion = (questionId: number) => {
+        const element = questionRefs.current.get(questionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveQuestion(questionId);
+        }
+    };
+
     if (loading) {
         return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     }
@@ -92,7 +102,7 @@ const ResultOverviewPage: React.FC = () => {
     const bookmarkedQuestions = mappedQuestions.filter((q) => q.question.isBookmarked).length;
 
     return (
-        <div className="p-6 lg:max-w-4xl mx-auto">
+        <div className="p-4 md:p-6 lg:max-w-4xl mx-auto relative">
             {resultData &&
                 <div className="mb-6">
                     <ResultHeader resultData={resultData} examId={examId} />
@@ -162,9 +172,56 @@ const ResultOverviewPage: React.FC = () => {
                 </button>
             </div>
 
+            {/* Quick Navigation Sidebar */}
+            <div className="fixed md:right-4 bottom-4 right-0 left-0 md:left-auto md:top-1/2 md:-translate-y-1/2 z-10 bg-white shadow-lg p-2 md:p-3 rounded-lg md:max-h-[80vh] overflow-x-auto md:overflow-y-auto md:overflow-x-hidden">
+                <div className="flex md:flex-col gap-2 justify-center md:justify-start">
+                    {filteredQuestions.map((question) => (
+                        <button
+                            key={question.id}
+                            onClick={() => scrollToQuestion(question.id)}
+                            className={`cursor-pointer w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${
+                                activeQuestion === question.id
+                                    ? 'bg-blue-600 text-white scale-110'
+                                    : question.question.isCorrect
+                                    ? 'bg-green-100 text-green-800 hover:bg-green-200'
+                                    : question.question.selectedAnswer === null
+                                    ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                    : 'bg-red-100 text-red-800 hover:bg-red-200'
+                            }`}
+                            title={`Câu ${(question.question.questionIndex ?? 0) + 1}: ${
+                                question.question.isCorrect 
+                                    ? 'Chính xác' 
+                                    : question.question.selectedAnswer === null
+                                    ? 'Bỏ qua'
+                                    : 'Không chính xác'
+                            }`}
+                        >
+                            {(question.question.questionIndex ?? 0) + 1}
+                            <span className="absolute -right-1 -top-1">
+                                {question.question.isCorrect ? (
+                                    <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
+                                ) : question.question.selectedAnswer === null ? (
+                                    <MinusCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
+                                ) : (
+                                    <XCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-red-600" />
+                                )}
+                            </span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
             <div className="space-y-6">
                 {filteredQuestions.map((question) => (
-                    <div className="border border-blue-200 p-4" key={question.id}>
+                    <div 
+                        ref={(el) => {
+                            if (el) {
+                                questionRefs.current.set(question.id, el);
+                            }
+                        }}
+                        className="border border-blue-200 p-4 rounded-xs h-auto" 
+                        key={question.id}
+                    >
                         <QuestionDetail
                             question={question.question}
                             isBookmarked={false}

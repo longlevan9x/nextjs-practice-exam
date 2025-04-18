@@ -15,6 +15,9 @@ import LoadingIcon from "@/components/common/LoadingIcon";
 import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
 import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
 import ActionButtons from "@/components/examDetail/ActionButtons";
+import { handleHttpError } from '@/services/notificationService';
+import { ApiError } from "next/dist/server/api-utils";
+
 interface ExamPracticeLayoutProps {
     examType: ExamType;
     displayMode: DisplayMode;
@@ -281,11 +284,19 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 questions: questions
             };
 
+            // Cập nhật dữ liệu trước khi chuyển trang
             await updateExamResultData(currentExamResult?.resultId || '', examResultData as ExamResult);
+            
+            // Chỉ chuyển trang khi cập nhật thành công
             router.push(`/exams/${examId}/result`);
+            setIsFinishing(false);
+
         } catch (error) {
             console.error('Error finishing test:', error);
-        } finally {
+            // Sử dụng hệ thống thông báo mới
+            if (error instanceof ApiError) {
+                handleHttpError(error, 'Có lỗi xảy ra khi kết thúc bài kiểm tra. Vui lòng kiểm tra kết nối mạng và thử lại.');
+            }
             setIsFinishing(false);
         }
     };

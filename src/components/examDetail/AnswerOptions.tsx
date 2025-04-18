@@ -54,9 +54,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
               />
             </div>
 
-            <span className="font-bold w-11/12">
-              {answer.answer}
-            </span>
+            <span className="font-bold w-11/12 [&_pre]:bg-gray-100 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answer.answer }} />
             <div>
               {isCorrect && <CheckCircleIcon className="w-7 h-7 text-green-500 ml-3" />}
               {isIncorrect && <XCircleIcon className="w-7 h-7 text-red-500 ml-3" />}

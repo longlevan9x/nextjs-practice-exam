@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "A photo-sharing company is storing user profile pictures in an Amazon S3 bucket and an image analysis application is deployed on four Amazon EC2 instances. A solutions architect would like to trigger an image analysis procedure only on one of the four Amazon EC2 instances for each photo uploaded.\n\nWhat do you recommend?",
+    "question": "<p>A photo-sharing company is storing user profile pictures in an Amazon S3 bucket and an image analysis application is deployed on four Amazon EC2 instances. A solutions architect would like to trigger an image analysis procedure only on one of the four Amazon EC2 instances for each photo uploaded.</p>\n\n<p>What do you recommend?</p>",
     "corrects": [
       4
     ],
@@ -89,7 +89,7 @@
   },
   {
     "id": 2,
-    "question": "A company has multiple Amazon EC2 instances operating in a private subnet which is part of a custom VPC. These instances are running an image processing application that needs to access images stored on Amazon S3. Once each image is processed, the status of the corresponding record needs to be marked as completed in a Amazon DynamoDB table.\n\nHow would you go about providing private access to these AWS resources which are not part of this custom VPC?",
+    "question": "<p>A company has multiple Amazon EC2 instances operating in a private subnet which is part of a custom VPC. These instances are running an image processing application that needs to access images stored on Amazon S3. Once each image is processed, the status of the corresponding record needs to be marked as completed in a Amazon DynamoDB table.</p>\n\n<p>How would you go about providing private access to these AWS resources which are not part of this custom VPC?</p>",
     "corrects": [
       3
     ],
@@ -173,7 +173,7 @@
   },
   {
     "id": 3,
-    "question": "A retail company needs a secure connection between its on-premises data center and AWS Cloud. This connection does not need high bandwidth and will handle a small amount of traffic. The company wants a quick turnaround time to set up the connection.\n\nWhat is the MOST cost-effective way to establish such a connection?",
+    "question": "<p>A retail company needs a secure connection between its on-premises data center and AWS Cloud. This connection does not need high bandwidth and will handle a small amount of traffic. The company wants a quick turnaround time to set up the connection.</p>\n\n<p>What is the MOST cost-effective way to establish such a connection?</p>",
     "corrects": [
       4
     ],
@@ -263,7 +263,7 @@
   },
   {
     "id": 4,
-    "question": "As a Solutions Architect, you have set up a database on a single Amazon EC2 instance that has an Amazon EBS volume of type gp2. You currently have 300 gigabytes of space on the gp2 device. The Amazon EC2 instance is of type m5.large. The database performance has recently been poor and upon looking at Amazon CloudWatch, you realize the IOPS on the Amazon EBS volume is maxing out. The disk size of the database must not change because of a licensing issue.\n\nHow do you troubleshoot this issue?",
+    "question": "<p>As a Solutions Architect, you have set up a database on a single Amazon EC2 instance that has an Amazon EBS volume of type gp2. You currently have 300 gigabytes of space on the gp2 device. The Amazon EC2 instance is of type m5.large. The database performance has recently been poor and upon looking at Amazon CloudWatch, you realize the IOPS on the Amazon EBS volume is maxing out. The disk size of the database must not change because of a licensing issue.</p>\n\n<p>How do you troubleshoot this issue?</p>",
     "corrects": [
       1
     ],
@@ -343,7 +343,7 @@
   },
   {
     "id": 5,
-    "question": "A company has moved its business critical data to Amazon Elastic File System (Amazon EFS) which will be accessed by multiple Amazon EC2 instances.\n\nAs an AWS Certified Solutions Architect - Associate, which of the following would you recommend to exercise access control such that only the permitted Amazon EC2 instances can read from the Amazon EFS file system? (Select two)",
+    "question": "<p>A company has moved its business critical data to Amazon Elastic File System (Amazon EFS) which will be accessed by multiple Amazon EC2 instances.</p>\n\n<p>As an AWS Certified Solutions Architect - Associate, which of the following would you recommend to exercise access control such that only the permitted Amazon EC2 instances can read from the Amazon EFS file system? (Select two)</p>",
     "corrects": [
       1,
       5
@@ -418,7 +418,7 @@
   },
   {
     "id": 6,
-    "question": "A company helps its customers legally sign highly confidential contracts. To meet the strong industry requirements, the company must ensure that the signed contracts are encrypted using the company's proprietary algorithm. The company is now migrating to AWS Cloud using Amazon Simple Storage Service (Amazon S3) and would like you, the solution architect, to advise them on the encryption scheme to adopt.\n\nWhat do you recommend?",
+    "question": "<p>A company helps its customers legally sign highly confidential contracts. To meet the strong industry requirements, the company must ensure that the signed contracts are encrypted using the company's proprietary algorithm. The company is now migrating to AWS Cloud using Amazon Simple Storage Service (Amazon S3) and would like you, the solution architect, to advise them on the encryption scheme to adopt.</p>\n\n<p>What do you recommend?</p>",
     "corrects": [
       2
     ],
@@ -479,7 +479,7 @@
   },
   {
     "id": 7,
-    "question": "An application running on an Amazon EC2 instance needs to access a Amazon DynamoDB table in the same AWS account.\n\nWhich of the following solutions should a solutions architect configure for the necessary permissions?",
+    "question": "<p>An application running on an Amazon EC2 instance needs to access a Amazon DynamoDB table in the same AWS account.</p>\n\n<p>Which of the following solutions should a solutions architect configure for the necessary permissions?</p>",
     "corrects": [
       4
     ],
@@ -552,7 +552,7 @@
   },
   {
     "id": 8,
-    "question": "A company is experiencing stability issues with their cluster of self-managed RabbitMQ message brokers and the company now wants to explore an alternate solution on AWS.\n\nAs a solutions architect, which of the following AWS services would you recommend that can provide support for quick and easy migration from RabbitMQ?",
+    "question": "<p>A company is experiencing stability issues with their cluster of self-managed RabbitMQ message brokers and the company now wants to explore an alternate solution on AWS.</p>\n\n<p>As a solutions architect, which of the following AWS services would you recommend that can provide support for quick and easy migration from RabbitMQ?</p>",
     "corrects": [
       3
     ],
@@ -612,7 +612,7 @@
   },
   {
     "id": 9,
-    "question": "A company has media files that need to be shared internally. Users are first authenticated using Active Directory and then they access files on a Microsoft Windows platform. The engineering manager wants to keep the same user permissions but wants the company to migrate the storage layer to AWS Cloud as the company is reaching its storage capacity limit on the on-premises infrastructure.\n\nWhat should a solutions architect recommend to meet this requirement?",
+    "question": "<p>A company has media files that need to be shared internally. Users are first authenticated using Active Directory and then they access files on a Microsoft Windows platform. The engineering manager wants to keep the same user permissions but wants the company to migrate the storage layer to AWS Cloud as the company is reaching its storage capacity limit on the on-premises infrastructure.</p>\n\n<p>What should a solutions architect recommend to meet this requirement?</p>",
     "corrects": [
       4
     ],
@@ -675,7 +675,7 @@
   },
   {
     "id": 10,
-    "question": "You are looking to build an index of your files in Amazon S3, using Amazon RDS PostgreSQL. To build this index, it is necessary to read the first 250 bytes of each object in Amazon S3, which contains some metadata about the content of the file itself. There are over 100,000 files in your S3 bucket, amounting to 50 terabytes of data.\n\nHow can you build this index efficiently?",
+    "question": "<p>You are looking to build an index of your files in Amazon S3, using Amazon RDS PostgreSQL. To build this index, it is necessary to read the first 250 bytes of each object in Amazon S3, which contains some metadata about the content of the file itself. There are over 100,000 files in your S3 bucket, amounting to 50 terabytes of data.</p>\n\n<p>How can you build this index efficiently?</p>",
     "corrects": [
       4
     ],
@@ -754,7 +754,7 @@
   },
   {
     "id": 11,
-    "question": "During a review, a security team has flagged concerns over an Amazon EC2 instance querying IP addresses used for cryptocurrency mining. The Amazon EC2 instance does not host any authorized application related to cryptocurrency mining.\n\nWhich AWS service can be used to protect the Amazon EC2 instances from such unauthorized behavior in the future?",
+    "question": "<p>During a review, a security team has flagged concerns over an Amazon EC2 instance querying IP addresses used for cryptocurrency mining. The Amazon EC2 instance does not host any authorized application related to cryptocurrency mining.</p>\n\n<p>Which AWS service can be used to protect the Amazon EC2 instances from such unauthorized behavior in the future?</p>",
     "corrects": [
       3
     ],
@@ -829,7 +829,7 @@
   },
   {
     "id": 12,
-    "question": "An engineering team wants to orchestrate multiple Amazon ECS task types running on Amazon EC2 instances that are part of the Amazon ECS cluster. The output and state data for all tasks need to be stored. The amount of data output by each task is approximately 20 megabytes and there could be hundreds of tasks running at a time. As old outputs are archived, the storage size is not expected to exceed 1 terabyte.\n\nAs a solutions architect, which of the following would you recommend as an optimized solution for high-frequency reading and writing?",
+    "question": "<p>An engineering team wants to orchestrate multiple Amazon ECS task types running on Amazon EC2 instances that are part of the Amazon ECS cluster. The output and state data for all tasks need to be stored. The amount of data output by each task is approximately 20 megabytes and there could be hundreds of tasks running at a time. As old outputs are archived, the storage size is not expected to exceed 1 terabyte.</p>\n\n<p>As a solutions architect, which of the following would you recommend as an optimized solution for high-frequency reading and writing?</p>",
     "corrects": [
       1
     ],
@@ -905,7 +905,7 @@
   },
   {
     "id": 13,
-    "question": "Your company has created a data warehouse using Amazon Redshift that is used to analyze data from Amazon S3. From the usage pattern, you have detected that after 30 days, the data is rarely queried in Amazon Redshift and it's not \"hot data\" anymore. You would like to preserve the SQL querying capability on your data and get the queries started immediately. Also, you want to adopt a pricing model that allows you to save the maximum amount of cost on Amazon Redshift.\n\nWhat do you recommend? (Select two)",
+    "question": "<p>Your company has created a data warehouse using Amazon Redshift that is used to analyze data from Amazon S3. From the usage pattern, you have detected that after 30 days, the data is rarely queried in Amazon Redshift and it's not \"hot data\" anymore. You would like to preserve the SQL querying capability on your data and get the queries started immediately. Also, you want to adopt a pricing model that allows you to save the maximum amount of cost on Amazon Redshift.</p>\n\n<p>What do you recommend? (Select two)</p>",
     "corrects": [
       2,
       3
@@ -987,7 +987,7 @@
   },
   {
     "id": 14,
-    "question": "A company uses a legacy on-premises reporting application that operates on gigabytes of .json files and represents years of data. The legacy application cannot handle the growing size of .json files. New .json files are added daily from various data sources to a central on-premises storage location. The company wants to continue to support the legacy application. The company has hired you as a solutions architect to build a solution that can manage ongoing data updates from your on-premises application to Amazon S3.\n\nWhich of the following solutions would you suggest to address the given requirement?",
+    "question": "<p>A company uses a legacy on-premises reporting application that operates on gigabytes of .json files and represents years of data. The legacy application cannot handle the growing size of .json files. New .json files are added daily from various data sources to a central on-premises storage location. The company wants to continue to support the legacy application. The company has hired you as a solutions architect to build a solution that can manage ongoing data updates from your on-premises application to Amazon S3.</p>\n\n<p>Which of the following solutions would you suggest to address the given requirement?</p>",
     "corrects": [
       3
     ],
@@ -1067,7 +1067,7 @@
   },
   {
     "id": 15,
-    "question": "A development team has noticed that one of the Amazon EC2 instances has been incorrectly configured with the 'DeleteOnTermination' attribute set to True for its root EBS volume.\n\nAs a Solution's Architect, can you suggest a way to disable this flag while the instance is still running?",
+    "question": "<p>A development team has noticed that one of the Amazon EC2 instances has been incorrectly configured with the 'DeleteOnTermination' attribute set to True for its root EBS volume.</p>\n\n<p>As a Solution's Architect, can you suggest a way to disable this flag while the instance is still running?</p>",
     "corrects": [
       4
     ],
@@ -1131,7 +1131,7 @@
   },
   {
     "id": 16,
-    "question": "A software engineering intern at a company is documenting the features offered by Amazon EC2 Spot instances and Spot fleets.\n\nCan you help the intern by selecting the correct options that identify the key characteristics of these two types of Spot entities? (Select two)",
+    "question": "<p>A software engineering intern at a company is documenting the features offered by Amazon EC2 Spot instances and Spot fleets.</p>\n\n<p>Can you help the intern by selecting the correct options that identify the key characteristics of these two types of Spot entities? (Select two)</p>",
     "corrects": [
       3,
       4
@@ -1213,7 +1213,7 @@
   },
   {
     "id": 17,
-    "question": "A healthcare company wants to run its applications on single-tenant hardware to meet compliance guidelines.\n\nWhich of the following is the MOST cost-effective way of isolating the Amazon EC2 instances to a single tenant?",
+    "question": "<p>A healthcare company wants to run its applications on single-tenant hardware to meet compliance guidelines.</p>\n\n<p>Which of the following is the MOST cost-effective way of isolating the Amazon EC2 instances to a single tenant?</p>",
     "corrects": [
       2
     ],
@@ -1295,7 +1295,7 @@
   },
   {
     "id": 18,
-    "question": "The engineering team at a startup is evaluating the most optimal block storage volume type for the Amazon EC2 instances hosting its flagship application. The storage volume should support very low latency but it does not need to persist the data when the instance terminates. As a solutions architect, you have proposed using Instance Store volumes to meet these requirements.\n\nWhich of the following would you identify as the key characteristics of the Instance Store volumes? (Select two)",
+    "question": "<p>The engineering team at a startup is evaluating the most optimal block storage volume type for the Amazon EC2 instances hosting its flagship application. The storage volume should support very low latency but it does not need to persist the data when the instance terminates. As a solutions architect, you have proposed using Instance Store volumes to meet these requirements.</p>\n\n<p>Which of the following would you identify as the key characteristics of the Instance Store volumes? (Select two)</p>",
     "corrects": [
       2,
       3
@@ -1368,7 +1368,7 @@
   },
   {
     "id": 19,
-    "question": "You have deployed a database technology that has a synchronous replication mode to survive disasters in data centers. The database is therefore deployed on two Amazon EC2 instances in two Availability Zones (AZs). The database must be publicly available so you have deployed the Amazon EC2 instances in public subnets. The replication protocol currently uses the Amazon EC2 public IP addresses.\n\nWhat can you do to decrease the replication cost?",
+    "question": "<p>You have deployed a database technology that has a synchronous replication mode to survive disasters in data centers. The database is therefore deployed on two Amazon EC2 instances in two Availability Zones (AZs). The database must be publicly available so you have deployed the Amazon EC2 instances in public subnets. The replication protocol currently uses the Amazon EC2 public IP addresses.</p>\n\n<p>What can you do to decrease the replication cost?</p>",
     "corrects": [
       3
     ],
@@ -1432,7 +1432,7 @@
   },
   {
     "id": 20,
-    "question": "A development team is looking for a solution that saves development time and deployment costs for an application that uses a high-throughput request-response message pattern.\n\nWhich of the following Amazon SQS queue types is the best fit to meet this requirement?",
+    "question": "<p>A development team is looking for a solution that saves development time and deployment costs for an application that uses a high-throughput request-response message pattern.</p>\n\n<p>Which of the following Amazon SQS queue types is the best fit to meet this requirement?</p>",
     "corrects": [
       4
     ],
@@ -1478,7 +1478,10 @@
         "answer": "",
         "explanation": "The following are the benefits of temporary queues:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>They serve as lightweight communication channels for specific threads or processes.</p></li>\n<li><p>They can be created and deleted without incurring additional costs.</p></li>\n<li><p>They are API-compatible with static (normal) Amazon SQS queues. This means that existing code that sends and receives messages can send messages to and receive messages from virtual queues.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "To better support short-lived, lightweight messaging destinations, AWS recommends Amazon SQS Temporary Queue Client. This client makes it easy to create and delete many temporary messaging destinations without inflating your AWS bill. The key concept behind the client is the virtual queue. Virtual queues let you multiplex many low-traffic queues onto a single Amazon SQS queue. Creating a virtual queue only instantiates a local buffer to hold messages for consumers as they arrive; there is no API call to SQS and no costs associated with creating a virtual queue."
@@ -1514,7 +1517,7 @@
   },
   {
     "id": 21,
-    "question": "The CTO of an online home rental marketplace wants to re-engineer the caching layer of the current architecture for its relational database. The CTO wants the caching layer to have replication and archival support built into the architecture.\n\nWhich of the following AWS service offers the capabilities required for the re-engineering of the caching layer?",
+    "question": "<p>The CTO of an online home rental marketplace wants to re-engineer the caching layer of the current architecture for its relational database. The CTO wants the caching layer to have replication and archival support built into the architecture.</p>\n\n<p>Which of the following AWS service offers the capabilities required for the re-engineering of the caching layer?</p>",
     "corrects": [
       3
     ],
@@ -1587,7 +1590,7 @@
   },
   {
     "id": 22,
-    "question": "A systems administration team has a requirement to run certain custom scripts only once during the launch of the Amazon Elastic Compute Cloud (Amazon EC2) instances that host their application.\n\nWhich of the following represents the best way of configuring a solution for this requirement with minimal effort?",
+    "question": "<p>A systems administration team has a requirement to run certain custom scripts only once during the launch of the Amazon Elastic Compute Cloud (Amazon EC2) instances that host their application.</p>\n\n<p>Which of the following represents the best way of configuring a solution for this requirement with minimal effort?</p>",
     "corrects": [
       3
     ],
@@ -1651,7 +1654,7 @@
   },
   {
     "id": 23,
-    "question": "A startup wants to create a highly available architecture for its multi-tier application. Currently, the startup manages a single Amazon EC2 instance along with a single Amazon RDS MySQL DB instance. The startup has hired you as an AWS Certified Solutions Architect - Associate to build a solution that meets these requirements while minimizing the underlying infrastructure maintenance effort.\n\nWhat will you recommend?",
+    "question": "<p>A startup wants to create a highly available architecture for its multi-tier application. Currently, the startup manages a single Amazon EC2 instance along with a single Amazon RDS MySQL DB instance. The startup has hired you as an AWS Certified Solutions Architect - Associate to build a solution that meets these requirements while minimizing the underlying infrastructure maintenance effort.</p>\n\n<p>What will you recommend?</p>",
     "corrects": [
       2
     ],
@@ -1736,7 +1739,7 @@
   },
   {
     "id": 24,
-    "question": "A company needs an Active Directory service to run directory-aware workloads in the AWS Cloud and it should also support configuring a trust relationship with any existing on-premises Microsoft Active Directory.\n\nWhich AWS Directory Service is the best fit for this requirement?",
+    "question": "<p>A company needs an Active Directory service to run directory-aware workloads in the AWS Cloud and it should also support configuring a trust relationship with any existing on-premises Microsoft Active Directory.</p>\n\n<p>Which AWS Directory Service is the best fit for this requirement?</p>",
     "corrects": [
       4
     ],
@@ -1805,7 +1808,7 @@
   },
   {
     "id": 25,
-    "question": "A healthcare company runs a fleet of Amazon EC2 instances in two private subnets (named PR1 and PR2) across two Availability Zones (AZs) named A1 and A2. The Amazon EC2 instances need access to the internet for operating system patch management and third-party software maintenance. To facilitate this, the engineering team at the company wants to set up two Network Address Translation gateways (NAT gateways) in a highly available configuration.\n\nWhich of the following options would you suggest?",
+    "question": "<p>A healthcare company runs a fleet of Amazon EC2 instances in two private subnets (named PR1 and PR2) across two Availability Zones (AZs) named A1 and A2. The Amazon EC2 instances need access to the internet for operating system patch management and third-party software maintenance. To facilitate this, the engineering team at the company wants to set up two Network Address Translation gateways (NAT gateways) in a highly available configuration.</p>\n\n<p>Which of the following options would you suggest?</p>",
     "corrects": [
       1
     ],
@@ -1876,7 +1879,7 @@
   },
   {
     "id": 26,
-    "question": "A Big Data consulting company runs large distributed and replicated workloads on the on-premises data center. The company now wants to move these workloads to Amazon EC2 instances by using the placement groups feature and it wants to minimize correlated hardware failures.\n\nWhich of the following represents the correct placement group configuration for the given requirement?",
+    "question": "<p>A Big Data consulting company runs large distributed and replicated workloads on the on-premises data center. The company now wants to move these workloads to Amazon EC2 instances by using the placement groups feature and it wants to minimize correlated hardware failures.</p>\n\n<p>Which of the following represents the correct placement group configuration for the given requirement?</p>",
     "corrects": [
       1
     ],
@@ -1982,7 +1985,7 @@
   },
   {
     "id": 27,
-    "question": "An e-commerce company uses Amazon RDS MySQL DB to store the data. The analytics department at the company runs its reports on the same database. The engineering team has noticed sluggish performance on the database when the analytics reporting process is in progress.\n\nAs an AWS Certified Solutions Architect - Associate, which of the following would you suggest as the MOST cost-optimal solution to improve the performance?",
+    "question": "<p>An e-commerce company uses Amazon RDS MySQL DB to store the data. The analytics department at the company runs its reports on the same database. The engineering team has noticed sluggish performance on the database when the analytics reporting process is in progress.</p>\n\n<p>As an AWS Certified Solutions Architect - Associate, which of the following would you suggest as the MOST cost-optimal solution to improve the performance?</p>",
     "corrects": [
       1
     ],
@@ -2071,7 +2074,7 @@
   },
   {
     "id": 28,
-    "question": "An e-commerce website is migrating towards a microservices-based approach for their website and plans to expose their website from the same load balancer, linked to different target groups with different URLs: checkout.mycorp.com, www.mycorp.com, mycorp.com/products, and mycorp.com/orders. The website would like to use Amazon ECS on the backend to manage these microservices and possibly host the same container of the application multiple times on the same Amazon EC2 instance.\n\nWhich feature can help you achieve this with minimal effort?",
+    "question": "<p>An e-commerce website is migrating towards a microservices-based approach for their website and plans to expose their website from the same load balancer, linked to different target groups with different URLs: checkout.mycorp.com, www.mycorp.com, mycorp.com/products, and mycorp.com/orders. The website would like to use Amazon ECS on the backend to manage these microservices and possibly host the same container of the application multiple times on the same Amazon EC2 instance.</p>\n\n<p>Which feature can help you achieve this with minimal effort?</p>",
     "corrects": [
       2
     ],
@@ -2142,7 +2145,7 @@
   },
   {
     "id": 29,
-    "question": "A company's real-time streaming application is running on AWS. As the data is ingested, a job runs on the data and takes 30 minutes to complete. The workload frequently experiences high latency due to large amounts of incoming data. A solutions architect needs to design a scalable and serverless solution to enhance performance.\n\nWhich combination of steps should the solutions architect take? (Select two)",
+    "question": "<p>A company's real-time streaming application is running on AWS. As the data is ingested, a job runs on the data and takes 30 minutes to complete. The workload frequently experiences high latency due to large amounts of incoming data. A solutions architect needs to design a scalable and serverless solution to enhance performance.</p>\n\n<p>Which combination of steps should the solutions architect take? (Select two)</p>",
     "corrects": [
       3,
       5
@@ -2219,7 +2222,7 @@
   },
   {
     "id": 30,
-    "question": "A big data analytics company is looking to archive the on-premises data into a POSIX compliant file storage system on AWS Cloud. The archived data would be accessed for just about a week in a year.\n\nAs a solutions architect, which of the following AWS services would you recommend as the MOST cost-optimal solution?",
+    "question": "<p>A big data analytics company is looking to archive the on-premises data into a POSIX compliant file storage system on AWS Cloud. The archived data would be accessed for just about a week in a year.</p>\n\n<p>As a solutions architect, which of the following AWS services would you recommend as the MOST cost-optimal solution?</p>",
     "corrects": [
       2
     ],
@@ -2291,7 +2294,7 @@
   },
   {
     "id": 31,
-    "question": "A Hollywood production studio is looking at transferring their existing digital media assets of around 20 petabytes to AWS Cloud in the shortest possible timeframe.\n\nWhich of the following is an optimal solution for this requirement, given that the studio's data centers are located at a remote location?",
+    "question": "<p>A Hollywood production studio is looking at transferring their existing digital media assets of around 20 petabytes to AWS Cloud in the shortest possible timeframe.</p>\n\n<p>Which of the following is an optimal solution for this requirement, given that the studio's data centers are located at a remote location?</p>",
     "corrects": [
       2
     ],
@@ -2350,7 +2353,7 @@
   },
   {
     "id": 32,
-    "question": "A company is transferring a significant volume of data from on-site storage to AWS, where it will be accessed by Windows, Mac, and Linux-based Amazon EC2 instances within the same AWS region using both SMB and NFS protocols. Part of this data will be accessed regularly, while the rest will be accessed less frequently. The company requires a hosting solution for this data that minimizes operational overhead.\n\nWhat solution would best meet these requirements?",
+    "question": "<p>A company is transferring a significant volume of data from on-site storage to AWS, where it will be accessed by Windows, Mac, and Linux-based Amazon EC2 instances within the same AWS region using both SMB and NFS protocols. Part of this data will be accessed regularly, while the rest will be accessed less frequently. The company requires a hosting solution for this data that minimizes operational overhead.</p>\n\n<p>What solution would best meet these requirements?</p>",
     "corrects": [
       3
     ],
@@ -2431,7 +2434,7 @@
   },
   {
     "id": 33,
-    "question": "The engineering team at an e-commerce company wants to set up a custom domain for internal usage such as internaldomainexample.com. The team wants to use the private hosted zones feature of Amazon Route 53 to accomplish this.\n\nWhich of the following settings of the VPC need to be enabled? (Select two)",
+    "question": "<p>The engineering team at an e-commerce company wants to set up a custom domain for internal usage such as internaldomainexample.com. The team wants to use the private hosted zones feature of Amazon Route 53 to accomplish this.</p>\n\n<p>Which of the following settings of the VPC need to be enabled? (Select two)</p>",
     "corrects": [
       1,
       3
@@ -2516,7 +2519,7 @@
   },
   {
     "id": 34,
-    "question": "The development team at a company manages a Python based nightly process with a runtime of 30 minutes. The process can withstand any interruptions in its execution and start over again. The process currently runs on the on-premises infrastructure and it needs to be migrated to AWS.\n\nWhich of the following options do you recommend as the MOST cost-effective solution?",
+    "question": "<p>The development team at a company manages a Python based nightly process with a runtime of 30 minutes. The process can withstand any interruptions in its execution and start over again. The process currently runs on the on-premises infrastructure and it needs to be migrated to AWS.</p>\n\n<p>Which of the following options do you recommend as the MOST cost-effective solution?</p>",
     "corrects": [
       3
     ],
@@ -2587,7 +2590,7 @@
   },
   {
     "id": 35,
-    "question": "The engineering team at a company wants to create a daily big data analysis job leveraging Spark for analyzing online/offline sales and customer loyalty data to create customized reports on a client-by-client basis. The big data analysis job needs to read the data from Amazon S3 and output it back to Amazon S3.\n\nWhich technology do you recommend to run the Big Data analysis job? (Select two)",
+    "question": "<p>The engineering team at a company wants to create a daily big data analysis job leveraging Spark for analyzing online/offline sales and customer loyalty data to create customized reports on a client-by-client basis. The big data analysis job needs to read the data from Amazon S3 and output it back to Amazon S3.</p>\n\n<p>Which technology do you recommend to run the Big Data analysis job? (Select two)</p>",
     "corrects": [
       2,
       3
@@ -2661,7 +2664,7 @@
   },
   {
     "id": 36,
-    "question": "You are deploying a critical monolith application that must be deployed on a single web server, as it hasn't been created to work in distributed mode. Still, you want to make sure your setup can automatically recover from the failure of an Availability Zone (AZ).\n\nWhich of the following options should be combined to form the MOST cost-efficient solution? (Select three)",
+    "question": "<p>You are deploying a critical monolith application that must be deployed on a single web server, as it hasn't been created to work in distributed mode. Still, you want to make sure your setup can automatically recover from the failure of an Availability Zone (AZ).</p>\n\n<p>Which of the following options should be combined to form the MOST cost-efficient solution? (Select three)</p>",
     "corrects": [
       2,
       3,
@@ -2769,7 +2772,7 @@
   },
   {
     "id": 37,
-    "question": "A Big Data company wants to optimize its daily Extract-Transform-Load (ETL) process that migrates and transforms data from its Amazon S3 based data lake to an Amazon Redshift cluster. The team wants to manage this daily job in a serverless environment.\n\nWhich AWS service is the best fit to manage this process without the need to configure or manage the underlying compute resources?",
+    "question": "<p>A Big Data company wants to optimize its daily Extract-Transform-Load (ETL) process that migrates and transforms data from its Amazon S3 based data lake to an Amazon Redshift cluster. The team wants to manage this daily job in a serverless environment.</p>\n\n<p>Which AWS service is the best fit to manage this process without the need to configure or manage the underlying compute resources?</p>",
     "corrects": [
       4
     ],
@@ -2854,7 +2857,7 @@
   },
   {
     "id": 38,
-    "question": "A digital media streaming company wants to use Amazon CloudFront to distribute its content only to its service subscribers. As a solutions architect, which of the following solutions would you suggest to deliver restricted content to the bona fide end users? (Select two)",
+    "question": "<p>A digital media streaming company wants to use Amazon CloudFront to distribute its content only to its service subscribers. As a solutions architect, which of the following solutions would you suggest to deliver restricted content to the bona fide end users? (Select two)</p>",
     "corrects": [
       1,
       2
@@ -2944,7 +2947,7 @@
   },
   {
     "id": 39,
-    "question": "The engineering team at an IT company is deploying an Online Transactional Processing (OLTP) application that needs to support relational queries. The application will have unpredictable spikes of usage that the team does not know in advance.\n\nWhich database would you recommend using?",
+    "question": "<p>The engineering team at an IT company is deploying an Online Transactional Processing (OLTP) application that needs to support relational queries. The application will have unpredictable spikes of usage that the team does not know in advance.</p>\n\n<p>Which database would you recommend using?</p>",
     "corrects": [
       1
     ],
@@ -3016,7 +3019,7 @@
   },
   {
     "id": 40,
-    "question": "A social media application lets users upload photos and perform image editing operations. The application offers two classes of service: pro and lite. The product team wants the photos submitted by pro users to be processed before those submitted by lite users. Photos are uploaded to Amazon S3 and the job information is sent to Amazon SQS.\n\nAs a solutions architect, which of the following solutions would you recommend?",
+    "question": "<p>A social media application lets users upload photos and perform image editing operations. The application offers two classes of service: pro and lite. The product team wants the photos submitted by pro users to be processed before those submitted by lite users. Photos are uploaded to Amazon S3 and the job information is sent to Amazon SQS.</p>\n\n<p>As a solutions architect, which of the following solutions would you recommend?</p>",
     "corrects": [
       1
     ],
@@ -3088,7 +3091,7 @@
   },
   {
     "id": 41,
-    "question": "A company is developing a document management application on AWS. The application runs on Amazon EC2 instances in multiple Availability Zones (AZs). The company requires the document store to be highly available and the documents need to be returned immediately when requested. The engineering team has configured the application to use Amazon Elastic Block Store (Amazon EBS) to store the documents but the team is willing to consider other options to meet the availability requirement.\n\nAs a solutions architect, which of the following will you recommend?",
+    "question": "<p>A company is developing a document management application on AWS. The application runs on Amazon EC2 instances in multiple Availability Zones (AZs). The company requires the document store to be highly available and the documents need to be returned immediately when requested. The engineering team has configured the application to use Amazon Elastic Block Store (Amazon EBS) to store the documents but the team is willing to consider other options to meet the availability requirement.</p>\n\n<p>As a solutions architect, which of the following will you recommend?</p>",
     "corrects": [
       2
     ],
@@ -3152,7 +3155,7 @@
   },
   {
     "id": 42,
-    "question": "A company manages a High Performance Computing (HPC) application that needs to be deployed on Amazon EC2 instances. The application requires high levels of inter-node communications and high network traffic between the instances.\n\nAs a solutions architect, which of the following options would you recommend to the engineering team at the company? (Select two)",
+    "question": "<p>A company manages a High Performance Computing (HPC) application that needs to be deployed on Amazon EC2 instances. The application requires high levels of inter-node communications and high network traffic between the instances.</p>\n\n<p>As a solutions architect, which of the following options would you recommend to the engineering team at the company? (Select two)</p>",
     "corrects": [
       1,
       5
@@ -3227,7 +3230,7 @@
   },
   {
     "id": 43,
-    "question": "The engineering team at a multi-national company uses AWS Firewall Manager to centrally configure and manage firewall rules across its accounts and applications using AWS Organizations.\n\nWhich of the following AWS resources can the AWS Firewall Manager configure rules on? (Select three)",
+    "question": "<p>The engineering team at a multi-national company uses AWS Firewall Manager to centrally configure and manage firewall rules across its accounts and applications using AWS Organizations.</p>\n\n<p>Which of the following AWS resources can the AWS Firewall Manager configure rules on? (Select three)</p>",
     "corrects": [
       1,
       3,
@@ -3325,7 +3328,7 @@
   },
   {
     "id": 44,
-    "question": "A financial services company stores confidential data on an Amazon Simple Storage Service (S3) bucket. The compliance guidelines require that files be stored with server-side encryption. The encryption used must be Advanced Encryption Standard (AES-256) and the company does not want to manage the encryption keys.\n\nWhich of the following options represents the most cost-optimal solution for the given use case?",
+    "question": "<p>A financial services company stores confidential data on an Amazon Simple Storage Service (S3) bucket. The compliance guidelines require that files be stored with server-side encryption. The encryption used must be Advanced Encryption Standard (AES-256) and the company does not want to manage the encryption keys.</p>\n\n<p>Which of the following options represents the most cost-optimal solution for the given use case?</p>",
     "corrects": [
       2
     ],
@@ -3384,7 +3387,7 @@
   },
   {
     "id": 45,
-    "question": "A company is deploying a publicly accessible web application. To accomplish this, the engineering team has designed the VPC with a public subnet and a private subnet. The application will be hosted on several Amazon EC2 instances in an Auto Scaling group. The team also wants Transport Layer Security (TLS) termination to be offloaded from the Amazon EC2 instances.\n\nWhich solution should a solutions architect implement to address these requirements in the most secure manner?",
+    "question": "<p>A company is deploying a publicly accessible web application. To accomplish this, the engineering team has designed the VPC with a public subnet and a private subnet. The application will be hosted on several Amazon EC2 instances in an Auto Scaling group. The team also wants Transport Layer Security (TLS) termination to be offloaded from the Amazon EC2 instances.</p>\n\n<p>Which solution should a solutions architect implement to address these requirements in the most secure manner?</p>",
     "corrects": [
       3
     ],
@@ -3467,7 +3470,7 @@
   },
   {
     "id": 46,
-    "question": "An application is hosted on multiple Amazon EC2 instances in the same Availability Zone (AZ). The engineering team wants to set up shared data access for these Amazon EC2 instances using Amazon EBS Multi-Attach volumes.\n\nWhich Amazon EBS volume type is the correct choice for these Amazon EC2 instances?",
+    "question": "<p>An application is hosted on multiple Amazon EC2 instances in the same Availability Zone (AZ). The engineering team wants to set up shared data access for these Amazon EC2 instances using Amazon EBS Multi-Attach volumes.</p>\n\n<p>Which Amazon EBS volume type is the correct choice for these Amazon EC2 instances?</p>",
     "corrects": [
       4
     ],
@@ -3530,7 +3533,7 @@
   },
   {
     "id": 47,
-    "question": "Your application is deployed on Amazon EC2 instances fronted by an Application Load Balancer. Recently, your infrastructure has come under attack. Attackers perform over 100 requests per second, while your normal users only make about 5 requests per second.\n\nHow can you efficiently prevent attackers from overwhelming your application?",
+    "question": "<p>Your application is deployed on Amazon EC2 instances fronted by an Application Load Balancer. Recently, your infrastructure has come under attack. Attackers perform over 100 requests per second, while your normal users only make about 5 requests per second.</p>\n\n<p>How can you efficiently prevent attackers from overwhelming your application?</p>",
     "corrects": [
       3
     ],
@@ -3608,7 +3611,7 @@
   },
   {
     "id": 48,
-    "question": "The engineering team at a retail company is planning to migrate to AWS Cloud from the on-premises data center. The team is evaluating Amazon Relational Database Service (Amazon RDS) as the database tier for its flagship application. The team has hired you as an AWS Certified Solutions Architect Associate to advise on Amazon RDS Multi-AZ capabilities.\n\nWhich of the following would you identify as correct for Amazon RDS Multi-AZ? (Select two)",
+    "question": "<p>The engineering team at a retail company is planning to migrate to AWS Cloud from the on-premises data center. The team is evaluating Amazon Relational Database Service (Amazon RDS) as the database tier for its flagship application. The team has hired you as an AWS Certified Solutions Architect Associate to advise on Amazon RDS Multi-AZ capabilities.</p>\n\n<p>Which of the following would you identify as correct for Amazon RDS Multi-AZ? (Select two)</p>",
     "corrects": [
       1,
       3
@@ -3701,7 +3704,7 @@
   },
   {
     "id": 49,
-    "question": "A team has around 200 users, each of these having an IAM user account in AWS. Currently, they all have read access to an Amazon S3 bucket. The team wants 50 among them to have write and read access to the buckets.\n\nHow can you provide these users access in the least possible time, with minimal changes?",
+    "question": "<p>A team has around 200 users, each of these having an IAM user account in AWS. Currently, they all have read access to an Amazon S3 bucket. The team wants 50 among them to have write and read access to the buckets.</p>\n\n<p>How can you provide these users access in the least possible time, with minimal changes?</p>",
     "corrects": [
       1
     ],
@@ -3781,7 +3784,7 @@
   },
   {
     "id": 50,
-    "question": "The data engineering team at a company wants to analyze Amazon S3 storage access patterns to decide when to transition the right data to the right storage class.\n\nWhich of the following represents a correct option regarding the capabilities of Amazon S3 Analytics storage class analysis?",
+    "question": "<p>The data engineering team at a company wants to analyze Amazon S3 storage access patterns to decide when to transition the right data to the right storage class.</p>\n\n<p>Which of the following represents a correct option regarding the capabilities of Amazon S3 Analytics storage class analysis?</p>",
     "corrects": [
       3
     ],
@@ -3853,7 +3856,7 @@
   },
   {
     "id": 51,
-    "question": "A startup uses a fleet of Amazon EC2 servers to manage its CRM application. These Amazon EC2 servers are behind Elastic Load Balancing (ELB). Which of the following configurations are NOT allowed for Elastic Load Balancing?",
+    "question": "<p>A startup uses a fleet of Amazon EC2 servers to manage its CRM application. These Amazon EC2 servers are behind Elastic Load Balancing (ELB). Which of the following configurations are NOT allowed for Elastic Load Balancing?</p>",
     "corrects": [
       1
     ],
@@ -3916,7 +3919,7 @@
   },
   {
     "id": 52,
-    "question": "A company has noticed several provisioned throughput exceptions on its Amazon DynamoDB database due to major spikes in the writes to the database. The development team wants to decouple the application layer from the database layer and dedicate a worker process to writing the data to Amazon DynamoDB.\n\nWhich middleware do you recommend on using that can scale infinitely and meet these requirements in the most cost effective way?",
+    "question": "<p>A company has noticed several provisioned throughput exceptions on its Amazon DynamoDB database due to major spikes in the writes to the database. The development team wants to decouple the application layer from the database layer and dedicate a worker process to writing the data to Amazon DynamoDB.</p>\n\n<p>Which middleware do you recommend on using that can scale infinitely and meet these requirements in the most cost effective way?</p>",
     "corrects": [
       3
     ],
@@ -3984,7 +3987,7 @@
   },
   {
     "id": 53,
-    "question": "Your e-commerce application is using an Amazon RDS PostgreSQL database and an analytics workload also runs on the same database. When the analytics workload is run, your e-commerce application slows down which further affects your sales.\n\nWhich of the following is the MOST cost-optimal solution to fix this issue?",
+    "question": "<p>Your e-commerce application is using an Amazon RDS PostgreSQL database and an analytics workload also runs on the same database. When the analytics workload is run, your e-commerce application slows down which further affects your sales.</p>\n\n<p>Which of the following is the MOST cost-optimal solution to fix this issue?</p>",
     "corrects": [
       3
     ],
@@ -4069,7 +4072,7 @@
   },
   {
     "id": 54,
-    "question": "A security consultant is designing a solution for a company that wants to provide developers with individual AWS accounts through AWS Organizations, while also maintaining standard security controls. Since the individual developers will have AWS account root user-level access to their own accounts, the consultant wants to ensure that the mandatory AWS CloudTrail configuration that is applied to new developer accounts is not modified.\n\nWhich of the following actions meets the given requirements?",
+    "question": "<p>A security consultant is designing a solution for a company that wants to provide developers with individual AWS accounts through AWS Organizations, while also maintaining standard security controls. Since the individual developers will have AWS account root user-level access to their own accounts, the consultant wants to ensure that the mandatory AWS CloudTrail configuration that is applied to new developer accounts is not modified.</p>\n\n<p>Which of the following actions meets the given requirements?</p>",
     "corrects": [
       2
     ],
@@ -4140,7 +4143,7 @@
   },
   {
     "id": 55,
-    "question": "To support critical production workloads that require maximum resiliency, a company wants to configure network connections between its Amazon VPC and the on-premises infrastructure. The company needs AWS Direct Connect connections with speeds greater than 1 Gbps.\n\nAs a solutions architect, which of the following will you suggest as the best architecture for this requirement?",
+    "question": "<p>To support critical production workloads that require maximum resiliency, a company wants to configure network connections between its Amazon VPC and the on-premises infrastructure. The company needs AWS Direct Connect connections with speeds greater than 1 Gbps.</p>\n\n<p>As a solutions architect, which of the following will you suggest as the best architecture for this requirement?</p>",
     "corrects": [
       2
     ],
@@ -4226,7 +4229,7 @@
   },
   {
     "id": 56,
-    "question": "An e-commerce application uses a relational database that runs several queries that perform joins on multiple tables. The development team has found that these queries are slow and expensive, therefore these are a good candidate for caching. The application needs to use a caching service that supports multi-threading.\n\nAs a solutions architect, which of the following services would you recommend for the given use case?",
+    "question": "<p>An e-commerce application uses a relational database that runs several queries that perform joins on multiple tables. The development team has found that these queries are slow and expensive, therefore these are a good candidate for caching. The application needs to use a caching service that supports multi-threading.</p>\n\n<p>As a solutions architect, which of the following services would you recommend for the given use case?</p>",
     "corrects": [
       1
     ],
@@ -4319,7 +4322,7 @@
   },
   {
     "id": 57,
-    "question": "The DevOps team at a major financial services company uses Multi-Availability Zone (Multi-AZ) deployment for its MySQL Amazon RDS database in order to automate its database replication and augment data durability. The DevOps team has scheduled a maintenance window for a database engine level upgrade for the coming weekend.\n\nWhich of the following is the correct outcome during the maintenance window?",
+    "question": "<p>The DevOps team at a major financial services company uses Multi-Availability Zone (Multi-AZ) deployment for its MySQL Amazon RDS database in order to automate its database replication and augment data durability. The DevOps team has scheduled a maintenance window for a database engine level upgrade for the coming weekend.</p>\n\n<p>Which of the following is the correct outcome during the maintenance window?</p>",
     "corrects": [
       2
     ],
@@ -4391,7 +4394,7 @@
   },
   {
     "id": 58,
-    "question": "The engineering team at a social media company has noticed that while some of the images stored in Amazon S3 are frequently accessed, others sit idle for a considerable span of time.\n\nAs a solutions architect, what is your recommendation to build the MOST cost-effective solution?",
+    "question": "<p>The engineering team at a social media company has noticed that while some of the images stored in Amazon S3 are frequently accessed, others sit idle for a considerable span of time.</p>\n\n<p>As a solutions architect, what is your recommendation to build the MOST cost-effective solution?</p>",
     "corrects": [
       1
     ],
@@ -4467,7 +4470,7 @@
   },
   {
     "id": 59,
-    "question": "A retail company's procurement application becomes slow when traffic spikes. The application has a three-tier architecture (web, application and database tier) that uses synchronous transactions. The engineering team at the company has identified certain bottlenecks in the application tier but it does not want to change the underlying application architecture.\n\nAs a solutions architect, which of the following solutions would you suggest to meet the required application response times while accounting for any traffic spikes?",
+    "question": "<p>A retail company's procurement application becomes slow when traffic spikes. The application has a three-tier architecture (web, application and database tier) that uses synchronous transactions. The engineering team at the company has identified certain bottlenecks in the application tier but it does not want to change the underlying application architecture.</p>\n\n<p>As a solutions architect, which of the following solutions would you suggest to meet the required application response times while accounting for any traffic spikes?</p>",
     "corrects": [
       3
     ],
@@ -4551,7 +4554,7 @@
   },
   {
     "id": 60,
-    "question": "As a Solutions Architect, you would like to completely secure the communications between your Amazon CloudFront distribution and your Amazon S3 bucket which contains the static files for your website. Users should only be able to access the Amazon S3 bucket through Amazon CloudFront and not directly.\n\nWhat do you recommend?",
+    "question": "<p>As a Solutions Architect, you would like to completely secure the communications between your Amazon CloudFront distribution and your Amazon S3 bucket which contains the static files for your website. Users should only be able to access the Amazon S3 bucket through Amazon CloudFront and not directly.</p>\n\n<p>What do you recommend?</p>",
     "corrects": [
       1
     ],
@@ -4589,7 +4592,10 @@
         "answer": "",
         "explanation": "To restrict access to content that you serve from Amazon S3 buckets, you need to follow the following steps:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Create a special Amazon CloudFront user called an origin access identity (OAI) and associate it with your distribution.</li>\n<li>Configure your Amazon S3 bucket permissions so that Amazon CloudFront can use the OAI to access the files in your bucket and serve them to your users. Make sure that users can’t use a direct URL to the Amazon S3 bucket to access a file there.</li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "After you take these steps, users can only access your files through Amazon CloudFront, not directly from the Amazon S3 bucket."
@@ -4619,7 +4625,7 @@
   },
   {
     "id": 61,
-    "question": "The DevOps team at an e-commerce company has deployed a fleet of Amazon EC2 instances under an Auto Scaling group (ASG). The instances under the ASG span two Availability Zones (AZ) within the us-east-1 region. All the incoming requests are handled by an Application Load Balancer (ALB) that routes the requests to the Amazon EC2 instances under the Auto Scaling Group. As part of a test run, two instances (instance 1 and 2, belonging to AZ A) were manually terminated by the DevOps team causing the Availability Zones (AZ) to have unbalanced resources. Later that day, another instance (belonging to AZ B) was detected as unhealthy by the Application Load Balancer's health check.\n\nCan you identify the correct outcomes for these events? (Select two)",
+    "question": "<p>The DevOps team at an e-commerce company has deployed a fleet of Amazon EC2 instances under an Auto Scaling group (ASG). The instances under the ASG span two Availability Zones (AZ) within the <code>us-east-1</code> region. All the incoming requests are handled by an Application Load Balancer (ALB) that routes the requests to the Amazon EC2 instances under the Auto Scaling Group. As part of a test run, two instances (instance 1 and 2, belonging to AZ A) were manually terminated by the DevOps team causing the Availability Zones (AZ) to have unbalanced resources. Later that day, another instance (belonging to AZ B) was detected as unhealthy by the Application Load Balancer's health check.</p>\n\n<p>Can you identify the correct outcomes for these events? (Select two)</p>",
     "corrects": [
       2,
       3
@@ -4708,7 +4714,7 @@
   },
   {
     "id": 62,
-    "question": "The systems administrator at a company wants to set up a highly available architecture for a bastion host solution.\n\nAs a solutions architect, which of the following options would you recommend as the solution?",
+    "question": "<p>The systems administrator at a company wants to set up a highly available architecture for a bastion host solution.</p>\n\n<p>As a solutions architect, which of the following options would you recommend as the solution?</p>",
     "corrects": [
       3
     ],
@@ -4789,7 +4795,7 @@
   },
   {
     "id": 63,
-    "question": "A company maintains its business-critical customer data on an on-premises system in an encrypted format. Over the years, the company has transitioned from using a single encryption key to multiple encryption keys by dividing the data into logical chunks. With the decision to move all the data to an Amazon S3 bucket, the company is now looking for a technique to encrypt each file with a different encryption key to provide maximum security to the migrated on-premises data.\n\nHow will you implement this requirement without adding the overhead of splitting the data into logical groups?",
+    "question": "<p>A company maintains its business-critical customer data on an on-premises system in an encrypted format. Over the years, the company has transitioned from using a single encryption key to multiple encryption keys by dividing the data into logical chunks. With the decision to move all the data to an Amazon S3 bucket, the company is now looking for a technique to encrypt each file with a different encryption key to provide maximum security to the migrated on-premises data.</p>\n\n<p>How will you implement this requirement without adding the overhead of splitting the data into logical groups?</p>",
     "corrects": [
       1
     ],
@@ -4853,7 +4859,7 @@
   },
   {
     "id": 64,
-    "question": "You are using AWS Lambda to implement a batch job for a big data analytics workflow. Based on historical trends, a similar job runs for 30 minutes on average. The AWS Lambda function pulls data from Amazon S3, processes it, and then writes the results back to Amazon S3. When you deployed your AWS Lambda function, you noticed an issue where the AWS Lambda function abruptly failed after 15 minutes of execution.\n\nAs a solutions architect, which of the following would you identify as the root cause of the issue?",
+    "question": "<p>You are using AWS Lambda to implement a batch job for a big data analytics workflow. Based on historical trends, a similar job runs for 30 minutes on average. The AWS Lambda function pulls data from Amazon S3, processes it, and then writes the results back to Amazon S3. When you deployed your AWS Lambda function, you noticed an issue where the AWS Lambda function abruptly failed after 15 minutes of execution.</p>\n\n<p>As a solutions architect, which of the following would you identify as the root cause of the issue?</p>",
     "corrects": [
       2
     ],
@@ -4920,7 +4926,7 @@
   },
   {
     "id": 65,
-    "question": "A development team wants to ensure that all objects uploaded to an Amazon S3 bucket are encrypted?\n\nWhich of the following options represents the correct solution?",
+    "question": "<p>A development team wants to ensure that all objects uploaded to an Amazon S3 bucket are encrypted?</p>\n\n<p>Which of the following options represents the correct solution?</p>",
     "corrects": [
       3
     ],
@@ -4958,7 +4964,10 @@
         "answer": "",
         "explanation": "Amazon S3 encrypts your data at the object level as it writes to disks in AWS data centers, and decrypts it for you when you access it. You can encrypt objects by using client-side encryption or server-side encryption. Client-side encryption occurs when an object is encrypted before you upload it to Amazon S3, and the keys are not managed by AWS. With server-side encryption, Amazon manages the keys in one of three ways:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Server-side encryption with customer-provided encryption keys (SSE-C).</li>\n<li>SSE-S3.</li>\n<li>SSE-KMS.</li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "Server-side encryption is about data encryption at rest—that is, Amazon S3 encrypts your data at the object level as it writes it to disks in its data centers and decrypts it for you when you access it. As long as you authenticate your request and you have access permissions, there is no difference in the way you access encrypted or unencrypted objects."

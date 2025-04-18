@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 import Menu from "@/components/Menu";
 import ExamRedirect from "@/components/ExamRedirect";
+import NotificationContainer from '@/components/common/NotificationContainer';
 
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="bg-white antialiased">
+        <NotificationContainer />
         <ExamRedirect />
         {/* Menu */}
         <header className="bg-blue-600 text-white shadow-md px-4">

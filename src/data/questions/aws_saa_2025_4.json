@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "The engineering team at a company is running batch workloads on AWS Cloud. The team has embedded Amazon RDS database connection strings within each web server hosting the flagship application. After failing a security audit, the team is looking at a different approach to store the database secrets securely and automatically rotate the database credentials.\n\nWhich of the following solutions would you recommend to meet this requirement?",
+    "question": "<p>The engineering team at a company is running batch workloads on AWS Cloud. The team has embedded Amazon RDS database connection strings within each web server hosting the flagship application. After failing a security audit, the team is looking at a different approach to store the database secrets securely and automatically rotate the database credentials.</p>\n\n<p>Which of the following solutions would you recommend to meet this requirement?</p>",
     "corrects": [
       3
     ],
@@ -70,7 +70,7 @@
   },
   {
     "id": 2,
-    "question": "A ride-sharing company wants to improve the ride-tracking system that stores GPS coordinates for all rides. The engineering team at the company is looking for a NoSQL database that has single-digit millisecond latency, can scale horizontally, and is serverless, so that they can perform high-frequency lookups reliably.\n\nAs a Solutions Architect, which database do you recommend for their requirements?",
+    "question": "<p>A ride-sharing company wants to improve the ride-tracking system that stores GPS coordinates for all rides. The engineering team at the company is looking for a NoSQL database that has single-digit millisecond latency, can scale horizontally, and is serverless, so that they can perform high-frequency lookups reliably.</p>\n\n<p>As a Solutions Architect, which database do you recommend for their requirements?</p>",
     "corrects": [
       1
     ],
@@ -158,7 +158,7 @@
   },
   {
     "id": 3,
-    "question": "The engineering team at a leading e-commerce company is anticipating a surge in the traffic because of a flash sale planned for the weekend. You have estimated the web traffic to be 10x. The content of your website is highly dynamic and changes very often.\n\nAs a Solutions Architect, which of the following options would you recommend to make sure your infrastructure scales for that day?",
+    "question": "<p>The engineering team at a leading e-commerce company is anticipating a surge in the traffic because of a flash sale planned for the weekend. You have estimated the web traffic to be 10x. The content of your website is highly dynamic and changes very often.</p>\n\n<p>As a Solutions Architect, which of the following options would you recommend to make sure your infrastructure scales for that day?</p>",
     "corrects": [
       1
     ],
@@ -241,7 +241,7 @@
   },
   {
     "id": 4,
-    "question": "A company has built a serverless application using Amazon API Gateway and AWS Lambda. The backend is leveraging an Amazon Aurora MySQL database. The web application was initially launched in the Americas and the company would now like to expand it to Europe, where a read-only version will be available to improve latency. You plan on deploying the Amazon API Gateway and AWS Lambda using AWS CloudFormation, but would like to have a read-only copy of your data in Europe as well.\n\nAs a Solutions Architect, what do you recommend?",
+    "question": "<p>A company has built a serverless application using Amazon API Gateway and AWS Lambda. The backend is leveraging an Amazon Aurora MySQL database. The web application was initially launched in the Americas and the company would now like to expand it to Europe, where a read-only version will be available to improve latency. You plan on deploying the Amazon API Gateway and AWS Lambda using AWS CloudFormation, but would like to have a read-only copy of your data in Europe as well.</p>\n\n<p>As a Solutions Architect, what do you recommend?</p>",
     "corrects": [
       1
     ],
@@ -306,7 +306,7 @@
   },
   {
     "id": 5,
-    "question": "A developer in your company has set up a classic 2 tier architecture consisting of an Application Load Balancer and an Auto Scaling group (ASG) managing a fleet of Amazon EC2 instances. The Application Load Balancer is deployed in a subnet of size 10.0.1.0/24 and the Auto Scaling group is deployed in a subnet of size 10.0.4.0/22.\n\nAs a solutions architect, you would like to adhere to the security pillar of the well-architected framework. How do you configure the security group of the Amazon EC2 instances to only allow traffic coming from the Application Load Balancer?",
+    "question": "<p>A developer in your company has set up a classic 2 tier architecture consisting of an Application Load Balancer and an Auto Scaling group (ASG) managing a fleet of Amazon EC2 instances. The Application Load Balancer is deployed in a subnet of size <code>10.0.1.0/24</code> and the Auto Scaling group is deployed in a subnet of size <code>10.0.4.0/22</code>.</p>\n\n<p>As a solutions architect, you would like to adhere to the security pillar of the well-architected framework. How do you configure the security group of the Amazon EC2 instances to only allow traffic coming from the Application Load Balancer?</p>",
     "corrects": [
       1
     ],
@@ -384,7 +384,7 @@
   },
   {
     "id": 6,
-    "question": "A retail company uses AWS Cloud to manage its technology infrastructure. The company has deployed its consumer-focused web application on Amazon EC2-based web servers and uses Amazon RDS PostgreSQL database as the data store. The PostgreSQL database is set up in a private subnet that allows inbound traffic from selected Amazon EC2 instances. The database also uses AWS Key Management Service (AWS KMS) for encrypting data at rest.\n\nWhich of the following steps would you recommend to facilitate end-to-end security for the data-in-transit while accessing the database?",
+    "question": "<p>A retail company uses AWS Cloud to manage its technology infrastructure. The company has deployed its consumer-focused web application on Amazon EC2-based web servers and uses Amazon RDS PostgreSQL database as the data store. The PostgreSQL database is set up in a private subnet that allows inbound traffic from selected Amazon EC2 instances. The database also uses AWS Key Management Service (AWS KMS) for encrypting data at rest.</p>\n\n<p>Which of the following steps would you recommend to facilitate end-to-end security for the data-in-transit while accessing the database?</p>",
     "corrects": [
       2
     ],
@@ -458,7 +458,7 @@
   },
   {
     "id": 7,
-    "question": "A company wants to grant access to an Amazon S3 bucket to users in its own AWS account as well as to users in another AWS account. Which of the following options can be used to meet this requirement?",
+    "question": "<p>A company wants to grant access to an Amazon S3 bucket to users in its own AWS account as well as to users in another AWS account. Which of the following options can be used to meet this requirement?</p>",
     "corrects": [
       2
     ],
@@ -530,7 +530,7 @@
   },
   {
     "id": 8,
-    "question": "An e-commerce company has copied 1 petabyte of data from its on-premises data center to an Amazon S3 bucket in the us-west-1 Region using an AWS Direct Connect link. The company now wants to set up a one-time copy of the data to another Amazon S3 bucket in the us-east-1 Region. The on-premises data center does not allow the use of AWS Snowball.\n\nAs a Solutions Architect, which of the following options can be used to accomplish this goal? (Select two)",
+    "question": "<p>An e-commerce company has copied 1 petabyte of data from its on-premises data center to an Amazon S3 bucket in the <code>us-west-1</code> Region using an AWS Direct Connect link. The company now wants to set up a one-time copy of the data to another Amazon S3 bucket in the <code>us-east-1</code> Region. The on-premises data center does not allow the use of AWS Snowball.</p>\n\n<p>As a Solutions Architect, which of the following options can be used to accomplish this goal? (Select two)</p>",
     "corrects": [
       1,
       5
@@ -621,7 +621,7 @@
   },
   {
     "id": 9,
-    "question": "A junior developer has downloaded a sample Amazon S3 bucket policy to make changes to it based on new company-wide access policies. He has requested your help in understanding this bucket policy.\n\nAs a Solutions Architect, which of the following would you identify as the correct description for the given policy?\n\n{\n \"Version\": \"2012-10-17\",\n \"Id\": \"S3PolicyId1\",\n \"Statement\": [\n   {\n     \"Sid\": \"IPAllow\",\n     \"Effect\": \"Allow\",\n     \"Principal\": \"*\",\n     \"Action\": \"s3:*\",\n     \"Resource\": \"arn:aws:s3:::examplebucket/*\",\n     \"Condition\": {\n        \"IpAddress\": {\"aws:SourceIp\": \"54.240.143.0/24\"},\n        \"NotIpAddress\": {\"aws:SourceIp\": \"54.240.143.188/32\"}\n     }\n   }\n ]\n}",
+    "question": "<p>A junior developer has downloaded a sample Amazon S3 bucket policy to make changes to it based on new company-wide access policies. He has requested your help in understanding this bucket policy.</p>\n\n<p>As a Solutions Architect, which of the following would you identify as the correct description for the given policy?</p>\n\n<pre><code>{\n \"Version\": \"2012-10-17\",\n \"Id\": \"S3PolicyId1\",\n \"Statement\": [\n   {\n     \"Sid\": \"IPAllow\",\n     \"Effect\": \"Allow\",\n     \"Principal\": \"*\",\n     \"Action\": \"s3:*\",\n     \"Resource\": \"arn:aws:s3:::examplebucket/*\",\n     \"Condition\": {\n        \"IpAddress\": {\"aws:SourceIp\": \"54.240.143.0/24\"},\n        \"NotIpAddress\": {\"aws:SourceIp\": \"54.240.143.188/32\"}\n     }\n   }\n ]\n}\n</code></pre>",
     "corrects": [
       4
     ],
@@ -701,7 +701,7 @@
   },
   {
     "id": 10,
-    "question": "You are working as an AWS architect for a weather tracking facility. You are asked to set up a Disaster Recovery (DR) mechanism with minimum costs. In case of failure, the facility can only bear data loss of approximately 15 minutes without jeopardizing the forecasting models.\n\nAs a Solutions Architect, which DR method will you suggest?",
+    "question": "<p>You are working as an AWS architect for a weather tracking facility. You are asked to set up a Disaster Recovery (DR) mechanism with minimum costs. In case of failure, the facility can only bear data loss of approximately 15 minutes without jeopardizing the forecasting models.</p>\n\n<p>As a Solutions Architect, which DR method will you suggest?</p>",
     "corrects": [
       1
     ],
@@ -772,7 +772,7 @@
   },
   {
     "id": 11,
-    "question": "An IT company runs a high-performance computing (HPC) workload on AWS. The workload requires high network throughput and low-latency network performance along with tightly coupled node-to-node communications. The Amazon EC2 instances are properly sized for compute and storage capacity and are launched using default options.\n\nWhich of the following solutions can be used to improve the performance of the workload?",
+    "question": "<p>An IT company runs a high-performance computing (HPC) workload on AWS. The workload requires high network throughput and low-latency network performance along with tightly coupled node-to-node communications. The Amazon EC2 instances are properly sized for compute and storage capacity and are launched using default options.</p>\n\n<p>Which of the following solutions can be used to improve the performance of the workload?</p>",
     "corrects": [
       1
     ],
@@ -844,7 +844,7 @@
   },
   {
     "id": 12,
-    "question": "An e-commerce company wants to migrate its on-premises application to AWS. The application consists of application servers and a Microsoft SQL Server database. The solution should result in the maximum possible availability for the database layer while minimizing operational and management overhead.\n\nAs a solutions architect, which of the following would you recommend to meet the given requirements?",
+    "question": "<p>An e-commerce company wants to migrate its on-premises application to AWS. The application consists of application servers and a Microsoft SQL Server database. The solution should result in the maximum possible availability for the database layer while minimizing operational and management overhead.</p>\n\n<p>As a solutions architect, which of the following would you recommend to meet the given requirements?</p>",
     "corrects": [
       1
     ],
@@ -912,7 +912,7 @@
   },
   {
     "id": 13,
-    "question": "A music-sharing company uses a Network Load Balancer to direct traffic to 5 Amazon EC2 instances managed by an Auto Scaling group. When a very popular song is released, the Auto Scaling Group scales to 100 instances and the company incurs high network and compute fees.\n\nThe company wants a solution to reduce the costs without changing any of the application code. What do you recommend?",
+    "question": "<p>A music-sharing company uses a Network Load Balancer to direct traffic to 5 Amazon EC2 instances managed by an Auto Scaling group. When a very popular song is released, the Auto Scaling Group scales to 100 instances and the company incurs high network and compute fees.</p>\n\n<p>The company wants a solution to reduce the costs without changing any of the application code. What do you recommend?</p>",
     "corrects": [
       4
     ],
@@ -984,7 +984,7 @@
   },
   {
     "id": 14,
-    "question": "A social media company wants the capability to dynamically alter the size of a geographic area from which traffic is routed to a specific server resource.\n\nWhich feature of Amazon Route 53 can help achieve this functionality?",
+    "question": "<p>A social media company wants the capability to dynamically alter the size of a geographic area from which traffic is routed to a specific server resource.</p>\n\n<p>Which feature of Amazon Route 53 can help achieve this functionality?</p>",
     "corrects": [
       4
     ],
@@ -1026,7 +1026,10 @@
         "answer": "",
         "explanation": "To optionally change the size of the geographic region from which Amazon Route 53 routes traffic to a resource, specify the applicable value for the bias:\n1. To expand the size of the geographic region from which Amazon Route 53 routes traffic to a resource, specify a positive integer from 1 to 99 for the bias. Amazon Route 53 shrinks the size of adjacent regions."
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>To shrink the size of the geographic region from which Amazon Route 53 routes traffic to a resource, specify a negative bias of -1 to -99. Amazon Route 53 expands the size of adjacent regions.</li>\n</ol>"
+      },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-saa-pt/assets/pt3-q61-i1.jpg",
         "answer": "",
@@ -1069,7 +1072,7 @@
   },
   {
     "id": 15,
-    "question": "An IT company has a large number of clients opting to build their application programming interface (API) using Docker containers. To facilitate the hosting of these containers, the company is looking at various orchestration services available with AWS.\n\nAs a Solutions Architect, which of the following solutions will you suggest? (Select two)",
+    "question": "<p>An IT company has a large number of clients opting to build their application programming interface (API) using Docker containers. To facilitate the hosting of these containers, the company is looking at various orchestration services available with AWS.</p>\n\n<p>As a Solutions Architect, which of the following solutions will you suggest? (Select two)</p>",
     "corrects": [
       1,
       5
@@ -1146,7 +1149,7 @@
   },
   {
     "id": 16,
-    "question": "A photo hosting service publishes a collection of beautiful mountain images, every month, that aggregate over 50 gigabytes in size and downloaded all around the world. The content is currently hosted on Amazon EFS and distributed by Elastic Load Balancing (ELB) and Amazon EC2 instances. The website is experiencing high load each month and very high network costs.\n\nAs a Solutions Architect, what can you recommend that won't force an application refactor and reduce network costs and Amazon EC2 load drastically?",
+    "question": "<p>A photo hosting service publishes a collection of beautiful mountain images, every month, that aggregate over 50 gigabytes in size and downloaded all around the world. The content is currently hosted on Amazon EFS and distributed by Elastic Load Balancing (ELB) and Amazon EC2 instances. The website is experiencing high load each month and very high network costs.</p>\n\n<p>As a Solutions Architect, what can you recommend that won't force an application refactor and reduce network costs and Amazon EC2 load drastically?</p>",
     "corrects": [
       2
     ],
@@ -1226,7 +1229,7 @@
   },
   {
     "id": 17,
-    "question": "A leading e-commerce company runs its IT infrastructure on AWS Cloud. The company has a batch job running at 7AM daily on an Amazon RDS database. It processes shipping orders for the past day, and usually gets around 2000 records that need to be processed sequentially in a batch job via a shell script. The processing of each record takes about 3 seconds.\n\nWhat platform do you recommend to run this batch job?",
+    "question": "<p>A leading e-commerce company runs its IT infrastructure on AWS Cloud. The company has a batch job running at 7AM daily on an Amazon RDS database. It processes shipping orders for the past day, and usually gets around 2000 records that need to be processed sequentially in a batch job via a shell script. The processing of each record takes about 3 seconds.</p>\n\n<p>What platform do you recommend to run this batch job?</p>",
     "corrects": [
       2
     ],
@@ -1286,7 +1289,7 @@
   },
   {
     "id": 18,
-    "question": "An e-commerce company tracks user clicks on its flagship website and performs analytics to provide near-real-time product recommendations. An Amazon EC2 instance receives data from the website and sends the data to an Amazon Aurora Database instance. Another Amazon EC2 instance continuously checks the changes in the database and executes SQL queries to provide recommendations. Now, the company wants a redesign to decouple and scale the infrastructure. The solution must ensure that data can be analyzed in real-time without any data loss even when the company sees huge traffic spikes.\n\nWhat would you recommend as an AWS Certified Solutions Architect - Associate?",
+    "question": "<p>An e-commerce company tracks user clicks on its flagship website and performs analytics to provide near-real-time product recommendations. An Amazon EC2 instance receives data from the website and sends the data to an Amazon Aurora Database instance. Another Amazon EC2 instance continuously checks the changes in the database and executes SQL queries to provide recommendations. Now, the company wants a redesign to decouple and scale the infrastructure. The solution must ensure that data can be analyzed in real-time without any data loss even when the company sees huge traffic spikes.</p>\n\n<p>What would you recommend as an AWS Certified Solutions Architect - Associate?</p>",
     "corrects": [
       4
     ],
@@ -1376,7 +1379,7 @@
   },
   {
     "id": 19,
-    "question": "A ride-sharing company wants to use an Amazon DynamoDB table for data storage. The table will not be used during the night hours whereas the read and write traffic will often be unpredictable during day hours. When traffic spikes occur they will happen very quickly.\n\nWhich of the following will you recommend as the best-fit solution?",
+    "question": "<p>A ride-sharing company wants to use an Amazon DynamoDB table for data storage. The table will not be used during the night hours whereas the read and write traffic will often be unpredictable during day hours. When traffic spikes occur they will happen very quickly.</p>\n\n<p>Which of the following will you recommend as the best-fit solution?</p>",
     "corrects": [
       4
     ],
@@ -1519,7 +1522,7 @@
   },
   {
     "id": 20,
-    "question": "A financial services firm has traditionally operated with an on-premise data center and would like to create a disaster recovery strategy leveraging the AWS Cloud.\n\nAs a Solutions Architect, you would like to ensure that a scaled-down version of a fully functional environment is always running in the AWS cloud, and in case of a disaster, the recovery time is kept to a minimum. Which disaster recovery strategy is that?",
+    "question": "<p>A financial services firm has traditionally operated with an on-premise data center and would like to create a disaster recovery strategy leveraging the AWS Cloud.</p>\n\n<p>As a Solutions Architect, you would like to ensure that a scaled-down version of a fully functional environment is always running in the AWS cloud, and in case of a disaster, the recovery time is kept to a minimum. Which disaster recovery strategy is that?</p>",
     "corrects": [
       3
     ],
@@ -1579,7 +1582,7 @@
   },
   {
     "id": 21,
-    "question": "As an e-sport tournament hosting company, you have servers that need to scale and be highly available. Therefore you have deployed an Elastic Load Balancing (ELB) with an Auto Scaling group (ASG) across 3 Availability Zones (AZs). When e-sport tournaments are running, the servers need to scale quickly. And when tournaments are done, the servers can be idle. As a general rule, you would like to be highly available, have the capacity to scale and optimize your costs.\n\nWhat do you recommend? (Select two)",
+    "question": "<p>As an e-sport tournament hosting company, you have servers that need to scale and be highly available. Therefore you have deployed an Elastic Load Balancing (ELB) with an Auto Scaling group (ASG) across 3 Availability Zones (AZs). When e-sport tournaments are running, the servers need to scale quickly. And when tournaments are done, the servers can be idle. As a general rule, you would like to be highly available, have the capacity to scale and optimize your costs.</p>\n\n<p>What do you recommend? (Select two)</p>",
     "corrects": [
       1,
       2
@@ -1669,7 +1672,7 @@
   },
   {
     "id": 22,
-    "question": "As part of the on-premises data center migration to AWS Cloud, a company is looking at using multiple AWS Snow Family devices to move their on-premises data.\n\nWhich AWS Snow Family service offers the feature of storage clustering?",
+    "question": "<p>As part of the on-premises data center migration to AWS Cloud, a company is looking at using multiple AWS Snow Family devices to move their on-premises data.</p>\n\n<p>Which AWS Snow Family service offers the feature of storage clustering?</p>",
     "corrects": [
       1
     ],
@@ -1741,7 +1744,7 @@
   },
   {
     "id": 23,
-    "question": "An Elastic Load Balancer has marked all the Amazon EC2 instances in the target group as unhealthy. Surprisingly, when a developer enters the IP address of the Amazon EC2 instances in the web browser, he can access the website.\n\nWhat could be the reason the instances are being marked as unhealthy? (Select two)",
+    "question": "<p>An Elastic Load Balancer has marked all the Amazon EC2 instances in the target group as unhealthy. Surprisingly, when a developer enters the IP address of the Amazon EC2 instances in the web browser, he can access the website.</p>\n\n<p>What could be the reason the instances are being marked as unhealthy? (Select two)</p>",
     "corrects": [
       2,
       4
@@ -1828,7 +1831,7 @@
   },
   {
     "id": 24,
-    "question": "A company has noticed that its Amazon EBS Elastic Volume (io1) accounts for 90% of the cost and the remaining 10% cost can be attributed to the Amazon EC2 instance. The Amazon CloudWatch metrics report that both the Amazon EC2 instance and the Amazon EBS volume are under-utilized. The Amazon CloudWatch metrics also show that the Amazon EBS volume has occasional I/O bursts. The entire infrastructure is managed by AWS CloudFormation.\n\nAs a Solutions Architect, what do you propose to reduce the costs?",
+    "question": "<p>A company has noticed that its Amazon EBS Elastic Volume (io1) accounts for 90% of the cost and the remaining 10% cost can be attributed to the Amazon EC2 instance. The Amazon CloudWatch metrics report that both the Amazon EC2 instance and the Amazon EBS volume are under-utilized. The Amazon CloudWatch metrics also show that the Amazon EBS volume has occasional I/O bursts. The entire infrastructure is managed by AWS CloudFormation.</p>\n\n<p>As a Solutions Architect, what do you propose to reduce the costs?</p>",
     "corrects": [
       2
     ],
@@ -1908,7 +1911,7 @@
   },
   {
     "id": 25,
-    "question": "A company runs a popular dating website on the AWS Cloud. As a Solutions Architect, you've designed the architecture of the website to follow a serverless pattern on the AWS Cloud using Amazon API Gateway and AWS Lambda. The backend uses an Amazon RDS PostgreSQL database. Currently, the application uses a username and password combination to connect the AWS Lambda function to the Amazon RDS database.\n\nYou would like to improve the security at the authentication level by leveraging short-lived credentials. What will you choose? (Select two)",
+    "question": "<p>A company runs a popular dating website on the AWS Cloud. As a Solutions Architect, you've designed the architecture of the website to follow a serverless pattern on the AWS Cloud using Amazon API Gateway and AWS Lambda. The backend uses an Amazon RDS PostgreSQL database. Currently, the application uses a username and password combination to connect the AWS Lambda function to the Amazon RDS database.</p>\n\n<p>You would like to improve the security at the authentication level by leveraging short-lived credentials. What will you choose? (Select two)</p>",
     "corrects": [
       2,
       5
@@ -1994,7 +1997,7 @@
   },
   {
     "id": 26,
-    "question": "The engineering team at a global e-commerce company is currently reviewing their disaster recovery strategy. The team has outlined that they need to be able to quickly recover their application stack with a Recovery Time Objective (RTO) of 5 minutes, in all of the AWS Regions that the application runs. The application stack currently takes over 45 minutes to install on a Linux system.\n\nAs a Solutions architect, which of the following options would you recommend as the disaster recovery strategy?",
+    "question": "<p>The engineering team at a global e-commerce company is currently reviewing their disaster recovery strategy. The team has outlined that they need to be able to quickly recover their application stack with a Recovery Time Objective (RTO) of 5 minutes, in all of the AWS Regions that the application runs. The application stack currently takes over 45 minutes to install on a Linux system.</p>\n\n<p>As a Solutions architect, which of the following options would you recommend as the disaster recovery strategy?</p>",
     "corrects": [
       1
     ],
@@ -2075,7 +2078,7 @@
   },
   {
     "id": 27,
-    "question": "The engineering team at an e-commerce company has been tasked with migrating to a serverless architecture. The team wants to focus on the key points of consideration when using AWS Lambda as a backbone for this architecture.\n\nAs a Solutions Architect, which of the following options would you identify as correct for the given requirement? (Select three)",
+    "question": "<p>The engineering team at an e-commerce company has been tasked with migrating to a serverless architecture. The team wants to focus on the key points of consideration when using AWS Lambda as a backbone for this architecture.</p>\n\n<p>As a Solutions Architect, which of the following options would you identify as correct for the given requirement? (Select three)</p>",
     "corrects": [
       2,
       4,
@@ -2181,7 +2184,7 @@
   },
   {
     "id": 28,
-    "question": "A company has migrated its application from a monolith architecture to a microservices based architecture. The development team has updated the Amazon Route 53 simple record to point \"myapp.mydomain.com\" from the old Load Balancer to the new one.\n\nThe users are still not redirected to the new Load Balancer. What has gone wrong in the configuration?",
+    "question": "<p>A company has migrated its application from a monolith architecture to a microservices based architecture. The development team has updated the Amazon Route 53 simple record to point \"myapp.mydomain.com\" from the old Load Balancer to the new one.</p>\n\n<p>The users are still not redirected to the new Load Balancer. What has gone wrong in the configuration?</p>",
     "corrects": [
       1
     ],
@@ -2258,7 +2261,7 @@
   },
   {
     "id": 29,
-    "question": "A company wants to adopt a hybrid cloud infrastructure where it uses some AWS services such as Amazon S3 alongside its on-premises data center. The company wants a dedicated private connection between the on-premise data center and AWS. In case of failures though, the company needs to guarantee uptime and is willing to use the public internet for an encrypted connection.\n\nWhat do you recommend? (Select two)",
+    "question": "<p>A company wants to adopt a hybrid cloud infrastructure where it uses some AWS services such as Amazon S3 alongside its on-premises data center. The company wants a dedicated private connection between the on-premise data center and AWS. In case of failures though, the company needs to guarantee uptime and is willing to use the public internet for an encrypted connection.</p>\n\n<p>What do you recommend? (Select two)</p>",
     "corrects": [
       2,
       4
@@ -2336,7 +2339,7 @@
   },
   {
     "id": 30,
-    "question": "Amazon Route 53 is configured to route traffic to two Network Load Balancer nodes belonging to two Availability Zones (AZs): AZ-A and AZ-B. Cross-zone load balancing is disabled. AZ-A has four targets and AZ-B has six targets.\n\nWhich of the below statements is true about traffic distribution to the target instances from Amazon Route 53?",
+    "question": "<p>Amazon Route 53 is configured to route traffic to two Network Load Balancer nodes belonging to two Availability Zones (AZs): <code>AZ-A</code> and <code>AZ-B</code>. Cross-zone load balancing is disabled. <code>AZ-A</code> has four targets and <code>AZ-B</code> has six targets.</p>\n\n<p>Which of the below statements is true about traffic distribution to the target instances from Amazon Route 53?</p>",
     "corrects": [
       1
     ],
@@ -2407,7 +2410,7 @@
   },
   {
     "id": 31,
-    "question": "An enterprise has decided to move its secondary workloads such as backups and archives to AWS cloud. The CTO wishes to move the data stored on physical tapes to Cloud, without changing their current tape backup workflows. The company holds petabytes of data on tapes and needs a cost-optimized solution to move this data to cloud.\n\nWhat is an optimal solution that meets these requirements while keeping the costs to a minimum?",
+    "question": "<p>An enterprise has decided to move its secondary workloads such as backups and archives to AWS cloud. The CTO wishes to move the data stored on physical tapes to Cloud, without changing their current tape backup workflows. The company holds petabytes of data on tapes and needs a cost-optimized solution to move this data to cloud.</p>\n\n<p>What is an optimal solution that meets these requirements while keeping the costs to a minimum?</p>",
     "corrects": [
       2
     ],
@@ -2484,7 +2487,7 @@
   },
   {
     "id": 32,
-    "question": "Your company is deploying a website running on AWS Elastic Beanstalk. The website takes over 45 minutes for the installation and contains both static as well as dynamic files that must be generated during the installation process.\n\nAs a Solutions Architect, you would like to bring the time to create a new instance in your AWS Elastic Beanstalk deployment to be less than 2 minutes. Which of the following options should be combined to build a solution for this requirement? (Select two)",
+    "question": "<p>Your company is deploying a website running on AWS Elastic Beanstalk. The website takes over 45 minutes for the installation and contains both static as well as dynamic files that must be generated during the installation process.</p>\n\n<p>As a Solutions Architect, you would like to bring the time to create a new instance in your AWS Elastic Beanstalk deployment to be less than 2 minutes. Which of the following options should be combined to build a solution for this requirement? (Select two)</p>",
     "corrects": [
       1,
       4
@@ -2573,7 +2576,7 @@
   },
   {
     "id": 33,
-    "question": "A development team has configured Elastic Load Balancing for host-based routing. The idea is to support multiple subdomains and different top-level domains.\n\nThe rule *.example.com matches which of the following?",
+    "question": "<p>A development team has configured Elastic Load Balancing for host-based routing. The idea is to support multiple subdomains and different top-level domains.</p>\n\n<p>The rule *.example.com matches which of the following?</p>",
     "corrects": [
       1
     ],
@@ -2648,7 +2651,7 @@
   },
   {
     "id": 34,
-    "question": "For security purposes, a development team has decided to deploy the Amazon EC2 instances in a private subnet. The team plans to use VPC endpoints so that the instances can access some AWS services securely. The members of the team would like to know about the two AWS services that support Gateway Endpoints.\n\nAs a solutions architect, which of the following services would you suggest for this requirement? (Select two)",
+    "question": "<p>For security purposes, a development team has decided to deploy the Amazon EC2 instances in a private subnet. The team plans to use VPC endpoints so that the instances can access some AWS services securely. The members of the team would like to know about the two AWS services that support Gateway Endpoints.</p>\n\n<p>As a solutions architect, which of the following services would you suggest for this requirement? (Select two)</p>",
     "corrects": [
       1,
       5
@@ -2750,7 +2753,7 @@
   },
   {
     "id": 35,
-    "question": "As a Solutions Architect, you are tasked to design a distributed application that will run on various Amazon EC2 instances. This application needs to have the highest performance local disk to cache data. Also, data is copied through an Amazon EC2 to EC2 replication mechanism. It is acceptable if the instance loses its data when stopped or terminated.\n\nWhich storage solution do you recommend?",
+    "question": "<p>As a Solutions Architect, you are tasked to design a distributed application that will run on various Amazon EC2 instances. This application needs to have the highest performance local disk to cache data. Also, data is copied through an Amazon EC2 to EC2 replication mechanism. It is acceptable if the instance loses its data when stopped or terminated.</p>\n\n<p>Which storage solution do you recommend?</p>",
     "corrects": [
       2
     ],
@@ -2817,7 +2820,7 @@
   },
   {
     "id": 36,
-    "question": "An Internet of Things (IoT) company would like to have a streaming system that performs real-time analytics on the ingested IoT data. Once the analytics is done, the company would like to send notifications back to the mobile applications of the IoT device owners.\n\nAs a solutions architect, which of the following AWS technologies would you recommend to send these notifications to the mobile applications?",
+    "question": "<p>An Internet of Things (IoT) company would like to have a streaming system that performs real-time analytics on the ingested IoT data. Once the analytics is done, the company would like to send notifications back to the mobile applications of the IoT device owners.</p>\n\n<p>As a solutions architect, which of the following AWS technologies would you recommend to send these notifications to the mobile applications?</p>",
     "corrects": [
       4
     ],
@@ -2895,7 +2898,7 @@
   },
   {
     "id": 37,
-    "question": "A CRM web application was written as a monolith in PHP and is facing scaling issues because of performance bottlenecks. The CTO wants to re-engineer towards microservices architecture and expose their application from the same load balancer, linked to different target groups with different URLs: checkout.mycorp.com, www.mycorp.com, yourcorp.com/profile and yourcorp.com/search. The CTO would like to expose all these URLs as HTTPS endpoints for security purposes.\n\nAs a solutions architect, which of the following would you recommend as a solution that requires MINIMAL configuration effort?",
+    "question": "<p>A CRM web application was written as a monolith in PHP and is facing scaling issues because of performance bottlenecks. The CTO wants to re-engineer towards microservices architecture and expose their application from the same load balancer, linked to different target groups with different URLs: checkout.mycorp.com, www.mycorp.com, yourcorp.com/profile and yourcorp.com/search. The CTO would like to expose all these URLs as HTTPS endpoints for security purposes.</p>\n\n<p>As a solutions architect, which of the following would you recommend as a solution that requires MINIMAL configuration effort?</p>",
     "corrects": [
       1
     ],
@@ -2963,7 +2966,7 @@
   },
   {
     "id": 38,
-    "question": "Your company runs a web portal to match developers to clients who need their help. As a solutions architect, you've designed the architecture of the website to be fully serverless with Amazon API Gateway and AWS Lambda. The backend uses Amazon DynamoDB table. You would like to automatically congratulate your developers on important milestones, such as - their first paid contract. All the contracts are stored in Amazon DynamoDB.\n\nWhich Amazon DynamoDB feature can you use to implement this functionality such that there is LEAST delay in sending automatic notifications?",
+    "question": "<p>Your company runs a web portal to match developers to clients who need their help. As a solutions architect, you've designed the architecture of the website to be fully serverless with Amazon API Gateway and AWS Lambda. The backend uses Amazon DynamoDB table. You would like to automatically congratulate your developers on important milestones, such as - their first paid contract. All the contracts are stored in Amazon DynamoDB.</p>\n\n<p>Which Amazon DynamoDB feature can you use to implement this functionality such that there is LEAST delay in sending automatic notifications?</p>",
     "corrects": [
       3
     ],
@@ -3040,7 +3043,7 @@
   },
   {
     "id": 39,
-    "question": "You are working as a Solutions Architect for a photo processing company that has a proprietary algorithm to compress an image without any loss in quality. Because of the efficiency of the algorithm, your clients are willing to wait for a response that carries their compressed images back. You also want to process these jobs asynchronously and scale quickly, to cater to the high demand. Additionally, you also want the job to be retried in case of failures.\n\nWhich combination of choices do you recommend to minimize cost and comply with the requirements? (Select two)",
+    "question": "<p>You are working as a Solutions Architect for a photo processing company that has a proprietary algorithm to compress an image without any loss in quality. Because of the efficiency of the algorithm, your clients are willing to wait for a response that carries their compressed images back. You also want to process these jobs asynchronously and scale quickly, to cater to the high demand. Additionally, you also want the job to be retried in case of failures.</p>\n\n<p>Which combination of choices do you recommend to minimize cost and comply with the requirements? (Select two)</p>",
     "corrects": [
       3,
       5
@@ -3131,7 +3134,7 @@
   },
   {
     "id": 40,
-    "question": "A small rental company had 5 employees, all working under the same AWS cloud account. These employees deployed their applications built for various functions- including billing, operations, finance, etc. Each of these employees has been operating in their own VPC. Now, there is a need to connect these VPCs so that the applications can communicate with each other.\n\nWhich of the following is the MOST cost-effective solution for this use-case?",
+    "question": "<p>A small rental company had 5 employees, all working under the same AWS cloud account. These employees deployed their applications built for various functions- including billing, operations, finance, etc. Each of these employees has been operating in their own VPC. Now, there is a need to connect these VPCs so that the applications can communicate with each other.</p>\n\n<p>Which of the following is the MOST cost-effective solution for this use-case?</p>",
     "corrects": [
       3
     ],
@@ -3199,7 +3202,7 @@
   },
   {
     "id": 41,
-    "question": "A systems administrator is creating IAM policies and attaching them to IAM identities. After creating the necessary identity-based policies, the administrator is now creating resource-based policies.\n\nWhich is the only resource-based policy that the IAM service supports?",
+    "question": "<p>A systems administrator is creating IAM policies and attaching them to IAM identities. After creating the necessary identity-based policies, the administrator is now creating resource-based policies.</p>\n\n<p>Which is the only resource-based policy that the IAM service supports?</p>",
     "corrects": [
       1
     ],
@@ -3263,7 +3266,7 @@
   },
   {
     "id": 42,
-    "question": "You are working for a software as a service (SaaS) company as a solutions architect and help design solutions for the company's customers. One of the customers is a bank and has a requirement to whitelist a public IP when the bank is accessing external services across the internet.\n\nWhich architectural choice do you recommend to maintain high availability, support scaling-up to 10 instances and comply with the bank's requirements?",
+    "question": "<p>You are working for a software as a service (SaaS) company as a solutions architect and help design solutions for the company's customers. One of the customers is a bank and has a requirement to whitelist a public IP when the bank is accessing external services across the internet.</p>\n\n<p>Which architectural choice do you recommend to maintain high availability, support scaling-up to 10 instances and comply with the bank's requirements?</p>",
     "corrects": [
       3
     ],
@@ -3344,7 +3347,7 @@
   },
   {
     "id": 43,
-    "question": "A Pharmaceuticals company is looking for a simple solution to connect its VPCs and on-premises networks through a central hub.\n\nAs a Solutions Architect, which of the following would you suggest as the solution that requires the LEAST operational overhead?",
+    "question": "<p>A Pharmaceuticals company is looking for a simple solution to connect its VPCs and on-premises networks through a central hub.</p>\n\n<p>As a Solutions Architect, which of the following would you suggest as the solution that requires the LEAST operational overhead?</p>",
     "corrects": [
       4
     ],
@@ -3447,7 +3450,7 @@
   },
   {
     "id": 44,
-    "question": "A company has grown from a small startup to an enterprise employing over 1000 people. As the team size has grown, the company has recently observed some strange behavior, with Amazon S3 buckets settings being changed regularly.\n\nHow can you figure out what's happening without restricting the rights of the users?",
+    "question": "<p>A company has grown from a small startup to an enterprise employing over 1000 people. As the team size has grown, the company has recently observed some strange behavior, with Amazon S3 buckets settings being changed regularly.</p>\n\n<p>How can you figure out what's happening without restricting the rights of the users?</p>",
     "corrects": [
       2
     ],
@@ -3518,7 +3521,7 @@
   },
   {
     "id": 45,
-    "question": "The engineering team at a social media company has recently migrated to AWS Cloud from its on-premises data center. The team is evaluating Amazon CloudFront to be used as a CDN for its flagship application. The team has hired you as an AWS Certified Solutions Architect – Associate to advise on Amazon CloudFront capabilities on routing, security, and high availability.\n\nWhich of the following would you identify as correct regarding Amazon CloudFront? (Select three)",
+    "question": "<p>The engineering team at a social media company has recently migrated to AWS Cloud from its on-premises data center. The team is evaluating Amazon CloudFront to be used as a CDN for its flagship application. The team has hired you as an AWS Certified Solutions Architect – Associate to advise on Amazon CloudFront capabilities on routing, security, and high availability.</p>\n\n<p>Which of the following would you identify as correct regarding Amazon CloudFront? (Select three)</p>",
     "corrects": [
       1,
       4,
@@ -3623,7 +3626,7 @@
   },
   {
     "id": 46,
-    "question": "A digital media company needs to manage uploads of around 1 terabyte each from an application being used by a partner company.\n\nAs a Solutions Architect, how will you handle the upload of these files to Amazon S3?",
+    "question": "<p>A digital media company needs to manage uploads of around 1 terabyte each from an application being used by a partner company.</p>\n\n<p>As a Solutions Architect, how will you handle the upload of these files to Amazon S3?</p>",
     "corrects": [
       1
     ],
@@ -3699,7 +3702,7 @@
   },
   {
     "id": 47,
-    "question": "A niche social media application allows users to connect with sports athletes. As a solutions architect, you've designed the architecture of the application to be fully serverless using Amazon API Gateway and AWS Lambda. The backend uses an Amazon DynamoDB table. Some of the star athletes using the application are highly popular, and therefore Amazon DynamoDB has increased the read capacity units (RCUs). Still, the application is experiencing a hot partition problem.\n\nWhat can you do to improve the performance of Amazon DynamoDB and eliminate the hot partition problem without a lot of application refactoring?",
+    "question": "<p>A niche social media application allows users to connect with sports athletes. As a solutions architect, you've designed the architecture of the application to be fully serverless using Amazon API Gateway and AWS Lambda. The backend uses an Amazon DynamoDB table. Some of the star athletes using the application are highly popular, and therefore Amazon DynamoDB has increased the read capacity units (RCUs). Still, the application is experiencing a hot partition problem.</p>\n\n<p>What can you do to improve the performance of Amazon DynamoDB and eliminate the hot partition problem without a lot of application refactoring?</p>",
     "corrects": [
       3
     ],
@@ -3767,7 +3770,7 @@
   },
   {
     "id": 48,
-    "question": "A company's business logic is built on several microservices that are running in the on-premises data center. They currently communicate using a message broker that supports the MQTT protocol. The company is looking at migrating these applications and the message broker to AWS Cloud without changing the application logic.\n\nWhich technology allows you to get a managed message broker that supports the MQTT protocol?",
+    "question": "<p>A company's business logic is built on several microservices that are running in the on-premises data center. They currently communicate using a message broker that supports the MQTT protocol. The company is looking at migrating these applications and the message broker to AWS Cloud without changing the application logic.</p>\n\n<p>Which technology allows you to get a managed message broker that supports the MQTT protocol?</p>",
     "corrects": [
       4
     ],
@@ -3837,7 +3840,7 @@
   },
   {
     "id": 49,
-    "question": "A company has developed a popular photo-sharing website using a serverless pattern on the AWS Cloud using Amazon API Gateway and AWS Lambda. The backend uses an Amazon RDS PostgreSQL database. The website is experiencing high read traffic and the AWS Lambda functions are putting an increased read load on the Amazon RDS database.\n\nThe architecture team is planning to increase the read throughput of the database, without changing the application's core logic. As a Solutions Architect, what do you recommend?",
+    "question": "<p>A company has developed a popular photo-sharing website using a serverless pattern on the AWS Cloud using Amazon API Gateway and AWS Lambda. The backend uses an Amazon RDS PostgreSQL database. The website is experiencing high read traffic and the AWS Lambda functions are putting an increased read load on the Amazon RDS database.</p>\n\n<p>The architecture team is planning to increase the read throughput of the database, without changing the application's core logic. As a Solutions Architect, what do you recommend?</p>",
     "corrects": [
       2
     ],
@@ -3910,7 +3913,7 @@
   },
   {
     "id": 50,
-    "question": "As a solutions architect, you have created a solution that utilizes an Application Load Balancer with stickiness and an Auto Scaling Group (ASG). The Auto Scaling Group spans across 2 Availability Zones (AZs). AZ-A has 3 Amazon EC2 instances and AZ-B has 4 Amazon EC2 instances. The Auto Scaling Group is about to go into a scale-in event due to the triggering of a Amazon CloudWatch alarm.\n\nWhat will happen under the default Auto Scaling Group configuration?",
+    "question": "<p>As a solutions architect, you have created a solution that utilizes an Application Load Balancer with stickiness and an Auto Scaling Group (ASG). The Auto Scaling Group spans across 2 Availability Zones (AZs). <code>AZ-A</code> has 3 Amazon EC2 instances and <code>AZ-B</code> has 4 Amazon EC2 instances. The Auto Scaling Group is about to go into a scale-in event due to the triggering of a Amazon CloudWatch alarm.</p>\n\n<p>What will happen under the default Auto Scaling Group configuration?</p>",
     "corrects": [
       4
     ],
@@ -3998,7 +4001,7 @@
   },
   {
     "id": 51,
-    "question": "A retail company is using AWS Site-to-Site VPN connections for secure connectivity to its AWS cloud resources from its on-premises data center. Due to a surge in traffic across the VPN connections to the AWS cloud, users are experiencing slower VPN connectivity.\n\nWhich of the following options will maximize the VPN throughput?",
+    "question": "<p>A retail company is using AWS Site-to-Site VPN connections for secure connectivity to its AWS cloud resources from its on-premises data center. Due to a surge in traffic across the VPN connections to the AWS cloud, users are experiencing slower VPN connectivity.</p>\n\n<p>Which of the following options will maximize the VPN throughput?</p>",
     "corrects": [
       2
     ],
@@ -4074,7 +4077,7 @@
   },
   {
     "id": 52,
-    "question": "A Big Data processing company has created a distributed data processing framework that performs best if the network performance between the processing machines is high. The application has to be deployed on AWS, and the company is only looking at performance as the key measure.\n\nAs a Solutions Architect, which deployment do you recommend?",
+    "question": "<p>A Big Data processing company has created a distributed data processing framework that performs best if the network performance between the processing machines is high. The application has to be deployed on AWS, and the company is only looking at performance as the key measure.</p>\n\n<p>As a Solutions Architect, which deployment do you recommend?</p>",
     "corrects": [
       3
     ],
@@ -4184,7 +4187,7 @@
   },
   {
     "id": 53,
-    "question": "You have developed a new REST API leveraging the Amazon API Gateway, AWS Lambda and Amazon Aurora database services. Most of the workload on the website is read-heavy. The data rarely changes and it is acceptable to serve users outdated data for about 24 hours. Recently, the website has been experiencing high load and the costs incurred on the Aurora database have been very high.\n\nHow can you easily reduce the costs while improving performance, with minimal changes?",
+    "question": "<p>You have developed a new REST API leveraging the Amazon API Gateway, AWS Lambda and Amazon Aurora database services. Most of the workload on the website is read-heavy. The data rarely changes and it is acceptable to serve users outdated data for about 24 hours. Recently, the website has been experiencing high load and the costs incurred on the Aurora database have been very high.</p>\n\n<p>How can you easily reduce the costs while improving performance, with minimal changes?</p>",
     "corrects": [
       4
     ],
@@ -4251,7 +4254,7 @@
   },
   {
     "id": 54,
-    "question": "A CRM company has a software as a service (SaaS) application that feeds updates to other in-house and third-party applications. The SaaS application and the in-house applications are being migrated to use AWS services for this inter-application communication.\n\nAs a Solutions Architect, which of the following would you suggest to asynchronously decouple the architecture?",
+    "question": "<p>A CRM company has a software as a service (SaaS) application that feeds updates to other in-house and third-party applications. The SaaS application and the in-house applications are being migrated to use AWS services for this inter-application communication.</p>\n\n<p>As a Solutions Architect, which of the following would you suggest to asynchronously decouple the architecture?</p>",
     "corrects": [
       3
     ],
@@ -4324,7 +4327,7 @@
   },
   {
     "id": 55,
-    "question": "A company has recently created a new department to handle their services workload. An IT team has been asked to create a custom VPC to isolate the resources created in this new department. They have set up the public subnet and internet gateway (IGW). However, they are not able to ping the Amazon EC2 instances with elastic IP address (EIP) launched in the newly created VPC.\n\nAs a Solutions Architect, the team has requested your help. How will you troubleshoot this scenario? (Select two)",
+    "question": "<p>A company has recently created a new department to handle their services workload. An IT team has been asked to create a custom VPC to isolate the resources created in this new department. They have set up the public subnet and internet gateway (IGW). However, they are not able to ping the Amazon EC2 instances with elastic IP address (EIP) launched in the newly created VPC.</p>\n\n<p>As a Solutions Architect, the team has requested your help. How will you troubleshoot this scenario? (Select two)</p>",
     "corrects": [
       3,
       4
@@ -4412,7 +4415,7 @@
   },
   {
     "id": 56,
-    "question": "You have an Amazon S3 bucket that contains files in two different folders - s3://my-bucket/images and s3://my-bucket/thumbnails. When an image is first uploaded and new, it is viewed several times. But after 45 days, analytics prove that image files are on average rarely requested, but the thumbnails still are. After 180 days, you would like to archive the image files and the thumbnails. Overall you would like the solution to remain highly available to prevent disasters happening against a whole Availability Zone (AZ).\n\nHow can you implement an efficient cost strategy for your Amazon S3 bucket? (Select two)",
+    "question": "<p>You have an Amazon S3 bucket that contains files in two different folders - <code>s3://my-bucket/images</code> and <code>s3://my-bucket/thumbnails</code>. When an image is first uploaded and new, it is viewed several times. But after 45 days, analytics prove that image files are on average rarely requested, but the thumbnails still are. After 180 days, you would like to archive the image files and the thumbnails. Overall you would like the solution to remain highly available to prevent disasters happening against a whole Availability Zone (AZ).</p>\n\n<p>How can you implement an efficient cost strategy for your Amazon S3 bucket? (Select two)</p>",
     "corrects": [
       1,
       3
@@ -4510,7 +4513,7 @@
   },
   {
     "id": 57,
-    "question": "A media company uses Amazon ElastiCache Redis to enhance the performance of its Amazon RDS database layer. The company wants a robust disaster recovery strategy for its caching layer that guarantees minimal downtime as well as minimal data loss while ensuring good application performance.\n\nWhich of the following solutions will you recommend to address the given use-case?",
+    "question": "<p>A media company uses Amazon ElastiCache Redis to enhance the performance of its Amazon RDS database layer. The company wants a robust disaster recovery strategy for its caching layer that guarantees minimal downtime as well as minimal data loss while ensuring good application performance.</p>\n\n<p>Which of the following solutions will you recommend to address the given use-case?</p>",
     "corrects": [
       4
     ],
@@ -4581,7 +4584,7 @@
   },
   {
     "id": 58,
-    "question": "A Big Data analytics company writes data and log files in Amazon S3 buckets. The company now wants to stream the existing data files as well as any ongoing file updates from Amazon S3 to Amazon Kinesis Data Streams.\n\nAs a Solutions Architect, which of the following would you suggest as the fastest possible way of building a solution for this requirement?",
+    "question": "<p>A Big Data analytics company writes data and log files in Amazon S3 buckets. The company now wants to stream the existing data files as well as any ongoing file updates from Amazon S3 to Amazon Kinesis Data Streams.</p>\n\n<p>As a Solutions Architect, which of the following would you suggest as the fastest possible way of building a solution for this requirement?</p>",
     "corrects": [
       2
     ],
@@ -4657,7 +4660,7 @@
   },
   {
     "id": 59,
-    "question": "You started a new job as a solutions architect at a company that has both AWS experts and people learning AWS. Recently, a developer misconfigured a newly created Amazon RDS database which resulted in a production outage.\n\nHow can you ensure that Amazon RDS specific best practices are incorporated into a reusable infrastructure template to be used by all your AWS users?",
+    "question": "<p>You started a new job as a solutions architect at a company that has both AWS experts and people learning AWS. Recently, a developer misconfigured a newly created Amazon RDS database which resulted in a production outage.</p>\n\n<p>How can you ensure that Amazon RDS specific best practices are incorporated into a reusable infrastructure template to be used by all your AWS users?</p>",
     "corrects": [
       2
     ],
@@ -4721,7 +4724,7 @@
   },
   {
     "id": 60,
-    "question": "A startup's cloud infrastructure consists of a few Amazon EC2 instances, Amazon RDS instances and Amazon S3 storage. A year into their business operations, the startup is incurring costs that seem too high for their business requirements.\n\nWhich of the following options represents a valid cost-optimization solution?",
+    "question": "<p>A startup's cloud infrastructure consists of a few Amazon EC2 instances, Amazon RDS instances and Amazon S3 storage. A year into their business operations, the startup is incurring costs that seem too high for their business requirements.</p>\n\n<p>Which of the following options represents a valid cost-optimization solution?</p>",
     "corrects": [
       3
     ],
@@ -4786,7 +4789,7 @@
   },
   {
     "id": 61,
-    "question": "What does this AWS CloudFormation snippet do? (Select three)\n\nSecurityGroupIngress:\n     - IpProtocol: tcp\n       FromPort: 80\n       ToPort: 80\n       CidrIp: 0.0.0.0/0\n     - IpProtocol: tcp\n       FromPort: 22\n       ToPort: 22\n       CidrIp: 192.168.1.1/32",
+    "question": "<p>What does this AWS CloudFormation snippet do? (Select three)</p>\n\n<pre><code>SecurityGroupIngress:\n     - IpProtocol: tcp\n       FromPort: 80\n       ToPort: 80\n       CidrIp: 0.0.0.0/0\n     - IpProtocol: tcp\n       FromPort: 22\n       ToPort: 22\n       CidrIp: 192.168.1.1/32\n\n</code></pre>",
     "corrects": [
       1,
       2,
@@ -4895,7 +4898,7 @@
   },
   {
     "id": 62,
-    "question": "A company uses Application Load Balancers in multiple AWS Regions. The Application Load Balancers receive inconsistent traffic that varies throughout the year. The engineering team at the company needs to allow the IP addresses of the Application Load Balancers in the on-premises firewall to enable connectivity.\n\nWhich of the following represents the MOST scalable solution with minimal configuration changes?",
+    "question": "<p>A company uses Application Load Balancers in multiple AWS Regions. The Application Load Balancers receive inconsistent traffic that varies throughout the year. The engineering team at the company needs to allow the IP addresses of the Application Load Balancers in the on-premises firewall to enable connectivity.</p>\n\n<p>Which of the following represents the MOST scalable solution with minimal configuration changes?</p>",
     "corrects": [
       2
     ],
@@ -4967,7 +4970,7 @@
   },
   {
     "id": 63,
-    "question": "The development team at a social media company wants to handle some complicated queries such as \"What are the number of likes on the videos that have been posted by friends of a user A?\".\n\nAs a solutions architect, which of the following AWS database services would you suggest as the BEST fit to handle such use cases?",
+    "question": "<p>The development team at a social media company wants to handle some complicated queries such as \"What are the number of likes on the videos that have been posted by friends of a user A?\".</p>\n\n<p>As a solutions architect, which of the following AWS database services would you suggest as the BEST fit to handle such use cases?</p>",
     "corrects": [
       3
     ],
@@ -5052,7 +5055,7 @@
   },
   {
     "id": 64,
-    "question": "A mobile gaming company is experiencing heavy read traffic to its Amazon Relational Database Service (Amazon RDS) database that retrieves player’s scores and stats. The company is using an Amazon RDS database instance type that is not cost-effective for their budget. The company would like to implement a strategy to deal with the high volume of read traffic, reduce latency, and also downsize the instance size to cut costs.\n\nWhich of the following solutions do you recommend?",
+    "question": "<p>A mobile gaming company is experiencing heavy read traffic to its Amazon Relational Database Service (Amazon RDS) database that retrieves player’s scores and stats. The company is using an Amazon RDS database instance type that is not cost-effective for their budget. The company would like to implement a strategy to deal with the high volume of read traffic, reduce latency, and also downsize the instance size to cut costs.</p>\n\n<p>Which of the following solutions do you recommend?</p>",
     "corrects": [
       2
     ],
@@ -5111,7 +5114,7 @@
   },
   {
     "id": 65,
-    "question": "A healthcare company is evaluating storage options on Amazon S3 to meet regulatory guidelines. The data should be stored in such a way on Amazon S3 that it cannot be deleted until the regulatory time period has expired.\n\nAs a solutions architect, which of the following would you recommend for the given requirement?",
+    "question": "<p>A healthcare company is evaluating storage options on Amazon S3 to meet regulatory guidelines. The data should be stored in such a way on Amazon S3 that it cannot be deleted until the regulatory time period has expired.</p>\n\n<p>As a solutions architect, which of the following would you recommend for the given requirement?</p>",
     "corrects": [
       3
     ],
