@@ -36,7 +36,7 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanation
   return (
     <div className="mb-4">
       <h4 className={`text-base font-semibold ${titleColor} mb-2`}>{titleText}</h4>
-      <div className="text-gray-700 space-y-4">
+      <div className="text-gray-700 space-y-1">
         {answerExplanations.map((answerExplanation, index) => (
           <div key={index} className="space-y-2">
             {(answerExplanation.answer) &&
