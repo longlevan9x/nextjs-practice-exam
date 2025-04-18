@@ -59,9 +59,8 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                 <p
                     title={question.question}
                     className="text-base line-clamp-1 transition-all duration-300"
-                >
-                    {question.question}
-                </p>
+                    dangerouslySetInnerHTML={{ __html: question.question }}
+                />
             </div>
         </li>
     );
