@@ -47,13 +47,13 @@ export default function RootLayout({
         <ExamRedirect />
         {/* Menu */}
         <header className="bg-blue-600 text-white shadow-md px-4">
-          <div className="mx-auto px-4 py-4">
+          <div className="mx-auto px-4 py-1">
             <Menu />
           </div>
         </header>
 
         {/* Breadcrumb */}
-        <div className="bg-gray-100 py-2 shadow-sm px-4">
+        <div className="bg-gray-100 py-2 shadow-sm">
           <div className="mx-auto px-4">
             <Breadcrumb />
           </div>

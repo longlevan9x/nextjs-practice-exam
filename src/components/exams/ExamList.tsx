@@ -68,24 +68,26 @@ export default function ExamList() {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-semibold text-gray-800">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
           Available Exam Sets
         </h2>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-row items-center gap-3">
           <ExamFilter
             courses={courses}
             selectedCourseId={selectedCourseId}
             onCourseChange={handleCourseChange}
           />
 
-          <Link href="/statistics" className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center gap-1 hover:bg-blue-700 transition-all duration-300">
-            Xem thống kê
+          <Link 
+            href="/statistics" 
+            className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center justify-center gap-1 hover:bg-blue-700 transition-all duration-300"
+          >
+            <span className="text-sm md:text-base whitespace-nowrap">Xem thống kê</span>
             <ChartBarIcon className="w-4 h-4" />
           </Link>
         </div>
-
       </div>
 
       {loading ? (

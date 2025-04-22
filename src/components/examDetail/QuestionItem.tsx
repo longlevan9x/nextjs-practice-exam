@@ -40,19 +40,6 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                 </div>
 
                 <div className="flex items-center space-x-2">
-                    {/* Select Button - Show on all devices with different styles */}
-                    {isMobile && (
-                        <button
-                            onClick={onSelect}
-                            className={`px-2 py-1 rounded-md text-xs font-medium ${isSelected
-                                ? "bg-blue-600 text-white"
-                                : "bg-blue-100 text-blue-800 hover:bg-blue-200"
-                                }`}
-                        >
-                            {isSelected ? "Đã chọn" : "Chọn"}
-                        </button>
-                    )}
-
                     {/* Answer Status */}
                     {isExamMode && question.answered && (
                         <span className="text-sm font-bold text-green-600">Đã trả lời</span>
@@ -64,6 +51,18 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                         >
                             {question.isCorrect ? "Chính xác" : "Không chính xác"}
                         </span>
+                    )}
+                     {/* Select Button - Show on all devices with different styles */}
+                     {isMobile && (
+                        <button
+                            onClick={onSelect}
+                            className={`px-2 py-1 cursor-pointer rounded-md text-xs font-medium ${isSelected
+                                ? "bg-blue-600 text-white"
+                                : "bg-blue-100 text-blue-800 hover:bg-blue-200"
+                                }`}
+                        >
+                            {isSelected ? "Đã chọn" : "Chọn"}
+                        </button>
                     )}
                 </div>
             </div>

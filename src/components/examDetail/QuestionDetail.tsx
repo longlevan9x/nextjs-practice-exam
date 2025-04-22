@@ -167,7 +167,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-blue-800 text-white p-3 hover:bg-blue-700 transition-all duration-200 z-50 hover:scale-110"
+          className="fixed bottom-16 right-4 bg-blue-800 text-white p-3 hover:bg-blue-700 transition-all duration-200 z-50 hover:scale-110"
           aria-label="Lên đầu trang"
         >
           <ArrowUpIcon className="w-6 h-6" />

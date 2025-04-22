@@ -50,14 +50,14 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
 
     return (
         <>
-            <div className="flex space-x-8 py-4">
+            <div className="flex flex-col lg:flex-row lg:space-x-8 py-4">
                 {/* Left Section: Donut Chart */}
-                <div className="flex flex-col items-center space-y-4 w-1/2">
+                <div className="flex flex-col items-center space-y-4 w-full lg:w-1/2 mb-6 lg:mb-0">
                     <DonutChartWithLegend data={chartData} />
                 </div>
 
                 {/* Right Section: Details */}
-                <div className="flex flex-col space-y-3 w-1/2 pr-2">
+                <div className="flex flex-col space-y-3 w-full lg:w-1/2 lg:pr-2">
                     {/* Attempt Header */}
                     <div className="flex justify-between items-center">
                         <h2 className="text-lg">
@@ -105,7 +105,7 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                     <div>
                         {/* Review Questions Button */}
                         <button
-                            className={`px-4 py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center ${isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+                            className={`px-3 py-1.5 lg:px-4 lg:py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center text-sm lg:text-base ${isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
                                 }`}
                             onClick={handleReviewQuestions}
                             disabled={isReviewing}

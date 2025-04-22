@@ -115,17 +115,17 @@ const QuestionList: React.FC<QuestionListProps> = ({
             <h2 className="text-xl font-bold text-gray-800">Danh sách câu hỏi</h2>
             <button 
               onClick={handleToggleCollapse} 
-              className="lg:hidden flex items-center justify-center bg-blue-100 text-blue-800 rounded-md px-4 py-2 min-w-[100px] active:bg-blue-200"
+              className="cursor-pointer lg:hidden flex items-center justify-center bg-blue-100 text-blue-800 rounded-sm px-2 py-1 min-w-[100px] active:bg-blue-200"
               aria-label={isCollapsed ? "Mở rộng danh sách câu hỏi" : "Thu gọn danh sách câu hỏi"}
             >
               {isCollapsed ? (
                 <>
-                  <ChevronRightIcon className="w-6 h-6 mr-1" />
+                  <ChevronRightIcon className="w-5 h-5 mr-1" />
                   <span className="font-medium">Mở rộng</span>
                 </>
               ) : (
                 <>
-                  <ChevronLeftIcon className="w-6 h-6 mr-1" />
+                  <ChevronLeftIcon className="w-5 h-5 mr-1" />
                   <span className="font-medium">Thu gọn</span>
                 </>
               )}
@@ -163,7 +163,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
         <div className={`${isCollapsed ? 'hidden transition-all duration-300' : 'transition-all duration-300'}`}>
           <ul className="space-y-0">
             {filteredQuestions.map((question) => (
-              <div className={`last:pb-72 cursor-pointer transition-colors duration-200`}
+              <div className={`last:pb-24 xl:last:pb-72 cursor-pointer transition-colors duration-200`}
                 ref={question.id === selectedQuestionId ? selectedQuestionRef : null} 
                 key={question.id}
               >

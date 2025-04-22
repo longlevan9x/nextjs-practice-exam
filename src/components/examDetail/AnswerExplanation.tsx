@@ -1,16 +1,96 @@
 import { AnswerExplanation as AnswerExplanationType } from "@/types/question";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 interface AnswerExplanationProps {
   answerExplanations: AnswerExplanationType[];
   type: 'correct' | 'incorrect';
 }
 
+interface ImageModalProps {
+  imageUrl: string;
+  scale: number;
+  onClose: () => void;
+  onZoomIn: () => void;
+  onZoomOut: () => void;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  imageUrl,
+  scale,
+  onClose,
+  onZoomIn,
+  onZoomOut,
+}) => {
+  return (
+    <div 
+      className="fixed inset-0 flex items-center justify-center z-[9999]"
+      onClick={onClose}
+    >
+      <div className="w-full h-full bg-black opacity-90 absolute top-0 left-0"></div>
+      <div className="relative w-full h-full flex items-center justify-center">
+        <div className="absolute top-4 right-4 flex gap-2">
+          <button 
+            className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              onZoomOut();
+            }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+            </svg>
+          </button>
+          <button 
+            className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              onZoomIn();
+            }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+          <button 
+            className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
+            onClick={onClose}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div 
+          className="relative max-w-full max-h-full transition-transform duration-200 ease-in-out"
+          style={{ transform: `scale(${scale})` }}
+        >
+          <Image
+            src={imageUrl}
+            alt="Zoomed explanation image"
+            width={1200}
+            height={800}
+            className="max-w-full max-h-[90vh] object-contain"
+            style={{ width: 'auto', height: 'auto' }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanations, type }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [scale, setScale] = useState(1);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   const handleImageClick = (imageUrl: string) => {
     setSelectedImage(imageUrl);
@@ -86,60 +166,15 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanation
       </div>
 
       {/* Image Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-          onClick={handleCloseModal}
-        >
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="absolute top-4 right-4 flex gap-2">
-              <button 
-                className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleZoomOut();
-                }}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                </svg>
-              </button>
-              <button 
-                className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleZoomIn();
-                }}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
-              </button>
-              <button 
-                className="bg-gray-800 text-white hover:bg-gray-700 rounded-full p-2 z-10 transition-colors duration-200 cursor-pointer"
-                onClick={handleCloseModal}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div 
-              className="relative max-w-full max-h-full transition-transform duration-200 ease-in-out"
-              style={{ transform: `scale(${scale})` }}
-            >
-              <Image
-                src={selectedImage}
-                alt="Zoomed explanation image"
-                width={1200}
-                height={800}
-                className="max-w-full max-h-[90vh] object-contain"
-                style={{ width: 'auto', height: 'auto' }}
-                onClick={(e) => e.stopPropagation()}
-              />
-            </div>
-          </div>
-        </div>
+      {mounted && selectedImage && createPortal(
+        <ImageModal
+          imageUrl={selectedImage}
+          scale={scale}
+          onClose={handleCloseModal}
+          onZoomIn={handleZoomIn}
+          onZoomOut={handleZoomOut}
+        />,
+        document.body
       )}
     </div>
   );
