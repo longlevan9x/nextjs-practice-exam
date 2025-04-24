@@ -52,18 +52,16 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                             {question.isCorrect ? "Chính xác" : "Không chính xác"}
                         </span>
                     )}
-                     {/* Select Button - Show on all devices with different styles */}
-                     {isMobile && (
-                        <button
-                            onClick={onSelect}
-                            className={`px-2 py-1 cursor-pointer rounded-md text-xs font-medium ${isSelected
-                                ? "bg-blue-600 text-white"
-                                : "bg-blue-100 text-blue-800 hover:bg-blue-200"
-                                }`}
-                        >
-                            {isSelected ? "Đã chọn" : "Chọn"}
-                        </button>
-                    )}
+                    {/* Select Button - Show on all devices with different styles */}
+                    <button
+                        onClick={onSelect}
+                        className={`hidden lg:block px-2 py-1 cursor-pointer rounded-md text-xs font-medium ${isSelected
+                            ? "bg-blue-600 text-white"
+                            : "bg-blue-100 text-blue-800 hover:bg-blue-200"
+                            }`}
+                    >
+                        {isSelected ? "Đã chọn" : "Chọn"}
+                    </button>
                 </div>
             </div>
 
