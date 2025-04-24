@@ -55,7 +55,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
                     {/* Select Button - Show on all devices with different styles */}
                     <button
                         onClick={onSelect}
-                        className={`block xl:hidden px-2 py-1 cursor-pointer rounded-md text-xs font-medium ${isSelected
+                        className={`block lg:hidden px-2 py-1 cursor-pointer rounded-md text-xs font-medium ${isSelected
                             ? "bg-blue-600 text-white"
                             : "bg-blue-100 text-blue-800 hover:bg-blue-200"
                             }`}
