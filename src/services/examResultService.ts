@@ -86,7 +86,8 @@ export const updateExamResultData = async (resultId: string, examResult: ExamRes
             id: question.id,
             selectedAnswer: question.selectedAnswer,
             isCorrect: question.isCorrect,
-            questionIndex: question.questionIndex
+            questionIndex: question.questionIndex,
+            answers: question.answers
         }));
     }
 

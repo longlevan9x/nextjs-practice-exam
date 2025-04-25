@@ -5,7 +5,7 @@ import QuestionList from "@/components/examDetail/QuestionList";
 import QuestionDetail from "@/components/examDetail/QuestionDetail";
 import Timer from "@/components/examDetail/Timer";
 import ProgressBar from "@/components/examDetail/ProgressBar";
-import { Question } from "@/types/question";
+import { Answer, Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "@/services/questionService";
 import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
@@ -60,7 +60,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 ...originalAnswer,
                                 correct: originalAnswer?.correct,
                             };
-                        });
+                        }) as Answer[];
 
                         return {
                             ...originalQuestion,
