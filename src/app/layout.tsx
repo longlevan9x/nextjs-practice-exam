@@ -20,15 +20,32 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Exam Practice - Luyện thi trực tuyến",
-  description: "Hệ thống luyện thi trực tuyến với đa dạng đề thi và bài kiểm tra thực hành",
-  keywords: ["luyện thi", "thi trực tuyến", "kiểm tra", "thực hành", "exam", "practice"],
+  description: 'Hệ thống luyện thi chứng chỉ Cloud với các bài thi thực hành chất lượng cao',
+  keywords: ['luyện thi', 'chứng chỉ', 'AWS', 'GCP', 'Cloud', 'bài thi', 'thực hành'],
   authors: [{ name: "Exam Practice Team" }],
   openGraph: {
     title: "Exam Practice - Luyện thi trực tuyến",
-    description: "Hệ thống luyện thi trực tuyến với đa dạng đề thi và bài kiểm tra thực hành",
+    description: 'Hệ thống luyện thi chứng chỉ Cloud với các bài thi thực hành chất lượng cao',
     type: "website",
     locale: "vi_VN",
     siteName: "Exam Practice",
+    url: 'https://nextjs-practice-exam.vercel.app',
+    images: [
+      {
+        url: 'https://nextjs-practice-exam.vercel.app/images/aws-saa.png',
+        width: 1200,
+        height: 630,
+        alt: 'Exam Practice - Luyện thi trực tuyến',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
