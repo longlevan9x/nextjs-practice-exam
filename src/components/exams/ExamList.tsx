@@ -6,10 +6,14 @@ import { Exam } from "@/types/exam";
 import { Course } from "@/types/course";
 import { getIncompleteExamResults } from "@/services/examResultService";
 import { getCourses } from "@/services/course";
+import { getExams, getExamsByCourseId } from "@/services/examService";
 import Link from "next/link";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
+import { useSearchParams } from "next/navigation";
 
 export default function ExamList() {
+  const searchParams = useSearchParams();
+  const courseId: string | null = searchParams.get('courseId');
   const [exams, setExams] = useState<Exam[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
@@ -19,13 +23,14 @@ export default function ExamList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [response, incompleteExamResults, coursesData] = await Promise.all([
-          import("@/data/exams.json"),
+        const [incompleteExamResults, coursesData] = await Promise.all([
           getIncompleteExamResults(),
           getCourses()
         ]);
 
-        const _exams = response.default.map(exam => {
+        let _exams = getExams();
+        
+        _exams = _exams.map(exam => {
           const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
           const examType = incompleteExam?.examType;
 
@@ -48,6 +53,12 @@ export default function ExamList() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (courseId) {
+      setSelectedCourseId(parseInt(courseId));
+    }
+  }, [courseId]);
 
   const handleCourseChange = (courseId: string) => {
     setSelectedCourseId(parseInt(courseId));

@@ -5,6 +5,8 @@ export interface Course {
     duration: number;
     passScore: number;
     domains: Domain[];
+    imageUrl: string;
+    description: string;
 }
 
 export interface Domain {

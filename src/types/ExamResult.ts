@@ -9,6 +9,7 @@ export interface ExamResultQuestion {
 
 export interface ExamResult {
     userId?: string;
+    courseId?: number;
     examType: ExamType;
     examId: number;
     resultId?: string;

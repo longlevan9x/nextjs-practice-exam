@@ -22,7 +22,9 @@
                 "name": "Design Cost-Optimized Architectures",
                 "questionCount": 9
             }
-        ]
+        ],
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide"
     },
     {
         "id": 2,
@@ -47,7 +49,9 @@
                 "name": "Design Cost-Optimized Architectures",
                 "questionCount": 9
             }
-        ]
+        ],
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide"
     },
     {
         "id": 3,
@@ -60,6 +64,35 @@
                 "name": "Design High-Performing Architectures",
                 "questionCount": 14
             }
-        ]
+        ],
+        "imageUrl": "/images/GCP-ACE-LOGO.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide"
+    },
+    {
+        "id": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 14
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            }
+        ],
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide"
     }
 ]

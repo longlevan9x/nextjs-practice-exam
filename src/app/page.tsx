@@ -1,10 +1,9 @@
-'use client';
-import ExamList from "@/components/exams/ExamList";
+import CourseList from "@/components/courses/CourseList";
 
-export default function ExamsPage() {
+export default function HomePage() {
   return (
     <>
-      <ExamList />
+      <CourseList />
     </>
   );
 }

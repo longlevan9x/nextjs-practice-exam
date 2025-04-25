@@ -449,5 +449,65 @@
         "questionCount": 65,
         "duration": 130,
         "passScore": 72
+    },
+    {
+        "id": 14,
+        "courseId": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN 1",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-05",
+        "domains": [],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 15,
+        "courseId": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN 2",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-05",
+        "domains": [],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 16,
+        "courseId": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN 3",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-05",
+        "domains": [],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 17,
+        "courseId": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN 4",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-05",
+        "domains": [],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 18,
+        "courseId": 4,
+        "name": "AWS Certified Solutions Architect Associate 2025 VN 5",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-05",
+        "domains": [],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     }
 ]

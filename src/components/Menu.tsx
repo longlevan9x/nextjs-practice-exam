@@ -53,7 +53,7 @@ const Menu: React.FC = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+            <Link href="/exams" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
               Đề thi
             </Link>
 

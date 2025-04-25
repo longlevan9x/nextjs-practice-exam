@@ -21,3 +21,10 @@ export const getAllExams = (): Exam[] => {
   }
 };
 
+export const getExams = (): Exam[] => {
+  return examData;
+};
+
+export const getExamsByCourseId = (courseId: number): Exam[] => {
+  return examData.filter(exam => exam.courseId === courseId);
+};
