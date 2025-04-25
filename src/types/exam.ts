@@ -6,7 +6,7 @@ export interface Exam {
   imageUrl: string;
   description: string;
   updatedAt: string;
-  categories: {
+  categories?: {
     name: string;
     path: string;
   }[];

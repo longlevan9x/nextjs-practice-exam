@@ -6,7 +6,7 @@ import { Exam } from "@/types/exam";
 import { Course } from "@/types/course";
 import { getIncompleteExamResults } from "@/services/examResultService";
 import { getCourses } from "@/services/course";
-import { getExams, getExamsByCourseId } from "@/services/examService";
+import { getExams } from "@/services/examService";
 import Link from "next/link";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { useSearchParams } from "next/navigation";

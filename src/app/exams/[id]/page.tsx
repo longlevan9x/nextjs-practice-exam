@@ -11,6 +11,7 @@ import { ExamResult } from "@/types/ExamResult";
 import { ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
+import { getExamById } from "@/services/examService";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{ id: string }>(); // Get the "id" parameter from the URL
@@ -59,10 +60,8 @@ export default function ExamDetailPage() {
 
     const fetchExam = async () => {
       try {
-        const response = await import("@/data/exams.json");
-        const examData = response.default.find(
-          (exam: Exam) => exam.id === parseInt(id)
-        );
+        const examData = getExamById(parseInt(id));
+
         if (examData) {
           setExam(examData);
         } else {

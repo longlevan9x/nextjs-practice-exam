@@ -76,7 +76,7 @@ const ResultOverviewPage: React.FC = () => {
 
     useEffect(() => {
         if (examId) {
-            const data = getExamById(examId); // Fetch data from localStorage
+            const data = getExamById(parseInt(examId)); // Fetch data from localStorage
             if (data) {
                 setResultData(data);
             }

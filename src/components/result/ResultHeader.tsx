@@ -11,7 +11,7 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ examId }) => {
   const [examData, setExamData] = useState<Exam | null>(null);
 
   useEffect(() => {
-    const exam = getExamById(examId); // Fetch the exam title dynamically
+    const exam = getExamById(parseInt(examId)); // Fetch the exam title dynamically
     if (exam) {
       setExamData(exam);
     }

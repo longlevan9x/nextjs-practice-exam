@@ -80,7 +80,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
     useEffect(() => {
         if (examId) {
-            const exam = getExamById(examId);
+            const exam = getExamById(parseInt(examId));
             if (exam?.domains) {
                 setDomains(exam.domains);
             }

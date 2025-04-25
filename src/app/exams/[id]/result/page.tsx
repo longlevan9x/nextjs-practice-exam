@@ -17,7 +17,7 @@ export default function ResultPage() {
   
   useEffect(() => {
     if (examId) {
-      const data = getExamById(examId);
+      const data = getExamById(parseInt(examId));
       if (data) {
         setResultData(data);
       }
