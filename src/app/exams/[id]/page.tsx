@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { fetchQuestionsByExamId } from "@/services/questionService";
-import { ExamResult } from "@/types/ExamResult";
+import { ExamResult, ExamResultQuestion, ExamResultQuestionAnswer } from "@/types/ExamResult";
 import { ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
@@ -34,10 +34,17 @@ export default function ExamDetailPage() {
         id: q.id,
         selectedAnswer: null,
         isCorrect: false,
+        answers: q.answers.map((a) => ({
+          id: a.id,
+        })),
       }));
 
       // Shuffle questions
-      const shuffledQuestions = shuffleArray(cloneQuestions);
+      const shuffledQuestions = shuffleArray<ExamResultQuestion>(cloneQuestions as ExamResultQuestion[]);
+
+      shuffledQuestions.map((q) => {
+        q.answers = shuffleArray<ExamResultQuestionAnswer>(q.answers as ExamResultQuestionAnswer[]);
+      });
 
       // Save initial exam result with isCompleted = false
       const initialResult: ExamResult = {

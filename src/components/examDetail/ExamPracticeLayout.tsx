@@ -54,13 +54,22 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     const questionsWithDetails = convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
                         const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
 
+                        const answers = convertedQuestion.answers.map((a) => {
+                            const originalAnswer = originalQuestion?.answers.find(originalAnswer => originalAnswer.id === a.id);
+                            return {
+                                ...originalAnswer,
+                                correct: originalAnswer?.correct,
+                            };
+                        });
+
                         return {
                             ...originalQuestion,
                             questionIndex: convertedQuestion.questionIndex,
                             selectedAnswer: convertedQuestion.selectedAnswer,
                             isCorrect: convertedQuestion.isCorrect,
                             answered: convertedQuestion.selectedAnswer !== null,
-                            showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null
+                            showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null,
+                            answers: answers,
                         };
                     });
 

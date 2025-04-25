@@ -5,8 +5,11 @@ export interface ExamResultQuestion {
     selectedAnswer?: number | number[] | null;
     isCorrect: boolean;
     questionIndex: number;
+    answers: ExamResultQuestionAnswer[];
 }
-
+export interface ExamResultQuestionAnswer {
+    id: number;
+}
 export interface ExamResult {
     userId?: string;
     courseId?: number;
