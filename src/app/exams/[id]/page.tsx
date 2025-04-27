@@ -12,6 +12,7 @@ import { ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
 import { getExamById } from "@/services/examService";
+import { isAuthenticated } from "@/services/authService";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{ id: string }>(); // Get the "id" parameter from the URL
@@ -23,6 +24,12 @@ export default function ExamDetailPage() {
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
 
   const handleStartExam = async (mode: string) => {
+    // Check if user is authenticated
+    if (!isAuthenticated()) {
+      router.push('/login');
+      return;
+    }
+
     setIsStarting(true);
     setSelectedMode(mode);
 

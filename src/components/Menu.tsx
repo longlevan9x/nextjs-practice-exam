@@ -80,7 +80,7 @@ const Menu: React.FC = () => {
                 <Link href="/login" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Đăng nhập
                 </Link>
-                <Link href="/login" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+                <Link href="/register" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Đăng ký
                 </Link>
               </>
