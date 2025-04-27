@@ -38,7 +38,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    let previousWidth = window.innerWidth;
+    let previousWidth = 0;
 
     // Check if screen is mobile/tablet (less than lg breakpoint)
     const checkScreenSize = () => {
@@ -46,11 +46,13 @@ const QuestionList: React.FC<QuestionListProps> = ({
       
       // Only update if width has changed
       if (currentWidth !== previousWidth) {
-        const isMobileView = currentWidth < 1024; // 1024px is the lg breakpoint in Tailwind
+        const isMobileView = currentWidth < 1280; // 1280px is the xl breakpoint in Tailwind
         setIsMobile(isMobileView);
         setIsCollapsed(isMobileView);
         previousWidth = currentWidth;
       }
+
+      previousWidth = currentWidth;
     };
 
     // Initial check

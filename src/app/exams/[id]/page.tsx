@@ -198,7 +198,7 @@ export default function ExamDetailPage() {
                 </div>
                 <div className="flex items-center">
                   <CheckCircleIcon className="w-4 h-4 mr-1 text-blue-500" />
-                  <span>Đậu: {exam.passScore}%</span>
+                  <span>Điểm đạt: {exam.passScore}%</span>
                 </div>
               </div>
 
