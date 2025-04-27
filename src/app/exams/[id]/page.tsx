@@ -12,7 +12,7 @@ import { ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
 import { getExamById } from "@/services/examService";
-import { isAuthenticated } from "@/services/authService";
+import { getCurrentUser } from "@/backend/services/authService";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{ id: string }>(); // Get the "id" parameter from the URL
@@ -25,7 +25,8 @@ export default function ExamDetailPage() {
 
   const handleStartExam = async (mode: string) => {
     // Check if user is authenticated
-    if (!isAuthenticated()) {
+    const user = await getCurrentUser();
+    if (!user) {
       router.push('/login');
       return;
     }
@@ -94,7 +95,7 @@ export default function ExamDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center ">
         <p className="text-blue-600 text-lg">Loading exam details...</p>
       </div>
     );
@@ -102,7 +103,7 @@ export default function ExamDetailPage() {
 
   if (error || !exam) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center">
         <p className="text-red-500 text-lg">
           Failed to load exam details. Please try again later.
         </p>

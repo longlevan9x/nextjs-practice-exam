@@ -1,7 +1,13 @@
-export const isAuthenticated = (): boolean => {
-  // Check if user is logged in
-  // You can implement your own authentication logic here
-  // For example, check localStorage, cookies, or JWT token
-  const token = localStorage.getItem('authToken');
-  return !!token;
-};
+import { getCurrentUser } from "@/backend/services/authService";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+
+export const checkAuth = async (router: AppRouterInstance   , currentUrl: string) => {
+    const user = await getCurrentUser();
+    if (!user) {
+        router.push(`/login?redirect=${currentUrl}`);
+        return false;
+    }
+    else {
+        return true;
+    }
+}

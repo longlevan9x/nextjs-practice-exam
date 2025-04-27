@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { supabase } from '@/backend/lib/supabase';
+import { supabase } from '@/backend/lib/supabase/client';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -76,7 +76,7 @@ export default function RegisterPage() {
             <div className="mt-4">
               <Link
                 href="/login"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="cursor-pointer font-medium text-blue-600 hover:text-blue-500"
               >
                 Quay lại trang đăng nhập
               </Link>
@@ -96,7 +96,7 @@ export default function RegisterPage() {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Đã có tài khoản?{' '}
-            <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
+            <Link href="/login" className="cursor-pointer font-medium text-blue-600 hover:text-blue-500">
               Đăng nhập
             </Link>
           </p>
@@ -159,7 +159,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+              className="cursor-pointer group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
             >
               {loading ? 'Đang đăng ký...' : 'Đăng ký'}
             </button>

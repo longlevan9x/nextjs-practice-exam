@@ -1,4 +1,4 @@
-import { supabase } from '@/backend/lib/supabase';
+import { supabase } from '@/backend/lib/supabase/client';
 
 export const getCurrentUser = async () => {
     try {

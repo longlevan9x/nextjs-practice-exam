@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/backend/lib/supabase";
+import { supabase } from "@/backend/lib/supabase/client";
+import { getCurrentUser } from "@/backend/services/authService";
 
 const Menu: React.FC = () => {
   interface User {
@@ -18,8 +19,8 @@ const Menu: React.FC = () => {
   useEffect(() => {
     // Kiểm tra trạng thái đăng nhập
     const checkUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      setUser(session?.user as User ?? null);
+      const user = await getCurrentUser();
+      setUser(user as User ?? null);
     };
 
     checkUser();
@@ -53,21 +54,21 @@ const Menu: React.FC = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/exams" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+            <Link href="/exams" className="cursor-pointer  hover:bg-blue-700 px-3 py-2 text-sm font-medium">
               Đề thi
             </Link>
 
             {user ? (
               <>
-                <Link href="/profile" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+                <Link href="/profile" className="cursor-pointer  hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Hồ sơ
                 </Link>
-                <Link href="/history" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+                <Link href="/history" className="cursor-pointer  hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Lịch sử
                 </Link>
                 <button
                   onClick={handleSignOut}
-                  className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium"
+                  className="cursor-pointer  hover:bg-blue-700 px-3 py-2 text-sm font-medium"
                 >
                   Đăng xuất
                 </button>
@@ -77,10 +78,10 @@ const Menu: React.FC = () => {
               </>
             ) : (
               <>
-                <Link href="/login" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+                <Link href="/login" className="cursor-pointer hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Đăng nhập
                 </Link>
-                <Link href="/register" className=" hover:bg-blue-700 px-3 py-2 text-sm font-medium">
+                <Link href="/register" className="cursor-pointer hover:bg-blue-700 px-3 py-2 text-sm font-medium">
                   Đăng ký
                 </Link>
               </>
