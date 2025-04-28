@@ -29,7 +29,7 @@ export default function ExamList() {
         ]);
 
         let _exams = getExams();
-        
+
         _exams = _exams.map(exam => {
           const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
           const examType = incompleteExam?.examType;
@@ -91,8 +91,8 @@ export default function ExamList() {
             onCourseChange={handleCourseChange}
           />
 
-          <Link 
-            href="/statistics" 
+          <Link
+            href="/statistics"
             className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center justify-center gap-1 hover:bg-blue-700 transition-all duration-300"
           >
             <span className="text-sm md:text-base whitespace-nowrap">Xem thống kê</span>
@@ -110,12 +110,7 @@ export default function ExamList() {
           {filteredExams.map((exam) => (
             <ExamCard
               key={exam.id}
-              id={exam.id}
-              logo={exam.imageUrl}
-              title={exam.name}
-              description={exam.description}
-              incomplete={exam.incomplete}
-              examType={exam.examType}
+              exam={exam}
             />
           ))}
         </div>

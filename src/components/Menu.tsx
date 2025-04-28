@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { supabase } from "@/backend/lib/supabase/client";
 import { getCurrentUser } from "@/backend/services/authService";
 
@@ -14,7 +13,6 @@ const Menu: React.FC = () => {
 
   const [user, setUser] = useState<User | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     // Kiểm tra trạng thái đăng nhập
@@ -35,7 +33,7 @@ const Menu: React.FC = () => {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    router.push('/login');
+    window.location.reload();
   };
 
   const toggleMenu = () => {

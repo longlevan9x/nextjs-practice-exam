@@ -48,7 +48,7 @@ export default function CourseList() {
   }, [searchQuery]);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="xl:container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Danh sách khóa học</h1>
         <div className="relative">
