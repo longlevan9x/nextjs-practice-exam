@@ -25,6 +25,7 @@ const ResultOverviewPage: React.FC = () => {
     const [resultData, setResultData] = useState<Exam | null>(null);
     const [filteredQuestions, setFilteredQuestions] = useState<MappedQuestion[]>([]);
     const [filterMode, setFilterMode] = useState<string>('all');
+    const [selectedDomain, setSelectedDomain] = useState<string>('all');
     const [examResult, setExamResult] = useState<ExamResult | null>(null);
     const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
     const questionRefs = useRef<Map<number, HTMLDivElement>>(new Map());
@@ -93,6 +94,29 @@ const ResultOverviewPage: React.FC = () => {
         }
     };
 
+    // Update filtered questions when filter mode or domain changes
+    useEffect(() => {
+        let filtered = [...mappedQuestions];
+
+        // Apply status filter
+        if (filterMode === 'correct') {
+            filtered = filtered.filter((q) => q.question.isCorrect === true);
+        } else if (filterMode === 'incorrect') {
+            filtered = filtered.filter((q) => q.question.isCorrect === false);
+        } else if (filterMode === 'skipped') {
+            filtered = filtered.filter((q) => q.question.selectedAnswer === null);
+        } else if (filterMode === 'bookmarked') {
+            filtered = filtered.filter((q) => q.question.isBookmarked);
+        }
+
+        // Apply domain filter
+        if (selectedDomain !== 'all') {
+            filtered = filtered.filter((q) => q.question.domain === selectedDomain);
+        }
+
+        setFilteredQuestions(filtered);
+    }, [filterMode, selectedDomain, mappedQuestions]);
+
     if (loading) {
         return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     }
@@ -121,7 +145,8 @@ const ResultOverviewPage: React.FC = () => {
                 </button>
             </div>
 
-            <div className="flex space-x-4 mb-6 justify-between">
+            {/* Filter buttons */}
+            <div className="flex flex-wrap gap-2 lg:justify-between mb-4">
                 <button
                     onClick={() => {
                         setFilterMode('all');
@@ -174,6 +199,29 @@ const ResultOverviewPage: React.FC = () => {
                 </button>
             </div>
 
+            {/* Domain Filter */}
+            <div className="mb-4">
+                <div className="flex flex-wrap gap-2">
+                    <button
+                        onClick={() => setSelectedDomain('all')}
+                        className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                    >
+                        Tất cả lĩnh vực
+                    </button>
+                    {resultData?.domains?.map((domain) => (
+                        <button
+                            key={domain.name}
+                            onClick={() => setSelectedDomain(domain.name)}
+                            className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }`}
+                        >
+                            {domain.name} ({mappedQuestions.filter(q => q.question.domain === domain.name).length})
+                        </button>
+                    ))}
+                </div>
+            </div>
+
             {/* Quick Navigation Sidebar */}
             <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
                 <div className="flex lg:flex-col gap-2 lg:max-w-none">
@@ -182,18 +230,18 @@ const ResultOverviewPage: React.FC = () => {
                             key={question.id}
                             onClick={() => scrollToQuestion(question.id)}
                             className={`cursor-pointer w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${activeQuestion === question.id
-                                    ? 'bg-blue-600 text-white scale-110'
-                                    : question.question.isCorrect
-                                        ? 'bg-green-100 text-green-800 hover:bg-green-200'
-                                        : question.question.selectedAnswer === null
-                                            ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                                            : 'bg-red-100 text-red-800 hover:bg-red-200'
+                                ? 'bg-blue-600 text-white scale-110'
+                                : question.question.isCorrect
+                                    ? 'bg-green-100 text-green-800 hover:bg-green-200'
+                                    : question.question.selectedAnswer === null
+                                        ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                        : 'bg-red-100 text-red-800 hover:bg-red-200'
                                 }`}
                             title={`Câu ${(question.question.questionIndex ?? 0) + 1}: ${question.question.isCorrect
-                                    ? 'Chính xác'
-                                    : question.question.selectedAnswer === null
-                                        ? 'Bỏ qua'
-                                        : 'Không chính xác'
+                                ? 'Chính xác'
+                                : question.question.selectedAnswer === null
+                                    ? 'Bỏ qua'
+                                    : 'Không chính xác'
                                 }`}
                         >
                             {(question.question.questionIndex ?? 0) + 1}
@@ -232,7 +280,7 @@ const ResultOverviewPage: React.FC = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 

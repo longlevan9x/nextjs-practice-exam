@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import StatisticsOverview from '@/components/statistics/StatisticsOverview';
 import DomainAnalysis from '@/components/statistics/DomainAnalysis';
 import StatisticsSection from '@/components/statistics/StatisticsSection';
@@ -11,7 +11,7 @@ import { getAllExams } from '@/services/examService';
 import { getCourses } from '@/services/course';
 import { Course } from '@/types/course';
 import LoadingIcon from '@/components/common/LoadingIcon';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 // Define statistics sections
 const statisticsSections = [
   {
@@ -26,7 +26,7 @@ const statisticsSections = [
   }
 ];
 
-export default function StatisticsPage() {
+const StatisticsPageComponent: React.FC = () => {
   const [examResults, setExamResults] = useState<ExamResult[]>([]);
   const [exams, setExams] = useState<Exam[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
@@ -90,8 +90,8 @@ export default function StatisticsPage() {
   });
 
   // Get exams based on selected exam
-  const displayExams = selectedExamId 
-    ? filteredExams.filter(exam => exam.id === selectedExamId) 
+  const displayExams = selectedExamId
+    ? filteredExams.filter(exam => exam.id === selectedExamId)
     : filteredExams;
 
   if (loading) {
@@ -113,7 +113,7 @@ export default function StatisticsPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Thống kê học tập</h1>
-      
+
       {/* Filters */}
       <div className="bg-white rounded-lg shadow-md p-4 mb-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -136,7 +136,7 @@ export default function StatisticsPage() {
               ))}
             </select>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Chọn đề thi
@@ -176,4 +176,14 @@ export default function StatisticsPage() {
       </div>
     </div>
   );
-} 
+}
+
+const StatisticsPage: React.FC = () => {
+  return (
+    <Suspense fallback={<LoadingIcon />}>
+      <StatisticsPageComponent />
+    </Suspense>
+  );
+};
+
+export default StatisticsPage; 

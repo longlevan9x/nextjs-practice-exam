@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, LabelList } from "recharts";
 
 interface DonutChartProps {
   data: { name: string; value: number; color: string }[]; // Data for the chart
@@ -26,6 +26,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
+            <LabelList className="text-xs font-normal" dataKey="value" position="top" />
           </Pie>
           <Tooltip
             contentStyle={{
