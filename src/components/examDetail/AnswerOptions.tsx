@@ -8,6 +8,7 @@ interface AnswerOptionsProps {
   showExplanation: boolean;
   onAnswerSelect: (answerId: number) => void;
   multiple: boolean;
+  questionId: number;
 }
 
 const AnswerOptions: React.FC<AnswerOptionsProps> = ({
@@ -16,10 +17,12 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
   showExplanation,
   onAnswerSelect,
   multiple,
+  questionId,
 }) => {
   return (
     <ul className="space-y-4">
       {answers.map((answer) => {
+        console.log(answer.id, typeof answer.id, typeof selectedAnswer, selectedAnswer);
         const isSelected = multiple
           ? selectedAnswer !== null && Array.isArray(selectedAnswer) && selectedAnswer.includes(answer.id)
           : selectedAnswer === answer.id;
@@ -46,7 +49,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
             <div className="flex items-center w-6 h-6 mr-3">
               <input
                 type={multiple ? "checkbox" : "radio"}
-                name="answer"
+                name={`answer-${questionId}`}
                 value={answer.id}
                 checked={isSelected}
                 onChange={() => onAnswerSelect(answer.id)}

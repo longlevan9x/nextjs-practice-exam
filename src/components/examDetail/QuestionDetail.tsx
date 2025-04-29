@@ -101,6 +101,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         {/* Answer Options */}
         <div className={`transition-all duration-300 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
           <AnswerOptions
+            questionId={question.id}
             answers={question.answers}
             selectedAnswer={question.selectedAnswer ?? null}
             showExplanation={question.showExplanation ?? false}
