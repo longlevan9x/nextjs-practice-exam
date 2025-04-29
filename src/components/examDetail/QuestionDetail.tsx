@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Question } from "@/types/question";
 import BookmarkButton from "./BookmarkButton";
 import AnswerOptions from "./AnswerOptions";
 import AnswerExplanation from "./AnswerExplanation";
 import References from "./References";
-import { ArrowUpIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 import {
   EXPLANATION_SECTION_TITLE,
@@ -33,22 +33,8 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onToggleBookmark,
   onAnswerSelect,
 }) => {
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const [isExpanded, setIsExpanded] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const getQuestionStatus = () => {
     if (!question.selectedAnswer) {
@@ -162,17 +148,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           </div>
         )}
       </div>
-
-      {/* Scroll to top button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-16 right-4 bg-blue-800 text-white p-3 hover:bg-blue-700 transition-all duration-200 z-50 hover:scale-110"
-          aria-label="Lên đầu trang"
-        >
-          <ArrowUpIcon className="w-6 h-6" />
-        </button>
-      )}
     </div>
   );
 };

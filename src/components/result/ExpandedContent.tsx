@@ -105,7 +105,7 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
                     <div>
                         {/* Review Questions Button */}
                         <button
-                            className={`px-3 py-1.5 lg:px-4 lg:py-2 bg-blue-500 text-white rounded-sm cursor-pointer flex items-center justify-center text-sm lg:text-base ${isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+                            className={`px-3 py-1.5 lg:px-4 lg:py-2 bg-blue-500 text-white rounded-xs cursor-pointer flex items-center justify-center text-sm lg:text-base ${isReviewing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
                                 }`}
                             onClick={handleReviewQuestions}
                             disabled={isReviewing}

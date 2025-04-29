@@ -6,8 +6,13 @@ interface ProgressBarProps {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
-  const percentage = Math.round((current / total) * 100);
-
+  
+  let percentage = 0;
+  
+  if (total > 0) {
+    percentage = Math.round((current / total) * 100);
+  }
+  
   // Determine the color based on progress
   const progressColor =
     percentage >= 80

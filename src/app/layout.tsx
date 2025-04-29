@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Menu from "@/components/Menu";
 import ExamRedirect from "@/components/ExamRedirect";
 import NotificationContainer from '@/components/common/NotificationContainer';
-
+import ScrollToTop from "@/components/common/ScrollToTop";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -78,6 +78,7 @@ export default function RootLayout({
 
         {/* Main Content */}
         <main className="mx-auto px-4 py-4">{children}</main>
+        <ScrollToTop />
       </body>
     </html>
   );

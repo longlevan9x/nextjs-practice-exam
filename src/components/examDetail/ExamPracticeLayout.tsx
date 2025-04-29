@@ -283,6 +283,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     };
 
     const handleFinishTest = async () => {
+        if (isFinishing) return;    
+        
         setIsFinishing(true);
         try {
             const endTime = new Date().toISOString();
@@ -298,8 +300,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             
             // Chỉ chuyển trang khi cập nhật thành công
             router.push(`/exams/${examId}/result`);
-            setIsFinishing(false);
-
+            // setIsFinishing(false);
         } catch (error) {
             console.error('Error finishing test:', error);
             // Sử dụng hệ thống thông báo mới
@@ -350,7 +351,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-6 lg:py-2 rounded-sm transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
                                         }`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>

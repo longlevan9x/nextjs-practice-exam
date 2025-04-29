@@ -114,20 +114,20 @@ const ResultOverviewPage: React.FC = () => {
             <div className="mb-4">
                 <button
                     onClick={() => window.history.back()}
-                    className="flex items-center px-1 py-2 text-blue-700 rounded-sm cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold"
+                    className="flex items-center px-1 py-2 text-blue-700 rounded-xs cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold"
                 >
                     <ChevronLeftIcon className="w-5 h-5 mr-2" />
                     Quay lại phần tổng quan kết quả
                 </button>
             </div>
 
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-4 mb-6 justify-between">
                 <button
                     onClick={() => {
                         setFilterMode('all');
                         setFilteredQuestions(mappedQuestions);
                     }}
-                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                 >
                     Tất cả ({totalQuestions})
@@ -137,7 +137,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('correct');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === true));
                     }}
-                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'correct' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'correct' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                 >
                     Chính xác ({correctQuestions})
@@ -147,7 +147,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('incorrect');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === false));
                     }}
-                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'incorrect' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'incorrect' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                 >
                     Không chính xác ({incorrectQuestions})
@@ -157,7 +157,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('skipped');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.selectedAnswer === null));
                     }}
-                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'skipped' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'skipped' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                 >
                     Đã bỏ qua ({skippedQuestions})
@@ -167,7 +167,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('bookmarked');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isBookmarked));
                     }}
-                    className={`px-4 py-2 rounded-sm font-semibold ${filterMode === 'bookmarked' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'bookmarked' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                 >
                     Đã đánh dấu ({bookmarkedQuestions})
@@ -181,22 +181,20 @@ const ResultOverviewPage: React.FC = () => {
                         <button
                             key={question.id}
                             onClick={() => scrollToQuestion(question.id)}
-                            className={`cursor-pointer w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${
-                                activeQuestion === question.id
+                            className={`cursor-pointer w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${activeQuestion === question.id
                                     ? 'bg-blue-600 text-white scale-110'
                                     : question.question.isCorrect
-                                    ? 'bg-green-100 text-green-800 hover:bg-green-200'
+                                        ? 'bg-green-100 text-green-800 hover:bg-green-200'
+                                        : question.question.selectedAnswer === null
+                                            ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                            : 'bg-red-100 text-red-800 hover:bg-red-200'
+                                }`}
+                            title={`Câu ${(question.question.questionIndex ?? 0) + 1}: ${question.question.isCorrect
+                                    ? 'Chính xác'
                                     : question.question.selectedAnswer === null
-                                    ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                                    : 'bg-red-100 text-red-800 hover:bg-red-200'
-                            }`}
-                            title={`Câu ${(question.question.questionIndex ?? 0) + 1}: ${
-                                question.question.isCorrect 
-                                    ? 'Chính xác' 
-                                    : question.question.selectedAnswer === null
-                                    ? 'Bỏ qua'
-                                    : 'Không chính xác'
-                            }`}
+                                        ? 'Bỏ qua'
+                                        : 'Không chính xác'
+                                }`}
                         >
                             {(question.question.questionIndex ?? 0) + 1}
                             <span className="absolute -right-1 -top-1">
