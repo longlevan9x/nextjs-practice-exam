@@ -11,7 +11,7 @@ import { getAllExams } from '@/services/examService';
 import { getCourses } from '@/services/course';
 import { Course } from '@/types/course';
 import LoadingIcon from '@/components/common/LoadingIcon';
-
+import { useRouter, useSearchParams } from 'next/navigation';
 // Define statistics sections
 const statisticsSections = [
   {
@@ -34,6 +34,15 @@ export default function StatisticsPage() {
   const [error, setError] = useState<string | null>(null);
   const [selectedCourseId, setSelectedCourseId] = useState<number>(0);
   const [selectedExamId, setSelectedExamId] = useState<number>(0);
+  // get courseId from query string
+  const searchParams = useSearchParams();
+  const courseId = searchParams.get('courseId');
+
+  useEffect(() => {
+    if (courseId) {
+      setSelectedCourseId(parseInt(courseId));
+    }
+  }, [courseId]);
 
   useEffect(() => {
     const fetchData = async () => {

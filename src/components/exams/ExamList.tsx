@@ -92,7 +92,7 @@ export default function ExamList() {
           />
 
           <Link
-            href="/statistics"
+            href={`/statistics?courseId=${selectedCourseId}`}
             className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center justify-center gap-1 hover:bg-blue-700 transition-all duration-300"
           >
             <span className="text-sm md:text-base whitespace-nowrap">Xem thống kê</span>

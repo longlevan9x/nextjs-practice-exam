@@ -20,16 +20,13 @@ const DomainAnalysis: React.FC<DomainAnalysisProps> = ({ examResults, exams }) =
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(exams);
-
-
     const fetchDomainStats = async () => {
       try {
         setLoading(true);
-        
+
         // Get unique domains from filtered exams
         const uniqueDomains = new Map<string, ExamDomain>();
-        
+
         exams.forEach(exam => {
           exam.domains?.forEach(domain => {
             if (uniqueDomains.has(domain.name)) {
@@ -62,7 +59,14 @@ const DomainAnalysis: React.FC<DomainAnalysisProps> = ({ examResults, exams }) =
           }, 0);
 
           // Calculate accuracy
-          const accuracy = totalQuestions > 0 ? (correctAnswers / totalQuestions) * 100 : 0;
+          let accuracy = 0;
+          if (totalQuestions > 0) {
+            accuracy = (correctAnswers / totalQuestions) * 100;
+          }
+
+          if (accuracy > 100) {
+            accuracy = 100;
+          }
 
           return {
             name: domain.name,
@@ -102,15 +106,15 @@ const DomainAnalysis: React.FC<DomainAnalysisProps> = ({ examResults, exams }) =
               {domain.correctAnswers}/{domain.totalQuestions} câu đúng
             </span>
           </div>
-          
+
           {/* Progress bar */}
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-blue-600 h-2 rounded-full" 
+            <div
+              className="bg-blue-600 h-2 rounded-full"
               style={{ width: `${domain.accuracy}%` }}
             ></div>
           </div>
-          
+
           <div className="flex justify-between mt-1.5">
             <span className="text-sm text-gray-600">
               Tổng số câu hỏi: {domain.questionCount}
