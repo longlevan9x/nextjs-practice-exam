@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import QuestionList from "@/components/examDetail/QuestionList";
 import QuestionDetail from "@/components/examDetail/QuestionDetail";
@@ -38,6 +38,30 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const router = useRouter();
 
+    const _convertExamResultToQuestions = useCallback((convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]) : Question[] => {
+        return convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
+            const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
+
+            const answers = convertedQuestion.answers.map((a) => {
+                const originalAnswer = originalQuestion?.answers.find(originalAnswer => originalAnswer.id === a.id);
+                return {
+                    ...originalAnswer,
+                    correct: originalAnswer?.correct,
+                };
+            }) as Answer[];
+
+            return {
+                ...originalQuestion,
+                questionIndex: convertedQuestion.questionIndex,
+                selectedAnswer: convertedQuestion.selectedAnswer,
+                isCorrect: convertedQuestion.isCorrect,
+                answered: convertedQuestion.selectedAnswer !== null,
+                showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null,
+                answers: answers,
+            };
+        }) as Question[];
+    }, [examType]);
+
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
@@ -46,7 +70,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     setCurrentExamResult(incompleteExam);
                     const convertedQuestions = incompleteExam.questions;
                     const originalQuestions = await fetchQuestionsByExamId(parseInt(examId));
-
+                    
                     const questionsWithDetails = _convertExamResultToQuestions(convertedQuestions, originalQuestions);
 
                     setQuestions(questionsWithDetails);
@@ -62,7 +86,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         };
 
         fetchQuestions();
-    }, [examId, examType, displayMode, router]);
+    }, [examId, examType, displayMode, router, _convertExamResultToQuestions]);
 
     useEffect(() => {
         if (examId) {
@@ -90,32 +114,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         return () => clearInterval(timer);
     }, [testEnded, examType, displayMode]);
 
-    // 1.1. Chuyển đổi dữ liệu từ API
-    const _convertExamResultToQuestions = (convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]): Question[] => {
-        return convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
-            const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
-
-            const answers = convertedQuestion.answers.map((a) => {
-                const originalAnswer = originalQuestion?.answers.find(originalAnswer => originalAnswer.id === a.id);
-                return {
-                    ...originalAnswer,
-                    correct: originalAnswer?.correct,
-                };
-            }) as Answer[];
-
-            return {
-                ...originalQuestion,
-                questionIndex: convertedQuestion.questionIndex,
-                selectedAnswer: convertedQuestion.selectedAnswer,
-                isCorrect: convertedQuestion.isCorrect,
-                answered: convertedQuestion.selectedAnswer !== null,
-                showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null,
-                answers: answers,
-            };
-        }) as Question[];
-    }
-
-    const _updateCurrentExamResultState = (examResult: ExamResult | {}): ExamResult | null => {
+    const _updateCurrentExamResultState = (examResult: ExamResult | object): ExamResult | null => {
         if (!currentExamResult?.resultId) {
             return null;
         }
@@ -130,7 +129,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         return updatedResult;
     }
 
-    const _saveExamResult = async (examResult: ExamResult | {}) => {
+    const _saveExamResult = async (examResult: ExamResult | object) => {
         const updatedResult = _updateCurrentExamResultState(examResult);
         await examResultService.updateExamResultData(currentExamResult?.resultId, updatedResult as ExamResult);
     };
@@ -203,6 +202,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
         const isCorrect = checkAnswerCorrectness(selectedQuestion);
         const updatedQuestions = [...questions];
+        
         updatedQuestions[currentQuestionIndex] = {
             ...selectedQuestion,
             showExplanation: true,
@@ -229,7 +229,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const handleNextQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
 
-        let updatedQuestions = [...questions];
+        const updatedQuestions = [...questions];
 
         // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
         if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
