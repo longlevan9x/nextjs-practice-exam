@@ -311,6 +311,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     };
 
     const isFirstQuestion = questions.length > 0 && selectedQuestion?.id === questions[0].id;
+    const isLastQuestion = questions.length > 0 && selectedQuestion?.id === questions[questions.length - 1].id;
 
     return (
         <div className="text-gray-900 grid grid-cols-12 -mr-4">
@@ -339,7 +340,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     <div className="w-full flex items-center mb-6">
                         {displayMode === DISPLAY_MODES.EXECUTE && (
                             <div className="flex w-full items-center space-x-4 mr-4">
-                                <ProgressBar current={questions.filter((q) => q.answered).length} total={questions.length} />
+                                <ProgressBar current={questions.filter((q) => q.answered).length + 1} total={questions.length} />
                                 {examType === EXAM_TYPES.EXAM && <Timer remainingTime={remainingTime} />}
                             </div>
                         )}
@@ -393,6 +394,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             selectedAnswer={selectedQuestion?.selectedAnswer ?? null}
                             testEnded={testEnded}
                             isFirstQuestion={isFirstQuestion ?? false}
+                            isLastQuestion={isLastQuestion ?? false}
                             examType={examType}
                         />
                     </div>

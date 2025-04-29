@@ -11,6 +11,7 @@ interface ActionButtonsProps {
   selectedAnswer: number | number[] | null;
   testEnded: boolean;
   isFirstQuestion: boolean;
+  isLastQuestion: boolean;
   examType?: ExamType;
 }
 
@@ -23,6 +24,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   selectedAnswer,
   testEnded,
   isFirstQuestion,
+  isLastQuestion,
   examType,
 }) => {
   return (
@@ -59,7 +61,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
           </button>
         )}
 
-        {(showExplanation || (selectedAnswer && examType === EXAM_TYPES.EXAM)) && (
+        {(showExplanation || (selectedAnswer && examType === EXAM_TYPES.EXAM)) && !isLastQuestion && (
           <button
             onClick={onNextQuestion}
             disabled={testEnded}
