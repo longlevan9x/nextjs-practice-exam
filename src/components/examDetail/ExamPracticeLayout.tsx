@@ -91,7 +91,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     }, [testEnded, examType, displayMode]);
 
     // 1.1. Chuyển đổi dữ liệu từ API
-    const _convertExamResultToQuestions = (convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]) : Question[] => {
+    const _convertExamResultToQuestions = (convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]): Question[] => {
         return convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
             const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
 
@@ -115,23 +115,34 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         }) as Question[];
     }
 
-    const handleQuestionSelect = async (questionId: number) => {
-        if (testEnded) return;
-        const question = questions.find((q) => q.id === questionId);
-        if (question) {
-            setSelectedQuestion(question);
-            const index = questions.findIndex((q) => q.id === questionId);
-            setCurrentQuestionIndex(index);
-            
-            if (currentExamResult?.resultId) {
-                const updatedResult = {
-                    ...currentExamResult,
-                    currentQuestionIndex: index
-                };
-                setCurrentExamResult(updatedResult);
-                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
-            }
+    const _updateCurrentExamResultState = (examResult: ExamResult | {}): ExamResult | null => {
+        if (!currentExamResult?.resultId) {
+            return null;
         }
+
+        const updatedResult = {
+            ...currentExamResult,
+            ...examResult
+        };
+
+        setCurrentExamResult(updatedResult);
+
+        return updatedResult;
+    }
+
+    const _saveExamResult = async (examResult: ExamResult | {}) => {
+        const updatedResult = _updateCurrentExamResultState(examResult);
+        await examResultService.updateExamResultData(currentExamResult?.resultId, updatedResult as ExamResult);
+    };
+
+    const handleQuestionSelect = async (questionIndex: number) => {
+        if (testEnded) return;
+
+        const question = questions[questionIndex];
+        setSelectedQuestion(question);
+        setCurrentQuestionIndex(questionIndex);
+
+        await _saveExamResult({ currentQuestionIndex: questionIndex });
     };
 
     const toggleBookmark = (questionId: number) => {
@@ -166,117 +177,87 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
         setQuestions(updatedQuestions);
         const updatedQuestion = updatedQuestions.find((q) => q.id === selectedQuestion.id);
+        
         if (updatedQuestion) {
             setSelectedQuestion(updatedQuestion);
         }
     };
 
-    const saveExamData = async (updatedQuestions: Question[]) => {
-        if (currentExamResult?.resultId) {
-            const examResultData = {
-                ...currentExamResult,
-                questions: updatedQuestions
-            };
+    // Thêm hàm helper để kiểm tra tính đúng sai của câu trả lời
+    const checkAnswerCorrectness = (question: Question): boolean => {
+        if (!question.selectedAnswer) return false;
 
-            await examResultService.updateExamResultData(currentExamResult.resultId, examResultData as ExamResult);
+        if (question.multiple) {
+            const selectedAnswers = Array.isArray(question.selectedAnswer) ? question.selectedAnswer : [];
+            const correctAnswers = question.answers.filter(a => a.correct).map(a => a.id);
+
+            return selectedAnswers.length === correctAnswers.length &&
+                selectedAnswers.every(id => correctAnswers.includes(id));
+        } else {
+            return question.answers.some(a => a.id === question.selectedAnswer && a.correct);
         }
     };
 
     const handleCheckAnswer = async () => {
         if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
 
-        const updatedQuestions = questions.map((q) => {
-            if (q.id === selectedQuestion.id) {
-                const isCorrect = q.multiple
-                    ? Array.isArray(q.selectedAnswer) &&
-                    q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
-                    q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
-                    : q.answers.some((a) => a.id === q.selectedAnswer && a.correct);
-
-                return {
-                    ...q,
-                    showExplanation: true,
-                    answered: true,
-                    isCorrect: isCorrect,
-                    incorrect: !isCorrect,
-                };
-            }
-            return q;
-        });
+        const isCorrect = checkAnswerCorrectness(selectedQuestion);
+        const updatedQuestions = [...questions];
+        updatedQuestions[currentQuestionIndex] = {
+            ...selectedQuestion,
+            showExplanation: true,
+            answered: true,
+            isCorrect: isCorrect,
+            incorrect: !isCorrect,
+        };
 
         setQuestions(updatedQuestions);
-        const updatedQuestion = updatedQuestions.find((q) => q.id === selectedQuestion.id);
-        if (updatedQuestion) {
-            setSelectedQuestion(updatedQuestion);
+        setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
+        await _saveExamResult({ questions: updatedQuestions });
+    };
+
+    const _handleNextQuestion = () => {
+        const nextIndex = currentQuestionIndex + 1;
+        if (nextIndex < questions.length) {
+            setCurrentQuestionIndex(nextIndex);
+            setSelectedQuestion(questions[nextIndex]);
         }
 
-        await saveExamData(updatedQuestions);
+        return nextIndex;
     };
 
     const handleNextQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
 
-        let updatedQuestions = questions;
+        let updatedQuestions = [...questions];
 
         // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
         if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
-            updatedQuestions = questions.map((q) => {
-                if (q.id === selectedQuestion.id) {
-                    const isCorrect = q.multiple
-                        ? Array.isArray(q.selectedAnswer) &&
-                        q.selectedAnswer.length === q.answers.filter((a) => a.correct).length &&
-                        q.selectedAnswer.every((id) => q.answers.find((a) => a.id === id)?.correct)
-                        : q.answers.some((a) => a.id === q.selectedAnswer && a.correct);
-
-                    return {
-                        ...q,
-                        answered: true,
-                        isCorrect: isCorrect,
-                        incorrect: !isCorrect,
-                    };
-                }
-                return q;
-            });
+            const isCorrect = checkAnswerCorrectness(selectedQuestion);
+            updatedQuestions[currentQuestionIndex] = {
+                ...selectedQuestion,
+                answered: true,
+                isCorrect: isCorrect,
+                incorrect: !isCorrect,
+            };
 
             setQuestions(updatedQuestions);
-
-            // await saveExamData(updatedQuestions);
         }
 
-        const nextIndex = currentQuestionIndex + 1;
+        const nextIndex = _handleNextQuestion();
 
-        if (nextIndex < questions.length) {
-            setCurrentQuestionIndex(nextIndex);
-            setSelectedQuestion(questions[nextIndex]);
-            // Save current question index
-            if (currentExamResult?.resultId) {
-                const updatedResult = {
-                    ...currentExamResult,
-                    questions: updatedQuestions as ExamResultQuestion[],
-                    currentQuestionIndex: nextIndex
-                };
-                setCurrentExamResult(updatedResult);
-                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
-            }
-        }
+        await _saveExamResult({ questions: updatedQuestions, currentQuestionIndex: nextIndex });
     };
 
     const handlePreviousQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
-        
+
         const prevIndex = currentQuestionIndex - 1;
         if (prevIndex >= 0) {
             setCurrentQuestionIndex(prevIndex);
             setSelectedQuestion(questions[prevIndex]);
-            
-            if (currentExamResult?.resultId) {
-                const updatedResult = {
-                    ...currentExamResult,
-                    currentQuestionIndex: prevIndex
-                };
-                setCurrentExamResult(updatedResult);
-                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
-            }
+
+            await _saveExamResult({ currentQuestionIndex: prevIndex });
         }
     };
 

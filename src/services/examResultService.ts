@@ -78,7 +78,11 @@ export const getExamResult = async (examId: string, resultId: string) => {
     }
 };
 
-export const updateExamResultData = async (resultId: string, examResult: ExamResult) => {
+export const updateExamResultData = async (resultId: string | undefined, examResult: ExamResult | null) => {
+    if (!examResult || !resultId) {
+        return null;
+    }
+
     const isUserAuthenticated = await isAuthenticated();
 
     if (examResult.questions) {

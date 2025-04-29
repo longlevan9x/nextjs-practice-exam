@@ -15,7 +15,7 @@ interface QuestionListProps {
   domains: ExamDomain[];
   onFilterChange: (filter: string) => void;
   onDomainFilterChange: (domainFilter: string) => void;
-  onQuestionSelect: (questionId: number) => void;
+  onQuestionSelect: (questionIndex: number) => void;
   onToggleBookmark: (questionId: number) => void;
   examType: ExamType;
 }
@@ -83,8 +83,11 @@ const QuestionList: React.FC<QuestionListProps> = ({
     setIsCollapsed(newCollapsedState);
   };
 
-  const handleQuestionSelect = (questionId: number) => {
-    onQuestionSelect(questionId);
+  const handleQuestionSelect = (questionIndex: number | undefined) => {
+    if (!questionIndex) {
+      return;
+    }
+    onQuestionSelect(questionIndex);
     // Collapse the list when a question is selected on mobile
     if (isMobile) {
       setIsCollapsed(true);
@@ -181,7 +184,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
                   question={question}
                   isSelected={selectedQuestionId === question.id}
                   isBookmarked={bookmarkedQuestions.includes(question.id)}
-                  onSelect={() => handleQuestionSelect(question.id)}
+                  onSelect={() => handleQuestionSelect(question.questionIndex)}
                   onToggleBookmark={() => onToggleBookmark(question.id)}
                   examType={examType}
                   isMobile={isMobile}
