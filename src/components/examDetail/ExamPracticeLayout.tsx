@@ -359,7 +359,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         )}
                     </div>
 
-                    <div className=" pb-20">
+                    <div className={`${selectedQuestion?.showExplanation ? 'pb-20' : ''}`}>
                         {selectedQuestion && (
                             <QuestionDetail
                                 question={selectedQuestion}
