@@ -8,7 +8,7 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 const Breadcrumb: React.FC = () => {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
-  const [examName, setExamName] = useState<string | null>(null);
+  const [exam, setExam] = useState<Exam | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Breadcrumb: React.FC = () => {
             (exam: Exam) => exam.id === parseInt(pathSegments[1])
           );
           if (examData) {
-            setExamName(examData.name);
+            setExam(examData);
           }
         } catch (err) {
           console.error("Failed to fetch exam data:", err);
@@ -66,11 +66,17 @@ const Breadcrumb: React.FC = () => {
         {/* Dynamic Breadcrumb Items */}
         {pathSegments.map((segment, index) => {
           const isLast = index === pathSegments.length - 1;
-          const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-          const displayName =
-            pathSegments[0] === "exams" && index === 1 && examName
-              ? examName
-              : decodeURIComponent(segment);
+          let href = `/${pathSegments.slice(0, index + 1).join("/")}`;
+
+          let displayName = "";
+          if (pathSegments[0] === "exams" && index === 1 && exam?.name) {
+            displayName = exam.name;
+            const urlParams = new URLSearchParams(href);
+            urlParams.set("courseId", exam.courseId.toString());
+            href = `${href.split("?")[0]}?${urlParams.toString()}`;
+          } else {
+            displayName = decodeURIComponent(segment);
+          }
 
           const truncatedName = isMobile ? truncateText(displayName, 20) : displayName;
 
