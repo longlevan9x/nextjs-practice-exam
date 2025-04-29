@@ -22,7 +22,6 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
   return (
     <ul className="space-y-4">
       {answers.map((answer) => {
-        console.log(answer.id, typeof answer.id, typeof selectedAnswer, selectedAnswer);
         const isSelected = multiple
           ? selectedAnswer !== null && Array.isArray(selectedAnswer) && selectedAnswer.includes(answer.id)
           : selectedAnswer === answer.id;

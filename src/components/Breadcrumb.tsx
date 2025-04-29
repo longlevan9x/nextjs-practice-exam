@@ -67,16 +67,21 @@ const Breadcrumb: React.FC = () => {
         {pathSegments.map((segment, index) => {
           const isLast = index === pathSegments.length - 1;
           let href = `/${pathSegments.slice(0, index + 1).join("/")}`;
+          const urlParams = new URLSearchParams(href);
 
           let displayName = "";
+          
           if (pathSegments[0] === "exams" && index === 1 && exam?.name) {
             displayName = exam.name;
-            const urlParams = new URLSearchParams(href);
-            urlParams.set("courseId", exam.courseId.toString());
-            href = `${href.split("?")[0]}?${urlParams.toString()}`;
           } else {
             displayName = decodeURIComponent(segment);
           }
+
+          if (pathSegments[0] === "exams" && index === 0) {
+            urlParams.set("courseId", exam?.courseId.toString() || "");
+          }
+
+          href = `${href.split("?")[0]}?${urlParams.toString()}`;
 
           const truncatedName = isMobile ? truncateText(displayName, 20) : displayName;
 

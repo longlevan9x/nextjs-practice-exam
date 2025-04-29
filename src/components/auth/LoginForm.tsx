@@ -18,7 +18,7 @@ export default function LoginForm() {
         // Kiểm tra nếu đã đăng nhập thì chuyển hướng
         const checkSession = async () => {
             const { data: { session } } = await supabase.auth.getSession();
-            console.log('session', session);
+            // console.log('session', session);
             if (session) {
                 router.push(redirect || '/');
             }
@@ -39,7 +39,7 @@ export default function LoginForm() {
 
             if (error) throw error;
 
-            console.log(redirect)
+            // console.log(redirect)
             if (data.user) {
                 router.push(redirect || '/');
             }

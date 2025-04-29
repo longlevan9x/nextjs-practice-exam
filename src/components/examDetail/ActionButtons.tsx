@@ -8,6 +8,7 @@ interface ActionButtonsProps {
   onNextQuestion: () => void;
   onPreviousQuestion: () => void;
   onSkipQuestion: () => void;
+  onSubmitExam: () => void;
   selectedAnswer: number | number[] | null;
   testEnded: boolean;
   isFirstQuestion: boolean;
@@ -21,6 +22,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   onNextQuestion,
   onPreviousQuestion,
   onSkipQuestion,
+  onSubmitExam,
   selectedAnswer,
   testEnded,
   isFirstQuestion,
@@ -39,7 +41,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
             Quay lại
           </button>
         )}
-        {!selectedAnswer && !showExplanation && (
+        {(!selectedAnswer && !showExplanation && !isLastQuestion) && (
           <button
             onClick={onSkipQuestion}
             disabled={testEnded}
@@ -71,6 +73,19 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
             <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
           </button>
         )}
+
+        {
+          (isLastQuestion) && (
+            <button
+              onClick={onSubmitExam}
+              disabled={testEnded}
+              className="flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+            >
+              Kết thúc bài kiểm tra
+              <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
+            </button>
+          ) 
+        }
       </div>
     </div>
   );

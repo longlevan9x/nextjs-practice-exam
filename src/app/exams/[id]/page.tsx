@@ -8,7 +8,7 @@ import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateI
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { fetchQuestionsByExamId } from "@/services/questionService";
 import { ExamResult, ExamResultQuestion, ExamResultQuestionAnswer } from "@/types/ExamResult";
-import { ExamType } from "@/constants/exam";
+import { EXAM_TYPES, ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
 import { getExamById } from "@/services/examService";
@@ -231,7 +231,7 @@ export default function ExamDetailPage() {
                   }`}
               >
                 <span className="text-sm sm:text-base">Bắt đầu thi</span>
-                {isStarting && selectedMode === 'exam' && (
+                {isStarting && selectedMode === EXAM_TYPES.EXAM && (
                   <LoadingIcon />
                 )}
                 {!isStarting && (
@@ -294,7 +294,7 @@ export default function ExamDetailPage() {
                   }`}
               >
                 <span className="text-sm sm:text-base">Bắt đầu luyện tập</span>
-                {isStarting && selectedMode === 'practice' && (
+                {isStarting && selectedMode === EXAM_TYPES.PRACTICE && (
                   <LoadingIcon />
                 )}
                 {!isStarting && (

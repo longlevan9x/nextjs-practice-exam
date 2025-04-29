@@ -351,7 +351,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'
                                         }`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>
@@ -361,7 +361,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         )}
                     </div>
 
-                    <div className={`${selectedQuestion?.showExplanation ? 'pb-20' : ''}`}>
+                    <div className={` pb-28 ${selectedQuestion?.showExplanation ? 'lg:pb-20' : 'lg:pb-auto'}`}>
                         {selectedQuestion && (
                             <QuestionDetail
                                 question={selectedQuestion}
@@ -397,6 +397,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             isFirstQuestion={isFirstQuestion ?? false}
                             isLastQuestion={isLastQuestion ?? false}
                             examType={examType}
+                            onSubmitExam={handleFinishTest ?? (() => { })}
                         />
                     </div>
                 </div>
