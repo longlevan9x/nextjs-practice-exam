@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { EXAM_TYPES, ExamType } from "@/constants/exam";
+import LoadingIcon from "@/components/common/LoadingIcon";
 
 interface ActionButtonsProps {
   showExplanation: boolean;
@@ -14,6 +15,7 @@ interface ActionButtonsProps {
   isFirstQuestion: boolean;
   isLastQuestion: boolean;
   examType?: ExamType;
+  isFinishing?: boolean;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({
@@ -28,6 +30,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   isFirstQuestion,
   isLastQuestion,
   examType,
+  isFinishing,
 }) => {
   return (
     <div className="flex justify-end ">
@@ -75,16 +78,16 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
         )}
 
         {
-          (isLastQuestion) && (
+          (isLastQuestion && ((examType === EXAM_TYPES.EXAM) || (examType === EXAM_TYPES.PRACTICE && showExplanation))) && (
             <button
               onClick={onSubmitExam}
               disabled={testEnded}
               className="flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
             >
-              Kết thúc bài kiểm tra
-              <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
+              <span>Kết thúc bài kiểm tra</span>
+              {isFinishing && <LoadingIcon />}
             </button>
-          ) 
+          )
         }
       </div>
     </div>

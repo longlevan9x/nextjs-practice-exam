@@ -82,10 +82,10 @@ const ExpandedContent: React.FC<ExpandedContentProps> = ({
 
                     <div className="flex items-center">
                         {examType === EXAM_TYPES.PRACTICE && (
-                            <p className="text-sm bg-blue-600 px-3 rounded-full text-white">Luyện tập</p>
+                            <p className="text-sm bg-green-600 px-3 rounded-full text-white">Luyện tập</p>
                         )}
                         {examType === EXAM_TYPES.EXAM && (
-                            <p className="text-sm bg-green-600 px-3 rounded-full text-white">Thực hành</p>
+                            <p className="text-sm bg-blue-600 px-3 rounded-full text-white">Thực hành</p>
                         )}
                     </div>
 

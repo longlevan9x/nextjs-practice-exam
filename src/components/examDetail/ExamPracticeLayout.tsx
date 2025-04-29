@@ -13,7 +13,7 @@ import { ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
-import { updateExamResultData, getIncompleteExamResult } from '@/services/examResultService';
+import * as examResultService from '@/services/examResultService';
 import ActionButtons from "@/components/examDetail/ActionButtons";
 import { handleHttpError } from '@/services/notificationService';
 import { ApiError } from "next/dist/server/api-utils";
@@ -41,7 +41,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         const fetchQuestions = async () => {
             try {
                 // Get incomplete exam result
-                const incompleteExam = await getIncompleteExamResult(examId);
+                const incompleteExam = await examResultService.getIncompleteExamResult(examId);
 
                 if (incompleteExam) {
                     setCurrentExamResult(incompleteExam);
@@ -113,7 +113,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         return () => clearInterval(timer);
     }, [testEnded, examType, displayMode]);
 
-    const handleQuestionSelect = (questionId: number) => {
+    const handleQuestionSelect = async (questionId: number) => {
         if (testEnded) return;
         const question = questions.find((q) => q.id === questionId);
         if (question) {
@@ -126,7 +126,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     currentQuestionIndex: currentIndex
                 };
                 setCurrentExamResult(updatedResult);
-                updateExamResultData(currentExamResult.resultId, updatedResult);
+                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
     };
@@ -175,7 +175,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 questions: updatedQuestions
             };
 
-            await updateExamResultData(currentExamResult.resultId, examResultData as ExamResult);
+            await examResultService.updateExamResultData(currentExamResult.resultId, examResultData as ExamResult);
         }
     };
 
@@ -254,12 +254,12 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
                 setCurrentExamResult(updatedResult);
 
-                await updateExamResultData(currentExamResult.resultId, updatedResult);
+                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
     };
 
-    const handlePreviousQuestion = () => {
+    const handlePreviousQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
 
         const currentIndex = questions.findIndex((q) => q.id === selectedQuestion.id);
@@ -272,7 +272,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     ...currentExamResult,
                     currentQuestionIndex: currentIndex - 1
                 };
-                updateExamResultData(currentExamResult.resultId, updatedResult);
+                await examResultService.updateExamResultData(currentExamResult.resultId, updatedResult);
             }
         }
     };
@@ -296,7 +296,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             };
 
             // Cập nhật dữ liệu trước khi chuyển trang
-            await updateExamResultData(currentExamResult?.resultId || '', examResultData as ExamResult);
+            await examResultService.updateExamResultData(currentExamResult?.resultId || '', examResultData as ExamResult);
             
             // Chỉ chuyển trang khi cập nhật thành công
             router.push(`/exams/${examId}/result`);
@@ -341,7 +341,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     <div className="w-full flex items-center mb-6">
                         {displayMode === DISPLAY_MODES.EXECUTE && (
                             <div className="flex w-full items-center space-x-4 mr-4">
-                                <ProgressBar current={questions.filter((q) => q.answered).length + 1} total={questions.length} />
+                                <ProgressBar current={questions.filter((q) => q.answered).length} total={questions.length} />
                                 {examType === EXAM_TYPES.EXAM && <Timer remainingTime={remainingTime} />}
                             </div>
                         )}
@@ -398,6 +398,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             isLastQuestion={isLastQuestion ?? false}
                             examType={examType}
                             onSubmitExam={handleFinishTest ?? (() => { })}
+                            isFinishing={isFinishing}
                         />
                     </div>
                 </div>
