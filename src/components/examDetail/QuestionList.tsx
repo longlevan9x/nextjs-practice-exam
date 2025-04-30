@@ -46,7 +46,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
       
       // Only update if width has changed
       if (currentWidth !== previousWidth) {
-        const isMobileView = currentWidth < 1280; // 1280px is the xl breakpoint in Tailwind
+        const isMobileView = currentWidth < 1024; // 1024px is the xl breakpoint in Tailwind
         setIsMobile(isMobileView);
         setIsCollapsed(isMobileView);
         previousWidth = currentWidth;
