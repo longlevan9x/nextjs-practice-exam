@@ -38,7 +38,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const router = useRouter();
 
-    const _convertExamResultToQuestions = useCallback((convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]) : Question[] => {
+    const _convertExamResultToQuestions = useCallback((convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]): Question[] => {
         return convertedQuestions.map((convertedQuestion: ExamResultQuestion) => {
             const originalQuestion = originalQuestions.find(originalQuestion => originalQuestion.id === convertedQuestion.id);
 
@@ -70,7 +70,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     setCurrentExamResult(incompleteExam);
                     const convertedQuestions = incompleteExam.questions;
                     const originalQuestions = await fetchQuestionsByExamId(parseInt(examId));
-                    
+
                     const questionsWithDetails = _convertExamResultToQuestions(convertedQuestions, originalQuestions);
 
                     setQuestions(questionsWithDetails);
@@ -134,6 +134,14 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         await examResultService.updateExamResultData(currentExamResult?.resultId, updatedResult as ExamResult);
     };
 
+    const _isExamType = () => {
+        return examType === EXAM_TYPES.EXAM;
+    }
+
+    const _isPracticeType = () => {
+        return examType === EXAM_TYPES.PRACTICE;
+    }
+
     const handleQuestionSelect = async (questionIndex: number) => {
         if (testEnded) return;
 
@@ -176,7 +184,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
         setQuestions(updatedQuestions);
         const updatedQuestion = updatedQuestions.find((q) => q.id === selectedQuestion.id);
-        
+
         if (updatedQuestion) {
             setSelectedQuestion(updatedQuestion);
         }
@@ -197,23 +205,46 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         }
     };
 
-    const handleCheckAnswer = async () => {
-        if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
+    const _onCheckAnswer =  async (selectedQuestion: Question, options: object ) : Promise<Question[]> => {
+        const updatedQuestions = [...questions];
 
         const isCorrect = checkAnswerCorrectness(selectedQuestion);
-        const updatedQuestions = [...questions];
-        
         updatedQuestions[currentQuestionIndex] = {
             ...selectedQuestion,
-            showExplanation: true,
             answered: true,
             isCorrect: isCorrect,
             incorrect: !isCorrect,
+            ...options 
         };
 
         setQuestions(updatedQuestions);
+
         setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
         await _saveExamResult({ questions: updatedQuestions });
+
+        return updatedQuestions
+    }
+
+    const handleCheckAnswer = async () => {
+        if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
+        // const isCorrect = checkAnswerCorrectness(selectedQuestion);
+        // const updatedQuestions = [...questions];
+
+        // updatedQuestions[currentQuestionIndex] = {
+        //     ...selectedQuestion,
+        //     showExplanation: true,
+        //     answered: true,
+        //     isCorrect: isCorrect,
+        //     incorrect: !isCorrect,
+        // };
+
+        // setQuestions(updatedQuestions);
+        // setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
+        // await _saveExamResult({ questions: updatedQuestions });
+
+        await _onCheckAnswer(selectedQuestion, {
+            showExplanation: true,
+        });
     };
 
     const _handleNextQuestion = () => {
@@ -233,15 +264,16 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
         // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
         if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
-            const isCorrect = checkAnswerCorrectness(selectedQuestion);
-            updatedQuestions[currentQuestionIndex] = {
-                ...selectedQuestion,
-                answered: true,
-                isCorrect: isCorrect,
-                incorrect: !isCorrect,
-            };
+            await _onCheckAnswer(selectedQuestion, {});
+            // const isCorrect = checkAnswerCorrectness(selectedQuestion);
+            // updatedQuestions[currentQuestionIndex] = {
+            //     ...selectedQuestion,
+            //     answered: true,
+            //     isCorrect: isCorrect,
+            //     incorrect: !isCorrect,
+            // };
 
-            setQuestions(updatedQuestions);
+            // setQuestions(updatedQuestions);
         }
 
         const nextIndex = _handleNextQuestion();
@@ -269,6 +301,11 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const handleFinishTest = async () => {
         if (isFinishing) return;
 
+        let finishQuestions = [...questions];
+        if (_isExamType() && selectedQuestion) {
+            finishQuestions = await _onCheckAnswer(selectedQuestion, {});
+        }
+
         setIsFinishing(true);
         try {
             const endTime = new Date().toISOString();
@@ -276,7 +313,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 ...currentExamResult,
                 endTime,
                 isCompleted: true,
-                questions: questions
+                questions: finishQuestions
             };
 
             // Cập nhật dữ liệu trước khi chuyển trang
