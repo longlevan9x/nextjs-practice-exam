@@ -1921,7 +1921,7 @@
       {
         "id": 1,
         "answer": "Disable session affinity (sticky sessions) on the ALB",
-        "correct": false,
+        "correct": true,
         "explanation": ""
       },
       {
@@ -1943,9 +1943,16 @@
         "explanation": ""
       }
     ],
-    "corrects": [],
+    "corrects": [
+      1
+    ],
     "multiple": false,
-    "correctAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "Disable session affinity (sticky sessions) on the ALB",
+        "explanation": ""
+      }
+    ],
     "domain": "",
     "incorrectAnswerExplanations": [],
     "reference": ""
@@ -1963,7 +1970,7 @@
       {
         "id": 2,
         "answer": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy",
-        "correct": false,
+        "correct": true,
         "explanation": ""
       },
       {
@@ -1981,13 +1988,25 @@
       {
         "id": 5,
         "answer": "Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function.",
-        "correct": false,
+        "correct": true,
         "explanation": ""
       }
     ],
-    "corrects": [],
-    "multiple": false,
-    "correctAnswerExplanations": [],
+    "corrects": [
+      2,
+      5
+    ],
+    "multiple": true,
+    "correctAnswerExplanations": [
+      {
+        "answer": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy",
+        "explanation": ""
+      },
+      {
+        "answer": "Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function.",
+        "explanation": ""
+      }
+    ],
     "domain": "",
     "incorrectAnswerExplanations": [],
     "reference": ""
@@ -2005,7 +2024,7 @@
       {
         "id": 2,
         "answer": "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3 Use Amazon Athena for analysis.",
-        "correct": false,
+        "correct": true,
         "explanation": ""
       },
       {
@@ -2021,9 +2040,16 @@
         "explanation": ""
       }
     ],
-    "corrects": [],
+    "corrects": [
+      2
+    ],
     "multiple": false,
-    "correctAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3 Use Amazon Athena for analysis.",
+        "explanation": ""
+      }
+    ],
     "domain": "",
     "incorrectAnswerExplanations": [],
     "reference": ""
@@ -2035,7 +2061,7 @@
       {
         "id": 1,
         "answer": "Attach a Network Load Balancer to the Auto Scaling group.",
-        "correct": false,
+        "correct": true,
         "explanation": ""
       },
       {
@@ -2057,9 +2083,16 @@
         "explanation": ""
       }
     ],
-    "corrects": [],
+    "corrects": [
+      1
+    ],
     "multiple": false,
-    "correctAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "Attach a Network Load Balancer to the Auto Scaling group.",
+        "explanation": ""
+      }
+    ],
     "domain": "",
     "incorrectAnswerExplanations": [],
     "reference": ""
