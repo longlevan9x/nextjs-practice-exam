@@ -138,10 +138,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         return examType === EXAM_TYPES.EXAM;
     }
 
-    const _isPracticeType = () => {
-        return examType === EXAM_TYPES.PRACTICE;
-    }
-
     const handleQuestionSelect = async (questionIndex: number) => {
         if (testEnded) return;
 
