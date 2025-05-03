@@ -84,9 +84,10 @@ const QuestionList: React.FC<QuestionListProps> = ({
   };
 
   const handleQuestionSelect = (questionIndex: number | undefined) => {
-    if (!questionIndex) {
+    if (questionIndex === undefined || questionIndex < 0) {
       return;
     }
+    
     onQuestionSelect(questionIndex);
     // Collapse the list when a question is selected on mobile
     if (isMobile) {
