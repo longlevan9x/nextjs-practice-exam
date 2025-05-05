@@ -207,7 +207,9 @@
       {
         "answer": "",
         "explanation": "Auto Scaling group is the correct answer here."
-      },
+      }
+    ],
+    "incorrectAnswerExplanations": [
       {
         "answer": "",
         "explanation": "Incorrect option:"
@@ -233,7 +235,6 @@
         "explanation": "<strong>Use an Amazon Route 53 Multi Value record</strong> - Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. Use Multi Value answer routing policy when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random. Amazon Route 53 does not help in scaling your application. This option has been added as a distractor."
       }
     ],
-    "incorrectAnswerExplanations": [],
     "references": [
       "https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html",
       "https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
@@ -355,7 +356,9 @@
       {
         "answer": "",
         "explanation": "Application Load Balancer (ALB) operates at the request level (layer 7), routing traffic to targets – Amazon EC2 instances, containers, IP addresses and Lambda functions based on the content of the request. Ideal for advanced load balancing of HTTP and HTTPS traffic, Application Load Balancer provides advanced request routing targeted at delivery of modern application architectures, including microservices and container-based applications."
-      },
+      }
+    ],
+    "incorrectAnswerExplanations": [
       {
         "answer": "",
         "explanation": "Incorrect option:"
@@ -377,7 +380,6 @@
         "explanation": "Adding the entire CIDR of the Application Load Balancer would work, but wouldn't guarantee that only the Auto Scaling group can access the Amazon EC2 instances that are part of the Auto Scaling group. Here, the right solution is to add a rule on the Auto Scaling group security group to allow incoming traffic only from the security group configured for the Application Load Balancer."
       }
     ],
-    "incorrectAnswerExplanations": [],
     "references": [
       "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html"
     ]
@@ -3811,7 +3813,9 @@
       {
         "answer": "",
         "explanation": "Therefore, the only possible answer is Amazon MQ."
-      },
+      }
+    ],
+    "incorrectAnswerExplanations": [
       {
         "answer": "",
         "explanation": "Incorrect option:"
@@ -3833,7 +3837,6 @@
         "explanation": "Amazon SNS, Amazon SQS, and Amazon Kinesis are AWS's proprietary technologies and do not come with MQTT compatibility."
       }
     ],
-    "incorrectAnswerExplanations": [],
     "references": [
       "https://aws.amazon.com/amazon-mq/"
     ]

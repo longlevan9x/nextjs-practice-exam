@@ -2115,7 +2115,9 @@
       {
         "answer": "",
         "explanation": "Dynamic port mapping with an Application Load Balancer makes it easier to run multiple tasks on the same Amazon ECS service on an Amazon ECS cluster."
-      },
+      }
+    ],
+    "incorrectAnswerExplanations": [
       {
         "answer": "",
         "explanation": "Incorrect option:"
@@ -2137,7 +2139,6 @@
         "explanation": "<strong>Network Load Balancer + dynamic port mapping</strong> - Network Load Balancer is best suited for use-cases involving low latency and high throughput workloads that involve scaling to millions of requests per second. Network Load Balancer operates at the connection level (Layer 4), routing connections to targets - Amazon EC2 instances, microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data."
       }
     ],
-    "incorrectAnswerExplanations": [],
     "references": [
       "https://aws.amazon.com/premiumsupport/knowledge-center/dynamic-port-mapping-ecs/",
       "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html"
