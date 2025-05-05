@@ -91,7 +91,10 @@ export const updateExamResultData = async (resultId: string | undefined, examRes
             selectedAnswer: question.selectedAnswer,
             isCorrect: question.isCorrect,
             questionIndex: question.questionIndex,
-            answers: question.answers
+            answers: question.answers.map((answer) => ({
+                id: answer.id,
+                correct: answer.correct,
+            }))
         }));
     }
 

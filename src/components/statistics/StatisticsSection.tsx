@@ -1,7 +1,6 @@
 import React from 'react';
-import { StatisticsComponentProps } from '@/types/statistics';
 
-interface StatisticsSectionProps extends StatisticsComponentProps {
+interface StatisticsSectionProps {
   title: string;
   description?: string;
   children: React.ReactNode;

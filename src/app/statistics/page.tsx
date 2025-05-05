@@ -12,19 +12,7 @@ import { getCourses } from '@/services/course';
 import { Course } from '@/types/course';
 import LoadingIcon from '@/components/common/LoadingIcon';
 import { useSearchParams } from 'next/navigation';
-// Define statistics sections
-const statisticsSections = [
-  {
-    title: 'Tổng quan',
-    description: 'Thống kê tổng quan về kết quả học tập',
-    component: StatisticsOverview
-  },
-  {
-    title: 'Phân tích theo lĩnh vực',
-    description: 'Phân tích chi tiết theo từng lĩnh vực kiến thức',
-    component: DomainAnalysis
-  }
-];
+import MostIncorrectQuestions from '@/components/statistics/MostIncorrectQuestions';
 
 const StatisticsPageComponent: React.FC = () => {
   const [examResults, setExamResults] = useState<ExamResult[]>([]);
@@ -37,12 +25,19 @@ const StatisticsPageComponent: React.FC = () => {
   // get courseId from query string
   const searchParams = useSearchParams();
   const courseId = searchParams.get('courseId');
+  const examId = searchParams.get('examId');
 
   useEffect(() => {
     if (courseId) {
       setSelectedCourseId(parseInt(courseId));
     }
   }, [courseId]);
+
+  useEffect(() => {
+    if (examId) {
+      setSelectedExamId(parseInt(examId));
+    }
+  }, [examId]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -159,20 +154,37 @@ const StatisticsPageComponent: React.FC = () => {
 
       {/* Statistics Sections */}
       <div className="space-y-4">
-        {statisticsSections.map((section, index) => (
-          <StatisticsSection
-            key={index}
-            title={section.title}
-            description={section.description}
+        <StatisticsSection
+          title="Tổng quan"
+          description="Thống kê tổng quan về kết quả học tập"
+        >
+          <StatisticsOverview
             examResults={filteredResults}
             exams={displayExams}
-          >
-            <section.component
-              examResults={filteredResults}
-              exams={displayExams}
+          />
+        </StatisticsSection>
+
+        <StatisticsSection
+          title="Phân tích theo lĩnh vực"
+          description="Phân tích chi tiết theo từng lĩnh vực kiến thức"
+        >
+          <DomainAnalysis
+            examResults={filteredResults}
+            exams={displayExams}
+          />
+        </StatisticsSection>
+
+        {(selectedExamId > 0) && (
+          <StatisticsSection
+            title="Câu hỏi sai nhiều nhất"
+            description="Câu hỏi sai nhiều nhất trong đề thi"
+        >
+          <MostIncorrectQuestions
+            examResults={filteredResults}
+            examId={selectedExamId}
             />
           </StatisticsSection>
-        ))}
+        )}
       </div>
     </div>
   );

@@ -125,14 +125,24 @@ export default function ExamDetailPage() {
           <span>Back to Exams</span>
         </Link>
 
-        {/* Result Link */}
-        <Link
-          href={`/exams/${id}/result`}
-          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
-        >
-          <ChartBarIcon className="w-5 h-5 mr-2" />
-          <span>Xem kết quả</span>
-        </Link>
+        <div className="flex items-center gap-2">
+          {/* Statistics Link */}
+          <Link
+            href={`/statistics?examId=${id}&courseId=${exam.courseId}`}
+            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
+          >
+            <ChartBarIcon className="w-5 h-5 mr-2" />
+            <span>Thống kê</span>
+          </Link>
+          {/* Result Link */}
+          <Link
+            href={`/exams/${id}/result`}
+            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
+          >
+            <ChartBarIcon className="w-5 h-5 mr-2" />
+            <span>Xem kết quả</span>
+          </Link>
+        </div>
       </div>
 
       {/* Exam Details Card */}
