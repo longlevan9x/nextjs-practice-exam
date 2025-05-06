@@ -7,6 +7,8 @@ export interface Course {
     domains: Domain[];
     imageUrl: string;
     description: string;
+    author: string;
+    updatedAt: string;
 }
 
 export interface Domain {

@@ -69,5 +69,29 @@
     {
         "examId": 18,
         "questionFile": "aws_saa_2025_vn_5.json"
+    },
+    {
+        "examId": 19,
+        "questionFile": "aws_saa_jonbonso_2025_1.json"
+    },
+    {
+        "examId": 20,
+        "questionFile": "aws_saa_jonbonso_2025_2.json"
+    },
+    {
+        "examId": 21,
+        "questionFile": "aws_saa_jonbonso_2025_3.json"
+    },
+    {
+        "examId": 22,
+        "questionFile": "aws_saa_jonbonso_2025_4.json"
+    },
+    {
+        "examId": 23,
+        "questionFile": "aws_saa_jonbonso_2025_5.json"
+    },
+    {
+        "examId": 24,
+        "questionFile": "aws_saa_jonbonso_2025_6.json"
     }
 ]

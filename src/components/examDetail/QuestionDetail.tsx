@@ -36,6 +36,8 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   const [isExpanded, setIsExpanded] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const showExplanationRaw = (question?.correctAnswerExplanations?.length === 0) && (question?.incorrectAnswerExplanations?.length === 0) && (question?.explanation !== "");
+
   const getQuestionStatus = () => {
     if (!question.selectedAnswer) {
       return "Chưa trả lời";
@@ -115,7 +117,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           <div className={`mt-6 p-4 bg-gray-50 border border-gray-300 rounded-xs transition-all duration-300 delay-100 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
             <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
 
-            {question.correctAnswerExplanations && (
+            {(question.correctAnswerExplanations && question.correctAnswerExplanations.length > 0) && (
               <AnswerExplanation
                 answerExplanations={question.correctAnswerExplanations}
                 type="correct"
@@ -132,6 +134,11 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
             {question.references && question.references.length > 0 && (
               <References references={question.references} />
             )}
+
+            {showExplanationRaw && (
+              <div dangerouslySetInnerHTML={{ __html: question.explanation }}></div>
+            )}
+
           </div>
         )}
 

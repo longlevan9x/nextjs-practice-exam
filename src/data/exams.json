@@ -509,5 +509,193 @@
         "questionCount": 65,
         "duration": 130,
         "passScore": 72
+    },
+    {
+        "id": 19,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 1",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 3
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Secure Applications and Architectures",
+                "questionCount": 2
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 21
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 19
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 20,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 2",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 15
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 19
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 20
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 11
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 21,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 3",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 21
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 17
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 18
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 9
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 22,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 4",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 8
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 18
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 17
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 22
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 23,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 5",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 12
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 4
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 23
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 26
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 24,
+        "courseId": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025 Jon Bonso 6",
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 3
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 15
+            },
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 24
+            },
+            {
+                "name": "unknown",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     }
 ]

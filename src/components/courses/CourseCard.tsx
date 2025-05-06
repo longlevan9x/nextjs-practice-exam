@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ClockIcon } from '@heroicons/react/24/outline';
+import { ClockIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import { Course } from '@/types/course';
 import Image from 'next/image';
 interface CourseCardProps {
@@ -15,7 +15,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="flex justify-center items-center">
                     <Image
-                        src={course.imageUrl} 
+                        src={course.imageUrl}
                         alt={course.name}
                         className="w-48 h-48 object-cover"
                         width={400}
@@ -34,6 +34,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
                             <ClockIcon className="w-4 h-4" />
                             <span>{course.duration} phút</span>
                         </div>
+                        {
+                            (course.author) &&
+                            <div className="flex items-center space-x-2">
+                                <UserCircleIcon className="w-4 h-4" />
+                                <span>{course.author}</span>
+                            </div>
+                        }
+
                         <div className="flex items-center space-x-2">
                             <span>{course.questionCount} câu hỏi</span>
                         </div>

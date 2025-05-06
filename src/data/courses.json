@@ -24,7 +24,9 @@
             }
         ],
         "imageUrl": "/images/aws-saa.png",
-        "description": "AWS Certified Solutions Architect Associate Study Guide"
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2023-01-01",
+        "author": "Stephane Maarek"
     },
     {
         "id": 2,
@@ -51,7 +53,9 @@
             }
         ],
         "imageUrl": "/images/aws-saa.png",
-        "description": "AWS Certified Solutions Architect Associate Study Guide"
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-01",
+        "author": "Stephane Maarek"
     },
     {
         "id": 3,
@@ -66,7 +70,9 @@
             }
         ],
         "imageUrl": "/images/GCP-ACE-LOGO.png",
-        "description": "AWS Certified Solutions Architect Associate Study Guide"
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2024-01-01",
+        "author": ""
     },
     {
         "id": 4,
@@ -93,6 +99,37 @@
             }
         ],
         "imageUrl": "/images/aws-saa.png",
-        "description": "AWS Certified Solutions Architect Associate Study Guide"
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-04-01",
+        "author": "Stephane Maarek"
+    },
+    {
+        "id": 5,
+        "name": "AWS Certified Solutions Architect Associate 2025",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Design High-Performing Architectures",
+                "questionCount": 0
+            },
+            {
+                "name": "Design Secure Architectures",
+                "questionCount": 0
+            },
+            {
+                "name": "Design Resilient Architectures",
+                "questionCount": 0
+            },
+            {
+                "name": "Design Cost-Optimized Architectures",
+                "questionCount": 0
+            }
+        ],
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Jon Bonso"
     }
 ]
