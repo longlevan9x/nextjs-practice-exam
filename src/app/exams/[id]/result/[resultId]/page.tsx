@@ -56,14 +56,25 @@ const ResultOverviewPage: React.FC = () => {
             const mappedQuestions = result.questions.map((mappedQuestion: ExamResultQuestion) => {
                 const originalQuestion = originalQuestions.find((q) => q.id === mappedQuestion.id);
 
+                originalQuestion!.selectedAnswer = mappedQuestion.selectedAnswer;
+                originalQuestion!.isCorrect = mappedQuestion.isCorrect;
+                originalQuestion!.questionIndex = mappedQuestion.questionIndex;
+                originalQuestion!.showExplanation = true; // Set showExplanation to true for all questions
+                
+
+                const answers = mappedQuestion?.answers.map((answer) => {
+                    const originalAnswer = originalQuestion?.answers.find((a) => a.id === answer.id);
+
+                    return {
+                        ...answer,
+                        ...{answer: originalAnswer?.answer || ""}, // Add answer property to each answer object
+                    };
+                });
+
+                originalQuestion!.answers = answers as [];
                 return {
                     id: originalQuestion?.id,
-                    question: {
-                        ...originalQuestion,
-                        ...mappedQuestion,
-                        ...{question: originalQuestion?.question}, // Merge original question text
-                        showExplanation: true
-                    }
+                    question: originalQuestion
                 };
             });
 
