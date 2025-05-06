@@ -61,6 +61,7 @@ const ResultOverviewPage: React.FC = () => {
                     question: {
                         ...originalQuestion,
                         ...mappedQuestion,
+                        ...{question: originalQuestion?.question}, // Merge original question text
                         showExplanation: true
                     }
                 };
