@@ -35,6 +35,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [currentExamResult, setCurrentExamResult] = useState<ExamResult | null>(null);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const [exam, setExam] = useState<Exam | null>(null);
+    const [checkingAnswer, setCheckingAnswer] = useState<boolean>(false);
+    const [isBacking, setIsBacking] = useState<boolean>(false);
 
     const router = useRouter();
 
@@ -114,8 +116,13 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     }
 
     const _saveExamResult = async (examResult: ExamResult | object) => {
-        const updatedResult = _updateCurrentExamResultState(examResult);
-        await examResultService.updateExamResultData(currentExamResult?.resultId, updatedResult as ExamResult);
+        try {
+            const updatedResult = _updateCurrentExamResultState(examResult);
+            await examResultService.updateExamResultData(currentExamResult?.resultId, updatedResult as ExamResult);
+        } catch (error) {
+            handleHttpError(error as ApiError, 'Có lỗi xảy ra khi lưu kết quả bài kiểm tra. Vui lòng thử lại sau.');
+            throw error;
+        }
     };
 
     const _isExamType = () => {
@@ -185,7 +192,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         }
     };
 
-    const _onCheckAnswer =  async (selectedQuestion: Question, options: object ) : Promise<Question[]> => {
+    const _onCheckAnswer = async (selectedQuestion: Question, options: object): Promise<Question[]> => {
         const updatedQuestions = [...questions];
 
         const isCorrect = checkAnswerCorrectness(selectedQuestion);
@@ -194,82 +201,99 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             answered: true,
             isCorrect: isCorrect,
             incorrect: !isCorrect,
-            ...options 
+            ...options
         };
 
-        setQuestions(updatedQuestions);
-
-        setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
         await _saveExamResult({ questions: updatedQuestions });
 
-        return updatedQuestions
+        setQuestions(updatedQuestions);
+        setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
+
+        return updatedQuestions;
     }
 
     const handleCheckAnswer = async () => {
         if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
-        // const isCorrect = checkAnswerCorrectness(selectedQuestion);
-        // const updatedQuestions = [...questions];
 
-        // updatedQuestions[currentQuestionIndex] = {
-        //     ...selectedQuestion,
-        //     showExplanation: true,
-        //     answered: true,
-        //     isCorrect: isCorrect,
-        //     incorrect: !isCorrect,
-        // };
-
-        // setQuestions(updatedQuestions);
-        // setSelectedQuestion(updatedQuestions[currentQuestionIndex]);
-        // await _saveExamResult({ questions: updatedQuestions });
-
-        await _onCheckAnswer(selectedQuestion, {
-            showExplanation: true,
-        });
+        try {
+            setCheckingAnswer(true);
+            await _onCheckAnswer(selectedQuestion, {
+                showExplanation: true,
+            });
+        }
+        catch (error) {
+            console.error('Error checking answer:', error);
+        }
+        finally {
+            setCheckingAnswer(false);
+        }
     };
 
-    const _handleNextQuestion = () => {
-        const nextIndex = currentQuestionIndex + 1;
+    const _getNextQuestionIndex = (currentIndex: number) => {
+        const nextIndex = currentIndex + 1;
         if (nextIndex < questions.length) {
-            setCurrentQuestionIndex(nextIndex);
-            setSelectedQuestion(questions[nextIndex]);
+            return nextIndex;
+        } else {
+            return currentIndex; // Hoặc một giá trị nào đó để chỉ ra không còn câu hỏi nào nữa
+        }
+    };
+
+    const _getPreviousQuestionIndex = (currentIndex: number) => {
+        const prevIndex = currentIndex - 1;
+        if (prevIndex >= 0) {
+            return prevIndex;
+        } else {
+            return currentIndex;
+        }
+    };
+
+    const _handleChangeQuestionIndex = (questionIndex: number) => {
+        if (questionIndex < questions.length && questionIndex >= 0) {
+            setCurrentQuestionIndex(questionIndex);
+            setSelectedQuestion(questions[questionIndex]);
         }
 
-        return nextIndex;
+        return questionIndex;
     };
 
     const handleNextQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
 
-        const updatedQuestions = [...questions];
+        try {
+            setCheckingAnswer(true);
+            let updatedQuestions = [...questions];
+            const nextIndex = _getNextQuestionIndex(currentQuestionIndex);
 
-        // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
-        if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
-            await _onCheckAnswer(selectedQuestion, {});
-            // const isCorrect = checkAnswerCorrectness(selectedQuestion);
-            // updatedQuestions[currentQuestionIndex] = {
-            //     ...selectedQuestion,
-            //     answered: true,
-            //     isCorrect: isCorrect,
-            //     incorrect: !isCorrect,
-            // };
+            // Lưu dữ liệu câu trả lời nếu đang ở chế độ exam
+            if (examType === EXAM_TYPES.EXAM && selectedQuestion.selectedAnswer) {
+                updatedQuestions = await _onCheckAnswer(selectedQuestion, { currentQuestionIndex: nextIndex });
+            }
+            else {
+                await _saveExamResult({ questions: updatedQuestions, currentQuestionIndex: nextIndex });
+            }
 
-            // setQuestions(updatedQuestions);
+            _handleChangeQuestionIndex(nextIndex);
+        } catch (error) {
+            console.error('Error handling next question:', error);
+        } finally {
+            setCheckingAnswer(false);
         }
-
-        const nextIndex = _handleNextQuestion();
-
-        await _saveExamResult({ questions: updatedQuestions, currentQuestionIndex: nextIndex });
     };
 
     const handlePreviousQuestion = async () => {
         if (!selectedQuestion || testEnded) return;
 
-        const prevIndex = currentQuestionIndex - 1;
-        if (prevIndex >= 0) {
-            setCurrentQuestionIndex(prevIndex);
-            setSelectedQuestion(questions[prevIndex]);
-
+        try {
+            setIsBacking(true);
+            const prevIndex = _getPreviousQuestionIndex(currentQuestionIndex);
             await _saveExamResult({ currentQuestionIndex: prevIndex });
+            _handleChangeQuestionIndex(prevIndex);
+        }
+        catch (error) {
+            console.error('Error handling previous question:', error);
+        }
+        finally {
+            setIsBacking(false);
         }
     };
 
@@ -281,13 +305,14 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const handleFinishTest = async () => {
         if (isFinishing) return;
 
-        let finishQuestions = [...questions];
-        if (_isExamType() && selectedQuestion) {
-            finishQuestions = await _onCheckAnswer(selectedQuestion, {});
-        }
-
-        setIsFinishing(true);
         try {
+            setIsFinishing(true);
+
+            let finishQuestions = [...questions];
+            if (_isExamType() && selectedQuestion) {
+                finishQuestions = await _onCheckAnswer(selectedQuestion, {});
+            }
+
             const endTime = new Date().toISOString();
             const examResultData = {
                 ...currentExamResult,
@@ -343,7 +368,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         {displayMode === DISPLAY_MODES.EXECUTE && (
                             <div className="flex w-full items-center space-x-4 mr-4">
                                 <ProgressBar current={questions.filter((q) => q.answered).length} total={questions.length} />
-                                {(examType === EXAM_TYPES.EXAM && currentExamResult?.startTime && exam?.duration && displayMode === DISPLAY_MODES.EXECUTE) &&  
+                                {(examType === EXAM_TYPES.EXAM && currentExamResult?.startTime && exam?.duration && displayMode === DISPLAY_MODES.EXECUTE) &&
                                     <Timer startTime={currentExamResult?.startTime} duration={exam?.duration} />
                                 }
                             </div>
@@ -354,8 +379,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'
-                                        }`}
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>
                                     {isFinishing && <LoadingIcon />}
@@ -402,6 +426,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             examType={examType}
                             onSubmitExam={handleFinishTest ?? (() => { })}
                             isFinishing={isFinishing}
+                            checkingAnswer={checkingAnswer}
+                            isBacking={isBacking}
                         />
                     </div>
                 </div>

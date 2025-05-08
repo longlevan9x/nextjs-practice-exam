@@ -24,17 +24,17 @@ export default function ExamDetailPage() {
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
 
   const handleStartExam = async (mode: string) => {
-    // Check if user is authenticated
-    const user = await getCurrentUser();
-    if (!user) {
-      router.push('/login');
-      return;
-    }
-
-    setIsStarting(true);
-    setSelectedMode(mode);
-
     try {
+      // Check if user is authenticated
+      setIsStarting(true);
+      setSelectedMode(mode);
+
+      const user = await getCurrentUser();
+      if (!user) {
+        router.push('/login');
+        return;
+      }
+
       // Fetch questions for the exam
       const questions = await fetchQuestionsByExamId(parseInt(id));
 

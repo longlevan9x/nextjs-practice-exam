@@ -16,6 +16,8 @@ interface ActionButtonsProps {
   isLastQuestion: boolean;
   examType?: ExamType;
   isFinishing?: boolean;
+  checkingAnswer?: boolean;
+  isBacking?: boolean;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({
@@ -31,6 +33,8 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   isLastQuestion,
   examType,
   isFinishing,
+  checkingAnswer,
+  isBacking
 }) => {
   return (
     <div className="flex justify-end ">
@@ -38,42 +42,46 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
         {!isFirstQuestion && (
           <button
             onClick={onPreviousQuestion}
-            disabled={testEnded}
-            className="cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-gray-200 text-gray-700 rounded-xs hover:bg-gray-300 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200"
+            disabled={testEnded || isBacking}
+            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-gray-200 text-gray-700 rounded-xs hover:bg-gray-300 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200 ${isBacking ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Quay lại
+            <span>Quay lại</span>
+            {isBacking && <LoadingIcon />}
           </button>
         )}
         {(!selectedAnswer && !showExplanation && !isLastQuestion) && (
           <button
             onClick={onSkipQuestion}
-            disabled={testEnded}
-            className="flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 border border-blue-700 rounded-xs hover:bg-gray-200 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-yellow-100"
+            disabled={testEnded || checkingAnswer}
+            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 border border-blue-700 rounded-xs hover:bg-gray-200 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-yellow-100 ${checkingAnswer ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Bỏ qua câu hỏi
-            <ChevronRightIcon className="w-4 h-4 ml-2" />
+            <span>Bỏ qua câu hỏi</span>
+            {checkingAnswer && <LoadingIcon />}
+            {!checkingAnswer && <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />}
           </button>
         )}
 
         {selectedAnswer && !showExplanation && examType === EXAM_TYPES.PRACTICE && (
           <button
             onClick={onCheckAnswer}
-            disabled={testEnded}
-            className="flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+            disabled={testEnded || checkingAnswer}
+            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${checkingAnswer ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700 hover:text-white'}`}
           >
-            Kiểm tra đáp án
-            <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
+            <span>Kiểm tra đáp án</span>
+            {checkingAnswer && <LoadingIcon />}
+            {!checkingAnswer && <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />}
           </button>
         )}
 
         {(showExplanation || (selectedAnswer && examType === EXAM_TYPES.EXAM)) && !isLastQuestion && (
           <button
             onClick={onNextQuestion}
-            disabled={testEnded}
-            className="flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-green-600 text-white rounded-xs hover:bg-green-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-600"
+            disabled={testEnded || checkingAnswer}
+            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-green-600 text-white rounded-xs hover:bg-green-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-600 ${checkingAnswer ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700 hover:text-white'}`}
           >
-            Câu hỏi tiếp theo
-            <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />
+            <span>Câu hỏi tiếp theo</span>
+            {checkingAnswer && <LoadingIcon />}
+            {!checkingAnswer && <ChevronRightIcon className="w-4 h-4 inline-block ml-2" />}
           </button>
         )}
 
@@ -81,8 +89,8 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
           (isLastQuestion && ((examType === EXAM_TYPES.EXAM) || (examType === EXAM_TYPES.PRACTICE && showExplanation))) && (
             <button
               onClick={onSubmitExam}
-              disabled={testEnded}
-              className="flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+              disabled={testEnded || isFinishing}
+              className={`flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
             >
               <span>Kết thúc bài kiểm tra</span>
               {isFinishing && <LoadingIcon />}

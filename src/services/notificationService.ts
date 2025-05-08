@@ -82,7 +82,7 @@ export const showInfo = (message: string, duration?: number) => {
 };
 
 // HTTP error handler
-export const handleHttpError = (error: ApiError, defaultMessage = 'Đã xảy ra lỗi') => {
+export const handleHttpError = (error: ApiError, defaultMessage = 'Đã xảy ra lỗi. Vui lòng thử lại sau.') => {
   console.error('HTTP Error:', error);
   
   let errorMessage = defaultMessage;
@@ -108,9 +108,6 @@ export const handleHttpError = (error: ApiError, defaultMessage = 'Đã xảy ra
   } else if (error.request) {
     // Request was made but no response was received
     errorMessage = 'Không thể kết nối đến máy chủ. Vui lòng kiểm tra kết nối mạng.';
-  } else {
-    // Something happened in setting up the request
-    errorMessage = 'Đã xảy ra lỗi khi thiết lập yêu cầu.';
   }
   
   showError(errorMessage);
