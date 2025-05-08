@@ -7,9 +7,8 @@ import Timer from "@/components/examDetail/Timer";
 import ProgressBar from "@/components/examDetail/ProgressBar";
 import { Answer, Question } from "@/types/question";
 import { fetchQuestionsByExamId } from "@/services/questionService";
-import { TIMER_INITIAL_VALUE } from "@/constants/constants";
 import { getExamById } from "@/services/examService";
-import { ExamDomain } from "@/types/exam";
+import { Exam, ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
@@ -31,11 +30,12 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const [filter, setFilter] = useState<string>("all");
     const [domainFilter, setDomainFilter] = useState<string>("all");
     const [domains, setDomains] = useState<ExamDomain[]>([]);
-    const [remainingTime, setRemainingTime] = useState<number>(TIMER_INITIAL_VALUE);
-    const [testEnded, setTestEnded] = useState<boolean>(false);
+    const [testEnded] = useState<boolean>(false);
     const [isFinishing, setIsFinishing] = useState<boolean>(false);
     const [currentExamResult, setCurrentExamResult] = useState<ExamResult | null>(null);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+    const [exam, setExam] = useState<Exam | null>(null);
+
     const router = useRouter();
 
     const _convertExamResultToQuestions = useCallback((convertedQuestions: ExamResultQuestion[], originalQuestions: Question[]): Question[] => {
@@ -91,28 +91,12 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     useEffect(() => {
         if (examId) {
             const exam = getExamById(parseInt(examId));
+            setExam(exam);
             if (exam?.domains) {
                 setDomains(exam.domains);
             }
         }
     }, [examId]);
-
-    useEffect(() => {
-        if (testEnded || examType === EXAM_TYPES.PRACTICE || displayMode === DISPLAY_MODES.REVIEW) return;
-
-        const timer = setInterval(() => {
-            setRemainingTime((prevTime) => {
-                if (prevTime <= 1) {
-                    clearInterval(timer);
-                    setTestEnded(true);
-                    return 0;
-                }
-                return prevTime - 1;
-            });
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, [testEnded, examType, displayMode]);
 
     const _updateCurrentExamResultState = (examResult: ExamResult | object): ExamResult | null => {
         if (!currentExamResult?.resultId) {
@@ -359,7 +343,9 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         {displayMode === DISPLAY_MODES.EXECUTE && (
                             <div className="flex w-full items-center space-x-4 mr-4">
                                 <ProgressBar current={questions.filter((q) => q.answered).length} total={questions.length} />
-                                {examType === EXAM_TYPES.EXAM && <Timer remainingTime={remainingTime} />}
+                                {(examType === EXAM_TYPES.EXAM && currentExamResult?.startTime && exam?.duration && displayMode === DISPLAY_MODES.EXECUTE) &&  
+                                    <Timer startTime={currentExamResult?.startTime} duration={exam?.duration} />
+                                }
                             </div>
                         )}
 
