@@ -209,5 +209,54 @@
         "description": "AWS Certified Solutions Architect Professional Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Stephane Maarek"
+    },
+    {
+        "id": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 - C02 - Neal Davis",
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75,
+        "domains": [
+            {
+                "name": "AWS Analytics",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 2
+            }
+        ],
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Neal Davis"
     }
 ]

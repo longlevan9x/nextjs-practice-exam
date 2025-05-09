@@ -41,52 +41,58 @@ const ResultOverviewPage: React.FC = () => {
         const fetchData = async () => {
             if (!resultId) return;
 
-            const result = await getExamResult(examId, resultId);
-            if (!result) {
-                console.error('Không tìm thấy kết quả thi.');
-                setLoading(false);
-                return;
-            }
+            try {
+                const result = await getExamResult(examId, resultId);
+                if (!result) {
+                    console.error('Không tìm thấy kết quả thi.');
+                    setLoading(false);
+                    return;
+                }
 
-            setExamResult(result);
+                setExamResult(result);
 
-            // Lấy danh sách câu hỏi gốc từ localStorage
-            const originalQuestions = await fetchQuestionsByExamId(result.examId);
+                // Lấy danh sách câu hỏi gốc từ localStorage
+                const originalQuestions = await fetchQuestionsByExamId(result.examId);
 
-            if (!originalQuestions || originalQuestions.length === 0) {
-                console.error('Không tìm thấy danh sách câu hỏi gốc.');
-                setLoading(false);
-                return;
-            }
+                if (!originalQuestions || originalQuestions.length === 0) {
+                    console.error('Không tìm thấy danh sách câu hỏi gốc.');
+                    setLoading(false);
+                    return;
+                }
 
-            const mappedQuestions = result.questions.map((mappedQuestion: ExamResultQuestion) => {
-                const originalQuestion = originalQuestions.find((q) => q.id === mappedQuestion.id);
+                const mappedQuestions = result.questions.map((mappedQuestion: ExamResultQuestion) => {
+                    const originalQuestion = originalQuestions.find((q) => q.id === mappedQuestion.id);
 
-                originalQuestion!.selectedAnswer = mappedQuestion.selectedAnswer;
-                originalQuestion!.isCorrect = mappedQuestion.isCorrect;
-                originalQuestion!.questionIndex = mappedQuestion.questionIndex;
-                originalQuestion!.showExplanation = true; // Set showExplanation to true for all questions
-                
+                    originalQuestion!.selectedAnswer = mappedQuestion.selectedAnswer;
+                    originalQuestion!.isCorrect = mappedQuestion.isCorrect;
+                    originalQuestion!.questionIndex = mappedQuestion.questionIndex;
+                    originalQuestion!.showExplanation = true; // Set showExplanation to true for all questions
 
-                const answers = mappedQuestion?.answers.map((answer) => {
-                    const originalAnswer = originalQuestion?.answers.find((a) => a.id === answer.id);
 
+                    const answers = mappedQuestion?.answers.map((answer) => {
+                        const originalAnswer = originalQuestion?.answers.find((a) => a.id === answer.id);
+
+                        return {
+                            ...answer,
+                            ...{ answer: originalAnswer?.answer || "" }, // Add answer property to each answer object
+                        };
+                    });
+
+                    originalQuestion!.answers = answers as [];
                     return {
-                        ...answer,
-                        ...{answer: originalAnswer?.answer || ""}, // Add answer property to each answer object
+                        id: originalQuestion?.id,
+                        question: originalQuestion
                     };
                 });
 
-                originalQuestion!.answers = answers as [];
-                return {
-                    id: originalQuestion?.id,
-                    question: originalQuestion
-                };
-            });
-
-            setMappedQuestions(mappedQuestions);
-            setFilteredQuestions(mappedQuestions);
-            setLoading(false);
+                setMappedQuestions(mappedQuestions);
+                setFilteredQuestions(mappedQuestions);
+                setLoading(false);
+            }
+            catch (error) {
+                console.error('Lỗi khi lấy dữ liệu kết quả:', error);
+                setLoading(false);
+            }
         };
 
         fetchData();
@@ -136,7 +142,7 @@ const ResultOverviewPage: React.FC = () => {
         }) as DomainStats[];
 
         setFilterDomains(domainStats || []);
-       
+
         // Apply domain filter
         if (selectedDomain !== 'all') {
             filtered = filtered.filter((q) => q.question.domain === selectedDomain);

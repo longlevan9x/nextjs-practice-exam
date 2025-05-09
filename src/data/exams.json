@@ -1099,5 +1099,309 @@
         "questionCount": 30,
         "duration": 180,
         "passScore": 75
+    },
+    {
+        "id": 34,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 1",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Analytics",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 2
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 35,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 2",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 8
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 8
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Cost Management",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 2
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 36,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 3",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Cost Management",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 37,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 4",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Cost Management",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 38,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 5",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Analytics",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 39,
+        "courseId": 8,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Neal Davis 6",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 10
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 35,
+        "duration": 180,
+        "passScore": 75
     }
 ]

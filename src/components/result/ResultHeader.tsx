@@ -17,12 +17,9 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ examId }) => {
     }
   }, [examId]);
 
-  // Extract the total number of questions
-  const totalQuestions = 65;
-  const percentageToPass = 72;
   // Convert total time (in minutes) to hours and minutes
-  const hours = 2;
-  const minutes = 10;
+  const hours = Math.floor((examData?.duration || 0) / 60 || 0); // Assuming duration is in minutes
+  const minutes = Math.floor((examData?.duration || 0) % 60 || 0); // Remaining minutes
 
   return (
     <div className="space-y-4">
@@ -34,7 +31,7 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ examId }) => {
       {/* Information Row */}
       <div className="flex flex-wrap justify-center items-center text-gray-700 space-x-4">
         <p className="text-base">
-          <span className="font-semibold">{totalQuestions}</span> câu hỏi
+          <span className="font-semibold">{examData?.questionCount}</span> câu hỏi
         </p>
         <span className="text-gray-400">|</span>
         <p className="text-base">
@@ -45,7 +42,7 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({ examId }) => {
         <span className="text-gray-400">|</span>
         <p className="text-base">
           Bắt buộc phải đúng{" "}
-          <span className="font-semibold">{percentageToPass}%</span> thì mới đạt
+          <span className="font-semibold">{examData?.passScore}%</span> thì mới đạt
         </p>
       </div>
 
