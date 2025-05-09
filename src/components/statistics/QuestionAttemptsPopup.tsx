@@ -2,9 +2,7 @@ import React from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ExamResult } from '@/types/ExamResult';
 import { Answer, Question } from '@/types/question';
-import AnswerExplanation from '@/components/examDetail/AnswerExplanation';
-import References from '@/components/examDetail/References';
-import { EXPLANATION_SECTION_TITLE } from '@/constants/constants';
+import AnswerExplanationGroup from '@/components/examDetail/AnswerExplanationGroup';
 
 interface QuestionAttemptsPopupProps {
   question: Question;
@@ -112,27 +110,8 @@ const QuestionAttemptsPopup: React.FC<QuestionAttemptsPopupProps> = ({
           ))}
         </div>
 
-        <div className={`mt-6 p-4 bg-gray-50 border border-gray-300 rounded-xs transition-all duration-300 delay-100`}>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
-
-          {question.correctAnswerExplanations && (
-            <AnswerExplanation
-              answerExplanations={question.correctAnswerExplanations}
-              type="correct"
-            />
-          )}
-
-          {question.incorrectAnswerExplanations && question.incorrectAnswerExplanations.length > 0 && (
-            <AnswerExplanation
-              answerExplanations={question.incorrectAnswerExplanations}
-              type="incorrect"
-            />
-          )}
-
-          {question.references && question.references.length > 0 && (
-            <References references={question.references} />
-          )}
-        </div>
+        <AnswerExplanationGroup question={question} isExpanded={true} />
+    
       </div>
     </div >
   );

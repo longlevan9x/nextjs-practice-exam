@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Question } from "@/types/question";
-import BookmarkButton from "./BookmarkButton";
-import AnswerOptions from "./AnswerOptions";
-import AnswerExplanation from "./AnswerExplanation";
-import References from "./References";
+import BookmarkButton from "@/components/examDetail/BookmarkButton";
+import AnswerOptions from "@/components/examDetail/AnswerOptions";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 import {
-  EXPLANATION_SECTION_TITLE,
   HEADER_TITLE_PREFIX,
 } from "@/constants/constants";
 import { DisplayMode, ExamType } from "@/constants/exam";
+import AnswerExplanationGroup from "./AnswerExplanationGroup";
 
 interface QuestionDetailProps {
   question: Question;
@@ -35,8 +33,6 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const showExplanationRaw = (question?.correctAnswerExplanations?.length === 0) && (question?.incorrectAnswerExplanations?.length === 0) && (question?.explanation !== "");
 
   const getQuestionStatus = () => {
     if (!question.selectedAnswer) {
@@ -113,34 +109,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         </div>
 
         {/* Explanation Section */}
-        {question.showExplanation && (
-          <div className={`mt-6 p-4 bg-gray-50 border border-gray-300 rounded-xs transition-all duration-300 delay-100 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
-
-            {(question.correctAnswerExplanations && question.correctAnswerExplanations.length > 0) && (
-              <AnswerExplanation
-                answerExplanations={question.correctAnswerExplanations}
-                type="correct"
-              />
-            )}
-
-            {question.incorrectAnswerExplanations && question.incorrectAnswerExplanations.length > 0 && (
-              <AnswerExplanation
-                answerExplanations={question.incorrectAnswerExplanations}
-                type="incorrect"
-              />
-            )}
-
-            {question.references && question.references.length > 0 && (
-              <References references={question.references} />
-            )}
-
-            {showExplanationRaw && (
-              <div dangerouslySetInnerHTML={{ __html: question.explanation }}></div>
-            )}
-
-          </div>
-        )}
+        <AnswerExplanationGroup question={question} isExpanded={isExpanded} />
 
         {/* Domain Section */}
         {(question.showExplanation && question.domain) && (
