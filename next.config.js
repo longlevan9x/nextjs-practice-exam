@@ -5,7 +5,7 @@ const nextConfig = {
       'assets-pt.media.datacumulus.com',
       "d1.awsstatic.com",
       "docs.aws.amazon.com",
-      "d2908q01vomqb2.cloudfront.net"
+      "d2908q01vomqb2.cloudfront.net",
     ],
   },
 }

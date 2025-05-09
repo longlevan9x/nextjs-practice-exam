@@ -32,14 +32,13 @@ const AnswerExplanationGroup: React.FC<AnswerExplanationGroupProps> = ({ questio
                 />
             )}
 
-            {question.references && question.references.length > 0 && (
-                <References references={question.references} />
-            )}
-
             {showExplanationRaw && (
                 <div dangerouslySetInnerHTML={{ __html: question.explanation }}></div>
             )}
 
+            {question.references && question.references.length > 0 && (
+                <References references={question.references} />
+            )}
         </div>
     );
 }

@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "name": "AWS Certified Solutions Architect Associate 2023",
+        "name": "AWS Certified Solutions Architect Associate 2023 - CO2 - Stephane Maarek",
         "questionCount": 65,
         "duration": 130,
         "passScore": 72,
         "domains": [
             {
                 "name": "Design High-Performing Architectures",
-                "questionCount": 14
+                "questionCount": 0
             },
             {
                 "name": "Design Secure Architectures",
-                "questionCount": 20
+                "questionCount": 0
             },
             {
                 "name": "Design Resilient Architectures",
-                "questionCount": 22
+                "questionCount": 0
             },
             {
                 "name": "Design Cost-Optimized Architectures",
-                "questionCount": 9
+                "questionCount": 0
             }
         ],
         "imageUrl": "/images/aws-saa.png",
@@ -30,26 +30,26 @@
     },
     {
         "id": 2,
-        "name": "AWS Certified Solutions Architect Associate 2025",
+        "name": "AWS Certified Solutions Architect Associate 2025 - C03 - Stephane Maarek",
         "questionCount": 65,
         "duration": 130,
         "passScore": 72,
         "domains": [
             {
                 "name": "Design High-Performing Architectures",
-                "questionCount": 14
+                "questionCount": 0
             },
             {
                 "name": "Design Secure Architectures",
-                "questionCount": 20
+                "questionCount": 0
             },
             {
                 "name": "Design Resilient Architectures",
-                "questionCount": 22
+                "questionCount": 0
             },
             {
                 "name": "Design Cost-Optimized Architectures",
-                "questionCount": 9
+                "questionCount": 0
             }
         ],
         "imageUrl": "/images/aws-saa.png",
@@ -66,7 +66,7 @@
         "domains": [
             {
                 "name": "Design High-Performing Architectures",
-                "questionCount": 14
+                "questionCount": 0
             }
         ],
         "imageUrl": "/images/GCP-ACE-LOGO.png",
@@ -76,26 +76,26 @@
     },
     {
         "id": 4,
-        "name": "AWS Certified Solutions Architect Associate 2025 VN",
+        "name": "AWS Certified Solutions Architect Associate 2025 VN - C03",
         "questionCount": 65,
         "duration": 130,
         "passScore": 72,
         "domains": [
             {
                 "name": "Design High-Performing Architectures",
-                "questionCount": 14
+                "questionCount": 0
             },
             {
                 "name": "Design Secure Architectures",
-                "questionCount": 20
+                "questionCount": 0
             },
             {
                 "name": "Design Resilient Architectures",
-                "questionCount": 22
+                "questionCount": 0
             },
             {
                 "name": "Design Cost-Optimized Architectures",
-                "questionCount": 9
+                "questionCount": 0
             }
         ],
         "imageUrl": "/images/aws-saa.png",
@@ -105,7 +105,7 @@
     },
     {
         "id": 5,
-        "name": "AWS Certified Solutions Architect Associate 2025",
+        "name": "AWS Certified Solutions Architect Associate 2025 - C03 - Jon Bonso",
         "questionCount": 65,
         "duration": 130,
         "passScore": 72,
@@ -131,5 +131,54 @@
         "description": "AWS Certified Solutions Architect Associate Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Jon Bonso"
+    },
+    {
+        "id": 6,
+        "name": "AWS Certified Solutions Architect Associate 2025 - C03 - Neal Davis",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 11
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 12
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Migration & Transfer",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            }
+        ],
+        "imageUrl": "/images/aws-saa.png",
+        "description": "AWS Certified Solutions Architect Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Neal Davis"
     }
 ]
