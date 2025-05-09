@@ -15,7 +15,8 @@ const QuestionAttemptsPopup: React.FC<QuestionAttemptsPopupProps> = ({
   examResults,
   onClose,
 }) => {
-
+  question.showExplanation = true; // Đảm bảo rằng question.showExplanation là true
+  
   // Lọc các lần làm bài có câu hỏi này
   const attempts = examResults
     .filter(result =>
