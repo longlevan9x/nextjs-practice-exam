@@ -149,7 +149,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
     const handleAnswerSelect = (answerId: number) => {
         if (!selectedQuestion || testEnded || displayMode === DISPLAY_MODES.REVIEW) return;
-        if (selectedQuestion.answered) return;
+        if (examType === EXAM_TYPES.PRACTICE && selectedQuestion.answered) return;
 
         const updatedQuestions = questions.map((q) => {
             if (q.id === selectedQuestion.id) {
