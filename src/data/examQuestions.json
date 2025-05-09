@@ -153,5 +153,21 @@
     {
         "examId": 39,
         "questionFile": "neal_davis_aws_sap_co2_2025/neal_davis_aws_sap_co2_2025_6.json"
+    },
+    {
+        "examId": 40,
+        "questionFile": "jonbonso_aws_sap_2025/jonbonso_aws_sap_2025_1.json"
+    },
+    {
+        "examId": 41,
+        "questionFile": "jonbonso_aws_sap_2025/jonbonso_aws_sap_2025_2.json"
+    },
+    {
+        "examId": 42,
+        "questionFile": "jonbonso_aws_sap_2025/jonbonso_aws_sap_2025_3.json"
+    },
+    {
+        "examId": 43,
+        "questionFile": "jonbonso_aws_sap_2025/jonbonso_aws_sap_2025_4.json"
     }
 ]

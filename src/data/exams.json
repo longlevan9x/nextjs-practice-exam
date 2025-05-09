@@ -1403,5 +1403,129 @@
         "questionCount": 35,
         "duration": 180,
         "passScore": 75
+    },
+    {
+        "id": 40,
+        "courseId": 9,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Jon Bonso 1",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain - Continuous Improvement for Existing Solutions",
+                "questionCount": 26
+            },
+            {
+                "name": "Domain - Design Solutions for Organizational Complexity",
+                "questionCount": 12
+            },
+            {
+                "name": "Domain - Design for New Solutions",
+                "questionCount": 28
+            },
+            {
+                "name": "Domain - Accelerate Workload Migration and Modernization",
+                "questionCount": 8
+            },
+            {
+                "name": "Domain - Migration Planning",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 41,
+        "courseId": 9,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Jon Bonso 2",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain - Continuous Improvement for Existing Solutions",
+                "questionCount": 25
+            },
+            {
+                "name": "Domain - Design Solutions for Organizational Complexity",
+                "questionCount": 12
+            },
+            {
+                "name": "Domain - Design for New Solutions",
+                "questionCount": 31
+            },
+            {
+                "name": "Domain - Accelerate Workload Migration and Modernization",
+                "questionCount": 7
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 42,
+        "courseId": 9,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Jon Bonso 3",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain - Continuous Improvement for Existing Solutions",
+                "questionCount": 39
+            },
+            {
+                "name": "Domain - Design for New Solutions",
+                "questionCount": 23
+            },
+            {
+                "name": "Domain - Design Solutions for Organizational Complexity",
+                "questionCount": 8
+            },
+            {
+                "name": "Domain - Accelerate Workload Migration and Modernization",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 43,
+        "courseId": 9,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Jon Bonso 4",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain - Continuous Improvement for Existing Solutions",
+                "questionCount": 39
+            },
+            {
+                "name": "Domain - Design for New Solutions",
+                "questionCount": 25
+            },
+            {
+                "name": "Domain - Accelerate Workload Migration and Modernization",
+                "questionCount": 7
+            },
+            {
+                "name": "Domain - Design Solutions for Organizational Complexity",
+                "questionCount": 4
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
     }
 ]
