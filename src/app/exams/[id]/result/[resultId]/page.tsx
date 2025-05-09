@@ -126,7 +126,7 @@ const ResultOverviewPage: React.FC = () => {
         if (filterMode === 'correct') {
             filtered = filtered.filter((q) => q.question.isCorrect === true);
         } else if (filterMode === 'incorrect') {
-            filtered = filtered.filter((q) => q.question.isCorrect === false);
+            filtered = filtered.filter((q) => q.question.isCorrect === false && q.question.selectedAnswer);
         } else if (filterMode === 'skipped') {
             filtered = filtered.filter((q) => q.question.selectedAnswer === null);
         } else if (filterMode === 'bookmarked') {
@@ -157,7 +157,7 @@ const ResultOverviewPage: React.FC = () => {
 
     const totalQuestions = mappedQuestions.length;
     const correctQuestions = mappedQuestions.filter((q) => q.question.isCorrect === true).length;
-    const incorrectQuestions = mappedQuestions.filter((q) => q.question.isCorrect === false).length;
+    const incorrectQuestions = mappedQuestions.filter((q) => q.question.isCorrect === false && q.question.selectedAnswer).length;
     const skippedQuestions = mappedQuestions.filter((q) => q.question.selectedAnswer === null).length;
     const bookmarkedQuestions = mappedQuestions.filter((q) => q.question.isBookmarked).length;
 
