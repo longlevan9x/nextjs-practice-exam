@@ -117,5 +117,17 @@
     {
         "examId": 30,
         "questionFile": "neal_davis_aws_saa_co3_2025/neal_davis_aws_saa_co3_2025_6.json"
+    },
+    {
+        "examId": 31,
+        "questionFile": "stephane_maarek_aws_sap_co2_2025/stephane_maarek_aws_sap_co2_2025_1.json"
+    },
+    {
+        "examId": 32,
+        "questionFile": "stephane_maarek_aws_sap_co2_2025/stephane_maarek_aws_sap_co2_2025_2.json"
+    },
+    {
+        "examId": 33,
+        "questionFile": "stephane_maarek_aws_sap_co2_2025/stephane_maarek_aws_sap_co2_2025_3.json"
     }
 ]

@@ -1009,5 +1009,95 @@
         "questionCount": 65,
         "duration": 130,
         "passScore": 72
+    },
+    {
+        "id": 31,
+        "courseId": 7,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Stephane Maarek 1",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design Solutions for Organizational Complexity",
+                "questionCount": 12
+            },
+            {
+                "name": "Continuous Improvement for Existing Solutions",
+                "questionCount": 25
+            },
+            {
+                "name": "Design for New Solutions",
+                "questionCount": 19
+            },
+            {
+                "name": "Accelerate Workload Migration and Modernization",
+                "questionCount": 19
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 32,
+        "courseId": 7,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Stephane Maarek 2",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Design for New Solutions",
+                "questionCount": 22
+            },
+            {
+                "name": "Design Solutions for Organizational Complexity",
+                "questionCount": 12
+            },
+            {
+                "name": "Accelerate Workload Migration and Modernization",
+                "questionCount": 26
+            },
+            {
+                "name": "Continuous Improvement for Existing Solutions",
+                "questionCount": 15
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 33,
+        "courseId": 7,
+        "name": "AWS Certified Solutions Architect Professional 2025 C02 Stephane Maarek 3 Mini",
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Accelerate Workload Migration and Modernization",
+                "questionCount": 4
+            },
+            {
+                "name": "Continuous Improvement for Existing Solutions",
+                "questionCount": 11
+            },
+            {
+                "name": "Design Solutions for Organizational Complexity",
+                "questionCount": 6
+            },
+            {
+                "name": "Design for New Solutions",
+                "questionCount": 9
+            }
+        ],
+        "questionCount": 30,
+        "duration": 180,
+        "passScore": 75
     }
 ]

@@ -180,5 +180,34 @@
         "description": "AWS Certified Solutions Architect Associate Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Neal Davis"
+    },
+    {
+        "id": 7,
+        "name": "AWS Certified Solutions Architect Professional 2025 - C02 - Stephane Maarek",
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75,
+        "domains": [
+            {
+                "name": "Design Solutions for Organizational Complexity",
+                "questionCount": 0
+            },
+            {
+                "name": "Continuous Improvement for Existing Solutions",
+                "questionCount": 0
+            },
+            {
+                "name": "Design for New Solutions",
+                "questionCount": 0
+            },
+            {
+                "name": "Accelerate Workload Migration and Modernization",
+                "questionCount": 0
+            }
+        ],
+        "imageUrl": "/images/aws-sap.png",
+        "description": "AWS Certified Solutions Architect Professional Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Stephane Maarek"
     }
 ]
