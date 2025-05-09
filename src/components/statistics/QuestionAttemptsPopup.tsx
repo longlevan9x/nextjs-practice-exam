@@ -55,7 +55,7 @@ const QuestionAttemptsPopup: React.FC<QuestionAttemptsPopupProps> = ({
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className=" bg-black opacity-90 absolute w-full h-full z-10"></div>
 
-      <div className="bg-white rounded-xs p-6 max-w-3xl w-full max-h-[80vh] overflow-y-auto z-20">
+      <div className="bg-white rounded-xs p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto z-20">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-gray-800">
             Chi tiết các lần trả lời
