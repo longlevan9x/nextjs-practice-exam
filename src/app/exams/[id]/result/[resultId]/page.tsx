@@ -17,6 +17,11 @@ interface MappedQuestion {
     question: Question;
 }
 
+interface DomainStats {
+    name: string;
+    total: number;
+}
+
 const ResultOverviewPage: React.FC = () => {
     const { id: examId } = useParams<{ id: string }>();
     const { resultId } = useParams<{ resultId: string }>(); // Lấy resultId từ URL
@@ -29,6 +34,7 @@ const ResultOverviewPage: React.FC = () => {
     const [examResult, setExamResult] = useState<ExamResult | null>(null);
     const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
     const questionRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+    const [filterDomains, setFilterDomains] = useState<DomainStats[]>([]);
 
     // Fetch result and map data
     useEffect(() => {
@@ -121,6 +127,16 @@ const ResultOverviewPage: React.FC = () => {
             filtered = filtered.filter((q) => q.question.isBookmarked);
         }
 
+        const domainStats = resultData?.domains?.map((domain) => {
+            const domainCount = filtered.filter((q) => q.question.domain === domain.name).length;
+            return {
+                name: domain.name,
+                total: domainCount,
+            };
+        }) as DomainStats[];
+
+        setFilterDomains(domainStats || []);
+       
         // Apply domain filter
         if (selectedDomain !== 'all') {
             filtered = filtered.filter((q) => q.question.domain === selectedDomain);
@@ -221,14 +237,14 @@ const ResultOverviewPage: React.FC = () => {
                     >
                         Tất cả lĩnh vực
                     </button>
-                    {resultData?.domains?.map((domain) => (
+                    {filterDomains.map((domain) => (
                         <button
                             key={domain.name}
                             onClick={() => setSelectedDomain(domain.name)}
                             className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
-                            {domain.name} ({mappedQuestions.filter(q => q.question.domain === domain.name).length})
+                            {domain.name} ({domain.total})
                         </button>
                     ))}
                 </div>
