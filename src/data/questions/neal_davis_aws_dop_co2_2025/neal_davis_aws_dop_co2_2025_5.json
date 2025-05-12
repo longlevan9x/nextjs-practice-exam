@@ -1,0 +1,794 @@
+[
+  {
+    "id": 1,
+    "question": "<p>A company uses a tagging strategy to allocate usage costs for AWS resources. An application runs on Amazon EC2 instances in an Auto scaling group. The Amazon EBS volumes that are attached to instances are being created without the correct cost center tags. A DevOps engineer must correct the configuration to ensure the EBS volumes are tagged appropriately.</p><p>What is the MOST efficient solution that meets this requirement?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Update the Auto Scaling group launch template to include the cost center tags for EBS volumes.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Tag Editor to scan the account for EBS volumes that are missing the tags and then add the cost center tags to the volumes.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Update the Auto Scaling group to include the cost center tags. Set the PropagateAtLaunch property to true.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Config to enforce tagging at EBS volume creation time and deny creation of any volumes that do not have the appropriate cost center tags.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>You can tag new or existing Auto Scaling groups. You can also propagate tags from an Auto Scaling group to the EC2 instances that it launches.</p><p>Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template.</p><p><strong>CORRECT: </strong>\"Update the Auto Scaling group launch template to include the cost center tags for EBS volumes\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Update the Auto Scaling group to include the cost center tags. Set the PropagateAtLaunch property to true\" is incorrect.</p><p>As noted above, you cannot propagate tags from an Auto Scaling group to EBS volumes.</p><p><strong>INCORRECT:</strong> \"Use AWS Config to enforce tagging at EBS volume creation time and deny creation of any volumes that do not have the appropriate cost center tags\" is incorrect.</p><p>AWS Config can be used to report on compliance but cannot stop volume creation.</p><p><strong>INCORRECT:</strong> \"Use Tag Editor to scan the account for EBS volumes that are missing the tags and then add the cost center tags to the volumes\" is incorrect.</p><p>Tag Editor is not an efficient solution as it would involve manual work. The correct solution is fully automated.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "<p>A company is deploying a serverless application that includes an Amazon API Gateway REST API and an AWS Lambda function. A DevOps engineer must come up with a strategy for updating the application that enables new features to be tested on a small number of users before rolling out the update to all users.</p><p>Which deployment strategy will meet these requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS SAM to deploy the serverless services and use a Lambda alias. When code needs to be changed, update the CloudFormation stack with the new Lambda code and API version. Use an Amazon Route 53 latency routing policy for the canary release strategy.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use the AWS CDK to deploy the serverless services. When code needs to be changed, update the AWS CloudFormation stack, and deploy the new version of the APIs and Lambda functions. Use an Amazon Route 53 failover routing policy for the canary release strategy.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS CloudFormation to deploy the serverless services and use Lambda function versions. When code needs to be changed, update the CloudFormation stack with the new Lambda code and update the API versions using a canary release strategy. Promote the new version when testing is complete.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Elastic Beanstalk to deploy the serverless services. When code needs to be changed, deploy a new version of the API and Lambda functions. Shift traffic using a canary release strategy.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Networking & Content Delivery",
+    "explanation": "<p>CloudFormation can be used to deploy both the AWS Lambda function and API Gateway REST API. The CloudFormation stack can then be updated to point to new function code when the version needs to be updated. For the REST API the update can be configured to use a canary release strategy to test the updates on a small number of users before full rollout. Once fully tested, the new version of the function code can be configured to take all traffic.</p><p><strong>CORRECT: </strong>\"Use AWS CloudFormation to deploy the serverless services and use Lambda function versions. When code needs to be changed, update the CloudFormation stack with the new Lambda code and update the API versions using a canary release strategy. Promote the new version when testing is complete\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use the AWS CDK to deploy the serverless services. When code needs to be changed, update the AWS CloudFormation stack, and deploy the new version of the APIs and Lambda functions. Use an Amazon Route 53 failover routing policy for the canary release strategy\" is incorrect.</p><p>The CDK is used when you need to define cloud application resources using programming languages such as TypeScript, Python, Java etc. and then deploy through CloudFormation. The CDK isn’t needed here, and the Route 53 failover routing policy cannot be used for a canary strategy as it involves one target receiving all traffic until it fails a health check at which time all traffic is failed to the failover target.</p><p><strong>INCORRECT:</strong> \"Use AWS Elastic Beanstalk to deploy the serverless services. When code needs to be changed, deploy a new version of the API and Lambda functions. Shift traffic using a canary release strategy\" is incorrect.</p><p>You cannot use Elastic Beanstalk to deploy these serverless services.</p><p><strong>INCORRECT:</strong> \"Use AWS SAM to deploy the serverless services and use a Lambda alias. When code needs to be changed, update the CloudFormation stack with the new Lambda code and API version. Use an Amazon Route 53 latency routing policy for the canary release strategy\" is incorrect.</p><p>The serverless services can be deployed via SAM but should then be updated via the “sam deploy” command. The update of the stack will also update everything in place and the latency routing would not achieve a canary release strategy as it simply routes traffic based on latency (and we only have one target anyway).</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html</a></p><p><a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-elastic-beanstalk/\">https://digitalcloud.training/aws-elastic-beanstalk/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html",
+      "https://digitalcloud.training/aws-elastic-beanstalk/"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "<p>A gaming startup company is finishing its migration to AWS and realizes that many DevOps engineers have permissions to delete Amazon DynamoDB tables.</p><p>A solution is required to receive near real-time notifications when the API call DeleteTable is invoked in DynamoDB.</p><p>Which actions should be taken to achieve this requirement most cost-effectively?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS CloudTrail event filter and use an AWS Lambda function to send an Amazon SNS notification.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an Amazon CloudWatch event filter that monitors for DeleteTable API actions and sends an alert via Amazon SNS.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an AWS CloudTrail trail. Create an Amazon EventBridge rule to track an AWS API call via CloudTrail and use Amazon SNS as a target.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable DynamoDB Streams and configure an AWS Lambda function to process events from the stream. Send alerts using Amazon SNS.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>To create a rule that triggers on an action by an AWS service that does not emit events, you can base the rule on API calls made by that service. The API calls are recorded by AWS CloudTrail. You must create an AWS CloudTrail trail. For the given use-case, we can use the 'AWS API Call via CloudTrail' feature of CloudWatch Events and set up SNS as a target to achieve the desired outcome.</p><p><strong>CORRECT: </strong>\"Create an AWS CloudTrail trail. Create an Amazon EventBridge rule to track an AWS API call via CloudTrail and use Amazon SNS as a target\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable DynamoDB Streams and configure an AWS Lambda function to process events from the stream. Send alerts using Amazon SNS\" is incorrect.</p><p>This would be less cost-effective compared to using AWS CloudTrail and Amazon EventBridge.</p><p><strong>INCORRECT:</strong> \"Create an AWS CloudTrail event filter and use an AWS Lambda function to send an Amazon SNS notification\" is incorrect.</p><p>Event filters are used with CloudWatch, not with CloudTrail.</p><p><strong>INCORRECT:</strong> \"Create an Amazon CloudWatch event filter that monitors for DeleteTable API actions and sends an alert via Amazon SNS\" is incorrect.</p><p>API actions are tracked by AWS CloudTrail but not by Amazon CloudWatch.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-cloudwatch/\">https://digitalcloud.training/amazon-cloudwatch/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html",
+      "https://digitalcloud.training/amazon-cloudwatch/"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "<p>A DevOps manager has been asked to optimize the costs associated with Amazon EBS volumes. There are many unattached EBS volumes which should be deleted if not used for 14 days. The manager asked a DevOps engineer to create an automation solution that deletes volumes that have been unattached for 14 days or more.</p><p>Which solution will accomplish this?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon EC2 and Amazon Data Lifecycle Manager to configure a volume lifecycle policy. Set the interval period for unattached EBS volumes to 14 days and set the retention rule to delete. Set the policy target volumes as *.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Trusted Advisor to detect EBS volumes that have been detached for more than 14 days. Invoke an AWS Lambda function that creates a snapshot and then deletes the EBS volume.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an Amazon CloudWatch Events rule to invoke an AWS Lambda function daily. Configure the function to find unattached EBS volumes and tag them with the current date and delete unattached volumes that have tags with dates that are more than 14 days old.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use the AWS Config ec2-volume-inuse-check managed rule to mark unattached volumes are non-compliant. Create a new Amazon CloudWatch Events rule scheduled to invoke an AWS Lambda function in 14 days to delete the non-compliant volumes.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>CloudWatch Events can be configured with a rule to run an AWS Lambda function on a schedule. The function can be written to find unattached volumes and tag them with the current date. It should avoid tagging volumes that are already tagged and it should delete volumes which have dates older than 14 days. This meets the requirements of the question.</p><p><strong>CORRECT: </strong>\"Create an Amazon CloudWatch Events rule to invoke an AWS Lambda function daily. Configure the function to find unattached EBS volumes and tag them with the current date and delete unattached volumes that have tags with dates that are more than 14 days old\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Trusted Advisor to detect EBS volumes that have been detached for more than 14 days. Invoke an AWS Lambda function that creates a snapshot and then deletes the EBS volume\" is incorrect.</p><p>Trusted Advisor checks for underutilized volumes but the criteria is that a volume is unattached or had less than 1 IOPS per day for the past 7 days.</p><p><strong>INCORRECT:</strong> \"Use the AWS Config ec2-volume-inuse-check managed rule to mark unattached volumes are non-compliant. Create a new Amazon CloudWatch Events rule scheduled to invoke an AWS Lambda function in 14 days to delete the non-compliant volumes\" is incorrect.</p><p>The function should run daily to delete those that have reached 14 days since being attached. This answer indicates that a specific rule is created for each instance of a non-compliant volume which is inefficient.</p><p><strong>INCORRECT:</strong> \"Use Amazon EC2 and Amazon Data Lifecycle Manager to configure a volume lifecycle policy. Set the interval period for unattached EBS volumes to 14 days and set the retention rule to delete. Set the policy target volumes as *\" is incorrect.</p><p>DLM assists with automating the lifecycle of snapshots and AMIs. In this case the DevOps team need to automate deletion of unattached EBS volumes.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-cloudwatch/\">https://digitalcloud.training/amazon-cloudwatch/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html",
+      "https://digitalcloud.training/amazon-cloudwatch/"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "<p>A company runs an application across thousands of EBS-backed Amazon EC2 instances. The company needs to ensure availability of the application and requires that instances are restarted when an EC2 instance retirement event is scheduled.</p><p>How can this a DevOps engineer automate this task?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create a rule in Amazon EventBridge with Amazon EC2 as the source and look for EC2 instance state-change notifications that indicate the instance is shutting down. Run an AWS Systems Manager automation document that starts the affected instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable EC2 Auto Recovery on all instances. Configure an Amazon CloudWatch alarm with the alarm action set to Recover. Specify a time for recovery that is outside of business hours.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an Amazon CloudWatch alarm for EC2 status checks. Configure the alarm to trigger an Amazon SNS notification to the operations team and have them stop and start affected instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create a rule in Amazon EventBridge with AWS Health as the source and look for instance retirement scheduled events. Run an AWS Systems Manager automation document that stops and starts affected instances.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Application Integration",
+    "explanation": "<p>An EC2 instance is scheduled for retirement when AWS detects an irreparable failure in the infrastructure that's hosting your instance. You are required to stop and then start the instance at your preferred time before the instance retirement date. Stopping and starting the instance moves the instance to another healthy host.</p><p>The best way to automate this process is to create a rule in Amazon EventBridge that looks for AWS Health events. The specific event is:</p><p>“AWS_EC2_INSTANCE_RETIREMENT_SCHEDULED”</p><p>When this event occurs EventBridge can trigger an AWS Systems Manager automation document that stops and starts the EC2 instances.</p><p><strong>CORRECT: </strong>\"Create a rule in Amazon EventBridge with AWS Health as the source and look for instance retirement scheduled events. Run an AWS Systems Manager automation document that stops and starts affected instances\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an Amazon CloudWatch alarm for EC2 status checks. Configure the alarm to trigger an Amazon SNS notification to the operations team and have them stop and start affected instances\" is incorrect.</p><p>Status checks do not inform us that an instance retirement event is scheduled, they let us know if there are issues that are affecting the instances or hosts.</p><p><strong>INCORRECT:</strong> \"Enable EC2 Auto Recovery on all instances. Configure an Amazon CloudWatch alarm with the alarm action set to Recover. Specify a time for recovery that is outside of business hours\" is incorrect.</p><p>Auto Recovery will recover an instance automatically, but this is not related to retirement events. You also cannot configure a time schedule in the alarm action.</p><p><strong>INCORRECT:</strong> \"Create a rule in Amazon EventBridge with Amazon EC2 as the source and look for EC2 instance state-change notifications that indicate the instance is shutting down. Run an AWS Systems Manager automation document that starts the affected instances\" is incorrect.</p><p>This would restart all instances that are shutdown, so the scope is too broad. We specifically want to target only the instances that are affected by retirement events.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/\">https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/</a></p><p><a href=\"https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html\">https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-systems-manager/\">https://digitalcloud.training/aws-systems-manager/</a></p><p><a href=\"https://digitalcloud.training/amazon-cloudwatch/\">https://digitalcloud.training/amazon-cloudwatch/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-retirement/",
+      "https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html",
+      "https://digitalcloud.training/aws-systems-manager/",
+      "https://digitalcloud.training/amazon-cloudwatch/"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "<p>A DevOps engineer must implement a serverless service that runs on multiple AWS Lambda functions and uses Amazon DynamoDB as the data store. The functions require a front end that supports unencrypted HTTP and allows routing to the functions based on the path in the URL.</p><p>Which solution will meet the requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Deploy an Amazon API Gateway HTTP API as the front end with an HTTP endpoint. Create resources to represent each URL path and use the ANY method. Use Lambda non-proxy integrations for each resource.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Deploy an Amazon API Gateway REST API as the front end with an HTTP endpoint. Create resources to represent each URL path and use the ANY method. Use Lambda proxy integrations for each resource.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Deploy an Application Load Balancer (ALB) as the front end. Create an HTTP listener and configure the Lambda functions as targets in separate target groups. Create path-based routing rules that forward requests to targets based on path values in the request.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Deploy a Network Load Balancer (NLB) as the front end. Create an HTTP listener and configure the Lambda functions as targets in separate target groups. Create IP-based routing rules that forward requests to targets based on path values in the request.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>It is not possible to use Amazon API Gateway for this solution as it only supports encrypted endpoints. This solution requires unencrypted HTTP. The best solution is to use an ALB as the front end and configure the Lambda functions as targets. An HTTP listener can be configured, and rules can be created to map requests to targets based on the path values in the request.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-39-10-dd12ec7535c85f563ca42e623666299c.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-39-10-dd12ec7535c85f563ca42e623666299c.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Deploy an Application Load Balancer (ALB) as the front end. Create an HTTP listener and configure the Lambda functions as targets in separate target groups. Create path-based routing rules that forward requests to targets based on path values in the request\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Deploy a Network Load Balancer (NLB) as the front end. Create an HTTP listener and configure the Lambda functions as targets in separate target groups. Create IP-based routing rules that forward requests to targets based on path values in the request\" is incorrect.</p><p>You cannot use an NLB for routing to targets based on path values in the requests. IP-based routing does not assist here and is also supported only on the ALB.</p><p><strong>INCORRECT:</strong> \"Deploy an Amazon API Gateway REST API as the front end with an HTTP endpoint. Create resources to represent each URL path and use the ANY method. Use Lambda proxy integrations for each resource\" is incorrect.</p><p>As explained above, you cannot deploy unencrypted HTTP endpoints with API Gateway, so this solution does not work.</p><p><strong>INCORRECT:</strong> \"Deploy an Amazon API Gateway HTTP API as the front end with an HTTP endpoint. Create resources to represent each URL path and use the ANY method. Use Lambda non-proxy integrations for each resource\" is incorrect.</p><p>As explained above, you cannot deploy unencrypted HTTP endpoints with API Gateway, so this solution does not work.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html\">https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/\">https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html",
+      "https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>An application is being deployed using an AWS CodePipeline pipeline. The pipeline includes an AWS CodeBuild stage which downloads source code from AWS CodeCommit, pulls data from an S3 bucket, and builds and tests the application before deployment.</p><p>A DevOps engineer has discovered that the S3 data is not being successfully downloaded due to a permissions issue.</p><p>How can the permissions be assigned to CodeBuild in the MOST secure manner?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Modify the service role for the CodeBuild project to include permissions for S3. Use the AWS CLI to download the data.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Modify the S3 bucket settings to enable HTTPS basic authentication and specify a token. Update the buildspec to use cURL to pass the token and download the data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use an aws:Referer condition key in the CodeBuild project settings. Update the buildspec to use the AWS CLI to download the data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure an IAM access key and a secret access key in the application code and use the AWS CLI to download the data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>The most likely issue is that the service role used by AWS CodeBuild does not have the correct permissions to download the data securely from the Amazon S3 bucket. CodeBuild uses the service role for all operations that are performed on your behalf. Therefore, the role must have the permissions needed during the build stage.</p><p>In this case, simply adding the correct permissions statements to the policy attached to the service role should resolve the permission issue. The data can then be downloaded from S3 using the AWS CLI by specifying commands in the buildspec document.</p><p><strong>CORRECT: </strong>\"Modify the service role for the CodeBuild project to include permissions for S3. Use the AWS CLI to download the data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure an IAM access key and a secret access key in the application code and use the AWS CLI to download the data\" is incorrect.</p><p>This is an insecure method of using credentials and should be avoided. It would also not provide the permissions needed by CodeBuild as the service gets those permissions from the service role.</p><p><strong>INCORRECT:</strong> \"Use an aws:Referer condition key in the CodeBuild project settings. Update the buildspec to use the AWS CLI to download the data\" is incorrect.</p><p>The condition key referenced is used in policies to restrict access to specific HTTP referers. This is not useful here as it does not provide any permissions to CodeBuild.</p><p><strong>INCORRECT:</strong> \"Modify the S3 bucket settings to enable HTTPS basic authentication and specify a token. Update the buildspec to use cURL to pass the token and download the data\" is incorrect.</p><p>You cannot configure different authentication options on S3 as it is a managed service. You can only limit who can access the bucket and objects and under what conditions.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role\">https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "<p>To improve security, a company plans to use AWS Systems Manager Session Manager to manage EC2 instances instead of using key pairs. The company also requires that access to Session Manager goes across private networks only.</p><p>Which combinations of actions will accomplish this? (Select TWO.)</p>",
+    "corrects": [
+      1,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create VPC endpoints for Systems Manager in the relevant AWS Region to provide private access.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Run the ‘aws configure’ command on all EC2 instances to add access keys that provide the required Systems Manager permissions.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Attach an IAM policy providing the required Systems Manager permissions to an existing IAM instance profile.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Update all EC2 instance security groups to allow SSH port TCP 22 inbound from the VPC CIDR.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Deploy an AWS Site to Site VPN in the relevant AWS Region for private access to Systems Manager.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>Session Manager is a fully managed AWS Systems Manager capability. With Session Manager, you can manage Amazon EC2 instances, edge devices, and on-premises servers and virtual machines (VMs).</p><p>Session Manager provides secure and auditable node management without the need to open inbound ports, maintain bastion hosts, or manage SSH keys. You do not need to open SSH ports in security groups and can enable private access using VPC endpoints.</p><p>To manage your instances using Session Manager you must install the Systems Manager agent on them and provide the necessary permissions for management. Permissions should be assigned through IAM instance profiles and policies.</p><p><strong>CORRECT: </strong>\"Attach an IAM policy providing the required Systems Manager permissions to an existing IAM instance profile\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Create VPC endpoints for Systems Manager in the relevant AWS Region to provide private access\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Update all EC2 instance security groups to allow SSH port TCP 22 inbound from the VPC CIDR\" is incorrect.</p><p>With Systems Manager Session Manager you do not need to open SSH ports.</p><p><strong>INCORRECT:</strong> \"Deploy an AWS Site to Site VPN in the relevant AWS Region for private access to Systems Manager\" is incorrect.</p><p>The private access between Session Manager and EC2 instances happens within AWS via VPC endpoints. A VPN cannot be used.</p><p><strong>INCORRECT:</strong> \"Run the ‘aws configure’ command on all EC2 instances to add access keys that provide the required Systems Manager permissions\" is incorrect.</p><p>This is a less secure method of providing the permissions needed by the EC2 instances. The better option is to use IAM instance profiles and policies.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html\">https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-systems-manager/\">https://digitalcloud.training/aws-systems-manager/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html",
+      "https://digitalcloud.training/aws-systems-manager/"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "<p>A DevOps engineer updated the AWS CloudFormation template for an application. The stack update failed and CloudFormation attempted to roll back the stack to its previous state. The roll back process failed and generated a UPDATE_ROLLBACK_FAILED error message.</p><p>What are the most likely causes for this issue? (Select TWO.)</p>",
+    "corrects": [
+      2,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>An interface VPC endpoint was not operational and CloudFormation could not update resources in the VPC.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>The user or role that was used to perform the stack update had insufficient permissions.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon EC2 instances included in the stack were updated recently using the ‘yum update’ command.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>A change set was not created and executed prior to deploying the updated template to the stack.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Changes to resources were made outside of CloudFormation and the template was not updated.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>This error indicates that a dependent resource can't return to its original state, causing the rollback to fail (UPDATE_ROLLBACK_FAILED state). A dependent resource has likely been changed or cannot be modified. There are several possible causes of this issue which include that a dependent resource has been changed outside of the CloudFormation stack or the resource cannot be modified as the user or role that performed the update has insufficient permissions.</p><p><strong>CORRECT: </strong>\"The user or role that was used to perform the stack update had insufficient permissions\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Changes to resources were made outside of CloudFormation and the template was not updated\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"A change set was not created and executed prior to deploying the updated template to the stack\" is incorrect.</p><p>Change sets are useful but not mandatory. There is no reason that the stack update would fail to roll back because a change set had not been used.</p><p><strong>INCORRECT:</strong> \"An interface VPC endpoint was not operational and CloudFormation could not update resources in the VPC\" is incorrect.</p><p>CloudFormation uses APIs rather than the network, so it is not reliant on interface endpoints to be able to modify resources in a VPC.</p><p><strong>INCORRECT:</strong> \"Amazon EC2 instances included in the stack were updated recently using the ‘yum update’ command\" is incorrect.</p><p>This command updates the operating system with the latest patches. There is no reason that running this update would have any bearing on CloudFormation’s ability to roll back a failed update.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-cloudformation/\">https://digitalcloud.training/aws-cloudformation/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html",
+      "https://digitalcloud.training/aws-cloudformation/"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "<p>When deploying a newly developed application on AWS, a DevOps team notices an intermittent error when attempting to make a connection to the application.</p><p>The application has a two-tier architecture with an AWS Lambda function backed by an Amazon API gateway and a NoSQL database as the data store.</p><p>The DevOps team noticed that sometime after deployment the error stops occurring. This application is deployed by AWS CodeDeploy and the Lambda function is deployed as the last step of pipeline.</p><p>What is the most efficient way for a DevOps engineer to resolve the issue?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use the ValidateService hook to validate that the deployment was completed successfully.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use DownloadBundle event hook in which CodeDeploy agent copies the application revision files to a temporary location which can be analyzed.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Add an AfterAllowTraffic hook to the AppSpec file that forces traffic to wait for any pending database changes before allowing the new version of the Lambda function to respond.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Add a BeforeAllowTraffic hook to the AppSpec file which tests and waits for any necessary database changes before traffic can flow to the new version of the Lambda function.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event. Each hook is executed once per deployment. Here are descriptions of the hooks available for use in your AppSpec file.</p><p>· <strong>BeforeAllowTraffic</strong> – Use to run tasks before traffic is shifted to the deployed Lambda function version.</p><p>· <strong>AfterAllowTraffic</strong> – Use to run tasks after all traffic is shifted to the deployed Lambda function version.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-44-54-3b27da721fdb31cd0114ba6bbff8f1d5.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-44-54-3b27da721fdb31cd0114ba6bbff8f1d5.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Add a BeforeAllowTraffic hook to the AppSpec file which tests and waits for any necessary database changes before traffic can flow to the new version of the Lambda function\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Add an AfterAllowTraffic hook to the AppSpec file that forces traffic to wait for any pending database changes before allowing the new version of the Lambda function to respond\" is incorrect.</p><p>You can use this deployment lifecycle event to run tasks on instances after they are deregistered from a load balancer.</p><p><strong>INCORRECT:</strong> \"Use DownloadBundle event hook in which CodeDeploy agent copies the application revision files to a temporary location which can be analyzed\" is incorrect.</p><p>Since the error resolves after some time, the issue will most likely be resolved by ensuring the application is not brought online until it is ready.</p><p><strong>INCORRECT:</strong> \"Use the ValidateService hook to validate that the deployment was completed successfully\" is incorrect.</p><p>This is used to verify the deployment was completed successfully, this will only detect deployment status and will not help in this scenario.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda\">https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/category/aws-cheat-sheets/aws-developer-tools/\">https://digitalcloud.training/category/aws-cheat-sheets/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda",
+      "https://digitalcloud.training/category/aws-cheat-sheets/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "<p>An application runs on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. The instances often come online before they are ready which leads to errors being experienced. The health check configuration provides a 60-second grace period and considers instances healthy after two 200 response codes from /index.php. This page can respond intermittently during the deployment process.</p><p>A DevOps engineer has been tasked with troubleshooting the errors. The instances should come online as soon as possible but not before they are ready.</p><p>Which strategy can be used to address this issue?</p><p>Which strategy would address this issue?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Modify the deployment script to create a /health-check.php file at the beginning of the deployment and modify the health check path to point to that file.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Modify the deployment script to create a /health-check.php file at the end of the deployment and modify the health check path to point to that file.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Increase the instance grace period from 60 seconds to 180 seconds and change the response code requirement from 200 to 202.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Increase the instance grace period from 60 seconds to 300 seconds, and the consecutive health check requirement from 2 to 3.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>The correct solution includes the creation of a health-check.php file at the end of the deployment when the application should be running consistently. The health check path is reconfigured to point to this file. This means that as soon as the application deployment is complete the health checks should start to return success (200) status codes and the instances will be marked as healthy.</p><p><strong>CORRECT: </strong>\"Modify the deployment script to create a /health-check.php file at the end of the deployment and modify the health check path to point to that file\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Modify the deployment script to create a /health-check.php file at the beginning of the deployment and modify the health check path to point to that file\" is incorrect.</p><p>This solution creates the health-check.php file too early in the process. The application may not be ready at this point so if the file is present the 200 response codes will be returned, and the instance will be marked as healthy despite the application not being ready to process requests. The question indicates that errors have been experienced due to the application being marked as healthy too early.</p><p><strong>INCORRECT:</strong> \"Increase the instance grace period from 60 seconds to 300 seconds, and the consecutive health check requirement from 2 to 3\" is incorrect.</p><p>The grace period helps Amazon EC2 Auto Scaling distinguish unhealthy instances from newly launched instances that are not yet ready to serve traffic. This grace period can prevent Amazon EC2 Auto Scaling from marking InService instances as unhealthy and terminating them before they have time to finish initializing. The issue experienced is not related to instances being terminated too early, it is related to instances coming online (marked as healthy) too early.</p><p>Changing the health check requirement from 2 to 3 may help delay bringing the application online but depends on the interval specified.</p><p><strong>INCORRECT:</strong> \"Increase the instance grace period from 60 seconds to 180 seconds and change the response code requirement from 200 to 202\" is incorrect.</p><p>As above, the changing the health check requirement from 2 to 3 may help delay bringing the application online but depends on the interval specified. Changing the response code requirement will not make any positive difference here.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "<p>The security team at a company requires a solution to identify activities that indicate that Amazon EC2 instances have been compromised. The solution should notify them by email if issues are discovered.</p><p>Which solution will meet these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS CloudTrail trail and log API events that indicate account compromise. Create an alarm in Amazon CloudWatch based on a custom metric filter for the API events. Send a notification via an Amazon SNS topic.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure AWS GuardDuty to identify activities that indicate the EC2 instances have been compromised. Create an Amazon EventBridge rule with an event source set to ‘aws.guardduty’. Send a notification using an Amazon SNS topic when the specified events are logged.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure Amazon Inspector to identify activities that indicate the EC2 instances have been compromised. Configure Inspector to send notifications directly via an Amazon SNS topic when there are changes in the state of findings.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Install the AWS Systems Manager agent on the EC2 instances and attach an instance profile with the necessary permissions. Configure Systems Manager to alert via an Amazon SNS topic if malicious activities are detected on the EC2 instances.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, EC2 workloads, container applications, and data stored in Amazon Simple Storage Service (S3)</p><p>GuardDuty provides threat detection services that cover several types of activity. One of these is instance compromise as per the following description of the scope of this service:</p><p><em>Activity indicating an instance compromise, such as cryptocurrency mining, backdoor command, and control (C&amp;C) activity, malware using domain generation algorithms (DGA), outbound denial of service activity, unusually high network traffic volume, unusual network protocols, outbound instance communication with a known malicious IP, temporary Amazon EC2 credentials used by an external IP address, and data exfiltration using DNS.</em></p><p>The GuardDuty findings are automatically logged to Amazon CloudWatch Events. You can then use EventBridge to create a rule that triggers an action when certain events that match the filter pattern are logged. In this case the trigger will be Amazon SNS as the security team require an email notification.</p><p><strong>CORRECT: </strong>\"Configure AWS GuardDuty to identify activities that indicate the EC2 instances have been compromised. Create an Amazon EventBridge rule with an event source set to ‘aws.guardduty’. Send a notification using an Amazon SNS topic when the specified events are logged\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure Amazon Inspector to identify activities that indicate the EC2 instances have been compromised. Configure Inspector to send notifications directly via an Amazon SNS topic when there are changes in the state of findings\" is incorrect.</p><p>Inspector does not identify instance compromise activities, use GuardDuty for this use case.</p><p><strong>INCORRECT:</strong> \"Install the AWS Systems Manager agent on the EC2 instances and attach an instance profile with the necessary permissions. Configure Systems Manager to alert via an Amazon SNS topic if malicious activities are detected on the EC2 instances\" is incorrect.</p><p>Systems Manager does not identify instance compromise activities, use GuardDuty for this use case.</p><p><strong>INCORRECT:</strong> \"Create an AWS CloudTrail trail and log API events that indicate account compromise. Create an alarm in Amazon CloudWatch based on a custom metric filter for the API events. Send a notification via an Amazon SNS topic\" is incorrect.</p><p>The question asks for identifying activities relating to instance compromise rather than account compromise. Either way, GuardDuty is the best tool for this job as it will discover possible compromise by looking at CloudTrail API events as well as other data sources.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/guardduty/features/\">https://aws.amazon.com/guardduty/features/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-guardduty/\">https://digitalcloud.training/aws-guardduty/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/guardduty/features/",
+      "https://digitalcloud.training/aws-guardduty/"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "<p>A DevOps engineer needs a managed environment for running a Node.js application. The infrastructure should support load balancing and auto scaling. The application will require a managed relational database, and data should be stored persistently and protected from accidental deletion. The solution should minimize ongoing operational effort.</p><p>Which actions should the engineer take to meet these requirements? (Select TWO.)</p>",
+    "corrects": [
+      1,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS Elastic Beanstalk environment with load balancing and auto scaling enabled.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create multiple AWS Lambda functions and associated Amazon Route 53 multivalue records.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an auto scaling group of Amazon EC2 instances managed by AWS Systems Manager.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an Amazon DynamoDB table in an Amazon VPC with automatic backups and deletion protection enabled.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Create an independent Amazon RDS database in an Amazon VPC with automatic backups and deletion protection enabled.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Compute",
+    "explanation": "<p>AWS Elastic Beanstalk is a service that provides managed infrastructure onto which developers and DevOps engineers can simply add their code. Node.js is supported along with many other popular programming languages. Elastic Beanstalk supports load balancing and auto scaling for the underlying infrastructure.</p><p>The question calls for a relational database that is managed. This requirement can be satisfied by deploying an Amazon RDS database. To ensure the database is protected from accidental deletion it should be created independently of the Elastic Beanstalk environment. The engineer may also want to enable deletion protection and automatic backups.</p><p><strong>CORRECT: </strong>\"Create an AWS Elastic Beanstalk environment with load balancing and auto scaling enabled\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Create an independent Amazon RDS database in an Amazon VPC with automatic backups and deletion protection enabled\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an auto scaling group of Amazon EC2 instances managed by AWS Systems Manager\" is incorrect.</p><p>This does not provide the managed infrastructure platform the question requires. Elastic Beanstalk is a better solution as it takes care of the management of the underlying infrastructure. Systems Manager can help with management of EC2, but you are still responsible.</p><p><strong>INCORRECT:</strong> \"Create multiple AWS Lambda functions and associated Amazon Route 53 multivalue records\" is incorrect.</p><p>This is not a good solution for running highly available and managed code. Lambda scales concurrently and therefore using Route 53 to load balance via DNS resolution is not necessary.</p><p><strong>INCORRECT:</strong> \"Create an Amazon DynamoDB table in an Amazon VPC with automatic backups and deletion protection enabled\" is incorrect.</p><p>DynamoDB is a NoSQL database, and the question requires that a relational database is deployed.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html\">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html</a></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/security.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/security.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-elastic-beanstalk/\">https://digitalcloud.training/aws-elastic-beanstalk/</a></p><p><a href=\"https://digitalcloud.training/amazon-dynamodb/\">https://digitalcloud.training/amazon-dynamodb/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/security.html",
+      "https://digitalcloud.training/aws-elastic-beanstalk/",
+      "https://digitalcloud.training/amazon-dynamodb/"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "<p>A DevOps Engineer manages a containerized rules engine application running inside an Amazon ECS container which pulls configuration files from AWS Systems Manager Parameter Store every time the container spins up. The configuration files are in a JSON format and are around 3 KB in size.</p><p>As new clients are onboarding, the engineer must load many new configuration files. The configuration files may increase significantly in number with increasing customer load. The engineer must load the configuration files on the fly after changes are done. The engineer must also ensure a history can be maintained for configuration changes.</p><p>What is the best solution for onboarding the new configuration files with the LEAST effort?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Save hierarchical configuration settings in AWS Systems Manager Parameter Store and load this data on application start up.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Secret Manager instead of AWS Systems Manager Parameter Store.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Put the configuration files as source code in the form of a properties file and refresh the binding via container restart.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Store configuration files in a versioning enabled Amazon S3 bucket and load the configuration settings using an Amazon EventBridge trigger and AWS Lambda function that is triggered by a cron job.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>SSM Parameter Store is an ideal choice for externalizing the configuration, but it has a limit of 4kb in standard tier and 8kb in advanced tier.</p><p>In the scenario where size might exceed 8kb, this configuration needs to externalize via an external store for which S3 is an ideal candidate.</p><p><strong>CORRECT: </strong>“Store configuration files in a versioning enabled Amazon S3 bucket and load the configuration settings using an Amazon EventBridge trigger and AWS Lambda function that is triggered by a cron job” is the correct answer (as explained above).</p><p><strong>INCORRECT:</strong> \"Put the configuration files as source code in the form of a properties file and refresh the binding via container restart \" is a possible option but efforts will be increased hence this is incorrect.</p><p><strong>INCORRECT:</strong> \"Use AWS Secret Manager instead of AWS Systems Manager Parameter Store \" is incorrect since secret manager also impose 512-character length restriction on secrets stored.</p><p><strong>INCORRECT:</strong> \"Save hierarchical configuration in a parameter store and load this data on application start up\" is incorrect since due to size restriction this will fail\" is incorrect since due to size restriction this will fail.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html\">Managing parameter tiers - AWS Systems Manager (amazon.com)</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-systems-manager/\">https://digitalcloud.training/aws-systems-manager/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html",
+      "https://digitalcloud.training/aws-systems-manager/"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "<p>A development team use a staging deployment of an application to test updates. The application includes an Amazon RDS database instances and Amazon EC2 instances. The resources only need to run when testing deployments are run using AWS CodePipeline. The testing usually runs for just a few hours a couple of times each week. A DevOps engineer wants cost-effective automating the instantiation and shutdown of the resources without changing the architecture of the application</p><p>Which solution best meets the requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Put the EC2 instances into an Auto Scaling group. Use Application Auto Scaling to configure a scheduled scaling event that runs at the start of the deployment tests.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Convert the RDS database to an Amazon Aurora Serverless database and create an Application Load Balancer for EC2. Use an AWS Lambda function to start and stop the EC2 and RDS instances before and after tests.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure CodePipeline to subscribe to an event in Amazon EventBridge that triggers an AWS Systems Manager automation document that starts and stops the EC2 and RDS instances before and after deployment tests.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Replace the EC2 instances with EC2 Spot Instances and the RDS database with an RDS Reserved Instance. Use AWS CLI commands to start and stop EC2 and RDS instances before and after tests.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>You can monitor CodePipeline events in EventBridge and then trigger another service to run using the event data. In this case, the DevOps engineer can create an event pattern that triggers the Systems Manager automation document to run when a CodePipeline execution has been initiated.</p><p><strong>CORRECT: </strong>\"Configure CodePipeline to subscribe to an event in Amazon EventBridge that triggers an AWS Systems Manager automation document that starts and stops the EC2 and RDS instances before and after deployment tests\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Convert the RDS database to an Amazon Aurora Serverless database and create an Application Load Balancer for EC2. Use an AWS Lambda function to start and stop the EC2 and RDS instances before and after tests\" is incorrect.</p><p>This requires more of an architectural change to the application and there is no automated solution for triggering the execution of the Lambda function.</p><p><strong>INCORRECT:</strong> \"Put the EC2 instances into an Auto Scaling group. Use Application Auto Scaling to configure a scheduled scaling event that runs at the start of the deployment tests\" is incorrect.</p><p>There is no solution here for the RDS database, this answer only provides a partial solution for EC2 instances.</p><p><strong>INCORRECT:</strong> \"Replace the EC2 instances with EC2 Spot Instances and the RDS database with an RDS Reserved Instance. Use AWS CLI commands to start and stop EC2 and RDS instances before and after tests\" is incorrect.</p><p>Changing the pricing structure does not automate starting and stopping the resources. Also, a reserved instance is not a good pricing option for this solution as it means you have paid regardless of whether the resource is running. The AWS CLI commands are not automated in this answer.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html\">https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html</a></p><p><a href=\"https://aws.amazon.com/blogs/mt/systems-manager-automation-documents-manage-instances-cut-costs-off-hours/\">https://aws.amazon.com/blogs/mt/systems-manager-automation-documents-manage-instances-cut-costs-off-hours/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html",
+      "https://aws.amazon.com/blogs/mt/systems-manager-automation-documents-manage-instances-cut-costs-off-hours/",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "<p>An application that was updated is returning HTTP 502 Bad Gateway errors to users. The application runs on Amazon EC2 instances in an Auto Scaling group that spans multiple Availability Zones.</p><p>The DevOps engineer wants to analyze the issue, but Auto Scaling is terminating the instances shortly after launch as the health check status is changing to unhealthy.</p><p>What steps can the DevOps engineer take to gain access to one of the instances for troubleshooting?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Add a lifecycle hook to your Auto Scaling group to move instances in the Terminating state to the Terminating:Wait state.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Suspend the AZRebalance auto scaling process to prevent instances from being terminated.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Take a snapshot of the attached EBS volumes. Create an image from the snapshot and launch an instance from the image.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Edit the Auto Scaling group to enable termination protection as this will protect unhealthy instances from being terminated.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>The DevOps engineer can add a lifecycle hook to the AWS Auto Scaling group to move instances in the Terminating state to the Terminating:Wait state. In this state, the engineer can access instances before they're terminated, and then troubleshoot why they were marked as unhealthy.</p><p>By default, an instance remains in the Terminating:Wait state for 3600 seconds (1 hour). To increase this time, you can use the heartbeat-timeout parameter in the put-lifecycle-hook API call. The maximum time that you can keep an instance in the Terminating:Wait state is 48 hours or 100 times the heartbeat timeout, whichever is smaller.</p><p><strong>CORRECT: </strong>\"Add a lifecycle hook to your Auto Scaling group to move instances in the Terminating state to the Terminating:Wait state\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Suspend the AZRebalance auto scaling process to prevent instances from being terminated\" is incorrect.</p><p>This would not stop instances that are unhealthy from being terminated. This simply prevents Auto Scaling rebalancing the instances across AZs.</p><p><strong>INCORRECT:</strong> \"Take a snapshot of the attached EBS volumes. Create an image from the snapshot and launch an instance from the image\" is incorrect.</p><p>It may not be possible to take a snapshot from an instance that is being terminated. Also, the state of the instance would not be captured, only the contents of the EBS volume.</p><p><strong>INCORRECT:</strong> \"Edit the Auto Scaling group to enable termination protection as this will protect unhealthy instances from being terminated\" is incorrect.</p><p>This will only prevent the Auto Scaling group from being deleted, it does not have any effect on how instances are terminated.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-delay-termination/\">https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-delay-termination/</a></p><p><strong>Save time with our exam-specific cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-delay-termination/",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "<p>An application uses an Elastic Load Balancer (ELB) in front of an Auto Scaling group of Amazon EC2 instances. A recent update to the application has resulted in longer times to run and complete bootstrap scripts. The instances often become healthy before they are ready to accept traffic resulting in errors. A DevOps engineer must prevent the instances from being registered with Elastic Load Balancing until the instances are ready to accept traffic.</p><p>Which solution meets these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS Lambda function that uses the Auto Scaling API to suspend the health check processes until the bootstrap scripts are complete.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use an Auto Scaling lifecycle hook to verify that the bootstrap scripts have completed before registering the instances with the ELB.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Increase the health check timeout from the default value to 120 seconds and configure the healthy threshold count to 5.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Increase the health check grace period from 300 seconds to 600 seconds to ensure the instances are not marked as healthy before they are ready to accept traffic.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>Amazon EC2 Auto Scaling offers the ability to add lifecycle hooks to your Auto Scaling groups. These hooks let you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p><p>A popular use of lifecycle hooks is to control when instances are registered with Elastic Load Balancing. By adding a launch lifecycle hook to your Auto Scaling group, you can ensure that your bootstrap scripts have completed successfully and the applications on the instances are ready to accept traffic before they are registered to the load balancer at the end of the lifecycle hook.</p><p>The following illustration shows the transitions between Auto Scaling instance states:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-33-11-47dc5f5dc473e042857e287968db6fd8.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-33-11-47dc5f5dc473e042857e287968db6fd8.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Use an Auto Scaling lifecycle hook to verify that the bootstrap scripts have completed before registering the instances with the ELB\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Increase the health check timeout from the default value to 120 seconds and configure the healthy threshold count to 5\" is incorrect.</p><p>The question specifically states that the solution should prevent the instances from being registered with Elastic Load Balancing until the instances are ready to accept traffic. This solution does not meet the requirement.</p><p><strong>INCORRECT:</strong> \"Increase the health check grace period from 300 seconds to 600 seconds to ensure the instances are not marked as healthy before they are ready to accept traffic\" is incorrect.</p><p>The HealthCheckGracePeriod parameter for the Auto Scaling group helps Amazon EC2 Auto Scaling distinguish unhealthy instances from newly launched instances that are not yet ready to serve traffic. This grace period can prevent Amazon EC2 Auto Scaling from marking InService instances as unhealthy and terminating them before they have time to finish initializing. This does not affect registration with the load balancer.</p><p><strong>INCORRECT:</strong> \"Create an AWS Lambda function that uses the Auto Scaling API to suspend the health check processes until the bootstrap scripts are complete\" is incorrect.</p><p>A better solution would be to suspend registration with the load balancer but that was not offered. Suspending health check processes does not meet the requirements.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "<p>A critical application runs on Amazon EC2 instances in an Auto Scaling group. A script runs on the instances every 10 seconds to check application availability. A DevOps engineer must use this information returned by the script to monitor the application and trigger an alarm if there is an issue. The data should be collected every 1-minute and the solution must be cost-effective.</p><p>Which action should the engineer take?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use a custom Amazon CloudWatch metric and configure a statistic set that aggregates data points and publishes the data every 1-minute.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use a default CloudWatch metric with a standard resolution, use a dimension to publish data sets every 1-minute.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use a custom Amazon CloudWatch metric with a high resolution and publish the data every 10 seconds.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use a default CloudWatch metric with a high resolution, aggregate multiple data points, and publish the data every 1-minute.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>You can create custom metrics to send to Amazon CloudWatch. With custom metrics you can choose standard or high resolution and you can aggregate multiple data points and publish data as a statistic set to reduce cost and increase efficiency.</p><p>Each metric is one of the following:</p><ul><li><p>Standard resolution, with data having a one-minute granularity.</p></li><li><p>High resolution, with data at a granularity of one second.</p></li></ul><p>Metrics produced by AWS services are standard resolution by default. When you publish a high-resolution metric, CloudWatch stores it with a resolution of 1 second, and you can read and retrieve it with a period of 1 second, 5 seconds, 10 seconds, 30 seconds, or any multiple of 60 seconds.</p><p>You can aggregate your data before you publish to CloudWatch. When you have multiple data points per minute, aggregating data minimizes the number of calls to <strong>put-metric-data</strong>.</p><p>Therefore, the engineer can use statistic sets to aggregate and publish the data every one minute. This is the most cost-effective solution that meets the requirements.</p><p><strong>CORRECT: </strong>\"Use a custom Amazon CloudWatch metric and configure a statistic set that aggregates data points and publishes the data every 1-minute\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use a default CloudWatch metric with a high resolution, aggregate multiple data points, and publish the data every 1-minute\" is incorrect.</p><p>You cannot use high resolution with a default CloudWatch metric and a default CloudWatch metric would not be available for the application availability data.</p><p><strong>INCORRECT:</strong> \"Use a custom Amazon CloudWatch metric with a high resolution and publish the data every 10 seconds\" is incorrect.</p><p>This would be less efficient and more costly as the put-metric-data API action would be run every 10 seconds. Fewer API calls means lower cost so aggregating into a statistic set is better and publishing every 1-minute.</p><p><strong>INCORRECT:</strong> \"Use a default CloudWatch metric with a standard resolution, use a dimension to publish data sets every 1-minute\" is incorrect.</p><p>There would not be a default metric available that uses the data returned from the application availability script. A dimension is used for organizing and clarifying what the metric data is and what it stores.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-cloudwatch/\">https://digitalcloud.training/amazon-cloudwatch/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html",
+      "https://digitalcloud.training/amazon-cloudwatch/"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "<p>An online sales application is being migrated to AWS with the application layer hosted on Amazon EC2 instances and the database layer on a PostgreSQL database. It is mandated that the application must have minimal downtime as it receives traffic 24/7 and any downtime may reduce business revenue. The application must also be fault tolerant including the data layer.</p><p>Concerns have been raised around performance of the database layer during sales events and other peak periods. The application must also be continually scanned for vulnerabilities.</p><p>Which option will meet the above requirements?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration for high availability. Use Amazon Inspector to perform automatic security assessments.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use RDS PostgreSQL for improved throughput in a multi-master configuration for high availability. Use Amazon Inspector to perform automatic security assessments.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration. Use Amazon GuardDuty to perform automatic security assessments.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration. Use Amazon Macie to perform automatic security assessments.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Database",
+    "explanation": "<p>The above question clearly mandates three requirements:</p><p>1. Performance- Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group</p><p>2. Database performance- Amazon Aurora will perform better than PostgreSQL since it provides multi-master configuration and can be scaled better than RDS on a global scale.</p><p>3. Vulnerability assessment- Amazon Inspector is the right fit for the scanning. The difference between Amazon Inspector and Amazon GuardDuty is that the former \"checks what happens when you actually get an attack\" and the latter \"analyzes the actual logs to check if a threat exists\". The purpose of Amazon Inspector is to test whether you are addressing common security risks in the target AWS.</p><p>Database categorization and selection parameters:</p><p>· If your scaling needs are for standard/ general purpose applications, RDS is the better option. You can auto-scale the database to max capacity with just a few clicks on the AWS console.</p><p>· You also have the option of Aurora Serverless that can scale up or scale down well, you have to be aware of several <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations\">restrictions that apply in the Serverless mode</a>.</p><p>· If you must handle a very high volume of read/write requests, DynamoDB is a better choice. It scales seamlessly with no impact on performance. You can run these database servers in on-demand or provisioned capacity mode.</p><p>If you have heavy write workloads and require more than five read replicas, Aurora is a better choice. Since Aurora uses shared storage for writer and readers, there is minimal replica lag. RDS allows only up to five replicas and the replication process is slower than Aurora.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-46-18-8cd4e56a381e9f1f934f96761a29cae7.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_08-46-18-8cd4e56a381e9f1f934f96761a29cae7.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration for high availability. Use Amazon Inspector to perform automatic security assessments\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use RDS PostgreSQL for improved throughput in a multi-master configuration for high availability. Use Amazon Inspector to perform automatic security assessments\" is incorrect.</p><p>Amazon Aurora is a better fit for this use case as described above.</p><p><strong>INCORRECT:</strong> \"Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration. Use Amazon Macie to perform automatic security assessments\" is incorrect.</p><p>Amazon Inspector should be used for performing the security assessments.</p><p><strong>INCORRECT:</strong> \"Create an Auto Scaling group of EC2 instances in a multi-AZ configuration. Deploy an Application Load Balancer to serve traffic to the Auto Scaling group. For the database, use Amazon Aurora for improved throughput in a multi-master configuration. Use Amazon GuardDuty to perform automatic security assessments\" is incorrect.</p><p>Amazon Inspector should be used for performing the security assessments.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/guardduty/\">https://aws.amazon.com/guardduty/</a></p><p>https://aws.amazon.com/blogs/database/is-amazon-rds-for-postgresql-or-amazon-aurora-postgresql-a-better-choice-for-me/</p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-aurora/\">https://digitalcloud.training/amazon-aurora/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations",
+      "https://aws.amazon.com/guardduty/",
+      "https://digitalcloud.training/amazon-aurora/"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "<p>An application runs on Amazon ECS instances in an Auto Scaling group behind an Application Load Balancer. An issue has occurred where instances are failing to respond to requests and are failing HTTP target group health checks.</p><p>A DevOps engineer has reviewed the configuration and noticed that the application has failed on some EC2 instances and error messages relating to memory usage have been logged in the system logs of affected instances.</p><p>The application may have a memory leak and the DevOps engineer needs to take steps to improve the resiliency of the application. Monitoring and notifications should be enabled for when issues occur.</p><p>Which combination of actions will meet these requirements? (Select TWO.)</p>",
+    "corrects": [
+      3,
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure the target group health checks to use TCP rather than HTTP and set the port to the port the application is listening on.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure an alarm in Amazon CloudWatch that monitors memory utilization and sends a message to an Amazon SNS topic when memory utilization is high.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure the Amazon CloudWatch agent on the EC2 instances. Create an alarm based on memory utilization metrics and send a message to an Amazon SNS topic when the alarm is triggered.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure the Auto Scaling group configuration to replace the EC2 instances when they fail the load balancer's health checks.</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Configure an Amazon CloudWatch alarm that automatically recovers instances based on EC2 status checks.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Compute",
+    "explanation": "<p>By default, Amazon EC2 Auto Scaling ignores the results of the Elastic Load Balancing health checks. However, you can enable these health checks for your Auto Scaling group. After you do this, when Elastic Load Balancing reports a registered instance as unhealthy, Amazon EC2 Auto Scaling marks the instance as unhealthy on its next periodic health check and replaces it. This will resolve the issue of having EC2 instances running that are out of memory and on which the application has failed.</p><p>Amazon CloudWatch does not collect memory utilization metrics by default. To get notifications the DevOps engineer can install the Amazon CloudWatch agent on the EC2 instances. The agent includes metrics such as ‘mem_active’, ‘mem_available’, and ‘mem_free’. This information can be used in a CloudWatch alarm to trigger notifications via SNS if an alarm threshold is exceeded.</p><p><strong>CORRECT: </strong>\"Configure the Auto Scaling group configuration to replace the EC2 instances when they fail the load balancer's health checks\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Configure the Amazon CloudWatch agent on the EC2 instances. Create an alarm based on memory utilization metrics and send a message to an Amazon SNS topic when the alarm is triggered\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure an Amazon CloudWatch alarm that automatically recovers instances based on EC2 status checks\" is incorrect.</p><p>EC2 instance status checks do not check the application, they check the underlying instance, software, and network connectivity. In this case, the underlying instance is healthy, but the application has failed, and this will not be detected through status checks.</p><p><strong>INCORRECT:</strong> \"Configure the target group health checks to use TCP rather than HTTP and set the port to the port the application is listening on\" is incorrect.</p><p>The application runs on port 80 and it is a web service. Changing the health check from HTTP to TCP but with the same port will not make any difference. Also, with an ALB you can only use HTTP or HTTPS for health checks, so the configuration is not even possible.</p><p><strong>INCORRECT:</strong> \"Configure an alarm in Amazon CloudWatch that monitors memory utilization and sends a message to an Amazon SNS topic when memory utilization is high\" is incorrect.</p><p>CloudWatch does collect memory utilization metrics from EC2 instances by default. You must use the CloudWatch agent.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html</a></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html",
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  }
+]

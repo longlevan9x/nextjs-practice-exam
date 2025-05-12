@@ -365,5 +365,87 @@
         "description": "AWS Certified Developer Associate Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Neal Davis"
+    },
+    {
+        "id": 12,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Stephane Maarek",
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75,
+        "domains": [
+            {
+                "name": "Domain 4: Monitoring and Logging",
+                "questionCount": 11
+            },
+            {
+                "name": "Domain 2: Configuration Management and IaC",
+                "questionCount": 16
+            },
+            {
+                "name": "Domain 1: SDLC Automation",
+                "questionCount": 16
+            },
+            {
+                "name": "Domain 6: Security and Compliance",
+                "questionCount": 9
+            },
+            {
+                "name": "Domain 3: Resilient Cloud Solutions",
+                "questionCount": 10
+            },
+            {
+                "name": "Domain 5: Incident and Event Response",
+                "questionCount": 13
+            }
+        ],
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Stephane Maarek"
+    },
+    {
+        "id": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis",
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75,
+        "domains": [
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 1
+            }
+        ],
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Neal Davis"
     }
 ]

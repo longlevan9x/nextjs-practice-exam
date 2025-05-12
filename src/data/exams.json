@@ -1983,5 +1983,349 @@
         "questionCount": 65,
         "duration": 130,
         "passScore": 72
+    },
+    {
+        "id": 56,
+        "courseId": 12,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Stephane Maarek 1",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain 4: Monitoring and Logging",
+                "questionCount": 11
+            },
+            {
+                "name": "Domain 2: Configuration Management and IaC",
+                "questionCount": 16
+            },
+            {
+                "name": "Domain 1: SDLC Automation",
+                "questionCount": 16
+            },
+            {
+                "name": "Domain 6: Security and Compliance",
+                "questionCount": 9
+            },
+            {
+                "name": "Domain 3: Resilient Cloud Solutions",
+                "questionCount": 10
+            },
+            {
+                "name": "Domain 5: Incident and Event Response",
+                "questionCount": 13
+            }
+        ],
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 57,
+        "courseId": 12,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Stephane Maarek 2 Mini",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Domain 5: Incident and Event Response",
+                "questionCount": 7
+            },
+            {
+                "name": "Domain 1: SDLC Automation",
+                "questionCount": 5
+            },
+            {
+                "name": "Domain 6: Security and Compliance",
+                "questionCount": 11
+            },
+            {
+                "name": "Domain 4: Monitoring and Logging",
+                "questionCount": 8
+            },
+            {
+                "name": "Domain 2: Configuration Management and IaC",
+                "questionCount": 9
+            },
+            {
+                "name": "Domain 3: Resilient Cloud Solutions",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 45,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 58,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 1",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 25,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 59,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 2",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 25,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 60,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 3",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Database",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 20,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 61,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 4",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Analytics",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 20,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 62,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 5",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 20,
+        "duration": 180,
+        "passScore": 75
+    },
+    {
+        "id": 63,
+        "courseId": 13,
+        "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis 6",
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 1
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 1
+            }
+        ],
+        "questionCount": 20,
+        "duration": 180,
+        "passScore": 75
     }
 ]

@@ -1,0 +1,1003 @@
+[
+  {
+    "id": 1,
+    "question": "<p>A custom application processes data associated with customer purchase activity using a multistep sequential action. Each step completes within 5 minutes. If a single step fails the entire process must be restarted. The current solution uses Amazon EC2 instances in an Auto Scaling group.</p><p>The company wants to update the application architecture so that if a single step fails only that step should be reprocessed.</p><p>What is the MOST operationally efficient solution that meets these requirements?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create a web application to pass the data to AWS Step Functions. Decouple the processing into Step Functions tasks and AWS Lambda functions.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create a web application to pass the data to separate Amazon SQS queues for each step. Process each step by using separate Lambda functions with the SQS queues.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create a web application to write the data to an Amazon S3 bucket. Use S3 Event Notifications to publish to separate SQS queues for each step. Use EC2 instances to process the data in each SQS queue.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create a REST API in Amazon API Gateway and configure the API as the endpoint for a web application to pass the data for processing. Use a single AWS Lambda function to process the data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Application Integration",
+    "explanation": "<p>AWS Step Functions is the ideal solution for rearchitecting this application. With Step Functions you can configure separate tasks with separate Lambda functions for processing each step of the application. The application logic can be configured as part of the state machine. If a single step fails the logic can require that only that step must rerun to reprocess the data.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-29-43-3ff9d4d6bdb94da71f59bd936642bd8b.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-29-43-3ff9d4d6bdb94da71f59bd936642bd8b.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Create a web application to pass the data to AWS Step Functions. Decouple the processing into Step Functions tasks and AWS Lambda functions\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create a web application to pass the data to separate Amazon SQS queues for each step. Process each step by using separate Lambda functions with the SQS queues\" is incorrect.</p><p>This is more operationally complex and there is no overarching logic to orchestrate the different components of the application and coordinate the reprocessing of failed steps.</p><p><strong>INCORRECT:</strong> \"Create a web application to write the data to an Amazon S3 bucket. Use S3 Event Notifications to publish to separate SQS queues for each step. Use EC2 instances to process the data in each SQS queue\" is incorrect.</p><p>There is no way that S3 can know which queue to place the data in as this answer states that all data is written to the same S3 bucket. This is also operationally complex and more expensive than using Lambda.</p><p><strong>INCORRECT:</strong> \"Create a REST API in Amazon API Gateway and configure the API as the endpoint for a web application to pass the data for processing. Use a single AWS Lambda function to process the data\" is incorrect.</p><p>Using a single Lambda function will not assist with decoupling the application so only a single step must be rerun if processing fails.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html\">https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-application-integration-services/\">https://digitalcloud.training/aws-application-integration-services/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html",
+      "https://digitalcloud.training/aws-application-integration-services/"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "<p>A DevOps manager requires a disaster recovery (DR) solution for a workload deployed on Amazon EC2 instances in an Amazon VPC within the us-east-1 Region. The DR solution should enable data replication to a staging area subnet in another AWS Region. The DR solution minimize operational overhead and enable fast failover and failback.</p><p>Which solution meets these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Resource Access Manager (RAM) to share the VPC across Regions and configure AWS DataSync to synchronize data between source and target systems.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Elastic Disaster Recovery to replicate data to a staging area subnet in another Region using the replication agent installed on the EC2 instance.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create a resource group for the EC2 instances and configure DR protection using AWS Resilience Hub. Configure RPO/RTO settings and enable automated recovery.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Backup to enable cross-Region snapshots for the EC2 instances. Use AWS Fault Injection Simulator to enable automated recovery.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>AWS Elastic Disaster Recovery (AWS DRS) minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery.</p><p>You can increase IT resilience when you use AWS Elastic Disaster Recovery to replicate on-premises or cloud-based applications running on supported operating systems. Use the AWS Management Console to configure replication and launch settings, monitor data replication, and launch instances for drills or recovery.</p><p>Set up AWS Elastic Disaster Recovery on your source servers to initiate secure data replication. Your data is replicated to a staging area subnet in your AWS account, in the AWS Region you select. The staging area design reduces costs by using affordable storage and minimal compute resources to maintain ongoing replication.</p><p><strong>CORRECT: </strong>\"Use AWS Elastic Disaster Recovery to replicate data to a staging area subnet in another Region using the replication agent installed on the EC2 instance\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Resource Access Manager (RAM) to share the VPC across Regions and configure AWS DataSync to synchronize data between source and target systems\" is incorrect.</p><p>AWS RAM cannot be used to share VPCs across Regions. Also, DataSync is not suitable for synchronizing the application data on Amazon EC2 instances.</p><p><strong>INCORRECT:</strong> \"Create a resource group for the EC2 instances and configure DR protection using AWS Resilience Hub. Configure RPO/RTO settings and enable automated recovery\" is incorrect.</p><p>AWS Resilience Hub provides a central place to define, validate, and track the resilience of applications on AWS. It cannot be used to configure DR protection or enable automated recovery.</p><p><strong>INCORRECT:</strong> \"Use AWS Backup to enable cross-Region snapshots for the EC2 instances. Use AWS Fault Injection Simulator to enable automated recovery\" is incorrect.</p><p>You can use AWS Backup to enable cross-Region backups of EC2 instances. However, AWS Fault Injection Simulator is not used for automated recovery, it is used for running fault injection experiments to improve an application’s performance, observability, and resiliency.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html\">https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "<p>An application runs on Amazon EC2 instances and calls an AWS Lambda function to process certain operations. A DevOps engineer needs to update the Lambda code without needing to modify the application on EC2. The updates should be initially tested with a subset of the traffic and rollback must be possible if issues occur. The solution must be operationally efficient.</p><p>Which actions should the DevOps engineer take?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an additional function with the new code. Create Amazon Route 53 weighted records. Configure the records to direct 90% of the traffic to the original function and 10% to the new function. Modify the application on EC2 to use the DNS record configured in Route 53.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create multiple Lambda layers for different versions of the code. Add the updated code to a new layer using a .zip archive. Create an alias that points to the layer containing the original code. Add the new layer to the alias and configure a weight that directs 10% of traffic to the new layer. Modify the application on EC2 to use the alias endpoint address.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an alias that points to the current version of the function. Publish an additional version with the new code, add the version to the alias, and configure a weight that directs 10% of traffic to the new version. Modify the application on EC2 to use the alias endpoint address.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an alias that points to the current version of the function. Create a second function with the updated code and create an alias for that function that uses the same alias name. Configure the provisioned concurrency for the second function so it only serves 10% of requests. Modify the application on EC2 to use the alias endpoint address.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>You can create one or more aliases for your Lambda function. A Lambda alias is like a pointer to a specific function version. Users can access the function version using the alias Amazon Resource Name (ARN). You can add multiple versions of a function to an alias and configure a weighting to direct percentages of traffic to one version or another.</p><p>This enables a blue/green deployment in which new code updates can be tested with a subset of the traffic. It is easy to then move to the new function or roll back to the original function by simply updating the alias configuration.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-06-30-d1d011076d05223238260eb865eff3ba.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-06-30-d1d011076d05223238260eb865eff3ba.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Create an alias that points to the current version of the function. Publish an additional version with the new code, add the version to the alias, and configure a weight that directs 10% of traffic to the new version. Modify the application on EC2 to use the alias endpoint address\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an additional function with the new code. Create Amazon Route 53 weighted records. Configure the records to direct 90% of the traffic to the original function and 10% to the new function. Modify the application on EC2 to use the DNS record configured in Route 53\" is incorrect.</p><p>Though this is indeed possible, it would be better to use the built-in features of AWS Lambda rather than external services. It is also much less operationally efficient to use multiple functions rather than versioning.</p><p><strong>INCORRECT:</strong> \"Create an alias that points to the current version of the function. Create a second function with the updated code and create an alias for that function that uses the same alias name. Configure the provisioned concurrency for the second function so it only serves 10% of requests. Modify the application on EC2 to use the alias endpoint address\" is incorrect.</p><p>This is not how aliases work; they are created within a function and point to separate versions of that function. Even if you create aliases with the same name on different functions they will still have a different ARN as the function name is included. It is also not possible to use provisioned concurrency to control weightings of traffic in this manner.</p><p><strong>INCORRECT:</strong> \"Create multiple Lambda layers for different versions of the code. Add the updated code to a new layer using a .zip archive. Create an alias that points to the layer containing the original code. Add the new layer to the alias and configure a weight that directs 10% of traffic to the new layer. Modify the application on EC2 to use the alias endpoint address\" is incorrect.</p><p>A Lambda <em>layer</em> is a .zip file archive that can contain additional code or other content. A layer can contain libraries, a custom runtime, data, or configuration files. In this case, versions should be used rather than layers for updating the code. Aliases also point to versions, not layers.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-lambda/\">https://digitalcloud.training/aws-lambda/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html",
+      "https://digitalcloud.training/aws-lambda/"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "<p>A financial company has applications hosted in multiple AWS accounts which are managed by AWS organizations. A security audit was conducted to address any potential security breaches and implement best practices. The security audit report recommended that all security related logging and security findings are collect in a centralized security account.</p><p>How can this be achieved?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon GuardDuty in each account to detect the attacks on EC2 instances. Create a CloudWatch rule in the GuardDuty administrator account to detect these findings. Create an automation chain from the CloudWatch rule to trigger Kinesis Data Streams to send findings to a designated S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon GuardDuty in each organization to detect the attacks on EC2 instances. Specify an organization as the GuardDuty administrator. Create a CloudWatch rule in the GuardDuty administrator account to detect these findings. Create an automation chain from the CloudWatch rule to trigger Kinesis Data Firehose to send findings to a designated S3 bucket.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon Inspector in each organization to detect the attacks on EC2 instances. Specify an organization as the Inspector administrator. Create a CloudWatch rule in the Inspector administrator account to detect these findings. Create an automation chain from the CloudWatch rule to trigger Kinesis Data Firehose to send findings to a designated S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Macie in each organization to detect the attacks on EC2 instances. Specify an organization as the Macie administrator. Create a CloudWatch rule in the Macie administrator account to detect these findings. Create an automation chain from the CloudWatch rule to trigger Kinesis Data Firehose to send findings to a designated S3 bucket.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>GuardDuty analyzes and processes VPC flow log, AWS CloudTrail event log, and DNS log data sources. You don’t need to manually manage these data sources because the data is automatically leveraged and analyzed when you activate GuardDuty.</p><p>For example, GuardDuty consumes VPC Flow Log events directly from the VPC Flow Logs feature through an independent and duplicative stream of flow logs. As a result, you don’t incur any operational burden on existing workloads.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-10-01-c38c34b5c636f2d9f839cf769fa2e58c.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-10-01-c38c34b5c636f2d9f839cf769fa2e58c.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "<p>An application is deployed on Amazon EC2 instances in an Auto Scaling group. The application includes a process that sometimes fails causing the application to return an error. Restarting the process resolves the issue. The DevOps team are investigating the issue. While the investigation is ongoing an engineer needs a method of identifying the issue and quickly remediating it without affecting the capacity of the Auto Scaling group.</p><p>Which approach meets this requirement in the fastest possible time?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Install the Amazon CloudWatch agent on the EC2 instances and use the procstat plugin to monitor the application process and send metrics to CloudWatch. Use Systems Manager Run Command to restart any processes that are failed.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon EventBridge to run an event every 10 minutes. Configure the event to run an AWS Lambda function that takes instances out of service one-by-one, restarts them, and then places them back in service.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Run a regular cron job to execute commands and check if the process is running. If the process returns an error, run the AWS CLI set-instance-health command to set the health state of the specified instance to Unhealthy.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon EventBridge to run an AWS Lambda function that checks if the process is running. If the process returns an error, run the AWS CLI set-instance-health command to set the health state of the specified instance to Unhealthy.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>The Amazon CloudWatch agent procstat plugin continuously watches specified processes and reports their metrics to Amazon CloudWatch. After the data is in Amazon CloudWatch, you can associate alarms to trigger actions like notifying teams or remediations like restarting the processes, resizing the instances, and so on. In this case AWS Systems Manager Run Command can then be used to restart any processes that are failed.</p><p>This solution will resolve the issue in the fastest time as metrics can be reported on a 1-minute timeframe and restarting the process is much quicker than restarting the instance or terminating it and launching a replacement. It also does not affect the capacity of the Auto Scaling group.</p><p><strong>CORRECT: </strong>\"Install the Amazon CloudWatch agent on the EC2 instances and use the procstat plugin to monitor the application process and send metrics to CloudWatch. Use Systems Manager Run Command to restart any processes that are failed\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Run a regular cron job to execute commands and check if the process is running. If the process returns an error, run the AWS CLI set-instance-health command to set the health state of the specified instance to Unhealthy\" is incorrect.</p><p>This will cause the instance to be terminated and a new instance will be launched. This could be slower than creating an automated process to restart the affected process. This also affects the capacity of the Auto Scaling group while the new instances are launched and brought into service.</p><p><strong>INCORRECT:</strong> \"Use Amazon EventBridge to run an AWS Lambda function that checks if the process is running. If the process returns an error, run the AWS CLI set-instance-health command to set the health state of the specified instance to Unhealthy\" is incorrect.</p><p>This is like the previous answer and has the same issues though it is potentially better as it uses AWS services to automate the process.</p><p><strong>INCORRECT:</strong> \"Use Amazon EventBridge to run an event every 10 minutes. Configure the event to run an AWS Lambda function that takes instances out of service one-by-one, restarts them, and then places them back in service\" is incorrect.</p><p>This may be the slowest of the options presented in terms of identification of the issue and it would be better to restart the process rather than restarting the instances.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/blogs/mt/detecting-remediating-process-issues-on-ec2-instances-using-amazon-cloudwatch-aws-systems-manager/\">https://aws.amazon.com/blogs/mt/detecting-remediating-process-issues-on-ec2-instances-using-amazon-cloudwatch-aws-systems-manager/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-systems-manager/\">https://digitalcloud.training/aws-systems-manager/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/blogs/mt/detecting-remediating-process-issues-on-ec2-instances-using-amazon-cloudwatch-aws-systems-manager/",
+      "https://digitalcloud.training/aws-systems-manager/"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "<p>A retail company uses a Spring boot web application running in an Auto Scaling group and behind an Application Load Balancer. Whenever traffic spikes occur, there have been inconsistent errors when the application auto scales. The following error message was generated:</p><p><em>“Instance failed to complete user's Lifecycle Action: Lifecycle Action with token&lt;token-Id&gt; was abandoned: Heartbeat Timeout”.</em></p><p>Which actions should a DevOps engineer take to collect logs for all affected instances and store them for later analysis? (Select THREE.)</p>",
+    "corrects": [
+      3,
+      4,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Update the health checks on the Auto Scaling group to use the correct port and protocol for the application.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Analyze the logs by loading them into an Amazon EMR cluster.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Analyze the logs directly in the Amazon S3 bucket using Amazon Athena.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an Auto Scaling Group Lifecycle Hook for the terminate action. Create an Amazon EventBridge rule and invoke a Lambda function that uses SSM Run Command to extract the application logs and store them in S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Update the deployment group as the AWS CodeDeploy limits have been reached.</p>",
+        "correct": true
+      },
+      {
+        "id": 6,
+        "answer": "<p>Enable Access Logs at the Target Group level and configure an Amazon S3 bucket as the destination.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Compute",
+    "explanation": "<p>The lifecycle-action-token is provided by Auto Scaling in the message sent as part of processing the lifecycle hook. You need to get the token from the original message.</p><p>The error message reported usually indicates one of the following:</p><ul><li><p>The maximum number of concurrent AWS CodeDeploy deployments associated with an AWS account was reached.</p></li><li><p>The Auto Scaling group tried to launch too many EC2 instances too quickly. The API calls to RecordLifecycleActionHeartbeat or CompleteLifecycleAction for each new instance were throttled.</p></li><li><p>An application in CodeDeploy was deleted before its associated deployment groups were updated or deleted.</p></li></ul><p>Therefore, the engineer can update the deployment group is limits have been reached and create a solution for extracting the application logs for later analysis. This solution can use Amazon EventBridge, Lambda and SSM Run Command with S3 as the destination.</p><p>Amazon Athena allows for running SQL queries against data in an Amazon S3 bucket. The engineer can then perform analysis to identify there are any application issues that must be fixed.</p><p><strong>CORRECT: \"</strong>Update the deployment group as the AWS CodeDeploy limits have been reached<strong>\" is a correct answer (as explained above.)</strong></p><p><strong>CORRECT: \"</strong>Create an Auto Scaling Group Lifecycle Hook for the terminate action. Create an Amazon EventBridge rule and invoke a Lambda function that uses SSM Run Command to extract the application logs and store them in S3<strong>\" is also a correct answer (as explained above.)</strong></p><p><strong>CORRECT: \"</strong>Analyze the logs directly in the Amazon S3 bucket using Amazon Athena<strong>\" is also a correct answer (as explained above.)</strong></p><p><strong>INCORRECT: \"</strong>Enable Access Logs at the Target Group level and configure an Amazon S3 bucket as the destination<strong>\" is incorrect.</strong></p><p><strong>The access logs will not provide the necessary information to troubleshoot and analyze the issues that are occurring. Access logs record information about the requests from clients.</strong></p><p><strong>INCORRECT: \"</strong>Analyze the logs by loading them into an Amazon EMR cluster<strong>\" is incorrect.</strong></p><p><strong>This won’t be needed as this is not a map reduce use case and data can be analyzed by EMR in Amazon S3.</strong></p><p><strong>INCORRECT: \"</strong>Update the health checks on the Auto Scaling group to use the correct port and protocol for the application<strong>\" is incorrect.</strong></p><p><strong>There is no evidence that health checks are misconfigured from the errors that were generated. Auto scaling must be using the health checks as it is managing to auto scale and bring instances into service.</strong></p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-reboot\">https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-reboot</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-reboot",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>A custom application generates events and produces data that must be processed for each event. An event-driven solution is required to process the events and save the output to a serverless key/value store.</p><p>Which actions should a DevOps engineer take?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure the application to submit the event data to an Amazon S3 bucket. Create an Amazon EventBridge rule that reacts to state changes in S3 and triggers Amazon Athena to process the data and save the output to an Amazon DynamoDB table.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure the application to submit the event data to an SQS queue. Configure a trigger for an AWS Lambda function and configure the function to process the data and save the output to an Amazon ElastiCache cluster.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure the application to submit the event data to an SNS topic. Subscribe an AWS Lambda function to the topic and configure the function to process the data and save the output to an Amazon DynamoDB table.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure the application to submit the event data to an Amazon Kinesis Data Firehose delivery stream with an Amazon S3 destination. Configure an event notification for an AWS Lambda function to process the data and save the output to an Amazon RDS database.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Application Integration",
+    "explanation": "<p>To create an event-driven architecture for this requirement the engineer can configure the application to submit the event data to an SNS topic. The Lambda function can be subscribed to the topic and will process the data and then save the results to Amazon DynamoDB which is a key/value database.</p><p><strong>CORRECT: </strong>\"Configure the application to submit the event data to an SNS topic. Subscribe an AWS Lambda function to the topic and configure the function to process the data and save the output to an Amazon DynamoDB table\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure the application to submit the event data to an Amazon S3 bucket. Create an Amazon EventBridge rule that reacts to state changes in S3 and triggers Amazon Athena to process the data and save the output to an Amazon DynamoDB table\" is incorrect.</p><p>An event notification rule can be created on S3 rather than using EventBridge. However, you cannot use Athena to process data as it is an analytics service, not a compute service.</p><p><strong>INCORRECT:</strong> \"Configure the application to submit the event data to an Amazon Kinesis Data Firehose delivery stream with an Amazon S3 destination. Configure an event notification for an AWS Lambda function to process the data and save the output to an Amazon RDS database\" is incorrect.</p><p>Amazon RDS is not a serverless key/value store. It is a relational database that uses Amazon EC2 instances so it is not suitable for this requirement.</p><p><strong>INCORRECT:</strong> \"Configure the application to submit the event data to an SQS queue. Configure a trigger for an AWS Lambda function and configure the function to process the data and save the output to an Amazon ElastiCache cluster\" is incorrect.</p><p>Amazon ElastiCache is a key/value store, but it is not a serverless database; it uses Amazon EC2 instances, so it is not suitable for this requirement.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html\">https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-application-integration-services/\">https://digitalcloud.training/aws-application-integration-services/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html",
+      "https://digitalcloud.training/aws-application-integration-services/"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "<p>A DevOps engineer needs to enable cross-Region replication for all the objects in an Amazon S3 bucket. The destination bucket will also be created in a separate AWS account. The objects must be automatically replicated between the source and target buckets across Regions and accounts.</p><p>Which combination of actions should be performed to enable this replication? (Select THREE.)</p>",
+    "corrects": [
+      3,
+      4,
+      6
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create a replication rule in the target bucket to enable replication for all the objects in the source bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Add statements to the source bucket policy allowing the replication IAM role to replicate objects.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Add statements to the target bucket policy allowing the replication IAM role to replicate objects.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create a replication rule in the source bucket to enable replication for all the objects in the bucket.</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Create an IAM role in the target account that has permissions to the source and destination buckets.</p>",
+        "correct": false
+      },
+      {
+        "id": 6,
+        "answer": "<p>Create an IAM role in the source account that has permissions to the source and destination buckets.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Storage",
+    "explanation": "<p>The correct configuration for this solution is to create the IAM role in the source AWS account and apply permissions to the source and target buckets. Then, the engineer must add statements to the target bucket policy that allow the replication IAM role in the source account to replicate the objects into the target bucket. Finally, the engineer must create the replication rule in the source bucket to enable replication for all objects.</p><p><strong>CORRECT: </strong>\"Create an IAM role in the source account that has permissions to the source and destination buckets\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Add statements to the target bucket policy allowing the replication IAM role to replicate objects\" is also a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Create a replication rule in the source bucket to enable replication for all the objects in the bucket\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an IAM role in the target account that has permissions to the source and destination buckets\" is incorrect – please refer to the correct process which is provided above.</p><p><strong>INCORRECT:</strong> \"Add statements to the source bucket policy allowing the replication IAM role to replicate objects\" is incorrect – please refer to the correct process which is provided above.</p><p><strong>INCORRECT:</strong> \"Create a replication rule in the target bucket to enable replication for all the objects in the source bucket\" is incorrect – please refer to the correct process which is provided above.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-walkthrough-2.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-walkthrough-2.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-s3-and-glacier/\">https://digitalcloud.training/amazon-s3-and-glacier/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-walkthrough-2.html",
+      "https://digitalcloud.training/amazon-s3-and-glacier/"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "<p>A DevOps engineer is developing an application that calls AWS Lambda functions. The functions must connect to a database and credentials must not be stored in source code. The credentials for connection to the database must be regularly rotated to meet security policy requirements.</p><p>What should a DevOps engineer do to meet these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Store the credentials in AWS CloudHSM. Associate the Lambda function with a role that can retrieve the credentials from CloudHSM using the key ID.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Store the credentials in AWS Secrets Manager. Associate the Lambda function with a role that can retrieve the credentials from Secrets Manager given using the secret ID.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Move the database credentials to an environment variable associated with the Lambda function. Retrieve the credentials from the environment variable upon execution.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Store the credentials in AWS Key Management Service (AWS KMS). Associate the Lambda function with a role that can retrieve the credentials from AWS KMS using the key ID.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>AWS Secrets Manager is ideal for this scenario as it can be used to securely store the secrets. Automatic rotation can be enabled for several AWS databases and can be configured through custom Lambda functions for other databases.</p><p><strong>CORRECT: </strong>\"Store the credentials in AWS Secrets Manager. Associate the Lambda function with a role that can retrieve the credentials from Secrets Manager given using the secret ID\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Store the credentials in AWS CloudHSM. Associate the Lambda function with a role that can retrieve the credentials from CloudHSM using the key ID\" is incorrect.</p><p>CloudHSM is used for storing encryption keys, not connection credentials.</p><p><strong>INCORRECT:</strong> \"Move the database credentials to an environment variable associated with the Lambda function. Retrieve the credentials from the environment variable upon execution\" is incorrect.</p><p>This is not a secure method of storing the credentials and Secrets Manager is more secure.</p><p><strong>INCORRECT:</strong> \"Store the credentials in AWS Key Management Service (AWS KMS). Associate the Lambda function with a role that can retrieve the credentials from AWS KMS using the key ID\" is incorrect.</p><p>KMS is used for storing encryption keys, not connection credentials.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/secrets-manager/\">https://aws.amazon.com/secrets-manager/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/secrets-manager/"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "<p>A company requires an extremely high performance in-memory database for an application. The database used should store data durably across multiple availability zones. The application requires that the database support strong consistency and can scale seamlessly to many terabytes in size.</p><p>Which database should the company use for this application?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon MemoryDB for Redis.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon ElastiCache for Memcached.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon Managed Grafana.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon ElastiCache for Redis.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Database",
+    "explanation": "<p>Amazon MemoryDB for Redis is a Redis-compatible, durable, in-memory database service that delivers ultra-fast performance. It is purpose-built for modern applications with microservices architectures.</p><p>Amazon MemoryDB for Redis vs ElastiCache:</p><p>• Use ElastiCache for caching DB queries.</p><p>• Use MemoryDB for a full DB solution combining DB and cache.</p><p>• MemoryDB offers higher performance with lower latency .</p><p>• MemoryDB offers strong consistency for primary nodes and eventual consistency for replica nodes.</p><p>• With ElastiCache there can be some inconsistency and latency depending on the engine and caching strategy.</p><p>For this scenario the requirement is for a full DB solution, not a caching solution, so MemoryDB for Redis is the best choice.</p><p><strong>CORRECT: </strong>\"Use Amazon MemoryDB for Redis\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon ElastiCache for Redis\" is incorrect as explained above.</p><p><strong>INCORRECT:</strong> \"Use Amazon ElastiCache for Memcached\" is incorrect as explained above.</p><p><strong>INCORRECT:</strong> \"Use Amazon Managed Grafana\" is incorrect. This service is not a database service, it is used for data visualization of operational metrics, logs, and traces.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/memorydb/features/\">https://aws.amazon.com/memorydb/features/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/memorydb/features/"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "<p>A company allows DevOps engineers to assume an administrator IAM role when they need more permissions within an AWS account. The security team would like to be able to track usage of the administrator role and receive a notification when the administrator IAM role is assumed.</p><p>How should this be accomplished?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure Amazon GuardDuty to monitor the account and alert on any anomalous usage of the administrator IAM role. When detected, publish a notification to an AWS CloudTrail trail.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure AWS Config to save logs to an Amazon S3 bucket. Use Amazon Athena to query the logs and look for AWS STS sign-in events. Publish a notification to Amazon Kinesis Firehose if the administrator IAM role is assumed.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an Amazon EventBridge events rule with an AWS API call via CloudTrail event pattern that triggers an AWS Lambda function that publishes a notification to an Amazon SNS topic if the administrator IAM role is assumed.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an Amazon EventBridge events rule with an AWS Management Console sign-in events event pattern that triggers an AWS Lambda function that publishes a notification to an Amazon SNS topic if the administrator IAM role is assumed.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>You can use Amazon EventBridge rules to react to API calls made by an AWS service that are recorded by AWS CloudTrail. The “AWS API call via CloudTrail” event pattern can be configured to specifically trigger when the API calls are made to assume the administrator IAM role.</p><p>Then, an AWS Lambda function can be triggered that processes the information received in the event and publishes this information to an Amazon SNS topic. The security team will be subscribers to the SNS topic and so will receive the notifications in their email inbox.</p><p><strong>CORRECT: </strong>\"Create an Amazon EventBridge events rule with an AWS API call via CloudTrail event pattern that triggers an AWS Lambda function that publishes a notification to an Amazon SNS topic if the administrator IAM role is assumed\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an Amazon EventBridge events rule with an AWS Management Console sign-in events event pattern that triggers an AWS Lambda function that publishes a notification to an Amazon SNS topic if the administrator IAM role is assumed\" is incorrect.</p><p>Management console sign-in events are different to assuming a role. In this case the users will be signing in with their own accounts and then assuming the administrator IAM role so this would not detect the assuming of the role.</p><p><strong>INCORRECT:</strong> \"Configure AWS Config to save logs to an Amazon S3 bucket. Use Amazon Athena to query the logs and look for AWS STS sign-in events. Publish a notification to Amazon Kinesis Firehose if the administrator IAM role is assumed\" is incorrect.</p><p>AWS Config does not log STS sign-in events. These would be logged as API calls in the AWS CloudTrail service and would need to be picked up there. There is also no mechanism for alerting that would work here as Firehose would simply load the data to a datastore and would not notify anyone.</p><p><strong>INCORRECT:</strong> \"Configure Amazon GuardDuty to monitor the account and alert on any anomalous usage of the administrator IAM role. When detected, publish a notification to an AWS CloudTrail trail\" is incorrect.</p><p>GuardDuty cannot be configured to alert when a specific role is assumed. Also, you cannot publish a notification to an AWS CloudTrail trail, use SNS instead.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-cloudtrail/\">https://digitalcloud.training/aws-cloudtrail/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-CloudTrail-Rule.html",
+      "https://digitalcloud.training/aws-cloudtrail/"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "<p>An application runs on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. When bringing new EC2 instances online, the application must be tested before traffic can be directed to the instances.</p><p>Which Auto Scaling process should a DevOps engineer suspend to allow testing to be performed without removing the instances from the Auto Scaling group?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Suspend the process AddToLoadBalancer.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Suspend the process AZ Rebalance.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Suspend the process Health Check.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Suspend the process Replace Unhealthy.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>Auto Scaling processes can be suspended and then resumed. You might want to do this, for example, so that you can investigate a configuration issue that is causing the process to fail, or to prevent Amazon EC2 Auto Scaling from marking instances unhealthy and replacing them while you are making changes to your Auto Scaling group.</p><p>In this scenario the engineer wants to test the instances before directing traffic to them whilst keeping them in the auto scaling group. The best process to suspend in this case is AddToLoadBalancer.</p><p>This will prevent the instances from being added to the load balancer so no traffic will be directed to them.</p><p><strong>CORRECT: </strong>\"Suspend the process AddToLoadBalancer\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Suspend the process Health Check\" is incorrect.</p><p>This will stop all health checks from running. This may not have the desired effect as instances will not be marked as healthy.</p><p><strong>INCORRECT:</strong> \"Suspend the process Replace Unhealthy\" is incorrect.</p><p>This is useful if you want to ensure that unhealthy instances are not terminated and replaced.</p><p><strong>INCORRECT:</strong> \"Suspend the process AZ Rebalance\" is incorrect.</p><p>This would be used to suspend rebalancing of instances across availability zones.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html</a></p><p><strong>Save time with our exam-specific cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "<p>A company has an application that uses Amazon Cognito user pools as an identity provider. The company must secure access to user records. The company has set up multi-factor authentication (MFA). The company also wants to send a login activity notification by email every time a user logs in.</p><p>What is the MOST operationally efficient solution that meets this requirement?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure Amazon Cognito to stream all logs to Amazon Kinesis Data Firehose. Create an AWS Lambda function to process the streamed logs and to send the email notification based on the login status of each user.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an AWS Lambda function that uses Amazon SES to send the email notification. Create an Amazon CloudWatch Logs log subscription filter to invoke the function based on the login status.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an AWS Lambda function that uses Amazon SES to send the email notification. Add an Amazon API Gateway API to invoke the function. Call the API from the client side when login confirmation is received.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an AWS Lambda function that uses Amazon SES to send the email notification. Add an Amazon Cognito post authentication Lambda trigger for the function.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>Amazon Cognito can invoke a trigger after signing in a user such as triggering an AWS Lambda function. Cognito will pass certain parameters to the Lambda function and the Lambda function can then trigger Amazon SES to send an email notification.</p><p>These are the parameters that Amazon Cognito passes to this Lambda function along with the event information in the common parameters.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-03-05_23-23-34-5d88ec6b26463c78dd328dc8e674ea16.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-03-05_23-23-34-5d88ec6b26463c78dd328dc8e674ea16.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Create an AWS Lambda function that uses Amazon SES to send the email notification. Add an Amazon Cognito post authentication Lambda trigger for the function\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an AWS Lambda function that uses Amazon SES to send the email notification. Add an Amazon API Gateway API to invoke the function. Call the API from the client side when login confirmation is received\" is incorrect.</p><p>The API is not suitable and not necessary for this purpose when Cognito can directly trigger Lambda which has the logic to send the necessary notification.</p><p><strong>INCORRECT:</strong> \"Create an AWS Lambda function that uses Amazon SES to send the email notification. Create an Amazon CloudWatch Logs log subscription filter to invoke the function based on the login status\" is incorrect.</p><p>As above, this is unnecessary as Cognito can trigger the Lambda function directly.</p><p><strong>INCORRECT:</strong> \"Configure Amazon Cognito to stream all logs to Amazon Kinesis Data Firehose. Create an AWS Lambda function to process the streamed logs and to send the email notification based on the login status of each user\" is incorrect.</p><p>As above, this is unnecessary as Cognito can trigger the Lambda function directly.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html#cognito-user-pools-lambda-trigger-syntax-post-auth\">https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html#cognito-user-pools-lambda-trigger-syntax-post-auth</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html#cognito-user-pools-lambda-trigger-syntax-post-auth"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "<p>A retail company has hired a DevOps engineer to provide consultancy services. The company runs Oracle and PostgreSQL services on Amazon RDS for storing large quantities of data generated by manufacturing equipment.</p><p>The business analytics team has been running ad-hoc queries on these databases to prepare daily reports for senior management. The engineering team has observed that the database performance takes a hit whenever these reports are run by the analytics team.</p><p>To facilitate the business analytics reporting, the engineering team now wants to replicate this data with high availability and consolidate these databases into a petabyte-scale data warehouse by streaming data to Amazon Redshift.</p><p>Which solution should the DevOps engineer recommend to achieve these requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Kinesis Data Streams to replicate the data from the databases into Amazon Redshift.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Glue to replicate the data from the databases into Amazon Redshift.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Database Migration Service to replicate the data from the databases into Amazon Redshift.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon EMR to replicate the data from the databases into Amazon Redshift.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Database",
+    "explanation": "<p>The AWS Database Migration Service (DMS) helps migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. With AWS DMS the data can be continuously replicated with high availability and the multiple databases can be consolidated into a petabyte-scale data warehouse.</p><p>The Amazon Redshift cluster must be in the same AWS account and the same AWS Region as the replication instance. During a database migration to Amazon Redshift, AWS DMS first moves data to an Amazon S3 bucket. When the files reside in an Amazon S3 bucket, AWS DMS then transfers them to the proper tables in the Amazon Redshift data warehouse. AWS DMS creates the S3 bucket in the same AWS Region as the Amazon Redshift database.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-02-48-34cbd839e896555130df72dfa20efc35.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-02-48-34cbd839e896555130df72dfa20efc35.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>“Use AWS Database Migration Service to replicate the data from the databases into Amazon Redshift\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Glue to replicate the data from the databases into Amazon Redshift\" is incorrect.</p><p>AWS Glue is an event-driven, serverless computing platform provided by Amazon as a part of Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.</p><p><strong>INCORRECT:</strong> \"Use Amazon EMR to replicate the data from the databases into Amazon Redshift\" is incorrect.</p><p>Amazon EMR (previously called Amazon Elastic MapReduce) is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark, on AWS to process and analyze vast amounts of data.</p><p><strong>INCORRECT:</strong> \"Use Amazon Kinesis Data Streams to replicate the data from the databases into Amazon Redshift\" is incorrect.</p><p>Amazon Kinesis Data Streams is a fully managed, serverless data streaming service that stores and ingests various streaming data in real time at any scale. It is not suitable for migrating data between databases.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/dms/\">https://aws.amazon.com/dms/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-migration-services/\">https://digitalcloud.training/aws-migration-services/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/dms/",
+      "https://digitalcloud.training/aws-migration-services/"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "<p>To increase security, a company plans to use AWS Systems Manager Session Manager to managed Amazon EC2 instances rather than SSH. The connectivity to Session Manager should also use a private network connection.</p><p>Which configuration actions should be taken to implement this? (Select TWO.)</p>",
+    "corrects": [
+      4,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Allow inbound access to TCP port 22 in all associated EC2 security groups from the VPC CIDR range.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Attach an Elastic IP to a NAT gateway in a public subnet and specify a route to the NAT gateway in the private subnet route tables.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Establish private Session Manager connectivity using the instance IDs of EC2 instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create a VPC endpoint for Systems Manager in the Region where the instances are running.</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Attach an IAM instance profile to the EC2 instances that provides the necessary permissions for Systems Manager.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>Systems Manager Session Manager enables secure remote access to EC2 instances without the need to open ports for SSH or create bastion hosts. You can connect to instances through Session Manager privately by establishing a VPC endpoint in your VPC. This ensures that all connectivity takes place using private addresses.</p><p>The EC2 instances must have the Systems Manager agent running and they must have permissions to be able to communicate with the Systems Manager service. An instance profile can be easily attached to provide these permissions to instances.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-59-28-dac1a7fafdbe3507d5ca4b1fe07ed213.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-59-28-dac1a7fafdbe3507d5ca4b1fe07ed213.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Attach an IAM instance profile to the EC2 instances that provides the necessary permissions for Systems Manager\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Create a VPC endpoint for Systems Manager in the Region where the instances are running\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Allow inbound access to TCP port 22 in all associated EC2 security groups from the VPC CIDR range\" is incorrect.</p><p>Port 22 is used by the SSH protocol and is not required by Systems Manager Session Manager.</p><p><strong>INCORRECT:</strong> \"Attach an Elastic IP to a NAT gateway in a public subnet and specify a route to the NAT gateway in the private subnet route tables\" is incorrect.</p><p>You cannot connect to EC2 instances via a NAT gateway. These gateways are used for outbound (internet) connectivity from the EC2 instances in private subnets.</p><p><strong>INCORRECT:</strong> \"Establish private Session Manager connectivity using the instance IDs of EC2 instances\" is incorrect.</p><p>You cannot connect privately to instances simply by connecting via the instance ID. You must establish a VPC endpoint and attach the necessary permissions to instances.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/ec2-systems-manager-vpc-endpoints/\">https://aws.amazon.com/premiumsupport/knowledge-center/ec2-systems-manager-vpc-endpoints/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-systems-manager/\">https://digitalcloud.training/aws-systems-manager/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/premiumsupport/knowledge-center/ec2-systems-manager-vpc-endpoints/",
+      "https://digitalcloud.training/aws-systems-manager/"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "<p>A company is running an eCommerce application on a fleet of Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. There have been issues occurring occasionally where instances fail to launch successfully, and the support team wants to be notified whenever this occurs.</p><p>Which configuration update will achieve these requirements?</p><p>Which action will accomplish this?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an Amazon CloudWatch alarm that sends an Amazon SNS notification when a failed SetInstanceHealth API call is made.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an Amazon CloudWatch alarm that sends a notification when an Amazon EC2 status check fails.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure an Amazon SNS topic for the Auto Scaling group that sends a notification whenever a failed instance launch occurs.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Add a health check to the Auto Scaling group to invoke an AWS Lambda function whenever an instance status is impaired.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Compute",
+    "explanation": "<p>You can be notified when Amazon EC2 Auto Scaling is launching or terminating the EC2 instances in your Auto Scaling group. You manage notifications using Amazon Simple Notification Service (Amazon SNS).</p><p>Amazon EC2 Auto Scaling supports sending Amazon SNS notifications when the following events occur:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-25-53-89c65e690caba055c07c38d0fb8c649a.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-25-53-89c65e690caba055c07c38d0fb8c649a.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p>The “autoscaling:EC2_INSTANCE_LAUNCH_ERROR” would be the correct event to monitor as this indicates if failed instance launch events have occurred. SNS can then send a notification to the support team to let them know what has happened.</p><p><strong>CORRECT: </strong>\"Configure an Amazon SNS topic for the Auto Scaling group that sends a notification whenever a failed instance launch occurs\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an Amazon CloudWatch alarm that sends an Amazon SNS notification when a failed SetInstanceHealth API call is made\" is incorrect.</p><p>This API action is used to set the health of an instance and does not monitor failed instance launch events.</p><p><strong>INCORRECT:</strong> \"Create an Amazon CloudWatch alarm that sends a notification when an Amazon EC2 status check fails\" is incorrect.</p><p>Status checks will show issues with instances that are already running rather than issues with launch events.</p><p><strong>INCORRECT:</strong> \"Add a health check to the Auto Scaling group to invoke an AWS Lambda function whenever an instance status is impaired\" is incorrect.</p><p>Health checks can be used to check the status of an instance, but the instance is already running. This does not help if the instance failed to launch.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html#auto-scaling-sns-notifications\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html#auto-scaling-sns-notifications</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-ec2-auto-scaling/\">https://digitalcloud.training/amazon-ec2-auto-scaling/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html#auto-scaling-sns-notifications",
+      "https://digitalcloud.training/amazon-ec2-auto-scaling/"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "<p>An organization is running containerized applications across Amazon EKS, Amazon ECS, and on-premises clusters. Due to some recent issues that caused outages, a solution is required to track container performance and system health, detect errors. The solution should enable collection and aggregation of time-series metrics from all container services for monitoring and analytics.</p><p>Which combination of services can the organization use?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Managed Service for Prometheus for collection of metrics and use Amazon Managed Grafana for visualization and analytics.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS AppConfig to collect application metrics from the containers and use Amazon OpenSearch Service for visualization and analytics.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use the AWS Systems Manager agent to collect the metrics and use Amazon Managed Service for Prometheus for visualization and analytics.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use the unified Amazon CloudWatch agent to collect the metrics, Amazon Athena to run SQL queries, and AWS Glue for visualization.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>Amazon Managed Service for Prometheus is a Prometheus-compatible service that monitors and provides alerts on containerized applications and infrastructure at scale. The service is integrated with Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Distro for OpenTelemetry.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-03-05_23-21-58-4a441982fe750d346208169ad7754e86.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-03-05_23-21-58-4a441982fe750d346208169ad7754e86.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p>The company can use Amazon Managed Grafana, a fully managed AWS service that makes it easy to use Grafana to monitor operational data with interactive data visualizations in a single console across multiple data sources, without needing to deploy, manage, and operate Grafana servers.</p><p><strong>CORRECT: </strong>\"Use Amazon Managed Service for Prometheus for collection of metrics and use Amazon Managed Grafana for visualization and analytics\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use the unified Amazon CloudWatch agent to collect the metrics, Amazon Athena to run SQL queries, and AWS Glue for visualization\" is incorrect.</p><p>The CloudWatch agent is used with Amazon EC2 instances and cannot be used with containers running on all these platforms. The Container Insights tool which is part of CloudWatch can be used for containers running in the AWS Cloud.</p><p><strong>INCORRECT:</strong> \"Use the AWS Systems Manager agent to collect the metrics and use Amazon Managed Service for Prometheus for visualization and analytics\" is incorrect.</p><p>Systems Manager cannot collect the time-series metrics from containerized applications running on the specified platforms.</p><p><strong>INCORRECT:</strong> \"Use AWS AppConfig to collect application metrics from the containers and use Amazon OpenSearch Service for visualization and analytics\" is incorrect.</p><p>AWS AppConfig is a capability of Systems Manager that is used to create, manage, and quickly deploy application configurations. It is not used for collecting metrics.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/prometheus/features/\">https://aws.amazon.com/prometheus/features/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/prometheus/features/"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "<p>A company has several AWS accounts and an on-premises data center. Several microservices applications run across the accounts and data center. The distributed architecture results in challenges with investigating application issues as the logs are saved in a variety of locations. A DevOps engineer must configure a solution that centralizes and aggregates the logs for analytics.</p><p>What is the MOST efficient and cost-effective solution?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Collect system logs and application logs using the Amazon CloudWatch Logs agent. Install the CloudWatch Logs agent on the on-premises servers. Use the Amazon S3 API to export log files and store them on-premises. Use an Amazon Elasticsearch Logstash Kibana stack to analyze logs in the on-premises data center.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Collect system logs and application logs using the Amazon CloudWatch Logs agent. Install the CloudWatch Logs agent on the on-premises servers. Store all logs in an S3 bucket in a central account. Set up an Amazon S3 trigger and an AWS Lambda function to analyze incoming logs and automatically identify anomalies. Use Amazon Athena to run ad hoc queries on the logs in the central account.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Collect system logs and application logs using the Amazon CloudWatch Logs agent. Use the Amazon S3 API to export on-premises logs and store the logs in an S3 bucket in a central account. Use Amazon Kinesis Data Analytics to query the data in the S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Collect system logs and application logs using the Amazon CloudWatch Logs agent. Use the Amazon S3 API to import on-premises logs. Store all logs in S3 buckets in individual accounts. Use Amazon Athena to run SQL queries on the logs in each account.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Security, Identity, & Compliance",
+    "explanation": "<p>The most efficient and cost-effective solution is to use the CloudWatch agent to collect log files from both AWS resources and on-premises servers and save that data to a centralized Amazon S3 bucket. S3 event notifications can be used to trigger an AWS Lambda function that analyzes the data looking for anomalies.</p><p>Amazon Athena is ideal for running ad-hoc SQL queries on data stored in S3. This can be used by the company when they have specific queries they need to run against the data.</p><p><strong>CORRECT: </strong>\"Collect system logs and application logs using the Amazon CloudWatch Logs agent. Install the CloudWatch Logs agent on the on-premises servers. Store all logs in an S3 bucket in a central account. Set up an Amazon S3 trigger and an AWS Lambda function to analyze incoming logs and automatically identify anomalies. Use Amazon Athena to run ad hoc queries on the logs in the central account\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Collect system logs and application logs using the Amazon CloudWatch Logs agent. Install the CloudWatch Logs agent on the on-premises servers. Use the Amazon S3 API to export log files and store them on-premises. Use an Amazon Elasticsearch Logstash Kibana stack to analyze logs in the on-premises data center\" is incorrect.</p><p>The best solution is not to store the data on-premises, it should be in the AWS Cloud. You would then be able to use the ELK stack to analyze the data.</p><p><strong>INCORRECT:</strong> \"Collect system logs and application logs using the Amazon CloudWatch Logs agent. Use the Amazon S3 API to export on-premises logs and store the logs in an S3 bucket in a central account. Use Amazon Kinesis Data Analytics to query the data in the S3 bucket\" is incorrect.</p><p>You cannot use S3 APIs to export log files from on-premises servers. You also cannot use KDA to analyze data in S3, it is used for analyzing data in other Kinesis services.</p><p><strong>INCORRECT:</strong> \"Collect system logs and application logs using the Amazon CloudWatch Logs agent. Use the Amazon S3 API to import on-premises logs. Store all logs in S3 buckets in individual accounts. Use Amazon Athena to run SQL queries on the logs in each account\" is incorrect.</p><p>As above, you cannot use the S3 API with on-premises resources.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-premise.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-premise.html</a></p><p><a href=\"https://aws.amazon.com/solutions/implementations/centralized-logging/\">https://aws.amazon.com/solutions/implementations/centralized-logging/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/amazon-cloudwatch/\">https://digitalcloud.training/amazon-cloudwatch/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-premise.html",
+      "https://aws.amazon.com/solutions/implementations/centralized-logging/",
+      "https://digitalcloud.training/amazon-cloudwatch/"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "<p>A DevOps engineer builds an artifact locally and then uploads it to an Amazon S3 bucket. The application has a local cache that must be cleared as part of the deployment. The engineer executes a command to do this, retrieves the artifact from Amazon S3, and unzips the artifact to complete the deployment.</p><p>The engineer wants to migrate to an automated CI/CD solution and incorporate checks to stop and roll back the deployment in the event of a failure. This requires tracking the progression of the deployment.</p><p>Which combination of actions will accomplish this? (Select THREE.)</p>",
+    "corrects": [
+      3,
+      4,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Add user data to the Amazon EC2 instances that contains script to clear the cache. Once deployed, test the application. If it is not successful, deploy it again.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Check the code into a code repository. On each pull into master use Amazon CloudWatch Events to trigger an AWS Lambda function that builds the artifact and uploads it to Amazon S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Set up an AWS CodePipeline pipeline to deploy the application. Check the code into a code repository as a source for the pipeline.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Write a custom script that clears the cache and specify the script in the BeforeInstall lifecycle hook in the AppSpec file.</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Use AWS CodeBuild to build the artifact and upload it to Amazon S3. Use AWS CodeDeploy to deploy the artifact to the Amazon EC2 instances.</p>",
+        "correct": true
+      },
+      {
+        "id": 6,
+        "answer": "<p>Use AWS Systems Manager to download the artifact from Amazon S3 and deploy it to all the EC2 instances.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>The engineer wants to build an automated CI/CD pipeline. Therefore, the best solution is to use a code repository such as CodeCommit for committing the code. Once committed a CodePipeline will automatically pick up the changes and initiate CodeBuild which will build the artifacts and upload the S3.</p><p>After the build artifact has been uploaded CodeDeploy can then be used to deploy the application. The AppSpec file is used by CodeDeploy during deployments. The engineer should add the script to clear the cache to the BeforeInstall lifecycle hook, so it is executed before the install occurs.</p><p><strong>CORRECT: </strong>\"Write a custom script that clears the cache and specify the script in the BeforeInstall lifecycle hook in the AppSpec file\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Set up an AWS CodePipeline pipeline to deploy the application. Check the code into a code repository as a source for the pipeline\" is also a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Use AWS CodeBuild to build the artifact and upload it to Amazon S3. Use AWS CodeDeploy to deploy the artifact to the Amazon EC2 instances\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Check the code into a code repository. On each pull into master use Amazon CloudWatch Events to trigger an AWS Lambda function that builds the artifact and uploads it to Amazon S3\" is incorrect.</p><p>A better solution is to use CodePipeline which is designed for automating CI/CD pipelines and CodeBuild for building the artifact.</p><p><strong>INCORRECT:</strong> \"Add user data to the Amazon EC2 instances that contains script to clear the cache. Once deployed, test the application. If it is not successful, deploy it again\" is incorrect.</p><p>User data only runs when the instance is first started so is not useful for running any commands after that time.</p><p><strong>INCORRECT:</strong> \"Use AWS Systems Manager to download the artifact from Amazon S3 and deploy it to all of the EC2 instances\" is incorrect.</p><p>Systems Manager is not suitable for deploying application updates and CodeDeploy should be used instead.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html\">https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "<p>The information security policy of a company has been updated and now requires that all Amazon EBS volumes must be encrypted. Any volumes that are not encrypted should be marked as non-compliant. The company uses AWS Organizations to manage multiple accounts. A DevOps engineer needs to automatically deploy the solution and ensure that this compliance check is applied.</p><p>Which solution will accomplish this MOST efficiently?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS Config rule at the AWS organization level to check whether EBS encryption is enabled. Create and apply an SCP to prohibit stopping and deleting AWS Config across the organization.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Run a scheduled AWS Lambda function in each account that checks the encryption status of EBS volumes in the account. Publish the report to a centralized Amazon S3 bucket. Use Amazon Athena to analyze the data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Apply an SCP in Organizations that uses conditional expressions to prevent the launch of Amazon EC2 instances that do not have encrypted EBS volumes. Apply the SCP to all AWS accounts.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable the AWS Config ec2-ebs-encryption-by-default rule to check whether EBS encryption is enabled. Deploy the rule in the management account of the Organization.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>AWS Config allows you to manage AWS Config rules across all AWS accounts within an organization. You can:</p><ul><li><p>Centrally create, update, and delete AWS Config rules across all accounts in your organization.</p></li><li><p>Deploy a common set of AWS Config rules across all accounts and specify accounts where AWS Config rules should not be created.</p></li><li><p>Use the APIs from the master account in AWS Organizations to enforce governance by ensuring that the underlying AWS Config rules are not modifiable by your organization’s member accounts.</p></li></ul><p>The DevOps engineer should create an organization level rule and then setup an SCP that prevents any modifications from happening that would stop the rule from running.</p><p>The engineer can use the AWS Config “ec2-ebs-encryption-by-default” rule. This rule checks that Amazon Elastic Block Store (EBS) encryption is enabled by default. The rule is NON_COMPLIANT if the encryption is not enabled.</p><p><strong>CORRECT: </strong>\"Create an AWS Config rule at the AWS organization level to check whether EBS encryption is enabled. Create and apply an SCP to prohibit stopping and deleting AWS Config across the organization\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable the AWS Config ec2-ebs-encryption-by-default rule to check whether EBS encryption is enabled. Deploy the rule in the management account of the Organization\" is incorrect.</p><p>Deploying the rule in the management account will not suffice as the company has multiple accounts in an AWS Organizations configuration. The rule must be deployed across all accounts.</p><p><strong>INCORRECT:</strong> \"Run a scheduled AWS Lambda function in each account that checks the encryption status of EBS volumes in the account. Publish the report to a centralized Amazon S3 bucket. Use Amazon Athena to analyze the data\" is incorrect.</p><p>While this may provide the required data, this is not the most efficient solution. Using Config is preferable as it will have less overhead and is designed specifically for compliance purposes and is a superior solution.</p><p><strong>INCORRECT:</strong> \"Apply an SCP in Organizations that uses conditional expressions to prevent the launch of Amazon EC2 instances that do not have encrypted EBS volumes. Apply the SCP to all AWS accounts\" is incorrect.</p><p>SCPs don't affect users or roles in the management account and condition elements may not affect users logged in with root user credentials. AWS Config will be a better solution for this requirement.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html\">https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html</a></p><p><a href=\"https://docs.aws.amazon.com/config/latest/developerguide/ec2-ebs-encryption-by-default.html\">https://docs.aws.amazon.com/config/latest/developerguide/ec2-ebs-encryption-by-default.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-config/\">https://digitalcloud.training/aws-config/</a></p><p><a href=\"https://digitalcloud.training/aws-organizations/\">https://digitalcloud.training/aws-organizations/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html",
+      "https://docs.aws.amazon.com/config/latest/developerguide/ec2-ebs-encryption-by-default.html",
+      "https://digitalcloud.training/aws-config/",
+      "https://digitalcloud.training/aws-organizations/"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "<p>A company needs is deploying a new application in AWS and requires a CI/CD pipeline to automate process. The company requires that the entire CI/CD pipeline can be re-provisioned in different AWS accounts or Regions within minutes.</p><p>The pipeline must support continuous integration, continuous delivery, and automatic rollback upon deployment failure. A DevOps engineer has already created an AWS CodeCommit repository to store the source code.</p><p>Which combination of actions should the DevOps engineer take to meet these requirements? (Select THREE.)</p>",
+    "corrects": [
+      1,
+      2,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Provision all resources using AWS CloudFormation.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Launch Amazon EC2 instances in an AWS Elastic Beanstalk environment and configure the environment as the deployment target in AWS CodePipeline.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure an AWS CodePipeline pipeline with a build stage using AWS CodeBuild.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement an Amazon SQS queue to decouple the pipeline components.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Launch Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB) and set the ALB as the deployment target in AWS CodePipeline.</p>",
+        "correct": false
+      },
+      {
+        "id": 6,
+        "answer": "<p>Copy the build artifact from CodeCommit to Amazon S3.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>The DevOps engineer should create a pipeline using AWS CodePipeline to automate the entire deployment. The CodeCommit repository can be used as the source. The combinations of CodeBuild with Elastic Beanstalk provides a way to build, test, and deploy with automatic rollback upon failure.</p><p>The question also requires that the entire CI/CD pipeline can be recreated in different accounts and Regions. For this reason the pipeline should be deployed using AWS CloudFormation. The templates can then be easily used to recreate the entire stack.</p><p><strong>CORRECT: </strong>\"Configure an AWS CodePipeline pipeline with a build stage using AWS CodeBuild\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Launch Amazon EC2 instances in an AWS Elastic Beanstalk environment and configure the environment as the deployment target in AWS CodePipeline\" is also a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Provision all resources using AWS CloudFormation\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Copy the build artifact from CodeCommit to Amazon S3\" is incorrect.</p><p>There is no need to do this, CodeCommit can be used directly as a source for source code and build artifacts.</p><p><strong>INCORRECT:</strong> Implement an Amazon SQS queue to decouple the pipeline components\" is incorrect.</p><p>CodePipeline has its own built-in capabilities for passing information durably between stages and does not require decoupling using Amazon SQS.</p><p><strong>INCORRECT:</strong> \"Launch Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB) and set the ALB as the deployment target in AWS CodePipeline\" is incorrect.</p><p>This solution would not provide the automatic rollback upon failure requested. Automatic rollback can be implemented when using Elastic Beanstalk with CodeBuild. Otherwise, you would need CodeDeploy.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html\">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html</a></p><p><a href=\"https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-continuous-delivery-integration.html\">https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-continuous-delivery-integration.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html",
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-continuous-delivery-integration.html",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "<p>A DevOps engineer is using AWS CodeBuild to build an application into a Docker image. The buildspec file is used to run the application build. The engineer needs to push the Docker image to an Amazon ECR repository only upon the successful completion of each build.</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Add an install phase to the buildspec file that uses the commands block to push the Docker image.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Add a post_build phase to the buildspec file that uses the finally block to push the Docker image.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Add a post_build phase to the buildspec file that uses the commands block to push the Docker image.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Add a post_build phase to the buildspec file that uses the artifacts sequence to find the build artifacts and push to Amazon ECR.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>The post_build phase is an optional sequence. It represents the commands, if any, that CodeBuild runs after the build. For example, you might use Maven to package the build artifacts into a JAR or WAR file, or you might push a Docker image into Amazon ECR. Then you might send a build notification through Amazon SNS.</p><p>Here is an example of a buildspec file with a post_build phase that pushes a Docker image to Amazon ECR:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-01-33-359af91dc55ebec29bd1a3cf7c7306b8.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-13_00-01-33-359af91dc55ebec29bd1a3cf7c7306b8.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Add a post_build phase to the buildspec file that uses the commands block to push the Docker image\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Add a post_build phase to the buildspec file that uses the finally block to push the Docker image\" is incorrect.</p><p>Commands specified in a final block are run after commands in the commands block. The commands in a final block are run even if a command in the commands block fails. This would not be ideal as this would push the image to ECR even if commands in previous sequences failed.</p><p><strong>INCORRECT:</strong> \"Add an install phase to the buildspec file that uses the commands block to push the Docker image\" is incorrect.</p><p>These are commands that are run during installation. The develop would want to push the image only after all installations have succeeded. Therefore, the post_build phase should be used.</p><p><strong>INCORRECT:</strong> \"Add a post_build phase to the buildspec file that uses the artifacts sequence to find the build artifacts and push to Amazon ECR\" is incorrect.</p><p>The artifacts sequence is not required if you are building and pushing a Docker image to Amazon ECR, or you are running unit tests on your source code, but not building it.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html</a></p><p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html",
+      "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "<p>A company manages a continuous integration and continuous delivery (CI/CD) pipeline that includes a Jenkins implementation that runs on Amazon EC2. The security team has requested that all build artifacts are encrypted as they contain company sensitive data.</p><p>Which changes should a DevOps engineer make to meet these requirements whilst reducing operational overhead for ongoing management?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Store build artifacts on Amazon S3 with default encryption enabled and move Jenkins to an Auto Scaling group.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Add a build action using AWS CodePipeline and encrypt the artifacts using AWS Certification Manager (ACM).</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Replace the Jenkins instance running on Amazon EC2 with AWS CodeBuild and configure artifact encryption.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure AWS Systems Manager to patch the Jenkins EC2 instances and set encryption for all Amazon EBS volumes.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>The existing Jenkins implementation runs on an Amazon EC2 instance, and this requires more operational management compared to using AWS CodeBuild which is a managed service. The DevOps engineer should replace Jenkins with AWS CodeBuild which is a fully managed build service.</p><p>CodeBuild compiles source code, runs unit tests, and produces artifacts that are ready to deploy. Encryption for build artifacts such as a cache, logs, exported raw test report data files, and build results, is enabled by default, and uses AWS managed keys (AWS KMS).</p><p><strong>CORRECT: </strong>\"Replace the Jenkins instance running on Amazon EC2 with AWS CodeBuild and configure artifact encryption\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure AWS Systems Manager to patch the Jenkins EC2 instances and set encryption for all Amazon EBS volumes\" is incorrect.</p><p>This solution may be secure, but it does require more operational management compared to using AWS CodeBuild and is therefore not the best option.</p><p><strong>INCORRECT:</strong> \"Store build artifacts on Amazon S3 with default encryption enabled and move Jenkins to an Auto Scaling group\" is incorrect.</p><p>Moving Jenkins to an Auto Scaling group does not reduce the operational management. This is also an option that requires more overhead to manage compared to using a managed service such as AWS CodeBuild.</p><p><strong>INCORRECT:</strong> \"Add a build action using AWS CodePipeline and encrypt the artifacts using AWS Certification Manager (ACM)\" is incorrect.</p><p>Artifacts cannot be encrypted using ACM as that is a service that issues SSL/TLS certificates which are used for encryption in-transit rather than encryption at-rest.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/security-encryption.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/security-encryption.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codebuild/latest/userguide/security-encryption.html",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "<p>A company is using AWS CodeCommit for version control and AWS CodePipeline for orchestration of software deployments. The development team are using a remote main branch as the trigger for the pipeline. A developer noticed that the CodePipeline pipeline was not triggered after the developer pushed code changes to the CodeCommit repository.</p><p>Which of the following actions should be taken to troubleshoot this issue?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Check that an AWS Lambda function has been created to check for code commits and trigger the pipeline.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Check that an Amazon CloudWatch Events rule has been created for the main branch to trigger the pipeline.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Check that the CodePipeline service role has permission to access the CodeCommit repository.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Check that the developer's IAM role has permission to push to the CodeCommit repository.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Developer Tools",
+    "explanation": "<p>An Amazon CloudWatch Events rule must be created to trigger the pipeline when changes are committed to the CodeCommit repository. If you use the console to create or edit your pipeline, the CloudWatch Events rule is created for you. In this case, the developer should check to make sure that the rule has been created and is correctly configured.</p><p>The following is a sample CodeCommit event pattern for a MyTestRepo repository with a branch named master:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-34-08-dc82125abf42153048e88229777e35c5.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://img-c.udemycdn.com/redactor/raw/practice_test_question_explanation/2023-02-12_23-34-08-dc82125abf42153048e88229777e35c5.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div></span><p><strong>CORRECT: </strong>\"Check that an Amazon CloudWatch Events rule has been created for the main branch to trigger the pipeline\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Check that the CodePipeline service role has permission to access the CodeCommit repository\" is incorrect.</p><p>The issue is that the pipeline was not triggered. If the service role does not have permissions the pipeline should still be triggered by the CloudWatch Events rule but then an error would be generated if insufficient permissions are assigned for accessing the CodeCommit repository.</p><p><strong>INCORRECT:</strong> \"Check that the developer's IAM role has permission to push to the CodeCommit repository\" is incorrect.</p><p>The developer already committed the code to the repository and did not experience any errors.</p><p><strong>INCORRECT:</strong> \"Check that an AWS Lambda function has been created to check for code commits and trigger the pipeline\" is incorrect.</p><p>An AWS Lambda function is not used to check for commits or to trigger the pipeline. A CloudWatch Events rule must be created for this purpose.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-trigger-source-repo-changes-console.html\">https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-trigger-source-repo-changes-console.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-developer-tools/\">https://digitalcloud.training/aws-developer-tools/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-trigger-source-repo-changes-console.html",
+      "https://digitalcloud.training/aws-developer-tools/"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "<p>A company stores sensitive data in Amazon S3 buckets. Each day the development team create new buckets for projects they are working on, and all existing and future buckets must be secured. The security team requires encryption, logging, and versioning to be enabled. It is also required that buckets should not be publicly accessible.</p><p>What should a DevOps engineer do to meet these requirements?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable AWS Trusted Advisor and configure automatic remediation using Amazon CloudWatch Events.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable AWS Systems Manager and configure automatic remediation using Systems Manager documents.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable AWS CloudTrail and configure automatic remediation using AWS Lambda.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable AWS Config rules and configure automatic remediation using AWS Systems Manager documents.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "AWS Management & Governance",
+    "explanation": "<p>You can use the AWS Config Auto Remediation feature to auto remediate any non-compliant S3 buckets using the AWS Config rules. There are several pre-built rules you can leverage for various use cases. For example, the following rules can be used to meet the requirements specified in this question:</p><ul><li><p>s3-bucket-logging-enabled</p></li><li><p>s3-bucket-server-side-encryption-enabled</p></li><li><p>s3-bucket-public-read-prohibited</p></li><li><p>s3-bucket-public-write-prohibited</p></li></ul><p>These rules act as controls to prevent any non-compliant S3 activities. AWS Config uses AWS Systems Manager to implement the remediations and the rules are automation documents that Systems Manager runs.</p><p><strong>CORRECT: </strong>\"Enable AWS Config rules and configure automatic remediation using AWS Systems Manager documents\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable AWS Trusted Advisor and configure automatic remediation using Amazon CloudWatch Events\" is incorrect.</p><p>Trusted Advisor will not discover these specific compliance events and CloudWatch Events is not able to remediate them.</p><p><strong>INCORRECT:</strong> \"Enable AWS Systems Manager and configure automatic remediation using Systems Manager documents\" is incorrect.</p><p>Systems Manager automation documents are used for remediation, but Systems Manager is unable to discover the specific compliance events for this scenario. AWS Config should be used with Systems Manager to meet the requirements.</p><p><strong>INCORRECT:</strong> \"Enable AWS CloudTrail and configure automatic remediation using AWS Lambda\" is incorrect.</p><p>CloudTrail can only detect API actions rather than audit compliance with configuration requirements. Though it is possible to use CloudTrail to detect some configuration changes this would be complex to implement.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/blogs/mt/aws-config-auto-remediation-s3-compliance/\">https://aws.amazon.com/blogs/mt/aws-config-auto-remediation-s3-compliance/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-config/\">https://digitalcloud.training/aws-config/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/blogs/mt/aws-config-auto-remediation-s3-compliance/",
+      "https://digitalcloud.training/aws-config/"
+    ]
+  }
+]
