@@ -1,0 +1,1752 @@
+[
+  {
+    "id": 1,
+    "question": "You are a project manager for the NJIK Project and you’re working with your project team to define the communications management plan. As part of this planning, you want to define how you’ll communicate with a hierarchical focus of the organization. Which one of the following describes how you will communicate to the project team members in consideration of the hierarchical structure?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Vertical",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Downward",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Horizontal",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Matrix",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Downward communication in the hierarchical communication structure defines the direction of the communication. As the team communicates to the project manager, the direction is downward. A is incorrect because a matrix describes the organizational structure, not the communication structure. Horizontal means peer-to-peer, and vertical isn’t a valid direction for the question.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 2,
+    "question": "You are the project manager of the JJ Project, and you and the project team are defining the project activities and sequencing for a project. The team has identified an activity, framing the building, which can’t begin until the concrete pad has adequately cured. The team is concerned that the concrete will take longer than usual due to the humid summer to cure so an extra two days may be needed before the framing can begin. What should you do next?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Schedule the concrete to dry on a Friday with two days of lead for the framing activity.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Schedule the framing to start after the concrete is poured, but with two days of lag.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Schedule the framing to start on a Monday and pour the concrete on a Friday.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Schedule the framing to start two days after the concrete is poured.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best choice to schedule the framing to begin as soon as the concrete is poured as a finish-to-start activity, but with two days of lag. The option to schedule the concrete to be poured on a Friday and the framing to start on a Monday is a tempting choice, but this doesn’t accommodate any shifts in the schedule. Should a delay happen upstream from this activity, then the delay wouldn’t be built into the schedule. By adding lag time, which is waiting time, then the delay would stay between the concrete and the framing activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "You are a project manager for your company, a startup technology company. Your project needs to purchase 30 laptops from a vendor and management has authorized you to manage the entire procurement decision and transaction as there is no procurement officer in your company. In this scenario, what type of purchasing are you participating in?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project purchasing",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Decentralized purchasing",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Vendor-based purchasing",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Direct purchasing",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "For smaller organizations or startup companies and those without a purchasing, contracting, or procurement department, the project manager may assume the purchasing authority role to negotiate and sign contracts directly (decentralized purchasing). For more mature organizations, the actual procurement and contracting functions will be carried out by a separate department with the specific role to purchase, negotiate, and sign contracts (centralized purchasing).",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 4,
+    "question": "You are working with your project team and management to create the resource management plan for a new project. This project will span several lines of business in your organization and will be a high-profile project. Management has asked that you create a chart to document and illustrate the existing departments and teams with project activities listed under each department to help each department see their responsibilities in the project. What type of chart is management asking you to create?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Work breakdown structure",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Resource breakdown structure",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Activity list",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Organizational breakdown structure",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "While the WBS shows a breakdown of project deliverables, an organizational breakdown structure is arranged according to an organization’s existing departments, units, or teams, with the project activities or work packages listed under each department. An operational department, such as information technology or purchasing, can see all its project responsibilities by looking at its portion of the OBS. The resource breakdown structure is a hierarchical list of team and physical resources related by category and resource type that is used for planning, managing and controlling project work. The activity list simply shows all the project activities, not segmented by department.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "Mike is the project manager of the AQA Project for his company. His BAC is $2,345,000, and he is currently 25 percent complete with the project, though he is supposed to be 30 percent complete. In the project so far, Mike has spent $612,000. Management has asked Mike to report on his cost and schedule performance. What is the EAC for AQA Project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$2,448,000",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$3,229,087",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$3,221,091",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$2,345,000",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The estimate at completion is $2,448,000. The EAC is found by using the formula of Budget at Completion / Cost Performance Index. In this question it’s $2,345,000 divided by .96.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 6,
+    "question": "Juan is the project manager of the NQA Project, and he has created a RACI chart for this project team to show the roles and responsibilities of several activities. Steph, a project team member, isn’t familiar with this type of chart and needs clarity on what a RACI chart means. What does RACI mean for Stephanie?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Risk, Account, Contractor, Integration",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Responsible, Actionable, Consult, Inform",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Risk, Action, Communicate, Information",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Responsible, Accountable, Consult, Inform",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "RACI means Responsible, Accountable, Consult, Inform. There is just one person accountable per activity in a RACI chart.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 7,
+    "question": "Beth is the project manager for her organization, and she’s meeting her project sponsor to discuss the competency level of the project team. Bill, the project sponsor, is worried that some of the project team members are new to the skills required in the project and he wants to know Beth’s strategy for these team members. What should Beth do next?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Some team members will require more oversight than others.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "All team members will be managed with the same level of oversight.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Some team members will likely be released from the project.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "All team members will be trained on the skills needed to ensure equal understanding.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project manager needs to be sensitive to both the willingness and the ability of team members to perform their work and adjust their management and leadership styles accordingly. Team members with low-skill abilities will require more intensive oversight than those who have demonstrated knowledge and experience.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 8,
+    "question": "As a project manager, you are familiar with the quality and how quality affects the acceptability of the product scope. For example, what is the difference between attribute sample and variable sampling?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Attribute sampling means you measure the product scope defined attributes for acceptability as part of quality control. Variable sampling implies the customer is testing the product scope acceptability as part of scope validation.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Attribute sampling and variable sampling both test the product scope for quality, but attribute sampling tests only the defined functional requirements, while variable sampling tests all variables of functional and non-functional requirements.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Attribute sampling means you’re testing a portion of the product scope attributes. Variable sampling means you’re examining several variables of the product scope attributes.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Attribute sampling means the result either conforms or does not conform. Variable sampling implies the result is rated on a continuous scale that measures the degree of conformity.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Attribute sampling means the result either conforms or does not conform. Variable sampling means the result is rated on a continuous scale that measures the degree of conformity.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 9,
+    "question": "Mike is the project manager of the AQA Project for his company. His BAC is $2,345,000, and he is currently 25 percent complete with the project, though is supposed to be 30 percent complete. In the project so far, Mike has spent $612,000. Management has asked Mike to report on his cost and schedule performance. Which one of the following is an accurate statement about the AQA Project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "There is a CPI of .96 and an SPI of .89.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "There is a cost variance of -$25,750 and a schedule variance of -$117,250.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "There is a cost variance of five percent and a schedule variance of ten percent.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The project’s time to complete with be 110 percent and the cost of the project will be an additional five percent.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best answer is that there is a cost variance of -$25,750 and a schedule variance of -$117,250.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 10,
+    "question": "Consider a project manager that has identified a risk in her project. The risk has a 20 percent chance of happening but will cost the project $450,000 if it happens. What’s the expected monetary value of this risk in a project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$450,000",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "0.9",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "($90,000)",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "$90,000",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The expected monetary value of the risk is found using the formula of probability times impact. In this scenario it is .20 times $450,000. Note this is a negative risk, so the answer is -$90,000.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 11,
+    "question": "Emily is the project manager of the GHY Project. She has hired several sellers to do a portion of the project work to test their competencies and to rate their work in the project. Based on their performance, she’ll choose one vendor to complete a larger portion of the project work. What is the primary advantage of this trial engagement approach?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Progress will be made on the project while testing the vendors’ performance.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Emily will save money on the project costs as the vendors will complete the smaller portions of the project work at no cost to the organization.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Multiple vendors will audition for the larger role on the project team.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The organization can test the vendor before buying more from the vendor.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Not every seller is well suited for an organization’s environment. Therefore, some projects will engage several candidate sellers for initial deliverables and work products on a paid basis before making the full commitment to a larger portion of the project scope. This accelerates momentum by allowing the buyer to evaluate potential partners, while simultaneously making progress on project work.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 12,
+    "question": "You are a project manager for the HJG Project, and you’re working with your project team and several key stakeholders to identify the project requirements. As part of this activity, you need to reference a specific project management plan that will define how requirements will be planned, tracked, and reported. What project management plan should you reference?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Scope management plan",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Requirements management plan",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Communications management plan",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The requirements management plan defines how the requirements activities will be planned, tracked, and reported for the project. This answer is from the PMBOK Guide, 5.1.3.2.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 13,
+    "question": "Ken is the project manager for his organization, and he’s working with his manager to discuss a new project. The project being considered is to implement a new hydroelectric dam in a community nearby. Some of the residents are not in favor of the dam, and other residents are excited about the dam. There are many government regulations, and environmental considerations before this dam can be installed. Based on this information, what is the most commonly used document to create the project charter if this project is approved?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Regulatory approval",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Business case",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Blueprints",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Environmental reports",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The approved business case, or similar, is the business document most commonly used to create the project charter. The business case describes the necessary information from a business standpoint to determine whether the expected outcomes of the project justify the required investment. It is commonly used for decision making by managers or executives above the project level.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 14,
+    "question": "Joan is a project manager in her organization and she is working with the project team to create the risk management plan. Joan wants to create a structure to show the decomposition of project risks in a hierarchical approach for the potential sources of risks in the project. What type of chart should Joan create with her project team?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Risk decomposition map",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Risk burnup chart",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Risk breakdown structure",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Risk burndown chart",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A common way to structure risk categories is with a risk breakdown structure (RBS), which is a hierarchical representation of potential sources of risk. An RBS helps the project team consider the full range of sources from which individual project risks may arise. This can be useful when identifying risks or when categorizing the identified risks. The organization may have a generic RBS to be used for all projects, or there may be several RBS frameworks for different types of projects, or the project may develop a tailored RBS. Where an RBS is not used, an organization may use a custom risk categorization framework, which may take the form of a simple list of categories or a structure based on project objectives.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 15,
+    "question": "Ned is the project manager of an IT upgrade project. He is working with the project team and the key project stakeholders to identify all of the project requirements. To keep the meeting moving along, Ned has created four classifications for requirements: hardware, software, network, and data. As requirements are identified, they are sorted into one of these four areas. What has Ned created in this meeting?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Nominal group technique",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Brainwriting",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Affinity diagram",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Mind mapping",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Affinity diagrams allow large numbers of ideas to be classified for review and analysis.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 16,
+    "question": "You are a project manager for the JHK Project for your organization, and you’re working with the project team to build the project network diagram. Your project team has identified a series of tasks that must happen in a specific order, but this order will cause the project duration to increase. What’s the best description on the ordering of these tasks in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Hard logic",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Constrained logic",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Soft logic",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Work logic",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of hard logic, also called mandatory dependencies. Mandatory dependencies are those that are legally or contractually required or inherent in the nature of the work.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 17,
+    "question": "Kelly is the project manager of the GHY Project for her organization. Management has asked Kelly to take the project scope baseline, the project cost baseline, and the project schedule baseline and create a hybrid baseline to reflect overall project performance. What should Kelly do next?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Inform her manager that these are three separate items that are distinct and cannot be merged to show project performance.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Create a performance measurement baseline to show all three baselines and how the project is performing overall.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Create a project dashboard.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Create an information radiator of all the performance requirements management has requested.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Management has asked Kelly to create a performance measurement baseline. A performance measurement baseline is an integrated scope-schedule-cost plan for the project work against which project execution is compared to measure and manage performance.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "Ben is a project manager in his organization and he’s leading an adaptive project. In this adaptive project, he knows that much of the leadership of the team shifts to the project team members rather than on himself. He’s also explaining to his manager that in adaptive projects there is an agile approach where the project team members are not necessarily subject matter experts but are called what term to describe their ability to serve in more than one role?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Generalized specialists",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Self-organizing",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Servant leadership",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Waiters and servers",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Successful self-organizing teams usually consist of generalized specialists, instead of subject matter experts, who continuously adapt to the changing environment and embrace constructive feedback. Servant leadership describes the role of the project manager in an agile environment. Waiters and servers is not a valid agile project management term. Self-organizing means that the team decides who’ll do what on the project and isn’t the best choice for this question.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 19,
+    "question": "You are the project manager of a new construction project for your organization. The project has just recently been chartered, and you’re working with the project team to define the project management plan, scope statement, and cost budget and other project details. Your customer has contacted you and informed you that they have several changes to the project, such as different flooring selection, larger windows, and an outdoor seating area. What should you do next?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Complete a change request and pass the change through integrated change control.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Accept the changes and continue with project planning.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Refuse the changes as the project charter has already been created.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Ask the team to explore the changes in costs, scope, schedule, risk, and quality concerns before approving the changes for the project.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project management plan should be baselined; that is, it is necessary to define at least the project references for scope, time, and cost, so that the project execution can be measured and compared to those references and performance can be managed. Before the baselines are defined, the project management plan may be updated as many times as necessary. No formal process is required at that time. However, once it is baselined, it may only be changed through the Perform Integrated Change Control process.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 20,
+    "question": "Your organization has asked you, a project manager, to work with a business analyst to create a business case for a proposed project. All of the following items are reasons why a business case may be created except for which one?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Legal requirement",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Market demand",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Organizational need",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Profit and loss",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Profit and loss is not a reason why a business case may be created. Business cases are created as a cause of market demand, organizational need, customer request, technological advance, legal requirement, ecological impact, and social needs.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 21,
+    "question": "You are a project manager for the NJJ Project and you’re working with the project team to identify project risks. Some of the risks in your project are uncomfortable for the project team to discuss. For example, there is a probability that the project team’s level of productivity may fluctuate or that the number of errors or defects in the project will not always be predictable. Though the team wants to insist that they will remain productive and that they’ll catch errors quickly and fix them, you know there is some fluctuation to be expected. What type of risk events are you defining in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Performance risk",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Variability risks",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Systemic risks",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Team risks",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Uncertainty exists about some key characteristics of a planned event or activity or decision. Examples of variability risks include: productivity may be above or below target, the number of errors found during testing may be higher or lower than expected, or unseasonal weather conditions may occur during the construction phase.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "Ken is a project manager in his organization and he working with the project team to create the project network diagram for an IT implementation project. His team has identified the tasks of launching the new web server and shutting down the old web server. The team wants to make sure that the new web server is up and running before turning off the older web server. If the new server is the successor activity and the older web server is the predecessor what’s the relationship type between these two tasks in the scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "SS",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "LC",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "FF",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "SF",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Start-to-finish (SF) is a logical relationship in which a successor activity cannot finish until a predecessor activity has started. The new web server (successor) has to start before the old web server can be shut down (predecessor).",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 23,
+    "question": "You are a project manager for the HGJ Project and you’re working with the project team to complete a RACI chart for your project activities. Beth and Laura will be working together on the “Install HW Fixtures” tasks. Beth is a senior electrical engineer and Laura is her assistant. Laura wonders though if she too should have the “A” designation for the task since she’ll be working on it with Beth. What’s the best response?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "If both employees are working on the task equally then yes, both should have the A designation.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "The senior employee should always have the A designation in RACI.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Only one person per task may have the A designation.",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Beth should have the R designation and Laura, the assistant, should have the A designation.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Only one person per task has the A designation as only one person per task is accountable. RACI means Responsible, Accountable, Consult, Inform.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 24,
+    "question": "Mary is the project manager for her organization, and she is a project manager for a new agile project. Management has asked Mary to show them the detailed project scope statement in this project. Mary reports that in agile projects there is not a detailed project scope. Management then wants to know where the project requirements are documented. What should Mary do next?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Show management the project scope management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Show management the product backlog",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Show management the project WBS",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Show management the Scrum statement",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "In an agile project, scope is defined and redefined throughout the project. In agile approaches, the requirements constitute the backlog.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 25,
+    "question": "You are a project manager for the KJG Project and you want to create a stakeholder register with the project team. In this register, you want to include the stakeholder identification information, the assessment information, and what other attributes should be included?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Stakeholder classification",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Responsibilities in the project",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Primary concerns for project requirements",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Role of the project team",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The stakeholder register includes the identification information, assessment information, and the stakeholder classification. The other choices are incorrect options for this question. Stakeholder classification includes attributes such as: internal/external, impact/influence/power/interest, upward/downward/outward/sideward, or any other classification model chosen by the project manager.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 26,
+    "question": "Martha is a project manager in her organization and she is working with the project team to create a data representation of the stakeholders' authority and interest in the project. She wants to create a salience model for the key stakeholders. In this model, all of the following attributes are used except for which one?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Urgency",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Power",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Legitimacy",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Influence",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Influence is not a component of the salience model. A salience model describes classes of stakeholders based on assessments of their power (level of authority or ability to influence the outcomes of the project), urgency (need for immediate attention, either time-constrained or relating to the stakeholders’ high stake in the outcome), and legitimacy (their involvement is appropriate).",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 27,
+    "question": "Beth is a project manager for her organization, and she is leading a massive construction project. She and the project team have determined that the electrical work on the project is too dangerous for the team to take on, so they have outsourced this part of the project work. Beth would like to capture this portion of the project in her network diagram, but she doesn’t know all of the activities the electricians would do. What should Beth do next?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Create a fragnet in her network diagram for the outsourced work.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Interview the electricians to capture all of their activities.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Create her network diagram without the electrical work since the project team won’t be doing this work.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Ask the vendor to provide their project network diagram for the portion of the project they are completing for Beth’s organization.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best answer presented is to create a fragnet for the portion of the project that has been outsourced to the vendor. A fragnet represents a part of the project network diagram that can be repetitive activities, a subproject, or outsourced project work.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 28,
+    "question": "Nancy is a project manager in her organization and she’s working with the project team to plan communications management. Robert, the project sponsor, tells Nancy that he’ll be glad when this planning activity is over because he doesn’t like planning and would rather get to the project execution. Nancy tells Robert that the communications planning activity will happen whenever new stakeholders are identified in the project and one other factor. When else should communications planning definitely happen in a project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "At the start of each project phase",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "At the end of the project",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "During project procurement",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "When risks are identified",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "An effective communications management plan that recognizes the diverse information needs of the project’s stakeholders is developed early in the project lifecycle. It should be reviewed regularly and modified when necessary when the stakeholder community changes or at the start of each new project phase.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 29,
+    "question": "Mike is the project manager of the AQA Project for his company. His BAC is $2,345,000, and he is currently 25 percent complete with the project, though he is supposed to be 30 percent complete. In the project so far, Mike has spent $612,000. Some changes have been added to the project will cost an additional $125,000 and now reflect Mike as being 20 percent complete. What is the CPI of the project considering these new changes?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "0.67",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "No change",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "0.81",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "0.75",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The CPI is now .81 because the added funds to the BAC and the reduction in total project completion cause the CPI to change.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 30,
+    "question": "You are a project manager for the UYT Project, and you’re working with the project team to build out the project network diagram. You and the team are reviewing the relationships between several activities in the project, and you’re concerned about some of the soft logic the team has used for the activity relationships. Who determines the soft logic about activity relationships in a project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project team",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Project lead",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Project manager",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project sponsor",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Discretionary dependencies should be fully documented since they can create arbitrary total float values and can limit later scheduling options. When fast-tracking techniques are employed, these discretionary dependencies should be reviewed and considered for modification or removal. The project team determines which dependencies are discretionary during the process of sequencing the activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 31,
+    "question": "You are a project manager for the HJK Project, and you’d like to bring all the stakeholders together to discuss the risks, success criteria, and a few other topics in a meeting. You want the meeting to be informal and conversational for all the stakeholders. What type of meeting are you proposing?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Scrum",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Kickoff meeting",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Focus group",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Status meeting",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Focus groups bring together stakeholders and subject matter experts to learn about the perceived project risk, success criteria, and other topics in a more conversational way than a one-on-one interview.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 32,
+    "question": "As a project manager, you need to recognize the 5Cs of communication and how these 5Cs affect the message being communicated. Which one of the following is not one of the 5Cs of communication?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Correct grammar and spelling",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Clear purpose and expression directed to the needs of the reader",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Concise expression and elimination of excess words",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Consistent messaging to the appropriate stakeholders throughout the project",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This choice is correct because “consistent messaging to the appropriate stakeholders throughout the project” is not one of the 5Cs of communication. The 5Cs are: Correct grammar and spelling; Concise expression and elimination of excess words; Clear purpose and expression directed to the needs of the reader; Coherent, logical flow of ideas; Controlling flow of words and ideas.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 33,
+    "question": "Robert is the project manager for his company and he’s leading a large, international project. In this project, he’ll be purchasing from vendors in different countries for resources needed on the project. In his contracts with the international vendors, what must be clearly defined to alleviate any claims or litigation concerns later in the project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Legal jurisdictions",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Contract attorneys",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Purchasing officer for each country",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Monetary unit",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "In international contracting, the legal jurisdictions under which the contracts will be administered are clearly spelled out in the contract. In most cases, the seller is an external contractor who is bound by a formal contractual relationship. Note that monetary units is often defined in the contract, but in consideration of litigation, the legal jurisdiction is the better choice for the scenario.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 34,
+    "question": "As a project manager, you need to have emotional intelligence. This means that you can recognize and improve inbound and outbound emotional competencies. Which two are examples of inbound emotional intelligence competencies?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Self-management and self-control",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Relationship management and self-control",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Self-management and relationship management",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Self-management and self-awareness",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project manager should invest in personal EI by improving inbound (e.g., self-management and self-awareness) and outbound (e.g., relationship management) competencies. The other choices are not valid answers for this question.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 35,
+    "question": "A project manager has been warned by her manager that overtime in the project work is not allowed as this is driving project costs. The project manager elects to utilize resource leveling heuristics for the project team. What is likely to happen to the project with this modification? (Choose the best answer.)",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The project duration will increase",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "The team will log all hours worked on the project",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Team members will work fewer hours",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Costs will be constrained to the project budget",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Resource leveling heuristics establishes a rule for the project team on how many hours they can work on the project per day or per week. When applied, the team is constrained to a maximum hours worked per time period, so that causes the overall duration of the project to increase because there are few working hours per day on the project activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 36,
+    "question": "Mike is the project manager of the AQA Project for his company. His BAC is $2,345,000, and he is currently 25 percent complete with the project, though he is supposed to be 30 percent complete. In the project so far, Mike has spent $612,000. Based on this information and using the Estimate at Completion, what is the TCPI value for this project?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "0.67",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "0.5",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "0.81",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "0.96",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The TCPI shows the likelihood to hit the Estimate at Completion, which is $2,448,000. To find the To Complete Performance Index you’ll use the formula of (BAC-EV)/(EAC-AC) to see the result of .96.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 37,
+    "question": "Mike is the project manager of the AQA Project for his company. His BAC is $2,345,000, and he is currently 25 percent complete with the project, though he is supposed to be 30 percent complete. In the project so far, Mike has spent $612,000. Management has asked Mike to report on his cost and schedule performance. What is the project’s CPI?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "0.75",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "1",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "0.96",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "2",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The CPI is .96 and is found by using the formula of earned value / actual costs. In this question, the earned value is $586,250, and the actual costs are $612,000.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 38,
+    "question": "You are a project manager for your organization and your project currently has 29 stakeholders. You’ve been informed, however, that due to a change in the project scope your project will have an additional 13 stakeholders next week. How many more communication channels will be created as a result of the 13 additional stakeholders?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "455",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$861",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$406",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$78",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "To find the answer to this question you’ll use the formula of N(n-1)/2 where N represents the number of stakeholders. You’ll first find the current number of stakeholder communication channels, based on 29 stakeholders, which is 406. Then you’ll find the number of communication channels with the additional 13 people, which is 861. Finally, you’ll find the difference of 861 and 406 which is 455.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 39,
+    "question": "You are a project manager for the HJG Project and you’re working with the project team to address the testing and control quality processes for your project. Management has requested that zero defects escape from the project and strict quality control processes must be implemented. One of the team members asks why they can’t just address any defects found by the customer as they come up. Of course, this isn’t a good practice for many reasons, but one of the best reasons is which one of the following choices?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Errors found by customers is the most expensive approach",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Customers may not be able to readily identify all the defects",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "It’s not what management has requested",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "It’s embarrassing to the organization and hurts the organization",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Usually, the most expensive approach is to let the customer find the defects. This approach can lead to warranty issues, recalls, loss of reputation, and rework costs.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 40,
+    "question": "John is a project manager, and he’s working with his project team to define all of the requirements used in the project. One of the decisions in the project is the selection of a sculpture that will go in the lobby of the new office complex. John and the key stakeholders have decided to allow everyone to vote on which sculpture will be selected using the plurality approach for the three choices. Sculpture A received 457 votes, Sculpture B received 120 votes, and Sculpture C received 459 votes. Which sculpture will be installed in the lobby?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Sculpture B will be installed as Sculpture A and Sculpture C cancel each other out, and therefore Sculpture B has the most remaining votes.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Undetermined; there is not a majority of voters for anyone sculpture as there are more voters against the statue with the most votes.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Sculpture A and Sculpture C will be voted on again without Sculpture B splitting the votes.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Sculpture C will be installed as it has the most votes.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Plurality voting creates a decision that is reached whereby the most significant block in a group decides, even if a majority is not achieved. This method is generally used when the number of options nominated is more than two.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 41,
+    "question": "Ned is a project manager in his organization and you are serving as a project management consultant on Ned’s project. Ned insists that his project needs a high-quality grade of material for the project work to be successful. You advise that quality and grade are often misunderstood. What’s the difference between quality and grade?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality is how well the materials fulfill requirements. Grade is a ranking or categorization of the materials.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Quality is about having the best product, while grade is about having the correct products.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Grade is the level of satisfaction the workers require from materials, while quality is the ability of the materials to deliver upon their satisfaction.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Actually, Ned is correct. Quality and grade are now considered to be the same term in the PMBOK Guide, sixth edition.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality and grade are not the same concepts. Quality as a delivered performance or result is “the degree to which a set of inherent characteristics fulfill requirements” (ISO 9000 [18].). Grade as a design intent is a category assigned to deliverables having the same functional use but different technical characteristics. The project manager and the project management team are responsible for managing the trade-offs associated with delivering the required levels of both quality and grade. While a quality level that fails to meet quality requirements is always a problem, a low-grade product may not be a problem.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 42,
+    "question": "Consider a project that is running behind schedule. The project manager has elected to utilize fast-tracking to reduce the overall duration of the project. Which one of the following statements best describes fast-tracking characteristics?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Fast-tracking removes all float in the project to reduce project duration but can increase project risk.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Fast-tracking allows phases to overlap to reduce project duration but can increase project risk.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Fast-tracking removes all float to reduce project duration but can increase project cost.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Fast-tracking adds labor to the project work but can increase project costs.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Fast-tracking allows phases to overlap, but this can introduce risk in the project as successor phases may be affected by defects in predecessor phases they are currently overlapping.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 43,
+    "question": "When two people are communicating via a web conference what component of the communication model is represented by the Internet?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Host",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Encode/Decode",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Medium",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Transmit message",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "In this scenario, this Internet is the medium to carry the message between the senders and receivers. Recall that the medium is the component of the communication model that carries the message between the two parties.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 44,
+    "question": "Beth is a project manager in her organization and she’s working with her project sponsor to define the levels of risk in a new project. Beth wants to discuss the project resilience and the unknowable-unknowns in the project. These risk events can only be recognized after they have occurred in the project. What term is best assigned to these type of risk events that attack project resilience?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Emergent risk",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Apparent risk",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Uncertain risk",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Negative risk",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The existence of emergent risk is becoming clear, with a growing awareness of so-called unknowable-unknowns. These are risks that can only be recognized after they have occurred. Emergent risks can be tackled through developing project resilience. Apparent risks and uncertain risks are not valid risk management terms. Negative risk isn’t technically a risk management term, but it’s often used to describe risks that threaten project objectives.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 45,
+    "question": "You are preparing the risk management plan according to the PMBOK Guide, sixth edition. One of the inputs for the process includes the project management plan and all its components. You also know that you should identify risks as early as possible in the project and not all the project management plan is complete. What should you do?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Complete the risk management plan first, then create the project management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Complete all the project management plan before completing the risk management plan",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Risk management planning is an iterative activity, so this is fine and expected",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Use a project template for the risk management plan and update it as needed in the approach",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Planning is an ongoing activity, so this is not unusual. In planning Project Risk Management, all approved subsidiary management plans should be taken into consideration to make the risk management plan consistent with them. The methodology outlined in other project management plan components might influence the Plan Risk Management process.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 46,
+    "question": "Gary is a project manager in his organization and he’s working with management to discuss the risks within the project. Some of the risks, Gary reports, can actually be beneficial to the project and the project should try to take advantage of those opportunities. Marsha, the project sponsor, says that she thinks Gary is mistaken as it’s company policy that all risks are negative and should be avoided in the project. Which one of the following is the best answers in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Marsha is correct as all risks are negative and should be avoided.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Marsha is correct because she is the project sponsor.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Gary is correct, as risk outcomes can be beneficial to the project costs.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Gary is correct, as risks can be positive or negative.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Gary is correct as individual project risks can have a positive or negative effect on project objectives. Project Risk Management aims to exploit or enhance positive risks (opportunities) while avoiding or mitigating negative risks (threats). Unmanaged threats may result in issues or problems such as delay, cost overruns, performance shortfall, or loss of reputation. Opportunities that are captured can lead to benefits such as reduced time and cost, improved performance, or reputation. Marsha is incorrect, even if she is the project sponsor.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 47,
+    "question": "You are the project manager of the NLO Project for your organization. This project is an IT upgrade project which will replace data servers on your company’s network. As part of the requirements gathering process Mark, the CIO of your organization, is concerned about the nonfunctional requirements that must be addressed in the project. Anna is confused about nonfunctional requirements and how they relate to this project. Of the following, what is an example of a nonfunctional requirement Mark may be concerned with?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Processor size",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Security of data",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Web access to data",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Data",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Nonfunctional requirements supplement functional requirements and describe the environmental conditions or qualities required for the product to be useful. Examples include reliability, security, performance, safety, level of service, supportability, retention/purge, etc.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 48,
+    "question": "Your manager has asked you to create a RACI chart for your project. What does the C in RACI stand for?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Consider",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Confirm",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Conversation",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Consult",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "RACI means Responsible, Accountable, Consult, Inform.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 49,
+    "question": "Charles is the project manager of a large construction project for his city. He has been asked to provide a method for public scrutiny into the working and progress of the project. Which one of the following is the best example of transparency into the progress of the project work for communications and public relations with the city residents?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Status reports mailed to the city residents",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Status reports and information on a project website",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Webcams on the job site",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Financial reports and data updated weekly",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A trend in infrastructure and commercial construction projects is the use of technology including web cameras (webcams) to improve stakeholder communications and relations. During construction, one or more webcams are installed on the site, with periodic updates to a publicly available website. The progress on the project can be viewed on the Internet by all stakeholders. Video data can also be stored, allowing analysis if a claim arises. Some projects have discovered that the use of webcams minimizes disputes relating to the construction work on site, as the webcam has recorded the events, so there should be no disagreement about the facts of the matter.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 50,
+    "question": "You are a project manager for your company and you are coaching your project team on quality. The team has a desire to work quickly and catch mistakes during product testing. Based on this analysis, complete this statement: Quality is _____________, never _____________.",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality is expensive, defects are more expensive.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Quality is mandatory, never optional items.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Quality is optional, never forgotten in.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quality is planned, never inspected in.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality is always planned into a project and never inspected into a project. Prevention is preferred over inspection. It is better to design quality into deliverables, rather than to find quality issues during inspection. The cost of preventing mistakes is generally much less than the cost of correcting mistakes when they are found by inspection or during usage. The other options are not valid statements about quality and inspection.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  }
+]

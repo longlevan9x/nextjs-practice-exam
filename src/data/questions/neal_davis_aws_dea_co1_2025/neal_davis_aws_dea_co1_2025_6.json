@@ -1,0 +1,949 @@
+[
+  {
+    "id": 1,
+    "question": "<p>A healthcare analytics company must ensure that its Amazon RDS instances are compliant with specific configuration requirements due to regulatory standards. The company needs to continuously monitor and record the RDS instances' configurations and be alerted if there are any changes that deviate from the established compliance standards.</p><p>Which AWS service should they use to maintain configuration compliance and receive notifications about changes?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable Amazon RDS Performance Insights to track the performance metrics and configuration data of the RDS instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up AWS CloudTrail to log all actions taken on the RDS instances and analyze the logs for configuration changes.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Utilize Amazon CloudWatch Events to respond to state changes in the RDS instances and notify the administrators of configuration changes.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement AWS Config to monitor the configurations of the RDS instances and use AWS Config rules to evaluate compliance with the desired configuration settings.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. It continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.</p><p>With AWS Config, the company can set up rules to check for compliance with the required configuration and get notified through Amazon Simple Notification Service (SNS) when there's a change that deviates from the compliance standards.</p><p><strong>CORRECT: </strong>\"Implement AWS Config to monitor the configurations of the RDS instances and use AWS Config rules to evaluate compliance with the desired configuration settings\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Set up AWS CloudTrail to log all actions taken on the RDS instances and analyze the logs for configuration changes\" is incorrect.</p><p>AWS CloudTrail provides a record of actions taken by a user, role, or AWS service, but it is not primarily used for configuration compliance monitoring.</p><p><strong>INCORRECT:</strong> \"Enable Amazon RDS Performance Insights to track the performance metrics and configuration data of the RDS instances\" is incorrect.</p><p>Amazon RDS Performance Insights is a performance tuning feature that helps you quickly assess the load on your RDS databases, and it does not provide configuration compliance monitoring.</p><p><strong>INCORRECT:</strong> \"Utilize Amazon CloudWatch Events to respond to state changes in the RDS instances and notify the administrators of configuration changes\" is incorrect.</p><p>Amazon CloudWatch Events can respond to state changes in AWS resources, but it does not assess or ensure compliance with configuration standards; it would only notify when changes occur.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/blogs/database/enforce-configuration-policies-for-your-amazon-rds-databases-using-aws-config/\">https://aws.amazon.com/blogs/database/enforce-configuration-policies-for-your-amazon-rds-databases-using-aws-config/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/blogs/database/enforce-configuration-policies-for-your-amazon-rds-databases-using-aws-config/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "<p>A company plans to move 10 TB of multimedia content from their local servers to AWS, with a portion of the data being updated weekly. These updates must be reflected in the Amazon S3 bucket where the data will be stored. The multimedia content consists of large image and video files.</p><p>To automate and schedule these data transfers effectively, which AWS service should the company employ?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS DataSync to automate and schedule the ongoing transfer of files to Amazon S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up an AWS Snowball job for periodic data transfer to Amazon S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Transfer for SFTP to secure and automate data transfer to S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Deploy an AWS Storage Gateway to synchronize and manage data transfers to S3.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "<p>A corporation utilizes an Amazon Redshift provisioned cluster for its data warehousing needs. The cluster is composed of four ra3.4xlarge nodes and employs even distribution. The data engineering team observes that during peak loads, the query performance is suboptimal. While one node is consistently at high CPU utilization, the others are significantly underutilized. The team aims to optimize the workload distribution across all nodes without altering the cluster size.</p><p>What strategy should the data engineering team implement to achieve a more uniform load distribution across the four nodes?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Adjust the WLM (Workload Management) configuration to prioritize queries differently across the nodes.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Transition to using a compound sort key based on the columns most frequently used in JOIN clauses.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Convert the cluster to use Elastic Resize to add more nodes during peak loads and remove them when not needed.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Redefine the distribution style to KEY using a column with high cardinality that is frequently joined on.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>In Amazon Redshift, adjusting the distribution style to a KEY distribution on a column with high cardinality (which means many unique values) that is frequently used in joins can help balance the data distribution across all nodes more evenly. This can alleviate bottlenecks on a single node and improve overall query performance without the need to increase the number of nodes.</p><p><strong>CORRECT: </strong>\"Redefine the distribution style to KEY using a column with high cardinality that is frequently joined on\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Convert the cluster to use Elastic Resize to add more nodes during peak loads and remove them when not needed\" is incorrect.</p><p>Elastic Resize is used to temporarily change the number of nodes in a Redshift cluster, which does not comply with the requirement to maintain the current number of compute nodes.</p><p><strong>INCORRECT:</strong> \"Adjust the WLM (Workload Management) configuration to prioritize queries differently across the nodes\" is incorrect.</p><p>WLM configuration helps manage query priority and memory allocation but does not inherently affect how data is distributed across nodes.</p><p><strong>INCORRECT:</strong> \"Transition to using a compound sort key based on the columns most frequently used in JOIN clauses\" is incorrect.</p><p>A compound sort key optimizes query performance by sorting data but does not impact the distribution of data across nodes, which is necessary for load balancing.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/t_Distributing_data.html\">https://docs.aws.amazon.com/redshift/latest/dg/t_Distributing_data.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/t_Distributing_data.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "<p>A healthcare company needs to upload sensitive patient records to an Amazon S3 bucket. Due to the confidential nature of the data, they want to ensure that the files are encrypted before leaving the company's internal network. The company also wants to manage the encryption keys themselves.</p><p>Which method should the healthcare company use to securely upload their sensitive data to Amazon S3?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable server-side encryption with Amazon S3-managed keys (SSE-S3) for the S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Apply Amazon S3 server-side encryption with AWS KMS-managed keys (SSE-KMS).</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use client-side encryption with a customer-managed key before uploading the data to S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure the S3 bucket to use AWS Shield for encrypting data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>For the highest level of control over the encryption process and the keys, the healthcare company should opt for client-side encryption. This approach involves encrypting the data on the client side (i.e., within the company's internal network) before it is uploaded to Amazon S3.</p><p>By managing their own encryption keys, the company ensures that the sensitive patient records are encrypted according to their standards and policies, and they retain full control over the encryption keys. This method aligns with their requirement to encrypt files before they leave the internal network and to manage the keys themselves.</p><p><strong>CORRECT: </strong>\"Use client-side encryption with a customer-managed key before uploading the data to S3\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable server-side encryption with Amazon S3-managed keys (SSE-S3) for the S3 bucket\" is incorrect.</p><p>While SSE-S3 encrypts data at rest in S3, it does not meet the company's requirement to encrypt data before it leaves their internal network. Additionally, the encryption keys are managed by Amazon S3, not the customer.</p><p><strong>INCORRECT:</strong> \"Apply Amazon S3 server-side encryption with AWS KMS-managed keys (SSE-KMS)\" is incorrect.</p><p>SSE-KMS provides an additional layer of security by allowing customers to use AWS KMS for key management. However, like SSE-S3, it doesn't meet the requirement of encrypting data before it leaves the company’s network, as the encryption happens server-side in S3.</p><p><strong>INCORRECT:</strong> \"Configure the S3 bucket to use AWS Shield for encrypting data\" is incorrect.</p><p>AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. It does not provide encryption capabilities for S3 objects. The purpose of AWS Shield is different and unrelated to data encryption.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "<p>A startup company needs a user-friendly tool to visualize and analyze its sales data stored in Amazon S3. The solution should be easy to use, require minimal setup, and provide interactive dashboards and insights.</p><p>Which AWS service should the company use for visualizing and analyzing their sales data?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Athena</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon QuickSight</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon Redshift</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Glue</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon QuickSight is a fast, cloud-powered business intelligence service that makes it easy to build visualizations, perform ad-hoc analysis, and quickly get business insights from data. It can directly connect to various data sources, including Amazon S3, and provides user-friendly tools for creating interactive dashboards.</p><p>QuickSight is designed for users of all skill levels and does not require any servers to set up or manage, making it an ideal choice for the startup company's requirements for easy-to-use data visualization and analysis.</p><p><strong>CORRECT: </strong>\"Amazon QuickSight\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Amazon Athena\" is incorrect.</p><p>Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. While it is powerful for querying data, Athena is not a visualization tool. It is used for data querying and analysis but would need to be integrated with a visualization tool like Amazon QuickSight for dashboards and insights.</p><p><strong>INCORRECT:</strong> \"AWS Glue\" is incorrect.</p><p>AWS Glue is a serverless data integration service that makes it easy to discover, prepare, and combine data for analytics, machine learning, and application development. It is primarily used for ETL (extract, transform, load) operations and data cataloging, rather than for data visualization and interactive analysis.</p><p><strong>INCORRECT:</strong> \"Amazon Redshift\" is incorrect.</p><p>Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. It is used for storing and analyzing large datasets but, like Athena, it is not a visualization tool. Redshift can be used as a data source for visualization tools like Amazon QuickSight but does not provide visualization capabilities on its own</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/quicksight/\">https://aws.amazon.com/quicksight/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/quicksight/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "<p>A digital media company has a vast collection of images stored in an Amazon S3 bucket. They require a dynamic solution that allows them to deliver resized images to their users on-the-fly, based on the specific size requested in the user's application. The solution must transform the images without storing multiple variants and should be integrated directly within the S3 object retrieval flow.</p><p>Which AWS service or feature should the company use to resize images dynamically when they are requested from the S3 bucket?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure Amazon S3 Event Notifications to trigger an AWS Lambda function for resizing upon each image retrieval request.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement AWS Lambda@Edge with Amazon CloudFront to resize images upon retrieval at the edge locations.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon S3 Object Lambda to apply image resizing operations during the data retrieval from S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Set up an Amazon API Gateway with AWS Lambda to handle image resizing and serve the resized images from S3.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon S3 Object Lambda allows you to add custom code to S3 GET requests to modify and process data as it is returned to an application. By using S3 Object Lambda, the company can apply image resizing logic to the images stored in S3 on-the-fly, based on the dimensions specified in the user's request.</p><p>This approach avoids the need to store multiple variants of each image, as transformations are performed dynamically and only when needed, thereby reducing storage costs, and simplifying management</p><p><strong>CORRECT: </strong>\"Use Amazon S3 Object Lambda to apply image resizing operations during the data retrieval from S3\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement AWS Lambda@Edge with Amazon CloudFront to resize images upon retrieval at the edge locations\" is incorrect.</p><p>Lambda@Edge is used to run Lambda functions at AWS Edge locations in response to CloudFront events. While it can resize images closer to the end-user, it typically involves caching the resized images at the edge, which does not align with the requirement to transform images directly within the S3 object retrieval flow.</p><p><strong>INCORRECT:</strong> \"Set up an Amazon API Gateway with AWS Lambda to handle image resizing and serve the resized images from S3\" is incorrect.</p><p>Using API Gateway with Lambda to resize images requires setting up an API endpoint that triggers a Lambda function for each request. This adds complexity as it requires additional configuration and management of both the API Gateway and Lambda function, rather than leveraging S3's built-in capabilities.</p><p><strong>INCORRECT:</strong> \"Configure Amazon S3 Event Notifications to trigger an AWS Lambda function for resizing upon each image retrieval request\" is incorrect.</p><p>S3 Event Notifications are designed to respond to changes in S3 objects, such as creations, deletions, or updates, not direct retrieval requests. This would not be suitable for on-the-fly transformations during data retrieval.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>A data analytics team is leveraging Amazon Redshift for their complex querying and reporting needs. To ensure optimal performance, they want to track when the query optimizer flags potential inefficiencies.</p><p>Which Amazon Redshift system view can the data engineer consult to find optimizer-generated performance alerts?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Examine the STL_WLM_QUERY system view to observe query execution and queueing durations.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Refer to the STL_ALERT_EVENT_LOG system view to find warnings and alerts related to query optimization.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Inspect the SVL_QUERY_SUMMARY system view for summary data about query execution to pinpoint performance issues.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Observe the STL_QUERYTEXT system view for the text of the SQL statements executed, which could be cross-referenced for performance tuning.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>The STL_ALERT_EVENT_LOG system view is specifically designed to record alerts generated by the Amazon Redshift query optimizer. It logs various alert events that might indicate performance issues, such as when a query is consuming excessive memory or when it's performing a nested loop join that could be inefficient. Monitoring this system view enables the data engineering team to proactively identify and address potential query performance problems.</p><p><strong>CORRECT: </strong>\"Refer to the STL_ALERT_EVENT_LOG system view to find warnings and alerts related to query optimization\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Examine the STL_WLM_QUERY system view to observe query execution and queueing durations\" is incorrect.</p><p>While the STL_WLM_QUERY system view provides valuable information about query execution times and whether queries are being queued, it does not directly log the alerts or warnings about query plans or optimization issues.</p><p><strong>INCORRECT:</strong> \"Observe the STL_QUERYTEXT system view for the text of the SQL statements executed, which could be cross-referenced for performance tuning\" is incorrect.</p><p>The STL_QUERYTEXT system view contains the text of each executed SQL command, which can be useful for reviewing and debugging queries, but it does not provide alerting or diagnostic information about query performance from the optimizer's perspective.</p><p><strong>INCORRECT:</strong> \"Inspect the SVL_QUERY_SUMMARY system view for summary data about query execution to pinpoint performance issues\" is incorrect.</p><p>The SVL_QUERY_SUMMARY system view gives a summary of query execution, including elapsed time and rows processed, which can help in understanding overall performance but does not provide specific alerts or warnings like the STL_ALERT_EVENT_LOG doe</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_STL_ALERT_EVENT_LOG.html\">https://docs.aws.amazon.com/redshift/latest/dg/r_STL_ALERT_EVENT_LOG.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/r_STL_ALERT_EVENT_LOG.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "<p>A digital media company processes large volumes of image and video files daily. These files are stored in an Amazon S3 bucket. The company needs to analyze metadata extracted from these files (such as file size, type, creation date) and store this information for quick retrieval and analysis. The solution should automatically handle new files as they are uploaded and be scalable to handle increasing data volumes.</p><p>Which AWS service should the company implement to extract, store, and manage the metadata efficiently?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure Amazon S3 Event Notifications to trigger AWS Lambda functions for metadata extraction and storage in Amazon DynamoDB.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Utilize Amazon Athena to query S3 metadata directly and store the query results in Amazon ElastiCache for quick access.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Glue to run ETL jobs on new files in S3, extract metadata, and store it in Amazon RDS for querying.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement Amazon Kinesis Data Firehose to capture file metadata and load it into Amazon Redshift for analysis.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>This approach is scalable and efficient for handling new files as they arrive in S3. Amazon S3 Event Notifications can trigger AWS Lambda functions to process new files and extract metadata.</p><p>AWS Lambda offers serverless compute, handling varying loads without manual scaling. Storing the extracted metadata in Amazon DynamoDB provides fast, low-latency access to the data, suitable for quick retrieval and analysis.</p><p>This end-to-end solution requires minimal management and is scalable to accommodate growing data volumes</p><p><strong>CORRECT: </strong>\"Configure Amazon S3 Event Notifications to trigger AWS Lambda functions for metadata extraction and storage in Amazon DynamoDB\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Glue to run ETL jobs on new files in S3, extract metadata, and store it in Amazon RDS for querying\" is incorrect.</p><p>AWS Glue is capable of ETL operations, but using Amazon RDS for metadata storage might not be the most efficient solution for the high-velocity and volume data typically associated with media files.</p><p><strong>INCORRECT:</strong> \"Implement Amazon Kinesis Data Firehose to capture file metadata and load it into Amazon Redshift for analysis\" is incorrect.</p><p>Kinesis Data Firehose is more suited for streaming data rather than handling file-based metadata extraction. Also, Amazon Redshift, being a data warehousing solution, might be more complex and costly for storing and retrieving simple metadata.</p><p><strong>INCORRECT:</strong> \"Utilize Amazon Athena to query S3 metadata directly and store the query results in Amazon ElastiCache for quick access\" is incorrect.</p><p>Athena is used for querying data, but it's not typically utilized for extracting and managing file metadata. Moreover, storing Athena query results in ElastiCache is not a conventional approach for metadata management and may not provide the most efficient retrieval method.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html\">https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "<p>A company uses an Amazon S3 bucket to store data in both JSON and .csv formats. They also operate databases on Amazon RDS for Microsoft SQL Server, have Amazon DynamoDB tables in provisioned capacity mode, and run queries on an Amazon Redshift cluster. They need a straightforward solution that allows their data scientists to perform SQL-like queries across all these data sources.</p><p>What is the simplest solution for enabling these queries with the least operational overhead?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Catalog the data with AWS Glue, and query using Redshift Spectrum, applying standard SQL to structured data and PartiQL to JSON.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up a data lake with AWS Lake Formation, convert all data to Apache Parquet using Lake Formation jobs, and query the data using Amazon Athena or Redshift Spectrum.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable AWS Glue to catalog the data sources and use Amazon Athena with standard SQL for structured data and PartiQL for the JSON data.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Glue to catalog and transform JSON data into .csv format using Glue jobs, then query all data using Amazon Athena.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Glue can catalog data across different AWS services, and Amazon Athena is designed to directly query data in various formats stored in S3 using standard SQL and PartiQL for JSON data. This solution avoids the additional steps of data transformation and leverages the managed services to handle the data querying, minimizing the overhead.</p><p>AWS Glue can automatically catalog the data stored in Amazon S3, Amazon RDS, DynamoDB, and Amazon Redshift, which simplifies the management of metadata. Amazon Athena allows data scientists to run ad-hoc queries using standard SQL for structured data like CSV files.</p><p>For the JSON format data, Athena supports querying using PartiQL, which is an SQL-compatible query language that extends SQL to include semi-structured and nested data, hence it can handle JSON data efficiently.</p><p><strong>CORRECT: </strong>\"Enable AWS Glue to catalog the data sources and use Amazon Athena with standard SQL for structured data and PartiQL for the JSON data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Catalog the data with AWS Glue, and query using Redshift Spectrum, applying standard SQL to structured data and PartiQL to JSON\" is incorrect.</p><p>Using Redshift Spectrum adds unnecessary complexity when directly querying data in S3 because it requires an existing Redshift cluster and does not add benefit over Athena for the task at hand.</p><p><strong>INCORRECT:</strong> \"Use AWS Glue to catalog and transform JSON data into .csv format using Glue jobs, then query all data using Amazon Athena\" is incorrect.</p><p>Transforming JSON data into .csv format adds additional steps and complexity, increasing operational overhead, which is not desired.</p><p><strong>INCORRECT:</strong> \"Set up a data lake with AWS Lake Formation, convert all data to Apache Parquet using Lake Formation jobs, and query the data using Amazon Athena or Redshift Spectrum\" is incorrect.</p><p>While AWS Lake Formation is a powerful tool for creating a data lake, transforming all data to Apache Parquet format is an extra step that adds complexity and is not necessary for SQL-like querying with services like Athena.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/athena/getting-started/\">https://aws.amazon.com/athena/getting-started/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/athena/getting-started/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "<p>A media company with a large library of digital assets uses Amazon S3 to store high-resolution images. The images are frequently accessed in the first month after upload but are rarely accessed thereafter. Immediate access is required on demand, even after the initial month. The company seeks to lower their S3 storage costs while maintaining quick access.</p><p>Which S3 storage is the most COST effective and meets the requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use S3 Outposts for on-premises access to the images.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Store the images in S3 Standard-IA after the first month.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Move the images to S3 Glacier immediately after the first month.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Keep the images in S3 Standard for high availability access.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>S3 Standard-IA is designed for data that is accessed less frequently, but when needed, requires rapid access. This storage class offers a lower storage price compared to S3 Standard, while still providing the same low-latency and high-throughput performance. It's ideal for the media company's use case where the images are not accessed frequently after the first month but still require the ability to be accessed quickly.</p><p><strong>CORRECT: </strong>\"Store the images in S3 Standard-IA after the first month\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Move the images to S3 Glacier immediately after the first month\" is incorrect.</p><p>S3 Glacier is for long-term archival storage where retrieval times of several minutes to hours are acceptable. It is not suitable for the media company's need for immediate access.</p><p><strong>INCORRECT:</strong> \"Keep the images in S3 Standard for high availability access\" is incorrect.</p><p>While S3 Standard offers high-availability access, it is not cost-efficient for the company's need since the images are rarely accessed after the first month.</p><p><strong>INCORRECT:</strong> \"Use S3 Outposts for on-premises access to the images\" is incorrect.</p><p>S3 Outposts is meant for on-premises applications and does not offer a cost benefit for infrequently accessed data that still requires quick access. It is also not a storage class but a separate service for AWS infrastructure deployment on-premises.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/s3/storage-classes/\">https://aws.amazon.com/s3/storage-classes/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/s3/storage-classes/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "<p>A data engineering team is building a system that processes various types of events generated by different applications within their organization. The system needs to route these events to specific AWS services for processing and analysis based on the event type. The solution must be scalable and able to handle many events efficiently.</p><p>Which AWS service should the data engineering team use to route these events to the appropriate AWS services based on the type of event?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Step Functions to orchestrate the event routing process to various AWS services.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon EventBridge to route events to target AWS services based on rules.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Lambda to manually parse and dispatch events to other AWS services.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Kinesis Data Streams to filter and route the events to different AWS services.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon EventBridge is an ideal choice for this scenario. It is a serverless event bus service that enables applications to communicate with each other using events.</p><p>EventBridge can be used to build event-driven architectures, where it captures events from various sources (like applications, AWS services, and external services), and routes them to the appropriate targets based on content-based rules.</p><p>This allows for efficient and scalable processing of many events, making it suitable for the team's requirements of handling and routing different types of events for processing and analysis.</p><p><strong>CORRECT: </strong>\"Use Amazon EventBridge to route events to target AWS services based on rules\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon Kinesis Data Streams to filter and route the events to different AWS services\" is incorrect.</p><p>While Amazon Kinesis Data Streams is effective for real-time data streaming and processing, it's not primarily designed for routing events based on type or content. It lacks the built-in routing capabilities based on event patterns that EventBridge offers.</p><p><strong>INCORRECT:</strong> \"Use AWS Lambda to manually parse and dispatch events to other AWS services\" is incorrect.</p><p>Using AWS Lambda to manually parse and route events would require more development effort and might not scale as efficiently as using a dedicated event routing service like EventBridge.</p><p><strong>INCORRECT:</strong> \"Use AWS Step Functions to orchestrate the event routing process to various AWS services\" is incorrect.</p><p>AWS Step Functions is a service for orchestrating microservices, workflows, and processes, but it is not optimal for event routing based on event types. Step Functions is more suited for coordinating complex workflows rather than acting as an event router.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-get-started.html\">https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-get-started.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-get-started.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "<p>A digital marketing agency collects customer interaction data through various cloud-based platforms and wants to analyze this data using Amazon Redshift. The data, sourced from multiple SaaS platforms, must be consolidated into an Amazon S3 bucket before analysis. The agency seeks the most straightforward and maintenance-light method to import this data into S3.</p><p>Which AWS service or feature should the agency use to streamline the transfer of data from the SaaS platforms to Amazon S3 with minimal operational effort?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon EventBridge to route data from SaaS platforms to the S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Data Exchange to import third-party data directly into S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon AppFlow for no-code data transfer between SaaS applications and S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use the AWS Transfer Family to handle SaaS data ingestion into the S3 bucket.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon AppFlow is a fully managed integration service that enables secure, no-code data transfer between AWS services and SaaS applications. It's designed to facilitate the flow of data into and out of AWS with minimal configuration.</p><p>With AppFlow, the digital marketing agency can easily connect their SaaS platforms to Amazon S3, set up data transfer flows, and schedule them to run at desired intervals without writing any custom integration code or managing underlying infrastructure, thus ensuring the least operational overhead.</p><p><strong>CORRECT: </strong>\"Use Amazon AppFlow for no-code data transfer between SaaS applications and S3\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon EventBridge to route data from SaaS platforms to the S3 bucket\" is incorrect.</p><p>While EventBridge could orchestrate data workflows, it's primarily an event bus service designed to connect application data from various sources, not specifically tailored for direct data transfer from SaaS platforms to S3.</p><p><strong>INCORRECT:</strong> \"Use AWS Data Exchange to import third-party data directly into S3\" is incorrect.</p><p>This service is mainly for finding, subscribing to, and using third-party data in the cloud. It doesn't cater to custom data transfer needs from a company’s specific SaaS tools to S3.</p><p><strong>INCORRECT:</strong> \"Use the AWS Transfer Family to handle SaaS data ingestion into the S3 bucket\" is incorrect.</p><p>This is used to provide secure file transfers into and out of S3 using protocols like SFTP, FTPS, and FTP, but it's not as direct or seamless for connecting SaaS applications compared to AppFlow, especially if those SaaS platforms do not support these protocols natively.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html\">https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "<p>A logistics company stores large datasets of shipping records in various formats in Amazon S3. They need to clean, transform, and consolidate this data into a structured format for analysis and reporting purposes. The process should be automated and scalable to handle increasing data volumes.</p><p>What AWS service should the data engineering team use to efficiently perform ETL (Extract, Transform, Load) operations on these datasets?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Deploy Amazon Redshift Spectrum to perform ETL operations directly on the data stored in S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure Amazon EMR to run custom ETL scripts on the data stored in S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Glue, a serverless data integration service, to perform ETL operations on the S3 datasets.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Set up an AWS Lambda function to trigger ETL processes on the data in S3 upon file upload.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Glue is a fully managed, serverless ETL service that is ideal for transforming and preparing large datasets for analysis. It can discover, prepare, and combine data for analytics, machine learning, and application development.</p><p>AWS Glue can automate the process of cataloging data, cleaning it, enriching it, and moving it reliably between various data stores. Its serverless nature means the company can scale ETL operations without managing any infrastructure, making it well-suited for the logistics company's needs</p><p><strong>CORRECT: </strong>\"Use AWS Glue, a serverless data integration service, to perform ETL operations on the S3 datasets\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Deploy Amazon Redshift Spectrum to perform ETL operations directly on the data stored in S3\" is incorrect.</p><p>While Amazon Redshift Spectrum allows querying and analyzing data in S3 using Redshift, it is not primarily an ETL tool. It is more suited for running complex queries on large datasets rather than performing the transformation and loading processes.</p><p><strong>INCORRECT:</strong> \"Configure Amazon EMR to run custom ETL scripts on the data stored in S3\" is incorrect.</p><p><br></p><p><br></p><p>Amazon EMR can be used for running ETL processes, but it involves managing clusters and is not as straightforward as AWS Glue. EMR requires more operational management compared to the serverless and managed nature of AWS Glue.</p><p><strong>INCORRECT:</strong> \"Set up an AWS Lambda function to trigger ETL processes on the data in S3 upon file upload\" is incorrect.</p><p>AWS Lambda can be used for smaller, event-driven processing tasks, but it may not be practical for large-scale ETL operations, especially for complex transformations and when dealing with large datasets.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html\">https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "<p>A data engineering team at an e-commerce company is optimizing their query performance on Amazon Redshift. They have numerous complex queries running against large joined datasets and have identified that some queries are not as efficient as they could be. The team has been advised to leverage Redshift’s query optimization features to improve performance. They are considering the use of materialized views to speed up these queries.</p><p>Which feature should the team implement to enhance their query performance in Redshift, especially for frequently executed queries that join multiple tables?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Activate Redshift’s automatic workload management (WLM) to dynamically manage memory and prioritize queries.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable short query acceleration in Redshift to prioritize execution of the complex join queries.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure Redshift Spectrum to offload the complex join queries and utilize external tables for better performance.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Redshift’s Query Optimizer with materialized views to precompute and store the results of complex joins.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Redshift's Query Optimizer can improve the performance of complex query execution, especially for those that are run frequently and involve joins across large tables. By creating materialized views, the team can store the precomputed results of these expensive join operations.</p><p>When queries are executed, the Query Optimizer can utilize the materialized views to deliver faster query performance since the data has already been aggregated and stored. This is particularly effective for repetitive and predictable query patterns, as it saves the cost of re-running the same join operations with each query.</p><p><strong>CORRECT: </strong>\"Use Redshift’s Query Optimizer with materialized views to precompute and store the results of complex joins\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Activate Redshift’s automatic workload management (WLM) to dynamically manage memory and prioritize queries\" is incorrect.</p><p>While WLM is useful for managing query performance by allocating memory and prioritizing different types of queries, it does not inherently optimize the execution plans of queries involving complex joins as materialized views would.</p><p><strong>INCORRECT:</strong> \"Enable short query acceleration in Redshift to prioritize execution of the complex join queries\" is incorrect.</p><p>Short query acceleration (SQA) is designed to prioritize shorter, interactive queries over longer-running ones. It would not necessarily optimize the performance of complex join operations, as it's more about prioritizing query execution rather than optimizing the queries themselves.</p><p><strong>INCORRECT:</strong> \"Configure Redshift Spectrum to offload the complex join queries and utilize external tables for better performance\" is incorrect.</p><p>Redshift Spectrum is used for querying data that resides in S3 without loading it into Redshift. While it can be used for processing large datasets, it’s not specifically designed to optimize complex joins within Redshift itself. Materialized views would be more effective for this purpose within the Redshift data warehouse.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html\">https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "<p>A mobile gaming company uses Amazon DynamoDB to store player session data. The data becomes irrelevant after 24 hours and should be automatically deleted to save storage space and reduce costs.</p><p>Which DynamoDB feature should the company use to automatically remove outdated player session data after 24 hours?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>DynamoDB Auto Scaling</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>DynamoDB TTL (Time To Live)</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>DynamoDB Conditional Writes</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>DynamoDB Streams</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>DynamoDB TTL is a feature that automatically deletes items from a table after a certain time period that you define. By enabling TTL and setting it to 24 hours for the player session data, the company can have DynamoDB automatically remove items that are older than 24 hours.</p><p>This process runs in the background and does not consume any write throughput, making it a cost-effective solution for managing the lifecycle of temporary data without manual intervention.</p><p><strong>CORRECT: </strong>\"DynamoDB TTL (Time To Live)\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"DynamoDB Streams\" is incorrect.</p><p>DynamoDB Streams capture changes to items in a DynamoDB table in near real-time, which can then be used for various purposes like triggering AWS Lambda functions or replicating data. However, Streams do not provide automatic deletion of items based on a time period.</p><p><strong>INCORRECT:</strong> \"DynamoDB Scheduled Deletion\" is incorrect.</p><p>While DynamoDB Conditional Writes do not automatically delete items after a certain time period, they allow you to specify conditions that must be met for a write operation (such as a deletion) to occur.</p><p><strong>INCORRECT:</strong> \"DynamoDB Auto Scaling\" is incorrect.</p><p>DynamoDB Auto Scaling automatically adjusts the read and write capacity of the table to match the workload. While it helps manage throughput and cost, it does not relate to the automatic deletion of items based on their age.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "<p>A photography studio stores its high-resolution image files in an Amazon S3 bucket. Recently, they encountered issues with accidental overwrites of important files. The studio requires a solution to prevent the overwriting and accidental deletion of their images while ensuring that the latest version of a file is readily accessible.</p><p>Which single feature should the photography studio enable on their S3 bucket to address this issue effectively?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable S3 Object Lock in compliance mode for strict WORM (Write Once, Read Many) protection.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Activate S3 Versioning to maintain multiple versions of each file.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement S3 Lifecycle policies to archive older versions of files to S3 Glacier.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure S3 Intelligent-Tiering to manage the storage of the files efficiently.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>S3 Versioning is the most suitable solution for the studio's requirement. It prevents data loss due to overwrites and deletions by keeping multiple versions of an object. When a file is overwritten or deleted, the older version is preserved, allowing for easy recovery. Versioning ensures that all versions of a file are available, with the latest version being readily accessible, aligning with the studio's need to access the most recent files quickly</p><p><strong>CORRECT: </strong>\"Activate S3 Versioning to maintain multiple versions of each file\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement S3 Lifecycle policies to archive older versions of files to S3 Glacier\" is incorrect.</p><p>While S3 Lifecycle policies can manage the storage of files and archive older versions, they do not prevent overwriting or accidental deletion of the current version.</p><p><strong>INCORRECT:</strong> \"Enable S3 Object Lock in compliance mode for strict WORM (Write Once, Read Many) protection\" is incorrect.</p><p>S3 Object Lock in compliance mode provides immutable storage, which is more stringent than needed for this scenario. It's typically used for regulatory requirements where data must not be altered or deleted for a certain period.</p><p><strong>INCORRECT:</strong> \"Configure S3 Intelligent-Tiering to manage the storage of the files efficiently\" is incorrect.</p><p>S3 Intelligent-Tiering is designed for cost optimization by automatically moving data between different access tiers. It does not address the issue of preventing file overwrites or accidental deletion.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "<p>A data engineer is experiencing permission-related errors when trying to access data through an Amazon QuickSight dashboard, which relies on Amazon Athena queries running on data in an S3 bucket. What could be the possible reasons for these errors? (Select TWO.)</p>",
+    "corrects": [
+      1,
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>QuickSight is not granted the necessary permissions within the AWS Identity and Access Management (IAM) policy to access the Athena tables.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>The KMS key policies do not include QuickSight as a principal, hindering decryption of the data queried by Athena.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>The S3 bucket where the data is stored has block public access settings enabled, preventing QuickSight from accessing the data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>The VPC settings are restricting QuickSight's access to the S3 bucket where the data resides.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>QuickSight’s SPICE capacity has been reached, and it is unable to import more data from Athena.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "<p>A marketing firm analyzes social media engagement data which is collected daily and saved as .csv files in an Amazon S3 bucket. The firm's data engineer needs to ensure that the S3 data is cataloged daily for use with AWS analytics services.</p><p>What steps should the data engineer take to catalog the social media data files in the AWS Glue Data Catalog each day with the least manual effort?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement an Amazon EventBridge rule to trigger an AWS Step Functions workflow that runs the Glue crawler daily.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Lambda to invoke an AWS Glue crawler for the social media data in S3, running the function with a CloudWatch Events rule on a daily schedule.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Assign an IAM role with the necessary Glue permissions to the AWS Glue crawler, point it to the S3 bucket's social media data, and set a daily schedule for the crawler.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure an AWS Batch job to execute the AWS Glue crawler for the S3 data, with a scheduled CloudWatch Events rule to trigger the job each day.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Utilizing an AWS Glue crawler with the correct permissions automates the process of cataloging new and modified data files in the AWS Glue Data Catalog.</p><p>By setting the crawler to run on a daily schedule, the data engineer ensures that the social media engagement data is consistently updated in the catalog with minimal manual intervention.</p><p>This approach is efficient as it leverages AWS Glue's managed service capabilities to handle the discovery and cataloging of data</p><p><strong>CORRECT: </strong>\"Assign an IAM role with the necessary Glue permissions to the AWS Glue crawler, point it to the S3 bucket's social media data, and set a daily schedule for the crawler\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Lambda to invoke an AWS Glue crawler for the social media data in S3, running the function with a CloudWatch Events rule on a daily schedule\" is incorrect.</p><p>While AWS Lambda could be used to trigger the Glue crawler, this approach adds complexity by introducing an additional service. It is not necessary to use Lambda when the Glue crawler can be scheduled directly.</p><p><strong>INCORRECT:</strong> \"Configure an AWS Batch job to execute the AWS Glue crawler for the S3 data, with a scheduled CloudWatch Events rule to trigger the job each day\" is incorrect.</p><p>AWS Batch is designed for batch computing workloads and not for running Glue crawlers. This method introduces unnecessary complexity and is not as straightforward as scheduling the crawler directly within the AWS Glue service.</p><p><strong>INCORRECT:</strong> \"Implement an Amazon EventBridge rule to trigger an AWS Step Functions workflow that runs the Glue crawler daily\" is incorrect.</p><p>Setting up a Step Functions workflow to trigger a Glue crawler adds an additional layer of orchestration that is not required for the simple task of running a crawler on a schedule. AWS Glue crawlers already have the built-in ability to be scheduled without the need for Step Functions.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "<p>A cloud architect is developing an AWS Step Functions workflow to orchestrate a data migration process. The workflow involves several dependent tasks: data extraction, transformation, and loading into a new system. Each task must be completed before the next one begins.</p><p>Which Step Functions state should the architect use to ensure that these tasks are executed in the required sequence?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Choice</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Parallel</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Succeed</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Wait</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>The 'Succeed' state in AWS Step Functions is used to mark a workflow as successful. In this scenario, the architect needs to ensure that the tasks (data extraction, transformation, and loading) are executed in sequence.</p><p>While 'Succeed' itself does not orchestrate the sequence, it is used at the end of the workflow to indicate successful completion of all tasks in the required order.</p><p>The sequential execution of tasks can be managed by the structure of the state machine, where each task transitions to the next upon successful completion, ultimately leading to the 'Succeed' state.</p><p><strong>CORRECT: </strong>\"Succeed\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Parallel\" is incorrect.</p><p>The 'Parallel' state is used for executing multiple branches of a workflow concurrently, not sequentially. It would not ensure that the data migration tasks are completed in the specific order of extraction, transformation, and loading.</p><p><strong>INCORRECT:</strong> \"Choice\" is incorrect.</p><p>The 'Choice' state is used to make decisions within a workflow based on input data, allowing the workflow to branch into different paths. It does not facilitate the sequential execution of tasks.</p><p><strong>INCORRECT:</strong> \"Wait\" is incorrect.</p><p>The 'Wait' state introduces a delay in the workflow. It is used to pause execution for a certain time but does not control the sequence of task execution.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html\">https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "<p>An e-commerce company is enhancing its product recommendation engine by integrating external market research data. To refine their recommendations, the company needs to efficiently incorporate this third-party data into their existing data analysis infrastructure.</p><p>Which AWS service should the e-commerce company use to seamlessly incorporate third-party market research datasets with minimal operational effort?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS DataSync to transfer third-party datasets into the company's AWS environment for integration.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Access and integrate third-party datasets from Amazon S3 using Amazon Kinesis Data Streams.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Import third-party datasets directly from AWS Data Exchange into the company's data analytics platform.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Stream third-party data into the company's system using Amazon Kinesis Data Streams from AWS CodeCommit.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Data Exchange makes it easy to find, subscribe to, and use third-party data in the cloud. For the e-commerce company looking to incorporate external market research data into their recommendation engine, AWS Data Exchange offers a streamlined way to access and integrate this data.</p><p>The service minimizes operational overhead by handling the complexities of data access and integration, allowing the company to focus on enhancing its recommendation engine with minimal effort.</p><p><strong>CORRECT: </strong>\"Import third-party datasets directly from AWS Data Exchange into the company's data analytics platform\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS DataSync to transfer third-party datasets into the company's AWS environment for integration\" is incorrect.</p><p>AWS DataSync is a data transfer service used for moving large volumes of data between on-premises storage and AWS storage services. While it can facilitate the transfer of datasets, it is not specifically designed for accessing third-party datasets, unlike AWS Data Exchange, which provides a marketplace for such data.</p><p><strong>INCORRECT:</strong> \"Stream third-party data into the company's system using Amazon Kinesis Data Streams from AWS CodeCommit\" is incorrect.</p><p>Amazon Kinesis Data Streams is a service for real-time data streaming, and AWS CodeCommit is a source control service. This combination is not relevant for accessing third-party market research datasets, as they are typically not stored in CodeCommit repositories nor streamed in real time.</p><p><strong>INCORRECT:</strong> \"Access and integrate third-party datasets from Amazon S3 using Amazon Kinesis Data Streams\" is incorrect.</p><p>While Amazon S3 is a widely used storage service, and Kinesis Data Streams can handle streaming data, this option does not directly address the challenge of accessing and integrating third-party market research datasets. AWS Data Exchange is a more suitable service for this purpose, offering a dedicated platform for discovering and using third-party data.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/data-exchange/\">https://aws.amazon.com/data-exchange/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/data-exchange/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "<p>A healthcare company uses an Amazon S3 bucket to store patient records. They want to ensure that the records can only be accessed by users who are accessing them through the company's Virtual Private Cloud (VPC). What should the company do to enforce this access restriction?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement an IAM policy for all users that restricts access to the S3 bucket unless requests are made through the company's VPC.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure a Network Access Control List (NACL) to allow access to the S3 bucket only for traffic originating from the company's VPC.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use an S3 bucket policy with a condition to allow access exclusively to requests that originate from the company's VPC.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Attach a Security Group to the S3 bucket that restricts access to the bucket to traffic originating from the company's VPC.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "<p>A healthcare company stores sensitive patient records as JSON files in an Amazon S3 bucket in the US East (N. Virginia) region. Due to regulatory requirements, they need to ensure that this data is automatically backed up to another AWS region for disaster recovery purposes. The backup process should be seamless and require minimal manual intervention.</p><p>Which AWS solution should the company implement to automatically back up their S3 bucket data to a different region?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Data Pipeline to create a daily job that copies data from the original S3 bucket to another bucket in a different region.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable cross-region replication on the S3 bucket to automatically replicate data to another S3 bucket in a different AWS region.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement an AWS Lambda function triggered by S3 events to copy new files to a backup bucket in another AWS region.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure Amazon S3 Lifecycle policies to transfer data to an S3 bucket in another region after a specific period.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Amazon S3 Cross-Region Replication (CRR) is a feature that automatically replicates data from one S3 bucket to another bucket in a different AWS region. This feature is designed to provide a simple and reliable solution for data backup and disaster recovery.</p><p>By enabling CRR on their S3 bucket, the healthcare company can ensure that all data written to their primary bucket is automatically and seamlessly backed up to a secondary bucket in a different region, fulfilling their regulatory requirements for data redundancy and disaster recovery</p><p><strong>CORRECT: </strong>\"Enable cross-region replication on the S3 bucket to automatically replicate data to another S3 bucket in a different AWS region\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Data Pipeline to create a daily job that copies data from the original S3 bucket to another bucket in a different region\" is incorrect.</p><p>While AWS Data Pipeline can automate data transfer between S3 buckets, this approach would require setting up and scheduling a pipeline job, which is less efficient and more complex than using S3's built-in cross-region replication. It also might not provide real-time replication.</p><p><strong>INCORRECT:</strong> \"Implement an AWS Lambda function triggered by S3 events to copy new files to a backup bucket in another AWS region\" is incorrect.</p><p>Using AWS Lambda for this task introduces unnecessary complexity. While Lambda functions can be triggered by S3 events, managing this for backup purposes is more labor-intensive and error-prone compared to the automatic and native solution provided by S3 Cross-Region Replication.</p><p><strong>INCORRECT:</strong> \"Configure Amazon S3 Lifecycle policies to transfer data to an S3 bucket in another region after a specific period\" is incorrect.</p><p>S3 Lifecycle policies are primarily used for managing the storage class of objects and automating the archiving or deletion process. They do not support automatic replication of data to buckets in different regions and are not suitable for real-time backup requirements.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "<p>A business is restructuring their data storage strategy, opting to centralize their diverse datasets into an Amazon S3-based data lake. During the initial data assessment, the team discovered redundant entries within their existing datasets.</p><p>What is the most efficient method for the data team to remove dataset redundancies?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Athena to run SQL queries that identify and delete duplicate records.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an Amazon S3 Lifecycle policy to automatically handle data deduplication.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an AWS Lambda function with custom Python code to remove duplicates before moving data to the data lake.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Glue with built-in deduplication transformations to clean the data.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p><strong>Explanation:</strong></p><p>AWS Glue is a managed ETL service that can discover, prepare, and combine data for analytics, machine learning, and application development. It provides built-in transforms, such as <strong>DropDuplicates</strong>, which can be used to remove duplicate data without the need to write custom code. This solution offers the least operational overhead as it leverages managed services and pre-built transformations.</p><p><strong>CORRECT: </strong>\"Use AWS Glue with built-in deduplication transformations to clean the data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an AWS Lambda function with custom Python code to remove duplicates before moving data to the data lake\" is incorrect.</p><p>Writing custom code in AWS Lambda for deduplication would increase operational overhead due to the development and maintenance of the code. It's less efficient compared to using AWS Glue's built-in capabilities.</p><p><strong>INCORRECT:</strong> \"Create an Amazon S3 Lifecycle policy to automatically handle data deduplication\" is incorrect.</p><p>Amazon S3 Lifecycle policies are designed to manage objects' life cycles, such as transitioning objects to different storage classes or deleting them after a certain period. They do not provide functionality for data deduplication.</p><p><strong>INCORRECT:</strong> \"Use Amazon Athena to run SQL queries that identify and delete duplicate records\" is incorrect.</p><p>While Amazon Athena can identify duplicate records using SQL queries, it is not an ETL service and does not inherently modify or remove data in S3. It would require additional steps to process and overwrite the original data, which adds complexity and operational overhead.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/transforms-drop-duplicates.html\">https://docs.aws.amazon.com/glue/latest/dg/transforms-drop-duplicates.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/transforms-drop-duplicates.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "<p>A financial services company has deployed its application on Amazon EC2 instances within a VPC. For security and compliance reasons, the company needs to ensure that all traffic to their Amazon DynamoDB tables remains within the AWS network and does not traverse the public internet.</p><p>Which AWS service or feature should the company use to securely connect its EC2 instances to DynamoDB without using the public internet?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement AWS PrivateLink to privately connect the VPC to DynamoDB.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Establish a VPN connection between the VPC and DynamoDB.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Direct Connect to link the VPC to DynamoDB.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure a NAT Gateway in the VPC for secure communication with DynamoDB.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>AWS PrivateLink is the most appropriate solution for the company's need to securely connect to DynamoDB without using the public internet. PrivateLink provides private connectivity between VPCs, AWS services, and on-premises applications, securely on the AWS network.</p><p>By using PrivateLink for DynamoDB, the company ensures that all traffic between their EC2 instances in the VPC and DynamoDB stays within the AWS network, meeting their security and compliance requirements.</p><p><strong>CORRECT: </strong>\"Implement AWS PrivateLink to privately connect the VPC to DynamoDB\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Establish a VPN connection between the VPC and DynamoDB\" is incorrect.</p><p>VPN connections are used for secure communications between a VPC and another network (like an on-premises network) over the internet. DynamoDB, being an AWS service, does not require a VPN for connectivity from a VPC.</p><p><strong>INCORRECT:</strong> \"Use AWS Direct Connect to link the VPC to DynamoDB\" is incorrect.</p><p>AWS Direct Connect provides a dedicated network connection from an on-premises environment to AWS. While it can reduce network costs and increase bandwidth, it is not necessary for intra-AWS service communication like connecting EC2 instances to DynamoDB.</p><p><strong>INCORRECT:</strong> \"Configure a NAT Gateway in the VPC for secure communication with DynamoDB\" is incorrect.</p><p>A NAT Gateway enables instances in a private subnet to connect to the internet or other AWS services, but it does not provide a private connection to DynamoDB. Traffic would still route through the internet, which does not align with the company’s requirement for internal AWS network-only connectivity.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/vpc-endpoints-dynamodb.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/vpc-endpoints-dynamodb.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/vpc-endpoints-dynamodb.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "<p>A fintech company is developing a real-time fraud detection system that needs to process and analyze large streams of transaction data as they occur. The system must capture, process, and analyze data in real-time to detect and alert on potentially fraudulent activities instantly.</p><p>Which AWS service is most suitable for capturing and processing this high-volume, real-time transaction data for the company's fraud detection system?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Kinesis Data Streams to capture and process the high-volume transaction data in real-time.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement Amazon Simple Queue Service (SQS) to manage the stream of transaction data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Store transaction data in Amazon DynamoDB and use DynamoDB Streams for real-time processing.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure Amazon S3 event notifications to trigger processing of transaction data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon Kinesis Data Streams is specifically designed for real-time data streaming and processing. It can continuously capture and store terabytes of data per hour from hundreds of thousands of sources, making it ideal for the fintech company's need to process large streams of transaction data in real-time.</p><p>Kinesis Data Streams supports rapid and continuous data intake and processing, which is essential for the company’s real-time fraud detection system. It enables immediate analysis and response to potentially fraudulent activities as data is streamed.</p><p><strong>CORRECT: </strong>\"Use Amazon Kinesis Data Streams to capture and process the high-volume transaction data in real-time\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement Amazon Simple Queue Service (SQS) to manage the stream of transaction data\" is incorrect.</p><p>While Amazon SQS is a message queuing service that can decouple and scale microservices, distributed systems, and serverless applications, it is not optimized for real-time data streaming and processing like Kinesis Data Streams. SQS is more suited for messaging and not for real-time analytics.</p><p><strong>INCORRECT:</strong> \"Store transaction data in Amazon DynamoDB and use DynamoDB Streams for real-time processing\" is incorrect.</p><p>DynamoDB Streams captures changes to items in a DynamoDB table, but it is not designed for handling high-volume, real-time streaming data like Kinesis Data Streams. It's more appropriate for scenarios where the focus is on capturing and reacting to changes in a DynamoDB table.</p><p><strong>INCORRECT:</strong> \"Configure Amazon S3 event notifications to trigger processing of transaction data\" is incorrect.</p><p>Amazon S3 event notifications can respond to events like object creation, but S3 is primarily a storage service and not suited for real-time processing of streaming data. This approach would not provide the low-latency processing capabilities required for real-time fraud detection.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/streams/latest/dev/introduction.html\">https://docs.aws.amazon.com/streams/latest/dev/introduction.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  }
+]

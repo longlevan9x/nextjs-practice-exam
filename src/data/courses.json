@@ -375,30 +375,30 @@
         "domains": [
             {
                 "name": "Domain 4: Monitoring and Logging",
-                "questionCount": 11
+                "questionCount": 0
             },
             {
                 "name": "Domain 2: Configuration Management and IaC",
-                "questionCount": 16
+                "questionCount": 0
             },
             {
                 "name": "Domain 1: SDLC Automation",
-                "questionCount": 16
+                "questionCount": 0
             },
             {
                 "name": "Domain 6: Security and Compliance",
-                "questionCount": 9
+                "questionCount": 0
             },
             {
                 "name": "Domain 3: Resilient Cloud Solutions",
-                "questionCount": 10
+                "questionCount": 0
             },
             {
                 "name": "Domain 5: Incident and Event Response",
-                "questionCount": 13
+                "questionCount": 0
             }
         ],
-        "imageUrl": "/images/aws-dva.png",
+        "imageUrl": "/images/aws-dop.png",
         "description": "AWS Certified DevOps Engineer Professional Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Stephane Maarek"
@@ -406,46 +406,253 @@
     {
         "id": 13,
         "name": "AWS Certified DevOps Engineer Professional 2025 - C02 - Neal Davis",
-        "questionCount": 75,
-        "duration": 180,
-        "passScore": 75,
+        "imageUrl": "/images/aws-dop.png",
+        "description": "AWS Certified DevOps Engineer Professional Study Guide",
+        "updatedAt": "2025-05-01",
         "domains": [
             {
                 "name": "AWS Security, Identity, & Compliance",
-                "questionCount": 4
+                "questionCount": 0
             },
             {
                 "name": "AWS Compute",
-                "questionCount": 5
+                "questionCount": 0
             },
             {
                 "name": "AWS Developer Tools",
-                "questionCount": 3
+                "questionCount": 0
             },
             {
                 "name": "AWS Networking & Content Delivery",
-                "questionCount": 3
+                "questionCount": 0
             },
             {
                 "name": "AWS Storage",
-                "questionCount": 4
+                "questionCount": 0
             },
             {
                 "name": "AWS Management & Governance",
-                "questionCount": 4
+                "questionCount": 0
             },
             {
                 "name": "AWS Analytics",
-                "questionCount": 1
+                "questionCount": 0
             },
             {
                 "name": "AWS Database",
-                "questionCount": 1
+                "questionCount": 0
             }
         ],
-        "imageUrl": "/images/aws-dva.png",
-        "description": "AWS Certified DevOps Engineer Professional Study Guide",
-        "updatedAt": "2025-05-01",
+        "questionCount": 75,
+        "duration": 180,
+        "passScore": 75,
         "author": "Neal Davis"
+    },
+    {
+        "id": 14,
+        "name": "AWS Certified Data Engineer Associate 2025 - C01 - Stephane Maarek",
+        "imageUrl": "/images/aws-dea.png",
+        "description": "AWS Certified Data Engineer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "Domain 3: Data Operations and Support",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 2: Data Store Management",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 4: Data Security and Governance",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 1: Data Ingestion and Transformation",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "author": "Stephane Maarek"
+    },
+    {
+        "id": 15,
+        "name": "AWS Certified Data Engineer Associate 2025 - C01 - Neal Davis",
+        "imageUrl": "/images/aws-dea.png",
+        "description": "AWS Certified Data Engineer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "Domain 2: Data Store Management",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 3: Data Operations and Support",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 1: Data Ingestion and Transformation",
+                "questionCount": 0
+            },
+            {
+                "name": "Domain 4: Data Security and Governance",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "author": "Neal Davis"
+    },
+    {
+        "id": 16,
+        "name": "AWS Certified Data Engineer Associate 2025 - C01 - Nicolai Schuler",
+        "imageUrl": "/images/aws-dea.png",
+        "description": "AWS Certified Data Engineer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "Data Security and Governance",
+                "questionCount": 0
+            },
+            {
+                "name": "Data Store Management",
+                "questionCount": 0
+            },
+            {
+                "name": "Data Operations and Support",
+                "questionCount": 0
+            },
+            {
+                "name": "Data Ingestion and Transformation",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "author": "Nicolai Schuler"
+    },
+    {
+        "id": 17,
+        "name": "AWS Certified Machine Learning Engineer Associate 2025 - C01 - Stephane Maarek",
+        "imageUrl": "/images/aws-mla.png",
+        "description": "AWS Certified Machine Learning Engineer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "ML Model Development",
+                "questionCount": 0
+            },
+            {
+                "name": "ML Solution Monitoring, Maintenance, and Security",
+                "questionCount": 0
+            },
+            {
+                "name": "Deployment and Orchestration of ML Workflows",
+                "questionCount": 0
+            },
+            {
+                "name": "Data Preparation for Machine Learning (ML)",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "author": "Stephane Maarek"
+    },
+    {
+        "id": 18,
+        "name": "AWS Certified Machine Learning Engineer Associate 2025 - C01 - Nicolai Schuler",
+        "imageUrl": "/images/aws-mla.png",
+        "description": "AWS Certified Machine Learning Engineer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "ML Solution Monitoring, Maintenance, and Security",
+                "questionCount": 0
+            },
+            {
+                "name": "ML Model Development",
+                "questionCount": 0
+            },
+            {
+                "name": "Data Preparation for Machine Learning",
+                "questionCount": 0
+            },
+            {
+                "name": "Deployment and Orchestration of ML Workflows",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "author": "Nicolai Schuler"
+    },
+    {
+        "id": 19,
+        "name": "PMP® Mock Exam Set I Exam - Joseph Phillips",
+        "imageUrl": "/images/pmp.png",
+        "description": "PMP® Mock Exam Set I Exam Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "Process",
+                "questionCount": 0
+            },
+            {
+                "name": "People",
+                "questionCount": 0
+            },
+            {
+                "name": "Business Environment",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 180,
+        "duration": 230,
+        "passScore": 70,
+        "author": "Joseph Phillips"
+    },
+    {
+        "id": 20,
+        "name": "PMP® Mock Exam Set II Exam - Joseph Phillips",
+        "imageUrl": "/images/pmp.png",
+        "description": "PMP® Mock Exam Set II Exam Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [
+            {
+                "name": "Process",
+                "questionCount": 0
+            },
+            {
+                "name": "People",
+                "questionCount": 0
+            },
+            {
+                "name": "Business Environment",
+                "questionCount": 0
+            }
+        ],
+        "questionCount": 180,
+        "duration": 230,
+        "passScore": 70,
+        "author": "Joseph Phillips"
+    },
+    {
+        "id": 21,
+        "name": "PMP Mock Exam Set - Internet Summary",
+        "imageUrl": "/images/pmp.png",
+        "description": "PMP Mock Exam Set Study Guide",
+        "updatedAt": "2025-05-01",
+        "domains": [],
+        "questionCount": 180,
+        "duration": 230,
+        "passScore": 70,
+        "author": "Internet Summary"
     }
 ]

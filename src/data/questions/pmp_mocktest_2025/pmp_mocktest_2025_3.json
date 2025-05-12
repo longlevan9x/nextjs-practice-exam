@@ -1,0 +1,1752 @@
+[
+  {
+    "id": 1,
+    "question": "Kelly is a new project manager for her organization. She has been informed that she’ll be working with the company’s PMO for her projects. Kelly isn’t familiar with the concept of project management offices. If you were consulting Kelly, which one of the following statements best describes the primary function of a PMO?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "A primary function of a PMO is to provide direction and leadership.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "A primary function of a PMO is to control the actions of the project manager.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "A primary function of a PMO is to oversee all project management decisions.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "A primary function of a PMO is to support project managers.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Of all the choices, the best answer is that the primary function of a PMO is to support project managers.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 2,
+    "question": "Consider an activity that is not on the critical path that has four days of float available. The duration of the activity is four days. What’s the total amount of time this activity can take without affecting the project completion date?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Four days",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Four days plus four days of slack time",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Seven days",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Eight days",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The correct answer is simply eight days as the task will take four days to complete, and there are four days of float for a total of eight possible days of duration.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "Holly is the project sponsor of your project in your organization. Your project will cost the organization $500,000, and Holly explains that the organization is utilizing a commercial loan to fund your project. While you should be prudent with all monies in a project, the commercial loan will cost the organization additional funds in interest. What term best describes the commercial loan for your project to exist in the organization?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Funding with equity",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Funding with debt",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Self-funding",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Opportunity cost",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of funding with debt as the organization has taken on debt to finance your project. A commercial loan has interest, which the organization will have to pay back to the finance company, so this is a debt to fund your project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 4,
+    "question": "Thomas is the project manager of the NHLK Project for his organization. He is working with the project team to identify the project stakeholders. Which one of the following business documents will best help Thomas identify the stakeholders in the project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Risk management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Benefits management plan",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Communications management plan",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Scope management plan",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is a very tricky question as the question asks which business document will help. The only business document referenced is the benefits management plan. The benefits management plan describes the expected plan for realizing the benefits claimed in the business case. It may identify the individuals and groups that will benefit from the delivery of the outcomes of the project and are thus considered as stakeholders. This is from the PMBOK Guide, 13.1.1.2.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "A project manager has determined that some of the phases of the project can overlap to save time on the schedule duration. What is this approach called?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "This is fast-tracking and it increases the cost of the project.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "This is fast-tracking and it increases the duration of the project.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "This is duration compression and it increases the cost of the project.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "This is fast-tracking and it increases the risk of the project.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Fast-tracking allows activities, but usually, phases, to overlap to decrease the overall project duration. This approach, however, does introduce project risk. Fast tracking usually applies to phases, but can be implemented for project activities too.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 6,
+    "question": "Ken, the sponsor of the JDH Project, has completed the project charter. It designates Roger as the project manager of this project. If Roger is now working on eliciting and documenting stakeholder requirements, which process group does his work fall under?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project Scope Management",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Project Integration Management",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Planning",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Monitoring and Controlling",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Roger is working in the planning process group. Note that project scope management and project integration management are not process groups, but are project management knowledge areas.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 7,
+    "question": "You are a project manager for your organization. Your project will need 1,200 fixtures for the project and you know that each fixture will cost your organization $345. Based on simple math you know that the cost of fixtures will be $414,000. This is what type of estimating for this portion of your project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Analogous",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Parametric",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Unit-based",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quantitative",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is a parametric estimate, where the parameter of the model is $345 per unit and your project will need 1,200 units. Analogous estimating compares one project to another to predict costs. Unit-based and quantitative are not valid cost estimating types.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 8,
+    "question": "You are a project manager for your organization. Your current project has a budget of $1,250,650 and is currently 65 percent done. Due to some errors by the project team, however, you were supposed to 75 percent as of today. In your project, you have spent $847,500 – slightly more than what was planned. Management has asked for to report your cost variance for this project. What’s the best answer?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "($34,578)",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "($53,196)",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "10 percent of the project budget",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "($125,065)",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Your cost variance is found by using the formula of Earned Value – Actual Costs. In this scenario, the earned value is $812,923 and the actual costs are $847,500. The other answers are incorrect calculations of the cost variance for this project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 9,
+    "question": "A project manager is running late on his project implementation and he has decided to add 15 workers to some effort-driven activities. This addition of workers will reduce the duration of the work but will drive costs. What term best describes this addition of labor to the effort-driven activities?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Float",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Compounding",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Crashing",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Slack",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Crashing adds labor to effort-driven activities but increases the overall costs of the project for the additional labor.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 10,
+    "question": "Beth is a project manager in her organization, and she is working with her project team to create the project management plan for her project. The purpose of the project management plan is best described as which one of the following choices?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Manage phase transitions within the project timeline",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Define when the work will be completed and how much the work will cost",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Define all processes the project team must utilize",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Define how the project will achieve its objectives",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best answer is that the project management plan defines how the project will achieve its objectives. The project plan defines all processes that the project, not just the project team, will utilize and to what depth each selected process will be implemented. The project plan can also address how phase transitions will be managed, but this is not the best choice for achieving the project objectives. The project plan also addresses more than just the timeline and project costs.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 11,
+    "question": "Jerry is a project manager in his organization. He is working with the project team to identify the project stakeholders by leading an exercise where the team will first create their list of potential stakeholders and then come for a group creativity session to compare their lists of stakeholders with the group. What data gathering approach is Jerry likely using in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Brainwriting",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Brainstorming",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Round robin",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Delphi technique",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Brainwriting is a refinement of brainstorming that allows individual participants time to consider the question(s) individually before the group creativity session is held. The information can be gathered in face-to-face groups or using virtual environments supported by technology.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 12,
+    "question": "You are the project manager for GHT Organization. Your manager, Jesse, has announced that he’s leaving the organization after 20 years of service. Another manager, Barb, who doesn’t like your project objectives, will be taking over as project sponsor and manager for your department. You now fear that Barb will cancel your project with her new authority. What type of power does Barb likely have in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Avoiding",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Referent",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Punitive",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Situational",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Barb has situational power. Her power over the project has increased due to the situation of Jesse leaving the organization. Punitive means the person can discipline others. Reference means the person has respect or admiration. Avoiding means the person refuses to participate.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 13,
+    "question": "Chris is working to develop the project charter for Project RTY. The project, sponsored by the county project officer, deals with the construction of a new community hall for the county government at a BAC of $400,000. Which of the following statements is not true concerning the project charter?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "It creates a formal record of the project.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "It provides a direct link between the project and the strategic objectives of the organization.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "It shows the organizational commitment to the project.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "It must always be developed by the project sponsor.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project charter can be developed by the sponsor or the project manager in collaboration with the initiating entity. The project sponsor signs charters as this is the person with the authority to authorize the project and the project manager.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 14,
+    "question": "The role of a project manager is distinct from that of a functional manager or operations manager. Which of the following definitions is not correct regarding these roles?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Operations managers are responsible for ensuring that business operations are efficient.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "The functional manager focuses on providing management oversight for a functional or business unit.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "The functional manager is the person assigned by the performing organization to lead the team that is responsible for achieving the project objectives.",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "The functional manager in a functional structure will make all project budget decisions throughout the project.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The person assigned by the performing organization to lead the team that is responsible for achieving the project objectives is the project manager, not the functional manager. The other choices are not valid answers for this question as these are accurate statements about these roles.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 15,
+    "question": "Joan is the project manager of the NKQ Project, and she is trying to get the project sponsor to decide some of the project work. Joan wants the project sponsor to make a decision, but the project sponsor is encouraging Joan and the project team to make the decision. Joan suspects that the project sponsor is putting the decision on her because if the decision is wrong, it will be her fault. Beth, a project team member, says that project sponsor always wants the team to make decisions. What leadership style is happening in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Servant leadership",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Laissez-faire",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Charismatic",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Transactional",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Laissez-faire means the project sponsor or project manager is allowing the team to make decisions and establish their personal goals, also referred to as taking a hands-off style. Transactional is more about the focus on goals, feedback, and accomplishment to determine rewards; management by exception. Servant leadership is often in agile projects and demonstrates a commitment to serve and put other people first; focuses on other people’s growth, learning, development, autonomy, and well-being; concentrates on relationships, community, and collaboration; leadership is secondary and emerges after service. Charismatic is the ability to inspire; is high-energy, enthusiastic, self-confident; holds strong convictions.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 16,
+    "question": "Barry is a project manager of the GJL Project for his organization. He’s working with the project team to define the communications management plan. In his planning meeting, Barry wants to the team to think of the 5C’s of Communication. You should know these too. Which one of the following is not one of the 5C’s of communication?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Correct grammar and spelling",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Consistent messaging",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Clear purpose of the message",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Concise message",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Consistent messaging is not one of the Five C’s of Communication. The Five C’s are correct grammar and spelling, concise message, the clear purpose of the message, coherent flow, and controlling the flow of the message.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 17,
+    "question": "Complete this statement: Research reveals that the top two percent of project managers as designated by their bosses and team members distinguish themselves by demonstrating ________________.",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Superior relationship and communication skills while displaying a positive attitude",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Superior relationship and analytical skills while displaying a positive attitude",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Superior analytical and communication skills while displaying a positive attitude",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Superior analytical skills while displaying a positive attitude",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Research reveals that the top two percent of project managers as designated by their bosses and team members distinguish themselves by demonstrating superior relationship and communication skills while displaying a positive attitude.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "Karen is the project manager for your organization and she’s working with the project team to finalize a phase of a project. Karen has requested that the team inspect all of the work prior to the project customer inspection next week. Karen wants to ensure that the work is perfect and that there will be no delays with the customer inspection in the project. What type of inspection is the project team completing before the customer’s inspection?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The team is completing PDCA and the customer is completing scope acceptance verification.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "The team is completing quality assurance and the customer is completing scope validation.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "The team is completing scope validation and the customer is completing quality control.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The team is completing quality control and the customer is completing scope validation.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The team is completing quality control, which aims to keep mistakes out of the customers’ hands. The customer will be completing scope validation, which aims to accept the product. Both processes utilize inspection. The other statements are not valid descriptions of what’s happening in the scenario.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 19,
+    "question": "June is a project manager in her organization and she’s working with the project sponsor and the immediate project team to identify the project stakeholders. The process of stakeholder identification is best described as first happening when?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Prior to or during the project charter development and approval",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "When the project planning begins by the project sponsor",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "At the start of each project phase as directed by the PMBOK Guide",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "At the start of project execution but before the WBS creation",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Stakeholder identification occurs for the first time in a project either prior to or at the same time the project charter is developed and approved. It is repeated as necessary, but should be performed at the start of each phase and when a significant change in the project or the organization occurs. Each time the identification process is repeated, the project management plan components and project documents should be consulted to identify relevant project stakeholders.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 20,
+    "question": "Ray is a project manager in his organization and he’s leading a Scrum-based project. In this project, Ray needs to define with the project team how long each project iteration should take. What term best describes the duration of an iteration in a Scrum project?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Rolling wave planning",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Increment",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Iteration",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Timeboxed period",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When using an adaptive life cycle, the time-boxed periods for releases, waves, and iterations are specified. Time-boxed periods are durations during which the team works steadily toward completion of a goal. Time-boxing helps to minimize scope creep as it forces the teams to process essential features first, then other features when time permits.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 21,
+    "question": "You are a project manager for the GHB Corporation and you’re working with your project sponsor to discuss a recent project that wasn’t successful. Several of the product testers missed defects that affected lines of business in the organization. The project sponsor wants to know who is responsible for the project as a whole. What’s the best answer?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "You, the project manager, are ultimately responsible",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "In this case, the product testers are responsible",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "The project team is responsible for the project",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The project team and the project manager are responsible",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The PMBOK Guide, the sixth edition, tells us in the key concepts of Chapter 4 that the project manager is ultimately responsible for the project as a whole. The project team may have some accountability, but the project manager is the responsible party. While the product testers may be accountable for missing the defects, the question asks about the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "Management has just approached you about some defects that were found by the customer during an inspection. Management is unhappy about these defects and needs these addressed immediately by you and the project team. These defects are specifically known as what term?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Internal defects",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Poor defects",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Sensitive defects",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "External defects",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "These are external defects. Failure costs are often categorized into internal (found by the project team) and external (found by the customer). Failure costs are also called the cost of poor quality.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 23,
+    "question": "As a project manager, you need several different skills to be effective. One skill is communication. According to some research cited in the PMBOK Guide, sixth edition, project managers spend how much of their time communicating?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "80 percent",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "50 percent",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "90 percent",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "20 percent",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Project managers spend about 90 percent of their time communicating. Communication management is covered in detail in Chapter 10 in the PMBOK Guide and is closely related to Project Stakeholder Engagement.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 24,
+    "question": "You are the project manager of the NLK Project for your organization. Your project is scheduled to last for 37 days, starts on a Wednesday, and you’ll not work any weekends on the project. Valerie, your project sponsor, needs to know on what day of the week the project will complete as it may affect some business processes they do. Based on this information, what day of the week will your project complete?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Wednesday",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Tuesday",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Thursday",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Friday",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Your project will end on a Thursday. To find this solution you count from Wednesday to Friday, which is day three, then you’ll add five to each Friday until you reach 38. Knowing that the project is only to last 37 days, the day prior to the 38th day is a Thursday.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 25,
+    "question": "Maria is a project manager and she is nearing the end of the GHY Project. Joseph, a project team member, reports that he’ll be done with the final project tasks in the next two days. Maria is reviewing the project budget and she realizes that there is $28,000 still left in the project budget. She decides that she will add several features to the project that the customer isn’t expecting as a surprise. These features will make the product more attractive and will definitely add value to the finished product. She confers with the project team and they agree they can complete these features by the project deadline. What best describes this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Scope validation",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Scope creep",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Value-added change",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Gold plating",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the project manager adds features to the project that were not asked for or approved only because there are funds available for the project, as in this case, it is called gold plating. It is wasteful as the customer didn’t request the additions. The changes have also bypassed integrated change control, so this is poor project management.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 26,
+    "question": "In project integration management the process to close the project or phase creates four outputs. Which one of the following is not one of the four outputs of closing the project or phase?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project documents updates",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Final report",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Final project team assessment",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Final product",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The close project or phase process does not create the final project team assessment. The four items are the product documents updates, the final product, service, or result transition, final report, and the organizational process assets updates.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 27,
+    "question": "You are a project manager for the KHAA Organization and you’re working with the project team to define the project scope management plan. You’re using historical information to adopt a similar project to the current project to define the scope management plan. In your plan, however, you know that you will need to define four key processes. All of the following are processes you should define in the project except for which one?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "A process that specifies how formal acceptance of the completed project deliverables will be obtained",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "A process that establishes how the project manager can modify the scope requirements",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "A process for preparing a project scope statement",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "A process that enables the creation of the WBS from the detailed project scope statement",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The scope management plan does not define how the scope requirements can be modified by the project manager. The plan defines the process for preparing a project scope statement, the creation of the WBS, how the scope baseline will be approved and maintained, and how formal acceptance of the completed project deliverables will be obtained.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 28,
+    "question": "You are a project manager for the ARQ Company, and you’re working with your project management office to learn about the required templates, forms, and tools all project managers in your organization must use. What type of project management office are you working with in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Controlling",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Supportive",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Directive",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Enterprise",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Controlling PMOs provide support and require compliance through various means. The degree of control provided by the PMO is moderate. Controlling PMOs define the specific templates, forms, and tools you’re required to use as the project manager.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 29,
+    "question": "A PMO may have the authority to act as an integral stakeholder and a key decision maker throughout the life of each project. Which of the following is not a function of a PMO?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Identifying and developing project management methodology, best practices, and standards",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Creating the charter for a project that is administered by the PMO",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Coordinating communication across projects",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Managing shared resources across all projects administered by the PMO",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project charter can be developed by the sponsor or the project manager in collaboration with the initiating entity, but not by the PMO. All the other options are valid functions of a PMO, so they are not correct answers for this question.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 30,
+    "question": "You have created the project network diagram with your team. Your team is concerned about one of the activities that may be delayed due to some risk on the project. What term is assigned to the total amount of time an activity may be delayed without affecting the early start of a successor activity?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Free float",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Float",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Slack",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Total float",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Free float is the amount of float that can be delayed without affecting the early start of a successor activity. Total float is the amount of time an activity can be delayed without affecting the project completion date. Note that slack is a dated term that also means float.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 31,
+    "question": "As a project manager, you should recognize the communication model not only for your exam but also to be a more effective project manager. Which one of the following is the correct ordering of a message through the communications model?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Sender, Encoder, Transmitter, Decoder, Receiver, Acknowledger",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Sender, Transmitter, Medium, Receiver, Decoder, Acknowledgment",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Sender, Encoder, Medium, Decoder, Receiver, Acknowledgement",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Encoder, Decoder, Acknowledgement",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The communications model is Sender, Encoder, Medium, Decoder, Receiver, and Acknowledgement.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 32,
+    "question": "Henry is the project manager of a construction project for his organization. He is examining the project schedule and he has several activities that are scheduled as finish-to-start, but there’s no real reason that the entire activities need to be completed before the successor activity can begin. Henry elects to allow some of the activities to overlap by a few days to compress the overall schedule duration. What technique has Henry likely used in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Lead time",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Negative float",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Schedule compression",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Duration compression",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Lead time is negative time as it brings activities closer to the project start date. Henry has added lead time to move the start date of the successor activities to overlap with the predecessor activities in the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 33,
+    "question": "Mary, the project sponsor, has asked you to create the most accurate project cost estimate before starting the project execution. What type of project cost estimate should you create for Mary?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Budget estimate",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Proof estimate",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "ROM",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Definitive estimate",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A definitive estimate is the most accurate cost estimate, but it requires the work breakdown structure to create. A definite estimate takes the longest to create, but it is the most reliable.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 34,
+    "question": "Projects are often complex and require analytical skills by the project manager and the project team. There are three specific dimensions to the complexity of project management. Which one of the following is not one of the three dimensions of complexity?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Human behavior",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "System behavior",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Team behavior",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Ambiguity",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Team behavior is not one of the three dimensions of complexity. Complexity within projects is a result of the organization’s system behavior, human behavior, and the uncertainty at work in the organization or its environment. In Navigating Complexity: A Practice Guide, these three dimensions of complexity are defined as System behavior: the interdependencies of components and systems. Human behavior: the interplay between diverse individuals and groups. Ambiguity: uncertainty of emerging issues and lack of understanding or confusion.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 35,
+    "question": "Harold is the project manager of the JKL Project for his organization and he’s meeting with the project team to identify some project risks in the next phase of the project. During the meeting, he notices that Char and Holly won’t look at each other and their body language tells Harold, and the rest of the project team members, that there is some hostility between these two individuals. Throughout the meeting, Harold observes that these two individuals won’t speak to each other and it’s causing some disruption in the conference. What component of the communication model is happening and will present a challenge for Harold to overcome?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Barrier",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Anger",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Blockage",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Emotional intelligence",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The only term listed that is part of the communication model is the barrier. A barrier is when two parties won’t communicate due to something blocking the flow of communication. In this instance, there appears to be some disagreement between Char and Holly, but a barrier could also be things like technology failure or different languages spoken between the parties.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 36,
+    "question": "You are a project manager for your organization and management has asked you to present a chart that will show the planned project performance on one axis and the actual project performance on a second axis to see the correlation of what was expected and what was experienced. What type of quality management chart is being requested?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Fishbone chart",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Scatter diagram",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Pareto chart",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Histogram",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Scatter diagrams can show the planned performance on one axis and the actual performance on the second axis.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 37,
+    "question": "As a project manager, you should be familiar with the project management processes and what the different processes create for a project. Consider the develop project charter process. This process creates the project charter, but also creates what other project item?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project manager designation",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Organizational process assets",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Project team charter",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Assumption log",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project management process of creating the project charter also establishes the assumption log. This is from the PMBOK Guide, Section 4.1.3.2.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 38,
+    "question": "Consider a project manager in a startup technology company. This project manager has very little authority, works closely with the people in the organization, has other responsibilities in the company other than project management, and everyone in the organization chips in together to complete project work – including the company owner. What type of organizational structure is this?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Organic",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "PMO",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Virtual",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Strong matrix",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an organic structure where the project manager has other responsibilities than project management, works closely with the people of the organization, and has no authority or little authority over the project team and resources.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 39,
+    "question": "Victor is the project sponsor of the HK Project and he has cautioned Mary of overworking the project team to meet deadlines in the project. Mary is eager to meet the deadlines and feels that the time should work a little extra throughout the project to deliver as promised. What’s one of the key drawbacks of overworking the project team?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The project will likely experience rework",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Duration estimates will be bloated to reduce actual work hours",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Mary will need improved communication and emotional intelligence",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The team will enjoy bonuses, but won’t enjoy the project work",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Meeting customer requirements by overworking the project team may result in decreased profits and increased levels of overall project risks, employee attrition, errors, or rework.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 40,
+    "question": "You are stopped in the hallway of your office and Gary, the CIO, wants a quick estimate for a small project. He promises he won’t hold you to the estimate, but needs a rough idea of what the cost of an implementation should be. You tell Gary the cost will likely be $250,000 but could be 25 percent less to 75 percent more, based on your limited information. What type of estimate have you provided Gary?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "SWAG",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Budget",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "ROM",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Ad hoc",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "You have provided Gary a ROM estimate, which is a rough order of magnitude estimate type. It’s not very reliable and is based on limited information. ROM estimates should always have a range variance to show their volatility and to set expectations.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 41,
+    "question": "You are the project manager of AGD Project, and your team comprises of a variety of specialists such as cost analysts, risk management experts, scheduling specialists, and other skilled workers. You are working with the project team to define project integration management processes for your project. Which of the following is an incorrect statement about the Project Integration Management knowledge area of your project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The process of finalizing all activities for the project, phase or contract is a part of Project Integration Management.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "You can delegate or transfer the accountability of Project Integration Management to one or more experts in your team.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Manage project knowledge is one of the processes under Project Integration Management.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "You develop the project management plan as part of Project Integration Management.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Whereas other Knowledge Areas may be managed by specialists, the accountability of Project Integration Management cannot be delegated or transferred. Project Integration Management is the responsibility of project managers.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 42,
+    "question": "Rick is working on the Plan Scope Management process and has decided to use alternatives analysis as the data analysis technique in his project. Which of the following is not evaluated in this technique?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Various ways of controlling the scope",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Various ways of validating the scope",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Various ways of creating the product",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Various ways of controlling change",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Rick would not use alternatives analysis to define how to control change in the project. The other options are examples of things that can be evaluated during alternatives analysis.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 43,
+    "question": "As a project manager participating in the PMI certification program, you should be familiar with the PMI Talent Triangle and its components. Which one of the following is not part of the PMI Talent Triangle?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Strategic and business management",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Quality management",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Leadership",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Technical project management",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality management is not part of the PMI Talent Triangle. The three components are Technical Project Management, Leadership, and Strategic and Business Management.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 44,
+    "question": "You are working with the project team to determine the cost of an activity in the project. The project team has provided a pessimistic, optimistic, and most likely estimate of costs for the activity. What type of estimate are you likely creating with the project team in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Monte Carlo",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Beta",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Averaged",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Constant",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The only answer that’s applicable is the beta estimate, which is also known as PERT. Beta uses the formula of (O+(4ML)+P)/6 to create a prediction of costs. Note that triangular is the three-point estimate that generates an average of costs, but it is not called Averaged.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 45,
+    "question": "John is the project manager for his organization, and he’s working with the project team to create a project cost estimate. John would like to purchase resources for his project from a specific vendor, The JH Goods Company, that he has worked with in the past. John knows that some other vendors may charge slightly less than the JH Goods Company, but he knows this vendor is reliable and does excellent work. What is the best term to describe John’s preference in this scenario?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Preferred vendor",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Sole source",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Single source",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Oligopoly",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is a single source model of procurement. John prefers to purchase from one specific vendor, though there are multiple vendors available. A sole source means only one vendor exists that can fulfill the particular project purchase. Oligopoly describes the market condition that is so tight that the actions of one company affect the operations of others, such as the cost of airline travel or fuel. A preferred vendor isn’t a valid project management term.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 46,
+    "question": "You are the project manager of the NJL Project. This project is replacing several servers, workstations, routers, and other equipment in your IT configuration. As part of this project, you and the team have created a WBS Dictionary. All of the following items are part of the WBS Dictionary except for which one?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality requirements",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Code of account identifier",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Technical reference",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Stakeholder requestor",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The stakeholder requestor is not included in the WBS Dictionary. The dictionary includes information about the components of the WBS and the project scope and is used to ensure that everyone has a clear understanding of what each component of the project scope and the WBS is and how it’s utilized and implemented in the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 47,
+    "question": "You are the project manager for your organization. Your current project has 18 stakeholders on the project that you have to work with each day. How many communication channels are in this project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "18",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "342",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "171",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "1",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "To find the answer you’ll use the formula of N(N-1)/2 where N represents the number of stakeholders. Notice that this question requires you to include the project manager in the total number of stakeholders presented. This is a common query from exam candidates: to include the project manager in the number of stakeholders or not. On your exam, you may have to first find the answer with the number of stakeholders including the project manager and then find the answer without the project manager in the number. Generally, it’s assumed that the project manager is a stakeholder (of course), and you’ll include the project manager in the calculation. Basically, do the formula and see if any of the answers match your findings if not, do the formula again and make an adjustment for the project manager to be included or not. It’s tedious, but not difficult. I highly doubt you’ll have to choose from answers with the project manager included and not included in the formula.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 48,
+    "question": "Alice is the project manager for her organization and she is considering building a solution for her company. If she builds the solution it will cost the organization $650,000 to create and $17,300 per month to support. A vendor promises that they can build the solution for $120,000, but the monthly fee will be $21,400. What should Alice do?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Build the solution if the organization will use the solution for less than 18 months, but longer than 12 months.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Buy the solution if the organization will use the solution for less than 13 months, but more than 11 months.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Buy the solution.",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Build the solution if the organization will use the solution for longer than 13 months, but less than 24 months.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Alice should buy the solution as it is incredibly more cost-effective than her in-house solution. It will take 129 months, nearly 11 years, for her solution to be more cost-effective than the vendor’s solution. You can find this answer by subtracting the buy costs from the build costs, which is $650,000 - $120,000 for a difference of $530,000. Then you find the difference of the monthly support costs, which is 21,400-17,300 and equals $4,100. Then you’ll divide the monthly difference into the out-of-pocket costs: 530,000/4,100 for a solution of 129 months. This means in 129 months the in-house solution is more cost-effective than the vendor’s solution.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 49,
+    "question": "Rajesh is the project manager of the KJU Project and is about to decide a data representation technique to be used in his project. He has asked Steve, his team member, to research on affinity diagrams. Which of the following statements best describes the purpose of an affinity diagram?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "They provide short, textual descriptions of required functionality, and are often developed during a requirements workshop.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "They help consolidate ideas created through individual brainstorming sessions into a single map to reflect commonality and differences in understanding and to generate new ideas.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "They visually depict the product scope by showing a business system and how people and other systems interact with it.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "They allow large numbers of ideas to be classified for review and analysis.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Affinity diagrams allow large numbers of ideas to be classified for review and analysis.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 50,
+    "question": "Gary is the project manager of the NKQ Project and he’s in a heated discussion with his team lead. The team lead has instructed the project team members to delay the start of an activity until all of the materials needed arrive on the job site. This action has caused a ripple effect of delays in the project that were not approved by Gary. The team leader’s logic was that all of the materials were not yet on the job site so that the team couldn’t complete all of the work. Gary, however, believes that the team could begin the work and the new materials would be delivered as the team consumed the materials. What type of solution was Gary working with in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Mandatory dependencies",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "JIT Scheduling",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Float",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Hard logic",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Gary was using JIT Scheduling, which is Just-in-Time scheduling. This approach provides new materials to the job site as the team consumes the current materials. It saves on space on the job site, limits cash outlays, and prevents theft of materials as the materials are only delivered as they are needed and don’t need to be stored and managed at the job site. This is not an example of float or mandatory dependencies. Note that mandatory dependencies are also known as hard logic.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  }
+]

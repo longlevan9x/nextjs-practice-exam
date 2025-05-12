@@ -1,0 +1,960 @@
+[
+  {
+    "id": 1,
+    "question": "<p>A data engineering team at an e-commerce company needs to analyze historical sales data stored in Amazon S3, alongside real-time data in their Amazon Redshift cluster. The historical data in S3 is in Parquet format and is updated monthly, while the Redshift cluster handles ongoing transactional data. The team wants to query both datasets simultaneously without importing the S3 data into Redshift, seeking an efficient solution to manage and query these datasets together.</p><p>Which AWS service or feature should the data engineering team use to query both the historical data in Amazon S3 and the real-time transactional data in Amazon Redshift without data loading or transformation?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Glue Data Catalog to combine data from Amazon S3 and Redshift for querying.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure Amazon Athena Federated Query to access both S3 and Redshift data sources.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement Amazon Redshift Spectrum to query data directly in S3 from Redshift.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Set up an AWS Data Pipeline to consolidate data in S3 and Redshift for combined querying.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Amazon Redshift Spectrum allows users to directly run SQL queries against exabytes of unstructured data in Amazon S3, no loading or ETL required. With Redshift Spectrum, the data engineering team can query their historical sales data stored in S3 directly from their Amazon Redshift cluster.</p><p>This enables them to perform analysis across their entire datasets (both historical in S3 and real-time in Redshift) using standard SQL, making it an ideal solution for their requirement to analyze combined datasets without the hassle of data loading or transformation.</p><p><strong>CORRECT: </strong>\"Implement Amazon Redshift Spectrum to query data directly in S3 from Redshift\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Glue Data Catalog to combine data from Amazon S3 and Redshift for querying\" is incorrect.</p><p>While the AWS Glue Data Catalog is a central metadata repository, it doesn’t enable querying of data across S3 and Redshift directly. It is more about cataloging data and serving metadata for ETL processes and data discovery.</p><p><strong>INCORRECT:</strong> \"Configure Amazon Athena Federated Query to access both S3 and Redshift data sources\" is incorrect.</p><p>Amazon Athena Federated Query allows querying data from multiple sources, but it is primarily used with Athena and doesn’t provide the seamless integration with Redshift that is needed for this scenario.</p><p><strong>INCORRECT:</strong> \"Set up an AWS Data Pipeline to consolidate data in S3 and Redshift for combined querying\" is incorrect.</p><p>AWS Data Pipeline is a web service for processing and moving data between different AWS compute and storage services. It is not optimized for direct querying of data, but rather for data movement and transformation.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html\">https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "<p>A high-traffic news website is experiencing performance issues due to frequent, read-heavy queries to their main database, which stores frequently accessed user session data and website preferences. To enhance the website's responsiveness and reduce database load, they require a caching solution that provides high throughput and low latency for data retrieval.</p><p>Which AWS service should the website implement to efficiently cache frequently accessed data and improve application performance?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Deploy Amazon DynamoDB with DAX (DynamoDB Accelerator) for caching read-heavy query results.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement Amazon ElastiCache to cache frequent read-query results and reduce direct database queries.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure Amazon S3 with Amazon CloudFront for caching static user session data and website preferences.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Deploy Amazon Relational Database Service (RDS) with read replicas to distribute the load of read queries.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon ElastiCache is a fully managed in-memory data store and cache service that is ideal for applications requiring fast access to data.</p><p>By caching frequently accessed data, such as user session information and website preferences, ElastiCache can significantly improve the performance of read-heavy applications.</p><p>This will help the news website alleviate the load on their primary database and achieve higher throughput and lower latency in data retrieval, enhancing the overall user experience.</p><p><strong>CORRECT: </strong>\"Implement Amazon ElastiCache to cache frequent read-query results and reduce direct database queries\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Deploy Amazon Relational Database Service (RDS) with read replicas to distribute the load of read queries\" is incorrect.</p><p>Read replicas can help distribute the read load, but they may not sufficiently address the performance issues for high-traffic, read-heavy scenarios. They also do not provide the same speed of access as an in-memory caching solution like ElastiCache.</p><p><strong>INCORRECT:</strong> \"Deploy Amazon DynamoDB with DAX (DynamoDB Accelerator) for caching read-heavy query results\" is incorrect.</p><p>DAX is a caching service specifically for DynamoDB and is effective in improving read performance. However, if the main database is not DynamoDB, then DAX is not applicable.</p><p><strong>INCORRECT:</strong> \"Configure Amazon S3 with Amazon CloudFront for caching static user session data and website preferences\" is incorrect.</p><p>Amazon S3 and CloudFront are typically used for caching static content and are not suited for dynamic user session data or database query results, which are better handled by a service like ElastiCache.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/elasticache/\">https://aws.amazon.com/elasticache/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/elasticache/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "<p>A company stores sensitive documents in an Amazon S3 bucket. They need to ensure that these documents can only be accessed by requests originating from a specific range of IP addresses within their corporate network. The company wants to enforce this policy at the bucket level.</p><p>Which approach should the company use to restrict access to the S3 bucket based on the originating IP address?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up a Security Group attached to the S3 bucket to allow traffic only from the specified IP range.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement IAM user policies to restrict access to the S3 bucket based on the IP address.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Apply an S3 bucket policy that includes a condition to allow access only from the specified IP address range.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use a Network Access Control List (NACL) to restrict access to the S3 bucket for the specific IP range.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>The best way to accomplish this requirement is by using an Amazon S3 bucket policy with a specific condition. The bucket policy can enforce access restrictions based on the source IP address.</p><p>By adding a condition in the bucket policy, the company can specify the allowed IP address range, ensuring that only requests originating from their corporate network can access the sensitive documents in the S3 bucket.</p><p>This approach is effective for applying broad access rules at the bucket level, directly controlling access to the data stored in S3.</p><p><strong>CORRECT: </strong>\"Apply an S3 bucket policy that includes a condition to allow access only from the specified IP address range\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement IAM user policies to restrict access to the S3 bucket based on the IP address\" is incorrect.</p><p>While IAM user policies can restrict access based on IP address, they are more suitable for user-level permissions rather than enforcing network-level restrictions for an entire S3 bucket.</p><p><strong>INCORRECT:</strong> \"Use a Network Access Control List (NACL) to restrict access to the S3 bucket for the specific IP range\" is incorrect.</p><p>NACLs are used at the subnet level within a VPC and cannot be directly applied to an S3 bucket. They are not the correct method for controlling access to S3 resources based on source IP.</p><p><strong>INCORRECT:</strong> \"Set up a Security Group attached to the S3 bucket to allow traffic only from the specified IP range\" is incorrect.</p><p>Security Groups are used to control inbound and outbound traffic for AWS resources like EC2 instances, but they cannot be directly attached to or enforce policies on S3 buckets.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "<p>A digital marketing agency wants to collect, analyze, and visualize web traffic data from their diverse portfolio of client websites for enhanced marketing insights. The solution needs to handle large volumes of data, offer powerful search capabilities, and provide an interactive dashboard for visualization and analysis.</p><p>Which combination of AWS services should the agency use to collect, search, analyze, and visualize the web traffic data?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Direct Connect for data ingestion, Amazon RDS for data storage and querying, and Amazon OpenSearch Service for visualization.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up Amazon S3 for data storage, AWS Glue for data ETL, and Amazon OpenSearch Service for search, analysis, and visualization.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement Amazon MSK for data streaming, Amazon Redshift for data analysis, and Amazon OpenSearch Service for visualization.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Kinesis Data Firehose for data collection, Amazon OpenSearch Service for search and analysis, and Amazon QuickSight for visualization.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>This combination effectively meets the agency's requirements for handling web traffic data. Amazon Kinesis Data Firehose is ideal for real-time data streaming and collection, capable of capturing, transforming, and loading streaming data into AWS services such as S3, Redshift, Elasticsearch Service, and others. It's suitable for collecting large volumes of web traffic data efficiently.</p><p>Amazon OpenSearch Service (successor to Amazon Elasticsearch Service) provides robust search and analysis capabilities, perfect for processing and analyzing large-scale web traffic data. It enables powerful searching, filtering, and aggregating of data.</p><p>Finally, Amazon QuickSight can be integrated to visualize the analyzed data, providing interactive dashboards and BI reporting, crucial for marketing insights.</p><p><strong>CORRECT: </strong>\"Use Amazon Kinesis Data Firehose for data collection, Amazon OpenSearch Service for search and analysis, and Amazon QuickSight for visualization\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement Amazon MSK for data streaming, Amazon Redshift for data analysis, and Amazon OpenSearch Service for visualization\" is incorrect.</p><p>Amazon MSK (Managed Streaming for Apache Kafka) is more focused on building and running applications that use Apache Kafka to process streaming data, which might be more complex than needed. Amazon Redshift is a powerful data warehouse service, but its integration with OpenSearch for visualization is not as seamless as using QuickSight.</p><p><strong>INCORRECT:</strong> \"Use AWS Direct Connect for data ingestion, Amazon RDS for data storage and querying, and Amazon OpenSearch Service for visualization\" is incorrect.</p><p>AWS Direct Connect is used for establishing a dedicated network connection from on-premises to AWS, which is not directly related to data collection for web traffic. Amazon RDS is a managed relational database service and may not be the most efficient solution for web traffic data analysis, which is typically non-relational and large-scale.</p><p><strong>INCORRECT:</strong> \"Set up Amazon S3 for data storage, AWS Glue for data ETL, and Amazon OpenSearch Service for search, analysis, and visualization\" is incorrect.</p><p>While this setup is plausible, it lacks a real-time data streaming solution like Kinesis Data Firehose. AWS Glue is great for ETL processes but might not be necessary if real-time data analysis and visualization are the primary objectives. QuickSight, not mentioned here, would be more suitable for visualization compared to using OpenSearch Service alone.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/opensearch-service/\">https://aws.amazon.com/opensearch-service/</a></p><p><a href=\"https://aws.amazon.com/quicksight/\">https://aws.amazon.com/quicksight/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/opensearch-service/",
+      "https://aws.amazon.com/quicksight/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "<p>A company needs to analyze high-volume streaming data for real-time insights, requiring the ability to aggregate data within a 30-minute time frame. They are looking for a highly available solution that minimizes the need for management and maintenance.</p><p>What is the most suitable AWS service for performing these real-time analytics with the least operational effort?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Deploy Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) with SQL applications to perform windowed aggregations on the streaming data.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Deploy Amazon Kinesis Data Streams with an Amazon Kinesis Data Firehose transformation to aggregate data before storing it for analysis.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure an AWS Glue streaming ETL job that reads from Amazon Kinesis Data Streams and performs aggregations in real-time.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement an Amazon EC2 fleet with an auto-scaling policy to host a custom aggregation service that processes data from Amazon Kinesis Data Streams.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) is a managed service that enables complex analytics on streaming data using standard SQL and Apache Flink.</p><p>It's designed to be highly fault-tolerant and provides built-in functions for time-based windowing operations, like the required 30-minute aggregations.</p><p>This managed service reduces operational overhead by managing the underlying infrastructure, scaling resources automatically, and providing out-of-the-box functions for real-time analytics, making it an ideal solution for the company's needs.</p><p><strong>CORRECT: </strong>\"Deploy Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) with SQL applications to perform windowed aggregations on the streaming data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Deploy Amazon Kinesis Data Streams with an Amazon Kinesis Data Firehose transformation to aggregate data before storing it for analysis\" is incorrect.</p><p>Kinesis Data Firehose is primarily for loading streaming data into AWS data stores and does not natively support complex time-based aggregations needed for real-time analytics within a 30-minute window.</p><p><strong>INCORRECT:</strong> \"Implement an Amazon EC2 fleet with an auto-scaling policy to host a custom aggregation service that processes data from Amazon Kinesis Data Streams\" is incorrect.</p><p>While this approach could technically work, it involves significant operational overhead in managing an EC2 fleet, including the setup, maintenance, and scaling of the servers, which is contrary to the requirement for minimal operational effort.</p><p><strong>INCORRECT:</strong> \"Configure an AWS Glue streaming ETL job that reads from Amazon Kinesis Data Streams and performs aggregations in real-time\" is incorrect.</p><p>AWS Glue is a managed ETL service that can process streaming data, but its primary use case is not real-time analytics. It's more suited for batch ETL jobs and data integration tasks, and may not provide the same level of fault tolerance or simplicity for real-time windowed aggregations compared to Amazon Kinesis Data Analytics.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/kinesisanalytics/latest/dev/windowed-sql.html\">https://docs.aws.amazon.com/kinesisanalytics/latest/dev/windowed-sql.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/windowed-sql.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "<p>A mobile gaming company experiences predictable spikes in server load every Friday evening when users are most active. Their player data is stored in an Amazon DynamoDB table set to provisioned capacity mode. During the rest of the week, the server traffic is much lower. The company needs to manage the DynamoDB capacity in a way that keeps costs low while ensuring the game servers remain responsive during busy periods.</p><p>Which strategy should the company adopt to optimize DynamoDB performance for the expected traffic pattern while maintaining cost efficiency?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement DynamoDB auto-scaling to adjust the provisioned capacity based on the usage patterns automatically.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Split the player data across multiple DynamoDB tables to distribute the load, adjusting provisioned capacity for each table accordingly.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Manually adjust the provisioned capacity each Friday to meet the expected peak and lower it after the busy period ends.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Switch to DynamoDB on-demand capacity mode, allowing the table to automatically scale to accommodate the varying loads.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>AWS Application Auto Scaling allows for the scheduling of scaling actions based on predictable workload patterns. By setting higher provisioned capacity during peak times (early Monday mornings) and lower capacity during off-peak times (weekends), the company can ensure that the application performs consistently during high-demand periods while reducing costs when demand is low. This approach is cost-effective because it avoids paying for unneeded capacity during slow periods.</p><p><strong>CORRECT: </strong>\"Implement DynamoDB auto-scaling to adjust the provisioned capacity based on the usage patterns automatically\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Manually adjust the provisioned capacity each Friday to meet the expected peak and lower it after the busy period ends\" is incorrect.</p><p>Auto-scaling dynamically adjusts the provisioned throughput capacity in response to actual traffic patterns, ensuring that the database can handle peak loads on Fridays while reducing capacity (and costs) when demand is low, like on weekends. This is cost-effective as it avoids over-provisioning and under-provisioning, maintaining performance and minimizing costs without manual intervention.</p><p><strong>INCORRECT:</strong> \"Split the player data across multiple DynamoDB tables to distribute the load, adjusting provisioned capacity for each table accordingly\" is incorrect.</p><p>Distributing data across multiple tables and manually managing capacity for each is more complex and might not lead to cost savings. It introduces additional complexity in managing and querying data across tables.</p><p><strong>INCORRECT:</strong> \"Switch to DynamoDB on-demand capacity mode, allowing the table to automatically scale to accommodate the varying loads\" is incorrect.</p><p>On-demand capacity mode is suitable for workloads with unpredictable traffic and can be more expensive than provisioned capacity with auto-scaling for predictable patterns. It may not be as cost-effective for a use case with a regular and predictable peak period.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format:</p><p>s3://bucket/prefix/year=2023/month=01/day=01</p><p>A data engineer must ensure that the AWS Glue Data Catalog synchronizes with the S3 storage when the company adds new partitions to the bucket.</p><p>Which solution will meet these requirements with the LEAST latency?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Manually run the AWS Glue CreatePartition API twice each day.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Run the MSCK REPAIR TABLE command from the AWS Glue console.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Schedule an AWS Glue crawler to run every morning.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>This solution is the most efficient and has the <strong>least latency</strong> because the Glue Data Catalog is updated in real time as data is written to the S3 bucket. It avoids the need for manual or scheduled processes, ensuring seamless synchronization.</p><p><strong>CORRECT: </strong>\"Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Schedule an AWS Glue crawler to run every morning\" is incorrect.</p><p>Using the UpdateTable API call to manually update the Data Catalog for new partitions can be time-consuming and might not scale efficiently, especially if the number of partitions or their details are not known in advance.</p><p><strong>INCORRECT:</strong> \"Manually run the AWS Glue CreatePartition API twice each day\" is incorrect.</p><p>While AWS Glue crawlers can automatically discover and add new partitions, they typically run on a scheduled basis and might not provide the immediate update needed for the marketing firm's use case. Continuous crawling can also increase costs and processing overhead.</p><p><strong>INCORRECT:</strong> \"Run the MSCK REPAIR TABLE command from the AWS Glue console\" is incorrect.</p><p>This command scans the S3 bucket for partitions and adds them to the Glue Data Catalog. However, it is a <strong>manual process</strong> that introduces latency, as it must be triggered manually after new partitions are added. Additionally, it is computationally expensive, as it must scan the entire S3 bucket.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/msck-repair-table.html\">https://docs.aws.amazon.com/athena/latest/ug/msck-repair-table.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/msck-repair-table.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "<p>A data engineer is looking to improve the execution time of Amazon Athena queries. The queries primarily filter on one column, and the data is currently stored in uncompressed .csv format. Which of the following actions will most effectively speed up query performance?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Partition the .csv files by the most commonly queried column to optimize data retrieval.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Transition the data from .csv to a columnar format like Apache Parquet and employ Snappy compression to expedite column-level queries.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Convert the .csv files into XML format and utilize GZIP compression to reduce file size and improve query speed.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable Amazon S3 Select on the .csv files to allow Athena to retrieve only the data needed for each query.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Apache Parquet is a columnar storage file format that is optimized for query performance in analytic workloads. When queries filter on specific columns, Parquet format significantly reduces the amount of data scanned, thus reducing costs, and improving performance.</p><p>Snappy compression is a fast and efficient compression algorithm that is supported by Athena and complements the Parquet format by reducing the file size without adding significant overhead in decompression, further enhancing query performance.</p><p><strong>CORRECT: </strong>\"Transition the data from .csv to a columnar format like Apache Parquet and employ Snappy compression to expedite column-level queries\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Convert the .csv files into XML format and utilize GZIP compression to reduce file size and improve query speed\" is incorrect.</p><p>While converting .csv files into XML and applying GZIP compression would reduce the file size, XML is not an efficient format for query performance. XML is still a row-oriented data format and does not offer the same performance benefits as columnar data formats when performing column-specific queries, which are common in analytical workloads.</p><p><strong>INCORRECT:</strong> \"Partition the .csv files by the most commonly queried column to optimize data retrieval\" is incorrect.</p><p>Partitioning improves performance but does not offer the same benefits as columnar formats when filtering by specific columns.</p><p><strong>INCORRECT:</strong> \"Enable Amazon S3 Select on the .csv files to allow Athena to retrieve only the data needed for each query\" is incorrect.</p><p>S3 Select can reduce data scanned per query, but it won't improve the performance as much as converting to a columnar format which is optimized for such operations.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html\">https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "<p>A financial analytics company stores large CSV files containing transaction data in an Amazon S3 bucket. They need to implement a solution that allows their data engineers to run SQL queries directly on these CSV files stored in S3, without the need for additional data transformation or loading into a database.</p><p>Which AWS service should the company use to query CSV files directly in the S3 bucket?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Athena to run SQL queries directly on the CSV files stored in S3.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon Redshift Spectrum to execute SQL queries on CSV files in S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon EMR with a Hive metastore to query the CSV files in the S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Data Pipeline to transfer CSV data from S3 to Amazon RDS for querying.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon Athena is an interactive query service that enables users to analyze data directly in Amazon S3 using standard SQL. It is perfectly suited for the company's requirement to run SQL queries on CSV files stored in S3.</p><p>Athena is serverless, so there's no infrastructure to manage, and it works directly with data in various formats, including CSV, stored in S3. This makes it an ideal choice for querying large datasets without the need for data loading or transformation, simplifying the process and reducing operational overhead.</p><p><strong>CORRECT: </strong>\"Use Amazon Athena to run SQL queries directly on the CSV files stored in S3\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon Redshift Spectrum to execute SQL queries on CSV files in S3\" is incorrect.</p><p>While Amazon Redshift Spectrum allows querying data in S3, it is part of the Redshift data warehousing service and requires managing a Redshift cluster. This might be more complex and costlier than necessary for directly querying CSV files, as required by the company.</p><p><strong>INCORRECT:</strong> \"Use AWS Data Pipeline to transfer CSV data from S3 to Amazon RDS for querying\" is incorrect.</p><p>AWS Data Pipeline is a web service for orchestrating data movement and transformations, but it requires transferring data to a database service like Amazon RDS. This adds an unnecessary step of moving data from S3 to RDS, which is not required with services like Athena that can query data directly in S3.</p><p><strong>INCORRECT:</strong> \"Use Amazon EMR with a Hive metastore to query the CSV files in the S3 bucket\" is incorrect.</p><p>Amazon EMR can be used for processing large datasets and can query data in S3. However, setting up EMR and configuring a Hive metastore is more complex and resource-intensive compared to using Athena. For direct SQL querying of data in S3, Athena is more straightforward and cost-effective.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/blogs/big-data/analyzing-data-in-s3-using-amazon-athena/\">https://aws.amazon.com/blogs/big-data/analyzing-data-in-s3-using-amazon-athena/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/blogs/big-data/analyzing-data-in-s3-using-amazon-athena/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "<p>A company stores sensitive documents in an Amazon S3 bucket in the US East (N. Virginia) region. To comply with data redundancy policies, they require an automatic backup of these documents to a bucket in the EU (Frankfurt) region.</p><p>Which Amazon S3 feature should the company use to ensure that the documents are automatically replicated to the second bucket in a different region?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>S3 Lifecycle Policies</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>S3 Versioning</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>S3 Cross-Region Replication (CRR)</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>S3 Transfer Acceleration</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>S3 Cross-Region Replication (CRR) is the specific feature that enables automatic replication of objects from one S3 bucket to another bucket located in a different AWS region.</p><p>This feature will meet the company's requirement for data redundancy by creating a copy of the sensitive documents in the EU (Frankfurt) region, ensuring that there is a backup in case of region-specific issues.</p><p>CRR is also easy to set up and manage, offering a straightforward solution to the company's need for automatic cross-region data replication.</p><p><strong>CORRECT: </strong>\"S3 Cross-Region Replication (CRR)\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"S3 Transfer Acceleration\" is incorrect.</p><p>S3 Transfer Acceleration is designed to speed up the transfer of files to and from S3 buckets over long distances using Amazon CloudFront's globally distributed edge locations. While it accelerates file uploads and downloads, it does not provide the automatic replication of objects between regions.</p><p><strong>INCORRECT:</strong> \"S3 Lifecycle Policies\" is incorrect.</p><p>S3 Lifecycle Policies are used to manage objects' life cycles by automating actions like transitioning to different storage classes or deleting objects after a certain period. They do not provide a mechanism for replicating data across regions.</p><p><strong>INCORRECT:</strong> \"S3 Versioning\" is incorrect.</p><p>S3 Versioning is used to preserve, retrieve, and restore every version of every object stored in an S3 bucket, providing a way to recover from unintended user actions and application failures. Versioning does not inherently replicate data to another region; it would need to be combined with CRR for that purpose.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "<p>An e-commerce company uses Amazon RDS for PostgreSQL to manage their product inventory. The database contains a table named <strong>products</strong> with columns <strong>id</strong>, <strong>name</strong>, <strong>price</strong>, and <strong>quantity_in_stock</strong>. The company needs to write an SQL query to find all products that have a price greater than $50 and a quantity in stock less than 100.</p><p>Which SQL query should the company use to retrieve the correct data from the <strong>products</strong> table in their PostgreSQL database?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>GET * FROM products WHEN price &gt; 50 &amp; quantity_in_stock &lt; 100;</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>SELECT * FROM products WHERE price &gt; 50 AND quantity_in_stock &lt; 100;</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>SELECT * FROM products WHERE price &gt; $50 AND quantity_in_stock &lt; 100;</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>FIND * IN products WHERE price IS GREATER THAN 50 AND quantity_in_stock IS LESS THAN 100;</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>This SQL query correctly applies the standard SQL syntax for a SELECT statement, which is used to retrieve data from a database. The WHERE clause accurately filters records where the price is greater than 50 and quantity_in_stock is less than 100, meeting the company's requirement to find products within those specific conditions. The query is appropriate for a PostgreSQL database and follows the correct format for numerical comparisons.</p><p><strong>CORRECT: </strong>\"SELECT * FROM products WHERE price &gt; 50 AND quantity_in_stock &lt; 100;\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"SELECT * FROM products WHERE price &gt; $50 AND quantity_in_stock &lt; 100;\" is incorrect.</p><p>In SQL, numerical values should not be prefixed with a currency symbol. The correct syntax for comparing numerical values would be price &gt; 50 without the '$' symbol.</p><p><strong>INCORRECT:</strong> \"FIND * IN products WHERE price IS GREATER THAN 50 AND quantity_in_stock IS LESS THAN 100;\" is incorrect.</p><p>This option uses incorrect SQL syntax. The correct verb for retrieving data in SQL is SELECT, not FIND, and the phrases IS GREATER THAN and IS LESS THAN are not valid SQL operators. The correct operators are &gt; and &lt;.</p><p><strong>INCORRECT:</strong> \"GET * FROM products WHEN price &gt; 50 &amp; quantity_in_stock &lt; 100;\" is incorrect.</p><p>The syntax used here is not valid SQL. The correct command for querying data is SELECT, not GET, and the logical operator for 'AND' should be used instead of &amp;. Additionally, the WHERE clause is the appropriate syntax for specifying conditions, not WHEN.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/what-is/sql/\">https://aws.amazon.com/what-is/sql/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/what-is/sql/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "<p>A data engineer is setting up an AWS Step Functions workflow to coordinate a series of computational tasks for a large dataset. Each data element in the dataset must be processed through the same sequence of tasks. The workflow should execute these tasks sequentially for each data element.</p><p>Which Step Functions state should the data engineer use for this sequential processing requirement?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Choice</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Map</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Parallel</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Wait</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>The <strong>Map state</strong> in AWS Step Functions is specifically designed to iterate over a dataset and process each data element through a defined sequence of steps. It allows sequential or parallel execution of tasks for each item in a list. For this use case, where each data element must go through the same sequence of tasks sequentially, the Map state is the ideal choice. The Map state can also handle large datasets efficiently and provides built-in support for managing iterations.</p><p><strong>CORRECT: </strong>\"Map\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Parallel\" is incorrect.</p><p>The Parallel state is used to execute multiple branches of tasks concurrently, not sequentially for each data element. It is useful for running independent tasks simultaneously, but it does not provide functionality for iterating over a dataset.</p><p><strong>INCORRECT:</strong> \"Choice\" is incorrect.</p><p>The Choice state is used for making decisions within the workflow based on the input data, allowing branching logic. It is not suitable for processing data elements in sequence or parallel.</p><p><strong>INCORRECT:</strong> \"Wait\" is incorrect.</p><p>The Wait state introduces a delay or a wait time in the workflow. It is used to pause the state machine execution for a certain time and does not facilitate the processing of data elements.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html\">https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "<p>A multinational corporation has separate AWS accounts for operational workloads and compliance monitoring. The operational account generates application logs stored in Amazon CloudWatch Logs. The corporation's compliance team, using a different AWS account, needs to analyze these logs using Amazon Kinesis Data Streams for real-time processing and alerting.</p><p>Which approach should the corporation take to stream application logs from the operational AWS account to the compliance team’s Kinesis Data Stream in their separate AWS account?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure a Kinesis Data Stream in the compliance account, then establish an IAM role with a trust policy in the operational account to push logs to this stream.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure a Kinesis Data Stream in the operational account and grant the compliance account's IAM role cross-account access to this stream for data ingestion.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure a Kinesis Data Stream in the compliance account, then create an IAM role in the operational account with permissions to access and write to this stream.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure a Kinesis Data Stream in the operational account and use AWS STS to assume a role in the compliance account for streaming logs.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>This solution involves creating the destination Kinesis Data Stream in the account where the log analysis will occur (the compliance account).</p><p>The key step is to set up an IAM role in the operational account (where the logs are generated) with the necessary permissions to write to the Kinesis Data Stream in the compliance account.</p><p>This approach enables the secure transfer of logs across accounts and aligns with best practices for cross-account access and data sharing in AWS.</p><p><strong>CORRECT: </strong>\"Configure a Kinesis Data Stream in the compliance account, then create an IAM role in the operational account with permissions to access and write to this stream\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure a Kinesis Data Stream in the operational account and grant the compliance account's IAM role cross-account access to this stream for data ingestion\" is incorrect.</p><p>While this setup involves cross-account access, it places the destination stream in the operational account, which isn't optimal for the compliance team that needs to process the logs in their own account.</p><p><strong>INCORRECT:</strong> \"Configure a Kinesis Data Stream in the compliance account, then establish an IAM role with a trust policy in the operational account to push logs to this stream\" is incorrect.</p><p>This option is similar to the correct answer, but it incorrectly implies that the trust policy should be set up in the operational account. The trust relationship is typically established in the account owning the resource (in this case, the compliance account), not the account that assumes the role.</p><p><strong>INCORRECT:</strong> \"Configure a Kinesis Data Stream in the operational account and use AWS STS to assume a role in the compliance account for streaming logs\" is incorrect.</p><p>This option suggests streaming logs to a data stream in the operational account, which doesn’t meet the requirement of delivering logs to the compliance account for analysis. Using AWS STS (Security Token Service) for role assumption is a part of the process, but the destination stream should be in the compliance account.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/blogs/architecture/field-notes-how-to-enable-cross-account-access-for-amazon-kinesis-data-streams-using-kinesis-client-library-2-x/\">https://aws.amazon.com/blogs/architecture/field-notes-how-to-enable-cross-account-access-for-amazon-kinesis-data-streams-using-kinesis-client-library-2-x/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/blogs/architecture/field-notes-how-to-enable-cross-account-access-for-amazon-kinesis-data-streams-using-kinesis-client-library-2-x/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "<p>A financial analytics company stores highly sensitive client data for analysis in an Amazon S3 bucket. Due to the sensitive nature of the data, the company requires that all files must be encrypted at rest using keys that they manage and control. They want the flexibility to rotate keys and enforce least privilege access to the encryption keys.</p><p>Which S3 encryption method and key management option should the company use to securely encrypt their data while maintaining control over the encryption keys?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable S3 server-side encryption with AWS managed keys (SSE-KMS) and default KMS key policies.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable S3 default encryption with Amazon S3-managed keys (SSE-S3).</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable S3 server-side encryption with customer-provided keys (SSE-C) and manage the keys on-premises.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable S3 server-side encryption with AWS KMS keys and create custom key policies for key rotation and access control.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>This option is best suited for the company's requirements. Server-side encryption with AWS KMS CMKs (SSE-KMS) provides the firm with the ability to use keys that they manage. AWS KMS also allows them to rotate keys and set key policies that enforce the principle of least privilege for key access. By using CMKs, the company can define who can use the keys to decrypt data, audit their use with AWS CloudTrail, and manage them through IAM policies.</p><p><strong>CORRECT: </strong>\"Enable S3 server-side encryption with AWS KMS keys and create custom key policies for key rotation and access control\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable S3 default encryption with Amazon S3-managed keys (SSE-S3\" is incorrect.</p><p>While SSE-S3 provides encryption at rest, it does not give the company control over the encryption keys. The keys are entirely managed by AWS, and the company cannot rotate or manage these keys directly.</p><p><strong>INCORRECT:</strong> \"Enable S3 server-side encryption with AWS managed keys (SSE-KMS) and default KMS key policies\" is incorrect.</p><p>SSE-KMS does use AWS KMS keys for encryption, but relying on default KMS key policies does not provide the granular control and flexibility that the company requires for managing and rotating keys.</p><p><strong>INCORRECT:</strong> \"Enable S3 server-side encryption with customer-provided keys (SSE-C) and manage the keys on-premises\" is incorrect.</p><p>SSE-C allows the company to use its own encryption keys. However, this method requires the company to provide the encryption key with each HTTP request to S3. This increases operational complexity as they must securely manage and use these keys, which is less integrated and more cumbersome than using AWS KMS. It also lacks the built-in auditing and managed rotation capabilities of AWS KMS.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "<p>A company is deploying a stateful application on Amazon EC2 that requires temporary storage for processing large datasets with maximum I/O. The application must also maintain a smaller subset of essential state data that needs to persist beyond the life of the instance. The company needs a storage solution that ensures the essential data is not lost if the EC2 instance is stopped or terminated.</p><p>Which combination of storage solutions should the company choose?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Attach Amazon EC2 instance store volumes for temporary data processing and Amazon Elastic Block Store (EBS) for essential state data.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement a combination of Amazon EC2 instance store volumes for rapid I/O and EBS snapshots for daily backups of essential data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Attach Amazon EBS volumes for essential state data and use Amazon DynamoDB for temporary data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Attach additional Amazon EBS volumes for temporary data processing and rely on the root device volume for essential state data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Instance store volumes provide high I/O for temporary data processing but do not offer data persistence after an EC2 instance is stopped or terminated. For essential state data that needs to be retained long-term, EBS is the appropriate choice because it persists independently of the EC2 instance's life cycle and allows for data durability and snapshot backups</p><p><strong>CORRECT: </strong>\"Attach Amazon EC2 instance store volumes for temporary data processing and Amazon Elastic Block Store (EBS) for essential state data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Attach Amazon EBS volumes for essential state data and use Amazon DynamoDB for temporary data\" is incorrect.</p><p>EBS is the correct choice for the essential state data but DynamoDB may not be the most effective choice for the temporary data. Using a local instance store volume would provide higher I/O.</p><p><strong>INCORRECT:</strong> \"Attach additional Amazon EBS volumes for temporary data processing and rely on the root device volume for essential state data\" is incorrect.</p><p>Using EBS for both temporary processing and essential data is a secure method to ensure data persistence. However, it might not be the most cost-effective approach for temporary data processing needs when compared to instance store volumes, which are included with EC2 instances at no extra cost.</p><p><strong>INCORRECT:</strong> \"Implement a combination of Amazon EC2 instance store volumes for rapid I/O and EBS snapshots for daily backups of essential data\" is incorrect.</p><p>This option misunderstands the purpose of EBS snapshots, which are meant for backups and not for real-time data persistence. While snapshots are critical for backup strategy, they are not a replacement for persistent storage required for essential state data.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html\">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "<p>A multinational corporation operates in multiple AWS Regions and each region has a dedicated research team. The company maintains a collection of proprietary datasets in an Amazon S3-based data warehouse.</p><p>A data engineering team has been tasked with ensuring that each research team can only query datasets pertaining to their specific region. The solution should be scalable and maintain minimal operational overhead.</p><p>Which combination of actions should the data engineering team take to enforce this requirement with the least amount of operational overhead? (Select TWO.)</p>",
+    "corrects": [
+      2,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Register each regional dataset with separate Amazon Redshift Spectrum external schemas and restrict access using IAM policies.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Lake Formation to set up cross-account data sharing and enforce region-based access controls to the datasets.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement S3 bucket policies that conditionally grant access based on the originating region of the request.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create individual S3 endpoints for each region through Amazon VPC and associate them with respective IAM roles for the research teams.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Apply tag-based access control on S3 objects, tagging each dataset with its corresponding region and modifying IAM roles to enforce these tags.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>AWS Lake Formation allows for fine-grained access control to data stored in S3 and can manage permissions at a dataset level, which can be configured based on the region, thus enforcing region-based access with less operational overhead.</p><p>Tag-based access control enables the data engineering team to apply tags to S3 objects and manage access via IAM policies. By tagging each dataset with a region-specific tag and modifying IAM roles to enforce these tags, they can efficiently control access at a granular level without significant overhead.</p><p><strong>CORRECT: </strong>\"Use AWS Lake Formation to set up cross-account data sharing and enforce region-based access controls to the datasets\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Apply tag-based access control on S3 objects, tagging each dataset with its corresponding region and modifying IAM roles to enforce these tags\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement S3 bucket policies that conditionally grant access based on the originating region of the request\" is incorrect.</p><p>S3 bucket policies are not designed to conditionally grant access based on the originating region of the request. They are more suitable for providing broad access permissions.</p><p><strong>INCORRECT:</strong> \"Register each regional dataset with separate Amazon Redshift Spectrum external schemas and restrict access using IAM policies\" is incorrect.</p><p>While Redshift Spectrum allows querying data across S3, setting up separate external schemas for each region would increase operational complexity and would not inherently restrict access based on IAM roles without additional configuration.</p><p><strong>INCORRECT:</strong> \"Create individual S3 endpoints for each region through Amazon VPC and associate them with respective IAM roles for the research teams\" is incorrect.</p><p>Creating individual S3 endpoints for each region may limit access to data based on network routing, but it is not a scalable solution for access control and would unnecessarily increase complexity and overhead. This method does not utilize IAM for access control and requires additional network configuration, which is not the most streamlined approach for this scenario.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html\">https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html</a></p><p><a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/tag-based-access-control.html\">https://docs.aws.amazon.com/lake-formation/latest/dg/tag-based-access-control.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html",
+      "https://docs.aws.amazon.com/lake-formation/latest/dg/tag-based-access-control.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "<p>A web application hosted on an Amazon EC2 instance leverages Amazon DynamoDB along with DynamoDB Accelerator (DAX) for improved performance with caching. The company's network administrator must configure the security group for the EC2 instance to allow necessary traffic for optimal application functionality.</p><p>Which port/s should the network administrator open in the EC2 instance’s security group to ensure proper communication with DynamoDB and D,?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Open port 22 for SSH, required for secure operations with DynamoDB and DAX.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Open port 443 for secure HTTP traffic to DynamoDB and DAX.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Open port 8111 for communication specifically with DAX, while maintaining default settings for DynamoDB access.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Open port 80 for HTTP traffic, allowing communication with DynamoDB and DAX.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>DynamoDB Accelerator (DAX) operates on port 8111. Therefore, the network administrator should open port 8111 in the security group of the EC2 instance to enable communication with the DAX cluster.</p><p>DynamoDB itself does not require a specific port to be opened in the security group since it is accessed over the AWS network. The application on the EC2 instance will communicate with DynamoDB over AWS managed connections, and thus, no additional security group configuration is required for DynamoDB access.</p><p><strong>CORRECT: </strong>\"Open port 8111 for communication specifically with DAX, while maintaining default settings for DynamoDB access\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Open port 443 for secure HTTP traffic to DynamoDB and DAX\" is incorrect.</p><p>While port 443 is used for HTTPS traffic, this is not applicable for direct communication with DynamoDB or DAX from an EC2 instance. DynamoDB and DAX do not require the EC2 security group to specifically open port 443 for their operations.</p><p><strong>INCORRECT:</strong> \"Open port 80 for HTTP traffic, allowing communication with DynamoDB and DAX\" is incorrect.</p><p>Port 80, which is typically used for HTTP traffic, is not used for direct communication with DynamoDB or DAX. Secure communication to these services does not rely on this port.</p><p><strong>INCORRECT:</strong> \"Open port 22 for SSH, required for secure operations with DynamoDB and DAX\" is incorrect.</p><p>Port 22 is used for SSH (Secure Shell) connections, typically for secure logins, file transfers, and port forwarding. It is not used for application communication with DynamoDB or DAX. This port is unrelated to the application’s data layer operations.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.create-cluster.console.configure-inbound-rules.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.create-cluster.console.configure-inbound-rules.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.create-cluster.console.configure-inbound-rules.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "<p>A data engineer at a financial analysis firm is responsible for enriching their AWS-based data lake with external financial datasets. The firm requires regular updates of stock market data and economic indicators from various data providers, which should be integrated seamlessly into their Amazon S3-based data lake for further processing and analysis.</p><p>Which AWS service should the data engineer use to automate the ingestion of these external financial datasets into their data lake with minimal effort?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up a recurring AWS Lambda function to retrieve and upload data from third-party APIs to their S3 data lake.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement an AWS Glue crawler to extract data from external data sources and load it into the data lake.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Data Exchange to subscribe to relevant financial datasets and directly import them into their S3 data lake.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure Amazon AppFlow to create flows between the data providers and S3, syncing the financial datasets to the data lake.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Data Exchange makes it easy to find, subscribe to, and use third-party data in the cloud. For a data engineer looking to enrich an AWS-based data lake with external financial datasets, this service simplifies the process by providing a vast selection of ready-to-use data from various financial data providers.</p><p>Once subscribed, the firm can set up AWS Data Exchange to automatically import these datasets into Amazon S3, ensuring the data lake is regularly updated with minimal manual intervention. This streamlines the ingestion process, saving time and effort compared to manual methods or custom-coded solutions.</p><p><strong>CORRECT: </strong>\"Use AWS Data Exchange to subscribe to relevant financial datasets and directly import them into their S3 data lake\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Set up a recurring AWS Lambda function to retrieve and upload data from third-party APIs to their S3 data lake\" is incorrect.</p><p>While AWS Lambda could be used to run custom scripts that pull data from APIs, it would require additional development work to handle API integration, data retrieval, and error handling. This is more operationally complex compared to using AWS Data Exchange.</p><p><strong>INCORRECT:</strong> \"Implement an AWS Glue crawler to extract data from external data sources and load it into the data lake\" is incorrect.</p><p>AWS Glue crawlers are designed to scan existing datasets and populate the AWS Glue Data Catalog with metadata. They do not inherently retrieve new data from external data providers; thus, this method would not meet the requirement of automating the ingestion of external financial datasets.</p><p><strong>INCORRECT:</strong> \"Configure Amazon AppFlow to create flows between the data providers and S3, syncing the financial datasets to the data lake\" is incorrect.</p><p>Amazon AppFlow facilitates the transfer of data between AWS services and SaaS applications but is not specifically tailored for acquiring datasets from a marketplace like AWS Data Exchange. It would also likely involve more setup and customization than AWS Data Exchange for the purpose of importing financial datasets.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/data-exchange/latest/userguide/what-is.html\">https://docs.aws.amazon.com/data-exchange/latest/userguide/what-is.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/data-exchange/latest/userguide/what-is.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "<p>A data engineering team at an online retail company is optimizing the performance of their Amazon Redshift data warehouse. The warehouse contains a large sales table with millions of rows and a smaller products table. Queries often join these two tables, and the team wants to optimize the query performance, especially for these join operations.</p><p>Which Redshift distribution style should the team use for the sales and products tables to enhance query performance?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure KEY distribution for both the sales and products tables based on the join column.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure the sales table to AUTO distribution and the products table to ALL distribution.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure the sales table to EVEN distribution and the products table to KEY distribution.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure the sales table to ALL distribution and the products table to EVEN distribution.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>For the large sales table, using AUTO distribution allows Amazon Redshift to automatically select the most appropriate distribution style based on the table's size and the query patterns.</p><p>This optimizes performance and storage efficiency for large tables. For the smaller products table, using ALL distribution replicates the entire table to each node in the Redshift cluster.</p><p>This significantly speeds up join operations between the sales and products tables, as the products table is present on every node, eliminating the need for costly data redistribution during queries.</p><p><strong>CORRECT: </strong>\"Configure the sales table to AUTO distribution and the products table to ALL distribution\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure the sales table to EVEN distribution and the products table to KEY distribution\" is incorrect.</p><p>EVEN distribution would spread the rows of the sales table evenly across all nodes, but it may not be the most efficient for join operations. KEY distribution for the products table would only be optimal if it is frequently joined on a specific column that is evenly distributed. However, for smaller tables, ALL distribution is often more effective.</p><p><strong>INCORRECT:</strong> \"Configure the sales table to ALL distribution and the products table to EVEN distribution\" is incorrect.</p><p>Using ALL distribution for a large table like sales is not efficient, as it would replicate the entire table across all nodes, consuming excessive storage space and potentially impacting performance. This approach is more suitable for smaller dimension tables.</p><p><strong>INCORRECT:</strong> \"Configure KEY distribution for both the sales and products tables based on the join column\" is incorrect.</p><p>While KEY distribution can improve the performance of join operations, it requires careful selection of the distribution key and is generally more beneficial for evenly sized large tables. For scenarios involving a large fact table and a smaller dimension table, combining AUTO or EVEN distribution for the large table with ALL distribution for the smaller table is often more effective.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/c_choosing_dist_sort.html\">https://docs.aws.amazon.com/redshift/latest/dg/c_choosing_dist_sort.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/c_choosing_dist_sort.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "<p>A tech company needs to reduce costs for storing large amounts of data in Amazon S3, where access patterns are unpredictable. They require millisecond retrieval times for all data. Which storage solution should they use?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement S3 Intelligent-Tiering for automatic cost optimization.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Move all data to S3 Glacier for long-term storage.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Transition to S3 One Zone-Infrequent Access for all data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create S3 Lifecycle policies to archive data to S3 Glacier Deep Archive.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>S3 Intelligent-Tiering is designed for data with unknown or unpredictable access patterns, automatically moving data to the most cost-effective access tier without performance impact. This option meets the requirement for millisecond-level retrieval times while optimizing costs, as it automatically shifts data between access tiers when access patterns change.</p><p><strong>CORRECT: </strong>\"Implement S3 Intelligent-Tiering for automatic cost optimization\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Transition to S3 One Zone-Infrequent Access for all data\" is incorrect.</p><p>S3 One Zone-IA does offer cost savings for infrequently accessed data, but it stores data in a single Availability Zone, which might not meet the company’s durability requirements or access patterns for all data.</p><p><strong>INCORRECT:</strong> \"Move all data to S3 Glacier for long-term storage\" is incorrect.</p><p>S3 Glacier is intended for archival data where retrieval times of several minutes to hours are acceptable. It does not support the required millisecond retrieval time.</p><p><strong>INCORRECT:</strong> \"Create S3 Lifecycle policies to archive data to S3 Glacier Deep Archive\" is incorrect.</p><p>S3 Glacier Deep Archive provides the lowest-cost storage for data archiving, but data retrieval times are on the order of hours, not milliseconds, making it unsuitable for the company’s needs</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/s3/storage-classes/\">https://aws.amazon.com/s3/storage-classes/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/s3/storage-classes/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "<p>A financial services company wants to optimize the performance of its Amazon RDS for MySQL instances. The database administrators need to collect and analyze operating system-level metrics such as CPU utilization, read IOPS, write IOPS, and memory pressure to identify bottlenecks. Which AWS service should they use to obtain these metrics for their RDS instances?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Activate Amazon RDS Enhanced Monitoring to gain access to more than 50 new CPU, memory, file system, and disk I/O metrics.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement AWS X-Ray to trace and analyze user requests as they travel through the RDS databases.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable Amazon RDS Performance Insights to monitor the database performance and analyze the database load.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS CloudWatch to monitor fundamental metrics and set alarms to notify when thresholds are breached.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon RDS Enhanced Monitoring provides real-time access to a set of 50+ CPU, memory, file system, and disk I/O metrics. These metrics are collected from the operating system that the RDS instance runs on and are more granular than the basic metrics provided by Amazon CloudWatch, making it an ideal choice for database administrators to analyze and optimize the performance of their RDS instances.</p><p><strong>CORRECT: </strong>\"Activate Amazon RDS Enhanced Monitoring to gain access to more than 50 new CPU, memory, file system, and disk I/O metrics\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable Amazon RDS Performance Insights to monitor the database performance and analyze the database load\" is incorrect.</p><p>Amazon RDS Performance Insights provides visibility into the performance of your RDS database, allowing you to analyze and troubleshoot database load, but it does not provide operating system-level metrics.</p><p><strong>INCORRECT:</strong> \"Use AWS CloudWatch to monitor fundamental metrics and set alarms to notify when thresholds are breached\" is incorrect.</p><p>AWS CloudWatch provides monitoring for AWS cloud resources and the applications you run on AWS, but it does not provide the same level of detail for OS-level metrics as RDS Enhanced Monitoring.</p><p><strong>INCORRECT:</strong> \"Implement AWS X-Ray to trace and analyze user requests as they travel through the RDS databases\" is incorrect.</p><p>AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture, but it is not designed for monitoring database performance metrics.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/rds/performance-insights/\">https://aws.amazon.com/rds/performance-insights/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/rds/performance-insights/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "<p>A software company is developing a web-based application that will be deployed on multiple Amazon EC2 instances in an Auto Scaling group. The application requires a shared file system that can be accessed concurrently by all EC2 instances for reading and writing data. The file system must also support high availability and scalability.</p><p>Which AWS storage service should the software company use to meet these requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement Amazon Elastic Block Store (EBS) with shared volumes.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Deploy Amazon EC2 instance store volumes for temporary, high-performance storage.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon Elastic File System (EFS) for a scalable, shared file storage system.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon S3 to provide a scalable object storage solution.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon EFS is the optimal choice for the software company’s requirements. EFS provides a fully managed elastic NFS file system that can be used with AWS Cloud services and on-premises resources.</p><p>It is designed to be highly available and scalable, making it suitable for scenarios where multiple EC2 instances need concurrent access to a shared file system.</p><p>EFS is particularly well-suited for use with EC2 instances in an Auto Scaling group, as it allows all instances to read and write to the same file system simultaneously, ensuring data consistency and availability.</p><p><strong>CORRECT: </strong>\"Use Amazon Elastic File System (EFS) for a scalable, shared file storage system\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 to provide a scalable object storage solution\" is incorrect.</p><p>While Amazon S3 is highly scalable and reliable, it is an object storage service and does not function as a traditional file system. It is not suitable for use cases requiring a shared file system with file locking and concurrent read/write capabilities.</p><p><strong>INCORRECT:</strong> \"Implement Amazon Elastic Block Store (EBS) with shared volumes\" is incorrect.</p><p>Amazon EBS provides block-level storage volumes for use with EC2 instances. EBS volumes are generally used for single instance storage and do not natively support being attached to multiple EC2 instances simultaneously for a shared file system setup.</p><p><strong>INCORRECT:</strong> \"Deploy Amazon EC2 instance store volumes for temporary, high-performance storage\" is incorrect.</p><p>Instance store volumes provide temporary block-level storage for EC2 instances. This storage is tied to the lifecycle of the instance and is not suitable for persistent storage needs. Instance store volumes do not provide the capability for shared file access across multiple EC2 instances.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/efs/\">https://aws.amazon.com/efs/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/efs/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "<p>A software development company is looking to enhance the performance of its cloud infrastructure by transitioning its Amazon EBS Provisioned IOPS SSD storage (io1) to the newer io2 volumes. The company needs to ensure that the transition does not disrupt their running Amazon EC2 instances or risk data loss.</p><p>What approach should a data engineer take to upgrade their storage with minimal operational effort?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Utilize Amazon EBS direct APIs to copy data from io1 to newly provisioned io2 volumes, then swap the volumes on the EC2 instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Provision new io2 volumes and incrementally copy data from io1 volumes using an EC2-based file copy tool, then detach io1 and attach io2 volumes to the instances.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement AWS Storage Gateway to facilitate the data transfer from io1 to io2 volumes, then update the instance configurations to utilize the new volumes.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Modify the volume type of the existing io1 volumes to io2 through the AWS Management Console or CLI without detaching them from the EC2 instances.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Amazon EBS allows you to change the volume type of existing volumes with no downtime using the AWS Management Console or the AWS Command Line Interface (CLI).</p><p>This method does not require detaching the volume from the EC2 instance, thus preventing any interruption.</p><p>The switch from io1 to io2 can be done seamlessly while the system is running, which provides the least operational overhead.</p><p><strong>CORRECT: </strong>\"Modify the volume type of the existing io1 volumes to io2 through the AWS Management Console or CLI without detaching them from the EC2 instances\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Utilize Amazon EBS direct APIs to copy data from io1 to newly provisioned io2 volumes, then swap the volumes on the EC2 instances\" is incorrect.</p><p>Utilizing Amazon EBS direct APIs would require scripting and handling API calls, which introduces more operational complexity compared to directly modifying the volume type.</p><p><strong>INCORRECT:</strong> \"Provision new io2 volumes and incrementally copy data from io1 volumes using an EC2-based file copy tool, then detach io1 and attach io2 volumes to the instances\" is incorrect.</p><p>Provisioning new volumes and manually copying data would not only be time-consuming but also risky as it involves multiple steps and potential for error during the manual copying and swapping process.</p><p><strong>INCORRECT:</strong> \"Implement AWS Storage Gateway to facilitate the data transfer from io1 to io2 volumes, then update the instance configurations to utilize the new volumes\" is incorrect.</p><p>AWS Storage Gateway is designed for hybrid cloud storage and is not necessary when transferring data between EBS volumes within AWS. Using it for this purpose would add unnecessary complexity and operational overhead.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/requesting-ebs-volume-modifications.html\">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/requesting-ebs-volume-modifications.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/requesting-ebs-volume-modifications.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "<p>A marketing firm uses Amazon Redshift to manage their campaigns' data. They have a 'Campaigns' table that lists various marketing campaigns, including a 'CampaignName' column. They need to select all campaigns that have names ending with \"Spring\" or \"Summer\".</p><p>Which SQL query will accurately select these campaigns from the 'Campaigns' table?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>SELECT * FROM Campaigns WHERE CampaignName = '%Spring' OR CampaignName = '%Summer';</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>SELECT * FROM Campaigns WHERE RIGHT(CampaignName, 6) = 'Spring' OR RIGHT(CampaignName, 6) = 'Summer';</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>SELECT * FROM Campaigns WHERE CampaignName LIKE '%Spring' OR CampaignName LIKE '%Summer';</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>SELECT * FROM Campaigns WHERE CampaignName ENDS WITH 'Spring' OR CampaignName ENDS WITH 'Summer';</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>This SQL query correctly employs the <strong>LIKE</strong> operator to filter for patterns at the end of the 'CampaignName' column. The <strong>%</strong> symbol serves as a wildcard for any number of characters, so placing it before \"Spring\" or \"Summer\" will match any campaign names that end with these terms. This approach will retrieve all campaign names finishing with \"Spring\" or \"Summer\" efficiently.</p><p><strong>CORRECT: </strong>\"SELECT * FROM Campaigns WHERE CampaignName LIKE '%Spring' OR CampaignName LIKE '%Summer';\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"SELECT * FROM Campaigns WHERE CampaignName ENDS WITH 'Spring' OR CampaignName ENDS WITH 'Summer';\" is incorrect.</p><p>The <strong>ENDS WITH</strong> phrase is not a valid SQL operator, which makes this statement incorrect for any SQL-based database system, including Amazon Redshift.</p><p><strong>INCORRECT:</strong> \"SELECT * FROM Campaigns WHERE CampaignName = '%Spring' OR CampaignName = '%Summer';\" is incorrect.</p><p>The <strong>=</strong> operator is used for exact matches in SQL, not for pattern matching. It does not work with wildcards like <strong>%</strong>, therefore this statement would not return the desired results.</p><p><strong>INCORRECT:</strong> \"SELECT * FROM Campaigns WHERE RIGHT(CampaignName, 6) = 'Spring' OR RIGHT(CampaignName, 6) = 'Summer';\" is incorrect.</p><p>The <strong>RIGHT()</strong> function is used to extract a specified number of characters from the right end of a string. However, this function would not work correctly here because \"Spring\" and \"Summer\" have different lengths. Moreover, it's more complicated than necessary when the <strong>LIKE</strong> operator suffices.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/redshift/latest/dg/c_SQL_commands.html\">https://docs.aws.amazon.com/redshift/latest/dg/c_SQL_commands.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/redshift/latest/dg/c_SQL_commands.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "<p>A data engineer is setting up an AWS Step Functions workflow to coordinate a series of computational tasks for a large dataset. Each data element in the dataset must be processed through the same sequence of tasks. The workflow should execute these tasks sequentially for each data element.</p><p>Which Step Functions state should the data engineer use for this sequential processing requirement?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Wait</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Choice</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Parallel</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Map</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>The Parallel state in AWS Step Functions is used to execute multiple branches of a workflow concurrently.</p><p>In this scenario, where each data element needs to go through the same sequence of tasks, the Parallel state can be utilized to process multiple data elements at the same time, but each within its sequence of tasks.</p><p>This allows for efficient handling of the dataset by parallelizing the workload while maintaining the sequential order of tasks for each individual element</p><p><strong>CORRECT: </strong>\"Parallel\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Choice\" is incorrect.</p><p>The Choice state is used for making decisions within the workflow based on the input data, allowing branching logic. It is not suitable for processing data elements in sequence or parallel.</p><p><strong>INCORRECT:</strong> \"Wait\" is incorrect.</p><p>The Wait state introduces a delay or a wait time in the workflow. It is used to pause the state machine execution for a certain time and does not facilitate the processing of data elements.</p><p><strong>INCORRECT:</strong> \"Map\" is incorrect.</p><p>The Map state is used for processing each item of an array of items in parallel, applying the same set of tasks to each item. While it offers parallel processing, it doesn't align with the scenario's requirement for sequential execution of tasks within each data element.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html\">https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  }
+]

@@ -1,0 +1,1752 @@
+[
+  {
+    "id": 1,
+    "question": "Holly is a project manager in her organization and she is leading a project in an adaptive project life cycle. She and the project team are working with Grace, the product owner for the project, throughout the project to identify, prioritize, and delivery the requirements of the project. In this approach, what two project management processes must be repeated in each iteration for Grace?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project planning and project execution",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Quality assurance and quality control",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Validate scope and control scope",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Stakeholder identification and Identify risk",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "In an adaptive or agile life cycle, the sponsor and customer representatives should be continuously engaged with the project to provide feedback on deliverables as they are created and to ensure that the product backlog reflects their current needs. Two processes (Validate Scope and Control Scope) are repeated for each iteration. On the contrary, in a predictive project, Validate Scope occurs with each deliverable or phase review and Control Scope is an ongoing process. The other processes are called on as needed in the project, but likely not in each iteration.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 2,
+    "question": "You are the project manager for your organization and your project is to remodel a condo for a client. The client has selected all the items to be included with the remodeling and you and the team are working on implementing the plan. As the project nears the end of the timeline, the customer requests that you change out some of the fixtures for some new fixtures she has found in Paris. You really don’t want to do this as you’re almost done with all the project, but the customer is willing to pay for the cost of the installation. What should you do next?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Submit a change request",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Ask the project team if they have enough time to install the fixtures",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Refuse to install the fixtures",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Install the fixtures",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Even though you may not want to install the fixtures, it’s best to submit a change request to your change control process to determine the whole effect the change may have. A change request would examine the change and its effect on the whole project and then a decision to make the change can happen.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "Jon is the project manager of the JKJ Project for his organization and he’s meeting with a large group of stakeholders next week to identify the project risks. Jon knows that some of the risks identified in this meeting are important for the project, but may be sensitive to some of the managers and stakeholders involved. He wants to avoid some of the stakeholders not identifying risks because of politics or fear or backlash. What should Jon do next?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Implement the Delphi Technique for the participants",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Divide the group to avoid the conflicts but to still capture the risks",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Utilize a moderator and project meeting rules to keep conflicts down",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Establish quiet writing to capture risks in the project meeting",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The Delphi Technique uses rounds of anonymous surveys to identify risks, allow participants to respond, and for the group to reach consensus on the risks. The Delphi Technique takes out the fear of backlash and allows everyone to speak their mind about the risks in the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 4,
+    "question": "You are the project manager of the IHI Project for your organization. You are considering outsourcing a portion of the project to a vendor. You are interested in the price of the vendor completing the writing of the technical manual for the software your project team is creating. What documents should you send to vendors?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "RFP and SOW",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Bid and SOW",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "IFB and SOW",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "RFP and invitation to bidders’ conference",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Because you are only wanting a price, you will send the vendors an Invitation to Bid and the Statement of Work. An IFB requests a price only and the SOW defines the project work. The other items are incorrect as an RFP asks for a proposal. You wouldn’t send a bid the vendor, but the vendor will reply with a bid.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "<p>You are the project manager of the GHB Project for your organization. This project is an agile project and is expected to last for 14 months. Your project team has created a charter that identifies their team rules, values, communication guidelines and other agreements that all project team members agree to. Lisa, one of the project team members, has been late on her assignments, has skipped some status meetings, and hasn’t been communicating effectively with the project team and stakeholders. In this instance, who should speak to Lisa about her behavior on the project team?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project team",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Lisa’s manager",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Project manager",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project sponsor",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the project team establishes the project ground rules it is up to everyone to enforce the ground rules from the project team, not just the project manager.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 6,
+    "question": "Anna has sent a SOW to 23 vendors for a portion of a construction project. The SOW describes the work in the project, but she has also invited the 23 vendors to a meeting to discuss the SOW and to answer any questions about the project work before the vendors will submit their proposals. What is the name of the meeting that vendors will participate in?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "SOW Clarity Meeting",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "SOW Meeting",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Meet-and-Greet Conference",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Bidders’ conference",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the vendors come to ask questions about the SOW for clarity this is a bidders’ conference. This is a pre-proposal meeting where the vendors will ask for clarity about the details of the SOW. Anna will answer questions, then update the SOW, and distribute it back to the vendors that participated in the meeting.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 7,
+    "question": "You are a project manager for the POA Project for your organization. You are reviewing the WBS with the project team to define the project activities. What component of the WBS should you be focusing on when creating the activities list with the project team?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Affinity items",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Cost estimates",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Duration estimates",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Work packages",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Activities represent the effort needed to complete a work package. The Define Activities process defines the final outputs as activities rather than deliverables, as done in the create WBS process. Cost estimates and duration estimates will not help with the creation of the activities list. Affinity items is not a valid project management term.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 8,
+    "question": "Management has asked you, the project manager of the JHK Project, to create a project website dashboard that will allow stakeholders to query the project status, check milestones, and other project information at any time. You task Gene, a project team member, with creating this website. What type of communication are you creating for stakeholders?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Persistent",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Pull",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "One-to-one",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Receiver-only",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is simply a pull communication model. The stakeholders will pull information from the web server as they require. The other terms are distractors and are not communication management terms for your exam.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 9,
+    "question": "You are the project manager of the NKL Project for your organization and you’re working with the project team on some quality control issues. You suspect that the maintenance on a piece of equipment is affecting the accuracy of the items the equipment creates. You’d like to track the possible correlation between the maintenance and the number of defects on the piece of equipment. Which chart would best show this possible relationship?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Scatter diagram",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Control chart",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Flowchart",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Pareto diagram",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A scatter diagram is the best choice presented as it can show the possible correlation between two variables, such as the defects and the maintenance of the equipment, to show a correlation.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 10,
+    "question": "Wendy is a project manager in her organization and she’s working with the project team to define the work activities over the next month. Items beyond this month, Wendy reports, will be defined in more detail later in the project. What type of planning is Wendy using in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Deductive planning",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Expressive planning",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "High-level planning",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Rolling wave planning",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Wendy is using rolling wave planning. Rolling wave planning is an iterative planning technique in which the work to be accomplished in the near term is planned in detail, while work in the future is planned at a higher level. It is a form of progressive elaboration applicable to work packages, planning packages, and release planning when using an agile or waterfall approach. Therefore, work can exist at various levels of detail depending on where it is in the project life cycle.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 11,
+    "question": "Ned is presenting a proposal to senior management at his organization. Management is asking Ned questions about the costs, feasibility, the likelihood of success, and other in-depth items before making a Go/No-Go Decision about chartering this proposed project. What type of meeting is Ned participating in?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Technical review board",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Project steering group",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Business analysis",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Murder board",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Ned is in a murder board meeting. This is a pre-initiation meeting that allows senior management and other decision makers to determine if the project should be launched or not. A technical review board is often used when a change request is made to an existing project, not a pre-launch project as in this case.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 12,
+    "question": "You are a project manager for your organization. Your current project has a budget of $1,250,650 and is currently 65 percent done. Due to some errors by the project team, however, you were supposed to 75 percent as of today. In your project, you have spent $847,500 – slightly more than what was planned. Management has asked for to report your cost performance index. What’s the best answer?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "1",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "0.96",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "1.1",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "0.75",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The cost performance index is found by using the formula of earned value divided by actual costs. In this scenario that would be $812,923/847,500 for a CPI of .96. The other answers are incorrect calculations of the cost performance index.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 13,
+    "question": "You are a project manager for the BNB Consulting Group. You are working with the project team to create a project management plan for a software development project for a new client. The client has defined all of the requirements for the project and has also provided a statement of work that defines exactly what’s expected of your organization. Your project team is planning all the work, and only the required work, to satisfy the project objectives for this new software. What project management approach are you utilizing in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Adaptive planning",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Agile project management",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Adaptive project management life cycle",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Predictive project management lifecycle",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Because all the planning is being done at the beginning of the project, this is an example of a predictive project management lifecycle. Project life cycles can range along a continuum from predictive approaches at one end to adaptive or agile methods at the other. In a predictive life cycle, the project deliverables are defined at the beginning of the project and any changes to the scope are progressively managed. In an adaptive or agile life cycle, the deliverables are developed over multiple iterations where a detailed scope is defined and approved for each iteration when it begins.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 14,
+    "question": "You need to purchase materials from a vendor, but you prefer a particular vendor you’ve worked with in the past. This vendor is slightly more than its competitors, but they always deliver on time, are easy to work with, and offer excellent support. Your desire to work with this one vendor is best described as what type of market condition?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Sole source",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Single source",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Preferred source",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Oligopoly",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is a single source marketplace. Single source means that there are many different vendors, but you prefer to work with a particular vendor. Sole source means that there is only one vendor available to choose from. Oligopoly means that market conditions are so tight that the actions of one vendor affect the actions of the other vendors, such as airline fees. Preferred source isn’t a valid choice.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 15,
+    "question": "A risk has been identified in your project that will likely cause the project to fail. You meet with the project sponsor to discuss the risk and its high probability of occurring. Which one of the following is a risk response that could address this high-probability and high-impact risk event?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Avoidance",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Accelerate",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Withdrawal",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Mitigation",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best option is avoidance. To avoid the risk may mean to shut down the project altogether or to trim part of the scope to avoid the project. Mitigation is the second-best choice as this approach can reduce the possibility and/or the impact of the risk event.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 16,
+    "question": "Jan is the project manager of the HZA Project for your company and you’re helping Jan identify the project stakeholders and classify them for engagement. You recommend Jan define the stakeholders’ direction of influence as a possible approach to categorizing the stakeholders in this large project. When using this approach, which one of the following is not a direction of influence to include?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Sideward",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Inward",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Upward",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Downward",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Inward is not one of the five directions of influence for stakeholder classification. The five directions to include are Upward, Downward, Outward, Sideward, and Prioritization.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 17,
+    "question": "Management has asked you, the project manager, to create a chart for all the defects in your project. They would like the chart to show the largest quantity of defects by category to the smallest category of defects in your project. This chart will help you attack the largest defects through rounds of improvement in the project work. What type of chart is management asking you to create?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Control chart",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Pareto chart",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Histogram",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Cause-and-effect chart",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A Pareto chart is a bar chart that shows categories of failure from largest to smallest. A cause-and-effect chart is also known as a fishbone diagram and helps to facilitate a conversation on root cause analysis. A histogram is a bar chart. A control chart tracks the results of processes to see trends and if the processes are within control.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "You are a project manager for your organization. Your current project has a budget of $1,250,650 and is currently 75 percent done. Due to some errors by the project team, however, you were supposed to 80 percent as of today. In your project, you have spent $989,000. Management has asked for to report your Estimate to complete. What’s the best answer?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$329,667",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "($68,017)",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "1.19",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$1,318,667",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "<p>To calculate the estimate to complete (ETC), use the following formulas:</p><p>EV = .75 X 1,250,650 = $937,987.50</p><p>CPI = EV/AC = 937,987.50/989,000 = .94842</p><p>ETC = (BAC-EV)/CPI = (1,250,650 - 937,987.50)/.94842 = <strong>$329,667</strong> (rounded)</p><p>The other answers are incorrect choices.</p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 19,
+    "question": "You are the project manager for your organization. You are leading a project that will utilize resources from the IT department. Nancy, the Director of IT, is not allowing her resources to be utilized on your project and this is causing a major disruption to get things moving forward. What is the most likely cause of the problem?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "You do not have a schedule.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "You do not have a project charter.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "You do not have permission to use her resources.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "You do not a budget to pay for the resources.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "All projects need a charter signed by a person with the correct amount of authority over all the project resources. Nancy is likely not allowing you to use her resources because you do not have a project charter that requires her to do so.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 20,
+    "question": "Karen is the project manager of a high-profile project in her organization. She is meeting with the key project stakeholders to identify the risks of this project and she wants to consider several factors in this meeting to get a comprehensive collection of risks to manage in the project. Karen informs the group that they’ll be using the PESTLE approach to risk identification based on the size of the project. What is PESTLE?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Political, Economic, Social, Timetables, Legal, and Environmental domains",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Parity, Economic, Social, Timetables, Legal, and Environmental domains",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Political, Economic, Social, Technological, Legal, and Environmental domains",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Planned value, Earned Value, Schedule Performance Index, TCPI, Little’s Law, and Expected Value domains",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "PESTLE is a prompt list to identify risks in the Political, Economic, Social, Technological, Legal, and Environmental domains.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 21,
+    "question": "There are five levels of quality management that any project manager should recognize. Of the five levels, which one is the most expensive?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Plan and design quality from the beginning of the project.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Let the customer find the defects.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Prevent defects through quality assurance programs.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Find the defects through quality control.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The most expensive level of quality management is to allow the customer to find the defect as it can result in loss of sales, diminished reputation, and other negative costs of poor quality.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "Jane reports that a project she’d like to implement will be worth $160,000 in five years. Considering the rate of return to be six percent, what’s the minimum amount that should be invested in Jane’s project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$160,000",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "$154,000",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$119,561",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "$13,200",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "$119,561 is the present value of $160,000. This formula is $160,000/1.338226 and is found by taking the future value and dividing by 1 plus the interest rate, to the power of five time periods.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 23,
+    "question": "Sam is a project manager in his organization, and he is working with the project sponsor to develop the project charter. This new project will implement a new email program that will allow end users to access their email on their phones and their laptops. The project charter’s primary goal in this scenario is to do what?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Define the success factors for the project",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Authorize the resources to work on the project team",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Define the end users",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Authorize the project to exist",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Developing the project charter is the process of developing a document that formally authorizes the existence of a project and provides the project manager with authority to apply organizational resources to project activities. The primary purpose of the project charter is to authorize the project, then to authorize the project manager to have control over project resources.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 24,
+    "question": "A solution that your team is creating will cost $568,000 and will cost $25,000 a month to support. A vendor reports that they can offer you the same solution for no out-of-pocket costs and .08 per transaction. You know that there will be approximately 450,000 transactions per month. What should you do?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Complete the solution in-house if you’ll keep the solution more than one year.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Hire the vendor if you’ll keep the solution less than four years.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Complete the solution in-house if you’ll keep the solution less than four years.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Hire the vendor if you’ll keep the solution longer than five years.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The vendor’s solution will cost you $36,000 per month and nothing out-of-pocket. You’ll need to find the difference between the initial costs, which is $568,000 and then find the difference between the monthly fees, which is $11,000. Then you’ll divide the $568,000 by $11,000 to find that in just over 51 months your in-house solution is more cost-effective. If you’ll keep the solution less than four years, which is 48 months, it is more cost-effective than building and maintaining the solution in-house.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 25,
+    "question": "Benji is the project manager of the BBB Project for his organization. The planned value for the project work at this point is $450,000, but his actual costs for the project is ten percent more than what was planned. The project’s earned value is $417,000. Management is considering canceling this project due to performance. Based on this information, what is the sunk cost of the project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$495,000",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$450,000",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$417,000",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Not enough information to know for certain",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Sunk costs describe the total amount of funds invested into the project. In this example, the actual costs are the sunk costs. The project’s planned value is $450,000 and the actual costs are ten percent more than that value, or $495,000.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 26,
+    "question": "John is the project manager of the YOM Project for his organization and he’s working with the project team record all of the requirements needed to satisfy the project scope. Management has asked John and the team to create a table that will show each requirement and its status as it moves through the project timeline. What type of chart is management asking John to provide?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Affinity diagram",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Work breakdown structure",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Requirements traceability matrix",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Project network diagram",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Management has asked John and the team to create a requirements traceability matrix. This chart is a table that tracks each requirement through all the associated phases of the project until each requirement is considered done.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 27,
+    "question": "Ben is the project manager of BBB Project for his organization and he’s working with the project team to identify the stakeholders’ interests, concerns, threats, and perceptions of threats. Where should Ben document the project team’s findings in this exercise?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Risk log",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Stakeholder log",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Risk register",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Stakeholder register",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The stakeholder register is the document where the project manager should define all characteristics and concerns of the project stakeholders.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 28,
+    "question": "Nancy is a project manager for her organization and she’s leading a recently launched project. Her project team has 12 people, some of which have worked together before and others have not. The team has created the project scope statement and the WBS and they are now working to develop the project schedule based on the activity list with the project manager. Some of the project team members are in a conflict about the sequencing of the activities, who’ll do what on the project, and how the work should be done. Based on this information, which one of the following terms best describes this scenario?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Norming",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Performing",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Storming",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Forming",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of storming. Storming is when the team experiences some initial conflicts about project decisions and is a natural part of team development. Forming is when the team first comes together and they learn about one another – which has likely already happened. Norming is when things settle and performing is when the team goes about getting the work done and the team becomes reliant on each other, something that hasn’t yet happened in this scenario.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 29,
+    "question": "You are the project manager of the GHY Project and you are examining a control chart for your project’s production. In the control chart, there are seven consecutive measurements all on the lower side of the mean. Your project sponsor is concerned about these seven measurements. Why?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "These seven measurements show that the mean is too high.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "These seven measurements show failing quality.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "These seven measurements show a trend.",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "These seven measurements show the project is failing.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "In a control chart, seven measurements in a row on one side of the mean is called the Rule of Seven and is an assignable cause. This assignable cause is a trend that represents something happening in the project which is affecting the quality of what’s being measured.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 30,
+    "question": "Terry is a functional manager in your organization and a stakeholder on your project. Your project is operating in a strong matrix and you have 16 people on your project team. Your team reports that Terry is not happy about the project and is challenging their work and decisions made for the requirements which have been approved by the project sponsor. Terry is challenging the project and doesn’t want it to move forward as it may disrupt her line of business. What type of stakeholder is Terry?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Negative",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Pessimistic",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Challenging",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Confronting",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When a stakeholder doesn’t want the project to exist they are considered a negative stakeholder and steps need to be taken via the stakeholder engagement plan to manage their perspective and concerns for the project. Terry could also be considered a resistant stakeholder if that were an option.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 31,
+    "question": "A project has just launched in your organization. The project manager has been working with the project team to define the activity list and the attributes of each activity in the activity list. These activity attributes are likely to include all of the following except for which one?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Activity name",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Activity identifier",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Predecessor activities",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "WBS ID",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Because this project has just recently launched, the initial information defined in the activity attributes would likely not include predecessor activities. The initial information would likely include activity identifiers, WBS IDs, and activity names.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 32,
+    "question": "You are the project manager for your organization which is a weak matrix. The project sponsor, a functional manager, wants you to create a strategy to define the stakeholders’ current level of engagement and how you may maintain or improve their engagement level. What document is the project sponsor actually looking for in this environment?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Communications management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Stakeholder engagement plan",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Stakeholder directory",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Stakeholder mapping",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project sponsor is looking for a stakeholder engagement plan. This plan defines how changes to the project may affect stakeholders, stakeholders’ engagement levels, relationships among the stakeholders, information needs of the stakeholders, the timing of communication, and how the plan will be updated and maintained.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 33,
+    "question": "You are a project manager for the BGF Organization and the project sponsor has approved the scope baseline for your project. A customer of the project, however, approaches you and requests for three additional items to be added to the project scope. The items are small and no work has yet been done of the project as the scope baseline was just approved. What’s the best way to manage this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Reject the change",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Changes will now flow through formal change control procedures",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Allow the changes to be added to the scope as no work has yet been completed",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Ask the customer to present the change for the project sponsor to approve",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The baseline has been approved and approved baselines can be changed only through formal change control procedures and is used as a basis for comparison while performing Validate Scope and Control Scope processes as well as other controlling processes. The other options are not valid answers as the approved baseline must now be managed through the formal change control procedures.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 34,
+    "question": "As a project manager, you need to recognize several human resource theories for your PMI exam. One theory is Maslow’s Hierarchy of Needs. In this theory, there are five needs that we all have. Which one of the following items is not one of the Maslow needs?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Affiliation",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Safety",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Esteem",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Social",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Affiliation is not one of the Maslow needs. The five needs in Maslow’s theory are physiological, safety, social, esteem, and self-actualization.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 35,
+    "question": "You are the project manager for the HJL Project for your organization and you’re discussing the quality requirements with your project team. The team insists that they need high-quality materials for the installation piece of the project. What is the team more likely to need than high-quality materials?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Confirmed materials",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "High-grade materials",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Correct materials",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quality-accepted materials",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Grade and quality are not the same things. High quality isn’t a valid term as quality is quality, there are not rankings of quality, but rankings of materials. Ranking of materials is grade, and that’s the best answer presented for this scenario.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 36,
+    "question": "You are a project manager for your organization. Your current project has a budget of $1,250,650 and is currently 75 percent done. Due to some errors by the project team, however, you were supposed to 80 percent as of today. In your project, you have spent $989,000. Management has asked for to report your Estimate to complete. What’s the best answer?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$329,667",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$1,318,667",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "($68,017)",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "1.19",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The estimate to complete is found by using the formula of the estimate at completion minus actual costs. In this question, that’d be 1,318,667 - $989,000. The other answers are incorrect choices.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 37,
+    "question": "You are the project manager for a construction project in your organization. Your project team has identified a project risk that is too dangerous for the project team members to take on, so you elect to use the transference risk response. Mary, a project team member, then identifies that the vendor managing the risk could cause delays in the project even though the contract may have repercussions for missed deadlines. This new risk, albeit small in probability and impact, is documented in the risk register. What type of risk is the possibility of a missed deadline by the vendor?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Accepted",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Non-conforming",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Residual",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Aggravated",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of a residual risk as the risk response creates a new, smaller risk that must still be managed. This risk event could also be considered a secondary risk if the probability and/or impact were more significant.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 38,
+    "question": "Jonathan is a project manager for the JG Corporation and he’s leading a project team in a strong matrix environment. Jonathan knows that the project team is pressed for time, but quality is paramount in his project. Jonathan offers the team a four-day weekend if the team can complete the next project milestone on time. The offer will mean the team will need to work on a Saturday, but the team is excited to reach the project milestone and have a few days off. What human resource theory is Jonathan demonstrating in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "McClelland’s Theory of Needs",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Maslow’s Hierarchy of Needs",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Halo Effect",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Vroom’s Expectancy Theory",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of Vroom’s Expectancy Theory which states that people’s behavior reflects what they believe their behavior will bring them. The project team is willing to work additional hours now to reach the milestone but to also receive a few days off as a reward.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 39,
+    "question": "Brad is the project manager of the JL Project for his organization. This project has recently been cancelled due to a change in the technology involved. What should Brad do next?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Move onto the next project.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Return to operations.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Nothing. The project is done.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Write a final project report.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Even though the project has been cancelled, he should still write the final project report as part of closing the project. The final project report defines the summation of the project, what was achieved, why the project was cancelled, and becomes part of historical information for the organization.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 40,
+    "question": "Jeffrey is the project manager of the OPO Project for his organization and a portion of his project will be contracted with a vendor. Kelly, the project sponsor of the OPO Project, tells Jeffrey to utilize a screening system for the vendors to help sort out unqualified vendors. Which one of the following is the best example of a screening system?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Vendors must be licensed and bonded in the US state where the work will take place",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Vendors must attend the bidders’ conference",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Bids must accompany a detailed proposal with timeline",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Bids must be under $250,000",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Of all the choices the requirement of vendors to be licensed and bonded in a specific US state is the best example of a screening system. While the other answers could be a screening system, they are not as restrictive as the bonded and licensing requirement.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 41,
+    "question": "You are a project manager for the IT Department in your organization and you’re working with the project team to define all the constraints and assumptions in your new project. You know that you should record all assumptions in an assumption log. What project management process creates the assumption log document?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Create the project management plan",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Develop project charter",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Define project scope",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Identify risks",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The assumption log is a document where you will record all assumptions identified in the project. The assumption log is created as an output of the Develop Project Charter process early in the project. The assumption log is not created by the define project scope process, the identify risks process, or while creating the project management plan.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 42,
+    "question": "You are a project manager for the BBB Project, and you’re working with Allen, a business analyst, to determine the problems and identify the business needs for the BBB Project. The project scope has been created, but there are some recent requests for additions to the project scope. The request for changes need to be tested and reviewed before being implemented. In this scenario, who is responsible for the requirement-related activities of the project scope considering the project has just started?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project sponsor",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Project customer",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Allen, the business analyst",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "You, the project manager",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "If a business analyst is assigned to a project, requirement-related activities are the responsibility of that role. The project manager is responsible for ensuring that requirements-related work is accounted for in the project management plan and that requirements-related activities are performed on time and within budget and deliver value. The project sponsor and the project customer are not responsible for requirements-related activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 43,
+    "question": "You are the project manager of the GGG Project for your organization and are leading a recently chartered project that will affect much of the organization. You’re about to meet with the project team and several key stakeholders to complete stakeholder identification. Because of the size of the project you want the meeting participants to come prepared with a list of stakeholders prior to stakeholder identification meeting. What’s the best approach to this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Have the participants complete brainwriting before the stakeholder identification meeting",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Have the team investigate potential stakeholders before the meeting",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Complete stakeholder identification on your own and then compare your results to the meeting outcomes",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Create a web survey and distribute it to the entire company to gauge who is, and who is not, a stakeholder",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Brainwriting is similar to brainstorming, but participants will create a list of stakeholders they believe to exist in the project before the meeting. The other choices are not feasible and don’t involve the entire meeting participants coming prepared with a list of stakeholders for the stakeholder identification meeting.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 44,
+    "question": "Kelly is a project team for your project and she’s trying to predict how long her activity will take. You ask Kelly what’s the optimistic estimate, most likely duration, and the worst-case duration for the task. She considers the question and the reports that the best case is 45 hours, the most likely will be 60 hours, and the worst-case will be 90 hours. Using triangular distribution, what do you expect the duration of the task to be?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "65 hours",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "45 hours",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "105 hours",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "90 hours",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Triangular distribution is just the average of the three estimates provided. In this case, 45, 60, and 90 averages to be 65 hours.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 45,
+    "question": "Quincy is the project manager of the GHY Project and he’s working with the project team to build out the project cost estimates. One of the first resources Quincy recommends using is the project charter. The team doesn’t understand why the charter is needed at this point of the project since they are now clearly in planning activities. Why would Quincy need the project charter at this point?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The charter defines who has authority over project costs.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "The charter defines the total costs of work packages for the project.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "The charter defines who has budget approval.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "The charter defines a summary budget for the project costs.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project charter includes a summary and the preapproved financial commitments for the project expenses, so it is a key input to the project cost estimating activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 46,
+    "question": "You are a project manager for your organization. Your current project has a budget of $1,250,650 and is currently 65 percent done. Due to some errors by the project team, however, you were supposed to 75 percent as of today. In your project you have spent $847,500 – slightly more than what was planned. It has just come to your attention, however, that a major defect will cost the project an additional $29,700. What is your cost performance index now?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "0.9",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "0.87",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "1.03",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "0.93",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "<p>The cost performance index is found by using the formula of earned value divided by actual costs. In this scenario that would be $812,923/877,200 for a CPI of .93. The other answers are incorrect calculations of the cost performance index.</p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 47,
+    "question": "You are the project manager for your organization and your project team has identified a risk that has a 40 percent chance of happening and will cost your project $245,000 if it occurs. You present the risk to the project sponsor as it’s a significant risk event in your project. Your project sponsor wants to know what the expected monetary value of the risk is. What’s the best response in this scenario?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "($245,000)",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "$245,000",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "($98,000)",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "You can’t know as the risk event has not yet occurred.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The expected monetary value is found by taking the probability times the impact. In this instance, it’s 40 percent of $245,000 for an expected monetary value of -$98,000.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 48,
+    "question": "Ned is a project manager for his organization and he’s working with the project team to create a schedule for the project work. Ned learns that some of the project team members have vacations scheduled that will affect the project schedule. Where should Ned record information about the project team members’ vacations?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project calendar",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Project schedule",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Risk log",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Resource calendar",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Vacations and planned time off for project resources are recorded in the resource calendar. The project calendar describes the general working hours and days for the project, not the individual schedules such as vacations.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 49,
+    "question": "You are a project manager for the JHKL Organization, and you are leading an adaptive project. In an adaptive project, who has control of the detailed planning of the product?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project sponsor",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Project team",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Product owner",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project manager",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The control of the detailed product planning and delivery is delegated to the team. The project manager’s focus is on building a collaborative decision-making environment and ensuring the team can respond to changes. The product owner is responsible for prioritizing the product backlog, not the detailed planning. The project sponsor will authorize the project, but won’t be involved in the detailed product planning.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 50,
+    "question": "Monica is a project manager for a construction project. In this project, she needs to purchase 1,345 doors and she knows the cost of each door, including the cost of labor, is $476. If she uses that amount in a parametric estimate what is the likely cost of the door installation for the project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$640,220",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$1,345",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$476",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$640,220 +/- 20 percent",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A parametric estimate uses the parameters of the cost of each door times the total number of doors. In this example, it’s 1,345 door times the cost of $476 per door, for a total of $640,220.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  }
+]

@@ -1,0 +1,959 @@
+[
+  {
+    "id": 1,
+    "question": "<p>An airline utilizes Amazon S3 and Athena for querying daily flight metrics recorded in .csv files, with data organized by date. They seek to optimize query performance due to increasing data volume. What is the MOST effective solution for enhancing query efficiency?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Convert the .csv files to JSON, optimizing the schema based on query patterns.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Transition the .csv data to a columnar format like Apache Parquet to improve predicate pushdown efficiency.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Ensure the S3 bucket holding the .csv files is in the same AWS Region where Athena is running.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Disperse S3 key prefixes randomly to maximize request throughput.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Converting .csv files to a columnar format like Apache Parquet is highly efficient for query performance in Athena. Parquet is optimized for query performance and reduces query costs by allowing Athena to read only the columns it needs to process the query, which is known as predicate pushdown. This also results in less data scanned per query, leading to improved performance and lower costs.</p><p><strong>CORRECT: </strong>\"Transition the .csv data to a columnar format like Apache Parquet to improve predicate pushdown efficiency\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Disperse S3 key prefixes randomly to maximize request throughput\" is incorrect.</p><p>Randomizing S3 key prefixes can increase throughput but does not directly improve Athena query performance, especially when the data is already partitioned by date.</p><p><strong>INCORRECT:</strong> \"Ensure the S3 bucket holding the .csv files is in the same AWS Region where Athena is running\" is incorrect.</p><p>While having the S3 bucket in the same AWS account as Athena is a common practice for simplicity and security, it does not inherently improve query performance.</p><p><strong>INCORRECT:</strong> \"Convert the .csv files to JSON, optimizing the schema based on query patterns\" is incorrect.</p><p>Converting .csv files to JSON may make the data more accessible for certain types of queries but does not offer the same level of performance improvement as a columnar format. JSON is not as efficient as Parquet for large datasets and complex queries because it is a row-oriented format that requires scanning more data than is necessary for queries with specific columnar predicates.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html\">https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "<p>A financial services company hosts its transactional database on Amazon RDS for PostgreSQL. Due to the sensitive nature of the data, the company implements strict security measures. The database credentials are rotated every 30 days to reduce the risk of unauthorized access. The application developers do not want to make code changes each time the credentials are rotated.</p><p>Which service should be used to manage the database credentials with the LEAST operational effort while adhering to the company's security policy?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Utilize AWS Key Management Service (KMS) to create and manage encryption keys, and store the encrypted credentials in an Amazon DynamoDB table.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure an IAM role with permission to access the database, and modify the application to retrieve temporary credentials from the IAM role.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement AWS Secrets Manager to automatically rotate and manage database credentials, allowing the application to retrieve them with API calls.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Store the database credentials in an encrypted Amazon S3 bucket and allow the application to retrieve them when needed, using S3 bucket policies to control access.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>AWS Secrets Manager is specifically designed to handle secrets, which includes the capability to automatically rotate credentials securely without requiring changes to the application code. The application can retrieve the latest credentials using Secrets Manager’s API, ensuring that the credentials are always current and that the rotation adheres to the company's security policy.</p><p><strong>CORRECT: </strong>\"Implement AWS Secrets Manager to automatically rotate and manage database credentials, allowing the application to retrieve them with API calls\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Store the database credentials in an encrypted Amazon S3 bucket and allow the application to retrieve them when needed, using S3 bucket policies to control access\" is incorrect.</p><p>Storing credentials in an S3 bucket, even when encrypted, is not a best practice for secrets management and does not provide automatic rotation capabilities.</p><p><strong>INCORRECT:</strong> \"Utilize AWS Key Management Service (KMS) to create and manage encryption keys, and store the encrypted credentials in an Amazon DynamoDB table\" is incorrect.</p><p>AWS KMS is used for managing encryption keys and is not a secrets management solution. It would not handle the rotation of database credentials.</p><p><strong>INCORRECT:</strong> \"Configure an IAM role with permission to access the database, and modify the application to retrieve temporary credentials from the IAM role\" is incorrect.</p><p>While IAM roles with temporary credentials are a secure way to grant access, this option does not fulfill the requirement for rotating database credentials every 30 days. Temporary credentials provided by IAM roles are more suited for granting access to AWS services rather than managing database passwords.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_turn-on-for-db.html\">https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_turn-on-for-db.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_turn-on-for-db.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "<p>A market research firm collects extensive survey data in .csv format, stored with numerous columns. The data analysts primarily focus on a subset of columns for most of their queries. The firm needs an efficient way to ingest this data into their Amazon S3 data lake to facilitate cost-effective querying with Amazon Athena, especially given that full file scans are rare.</p><p>Which method should the data engineer use to ingest the survey data into the S3 data lake to optimize for Athena querying and cost efficiency?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement an AWS Glue ETL job to transform the .csv files into JSON format, focusing on the columns most frequently queried.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure an AWS Glue ETL job to process the .csv files and store them in the data lake in Apache Parquet format.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Lambda to parse the .csv files and reformat them into a normalized Amazon Redshift database for Athena querying.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Utilize AWS Glue PySpark job to convert the .csv files into .orc format before ingesting them into the data lake.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Apache Parquet is a columnar storage file format that is optimized for querying with services like Amazon Athena. It allows for efficient compression and encoding schemes, leading to cost savings in both storage and query execution.</p><p>Since the data analysts primarily query only a few columns at a time, storing the data in Parquet format means that Athena queries will scan only the necessary columns, reducing the amount of data processed and thus the query costs.</p><p>This approach is well-suited for datasets with many columns where only a subset is frequently accessed.</p><p><strong>CORRECT: </strong>\"Configure an AWS Glue ETL job to process the .csv files and store them in the data lake in Apache Parquet format\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Utilize AWS Glue PySpark job to convert the .csv files into .orc format before ingesting them into the data lake\" is incorrect.</p><p>While ORC is also a columnar format like Parquet and offers similar benefits, Parquet is generally preferred for its better integration and performance with Amazon Athena, making it a more cost-effective choice for this specific use case.</p><p><strong>INCORRECT:</strong> \"Implement an AWS Glue ETL job to transform the .csv files into JSON format, focusing on the columns most frequently queried\" is incorrect.</p><p>JSON is not a columnar format, and it's less efficient for the type of querying described. Querying JSON data typically requires more data to be scanned compared to Parquet, leading to higher query costs in Athena.</p><p><strong>INCORRECT:</strong> \" Use AWS Lambda to parse the .csv files and reformat them into a normalized Amazon Redshift database for Athena querying \" is incorrect.</p><p>This approach introduces unnecessary complexity and cost. Amazon Redshift is a powerful data warehousing solution but overkill for this scenario. Additionally, using AWS Lambda for this task would require custom scripting and wouldn't leverage the columnar storage benefits provided by formats like Parquet</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-format-parquet-home.html\">https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-format-parquet-home.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-format-parquet-home.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "<p>A data engineer needs to streamline a process where a specific AWS Lambda function processes data and subsequently triggers an AWS Glue ETL job. This automated workflow should be simple to manage and fully integrated within the AWS ecosystem.</p><p>Which AWS service or feature should the data engineer use to orchestrate this sequence of actions with minimal administrative effort?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Batch to manage a job workflow, first executing the Lambda function as a job and then the AWS Glue job.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure Amazon EventBridge to trigger the Lambda function and then the AWS Glue job upon successful completion.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Set up an AWS CodePipeline where the first stage executes the Lambda function and the subsequent stage triggers the AWS Glue job.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Glue triggers to initiate the Lambda function and then the AWS Glue job in sequence.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Amazon EventBridge is designed for event-driven workflows within the AWS ecosystem. It provides seamless integration with AWS services like Lambda and Glue.</p><p>By creating an EventBridge rule, you can:</p><ul><li><p>Trigger the Lambda function when specific criteria are met.</p></li><li><p>Set up another rule to trigger the AWS Glue job when the Lambda function completes successfully.</p></li></ul><p>This method is simple to manage and aligns perfectly with the requirement for a minimal administrative overhead and full AWS integration.</p><p><strong>CORRECT: </strong>\"Configure Amazon EventBridge to trigger the Lambda function and then the AWS Glue job upon successful completion\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Batch to manage a job workflow, first executing the Lambda function as a job and then the AWS Glue job\" is incorrect.</p><p>AWS Batch is designed to run batch computing workloads, and while it could orchestrate a sequence of jobs, it is not tailored for integrating Lambda and Glue jobs. Setting up AWS Batch would introduce unnecessary complexity for a workflow that primarily involves AWS Glue and Lambda.</p><p><strong>INCORRECT:</strong> \"Use AWS Glue triggers to initiate the Lambda function and then the AWS Glue job in sequence\" is incorrect.</p><p>AWS Glue triggers are used to orchestrate AWS Glue workflows (e.g., running ETL jobs, crawlers, or Glue scripts in sequence). Glue triggers cannot directly invoke a Lambda function, so this approach cannot manage the desired workflow.</p><p><strong>INCORRECT:</strong> \"Set up an AWS CodePipeline where the first stage executes the Lambda function and the subsequent stage triggers the AWS Glue job\" is incorrect.</p><p>AWS CodePipeline is a continuous integration and continuous delivery service for automating release pipelines. While it can technically be used to orchestrate workflows, it is more suited for code deployments and delivery processes, not data pipelines. Using CodePipeline for this purpose would be overkill and not the most straightforward approach.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html\">https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "<p>A software development team is deploying an application on Amazon Elastic Container Service (ECS) using Fargate. The application requires persistent storage to manage stateful data. The team needs to select an appropriate storage solution that can be attached to the ECS containers.</p><p>Which storage option should the team use for persistent storage with their ECS containers on Fargate?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon Elastic File System (EFS) volumes with the ECS containers.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Attach Amazon Elastic Block Store (EBS) volumes directly to the ECS containers.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon S3 buckets by mounting them directly onto the ECS containers.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement instance store volumes provided by the underlying EC2 instances of Fargate.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon Elastic File System (EFS) is the suitable choice for providing persistent storage to containers running on Amazon ECS using Fargate. EFS is a fully managed, scalable file storage that can be attached to multiple ECS containers, allowing them to share the same file system.</p><p>This is ideal for stateful applications that require shared or persistent storage across tasks or services in ECS. The integration between ECS and EFS allows containers to access the same EFS volumes, ensuring data persistence and availability.</p><p><strong>CORRECT: </strong>\"Use Amazon Elastic File System (EFS) volumes with the ECS containers\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Attach Amazon Elastic Block Store (EBS) volumes directly to the ECS containers\" is incorrect.</p><p>Amazon EBS volumes cannot be directly attached to ECS containers, especially in the Fargate launch type. EBS is primarily used with EC2 instances and is not suitable for container-based architectures where containers might be rescheduled on different underlying infrastructure.</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 buckets by mounting them directly onto the ECS containers\" is incorrect.</p><p>Amazon S3 is an object storage service and cannot be directly mounted onto ECS containers as a file system. While S3 can be used for storing and retrieving data, it is not designed to serve as attached storage for containers.</p><p><strong>INCORRECT:</strong> \"Implement instance store volumes provided by the underlying EC2 instances of Fargate\" is incorrect.</p><p>Fargate does not provide direct access to the underlying EC2 instance store volumes, as it abstracts the underlying infrastructure management. Instance store volumes are ephemeral and tied to the lifecycle of an EC2 instance, making them unsuitable for persistent storage needs in a containerized environment.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "<p>A retail company uses Amazon Aurora to manage inventory data. The company's Aurora DB cluster resides in a private subnet. A team member has created an AWS Lambda function to manage inventory levels within the Aurora DB cluster. To maintain data security, the company wants to ensure that this Lambda function can access the Aurora DB cluster only through the private network.</p><p>What steps should be taken to enable private connectivity from the Lambda function to the Aurora DB cluster with minimal administrative effort? (Select TWO.)</p>",
+    "corrects": [
+      2,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Deploy the Lambda function within a public subnet and configure a NAT Gateway for outbound connections.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Modify the security group of the Aurora DB cluster to allow incoming connections on the appropriate port from the Lambda function.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Ensure the Lambda function is configured to run in the same VPC as the Aurora DB cluster, within a private subnet.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable the private DNS name feature for the Aurora DB cluster endpoint.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Implement VPC peering between the VPC containing the Lambda function and the VPC containing the Aurora DB cluster.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>Adjusting the security group rules for the Aurora DB cluster to allow connections from the Lambda function enables secure, private communication without exposing the database to the public internet. This is crucial for maintaining a strong security posture.</p><p>Configuring the Lambda function to operate within the same VPC—and more specifically, within the private subnet where the Aurora DB cluster resides—ensures that the database can be accessed without traversing the public internet, in line with AWS best practices for security and privacy.</p><p><strong>CORRECT: </strong>\"Modify the security group of the Aurora DB cluster to allow incoming connections on the appropriate port from the Lambda function\" is a correct answer (as explained above.)</p><p><strong>CORRECT: </strong>\"Ensure the Lambda function is configured to run in the same VPC as the Aurora DB cluster, within a private subnet\" is also a correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Enable the private DNS name feature for the Aurora DB cluster endpoint\" is incorrect.</p><p>The private DNS name feature is typically enabled by default and does not directly facilitate Lambda's access to the database.</p><p><strong>INCORRECT:</strong> \"Deploy the Lambda function within a public subnet and configure a NAT Gateway for outbound connections\" is incorrect.</p><p>Placing the Lambda function in a public subnet and using a NAT Gateway would still route traffic through the public internet, which the company wants to avoid.</p><p><strong>INCORRECT:</strong> \"Implement VPC peering between the VPC containing the Lambda function and the VPC containing the Aurora DB cluster\" is incorrect.</p><p>VPC peering is unnecessary if both the Lambda function and the Aurora DB cluster are within the same VPC, as stated in the scenario. This option would add unnecessary complexity without solving the connectivity issue.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html</a></p><p><a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html\">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html",
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "<p>A streaming service company stores video metadata in various databases, including Amazon RDS, and in JSON format within Amazon S3. They require a managed service to automatically catalog this data and reflect schema changes. Which AWS service should they use for automatic metadata cataloging with minimal manual effort?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure AWS Lambda to periodically scan databases and S3, updating an Amazon RDS instance serving as a metadata catalog.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Glue Data Catalog with scheduled crawlers for databases and S3 to maintain an up-to-date central metadata repository.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure Amazon Redshift Spectrum to scan data and populate a metadata schema in a Redshift cluster.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Athena to query databases and S3, writing metadata results to Amazon DynamoDB as a catalog.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>AWS Glue Data Catalog is a fully managed service that serves as a central repository for metadata across AWS services.</p><p>It has built-in crawlers that automatically discover and catalog metadata from various sources like Amazon RDS and Amazon S3.</p><p>When configured to run on a schedule, these crawlers can detect and incorporate schema changes, keeping the metadata repository current without the need for manual updates</p><p><strong>CORRECT: </strong>\"Use AWS Glue Data Catalog with scheduled crawlers for databases and S3 to maintain an up-to-date central metadata repository\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure AWS Lambda to periodically scan databases and S3, updating an Amazon RDS instance serving as a metadata catalog\" is incorrect.</p><p>This approach would require custom coding and manual setup of AWS Lambda functions, increasing operational effort. It's not as efficient as using a purpose-built service like AWS Glue Data Catalog.</p><p><strong>INCORRECT:</strong> \"Use Amazon Athena to query databases and S3, writing metadata results to Amazon DynamoDB as a catalog\" is incorrect.</p><p>While Amazon Athena can query metadata, using it in conjunction with DynamoDB to maintain a metadata catalog would involve manual processes for synchronization, which is not as streamlined as using AWS Glue Data Catalog.</p><p><strong>INCORRECT:</strong> \"Configure Amazon Redshift Spectrum to scan data and populate a metadata schema in a Redshift cluster\" is incorrect.</p><p>Amazon Redshift Spectrum can query data across databases and S3, but it's not designed for automatic metadata cataloging. It requires more complex setup and maintenance compared to the automated capabilities of AWS Glue Data Catalog.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html\">https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "<p>A DevOps team is responsible for monitoring and troubleshooting a fleet of EC2 instances running web applications in AWS. They need an efficient way to analyze and query the log data generated by these applications, which are stored in Amazon CloudWatch Logs. The team wants to quickly identify errors and understand usage patterns through log analysis.</p><p>Which AWS service or feature should the DevOps team use for effective real-time analysis and querying of log data stored in Amazon CloudWatch Logs?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use CloudWatch Logs Insights to perform queries and analyze the log data.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up Amazon Athena to query log data directly from CloudWatch Logs.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure Amazon Elasticsearch Service for log analytics and visualization.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement AWS X-Ray for in-depth analysis and tracing of application logs.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>CloudWatch Logs Insights is the most suitable tool for the DevOps team's requirements. It provides an interactive interface to query and analyze log data stored in CloudWatch Logs.</p><p>Logs Insights enables the team to execute complex queries on their log data, helping them efficiently analyze and visualize operational data.</p><p>It's particularly useful for identifying trends, pinpointing errors, and extracting valuable insights from log data, which is essential for monitoring and troubleshooting their web applications.</p><p><strong>CORRECT: </strong>\"Use CloudWatch Logs Insights to perform queries and analyze the log data\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement AWS X-Ray for in-depth analysis and tracing of application logs\" is incorrect.</p><p>AWS X-Ray is more focused on providing insights into the performance of distributed applications and services, rather than log analysis. It is used for tracing requests as they move through distributed systems but does not specifically cater to querying and analyzing log data like CloudWatch Logs Insights.</p><p><strong>INCORRECT:</strong> \"Set up Amazon Athena to query log data directly from CloudWatch Logs\" is incorrect.</p><p>While Amazon Athena can be used to query large-scale datasets, it is not directly integrated with CloudWatch Logs for log analysis. Athena is more suited for querying data stored in Amazon S3 and does not offer the real-time log analytics capabilities provided by CloudWatch Logs Insights.</p><p><strong>INCORRECT:</strong> \"Configure Amazon Elasticsearch Service for log analytics and visualization\" is incorrect.</p><p>Amazon Elasticsearch Service is a powerful tool for log analytics and visualization, but it involves setting up and managing an Elasticsearch cluster. For real-time analysis and querying of log data, CloudWatch Logs Insights offers a more direct and integrated solution within the AWS ecosystem, especially for logs stored in CloudWatch.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "<p>An organization utilizes Amazon Athena for running SQL queries as part of their data analysis process. They now need to leverage Apache Spark for more complex data processing and analytics tasks. The organization wants to ensure they can access data within Athena using Spark.</p><p>Which feature should the organization use to enable Apache Spark to access and analyze data in Athena?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Athena JDBC driver</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Athena SDK</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Athena UDFs</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Athena API</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>To enable Apache Spark to access and analyze data in Amazon Athena, the organization can use the Athena JDBC (Java Database Connectivity) driver. JDBC drivers allow applications, like those written in Spark, to connect to a database (in this case, Athena) and perform SQL queries over the network.</p><p>By integrating the Athena JDBC driver into their Spark environment, the organization can directly run Spark jobs that query the data stored in Athena. This approach provides a seamless way to combine the power of Spark's data processing capabilities with Athena's interactive query service</p><p><strong>CORRECT: </strong>\"Athena JDBC driver\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Athena API\" is incorrect.</p><p>While the Athena API allows programmatic access to Athena for running queries, managing query execution, and retrieving results, it is not specifically designed for integrating with Apache Spark. The API is more suited for custom application integrations and automated workflows rather than direct use within a Spark environment.</p><p><strong>INCORRECT:</strong> \"Athena SDK\" is incorrect.</p><p>The Athena Software Development Kit (SDK) is used for developing applications that interact with Athena, but it does not provide a direct method for Apache Spark to access Athena for data analysis. The SDK is typically used for building custom applications and scripts.</p><p><strong>INCORRECT:</strong> \"Athena UDFs\" is incorrect.</p><p>Athena UDFs (User Defined Functions) allow users to create custom functions in Athena to extend its SQL capabilities. However, UDFs are not a mechanism for enabling Spark to access Athena data. They are more about enhancing Athena's query functionality.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "<p>An enterprise is looking to automate its data processing workflows on AWS. Whenever a .csv file is uploaded to a specific Amazon S3 bucket, they want a serverless process to convert the file into Apache Parquet format. The goal is to minimize manual intervention and ensure that the process is triggered only by the upload of .csv files.</p><p>What is the most efficient method for the data engineer to set up an AWS Lambda function that responds exclusively to the uploading of .csv files into an S3 bucket?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up an S3 event notification for s3:ObjectCreated:Put events, applying a suffix filter for .csv files and designating the Lambda function's ARN as the direct trigger.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Establish an Amazon EventBridge rule to trigger the Lambda function on any S3 put action, with a specific filter for .csv file prefixes.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure an S3 Lifecycle policy to invoke the Lambda function for .csv files added to the bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement an AWS Step Functions state machine that starts when a .csv file is uploaded to S3, and invoke the Lambda function as the initial step of the workflow.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon S3 event notifications can be configured to respond to specific events, such as the creation of a new object. By setting a suffix filter for .csv files, the S3 bucket will only invoke the Lambda function when a .csv file is uploaded. This direct integration between S3 and Lambda ensures that the data transformation process is triggered automatically with the least operational overhead.</p><p><strong>CORRECT: </strong>\"Set up an S3 event notification for s3:ObjectCreated:Put events, applying a suffix filter for .csv files and designating the Lambda function's ARN as the direct trigger\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure an S3 Lifecycle policy to invoke the Lambda function for .csv files added to the bucket\" is incorrect.</p><p>S3 Lifecycle policies are used for managing objects' lifecycles, such as archiving and deletion, not for triggering processing functions upon file upload.</p><p><strong>INCORRECT:</strong> \"Establish an Amazon CloudWatch Events rule to trigger the Lambda function on any S3 put action, with a specific filter for .csv file prefixes\" is incorrect.</p><p>Amazon EventBridge can monitor S3 activity, but it is not as direct or straightforward for triggering a Lambda function upon specific file uploads as S3 event notifications.</p><p><strong>INCORRECT:</strong> \"Implement an AWS Step Functions state machine that starts when a .csv file is uploaded to S3, and invoke the Lambda function as the initial step of the workflow\" is incorrect.</p><p>AWS Step Functions is a workflow service that can coordinate multiple AWS services into serverless workflows. While it could orchestrate the process, it is more complex and introduces additional overhead compared to direct S3 event notifications.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html\">https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "<p>A mobile application development company is using Amazon DynamoDB for its user data storage. The company requires a mechanism to track and respond to changes in the user data in real-time. They need a solution that captures modifications to DynamoDB items and triggers a process to handle these changes as they occur.</p><p>Which AWS service should the company implement to meet this requirement effectively?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure Amazon S3 event notifications to respond to data changes in the DynamoDB table.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Activate DynamoDB Streams to capture changes and trigger an AWS Lambda function for real-time processing.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Lambda to periodically poll the DynamoDB table for changes.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement Amazon Kinesis Data Firehose to capture and process data changes in DynamoDB.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>DynamoDB Streams is an ideal solution for the company's requirement to track and respond to changes in DynamoDB data in real time. When enabled, DynamoDB Streams captures a time-ordered sequence of item-level modifications in any DynamoDB table and stores this information for 24 hours.</p><p>This stream of data can then be used to trigger an AWS Lambda function automatically whenever there are changes (such as inserts, updates, or deletes) to the table. This integration allows for efficient and real-time processing of data changes, making it a suitable choice for the company's needs.</p><p><strong>CORRECT: </strong>\"Activate DynamoDB Streams to capture changes and trigger an AWS Lambda function for real-time processing\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Lambda to periodically poll the DynamoDB table for changes\" is incorrect.</p><p>Periodically polling the DynamoDB table for changes using Lambda is less efficient and may introduce latency in response to data changes. It is also a more resource-intensive approach compared to using DynamoDB Streams.</p><p><strong>INCORRECT:</strong> \"Implement Amazon Kinesis Data Firehose to capture and process data changes in DynamoDB\" is incorrect.</p><p>Amazon Kinesis Data Firehose is primarily used for loading streaming data into AWS data stores and does not have a direct integration with DynamoDB for capturing table changes.</p><p><strong>INCORRECT:</strong> \"Configure Amazon S3 event notifications to respond to data changes in the DynamoDB table\" is incorrect.</p><p>Amazon S3 event notifications are used to respond to changes in S3 buckets, not DynamoDB tables. This option is not applicable for tracking changes in a DynamoDB table.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.Lambda.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.Lambda.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.Lambda.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "<p>A large retail organization is leveraging Amazon Athena for ad-hoc SQL querying of their multi-petabyte e-commerce transaction dataset. The dataset, housed in Amazon S3, is updated nightly through an AWS Glue job. To align with the retail analytics team's needs, the dataset must be refreshed in the BI tools every two hours. The data engineer aims to optimize Athena query costs while maintaining operational simplicity and adhering to the refresh frequency requirements.</p><p>Which approach should the data engineer adopt to minimize Athena querying costs without increasing infrastructure complexity?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up Amazon Athena Workgroups to enforce cost controls and manage query usage.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Athena’s data partitioning to improve query efficiency and reduce the amount of data scanned.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement Amazon S3 Intelligent-Tiering to automatically move less frequently accessed data to cost-effective storage classes.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Convert the dataset to a columnar format like Apache ORC to reduce data scanned and improve query performance.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>Athena’s data partitioning allows for organizing data in a way that reduces the amount of data scanned by each query, thus lowering costs.</p><p>By partitioning the dataset based on frequently used query filters (such as date, product category, etc.), Athena can limit the data it needs to scan, leading to faster query performance and lower costs.</p><p>This approach is particularly effective for large datasets and does not require additional infrastructure or significant operational changes.</p><p><strong>CORRECT: </strong>\"Use Athena’s data partitioning to improve query efficiency and reduce the amount of data scanned\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement Amazon S3 Intelligent-Tiering to automatically move less frequently accessed data to cost-effective storage classes\" is incorrect.</p><p>While S3 Intelligent-Tiering can reduce storage costs by automatically moving data to the most cost-effective access tier, it does not directly impact the cost of querying data with Athena, which is primarily determined by the amount of data scanned.</p><p><strong>INCORRECT:</strong> \"Set up Amazon Athena Workgroups to enforce cost controls and manage query usage\" is incorrect.</p><p>Workgroups are used to separate query execution and data access across Athena. They provide means to control access and set query-related limits, but they don’t inherently reduce the cost of querying large datasets.</p><p><strong>INCORRECT:</strong> \"Convert the dataset to a columnar format like Apache ORC to reduce data scanned and improve query performance\" is incorrect.</p><p>Converting data to a columnar storage format like ORC or Parquet can indeed improve query performance and reduce costs by optimizing the data for query access. However, this involves a one-time conversion process and might not be as straightforward as implementing data partitioning in terms of operational overhead.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html\">https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "<p>An analytics team at a retail corporation is looking to process their vast amounts of transactional data stored in Amazon S3 using complex analytical queries. The team plans to use Amazon EMR with Apache Hive for their batch processing needs. They require a metadata management system that will allow them to define, organize, and query their data structure.</p><p>What component should the team implement within their Amazon EMR environment to manage their metadata effectively and ensure compatibility with Hive?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure the EMR cluster to use the Glue Data Catalog as a drop-in replacement for the Hive Metastore.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use the EMR File System (EMRFS) to handle Hive metadata alongside the transactional data in S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Deploy an Amazon RDS instance configured as an external Hive Metastore for the EMR cluster.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement Amazon DynamoDB to store and manage Hive metadata for EMR processing tasks.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>The AWS Glue Data Catalog provides a persistent metadata store that is integrated with Amazon EMR, serving as a fully managed Hive metastore compatible with Apache Hive.</p><p>By configuring the EMR cluster to use the AWS Glue Data Catalog, the analytics team can manage their metadata in a centralized repository that automatically scales and is accessible across all their EMR clusters.</p><p>This eliminates the operational overhead of managing their own Hive Metastore on a separate infrastructure, like RDS, and provides enhanced features such as search and discovery of datasets, schema versioning, and integration with other AWS analytics services.</p><p><strong>CORRECT: </strong>\"Configure the EMR cluster to use the Glue Data Catalog as a drop-in replacement for the Hive Metastore\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Deploy an Amazon RDS instance configured as an external Hive Metastore for the EMR cluster\" is incorrect.</p><p>While using RDS as an external Hive Metastore is possible, it would introduce additional complexity and management overhead, such as manual scaling and backups. It is not as seamless and managed as using the AWS Glue Data Catalog, which is purpose-built for metadata management and integrates natively with EMR.</p><p><strong>INCORRECT:</strong> \"Implement Amazon DynamoDB to store and manage Hive metadata for EMR processing tasks\" is incorrect.</p><p>Amazon DynamoDB is a NoSQL database service suitable for applications that need consistent, single-digit millisecond latency at any scale. It is not typically used as a metadata repository for Hive and would require custom implementation to serve as a Hive Metastore, which is not advisable considering managed alternatives like AWS Glue Data Catalog.</p><p><strong>INCORRECT:</strong> \"Use the EMR File System (EMRFS) to handle Hive metadata alongside the transactional data in S3\" is incorrect.</p><p>EMRFS is an implementation of HDFS (Hadoop Distributed File System) for Amazon EMR that interacts with data stored in Amazon S3. However, it is not a metadata management system and does not replace the functionalities of a Hive Metastore.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html\">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "<p>A marketing agency frequently runs ad-hoc queries on datasets stored in Amazon S3 using Amazon Athena. They need to establish strict access control measures to ensure that different departments within the agency can only view and run queries relevant to their specific projects and cannot access others' query logs or results.</p><p>What approach should the agency adopt to enforce these fine-grained permission controls within their shared AWS account?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement Amazon S3 access points for each department's data and associate them with specific IAM policies to manage query execution permissions.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Create an individual AWS Glue Data Catalog database for each department's datasets and configure IAM policies to control access to each database.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Set up a separate Athena workgroup for each department, controlling access to query execution and history by attaching IAM policies to each workgroup.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Organize data into different S3 prefixes per department and create corresponding IAM roles, allowing departments to execute queries only on their assigned prefixes.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>Athena workgroups are a feature that allows for the separation of workloads by teams or applications. By creating different workgroups for each department, the agency can isolate query execution and access to query histories.</p><p>IAM policies can then be attached to each workgroup to manage permissions effectively. This ensures that each department only has access to its relevant queries and data, thereby meeting the agency's requirement for permission controls.</p><p><strong>CORRECT: </strong>\"Set up a separate Athena workgroup for each department, controlling access to query execution and history by attaching IAM policies to each workgroup\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Create an individual AWS Glue Data Catalog database for each department's datasets and configure IAM policies to control access to each database\" is incorrect.</p><p>Creating separate databases for each department would help in organizing the data, but this approach doesn't directly control access to the query process or the query history, which is a key requirement from the company.</p><p><strong>INCORRECT:</strong> \"Organize data into different S3 prefixes per department and create corresponding IAM roles, allowing departments to execute queries only on their assigned prefixes\" is incorrect.</p><p>This approach would manage access to the data itself but would not provide the necessary controls for separating the query processes or the access to query history which is essential for the company's use cases.</p><p><strong>INCORRECT:</strong> \"Implement Amazon S3 access points for each department's data and associate them with specific IAM policies to manage query execution permissions\" is incorrect.</p><p>S3 access points are a way to manage access to specific data sets in S3. However, they do not offer the granularity needed for controlling access to query execution and history in Athena, which the company requires.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/user-created-workgroups.html\">https://docs.aws.amazon.com/athena/latest/ug/user-created-workgroups.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/user-created-workgroups.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "<p>A business specializing in big data analytics is transitioning its data processing from an on-site data center to AWS to cut down on management complexity. They're interested in adopting a serverless architecture wherever possible.</p><p>Their current setup involves heavy use of Apache Pig, Apache Oozie, Apache Spark, Apache HBase, and Apache Flink, handling petabytes of data with rapid processing times. The business requires that their new cloud-based solution offer comparable, if not superior, processing performance.</p><p>Which AWS service should they choose to achieve serverless ETL at scale?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon S3 with S3 Select for optimized data retrieval.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon Kinesis Data Analytics for real-time analytics.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use serverless Amazon Athena for interactive query services.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Glue for serverless ETL operations.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Glue is a fully managed, serverless ETL service that makes it simple and cost-effective to categorize, clean, enrich, and move data. It supports a serverless architecture, which aligns with the company's desire to reduce operational overhead.</p><p>AWS Glue is scalable to handle petabytes of data and can process data quickly, offering a performance similar to or better than the company's on-premises solution. Moreover, it can natively integrate with Apache Spark, allowing for seamless migration of Spark jobs.</p><p><strong>CORRECT: </strong>\"Use AWS Glue for serverless ETL operations\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use serverless Amazon Athena for interactive query services\" is incorrect.</p><p>Amazon Athena is a serverless interactive query service that directly works with data in Amazon S3, but it is not an ETL service. While Athena can handle large-scale data processing, it does not replace the full suite of ETL capabilities or support the breadth of data processing frameworks such as Apache Pig and Apache Oozie that the company currently uses.</p><p><strong>INCORRECT:</strong> \"Use Amazon Kinesis Data Analytics for real-time analytics\" is incorrect.</p><p>Amazon Kinesis Data Analytics is suitable for real-time analytics on streaming data but does not offer a comprehensive ETL solution for batch processing and may not support all the specific technologies the company is currently using.</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 with S3 Select for optimized data retrieval\" is incorrect.</p><p>Amazon S3 and S3 Select provide a data storage solution with optimized retrieval capabilities but do not constitute a complete ETL service. S3 Select allows for retrieving subsets of data from a larger dataset, but it would not provide the processing capabilities or replace the components like Apache Pig or Oozie in the company's current ETL workflow.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/glue/\">https://aws.amazon.com/glue/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/glue/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "<p>A data engineer needs to reformat newly acquired .csv data in an S3 bucket for more efficient analytics. The data includes timestamps, and older data is removed daily. What is the most cost-effective AWS solution to transform and optimize this data for query performance?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Configure an EMR Spark job to transform the .csv files into Parquet, partitioned by the creation timestamp.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Glue to convert the .csv data to Apache Parquet and partition it by timestamp.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Set up a daily Lambda function to convert and partition the .csv data into Parquet format within S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Run an Athena CTAS query to convert the data to Parquet format with Snappy compression, partitioned by timestamp.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon Athena's CTAS feature enables the conversion of data into columnar formats like Parquet, which is optimized for analytics. Parquet format, combined with Snappy compression, improves performance, and reduces costs by minimizing storage use and speeding up query times.</p><p>Partitioning the data by timestamp ensures efficient data management and retrieval, aligning with the need for daily removal of outdated data. This serverless solution does not require managing any infrastructure, making it cost-effective for transforming and optimizing data directly within S3</p><p><strong>CORRECT: </strong>\"Run an Athena CTAS query to convert the data to Parquet format with Snappy compression, partitioned by timestamp\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Glue to convert the .csv data to Apache Parquet and partition it by timestamp\" is incorrect.</p><p>AWS Glue is a fully managed ETL service that could perform the transformation. However, for a straightforward conversion and partitioning task, AWS Glue might introduce more complexity and cost compared to the simplicity and serverless nature of an Athena CTAS query.</p><p><strong>INCORRECT:</strong> \"Configure an EMR Spark job to transform the .csv files into Parquet, partitioned by the creation timestamp\" is incorrect.</p><p>Amazon EMR is a managed cluster platform that runs big data frameworks like Apache Spark. While EMR can handle the task, it is typically more cost-effective for large-scale, complex processing jobs. The overhead of setting up and managing an EMR cluster is not necessary for this scenario, making Athena a more cost-effective choice.</p><p><strong>INCORRECT:</strong> \"Set up a daily Lambda function to convert and partition the .csv data into Parquet format within S3\" is incorrect.</p><p>AWS Lambda allows running code in response to events, such as new data arrival. However, for data transformation tasks, particularly for large datasets, Lambda may face limitations in terms of execution time and memory. Athena's CTAS is a more suitable tool for large-scale data transformation without these limitations</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/athena/latest/ug/ctas.html\">https://docs.aws.amazon.com/athena/latest/ug/ctas.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/athena/latest/ug/ctas.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "<p>A logistics company integrates IoT devices in their fleet to track vehicle locations. The location data is stored in an Amazon RDS instance. The company wants to record the last known locations of vehicles at the end of each day in an Amazon DynamoDB table for quick access. A data engineer has developed an AWS Lambda function to transfer this end-of-day location data from RDS to DynamoDB.</p><p>How should the data engineer automate the execution of the Lambda function to ensure the daily transfer of location data to DynamoDB?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an AWS Step Functions state machine to call the Lambda function in response to AWS CloudTrail logs indicating data entry completion.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon S3 event notifications to invoke the Lambda function when new location data is uploaded to an S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Trigger the Lambda function using Amazon EventBridge based on a scheduled rule corresponding to the end of each day.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure Amazon RDS to directly invoke the Lambda function upon detecting the end-of-day data entry.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>Amazon EventBridge can be used to trigger AWS Lambda functions on a scheduled basis. In this scenario, the data engineer can set up a rule to invoke the Lambda function at the end of each day, ensuring the daily transfer of location data from the Amazon RDS instance to the DynamoDB table.</p><p>This approach is efficient for tasks that need to occur at regular intervals, like the daily update of location data, and it requires minimal manual intervention once set up</p><p><strong>CORRECT: </strong>\"Trigger the Lambda function using Amazon EventBridge based on a scheduled rule corresponding to the end of each day\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 event notifications to invoke the Lambda function when new location data is uploaded to an S3 bucket\" is incorrect.</p><p>This option is not applicable as the location data is stored in an Amazon RDS instance and not in an Amazon S3 bucket. S3 event notifications are used for triggering actions in response to changes in S3, not RDS.</p><p><strong>INCORRECT:</strong> \"Configure Amazon RDS to directly invoke the Lambda function upon detecting the end-of-day data entry\" is incorrect.</p><p>Amazon RDS does not have a native feature to directly invoke a Lambda function based on data entry events. The integration between RDS and Lambda typically requires an intermediary service like AWS Lambda or EventBridge.</p><p><strong>INCORRECT:</strong> \"Create an AWS Step Functions state machine to call the Lambda function in response to AWS CloudTrail logs indicating data entry completion\" is incorrect.</p><p>AWS CloudTrail is used for logging and monitoring AWS account activity, not for triggering operational tasks like data transfers. Using AWS Step Functions and CloudTrail for this purpose would be overly complex and not aligned with the requirement for a simple daily data transfer.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html\">https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "<p>A data engineering team at a large corporation is tasked with migrating several terabytes of data from an on-premises Oracle database to Amazon Aurora. The migration should minimize downtime and ensure data consistency. After the initial migration, the team also needs to keep the Aurora database synchronized with the on-premises database for a transitional period.</p><p>Which AWS service should the data engineering team use to efficiently migrate and continuously replicate data from the Oracle database to Amazon Aurora with minimal downtime?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Database Migration Service (AWS DMS) to migrate the existing data and then use ongoing replication to synchronize changes.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure Amazon Kinesis Data Firehose for continuous data streaming from the Oracle database to Amazon Aurora.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Data Pipeline to transfer data from the Oracle database to Amazon Aurora, and set up a schedule for incremental updates.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon S3 Transfer Acceleration for initial data migration, and then set up AWS Lambda to handle ongoing data changes.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 3: Data Operations and Support",
+    "explanation": "<p>AWS Database Migration Service (DMS) is specifically designed for efficient database migrations with minimal downtime. It supports various database platforms, including Oracle and Amazon Aurora.</p><p>DMS not only facilitates the initial bulk data migration but also enables continuous data replication, which can be used to synchronize the on-premises Oracle database with Amazon Aurora during the transitional period.</p><p>This solution ensures data consistency and minimizes the impact on operational systems, making it ideal for the data engineering team's requirements</p><p><strong>CORRECT: </strong>\"Use AWS Database Migration Service (AWS DMS) to migrate the existing data and then use ongoing replication to synchronize changes\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use AWS Data Pipeline to transfer data from the Oracle database to Amazon Aurora, and set up a schedule for incremental updates\" is incorrect.</p><p>AWS Data Pipeline is a web service designed to automate and schedule data transfers. However, it’s more suited for data processing workflows than for complex database migrations and real-time replication, and it might not efficiently handle large-scale database migrations with minimal downtime.</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 Transfer Acceleration for initial data migration, and then set up AWS Lambda to handle ongoing data changes\" is incorrect.</p><p>Amazon S3 Transfer Acceleration optimizes the transfer of data to S3, but it's not a database migration tool. Also, using AWS Lambda for continuous replication would require custom development and might not offer the same level of robustness and ease of setup as AWS DMS.</p><p><strong>INCORRECT:</strong> \"Configure Amazon Kinesis Data Firehose for continuous data streaming from the Oracle database to Amazon Aurora\" is incorrect.</p><p>Amazon Kinesis Data Firehose is primarily used for real-time streaming of data into AWS services. While it can handle continuous data streaming, it is not tailored for migrating existing databases and ensuring consistency between source and target databases, as required in database migration scenarios.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/dms/faqs/\">https://aws.amazon.com/dms/faqs/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/dms/faqs/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "<p>A data engineering team is building an ETL pipeline that requires secure access to a database hosted on Amazon RDS. The pipeline will run on AWS Lambda, and the team needs to manage the database credentials securely.</p><p>Which AWS service should the team use to store and retrieve the database credentials securely for the Lambda function?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Simple Storage Service (S3)</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Systems Manager Parameter Store</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Secrets Manager</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Identity and Access Management (IAM)</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>AWS Secrets Manager is designed specifically for securely storing and managing sensitive information such as database credentials. It enables the data engineering team to store the RDS database credentials securely and provides built-in functionality for rotating the credentials automatically.</p><p>When the AWS Lambda function needs to access the database, it can securely retrieve the credentials from Secrets Manager. This approach enhances security by keeping credentials out of the code and managing them centrally, making it an ideal choice for the team's ETL pipeline.</p><p><strong>CORRECT: </strong>\"AWS Secrets Manager\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Amazon Simple Storage Service (S3)\" is incorrect.</p><p>While Amazon S3 is a secure and scalable object storage service, it is not specifically intended for managing sensitive configuration data like database credentials. Storing such sensitive information in S3 does not provide the same level of security best practices or features (such as credential rotation) that are offered by AWS Secrets Manager.</p><p><strong>INCORRECT:</strong> \"AWS Systems Manager Parameter Store\" is incorrect.</p><p>AWS Systems Manager Parameter Store provides secure, hierarchical storage for configuration data and secrets. While it is a viable option for storing credentials and can be used in a similar manner to Secrets Manager, it does not offer some of the advanced features of Secrets Manager, such as automatic rotation of secrets.</p><p><strong>INCORRECT:</strong> \"AWS Identity and Access Management (IAM)\" is incorrect.</p><p>AWS IAM is used for managing access to AWS services and resources but does not provide a mechanism for storing or retrieving database credentials. IAM roles and policies are more about defining permissions and access controls rather than handling sensitive information like database credentials.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/secrets-manager/\">https://aws.amazon.com/secrets-manager/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/secrets-manager/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "<p>A data engineering team needs to orchestrate complex ETL workflows involving multiple AWS services like Amazon EMR, Amazon Redshift, and AWS Glue. These workflows require customizable scheduling, monitoring, and dependencies management. The team seeks a scalable and managed solution to orchestrate these workflows efficiently.</p><p>Which AWS service should the team use for orchestrating their ETL workflows?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up Amazon Data Pipeline to define data movement and transformation between different AWS services.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Implement AWS Step Functions to manage the workflow execution and dependencies between various AWS services.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon Managed Workflows for Apache Airflow (MWAA) to create, schedule, and monitor complex ETL workflows.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure AWS Lambda functions with Amazon EventBridge for scheduling and orchestrating ETL processes.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon Managed Workflows for Apache Airflow (MWAA) is a managed service that makes it easier to set up and operate end-to-end data pipelines in the cloud with Apache Airflow. It is ideal for orchestrating complex ETL workflows that involve multiple AWS services like Amazon EMR, Redshift, and Glue.</p><p>MWAA provides robust capabilities for workflow scheduling, dependency management, and monitoring, all within a managed environment. This service offers the flexibility and scalability the data engineering team needs for efficient orchestration of their ETL processes.</p><p><strong>CORRECT: </strong>\"Use Amazon Managed Workflows for Apache Airflow (MWAA) to create, schedule, and monitor complex ETL workflows\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement AWS Step Functions to manage the workflow execution and dependencies between various AWS services\" is incorrect.</p><p>While AWS Step Functions is a powerful service for orchestrating workflows, it is more suited for coordinating components of application workflows and microservices. For complex ETL tasks involving specific AWS services and requiring detailed scheduling and dependency management, MWAA is a more tailored solution.</p><p><strong>INCORRECT:</strong> \"Configure AWS Lambda functions with Amazon EventBridge for scheduling and orchestrating ETL processes\" is incorrect.</p><p>AWS Lambda and EventBridge can handle specific automation tasks and simple workflows. However, they lack the comprehensive ETL orchestration, scheduling, and monitoring capabilities provided by Apache Airflow, making them less suitable for complex ETL workflow management.</p><p><strong>INCORRECT:</strong> \"Set up Amazon Data Pipeline to define data movement and transformation between different AWS services\" is incorrect.</p><p>Amazon Data Pipeline is a web service for processing and moving data between AWS compute and storage services. While it can automate the movement and transformation of data, it does not offer the same level of flexibility, extensibility, and detailed monitoring as Apache Airflow through MWAA, especially for complex, multi-step ETL workflows.</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/managed-workflows-for-apache-airflow/\">https://aws.amazon.com/managed-workflows-for-apache-airflow/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/managed-workflows-for-apache-airflow/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "<p>A research institution is looking to transition their on-premises data analytics platform, which includes Apache Hadoop clusters and a comprehensive data catalog managed in an Apache Hive metastore, to the AWS cloud. They are adopting Amazon EMR for their Hadoop workloads and require a serverless, cost-effective solution to migrate and manage their existing data catalog.</p><p>Which solution should the institution implement to migrate their Hive metastore to AWS while ensuring a serverless and cost-effective data catalog management?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement Amazon Athena to reconstruct the data catalog from the Hive metastore data stored in Amazon S3, integrating it with EMR for analytics.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Glue Data Catalog to import the existing Hive metastore, making it the centralized metadata repository, and integrate it with Amazon EMR.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Migrate the Hive metastore to Amazon RDS with AWS Database Migration Service (DMS), then connect the RDS instance to Amazon EMR clusters.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Set up an Amazon EMR cluster with a configured Hive metastore, migrate the on-premises metastore to EMR, and utilize AWS Glue Data Catalog for catalog synchronization.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>AWS Glue Data Catalog offers a serverless metadata repository service that can replace an Apache Hive metastore. It integrates seamlessly with Amazon EMR, allowing the research institution to maintain a unified data catalog across their AWS and on-premises environments.</p><p>By importing their existing Hive metastore into AWS Glue Data Catalog, they can centralize and manage their metadata efficiently in the cloud without the need for additional servers or management overhead. This approach is cost-effective, leveraging AWS's managed services to reduce operational complexity.</p><p><strong>CORRECT: </strong>\"Use AWS Glue Data Catalog to import the existing Hive metastore, making it the centralized metadata repository, and integrate it with Amazon EMR\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Migrate the Hive metastore to Amazon RDS with AWS Database Migration Service (DMS), then connect the RDS instance to Amazon EMR clusters\" is incorrect/</p><p>While this method could technically work, using Amazon RDS for the Hive metastore does not provide a serverless solution and could incur higher costs and operational overhead compared to using AWS Glue Data Catalog.</p><p><strong>INCORRECT:</strong> \"Set up an Amazon EMR cluster with a configured Hive metastore, migrate the on-premises metastore to EMR, and utilize AWS Glue Data Catalog for catalog synchronization\" is incorrect.</p><p>Configuring a Hive metastore directly on Amazon EMR involves managing the EMR cluster's lifecycle, which contradicts the requirement for a serverless solution. While AWS Glue Data Catalog can synchronize with this setup, it's more efficient to use Glue Data Catalog as the primary metadata repository.</p><p><strong>INCORRECT:</strong> \"Implement Amazon Athena to reconstruct the data catalog from the Hive metastore data stored in Amazon S3, integrating it with EMR for analytics\" is incorrect.</p><p>Amazon Athena is a serverless interactive query service but is not used for managing data catalogs or migrating Hive metastores. This option would involve unnecessary complexity and does not directly address the need for migrating and managing a data catalog.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-glue.html\">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-glue.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-glue.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "<p>A social media company uses an Amazon DynamoDB table to store user activity logs. The logs are only relevant for 30 days for analytical purposes. After 30 days, these logs are no longer needed and should be automatically deleted to save storage costs.</p><p>What steps should the company take to automatically remove outdated logs from the DynamoDB table after 30 days?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Set up a Time To Live (TTL) attribute on the DynamoDB table and configure it to expire items after 30 days.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon DynamoDB Streams to trigger a deletion process for items that are 30 days old.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Configure an AWS Lambda function to periodically scan the DynamoDB table and delete items older than 30 days.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Implement an Amazon S3 Lifecycle policy to remove data from the DynamoDB table after 30 days.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Implementing a TTL (Time To Live) attribute in Amazon DynamoDB is the most efficient way to automatically delete items after a specific period. To achieve this, the company should first add a TTL attribute to their DynamoDB table.</p><p>This attribute should hold the expiration timestamp for each item (i.e., the time the item was created plus 30 days). DynamoDB will then automatically delete items once the TTL value is reached, efficiently handling the removal of outdated logs without incurring additional costs or manual intervention.</p><p><strong>CORRECT: </strong>\"Set up a Time To Live (TTL) attribute on the DynamoDB table and configure it to expire items after 30 days\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Configure an AWS Lambda function to periodically scan the DynamoDB table and delete items older than 30 days\" is incorrect.</p><p>While this method could work, it introduces unnecessary complexity and operational overhead. It requires writing and maintaining a Lambda function and also incurs additional costs for Lambda invocations.</p><p><strong>INCORRECT:</strong> \"Use Amazon DynamoDB Streams to trigger a deletion process for items that are 30 days old\" is incorrect.</p><p>DynamoDB Streams capture modifications to items in the table and can trigger downstream processes. However, they are not designed to automatically delete items based on age. Implementing this would require additional components and is less efficient than using TTL.</p><p><strong>INCORRECT:</strong> \"Implement an Amazon S3 Lifecycle policy to remove data from the DynamoDB table after 30 days\" is incorrect.</p><p>Amazon S3 Lifecycle policies are for managing S3 objects, not for DynamoDB items. These policies cannot be used to delete data from a DynamoDB table.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "<p>A retail company is looking to analyze transactional data in real-time. They plan to collect streaming data using Amazon Kinesis Data Streams and process it for immediate insights using Amazon Redshift, while also ensuring compatibility with their existing BI tools. They require a solution that minimizes the need for manual intervention and operational management.</p><p>Which solution will meet the company's real-time analytics requirements with the least operational overhead?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Implement a batch ETL process that periodically extracts data from Kinesis Data Streams and loads it into Amazon Redshift.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Kinesis Data Firehose to deliver data from Kinesis Data Streams to Redshift, using the COPY command for automatic data loading.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement Kinesis Data Streams with an AWS Lambda function to process and load data into Amazon Redshift continuously.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Redshift Spectrum to query the data directly from Kinesis Data Streams without persistent storage.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 1: Data Ingestion and Transformation",
+    "explanation": "<p>Amazon Kinesis Data Firehose provides a fully managed service that automatically loads streaming data into data stores and analytics tools. It can capture, transform, and load data into Amazon Redshift, enabling real-time analytics with minimal operational effort.</p><p>The COPY command is used to load data efficiently into Redshift, and this setup can be configured to work automatically without the need for manual intervention, fulfilling the company's requirement for operational efficiency.</p><p><strong>CORRECT: </strong>\"Use Kinesis Data Firehose to deliver data from Kinesis Data Streams to Redshift, using the COPY command for automatic data loading\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Implement Kinesis Data Streams with an AWS Lambda function to process and load data into Amazon Redshift continuously\" is incorrect.</p><p>AWS Lambda can process and load data from Kinesis Data Streams into Redshift, but this approach generally requires more setup and maintenance, such as writing and managing the Lambda function code, which increases operational overhead.</p><p><strong>INCORRECT:</strong> \"Use Amazon Redshift Spectrum to query the data directly from Kinesis Data Streams without persistent storage\" is incorrect.</p><p>Redshift Spectrum is used to query data in S3 and does not directly query data from Kinesis Data Streams. Furthermore, it's meant for querying large amounts of data in storage, not for real-time analytics on streaming data.</p><p><strong>INCORRECT:</strong> \"Implement a batch ETL process that periodically extracts data from Kinesis Data Streams and loads it into Amazon Redshift\" is incorrect.</p><p>A batch ETL process introduces latency between data capture and availability for analysis, which does not align with the company's goal of real-time analytics. This also typically requires more manual setup and scheduling compared to Kinesis Data Firehose's automatic loading capabilities.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html\">https://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "<p>A gaming company is developing a high-score leaderboard for their online game, which receives bursts of high read traffic when scores are updated. The backend is powered by a relational database, which is experiencing latency under heavy load due to frequent read requests.</p><p>Which AWS service should the gaming company implement to reduce read latency and manage the read traffic more efficiently?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Introduce Amazon ElastiCache to cache high-score data and alleviate the read load from the database.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure Amazon DynamoDB with DAX (DynamoDB Accelerator) for caching leaderboard scores.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon S3 to store the leaderboard scores for high availability and low-latency retrieval.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Deploy additional read replicas of the relational database to handle the increased read traffic.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 2: Data Store Management",
+    "explanation": "<p>Amazon ElastiCache is a fully managed in-memory data store, compatible with Redis or Memcached, that provides extremely fast performance, ideal for read-heavy application workloads like gaming leaderboards.</p><p>By caching frequently accessed information, ElastiCache significantly reduces the latency of read operations and decreases the direct read load on the database.</p><p><strong>CORRECT: </strong>\"Introduce Amazon ElastiCache to cache high-score data and alleviate the read load from the database\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Use Amazon S3 to store the leaderboard scores for high availability and low-latency retrieval\" is incorrect.</p><p>While Amazon S3 is highly available and durable, it is not optimized for low-latency read access on the scale required for real-time gaming leaderboards, especially when compared to in-memory caching solutions.</p><p><strong>INCORRECT:</strong> \"Deploy additional read replicas of the relational database to handle the increased read traffic\" is incorrect.</p><p>Read replicas can help distribute the load, but they might still struggle under high traffic bursts and do not offer the same low-latency performance as an in-memory caching system.</p><p><strong>INCORRECT:</strong> \"Configure Amazon DynamoDB with DAX (DynamoDB Accelerator) for caching leaderboard scores\" is incorrect.</p><p>DAX is specific to Amazon DynamoDB and provides in-memory caching for that service. However, since the company's backend is a relational database, not DynamoDB, this solution would require migrating to DynamoDB first, which could be a more extensive change than implementing ElastiCache</p><p><strong>References:</strong></p><p><a href=\"https://aws.amazon.com/elasticache/\">https://aws.amazon.com/elasticache/</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://aws.amazon.com/elasticache/",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "<p>A legal firm wishes to store highly confidential case files in Amazon S3, with a requirement that only designated lawyers can view and edit the files. The firm also needs the ability to track which specific users accessed or modified a file.</p><p>What measure should the firm implement to control and audit file access?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Encrypt files using S3 server-side encryption with AWS KMS-managed keys (SSE-KMS) and restrict key usage permissions to designated lawyers.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use S3 Object Lock with governance mode to prevent files from being deleted or overwritten and apply IAM policies for access control.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Apply an S3 bucket policy that restricts access to the files based on IAM user roles and enable S3 access logging for audit trails.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable S3 Versioning and MFA Delete on the bucket, requiring multi-factor authentication for file access.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Domain 4: Data Security and Governance",
+    "explanation": "<p>By encrypting files with SSE-KMS, the firm can specify which AWS KMS key is used for encryption and then use the key policy to precisely control which users have permissions to use the key to encrypt and decrypt files. AWS KMS also provides an audit capability by logging key usage to AWS CloudTrail, enabling the firm to see which user accessed or modified a file.</p><p><strong>CORRECT: </strong>\"Encrypt files using S3 server-side encryption with AWS KMS-managed keys (SSE-KMS) and restrict key usage permissions to designated lawyers\" is the correct answer (as explained above.)</p><p><strong>INCORRECT:</strong> \"Apply an S3 bucket policy that restricts access to the files based on IAM user roles and enable S3 access logging for audit trails\" is incorrect.</p><p>While S3 bucket policies and S3 access logging can restrict access and provide audit logs, they do not offer the granular encryption key management or the tracking of individual key usage that AWS KMS does</p><p><strong>INCORRECT:</strong> \"Enable S3 Versioning and MFA Delete on the bucket, requiring multi-factor authentication for file access\" is incorrect.</p><p>S3 Versioning and MFA Delete provide additional security against accidental deletions and overwrites, but they do not control file access permissions at the user level or log specific user access.</p><p><strong>INCORRECT:</strong> \"Use S3 Object Lock with governance mode to prevent files from being deleted or overwritten and apply IAM policies for access control\" is incorrect.</p><p>S3 Object Lock prevents objects from being deleted or overwritten for a fixed amount of time or indefinitely, but it is primarily used for compliance retention requirements and does not manage user-level access or encryption key usage.</p><p><strong>References:</strong></p><p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html</a></p><p><strong>Save time with our AWS cheat sheets:</strong></p><p><a href=\"https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/\">https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/</a></p>",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": [
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html",
+      "https://digitalcloud.training/aws-certified-data-engineer-associate-cheat-sheet/"
+    ]
+  }
+]

@@ -1,0 +1,1752 @@
+[
+  {
+    "id": 1,
+    "question": "Politics involves influence, negotiation, autonomy, and power. Power and its use can be complex given its nature and the various factors at play in a project. Which of the following statements is correct about power in the context of a project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Power can originate from traits exhibited by the individual or the organization.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Power is often independent of other people's perception of the leader.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Top project managers are reactive and unintentional when it comes to power.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project manager's charm or attraction is not a form of power that he has at his disposal.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Power can originate from traits exhibited by the individual or the organization.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 2,
+    "question": "Sarah is a project team member for your project and she’s working with the project customer to gather requirements for your project. Your project is to create a more streamlined workflow for a manufacturing process. Sarah is completing all of the tasks in the manufacturing process to get a deep understanding of what needs to be improved and how the processes in the workflow operate. Tim, a manufacturing employee, is following and coaching Sarah through the processes. What type of knowledge management is happening with Sarah and Tim?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Senior coaching",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Reverse shadowing",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Tacit hands-on learning",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Direct supervision",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of reverse shadowing, where Tim, the manufacturing employee is shadowing Sarah through the process and offering coaching to help Sarah learn the processes to be improved. The other options aren’t valid terms for this scenario.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "You are the project manager for the GFG Project and you’re working with the project team to categorize the defects found in the project work. You have created a histogram for the project showing the largest categories of failure and ranked them from largest to smallest in your chart. What type of histogram have you created?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Pareto chart",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Ishikawa chart",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Cause-and-effect chart",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Bubble chart",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "You have created a Pareto chart. A Pareto chart shows the categories of failure from largest to smallest in a histogram, a bar chart, that help the team attack the most significant problems in the project first. As problems are resolved the sequence of the items will be reordered to consistently reflect the largest categories of defect in the chart.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 4,
+    "question": "Jeff is the project manager of the JKQ Project and he’s working with the project team to define all of the items in the WBS. Some of the items in the WBS are a type of marker for additional planning and are part of a control account. What is the term given to these markers in the WBS?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "TBD packages",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Planning packages",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Control account packages",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Work packages",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A control account may include one or more planning packages. A planning package is a work breakdown structure component below the control account and above the work package with known work content but without detailed schedule activities.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "Consider a project to create new accounting software for an organization. In the project the team has skipped some required software testing to meet a deadline, but this has allowed several escaped defects which have now caused problems in production. What term best describes this scenario?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Poor project management",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Escaped defect resolution",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Cost of nonconformance to quality",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Poor change control",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The cost of nonconformance to quality are the costs that are introduced to an organization when quality control, quality assurance measures, and guidelines are not followed. By the team skipping the testing portion of the software development lifecycle they have allowed errors to be introduced to production, which can be a costly mistake. The cost of nonconformance to quality, sometimes just called poor quality, can also be costs such as loss of sales, loss of reputation, and frustration by the stakeholders.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 6,
+    "question": "You are a project manager for the GBF Organization. Throughout the life cycle of a project, a significant amount of data is collected, analyzed, and transformed. Team members of your project have reported a percentage of the work physically completed. You use this as input to arrive at the status of deliverables. Which of the following is the output of your work in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Status report",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Work performance data",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Work performance report",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Work performance information",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the performance data is analyzed in context and integrated based on relationships across areas, you arrive at work performance information. Work performance data is the input to your work. Work performance reports refer to the physical or electronic representation of work performance information compiled in project documents. A status report is an example of a work performance report.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 7,
+    "question": "John is the project manager of JHG Project and he’s working with his project team. Karen, a senior developer on the team, is explaining to the team how the software your project is developing will work. It’s a sophisticated piece of software, so Karen is using analogies and drawing diagrams on the whiteboard to coach the team. What type of knowledge is Karen utilizing in this scenario?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Encumbered",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Explicit",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Tacit",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Direct",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Karen is utilizing tacit knowledge. Tacit knowledge is more difficult to share, requires analogies, drawings, and more time to absorb. Explicit knowledge, the only other knowledge type you’ll need to know for your exam, is more direct and easily expressed.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 8,
+    "question": "You know that there are five phases of team development. Which one of the following statements is the correct ordering of the five phases of team development?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Forming, Storming, Norming, Performing, Producing",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Forming, Storming, Norming, Working, Adjourning",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Forming, Storming, Norming, Performing, Adjourning",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Forming, Learning, Norming, Performing, Adjourning",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The correct order is Forming, Storming, Norming, Performing, Adjourning and this is called Tuckman’s Ladder of Team Development. Each stage describes the likely actions of the project team in that phase.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 9,
+    "question": "You are the project manager of the NKK Project for your organization. The project team has created the project ground rules for the project team, which includes that all project team members must attend all project status meetings each Thursday unless they are excused from the meeting. Sandy, a project team member, has skipped the last few meetings because she hasn’t any work due in the project at this time. The team approaches you to resolve this situation. What should you do next?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "The project team should enforce the ground rules and speak with Sandy.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "You and the project team should review the ground rules as a whole.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "You should enforce the ground rules and speak with Sandy.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Sandy doesn’t need to attend the meeting as she has nothing to contribute at this time.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the project team has defined and agreed upon the project ground rules, it is up to everyone, not just the project manager, to enforce the ground rules. The best response is that the entire team should enforce the ground rules, which includes everyone coming to the status meetings.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 10,
+    "question": "You are the project manager of the NK Project for your organization, and you’ve created a tally list for the results of repeated activity in the project. What is a tally list?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "It’s a checklist to conformance",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "It’s a list of all the different processes completed in the project",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "It’s a requirements traceability matrix for quality measurements",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "It’s a list of all the different types of defects in the project",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A tally list is merely a list of all the different types of defects found in the project. For example, you would “tally” all the spelling errors, then “tally” all the formatting errors, and then “tally” all the printing errors. Tally is simply a count of specific types of defects and is used in the control quality process.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 11,
+    "question": "Nancy is the project manager of a project to install new software throughout the organization. To date, the project has spent $125,000 of the $200,000 budget. Today, Nancy learns, that the software the project is to install has been replaced by a newer, less expensive software. Effectively, her project is ruined because of the new software released that the stakeholders want in lieu of the software Nancy’s project is to install. What term best describes the $125,000 that Nancy has already spent on the project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Operating loss",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Variable cost",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Sunk cost",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Opportunity costs",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Sunk costs describe the monies that are already spent on the project. Sunk costs should not be considered when determining if a project should move forward or not. For example, Nancy shouldn’t advocate for the project to continue because she’s already spent $125,000. The $125,000 is already spent and is considered “sunk” into the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 12,
+    "question": "Tom and Nancy are project team members and they are in a heated argument about achieving quality in the project. Nancy insists that quality is made by delivering exactly what the customer has requested in the project scope. Tom insists that quality for the customer is actually achieved by providing slightly more than what the customer has asked for but at minimal costs. They look to you, the project manager, to resolve this scenario. What should you do next?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Tell Tom and Nancy that quality is achieved by delivering more than what was expected.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Tell Tom and Nancy that quality is achieved by delivering exactly what was requested.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Tell Tom and Nancy that the customer will decide quality during scope validation and acceptance.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Tell Tom and Nancy that you’ll decide what quality is based on the Quality Management Plan.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality is achieved by delivering exactly what was requested by the customer – nothing more. This is sometimes a difficult concept for project team members and even stakeholders to accept, but quality is a conformance to requirements, not going above or outside the requirements in the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 13,
+    "question": "You are the project manager of the NK Project for your organization and you’re working with the project team to plan how to manage quality in the project. Your project team is confused, however, about the difference between quality assurance and quality control. What’s the best answer?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality assurance is a management process. Quality control is a project process.",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Quality assurance is planned. Quality control is achieved.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Quality assurance is prevention-driven. Quality control is testing-driven.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quality assurance is about planning quality. Quality control is about achieve quality.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality assurance is a management-driven process that aims to plan quality into the project and the project work. Quality control, a project process, is the inspection and testing of the project results to confirm that quality exists. This is an example of a test question where none of the answers are excellent choices, but you have to choose the best answer presented. In reality, quality control is not a project management process, as it is now called control quality, but this answer is still the best of those presented.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 14,
+    "question": "As a project manager you need to identify assumptions, constraints, risks, and other facets of the project you’re managing. Which one of the following is not an example of a constraint?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "A project requirement to use Microsoft Office",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "A project schedule based on predictable weather",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "A project budget of $250,000",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "A project deadline of December 12",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A constraint is anything that limits your options. An assumption is anything that you believe to be true, but can’t, or have not, proven it to be true. While you may schedule your project for good weather, such as in a construction project, you can’t always predict the weather. Weather is an assumption. The other options are constraints.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 15,
+    "question": "You are the project manager of the QQQ Project, and you’re working with the project sponsor to review the project performance. Currently, the project has a CPI of 0.9 and SPI of 0.67. Who is accountable for the development and maintenance of the project business case document based on project performance?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project sponsor",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Project manager",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Project team",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project stakeholders",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project sponsor is accountable for the development and maintenance of the project business case document.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 16,
+    "question": "Complete this statement about quality: Quality is __________________ into a project and is never _________________________ into a project.",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality is made into a project and is never purchased into a project.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Quality is planned into a project and is never purchased into a project.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Quality is built into a project and is never planned into a project.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quality is planned into a project and is never inspected into a project.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Quality is planned into a project and is never inspected into a project. This means that you plan quality into the work and you do not examine the work and fix errors as you find them. While the team will still complete quality control activities, which are inspection-driven, quality is about doing the work correctly, not taking the attitude of inspecting the work and fixing errors if and when your team finds them.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 17,
+    "question": "Projects exist and operate in environments that may influence them. Some of these influences originate from the environment outside of the project, whereas some others are internal to the organization. Which of the following is an organizational process asset that can influence a project?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Legal restrictions",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Government or industry standards",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Organizational culture, structure, and governance",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Processes, policies, and procedures",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Processes, policies, and procedures are a category of organizational process assets. The other choices are examples of enterprise environmental factors.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "Gary is the project manager of the JKP Project, and he believes in McClelland’s Theory of Needs. As part of his belief, he has the project team complete a thematic apperception test. All of the following are part of this theory except for which one?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Need for affiliation",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Need for power",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Need for ambition",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Need for achievement",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The need for ambition is not part of the McClelland’s Theory of Needs, sometimes called the Three Needs Theory. The need for achievement, affiliation, and power are the three needs of this theory.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 19,
+    "question": "Consider two tasks that could happen in any order in your project but will be completed by the same team resource. You refer to the project team to choose the ordering of the tasks. What type of logic is this?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Hard logic",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Soft logic",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Team logic",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Management logic",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of soft logic, which means the tasks can happen in any particular order and it won’t affect the schedule or other variables in the project. Hard logic is the opposite and means the tasks must occur in a specific order in the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 20,
+    "question": "Tom is a software developer on your project team and it’s come to your attention that some of the stakeholders have been approaching Tom and asking for additional items in the software. These additions have caused Tom’s scheduled work to be late and they’ve also driven the overall cost of the project up. What term best describes these additions to the project even though the stakeholders claim they are small changes?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Integrated change control",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Scope control",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Scope creep",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Gold plating",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Scope creep are small, undocumented items that are added to the project scope without first passing through the project’s integrated change control. Scope creep takes time and money away from approved items and can cause the project duration and overall costs to increase. Gold plating happens when changes are added to the project scope only for the sake of consuming the entire project budget.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 21,
+    "question": "You are the project manager of Project BNM. The project management office in your organization has been supporting you by supplying specific templates, forms, and tools, and requiring that you comply with the expectations of their usage. Which of the following types best describes your PMO?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Supportive",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Controlling",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Collaborative",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Directive",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Controlling PMOs provide support and require compliance through various means.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "Jen is a project manager for the NQQ Project for her organization. She is working with the project team to create the project schedule. Tom, a project team member, reports that he’s adding ten percent duration to all activities involved with a vendor because vendors are always late. What is the ten percent duration increase in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Constraint",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Assumption",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Risk",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Padding",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Tom is making an assumption that the vendors will be ten percent late on each activity. This is an assumption with little proof of the duration. Assumptions can become risks, but this isn’t the best choice in this scenario. Assumptions can be made, but need to be added to the assumption log.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 23,
+    "question": "Steve is the project manager of the NKQ Project. This project is to paint the 245 offices in his company’s building a new color of gray. The project team is executing the project plan and has already painted 58 of the 245 offices. Stacey, a stakeholder, calls you to report that the project team has actually been painting the offices a light yellow – not the approved gray color the executives have selected. What should you do next?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Tell the team the team they need to document the error before moving forward.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Tell the team to continue to paint the offices yellow.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Tell the team to stop work until you can inspect the error.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Tell the team to paint all remaining offices the correct color of gray.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of a question where none of the items are excellent choices, something you may experience on your exam. You know that in the real world you’d apply corrective actions to the problem and keep the project moving forward, however you must choose the best answer presented. In this scenario, the best solution is for the team to paint the remaining offices the correct color of gray. The other choices interrupt the work or don’t address the error directly.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 24,
+    "question": "Mary is the project manager for her organization and she’s been assigned a new project. Management has asked Mary to create a reliable project budget as soon as possible and Mary states she’ll need to create a definitive estimate and this will take some time. In order to create the definitive estimate for a project, what document must first be created? Choose the best answer:",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Project charter",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Work breakdown structure",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Product scope",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Project scope",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "A definitive estimate for project costs is the most reliable estimate type, but it does require a WBS. The WBS will take time to create, so too then will the definitive estimate. The other choices don’t provide enough information to create a reliable estimate type for management.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 25,
+    "question": "You are the project manager of the NJK Project and your budget for this project is $575,000. You are 20 percent complete with this project, though you are supposed to be 30 percent complete. So far you have spent 10 percent more than what was expected for the work completed. What is your cost performance index for this project?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "0.91",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "0.83",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "115000",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "138000",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "To find the CPI, you’ll need to find the earned value and the actual costs as the formula for the CPI is EV/AC. The EV in this formula is 20 percent of the BAC of $575,000. The actual costs are 10 percent more than the earned value. So, the earned value is $115,000, and the actual costs are $126,500. The CPI formula is $115,000/126,500 for a result of .91 as the CPI.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 26,
+    "question": "You are the project manager for a marketing project to mail out 1,000,000 postcards to prospective customers. Rather than mail out all 1,000,000 postcards at once, you and the team design three cards of different designs that you’ll mail in batches of 100,000. Whichever card gets the best response will be the selected card for the balance of the 1,000,000. What quality tool are you using in this scenario?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality assurance",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Design of experiments",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Design for X",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Rule of seven",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is the design of experiments, which means you’ll do experiments on a smaller pool of the project before making decisions for the entire project. You can do this with materials – such as paint, software, and other resources before making project decisions. It helps to ensure that the project will use the best solution of all the possible alternatives identified.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 27,
+    "question": "You are the project manager for your organization and you’re working with the project team. You’ve been tasked with finding a good solution for a remodeling project that keeps the project budget under $125,000 for materials. You’ve already identified the appliances and fixtures with the project team, but now you’re working to make the best choices for the floors, cabinets, and countertops the project will require. Ned, a project team member, has identified that if you choose wood floors instead of tile floors you’ll have $5,000 less for the cabinet portion of the project. Mary, another team member, feels strongly about the tile floors as these are more durable considering the traffic through the room to be remodeled. The team works together, and they find a tile flooring that looks like wood that everyone can agree upon. What is the best description of what’s happening in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Alternatives identification",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Storming",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Product description",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Product scope creation",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of alternatives identification, also known as alternative generation. It means the project team is finding alternatives, often with materials, to fit the project requirements.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 28,
+    "question": "You are the project manager for the GHB Project and you’re working with the project team to create the project schedule. Jeff, a project team member, has identified two tasks that don’t need to happen sequentially, but could happen at the same time if one task starts a day before the second task. What type of relationship could you apply to these to two tasks?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "FS",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Lead, one day",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "SS",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "SF",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best choice is SS, a start-to-start activity. This would allow both activities to start at the same time essentially, you could then add +1 day of lag to the second activity to shift its start day by one day. Note that lead time, one day, isn’t a valid relationship and wouldn’t be the best choice as the answer doesn’t address which task has the lead day. In addition, lead is negative time, so this would be a cumbersome scheduling approach.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 29,
+    "question": "You are the project manager of the GHU Project for your organization. You’re working with a vendor that will be doing a portion of the project work. A stakeholder in the project has requested several changes that will affect your contracted work with the vendor. What project management process will you select to manage the changes to the contract caused by the additions to the project scope?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Vendor negotiation",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Control procurements",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Control scope",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Stakeholder management",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Approved change requests can include modifications to the terms and conditions of the contract, including the procurement statement of work (SOW), pricing, and descriptions of the products, services, or results to be provided. All procurement-related changes are formally documented in writing and approved before being implemented through the Control Procurements process.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 30,
+    "question": "As a project manager you know that there is a six-step approach to problem resolution. You need to follow these six steps to identify and resolve the problem. Which one of the following statements is the correct ordering of the six steps to problem-solving in project management?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Define the cost of the problem; Define the problem’s root cause; Generate a cost estimate for the solution to the problem; Select the best solution for the problem; Implement the selected solution; Test and verify the solution’s effectiveness.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Define the problem; Define the problem’s root cause; Generate solutions to the problem; Select the best solution for the problem; Implement the selected solution; Test and verify the solution’s effectiveness.",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Define the problem; Define the contributing parties; Generate solutions to the problem; Select the best solution for the problem; Implement the selected solution; Test and verify the solution’s effectiveness.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Define the problem; Define the problem’s root cause; Generate solutions to the problem; Select the best people to implement the solution; Implement the selected solution; Test and verify the solution’s effectiveness.",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is a tricky question, but the best answer is: Define the problem; Define the problem’s root cause; Generate solutions to the problem; Select the best solution for the problem; Implement the selected solution; Test and verify the solution’s effectiveness.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 31,
+    "question": "Ernesto is the project manager of a new project his company has just launched. The project sponsor, Julieanne, has asked Ernesto to create a quick estimate of the project should cost. Ernesto’s current project is similar, but larger in scope, to a project he recently finished. The older project cost $250,000, so he estimates the new project will cost $275,000. What type of estimate has Ernesto created?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Comparable",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Direct",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Parametric",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Analogous",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Ernesto has created an analogous estimate. Analogous estimates are based on similar projects to predict the cost of the current project. Analogous estimates are analogies between similar projects and while not always reliable, they are quick and based on proven project information. Note that analogous estimates should have a range of variance, such as +/- 10 percent based on the size of the project, the differences between the projects, and other factors.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 32,
+    "question": "You are the project manager of the NJK Project, and your project sponsor has asked you to create a flowchart to show how vendors and customers may interact in your project. What specific type of diagram is your project sponsor asking you to create?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "HUSTL",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "SIPOC",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "PESTLE",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "GERT",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project sponsor is asking for a SIPOC flowchart. SIPOC shows the interactions between customers and vendors using the acronym Suppliers, Inputs, Processes, Outputs, and Customers.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 33,
+    "question": "You are the project manager of the JKQ Project. This project includes the installation of 750 fixtures and your costs for this is $110,250. Management has asked how you created this estimate of the costs since you also included the labor per fixture in the pricing. You report that you used a parametric estimate. What’s the cost of each fixture?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$147",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "$102",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$150",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$83",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "You can find this answer by dividing the total cost of $110,250 by the number of fixtures, 750 for an individual fixture cost of $147.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 34,
+    "question": "You are the project manager for the RGR Project and you’ve worked with the project team to create the WBS. Many of the components of the WBS in your project are identical, such as the television screens that will be installed throughout the complex. You need a method to identify each component and work package to track the requirements through the project and to help with planning the project work. Which one of the following is the best answer for identifying and tracking these items throughout the project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "WBS",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Code of accounts",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Requirements tracking matrix",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "WBS dictionary",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The best answer is the code of accounts, which is a numbering system to identify each element of the WBS in a sequential pattern, such as 10.9.3 and then lower components could be numbered as 10.9.3.1, 10.9.3.2, and so on. The PMBOK Guide uses a numbering sequence like this to identify each heading in the guide. Note that the requirements tracking matrix is not a valid term, but a requirements traceability matrix is and would be a correct answer if that choice were present.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 35,
+    "question": "You are the project manager for your organization, and you’re working with the project team to sequence the project network diagram. You have identified the critical path, but your team is uncertain what the critical path means. What’s the best definition of the critical path?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "It’s the path with the most important activities in the project network diagram.",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "It’s the path that cannot be crashed in the project network diagram.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "It’s the longest path of activities in the project network diagram.",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "It’s the longest path of duration in the project network diagram.",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The critical path is the path that has the longest duration in the project network diagram. This path cannot be delayed, or the project will be late. Note that the critical path is not the longest path of activities as you can have many small activities in a path that would not take the same amount of duration as another path.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 36,
+    "question": "You are the project manager for your organization, and you subscribe to Herzberg’s Theory of Motivation. You have created several hygiene agents for members of the project team. Some of the project team members, however, have reported that they have not yet been paid by their contracting company and are frustrated with the project. What term best describes the paycheck of the project team members?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Hygiene agents",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Uniform agents",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Stability agents",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Motivating agents",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Hygiene agents are the expectations of the employee-employer contract, such as getting paid, promised benefits, and an acceptable working environment. Hygiene agents do not motivate, but their absence will demotivate the project team members.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 37,
+    "question": "Jen is the project manager of an adaptive project in her organization. She wants to create a chart that will show how much work is remaining in the product backlog. What chart should Jen create?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Iteration burndown chart",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Forecast chart",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Agile chart",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Scrum chart",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This chart tracks the work that remains to be completed in the iteration backlog. It is used to analyze the variance with respect to an ideal burndown based on the work committed from iteration planning (see PMBOK Guide, section 6.4.2.8). A forecast trend line can be used to predict the likely variance at iteration completion and take appropriate actions during the course of the iteration. A diagonal line representing the ideal burndown and daily actual remaining work is then plotted. A trend line is then calculated to forecast completion based on remaining work.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 38,
+    "question": "Joan is the project manager of a healthcare project, and she has strict quality requirements in the project. She insists that the team complete intense training, have all worked checked by a quality auditor and that all worked is tested before it goes into production. These quality requirements will add costs to the project and management has agreed to the costs. What term best describes these costs?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Cost of compliance",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Liability costs",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Cost of conformance to quality",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Risk mitigation",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "These costs are the costs of conformance to quality, sometimes just called the costs of quality. It is the money that the project and organization must pay to ensure quality in the deliverables of the project.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 39,
+    "question": "You are the project manager of Project GHJ, and you’re working with Jack as he manages the budget for your project. In your organization, the project team reports to Jack. Which of the following options can best describe the amount of authority you have in this organizational structure?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Total",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "High",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Moderate",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Low",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When the project budget is managed by the functional manager and the team reports to the functional manager you’re likely operating in a functional, multi-divisional or weak matrix structure. The project manager's authority in these organizational structures varies from low to little or none.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 40,
+    "question": "You are the project manager of SDF project. While working with your team, you decide to direct using positional power. To ensure that the project runs smoothly, you focus on near-term goals, bottom line, systems, and structure. Which of the following statements best describes the way in which you are handling the project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Your way of working can be best described as leadership",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "You are employing the servant leadership model for the project team.",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Your way of working can be best described as management",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "You are employing both leadership and management",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "All the points mentioned about your approach are attributes of management. Leadership is more about aligning and motivating people while management is about getting things done.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 41,
+    "question": "You are the ScrumMaster of a large software development project. Your manager has asked that you take a moment and create a chart to show the causal factors and effect of a bottleneck your project is experiencing. You gather the project team to create this chart and do root cause analysis. What type of chart are you creating in this project?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Pareto",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Five-Whys Charts",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Ishikawa",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Risk burndown",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "You are creating an Ishikawa chart. An Ishikawa chart is the same as a fishbone or cause-and-effect chart and helps to facilitate root cause analysis. Note that there is not a Five-Whys chart, this is a fictional term.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 42,
+    "question": "Gwen is the project manager of the HJ Project and her schedule is running late. She has identified some activities that she would like to crash, but is concerned about how useful crashing will be. In order to crash the project activities what must be true about the work?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Effort-driven activities",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Critical path activities",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Non-critical path activities",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Activities longer than eight hours, but less than 80 hours",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Only activities that are effort-driven can be crashed. Crashing means that Gwen will add effort in the form of more labor to the effort-driven activities. Activities that are of fixed duration aren’t valid for crashing. You can crash critical and non-critical path activities and the duration of the activities doesn’t really affect the effectiveness of crashing.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 43,
+    "question": "Your project team is inspecting all of the work that has been completed in the project so far. The team is testing, measuring, and sampling the completed deliverables before the customer will inspect the work next week. They are also applying corrective actions to any mistakes to ensure the deliverables are defect-free before the customer examines the work and allows the project to move forward. What is happening in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Quality control and scope control",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Refactoring and scope validation",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Scope control and quality assurance",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Quality control and scope validation",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The project team is inspecting and correcting the work before the customers examine the work for acceptability. The project team inspection is quality control, which aims to mistakes out of the customers’ hands. The customers will inspect the work for acceptability, which aims for the work to be accepted.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 44,
+    "question": "Beth is the project manager of the GHV Project for her organization. Her project is to install new software at 450 sites around the world over the next year. Management has asked Beth to create a cost estimate for the project, but Beth says it will be difficult to provide an accurate cost estimate because of the travel costs fluctuating in the project. What type of costs are the travel costs in this project?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Indirect costs",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Variable costs",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Direct costs",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Fluctuating costs",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Travel costs are variable costs as these costs will vary based on the marketplace. Unless Beth can purchase all of the travel immediately, which is not likely, the estimate for the travel may change throughout the project. Direct costs do describe costs specific to the project, but variable costs is a more precise answer. Indirect costs are costs that are shared with the organization, such as leases for office space or electricity. Note that fluctuating costs isn’t a valid cost type.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 45,
+    "question": "Hans is the project manager for his organization and management has asked him to help choose a project. Project A is worth $450,000 and will take 18 months to complete. Project B is worth $560,000 but will take two years to complete. A third project is worth $301,000 and will take 25 months to complete. If Hans recommends Project A what is the opportunity cost in this scenario?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "$560,000",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "$301,000",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "$450,000",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "$861,000",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "The opportunity cost is the total amount of the other projects that the organization chooses to not do in favor of Project A. In this scenario, it’s the total of Project B and Project C; this would be $560,000 and $301,000.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 46,
+    "question": "You are the project manager of the JKL Project for your organization and you’re meeting with the project team. It’s come to your attention that the project team has padded every activity duration in the project schedule by 10-12 hours. You explain to the team that this padding isn’t acceptable and they need to identify accurate duration estimates to predict the duration of the project. What law describes the danger of padding activity duration estimates?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Parkinson’s Law",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Law of Diminishing Returns",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Moore’s Law",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Little’s Law",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Parkinson’s Law states that work expands to fill the time allotted to it. So, if the project team says an activity will take 50 hours, even with the padding, the task will take 50 hours. Little’s Law describes the duration and length of a queue in relation to how long the queue is. Moore’s Law describes the speed of processors, which is somewhat dated now. The Law of Diminishing Returns says that you cannot continue to add labor to reduce the duration of an activity with affecting the yield of the activity and the effectiveness of the laborers added to the activity.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 47,
+    "question": "You are the project manager of the NKQ Project and you’re working with your project team to define some reasons why several defects have slipped past your testing into production. There are lots of potential reasons why the defects have passed through. What term is given to these defects?",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Passed defects",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Poor inspections",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Found defects",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Escaped defects",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Defects that slip through the testing and quality control activities are called escaped defects. These are the cost of nonconformance to quality.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 48,
+    "question": "Consider a project to create a new house for a customer. The customer describes the home as a three-bedroom house. They go on to define the square footage, how the home will be used, the look and feel of the home, the type of flooring, the appliances, and more and more detail as you work with the customer to capture all of the requirements. What is this process called?",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Choice generation",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Decomposition",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Progressive elaboration",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "Painful",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "Hopefully you didn’t choose painful, though that can describe some projects. The best choice is progressive elaboration – a process of starting with a broad concept and through questions and conversation you’ll get more and more detail about the project scope. Decomposition is a tempting choice, but it’s more appropriate for the breaking down of the project scope statement into the work breakdown structure and the activity list. Choice generation is not a valid term.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 49,
+    "question": "Kelly and Chris are in a heated debate over which software to use in the project. Both Kelly and Chris have good points to the solution, but Kelly, the senior engineer, finally says that since she has seniority, the decision will be hers to make. What type of conflict resolution is happening in this scenario?",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Forcing",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "Compromising",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "Power",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Collaboration",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "This is an example of forcing, where the person with the authority makes the decision. It is sometimes called directing. Note that power is not a valid conflict resolution approach.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 50,
+    "question": "You are the project manager for the OOG Project for your organization and you’re meeting with your project team. Some of the team members are debating the order and timing of the activities for your project schedule. Frank, the database administrator, states the ordering of the activities must happen in a particular sequence to set up a new server. What type of dependencies is Frank describing?",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "Discretionary",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "Mandatory",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "Required",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "Technical",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "",
+    "explanation": "When activities must happen in a particular sequence it is a mandatory dependency. Discretionary means that the tasks can occur in any order. The other options are not valid project management terms.",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  }
+]

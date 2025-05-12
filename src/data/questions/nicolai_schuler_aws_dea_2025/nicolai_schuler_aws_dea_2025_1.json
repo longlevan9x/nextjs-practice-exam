@@ -1,0 +1,2325 @@
+[
+  {
+    "id": 1,
+    "question": "<p>A company wants to host a web server that must be accessible from the internet within an Amazon VPC. Which subnet type should the web server be deployed in?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Isolated Subnet</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>VPN-only Subnet</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Public Subnet</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Private Subnet</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 2,
+    "question": "<p>A data engineer needs to set up OpenSearch to manage the company's internal documents efficiently. They want to distribute these documents across several nodes in a cluster while ensuring that read requests are handled quickly and without failure. How should the data engineer configure the architecture of OpenSearch to meet this requirement?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use a single node with replica shards</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use multiple nodes with primary shards and replica shards</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use multiple nodes with cold storage for read requests</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use multiple nodes with primary shards only</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 3,
+    "question": "<p>A Redshift cluster administrator is tasked with sharing live data from a production Redshift cluster to another Redshift cluster in a different AWS account. The data should remain in the original cluster and the consuming account should bear the compute cost of querying the data. Which Redshift feature would best meet these requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Redshift Data API</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Redshift Spectrum</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Redshift Data Sharing</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Redshift Replication</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 4,
+    "question": "<p>An AWS data engineer is tasked with backing up EBS volumes regularly to protect against data loss. These backups must be efficient, cost-effective, and able to be restored quickly in another availability zone or region. What should the engineer do to meet these requirements?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Detach the EBS volumes and copy them to another region manually using EC2 AMIs for redundancy.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Lambda to automatically create new EBS volumes in another region based on the current EBS volume data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create Amazon S3 backups of the EBS volumes using S3 Transfer Acceleration for faster data transfer.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Configure EBS Snapshots to perform block-level backups of the volumes, and store them in Amazon S3 with cross-region replication. </p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 5,
+    "question": "<p>A data engineering team at an e-commerce company needs to build a data pipeline to ingest and transform data from various sources for reporting and analysis. The raw data is stored in Amazon S3 as JSON files. The company wants to transform the data into a columnar format to optimize query performance. After the transformation, the data should be stored back in S3 and queried using Amazon Athena for reporting purposes. <br>The company also wants to automate schema discovery and ensure that the pipeline is cost-effective, scalable, and easily maintainable. Which TWO of the following strategies should the team implement to meet these requirements? (Choose Two)</p>",
+    "corrects": [
+      3,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Manually create an Amazon Athena table with the schema for the JSON data and run SQL queries to perform data transformation into Parquet format.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up an Amazon EMR cluster to run a Spark job that reads data from S3, converts it to Parquet, and writes it back to S3. Use AWS Glue Data Catalog to maintain the schema for Athena.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use an AWS Glue ETL job to transform the JSON data into Apache Parquet format and store it in Amazon S3 for efficient querying with Athena.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Lambda to read the JSON files from S3, transform them into Parquet format, and write the transformed data back into a new S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Configure an AWS Glue crawler to automatically infer the schema from the JSON files and update the AWS Glue Data Catalog with the correct schema.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 6,
+    "question": "<p>A company is using IoT devices to generate streaming data that it needs to deliver to both Amazon S3 and Amazon Redshift for storage and further analysis. Which service is the most efficient way to capture, transform, and load this streaming data into the required destinations? </p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Managed Service for Apache Flink</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon Kinesis Data Streams</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Lambda</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon Kinesis Data Firehose</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 7,
+    "question": "<p>A company operating in a remote mining site with very limited internet connectivity needs to transfer large amounts of data to AWS for processing. Additionally, they require edge computing capabilities to process data locally before transferring it to AWS. Which AWS service would be the most appropriate for this scenario?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Snowmobile</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS DataSync</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Snowball Edge - Compute Optimized</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Snowcone</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 8,
+    "question": "<p>A data engineer is implementing a streaming data ingestion solution using Amazon Kinesis Data Streams. The goal is to ensure that if a failure occurs during the ingestion process, the system can resume from where it left off, without reprocessing already ingested data. Which approach should the engineer take to meet this requirement?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable Amazon Kinesis Data Firehose to store all streaming data in Amazon S3 for later analysis.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Lambda with stateless ingestion to process new records as they arrive.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Implement stateful data ingestion by tracking the sequence number of the last processed record.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use stateless data ingestion to reprocess all data from the beginning after a failure.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 9,
+    "question": "<p>A financial services company needs to implement a graph database to model relationships between various entities such as customers, accounts, and transactions. The company requires a managed graph database service that supports both property graphs and RDF (Resource Description Framework) data models, with the ability to scale and handle complex queries. Which AWS service should the company choose to meet these requirements?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Redshift</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon DynamoDB</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon RDS for PostgreSQL</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon Neptune</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 10,
+    "question": "<p>A data engineer is tasked with restricting access to certain sensitive columns in a table for specific users and ensuring that only authorized users can view rows based on their assigned warehouse ID. The company also wants to apply dynamic data masking to hide sensitive personal information. Which features should the data engineer use to implement this requirement in Amazon Redshift? (Choose TWO.)</p>",
+    "corrects": [
+      1,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Column-level security to grant select privileges only to specific columns.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Row-level security to restrict access to rows based on conditions like warehouse ID.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Dynamic data masking to hide sensitive information, such as email addresses.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Glue to automate the masking of sensitive data.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>VPC peering to control access to the Redshift cluster from other AWS accounts.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 11,
+    "question": "<p>A data engineering team needs to set up a fully managed search and analytics solution on AWS for analyzing and visualizing application log data in real-time. They also require the ability to store, search, and retrieve customer data with minimal configuration. Which AWS service should the team use?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Redshift</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon Kinesis Data Analytics</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Glue</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon OpenSearch Service</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 12,
+    "question": "<p>A company runs a real-time stock trading application where every millisecond of latency matters. The application ingests trades from an external feed, processes them, and updates the stock prices. The trading data is continuously ingested into Amazon Kinesis Data Streams, and the company needs to ensure low-latency processing of each record. The data is processed and then stored in Amazon RDS for real-time querying. The company wants to minimize operational complexity while ensuring that the system scales automatically with data volumes.</p><p>Which architecture should be used to meet these requirements? </p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use an Amazon EC2 instance in an Auto Scaling group to read from Kinesis Data Streams, process the records, and write the output to Amazon RDS. </p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use AWS Lambda to process each record from Kinesis Data Streams and update Amazon RDS in real time.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS Glue streaming jobs to consume the Kinesis Data Streams and write the data to Amazon RDS. </p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use an Amazon Kinesis Data Firehose to transform the data and store it directly into Amazon RDS for querying. </p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 13,
+    "question": "<p>A data engineer at a retail company needs to run complex queries on large datasets stored in Amazon Redshift. These queries often involve aggregating data from specific columns rather than all columns in a table. The engineer is looking for a way to optimize query performance. Which of the following Amazon Redshift features will provide the best optimization for the engineer's use case?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Row-based storage with high SSD IOPS</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Horizontal partitioning to split data across multiple nodes</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Multi-AZ replication for faster data access</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Columnar storage for minimizing I/O operations</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 14,
+    "question": "<p>A data scientist is using Amazon SageMaker to train a machine learning model. The dataset is stored in Amazon S3, and the scientist is using one of SageMaker's built-in algorithms. Which steps should the data scientist take to prepare and configure the training job? (Choose THREE.)</p>",
+    "corrects": [
+      1,
+      5,
+      6
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Define the hyperparameters to optimize the training algorithm.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure the output path to specify where SageMaker should store the trained model.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Deploy the trained model to an Amazon EC2 instance for inference.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable Amazon SageMaker Studio to automatically transform the data into RecordIO format.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Specify the S3 location of the training data as a training channel.</p>",
+        "correct": true
+      },
+      {
+        "id": 6,
+        "answer": "<p>Set the IAM role that SageMaker can assume to access resources on behalf of the user.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 15,
+    "question": "<p>A data engineering team is building a data lake on Amazon S3 to store large volumes of raw data generated by IoT devices. They need to optimize the cost of storage without compromising on the accessibility of the data, as some datasets need frequent access while others are rarely accessed. Which combination of storage classes should they use to achieve this?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>S3 Intelligent-Tiering for frequently accessed data and S3 Glacier for rarely accessed data.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>S3 Standard for frequently accessed data and S3 Intelligent-Tiering for rarely accessed data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>S3 Standard for frequently accessed data and S3 Glacier Deep Archive for rarely accessed data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>S3 Intelligent-Tiering for frequently accessed data and S3 One Zone-IA for rarely accessed data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 16,
+    "question": "<p>A data scientist has developed a machine learning model using SageMaker and now needs to train the model on a large dataset. The training must be scalable, and the model needs to be deployed with high availability for making predictions. What are TWO key SageMaker features that address these requirements? (Choose Two)</p>",
+    "corrects": [
+      4,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>SageMaker Debugger for optimizing hyperparameters</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Offline store for low-latency real-time predictions</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>SageMaker Experiments to track model lineage</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Managed deployment of models with high availability</p>",
+        "correct": true
+      },
+      {
+        "id": 5,
+        "answer": "<p>Automatic scaling of training resources based on data volume</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 17,
+    "question": "<p>A data engineer is tasked with ensuring the encryption of sensitive customer data stored in Amazon S3 using AWS KMS. The company requires regular audits to track who accesses the encryption keys and when they are used. Which type of key should the data engineer choose to meet this requirement?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS managed key</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Symmetric key</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Customer managed key</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS owned key</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 18,
+    "question": "<p>A company uses IoT devices that send temperature readings in real time. The company wants to perform real-time analytics on the data and react to anomalies immediately. Which combination of AWS services should they use for data ingestion and real-time analysis?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Kinesis Firehose and Amazon Redshift</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon Kinesis Data Streams and AWS Lambda</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon Kinesis Data Streams and Managed Apache Flink (formerly Kinesis Data Analytics)</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon Kinesis Data Streams and Amazon Kinesis Data Firehose</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 19,
+    "question": "<p>A startup is using Amazon Kinesis Data Streams to capture website clickstream data for customer behavior analysis. The company expects spikes in traffic during sales events and wants to ensure the system scales dynamically with demand without manual intervention. Which of the following configurations should they use to achieve this? </p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Kinesis Data Streams with the provisioned mode and manually add shards during traffic spikes. </p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Kinesis Data Streams with enhanced fan-out to increase the processing rate for high throughput.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Kinesis Data Streams in on-demand mode to automatically scale based on throughput.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon Kinesis Data Firehose to automatically adjust to spikes in traffic.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 20,
+    "question": "<p>A company wants to develop an ETL pipeline with AWS Glue to process data from multiple sources such as S3 and Amazon Redshift. The pipeline needs to scale automatically and run at minimal cost. How should the company configure the Glue job to achieve these goals?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon EC2 instances with a custom Python script to run the ETL jobs and manually manage scaling.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Set up the AWS Glue job with a fixed number of 10 Data Processing Units (DPUs) for all jobs to ensure consistent processing.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Glue’s auto-scaling feature to dynamically adjust the number of DPUs based on the data volume.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Allocate the maximum number of DPUs available to ensure faster job completion regardless of data size.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 21,
+    "question": "<p>A company frequently runs a complex query on Redshift that aggregates data from several tables. The query takes a long time to execute due to the complexity of the operations. The company wants to improve the query performance without altering the underlying data. Which feature should the company use?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create a materialized view for the query.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Redshift to create indexes on the query's result set.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create a Federated Query that references the external data sources.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Redshift Spectrum to store the aggregated data in S3.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 22,
+    "question": "<p>A company wants to use Amazon Elastic Kubernetes Service (EKS) to run a highly dynamic workload where compute resources should automatically scale up or down based on application demand. Which node type should the company choose for their workload?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Self-Managed Nodes</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Fargate</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Carpenter</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon EKS Managed Node Groups</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 23,
+    "question": "<p>A company is building an e-commerce application using DynamoDB. Each item in the inventory has different attributes, and the system must quickly retrieve product data by a unique identifier. Which feature of DynamoDB is primarily responsible for ensuring efficient access to each unique item?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Composite Key</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Partition Key</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Secondary Index</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Sort Key</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 24,
+    "question": "<p>A data engineer is tasked with setting up an Amazon Kinesis Data Stream that will be consumed by multiple applications simultaneously. Due to the high throughput required by each consumer, the engineer needs a solution that avoids bottlenecks. What feature should be implemented to ensure each consumer has dedicated throughput?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enhanced Fan-Out</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Shard Scaling</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Kinesis Data Firehose</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Partition Key Algorithm</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 25,
+    "question": "<p>A data engineering team is using Amazon DynamoDB to store user profiles and needs to enable DynamoDB Streams to track real-time changes in the table. The team is primarily interested in auditing the data, including viewing both the previous and new states of items that are modified. Which stream option should the team select to capture both the old and new versions of the modified items?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Keys only</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Old image</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>New and old images</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>New image</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 26,
+    "question": "<p>A company is using Amazon Kinesis Data Streams to ingest large volumes of sensor data from IoT devices. They need to ensure that if errors occur during ingestion, the data can be reprocessed to maintain consistency. Which feature of Kinesis Data Streams is most suitable to handle this requirement?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Backfilling</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Partitioning</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Idempotent operations</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Replayability</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 27,
+    "question": "<p>A company wants to ensure that any unauthorized changes made to their IAM policies are automatically detected and notified. They also want to store a history of these changes for audit purposes. The solution should provide continuous monitoring and alert the security team in case of policy violations. Which combination of AWS services will meet these requirements?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS CloudWatch for tracking policy changes, AWS CloudTrail for continuous monitoring, and Amazon SES for notifications.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Config for tracking policy changes, AWS CloudTrail for continuous monitoring, and Amazon SNS for notifications.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS CloudTrail for tracking policy changes, AWS Config for continuous monitoring, and Amazon SNS for notifications.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS CloudTrail for tracking policy changes, AWS Config for continuous monitoring, and AWS Lambda for notifications.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 28,
+    "question": "<p>A company uses the AWS Well-Architected Tool to review its workloads and identify improvements. After performing a review, the company receives a recommendation to improve its security posture by implementing least-privilege access for its IAM policies. Which feature of AWS IAM can the company use to analyze and validate their IAM policies to ensure they are following least-privilege best practices?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>IAM Policy Simulator</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS IAM Access Analyzer</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Trusted Advisor</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Systems Manager Parameter Store</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 29,
+    "question": "<p>A company needs to transfer 100 petabytes of archival data from an on-premise data center to AWS. The company has limited bandwidth and needs a solution that ensures data integrity and security during transit. Which AWS service should the company use?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Snowball Edge - Storage Optimized</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Transfer Family</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Snowmobile</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS DataSync</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 30,
+    "question": "<p>A company is experiencing unpredictable traffic to its DynamoDB table. The team is unsure about how much traffic they will receive but needs to ensure consistent performance and avoid throttling. What is the most appropriate DynamoDB capacity mode for their use case?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Provisioned capacity mode with reserved capacity</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Provisioned capacity mode with auto-scaling enabled </p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>On-demand capacity mode</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Provisioned capacity mode with overprovisioning</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 31,
+    "question": "<p>You are managing an OpenSearch domain that stores customer information. The domain is configured with a cluster containing multiple nodes. To ensure high availability and improve read performance, which type of shard should be configured in addition to primary shards?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Hot shards</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Secondary shards</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Cold shards</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Replica shards</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 32,
+    "question": "<p>A healthcare company is developing a serverless ETL pipeline to process medical records in compliance with healthcare regulations. The pipeline needs to perform the following steps: </p><ul><li><p>Data arrives in CSV format and is stored in an Amazon S3 bucket. </p></li><li><p>AWS Lambda should automatically trigger when new files are uploaded. Lambda should transform the data into a standard JSON format and send it to Amazon Kinesis Data Streams for real-time processing.</p></li><li><p>Processed data should be stored in Amazon DynamoDB for fast querying by the downstream applications.</p></li><li><p>The solution should handle sudden increases in incoming data without manual intervention. </p></li></ul><p>Which solution will meet the requirements while maintaining a cost-effective, fully managed, and scalable architecture?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use an Amazon S3 Event Notification to trigger an AWS Lambda function upon new file uploads. The Lambda function will transform the CSV into JSON and send the data to Amazon Kinesis Data Streams for processing. Process the stream data in a Kinesis-enabled EC2 instance, and write the results to Amazon DynamoDB. </p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use an Amazon S3 Event Notification to trigger an AWS Lambda function upon new file uploads. The Lambda function will transform the data into JSON and push it to Amazon Kinesis Data Streams. Another AWS Lambda function will consume from the Kinesis stream and write the processed data to Amazon DynamoDB. </p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use an Amazon S3 Event Notification to trigger an AWS Lambda function upon file uploads. The Lambda function will transform the CSV to JSON and store the output directly into Amazon DynamoDB.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use an Amazon S3 Event Notification to trigger an AWS Lambda function. The Lambda function will process the CSV files, store them in Amazon S3 Glacier, and then update Amazon DynamoDB with references to the processed data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 33,
+    "question": "<p>A company stores large amounts of semi-structured data, such as CSV and Parquet files, in an Amazon S3 bucket. They want to run interactive SQL queries on this data for quick ad hoc analysis without managing any infrastructure. Which AWS service is the best fit for this requirement?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Athena</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon Redshift</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Glue</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon RDS</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 34,
+    "question": "<p>A startup uses DynamoDB to store customer orders and requires the ability to track real-time changes to the order data. They want to capture only the modified data and send it to an Amazon Redshift cluster for analytics processing. The system must handle frequent updates to large volumes of data efficiently. Which solution best meets these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable DynamoDB Streams with the \"New and Old Image\" option. Use AWS Lambda to trigger an ETL process that writes the updated data to Amazon S3. Use Amazon Redshift Spectrum to query the data in S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable DynamoDB Streams with the \"New Image\" option. Use AWS Lambda to process the stream and send the modified data to an Amazon Kinesis Data Firehose that loads the data into Amazon Redshift.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable DynamoDB Streams with the \"Keys Only\" option. Use AWS Lambda to process only the primary key changes and update an Amazon S3 data lake. Load the data from S3 into Amazon Redshift using AWS Glue.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable DynamoDB Streams with the \"New and Old Image\" option. Use AWS Glue to run batch ETL jobs that extract the updated data directly from the stream and load it into Amazon Redshift.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 35,
+    "question": "<p>A company is processing customer data using AWS Glue and needs to comply with privacy regulations, such as GDPR, by protecting sensitive information such as social security numbers and credit card details. Which AWS Glue transformation should they use to identify and manage this sensitive information?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use the \"Find Matches\" transformation to locate sensitive information in the dataset.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use the \"Join\" transformation to combine datasets and remove sensitive data manually.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use the \"Aggregate\" transformation to summarize the sensitive data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use the \"Detect PII\" transformation to automatically identify and manage personally identifiable information.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 36,
+    "question": "<p>A company wants to use the Amazon Redshift Data API to access data from its Redshift cluster for a web-based application. The application retrieves user data intermittently and displays it on the UI. Which feature of the Data API is especially helpful for this use case?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Persistent connections for long-running queries.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Asynchronous query processing.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Automatic data replication across regions for high availability.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Support for synchronous query execution.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 37,
+    "question": "<p>An enterprise is using Amazon Redshift to store and analyze confidential business data. The company needs to track who is accessing the data and what actions they are performing in the cluster. They also need to ensure that the cluster meets corporate security policies, including encryption and network isolation. Additionally, the company wants to retain query logs and audit access for at least 7 years for compliance reasons. Which combination of features and services will best satisfy the company’s security and compliance requirements? (Choose two.)</p>",
+    "corrects": [
+      1,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Key Management Service (KMS) to enable encryption at rest for Redshift.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon Redshift Spectrum to store audit logs in Amazon S3 for long-term retention.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use AWS CloudTrail to log API calls and monitor who accessed the Redshift cluster.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable Amazon CloudWatch to capture audit logs and retain them for 7 years. </p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Enable Amazon Redshift Enhanced VPC Routing to enforce network isolation.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 38,
+    "question": "<p>A company is building a multi-account data lake using AWS Lake Formation. They want to securely share databases across AWS accounts and control data access at the row and column level. What combination of Lake Formation features should the company use to achieve this?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Lake Formation Tag-Based Access Control (TBAC) for access control, AWS Resource Access Manager (RAM) for cross-account sharing, and Lake Formation Data Filters for row and column-level security.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Glue Crawlers for automated cataloging, AWS Glue DataBrew for data preparation, and Amazon Redshift Spectrum for analytics.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon S3 for data storage, AWS KMS for encryption, and Amazon Athena for querying the data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Glue Data Catalog for organizing data, AWS IAM for access control, and AWS Glue ETL jobs for data transformations.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 39,
+    "question": "<p>A data engineer is implementing DynamoDB Accelerator (DAX) to reduce read latency for an application querying a DynamoDB table. The engineer is concerned about performance under high read loads and is considering using retry logic for handling throttling exceptions. Which TWO of the following statements are TRUE about DAX and throttling behavior? (Choose two.)</p>",
+    "corrects": [
+      1,
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>DAX may throttle requests if the traffic exceeds the configured throughput capacity.</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>DAX directly updates the DynamoDB table without updating its cache, ensuring consistency.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>DAX caches frequently accessed data, reducing the need to query DynamoDB directly.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>If the throughput capacity is exceeded, DAX will automatically retry failed requests without throttling. </p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>DAX clusters consist of multiple nodes, where one node acts as the primary for cache updates.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 40,
+    "question": "<p>A financial institution needs to process data streams with very low latency and multiple concurrent consumer applications. Which feature of Amazon Kinesis Data Streams should they enable to avoid bottlenecks and ensure scalable, low-latency data delivery?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enhanced fan-out</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Auto-scaling with provisioned mode Correct </p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Data stream replication</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Manual shard scaling</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 41,
+    "question": "<p>A company is running several Amazon EC2 instances that require durable, high-performance block storage for databases and application data. The company needs to ensure that the data remains available even if the EC2 instances are stopped or terminated. They also want to optimize for cost and ensure data is protected from hardware failures. Which combination of services and storage options should the company use?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use Amazon EBS Cold HDD volumes attached to EC2 instances with no snapshots for cost savings.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon EFS for application data and EC2 instance storage for temporary data.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Amazon EBS General Purpose SSD volumes attached to EC2 instances with snapshots for backups.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon S3 for all application and database data storage, and EC2 instance storage for temporary data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 42,
+    "question": "<p>A data engineer is tasked with preparing a dataset for machine learning using AWS Glue DataBrew. The dataset contains several inconsistencies, including missing values, combined fields, and some redundant columns. The data engineer wants to visually inspect and transform the dataset without writing code and ensure that transformations are automated to run on a regular schedule. Which of the following approaches would best address these requirements?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Create an Amazon EMR cluster to run Apache Spark jobs for data cleansing and scheduling.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon Redshift to load the dataset, run SQL queries to clean the data, and schedule tasks using Amazon EventBridge.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Write custom Python scripts in AWS Lambda to process the dataset and store it in an Amazon S3 bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use AWS Glue DataBrew to visually inspect the dataset, create a transformation recipe, and schedule a job to execute it regularly.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 43,
+    "question": "<p>A media company is using Amazon Redshift to store and analyze large volumes of log data from their web application. They ingest hundreds of gigabytes of data daily into the Redshift cluster, but they are experiencing performance degradation in their queries due to the growing data volume. The company needs a cost-effective solution to manage storage growth while maintaining high query performance. Which of the following solutions should the data engineer implement to optimize storage and improve query performance?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use the Amazon Redshift COPY command to load the log data into separate tables, partitioned by date.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Upgrade the Amazon Redshift cluster to use RA3 instances with managed storage and offload older data to Amazon S3 using the UNLOAD command.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable Amazon Redshift Concurrency Scaling to automatically add more compute capacity as the query volume increases.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Redshift Spectrum to offload old log data to S3 and query it from there when needed.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 44,
+    "question": "<p>A company uses OpenSearch for indexing and querying application logs. The company is optimizing costs by storing older logs in a lower-cost storage tier while keeping the most recent logs readily accessible. Which combination of storage tiers is the most cost-effective solution?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Hot storage for recent logs, cold storage for older logs</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Cold storage for recent logs, ultra-warm storage for older logs</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Ultra-warm storage for recent logs, cold storage for older logs</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Hot storage for recent logs, ultra-warm storage for older logs</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 45,
+    "question": "<p>A company is experiencing rapid growth in its dataset and wants to store the most frequently accessed data on high-performance SSDs, while moving infrequently accessed data to a more cost-effective long-term storage solution. Which Amazon Redshift feature should the company use to manage storage for both hot and cold data?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>S3 Lifecycle Management</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Auto-scaling compute nodes </p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>DC2 nodes with local SSD storage</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Managed Storage with RA3 nodes </p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 46,
+    "question": "<p>A company is using AWS Lake Formation to set up a secure data lake. They need to ensure that data from both Amazon S3 and on-premise databases is ingested, cataloged, and secured within the lake. What key AWS Lake Formation feature should be used to automate the ingestion and cataloging process?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Resource Access Manager (RAM)</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Lake Formation LF-Tags</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon EMR</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Lake Formation Blueprints</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 47,
+    "question": "<p>A company wants to streamline patch management and automate operational tasks like running scripts, collecting inventory, and applying security patches on their EC2 instances across multiple AWS Regions. Which AWS service should the company use to manage this with minimal operational overhead?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Systems Manager</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS CloudFormation</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon CloudWatch</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Trusted Advisor</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 48,
+    "question": "<p>A company is using AWS Config to track changes to their resources and ensure compliance. They also want to integrate Amazon CloudTrail to investigate unauthorized access attempts. How do AWS Config and CloudTrail complement each other in this scenario?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Config automatically reverts any unauthorized changes, while CloudTrail blocks the API calls that trigger non-compliant changes.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Config and CloudTrail both monitor API calls, with Config focusing on network-related calls and CloudTrail focusing on compute-related calls.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Config tracks changes in resource configurations, while CloudTrail logs API calls, providing insights into who made the changes.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Config logs all API calls made to AWS resources, and CloudTrail monitors compliance against security best practices.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 49,
+    "question": "<p>A data engineer needs to optimize the performance of SQL queries run via Amazon Athena on a large S3 data lake. The data is partitioned by month and region. How can the engineer reduce query time and cost most effectively?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Increase the number of queries to speed up partition selection.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Store the data in a single large file for faster scanning.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Disable query result reuse to ensure each query scans the latest data.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use partition pruning to eliminate irrelevant partitions during query execution.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 50,
+    "question": "<p>A company uses Amazon QuickSight to create dashboards for business users who are not technically proficient. The company wants users to query data by asking questions in natural language and receive visual answers. Which Amazon QuickSight feature should the company use to meet this requirement?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Dashboards</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>SPICE</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS Glue</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>QuickSight Q</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 51,
+    "question": "<p>A retail company is collecting real-time purchase data from its e-commerce platform using Amazon Kinesis. The company wants to ingest and analyze this streaming data in real-time for fraud detection purposes. Which service would best fulfill the requirement for real-time analytics on this data stream? </p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Amazon Kinesis Producer Library (KPL) </p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Amazon Kinesis Data Firehose</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon Managed Service for Apache Flink</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Amazon Kinesis Data Streams</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 52,
+    "question": "<p>A company is considering using DynamoDB for a real-time analytics application with rapidly growing data. The data will be diverse, with no consistent schema. The company needs a database that can automatically scale and maintain high availability. Why is DynamoDB a suitable choice for this use case?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>DynamoDB requires manual scaling and cannot handle schema-less data, making it unsuitable for diverse data types.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>DynamoDB provides a fixed schema, ensuring data consistency across all records.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>DynamoDB is a NoSQL database that automatically scales horizontally, handles schema-less data, and offers high availability through data replication across multiple availability zones.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>DynamoDB supports SQL queries and complex joins, which will be helpful for analyzing the data.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 53,
+    "question": "<p>A financial services company uses Amazon Kinesis Data Streams to capture and store streaming stock market data. They are concerned about data durability and want to ensure that if an Availability Zone (AZ) goes down, their data stream can still be processed. Which feature of Kinesis Data Streams ensures the data’s durability?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Data is replicated across multiple shards in a single AZ.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Data is stored on durable EBS volumes within the stream.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Data is replicated across multiple Availability Zones. </p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Data is automatically stored in Amazon S3 for backup. </p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 54,
+    "question": "<p>A company is using AWS Glue for ETL operations and wants to automate the deployment and configuration of their AWS Glue jobs using infrastructure as code. They also need to trigger AWS Glue jobs from an S3 event using AWS Lambda. Which AWS service or tool would best help them achieve these requirements?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS CodeDeploy</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Elastic Beanstalk</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS CloudFormation</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS SAM (Serverless Application Model) </p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 55,
+    "question": "<p>A healthcare company wants to build a serverless system that automatically processes patient records as they are uploaded to an Amazon S3 bucket. After processing, the Lambda function should store the results in an Amazon RDS database. The company also needs to ensure the processed data is auditable to meet regulatory compliance. Which combination of steps should the company implement to meet these requirements? (Choose TWO.)</p>",
+    "corrects": [
+      3,
+      5
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Key Management Service (KMS) to encrypt the processed data before storing it in Amazon RDS.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Store the processed data in Amazon DynamoDB instead of Amazon RDS for automatic scaling.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Set up AWS CloudTrail to log API activity for all Lambda function invocations and database interactions.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use Amazon S3 Transfer Acceleration to ensure secure and fast uploads of patient records.</p>",
+        "correct": false
+      },
+      {
+        "id": 5,
+        "answer": "<p>Configure Amazon S3 to trigger the Lambda function whenever new patient records are uploaded.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": true,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 56,
+    "question": "<p>A company wants to copy an encrypted Amazon EBS volume snapshot from one AWS region to another. The volume is encrypted using a customer managed key. What must the data engineer do to ensure the snapshot remains encrypted in the destination region?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Re-encrypt the snapshot using the default AWS managed key in the target region.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Disable encryption during the snapshot copy process, then re-enable it in the target region.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use a customer managed key in the destination region to re-encrypt the snapshot.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Use the same key from the source region to encrypt the snapshot in the target region.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 57,
+    "question": "<p>A data engineer is preparing customer transaction data stored in an Amazon S3 bucket for analysis. The data contains a column with both city names and ZIP codes combined into one field, separated by a comma. The engineer wants to split this column into two separate fields using AWS Glue DataBrew. Which of the following transformations in DataBrew should the engineer use to accomplish this task?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Split Column</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Join Datasets</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Nest to Map</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Unpivot</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 58,
+    "question": "<p>A data engineer is using Amazon QuickSight to visualize data stored in Amazon S3. They want to ensure fast performance by caching the data in memory for quicker access when users query large datasets. Which feature of QuickSight will enable this capability?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>SPICE</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>Dashboards</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon Athena</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>VPC Peering</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Store Management",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 59,
+    "question": "<p>A data engineer needs to develop, train, and deploy a machine learning model using SageMaker. The engineer wants to use TensorFlow as the framework and needs a development environment that allows for interactive data exploration and visualization. Which of the following SageMaker components should the data engineer use?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>SageMaker Studio with Jupyter notebooks for model development</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>SageMaker Feature Store for managing input data and predictions</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>SageMaker Debugger to analyze and debug the training process</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>SageMaker Autopilot for automated model tuning and deployment</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 60,
+    "question": "<p>A data engineer is tasked with troubleshooting performance issues in a custom application running on an Amazon EC2 instance. The engineer wants to monitor key performance metrics such as CPU utilization and disk I/O activity, set alarms for when the instance’s CPU exceeds 80%, and log all API activity that affects the instance. Which combination of AWS services should the engineer use to meet these requirements?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Config for tracking performance metrics, AWS CloudWatch for setting alarms, and AWS CloudTrail for logging API activity.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS CloudWatch for tracking performance metrics and setting alarms, and AWS CloudTrail for logging API activity.</p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>AWS CloudTrail for tracking performance metrics and setting alarms, and AWS CloudWatch for logging API activity.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS CloudTrail for monitoring API activity, AWS CloudWatch for tracking performance metrics, and AWS Config for setting alarms.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 61,
+    "question": "<p>A company needs to securely store and manage sensitive customer information in Amazon S3. They are required to meet strict data privacy regulations, ensuring that the data is encrypted both at rest and in transit. Additionally, they want to ensure that only specific applications from their internal network can access this data. Which combination of features should they use to achieve this?</p>",
+    "corrects": [
+      2
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Enable S3 server-side encryption with customer-provided keys (SSE-C) and configure cross-region replication to a secure secondary bucket.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Enable S3 server-side encryption with AWS KMS keys (SSE-KMS) and configure a bucket policy allowing access only through a VPC endpoint. </p>",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "answer": "<p>Enable S3 server-side encryption (SSE-S3) and configure VPC endpoint policies for Amazon S3.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Enable S3 server-side encryption with customer-provided keys (SSE-C) and configure a bucket policy restricting access to specific IP ranges. </p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Security and Governance",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 62,
+    "question": "<p>A gaming company is using Amazon MemoryDB for Redis to manage real-time game session data, leaderboards, and player stats. They require high availability, data persistence, and in-memory performance to ensure low-latency responses during game play. However, they are concerned about data loss in case of node failure. Which feature of Amazon MemoryDB ensures that data remains available and consistent, even in the event of a node failure?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Manual backup and restore procedures</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Redis's eviction policies for managing memory</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Multi-AZ replication with automatic failover</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>DynamoDB Streams for capturing real-time data changes</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 63,
+    "question": "<p>A data engineer is using AWS Glue to process a large volume of streaming data in near-real-time. To optimize the ETL job for both cost and efficiency, the engineer needs to ensure that only new data is processed incrementally, without reprocessing previously ingested data. Which AWS Glue feature should the engineer enable?</p>",
+    "corrects": [
+      1
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>AWS Glue Bookmarks</p>",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "answer": "<p>AWS Glue Crawlers</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Amazon Kinesis Data Streams</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>AWS Glue Job Triggers</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 64,
+    "question": "<p>A company has implemented a decoupled architecture where multiple services communicate via message queues. They use Amazon SQS to handle message queues and Amazon EventBridge to route specific application events to different AWS services. The company also needs to implement a feature where certain events from EventBridge should trigger a notification to various team members using Amazon SNS. Which of the following is the correct way to implement this feature?</p>",
+    "corrects": [
+      3
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use an Amazon SQS queue with a redrive policy to send failed events to SNS for notifications.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Configure an Amazon SQS queue as an EventBridge target and use Lambda to forward messages to Amazon SNS.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Create an EventBridge rule to forward events directly to Amazon SNS, which will send notifications to the subscribed team members.</p>",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "answer": "<p>Create an SNS topic for each EventBridge rule and configure SNS to poll EventBridge for new events.</p>",
+        "correct": false
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Operations and Support",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  },
+  {
+    "id": 65,
+    "question": "<p>A data engineer needs to query data from multiple sources, including an Amazon RDS PostgreSQL database and an on-premises PostgreSQL database. The engineer wants to avoid duplicating data into the Amazon Redshift cluster and minimize data transmission. Which solution should the data engineer use?</p>",
+    "corrects": [
+      4
+    ],
+    "answers": [
+      {
+        "id": 1,
+        "answer": "<p>Use AWS Glue to run ETL jobs that extract, transform, and load the data into Redshift tables.</p>",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "answer": "<p>Use Amazon Athena to query the external databases and join the results with Redshift tables.</p>",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "answer": "<p>Use Redshift Spectrum to query the data directly from the external PostgreSQL databases.</p>",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "answer": "<p>Set up Redshift Federated Queries and create external schema definitions pointing to the PostgreSQL databases.</p>",
+        "correct": true
+      }
+    ],
+    "multiple": false,
+    "domain": "Data Ingestion and Transformation",
+    "explanation": "",
+    "correctAnswerExplanations": [],
+    "incorrectAnswerExplanations": [],
+    "references": []
+  }
+]
