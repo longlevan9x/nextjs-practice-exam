@@ -169,5 +169,53 @@
     {
         "examId": 43,
         "questionFile": "jonbonso_aws_sap_2025/jonbonso_aws_sap_2025_4.json"
+    },
+    {
+        "examId": 44,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_1.json"
+    },
+    {
+        "examId": 45,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_2.json"
+    },
+    {
+        "examId": 46,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_3.json"
+    },
+    {
+        "examId": 47,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_4.json"
+    },
+    {
+        "examId": 48,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_5.json"
+    },
+    {
+        "examId": 49,
+        "questionFile": "stephane_maarek_aws_dva_co2_2025/stephane_maarek_aws_dva_co2_2025_6.json"
+    },
+    {
+        "examId": 50,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_1.json"
+    },
+    {
+        "examId": 51,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_2.json"
+    },
+    {
+        "examId": 52,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_3.json"
+    },
+    {
+        "examId": 53,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_4.json"
+    },
+    {
+        "examId": 54,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_5.json"
+    },
+    {
+        "examId": 55,
+        "questionFile": "neal_davis_aws_dav_co2_2025/neal_davis_aws_dav_co2_2025_6.json"
     }
 ]

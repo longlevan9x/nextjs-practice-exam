@@ -1527,5 +1527,461 @@
         "questionCount": 75,
         "duration": 180,
         "passScore": 75
+    },
+    {
+        "id": 44,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 1",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Security",
+                "questionCount": 16
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 20
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 17
+            },
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 12
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 45,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 2",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Deployment",
+                "questionCount": 9
+            },
+            {
+                "name": "Security",
+                "questionCount": 9
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 24
+            },
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 23
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 46,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 3",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 16
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 26
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 8
+            },
+            {
+                "name": "Security",
+                "questionCount": 15
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 47,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 4",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Security",
+                "questionCount": 17
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 21
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 13
+            },
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 14
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 48,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 5",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 25
+            },
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 18
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 8
+            },
+            {
+                "name": "Security",
+                "questionCount": 14
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 49,
+        "courseId": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek 6",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 24
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 23
+            },
+            {
+                "name": "Security",
+                "questionCount": 8
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 10
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 50,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 1",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 18
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 17
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 51,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 2",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 17
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 13
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 8
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 2
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 52,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 3",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Database",
+                "questionCount": 12
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 14
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 10
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 2
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 4
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 53,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 4",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 9
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 12
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 15
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 6
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 54,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 5",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 12
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 10
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 8
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 14
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 3
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
+    },
+    {
+        "id": 55,
+        "courseId": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis 6",
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-01-01",
+        "categories": [],
+        "domains": [
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 12
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 17
+            },
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 11
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Storage",
+                "questionCount": 5
+            }
+        ],
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72
     }
 ]

@@ -291,5 +291,79 @@
         "description": "AWS Certified Solutions Architect Professional Study Guide",
         "updatedAt": "2025-05-01",
         "author": "Jon Bonso"
+    },
+    {
+        "id": 10,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Stephane Maarek",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "Security",
+                "questionCount": 16
+            },
+            {
+                "name": "Development with AWS Services",
+                "questionCount": 20
+            },
+            {
+                "name": "Deployment",
+                "questionCount": 17
+            },
+            {
+                "name": "Troubleshooting and Optimization",
+                "questionCount": 12
+            }
+        ],
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Stephane Maarek"
+    },
+    {
+        "id": 11,
+        "name": "AWS Certified Developer Associate 2025 - C02 - Neal Davis",
+        "questionCount": 65,
+        "duration": 130,
+        "passScore": 72,
+        "domains": [
+            {
+                "name": "AWS Networking & Content Delivery",
+                "questionCount": 6
+            },
+            {
+                "name": "AWS Security, Identity, & Compliance",
+                "questionCount": 7
+            },
+            {
+                "name": "AWS Database",
+                "questionCount": 18
+            },
+            {
+                "name": "AWS Compute",
+                "questionCount": 17
+            },
+            {
+                "name": "AWS Developer Tools",
+                "questionCount": 5
+            },
+            {
+                "name": "AWS Management & Governance",
+                "questionCount": 4
+            },
+            {
+                "name": "AWS Analytics",
+                "questionCount": 3
+            },
+            {
+                "name": "AWS Application Integration",
+                "questionCount": 5
+            }
+        ],
+        "imageUrl": "/images/aws-dva.png",
+        "description": "AWS Certified Developer Associate Study Guide",
+        "updatedAt": "2025-05-01",
+        "author": "Neal Davis"
     }
 ]
