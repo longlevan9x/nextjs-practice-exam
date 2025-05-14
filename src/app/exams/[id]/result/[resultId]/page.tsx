@@ -307,7 +307,6 @@ const ResultOverviewPage: React.FC = () => {
                     >
                         <QuestionDetail
                             question={question.question}
-                            isBookmarked={false}
                             testEnded={true}
                             displayMode={DISPLAY_MODES.REVIEW}
                             examType={examResult?.examType}

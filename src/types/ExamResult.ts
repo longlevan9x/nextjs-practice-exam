@@ -13,6 +13,7 @@ export interface ExamResultQuestionAnswer {
     id: number;
     correct: boolean;
 }
+
 export interface ExamResult {
     userId?: string;
     courseId?: number;
