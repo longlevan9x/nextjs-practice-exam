@@ -4,7 +4,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import StatisticsOverview from '@/components/statistics/StatisticsOverview';
 import DomainAnalysis from '@/components/statistics/DomainAnalysis';
 import StatisticsSection from '@/components/statistics/StatisticsSection';
-import { ExamResult } from '@/types/examResult';
+import { ExamResult } from '@/types/ExamResult';
 import { Exam } from '@/types/exam';
 import { getExamResults } from '@/services/examResultService';
 import { getAllExams } from '@/services/examService';

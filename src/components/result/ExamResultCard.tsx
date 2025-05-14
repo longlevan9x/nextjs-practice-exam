@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ExamResult } from "@/types/examResult";
+import { ExamResult } from "@/types/ExamResult";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import CollapsedContent from "./CollapsedContent";
 import ExpandedContent from "./ExpandedContent";

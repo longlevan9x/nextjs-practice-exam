@@ -11,7 +11,7 @@ import { getExamById } from "@/services/examService";
 import { Exam, ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "@/components/common/LoadingIcon";
-import { ExamResult, ExamResultQuestion } from "@/types/examResult";
+import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
 import * as examResultService from '@/services/examResultService';
 import ActionButtons from "@/components/examDetail/ActionButtons";
 import { handleHttpError } from '@/services/notificationService';

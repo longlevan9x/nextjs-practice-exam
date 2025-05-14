@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { ExamResult } from "@/types/examResult";
+import { ExamResult } from "@/types/ExamResult";
 import ResultHeader from "@/components/result/ResultHeader";
 import ExamResultCard from "@/components/result/ExamResultCard";
 import { getExamById } from "@/services/examService";

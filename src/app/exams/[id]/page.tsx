@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ClipboardDocumentIcon, ClockIcon, CheckCircleIcon, ClockIcon as UpdateIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import LoadingIcon from "@/components/common/LoadingIcon";
 import { fetchQuestionsByExamId } from "@/services/questionService";
-import { ExamResult, ExamResultQuestion, ExamResultQuestionAnswer } from "@/types/examResult";
+import { ExamResult, ExamResultQuestion, ExamResultQuestionAnswer } from "@/types/ExamResult";
 import { EXAM_TYPES, ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";

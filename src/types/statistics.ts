@@ -1,4 +1,4 @@
-import { ExamResult } from '@/types/examResult';
+import { ExamResult } from '@/types/ExamResult';
 import { Exam } from '@/types/exam';
 import { Question } from '@/types/question';
 

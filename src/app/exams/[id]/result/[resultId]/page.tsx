@@ -10,7 +10,7 @@ import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
 import { ChevronLeftIcon, CheckCircleIcon, XCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid"; // Import Heroicons
 import { DISPLAY_MODES } from '@/constants/exam';
-import { ExamResult, ExamResultQuestion } from '@/types/examResult';
+import { ExamResult, ExamResultQuestion } from '@/types/ExamResult';
 import { getExamResult } from '@/services/examResultService';
 interface MappedQuestion {
     id: number;

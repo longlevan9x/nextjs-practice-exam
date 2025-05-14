@@ -15,7 +15,7 @@ import {
     getExamResults as getBackendExamResults
 } from '@/backend/services/examResultService';
 import { getCurrentUser, isAuthenticated } from '../backend/services/authService';
-import { ExamResult } from '@/types/examResult';
+import { ExamResult } from '@/types/ExamResult';
 
 export const saveExamResultData = async (examResult: ExamResult) => {
     const currentUser = await getCurrentUser();

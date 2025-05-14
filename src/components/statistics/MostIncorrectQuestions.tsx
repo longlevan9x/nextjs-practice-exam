@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { ExamResult } from '@/types/examResult';
+import { ExamResult } from '@/types/ExamResult';
 import { calculateMostIncorrectQuestions } from '@/services/statisticsService';
 import { fetchQuestionsByExamId } from '@/services/questionService';
 import { QuestionStatistic } from '@/types/statistics';
