@@ -114,7 +114,7 @@ export default function ExamDetailPage() {
   return (
     <>
       {/* Back Button */}
-      <div className="mb-3 flex justify-between items-center">
+      <div className="mb-3 flex md:flex-row justify-between md:items-center flex-col gap-2">
         <Link
           href="/"
           className="inline-flex items-center text-gray-600 hover:text-gray-800 transition duration-300"
@@ -125,11 +125,11 @@ export default function ExamDetailPage() {
           <span>Back to Exams</span>
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-end">
           {/* Statistics Link */}
           <Link
             href={`/statistics?examId=${id}&courseId=${exam.courseId}`}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
+            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300"
           >
             <ChartBarIcon className="w-5 h-5 mr-2" />
             <span>Thống kê</span>
@@ -137,7 +137,7 @@ export default function ExamDetailPage() {
           {/* Result Link */}
           <Link
             href={`/exams/${id}/result`}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition duration-300"
+            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300"
           >
             <ChartBarIcon className="w-5 h-5 mr-2" />
             <span>Xem kết quả</span>
@@ -146,7 +146,7 @@ export default function ExamDetailPage() {
       </div>
 
       {/* Exam Details Card */}
-      <div className="w-full lg:w-4xl mx-auto bg-white rounded-sm shadow-lg p-6 md:p-8">
+      <div className="w-full lg:w-4xl mx-auto bg-white rounded-xs shadow-lg p-6 md:p-8">
         {/* Exam Logo */}
         <div className="flex justify-center mb-6">
           <Image
@@ -191,7 +191,7 @@ export default function ExamDetailPage() {
         {/* Mode Selection Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8">
           {/* Exam Mode Card */}
-          <div className="bg-white rounded-sm p-4 sm:p-6 border border-blue-200 hover:border-blue-400 transition-all duration-300">
+          <div className="bg-white rounded-xs p-4 sm:p-6 border border-blue-200 hover:border-blue-400 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-blue-600">Chế độ thi</h3>
@@ -237,7 +237,7 @@ export default function ExamDetailPage() {
               <button
                 onClick={() => handleStartExam('exam')}
                 disabled={isStarting}
-                className={`w-full cursor-pointer bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm shadow-md transition duration-300 flex items-center justify-center ${isStarting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+                className={`w-full cursor-pointer bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xs shadow-md transition duration-300 flex items-center justify-center ${isStarting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
                   }`}
               >
                 <span className="text-sm sm:text-base">Bắt đầu thi</span>
@@ -254,7 +254,7 @@ export default function ExamDetailPage() {
           </div>
 
           {/* Practice Mode Card */}
-          <div className="bg-white rounded-sm p-4 sm:p-6 border border-green-200 hover:border-green-400 transition-all duration-300">
+          <div className="bg-white rounded-xs p-4 sm:p-6 border border-green-200 hover:border-green-400 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-green-600">Chế độ luyện tập</h3>
@@ -300,7 +300,7 @@ export default function ExamDetailPage() {
               <button
                 onClick={() => handleStartExam('practice')}
                 disabled={isStarting}
-                className={`w-full cursor-pointer bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-sm shadow-md transition duration-300 flex items-center justify-center ${isStarting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700'
+                className={`w-full cursor-pointer bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xs shadow-md transition duration-300 flex items-center justify-center ${isStarting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700'
                   }`}
               >
                 <span className="text-sm sm:text-base">Bắt đầu luyện tập</span>
