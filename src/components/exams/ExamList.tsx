@@ -26,6 +26,7 @@ export default function ExamList() {
       try {
         return await getIncompleteExamResults();
       } catch (error) {
+        console.log("_getIncompleteExamResults", error);
         return [];
       }
     }
