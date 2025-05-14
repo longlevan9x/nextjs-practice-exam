@@ -11,7 +11,7 @@ import { getExamById } from "@/services/examService";
 import { Exam, ExamDomain } from "@/types/exam";
 import { EXAM_TYPES, DISPLAY_MODES, ExamType, DisplayMode } from "@/constants/exam";
 import LoadingIcon from "@/components/common/LoadingIcon";
-import { ExamResult, ExamResultQuestion } from "@/types/ExamResult";
+import { ExamResult, ExamResultQuestion } from "@/types/examResult";
 import * as examResultService from '@/services/examResultService';
 import ActionButtons from "@/components/examDetail/ActionButtons";
 import { handleHttpError } from '@/services/notificationService';
@@ -26,7 +26,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const { id: examId } = useParams<{ id: string }>();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
-    const [bookmarkedQuestions, setBookmarkedQuestions] = useState<number[]>([]);
     const [filter, setFilter] = useState<string>("all");
     const [domainFilter, setDomainFilter] = useState<string>("all");
     const [domains, setDomains] = useState<ExamDomain[]>([]);
@@ -57,6 +56,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                 questionIndex: convertedQuestion.questionIndex,
                 selectedAnswer: convertedQuestion.selectedAnswer,
                 isCorrect: convertedQuestion.isCorrect,
+                isBookmarked: convertedQuestion.isBookmarked,
                 answered: convertedQuestion.selectedAnswer !== null,
                 showExplanation: examType === EXAM_TYPES.PRACTICE && convertedQuestion.selectedAnswer !== null,
                 answers: answers,
@@ -139,12 +139,17 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
         await _saveExamResult({ currentQuestionIndex: questionIndex });
     };
 
-    const toggleBookmark = (questionId: number) => {
-        setBookmarkedQuestions((prev) =>
-            prev.includes(questionId)
-                ? prev.filter((id) => id !== questionId)
-                : [...prev, questionId]
-        );
+    const toggleBookmark = async (questionIndex: number | undefined) => {
+        if (questionIndex === undefined || questionIndex < 0) {
+            return;
+        }
+
+        const question = questions[questionIndex];
+        question.isBookmarked = !question.isBookmarked;
+        setSelectedQuestion(question);
+        setCurrentQuestionIndex(questionIndex);
+
+        await _saveExamResult({ currentQuestionIndex: questionIndex });
     };
 
     const handleAnswerSelect = (answerId: number) => {
@@ -348,7 +353,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                     <QuestionList
                         questions={questions}
                         selectedQuestionId={selectedQuestion?.id || null}
-                        bookmarkedQuestions={bookmarkedQuestions}
                         filter={filter}
                         domainFilter={domainFilter}
                         domains={domains}
@@ -392,8 +396,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                         {selectedQuestion && (
                             <QuestionDetail
                                 question={selectedQuestion}
-                                isBookmarked={bookmarkedQuestions.includes(selectedQuestion.id)}
-                                onToggleBookmark={() => toggleBookmark(selectedQuestion.id)}
+                                onToggleBookmark={() => toggleBookmark(selectedQuestion.questionIndex)}
                                 onAnswerSelect={handleAnswerSelect}
                                 onCheckAnswer={handleCheckAnswer}
                                 onNextQuestion={handleNextQuestion}

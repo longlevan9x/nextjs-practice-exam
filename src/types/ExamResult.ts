@@ -6,7 +6,9 @@ export interface ExamResultQuestion {
     isCorrect: boolean;
     questionIndex: number;
     answers: ExamResultQuestionAnswer[];
+    isBookmarked?: boolean;
 }
+
 export interface ExamResultQuestionAnswer {
     id: number;
     correct: boolean;

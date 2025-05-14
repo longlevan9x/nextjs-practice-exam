@@ -9,21 +9,19 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 interface QuestionListProps {
   questions: Question[];
   selectedQuestionId: number | null;
-  bookmarkedQuestions: number[];
   filter: string;
   domainFilter: string;
   domains: ExamDomain[];
   onFilterChange: (filter: string) => void;
   onDomainFilterChange: (domainFilter: string) => void;
   onQuestionSelect: (questionIndex: number) => void;
-  onToggleBookmark: (questionId: number) => void;
+  onToggleBookmark: (questionIndex: number) => void;
   examType: ExamType;
 }
 
 const QuestionList: React.FC<QuestionListProps> = ({
   questions,
   selectedQuestionId,
-  bookmarkedQuestions,
   filter,
   domainFilter,
   domains,
@@ -95,6 +93,14 @@ const QuestionList: React.FC<QuestionListProps> = ({
     }
   };
 
+  const handleToggleBookmark = (questionIndex: number | undefined) => {
+     if (questionIndex === undefined || questionIndex < 0) {
+      return;
+    }
+    
+    onToggleBookmark(questionIndex);
+  }
+
   const filteredQuestions = questions.filter((question) => {
     // Apply status filter
     const statusMatch = (() => {
@@ -104,7 +110,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
         case FILTER_OPTION_VALUE.ANSWERED:
           return question.answered;
         case FILTER_OPTION_VALUE.BOOKMARKED:
-          return bookmarkedQuestions.includes(question.id);
+          return question.isBookmarked;
         case FILTER_OPTION_VALUE.CORRECT:
           return question.isCorrect;
         case FILTER_OPTION_VALUE.INCORRECT:
@@ -184,9 +190,9 @@ const QuestionList: React.FC<QuestionListProps> = ({
                 <QuestionItem
                   question={question}
                   isSelected={selectedQuestionId === question.id}
-                  isBookmarked={bookmarkedQuestions.includes(question.id)}
+                  isBookmarked={question.isBookmarked}
                   onSelect={() => handleQuestionSelect(question.questionIndex)}
-                  onToggleBookmark={() => onToggleBookmark(question.id)}
+                  onToggleBookmark={() => handleToggleBookmark(question.questionIndex)}
                   examType={examType}
                   isMobile={isMobile}
                 />

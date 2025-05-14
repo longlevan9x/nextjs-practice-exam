@@ -15,7 +15,7 @@ import {
     getExamResults as getBackendExamResults
 } from '@/backend/services/examResultService';
 import { getCurrentUser, isAuthenticated } from '../backend/services/authService';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 
 export const saveExamResultData = async (examResult: ExamResult) => {
     const currentUser = await getCurrentUser();
@@ -91,6 +91,7 @@ export const updateExamResultData = async (resultId: string | undefined, examRes
             selectedAnswer: question.selectedAnswer,
             isCorrect: question.isCorrect,
             questionIndex: question.questionIndex,
+            isBookmarked: question.isBookmarked,
             answers: question.answers.map((answer) => ({
                 id: answer.id,
                 correct: answer.correct,

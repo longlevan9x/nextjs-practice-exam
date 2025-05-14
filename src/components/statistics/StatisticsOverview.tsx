@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 import { Exam } from '@/types/exam';
 
 interface StatisticsOverviewProps {

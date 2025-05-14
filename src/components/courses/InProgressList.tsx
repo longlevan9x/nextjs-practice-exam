@@ -15,21 +15,26 @@ const InProgressList: React.FC = () => {
 
     useEffect(() => {
         const fetchInProgressExams = async () => {
-            const incompleteExamResults = await getIncompleteExamResults();
-            let _exams = getExams();
-            _exams = _exams.map(exam => {
-                const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
-                const examType = incompleteExam?.examType;
+            try {
+                const incompleteExamResults = await getIncompleteExamResults();
+                let _exams = getExams();
+                _exams = _exams.map(exam => {
+                    const incompleteExam = incompleteExamResults.find(result => result.examId === exam.id);
+                    const examType = incompleteExam?.examType;
 
-                return {
-                    ...exam,
-                    incomplete: incompleteExam?.isCompleted === false,
-                    examType
-                };
-            }).filter(exam => exam.incomplete);
+                    return {
+                        ...exam,
+                        incomplete: incompleteExam?.isCompleted === false,
+                        examType
+                    };
+                }).filter(exam => exam.incomplete);
 
-            setInProgressExams(_exams);
-            setLoading(false);
+                setInProgressExams(_exams);
+                setLoading(false);
+            } catch (error) {
+                console.log("fetchInProgressExams", error);
+                setLoading(false);
+            }
         };
 
         fetchInProgressExams();

@@ -12,7 +12,7 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = ({
   children
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md">
+    <div className="bg-white rounded-xs shadow-md">
       <div className="border-b border-gray-200 px-4 py-3">
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         {description && (

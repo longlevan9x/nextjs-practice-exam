@@ -12,7 +12,6 @@ import AnswerExplanationGroup from "./AnswerExplanationGroup";
 
 interface QuestionDetailProps {
   question: Question;
-  isBookmarked: boolean;
   onToggleBookmark?: () => void;
   onAnswerSelect?: (answerId: number) => void;
   onCheckAnswer?: () => void;
@@ -27,7 +26,6 @@ interface QuestionDetailProps {
 
 const QuestionDetail: React.FC<QuestionDetailProps> = ({
   question,
-  isBookmarked,
   onToggleBookmark,
   onAnswerSelect,
 }) => {
@@ -66,7 +64,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       <div className="flex flex-row sm:items-center justify-between mb-4 gap-2">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
-            <BookmarkButton isBookmarked={isBookmarked} onToggle={onToggleBookmark ?? (() => { })} />
+            <BookmarkButton isBookmarked={question.isBookmarked || false} onToggle={onToggleBookmark ?? (() => { })} />
             <h2 className="text-lg font-normal">
               {HEADER_TITLE_PREFIX} {(question.questionIndex !== undefined) && question.questionIndex + 1}
             </h2>

@@ -10,7 +10,7 @@ import { Exam } from '@/types/exam';
 import { getExamById } from '@/services/examService';
 import { ChevronLeftIcon, CheckCircleIcon, XCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid"; // Import Heroicons
 import { DISPLAY_MODES } from '@/constants/exam';
-import { ExamResult, ExamResultQuestion } from '@/types/ExamResult';
+import { ExamResult, ExamResultQuestion } from '@/types/examResult';
 import { getExamResult } from '@/services/examResultService';
 interface MappedQuestion {
     id: number;
@@ -66,6 +66,7 @@ const ResultOverviewPage: React.FC = () => {
                     originalQuestion!.selectedAnswer = mappedQuestion.selectedAnswer;
                     originalQuestion!.isCorrect = mappedQuestion.isCorrect;
                     originalQuestion!.questionIndex = mappedQuestion.questionIndex;
+                    originalQuestion!.isBookmarked = mappedQuestion.isBookmarked;
                     originalQuestion!.showExplanation = true; // Set showExplanation to true for all questions
 
 

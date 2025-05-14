@@ -6,7 +6,7 @@ import { EXAM_TYPES, ExamType } from "@/constants/exam";
 interface QuestionItemProps {
     question: Question;
     isSelected: boolean;
-    isBookmarked: boolean;
+    isBookmarked?: boolean;
     onSelect: () => void;
     onToggleBookmark: () => void;
     examType: ExamType;
@@ -33,7 +33,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
                     <BookmarkButton
-                        isBookmarked={isBookmarked}
+                        isBookmarked={isBookmarked || false}
                         onToggle={onToggleBookmark}
                     />
                     <p className="text-base font-bold ml-1">Câu hỏi {(question.questionIndex !== undefined) && question.questionIndex + 1}</p>

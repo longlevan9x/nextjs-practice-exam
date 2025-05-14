@@ -4,7 +4,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import StatisticsOverview from '@/components/statistics/StatisticsOverview';
 import DomainAnalysis from '@/components/statistics/DomainAnalysis';
 import StatisticsSection from '@/components/statistics/StatisticsSection';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 import { Exam } from '@/types/exam';
 import { getExamResults } from '@/services/examResultService';
 import { getAllExams } from '@/services/examService';
@@ -106,7 +106,7 @@ const StatisticsPageComponent: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto lg:px-4 py-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Thống kê học tập</h1>
 
       {/* Filters */}

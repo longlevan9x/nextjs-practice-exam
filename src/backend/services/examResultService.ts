@@ -1,5 +1,5 @@
 import { supabase } from '@/backend/lib/supabase/client';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 
 export const saveExamResult = async (examResult: ExamResult, userId: string) => {
     try {

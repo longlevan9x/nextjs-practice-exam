@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 import { calculateMostIncorrectQuestions } from '@/services/statisticsService';
 import { fetchQuestionsByExamId } from '@/services/questionService';
 import { QuestionStatistic } from '@/types/statistics';
@@ -42,30 +42,32 @@ const MostIncorrectQuestions: React.FC<MostIncorrectQuestionsProps> = ({ examId,
         <div key={stat.question.id} className="border rounded-lg p-4 hover:bg-gray-50">
           <div className="flex justify-between items-start">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-500">#{index + 1}</span>
-                <span className="text-sm font-medium text-red-600">
-                  {stat.incorrectPercentage.toFixed(1)}% sai
-                </span>
-                <span className="text-sm text-gray-500">
-                  ({stat.incorrectCount}/{stat.totalAttempts} lần)
-                </span>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-500">#{index + 1}</span>
+                  <span className="text-sm font-medium text-red-600">
+                    {stat.incorrectPercentage.toFixed(1)}% sai
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    ({stat.incorrectCount}/{stat.totalAttempts} lần)
+                  </span>
+                </div>
+                <div className="flex gap-1 cursor-pointer hover:text-blue-800 hover:underline">
+                  <button
+                    onClick={() => setSelectedQuestion(stat)}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium cursor-pointer"
+                  >
+                    Xem chi tiết
+                  </button>
+                  <Link
+                    href={`/exam/${examId}/question/${stat.question.id}`}
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    <ChevronRightIcon className="h-5 w-5" />
+                  </Link>
+                </div>
               </div>
-              <p className="text-gray-800 line-clamp-2" dangerouslySetInnerHTML={{ __html: stat.question.question }} />
-            </div>
-            <div className="flex gap-2 cursor-pointer hover:text-blue-800 hover:underline">
-              <button
-                onClick={() => setSelectedQuestion(stat)}
-                className="text-blue-600 hover:text-blue-800 text-sm font-medium cursor-pointer"
-              >
-                Xem chi tiết
-              </button>
-              <Link
-                href={`/exam/${examId}/question/${stat.question.id}`}
-                className="text-blue-600 hover:text-blue-800"
-              >
-                <ChevronRightIcon className="h-5 w-5" />
-              </Link>
+              <div className="text-gray-800 line-clamp-2" dangerouslySetInnerHTML={{ __html: stat.question.question.replaceAll("<pre>", "").replaceAll("</pre>", "") }} />
             </div>
           </div>
         </div>

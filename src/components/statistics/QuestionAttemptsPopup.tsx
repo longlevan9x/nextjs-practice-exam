@@ -1,6 +1,6 @@
 import React from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 import { Answer, Question } from '@/types/question';
 import AnswerExplanationGroup from '@/components/examDetail/AnswerExplanationGroup';
 

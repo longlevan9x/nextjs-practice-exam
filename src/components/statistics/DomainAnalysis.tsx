@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ExamResult } from '@/types/ExamResult';
+import { ExamResult } from '@/types/examResult';
 import { Exam, ExamDomain } from '@/types/exam';
 
 interface DomainAnalysisProps {

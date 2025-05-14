@@ -1,4 +1,4 @@
-import { ExamResult } from "@/types/ExamResult";
+import { ExamResult } from "@/types/examResult";
 
 export const createExamResult = (examId: number, data: object) => {
     try {
