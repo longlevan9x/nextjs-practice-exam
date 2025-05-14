@@ -10,6 +10,7 @@ import { getExams } from "@/services/examService";
 import Link from "next/link";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { useSearchParams } from "next/navigation";
+import { ExamResult } from "@/types/ExamResult";
 
 export default function ExamList() {
   const searchParams = useSearchParams();
@@ -21,10 +22,18 @@ export default function ExamList() {
   const [selectedCourseId, setSelectedCourseId] = useState<number>(0);
 
   useEffect(() => {
+    const _getIncompleteExamResults = async (): Promise<ExamResult[]> => {
+      try {
+        return await getIncompleteExamResults();
+      } catch (error) {
+        return [];
+      }
+    }
+
     const fetchData = async () => {
       try {
         const [incompleteExamResults, coursesData] = await Promise.all([
-          getIncompleteExamResults(),
+          _getIncompleteExamResults(),
           getCourses()
         ]);
 
