@@ -2014,8 +2014,8 @@
       }
     ],
     "corrects": [
-      2,
-      5
+      4,
+      2
     ],
     "multiple": true,
     "correctAnswerExplanations": [
@@ -2025,6 +2025,18 @@
       },
       {
         "answer": "Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function.",
+        "explanation": ""
+      },
+      {
+        "answer": "",
+        "explanation": "Update: Correct answer is."
+      },
+      {
+        "answer": "Create a new IAM policy with the kms:decrypt permission and attach the policy to the Lambda function.",
+        "explanation": ""
+      },
+      {
+        "answer": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy.",
         "explanation": ""
       }
     ],
@@ -2718,14 +2730,23 @@
       }
     ],
     "corrects": [
-      1
+      4
     ],
     "multiple": false,
     "correctAnswerExplanations": [
       {
         "answer": "Configure an AWS Lambda function to be an authorizer in API Gateway to validate which user made the request.",
         "explanation": ""
+      },
+      {
+        "answer": "",
+        "explanation": "Update: Correct answer is."
+      },
+      {
+        "answer": "Configure an Amazon Cognito user pool authorizer in API Gateway to allow Amazon Cognito to validate each request.",
+        "explanation": ""
       }
+
     ],
     "domain": "",
     "incorrectAnswerExplanations": [],
