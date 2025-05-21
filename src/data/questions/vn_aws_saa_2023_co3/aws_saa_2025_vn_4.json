@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "A company is developing an application to support customer demands. The company wants to deploy the application on multiple Amazon EC2 Nitro-based instances within the same Availability Zone. The company also wants to give the application the ability to write to multiple block storage volumes in multiple EC2 Nitro-based instances simultaneously to achieve higher application availability.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is developing an application to support customer demands. The company wants to deploy the application on multiple Amazon EC2 Nitro-based instances within the same Availability Zone. The company also wants to give the application the ability to write to multiple block storage volumes in multiple EC2 Nitro-based instances simultaneously to achieve higher application availability.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -39,7 +39,7 @@
   },
   {
     "id": 2,
-    "question": "A company designed a stateless two-tier application that uses Amazon EC2 in a single Availability Zone and an Amazon RDS Multi-AZ DB instance. New company management wants to ensure the application is highly available.\n\nWhat should a solutions architect do to meet this requirement?* 1 point",
+    "question": "A company designed a stateless two-tier application that uses Amazon EC2 in a single Availability Zone and an Amazon RDS Multi-AZ DB instance. New company management wants to ensure the application is highly available.<br>What should a solutions architect do to meet this requirement?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -77,7 +77,7 @@
   },
   {
     "id": 3,
-    "question": "A company uses AWS Organizations. A member account has purchased a Compute Savings Plan. Because of changes in the workloads inside the member account, the account no longer receives the full benefit of the Compute Savings Plan commitment. That member account uses less than 50% of its purchased compute power.\n\nAs a solution architect, which solution would you recommend?* 1 point",
+    "question": "A company uses AWS Organizations. A member account has purchased a Compute Savings Plan. Because of changes in the workloads inside the member account, the account no longer receives the full benefit of the Compute Savings Plan commitment. That member account uses less than 50% of its purchased compute power.<br>As a solution architect, which solution would you recommend?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -115,7 +115,7 @@
   },
   {
     "id": 4,
-    "question": "A company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the frontend of the application to users. The REST APIs must access the backend services that the company hosts in containers in private VPC subnets.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the frontend of the application to users. The REST APIs must access the backend services that the company hosts in containers in private VPC subnets.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -153,7 +153,7 @@
   },
   {
     "id": 5,
-    "question": "A company stores raw collected data in an Amazon S3 bucket. The data is used for several types of analytics on behalf of the company's customers. The type of analytics requested determines the access pattern on the S3 objects.\n\nThe company cannot predict or control the access pattern. The company wants to reduce its S3 costs.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company stores raw collected data in an Amazon S3 bucket. The data is used for several types of analytics on behalf of the company's customers. The type of analytics requested determines the access pattern on the S3 objects.<br>The company cannot predict or control the access pattern. The company wants to reduce its S3 costs.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -191,7 +191,7 @@
   },
   {
     "id": 6,
-    "question": "A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company’s security policy states that any external service cannot initiate a connection to the EC2 instances.\n\nWhat should a solutions architect recommend to resolve this issue?* 1 point",
+    "question": "A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company’s security policy states that any external service cannot initiate a connection to the EC2 instances.<br>What should a solutions architect recommend to resolve this issue?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -229,7 +229,7 @@
   },
   {
     "id": 7,
-    "question": "A company is creating an application that runs on containers in a VPC. The application stores and accesses data in an Amazon S3 bucket. During the development phase, the application will store and access 1 TB of data in Amazon S3 each day. The company wants to minimize costs and wants to prevent traffic from traversing the internet whenever possible.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is creating an application that runs on containers in a VPC. The application stores and accesses data in an Amazon S3 bucket. During the development phase, the application will store and access 1 TB of data in Amazon S3 each day. The company wants to minimize costs and wants to prevent traffic from traversing the internet whenever possible.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -267,7 +267,7 @@
   },
   {
     "id": 8,
-    "question": "A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes.\n\nWhich method should the solutions architect select?* 1 point",
+    "question": "A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes.<br>Which method should the solutions architect select?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -343,7 +343,7 @@
   },
   {
     "id": 10,
-    "question": "A company has multiple VPCs across AWS Regions to support and run workloads that are isolated from workloads in other Regions. Because of a recent application launch requirement, the company’s VPCs must communicate with all other VPCs across all Regions.\n\nWhich solution will meet these requirements with the LEAST amount of administrative effort?* 1 point",
+    "question": "A company has multiple VPCs across AWS Regions to support and run workloads that are isolated from workloads in other Regions. Because of a recent application launch requirement, the company’s VPCs must communicate with all other VPCs across all Regions.<br>Which solution will meet these requirements with the LEAST amount of administrative effort?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -381,7 +381,7 @@
   },
   {
     "id": 11,
-    "question": "A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared file system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The file system needs to provide a mount target in each Availability Zone within a Region.\n\nA solutions architect wants to use AWS Backup to manage the replication to another Region.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared file system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The file system needs to provide a mount target in each Availability Zone within a Region.<br>A solutions architect wants to use AWS Backup to manage the replication to another Region.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -419,7 +419,7 @@
   },
   {
     "id": 12,
-    "question": "A company is expecting rapid growth in the near future. A solutions architect needs to configure existing users and grant permissions to new users on AWS. The solutions architect has decided to create IAM groups. The solutions architect will add the new users to IAM groups based on department.\n\nWhich additional action is the MOST secure way to grant permissions to the new users?* 1 point",
+    "question": "A company is expecting rapid growth in the near future. A solutions architect needs to configure existing users and grant permissions to new users on AWS. The solutions architect has decided to create IAM groups. The solutions architect will add the new users to IAM groups based on department.<br>Which additional action is the MOST secure way to grant permissions to the new users?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -533,7 +533,7 @@
   },
   {
     "id": 15,
-    "question": "A company is making a prototype of the infrastructure for its new website by manually provisioning the necessary infrastructure. This infrastructure includes an Auto Scaling group, an Application Load Balancer and an Amazon RDS database. After the configuration has been thoroughly validated, the company wants the capability to immediately deploy the infrastructure for development and production use in two Availability Zones in an automated fashion.\n\nWhat should a solutions architect recommend to meet these requirements?* 1 point",
+    "question": "A company is making a prototype of the infrastructure for its new website by manually provisioning the necessary infrastructure. This infrastructure includes an Auto Scaling group, an Application Load Balancer and an Amazon RDS database. After the configuration has been thoroughly validated, the company wants the capability to immediately deploy the infrastructure for development and production use in two Availability Zones in an automated fashion.<br>What should a solutions architect recommend to meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -571,7 +571,7 @@
   },
   {
     "id": 16,
-    "question": "A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security officer has directed that no application traffic between the two services should traverse the public internet.\n\nWhich capability should the solutions architect use to meet the compliance requirements?* 1 point",
+    "question": "A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security officer has directed that no application traffic between the two services should traverse the public internet.<br>Which capability should the solutions architect use to meet the compliance requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -609,7 +609,7 @@
   },
   {
     "id": 17,
-    "question": "A company hosts a three-tier web application in the AWS Cloud. A Multi-AZAmazon RDS for MySQL server forms the database layer Amazon ElastiCache forms the cache layer. The company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database. The data in the cache must always match the data in the database.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company hosts a three-tier web application in the AWS Cloud. A Multi-AZAmazon RDS for MySQL server forms the database layer Amazon ElastiCache forms the cache layer. The company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database. The data in the cache must always match the data in the database.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -647,7 +647,7 @@
   },
   {
     "id": 18,
-    "question": "A company wants to migrate 100 GB of historical data from an on-premises location to an Amazon S3 bucket. The company has a 100 megabits per second (Mbps) internet connection on premises. The company needs to encrypt the data in transit to the S3 bucket. The company will store new data directly in Amazon S3.\n\nWhich solution will meet these requirements with the LEAST operational overhead?* 1 point",
+    "question": "A company wants to migrate 100 GB of historical data from an on-premises location to an Amazon S3 bucket. The company has a 100 megabits per second (Mbps) internet connection on premises. The company needs to encrypt the data in transit to the S3 bucket. The company will store new data directly in Amazon S3.<br>Which solution will meet these requirements with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -685,7 +685,7 @@
   },
   {
     "id": 19,
-    "question": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes.\n\nWhich solution will meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes.<br>Which solution will meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -723,7 +723,7 @@
   },
   {
     "id": 20,
-    "question": "A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate access to these AWS accounts by using a centralized corporate directory service.\n\nWhich combination of actions should a solutions architect recommend to meet these requirements? (Choose two.)* 1 point",
+    "question": "A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate access to these AWS accounts by using a centralized corporate directory service.<br>Which combination of actions should a solutions architect recommend to meet these requirements? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -770,7 +770,7 @@
   },
   {
     "id": 21,
-    "question": "A company is looking for a solution that can store video archives in AWS from old news footage. The company needs to minimize costs and will rarely need to restore these files. When the files are needed, they must be available in a maximum of five minutes.\n\nWhat is the MOST cost-effective solution?* 1 point",
+    "question": "A company is looking for a solution that can store video archives in AWS from old news footage. The company needs to minimize costs and will rarely need to restore these files. When the files are needed, they must be available in a maximum of five minutes.<br>What is the MOST cost-effective solution?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -808,7 +808,7 @@
   },
   {
     "id": 22,
-    "question": "A company is building a three-tier application on AWS. The presentation tier will serve a static website The logic tier is a containerized application. This application will store data in a relational database. The company wants to simplify deployment and to reduce operational costs.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is building a three-tier application on AWS. The presentation tier will serve a static website The logic tier is a containerized application. This application will store data in a relational database. The company wants to simplify deployment and to reduce operational costs.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -846,7 +846,7 @@
   },
   {
     "id": 23,
-    "question": "A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.\n\nWhich storage solution meets these requirements?* 1 point",
+    "question": "A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.<br>Which storage solution meets these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -884,7 +884,7 @@
   },
   {
     "id": 24,
-    "question": "A 4-year-old media company is using the AWS Organizations all features feature set to organize its AWS accounts. According to the company's finance team, the billing information on the member accounts must not be accessible to anyone, including the root user of the member accounts.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A 4-year-old media company is using the AWS Organizations all features feature set to organize its AWS accounts. According to the company's finance team, the billing information on the member accounts must not be accessible to anyone, including the root user of the member accounts.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -922,7 +922,7 @@
   },
   {
     "id": 25,
-    "question": "An ecommerce company runs an application in the AWS Cloud that is integrated with an on-premises warehouse solution. The company uses Amazon Simple Notification Service (Amazon SNS) to send order messages to an on-premises HTTPS endpoint so the warehouse application can process the orders. The local data center team has detected that some of the order messages were not received.\n\nA solutions architect needs to retain messages that are not delivered and analyze the messages for up to 14 days.\n\nWhich solution will meet these requirements with the LEAST development effort?* 1 point",
+    "question": "An ecommerce company runs an application in the AWS Cloud that is integrated with an on-premises warehouse solution. The company uses Amazon Simple Notification Service (Amazon SNS) to send order messages to an on-premises HTTPS endpoint so the warehouse application can process the orders. The local data center team has detected that some of the order messages were not received.<br>A solutions architect needs to retain messages that are not delivered and analyze the messages for up to 14 days.<br>Which solution will meet these requirements with the LEAST development effort?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -960,7 +960,7 @@
   },
   {
     "id": 26,
-    "question": "A gaming company uses Amazon DynamoDB to store user information such as geographic location, player data, and leaderboards. The company needs to configure continuous backups to an Amazon S3 bucket with a minimal amount of coding. The backups must not affect availability of the application and must not affect the read capacity units (RCUs) that are defined for the table.\n\nWhich solution meets these requirements?* 1 point",
+    "question": "A gaming company uses Amazon DynamoDB to store user information such as geographic location, player data, and leaderboards. The company needs to configure continuous backups to an Amazon S3 bucket with a minimal amount of coding. The backups must not affect availability of the application and must not affect the read capacity units (RCUs) that are defined for the table.<br>Which solution meets these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -998,7 +998,7 @@
   },
   {
     "id": 27,
-    "question": "A solutions architect is designing an asynchronous application to process credit card data validation requests for a bank. The application must be secure and be able to process each request at least once.\n\nWhich solution will meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A solutions architect is designing an asynchronous application to process credit card data validation requests for a bank. The application must be secure and be able to process each request at least once.<br>Which solution will meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1036,7 +1036,7 @@
   },
   {
     "id": 28,
-    "question": "A company has multiple AWS accounts for development work. Some staff consistently use oversized Amazon EC2 instances, which causes the company to exceed the yearly budget for the development accounts. The company wants to centrally restrict the creation of AWS resources in these accounts.\n\nWhich solution will meet these requirements with the LEAST development effort?* 1 point",
+    "question": "A company has multiple AWS accounts for development work. Some staff consistently use oversized Amazon EC2 instances, which causes the company to exceed the yearly budget for the development accounts. The company wants to centrally restrict the creation of AWS resources in these accounts.<br>Which solution will meet these requirements with the LEAST development effort?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1074,7 +1074,7 @@
   },
   {
     "id": 29,
-    "question": "A company wants to use artificial intelligence (AI) to determine the quality of its customer service calls. The company currently manages calls in four different languages, including English. The company will offer new languages in the future. The company does not have the resources to regularly maintain machine learning (ML) models.\n\nThe company needs to create written sentiment analysis reports from the customer service call recordings. The customer service call recording text must be translated into English.\n\nWhich combination of steps will meet these requirements? (Choose three.)* 1 point",
+    "question": "A company wants to use artificial intelligence (AI) to determine the quality of its customer service calls. The company currently manages calls in four different languages, including English. The company will offer new languages in the future. The company does not have the resources to regularly maintain machine learning (ML) models.<br>The company needs to create written sentiment analysis reports from the customer service call recordings. The customer service call recording text must be translated into English.<br>Which combination of steps will meet these requirements? (Choose three.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1130,7 +1130,7 @@
   },
   {
     "id": 30,
-    "question": "A company uses Amazon EC2 instances to host its internal systems. As part of a deployment operation, an administrator tries to use the AWS CLI to terminate an EC2 instance. However, the administrator receives a 403 (Access Denied) error message.\n\nThe administrator is using an IAM role that has the following IAM policy attached.\n\nWhat is the cause of the unsuccessful request?*",
+    "question": "A company uses Amazon EC2 instances to host its internal systems. As part of a deployment operation, an administrator tries to use the AWS CLI to terminate an EC2 instance. However, the administrator receives a 403 (Access Denied) error message.<br>The administrator is using an IAM role that has the following IAM policy attached.<br>What is the cause of the unsuccessful request?*",
     "answers": [
       {
         "id": 1,
@@ -1168,7 +1168,7 @@
   },
   {
     "id": 31,
-    "question": "A company is conducting an internal audit. The company wants to ensure that the data in an Amazon S3 bucket that is associated with the company’s AWS Lake Formation data lake does not contain sensitive customer or employee data. The company wants to discover personally identifiable information (PII) or financial information, including passport numbers and credit card numbers.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is conducting an internal audit. The company wants to ensure that the data in an Amazon S3 bucket that is associated with the company’s AWS Lake Formation data lake does not contain sensitive customer or employee data. The company wants to discover personally identifiable information (PII) or financial information, including passport numbers and credit card numbers.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1206,7 +1206,7 @@
   },
   {
     "id": 32,
-    "question": "A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company needs a high-performing solution that supports local caching without re-architecting its existing applications.\n\nWhich combination of actions should a solutions architect take to meet these requirements? (Choose two.)* 1 point",
+    "question": "A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company needs a high-performing solution that supports local caching without re-architecting its existing applications.<br>Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1253,7 +1253,7 @@
   },
   {
     "id": 33,
-    "question": "A company has a service that reads and writes large amounts of data from an Amazon S3 bucket in the same AWS Region. The service is deployed on Amazon EC2 instances within the private subnet of a VPC. The service communicates with Amazon S3 over a NAT gateway in the public subnet. However, the company wants a solution that will reduce the data output costs.\n\nWhich solution will meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A company has a service that reads and writes large amounts of data from an Amazon S3 bucket in the same AWS Region. The service is deployed on Amazon EC2 instances within the private subnet of a VPC. The service communicates with Amazon S3 over a NAT gateway in the public subnet. However, the company wants a solution that will reduce the data output costs.<br>Which solution will meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1291,7 +1291,7 @@
   },
   {
     "id": 34,
-    "question": "A company uses Amazon S3 to store high-resolution pictures in an S3 bucket. To minimize application changes, the company stores the pictures as the latest version of an S3 object. The company needs to retain only the two most recent versions of the pictures.\n\nThe company wants to reduce costs. The company has identified the S3 bucket as a large expense.\n\nWhich solution will reduce the S3 costs with the LEAST operational overhead?* 1 point",
+    "question": "A company uses Amazon S3 to store high-resolution pictures in an S3 bucket. To minimize application changes, the company stores the pictures as the latest version of an S3 object. The company needs to retain only the two most recent versions of the pictures.<br>The company wants to reduce costs. The company has identified the S3 bucket as a large expense.<br>Which solution will reduce the S3 costs with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1329,7 +1329,7 @@
   },
   {
     "id": 35,
-    "question": "A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1367,7 +1367,7 @@
   },
   {
     "id": 36,
-    "question": "A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.\n\nWhich solutions will meet these requirements? (Choose two.)* 1 point",
+    "question": "A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.<br>Which solutions will meet these requirements? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1414,7 +1414,7 @@
   },
   {
     "id": 37,
-    "question": "A company wants to ingest customer payment data into the company's data lake in Amazon S3. The company receives payment data every minute on average. The company wants to analyze the payment data in near real time. Then the company wants to ingest the data into the data lake.\n\nWhich solution will meet these requirements with the MOST operational efficiency?* 1 point",
+    "question": "A company wants to ingest customer payment data into the company's data lake in Amazon S3. The company receives payment data every minute on average. The company wants to analyze the payment data in near real time. Then the company wants to ingest the data into the data lake.<br>Which solution will meet these requirements with the MOST operational efficiency?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1452,7 +1452,7 @@
   },
   {
     "id": 38,
-    "question": "A company runs a website that uses a content management system (CMS) on Amazon EC2. The CMS runs on a single EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for the data tier. Website images are stored on an Amazon Elastic Block Store (Amazon EBS) volume that is mounted inside the EC2 instance.\n\nWhich combination of actions should a solutions architect take to improve the performance and resilience of the website? (Choose two.)* 1 point",
+    "question": "A company runs a website that uses a content management system (CMS) on Amazon EC2. The CMS runs on a single EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for the data tier. Website images are stored on an Amazon Elastic Block Store (Amazon EBS) volume that is mounted inside the EC2 instance.<br>Which combination of actions should a solutions architect take to improve the performance and resilience of the website? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1499,7 +1499,7 @@
   },
   {
     "id": 39,
-    "question": "A company runs an infrastructure monitoring service. The company is building a new feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances and read Amazon CloudWatch metrics.\n\nWhat should the company do to obtain access to customer accounts in the MOST secure way?* 1 point",
+    "question": "A company runs an infrastructure monitoring service. The company is building a new feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances and read Amazon CloudWatch metrics.<br>What should the company do to obtain access to customer accounts in the MOST secure way?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1537,7 +1537,7 @@
   },
   {
     "id": 40,
-    "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network.\n\nWhat is the MOST operationally efficient solution to connect the VPCs?* 1 point",
+    "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network.<br>What is the MOST operationally efficient solution to connect the VPCs?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1575,7 +1575,7 @@
   },
   {
     "id": 41,
-    "question": "A company has Amazon EC2 instances that run nightly batch jobs to process data. The EC2 instances run in an Auto Scaling group that uses On-Demand billing. If a job fails on one instance, another instance will reprocess the job. The batch jobs run between 12:00 AM and 06:00 AM local time every day.\n\nWhich solution will provide EC2 instances to meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A company has Amazon EC2 instances that run nightly batch jobs to process data. The EC2 instances run in an Auto Scaling group that uses On-Demand billing. If a job fails on one instance, another instance will reprocess the job. The batch jobs run between 12:00 AM and 06:00 AM local time every day.<br>Which solution will provide EC2 instances to meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1613,7 +1613,7 @@
   },
   {
     "id": 42,
-    "question": "A social media company is building a feature for its website. The feature will give users the ability to upload photos. The company expects significant increases in demand during large events and must ensure that the website can handle the upload traffic from users.\n\nWhich solution meets these requirements with the MOST scalability?* 1 point",
+    "question": "A social media company is building a feature for its website. The feature will give users the ability to upload photos. The company expects significant increases in demand during large events and must ensure that the website can handle the upload traffic from users.<br>Which solution meets these requirements with the MOST scalability?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1651,7 +1651,7 @@
   },
   {
     "id": 43,
-    "question": "A company has a web application for travel ticketing. The application is based on a database that runs in a single data center in North America. The company wants to expand the application to serve a global user base. The company needs to deploy the application to multiple AWS Regions. Average latency must be less than 1 second on updates to the reservation database.\n\nThe company wants to have separate deployments of its web platform across multiple Regions. However, the company must maintain a single primary reservation database that is globally consistent.\n\nWhich solution should a solutions architect recommend to meet these requirements?* 1 point",
+    "question": "A company has a web application for travel ticketing. The application is based on a database that runs in a single data center in North America. The company wants to expand the application to serve a global user base. The company needs to deploy the application to multiple AWS Regions. Average latency must be less than 1 second on updates to the reservation database.<br>The company wants to have separate deployments of its web platform across multiple Regions. However, the company must maintain a single primary reservation database that is globally consistent.<br>Which solution should a solutions architect recommend to meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1689,7 +1689,7 @@
   },
   {
     "id": 44,
-    "question": "A company has migrated multiple Microsoft Windows Server workloads to Amazon EC2 instances that run in the us-west-1 Region. The company manually backs up the workloads to create an image as needed.\n\nIn the event of a natural disaster in the us-west-1 Region, the company wants to recover workloads quickly in the us-west-2 Region. The company wants no more than 24 hours of data loss on the EC2 instances. The company also wants to automate any backups of the EC2 instances.\n\nWhich solutions will meet these requirements with the LEAST administrative effort? (Choose two.)* 1 point",
+    "question": "A company has migrated multiple Microsoft Windows Server workloads to Amazon EC2 instances that run in the us-west-1 Region. The company manually backs up the workloads to create an image as needed.<br>In the event of a natural disaster in the us-west-1 Region, the company wants to recover workloads quickly in the us-west-2 Region. The company wants no more than 24 hours of data loss on the EC2 instances. The company also wants to automate any backups of the EC2 instances.<br>Which solutions will meet these requirements with the LEAST administrative effort? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1736,7 +1736,7 @@
   },
   {
     "id": 45,
-    "question": "A company operates a two-tier application for image processing. The application uses two Availability Zones, each with one public subnet and one private subnet. An Application Load Balancer (ALB) for the web tier uses the public subnets. Amazon EC2 instances for the application tier use the private subnets.\n\nUsers report that the application is running more slowly than expected. A security audit of the web server log files shows that the application is receiving millions of illegitimate requests from a small number of IP addresses. A solutions architect needs to resolve the immediate performance problem while the company investigates a more permanent solution.\n\nWhat should the solutions architect recommend to meet this requirement?* 1 point",
+    "question": "A company operates a two-tier application for image processing. The application uses two Availability Zones, each with one public subnet and one private subnet. An Application Load Balancer (ALB) for the web tier uses the public subnets. Amazon EC2 instances for the application tier use the private subnets.<br>Users report that the application is running more slowly than expected. A security audit of the web server log files shows that the application is receiving millions of illegitimate requests from a small number of IP addresses. A solutions architect needs to resolve the immediate performance problem while the company investigates a more permanent solution.<br>What should the solutions architect recommend to meet this requirement?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1774,7 +1774,7 @@
   },
   {
     "id": 46,
-    "question": "A global marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu-west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2.\n\nWhich network design will meet these requirements?* 1 point",
+    "question": "A global marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu-west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2.<br>Which network design will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1812,7 +1812,7 @@
   },
   {
     "id": 47,
-    "question": "A company is developing software that uses a PostgreSQL database schema. The company needs to configure multiple development environments and databases for the company's developers. On average, each development environment is used for half of the 8-hour workday.\n\nWhich solution will meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A company is developing software that uses a PostgreSQL database schema. The company needs to configure multiple development environments and databases for the company's developers. On average, each development environment is used for half of the 8-hour workday.<br>Which solution will meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1850,7 +1850,7 @@
   },
   {
     "id": 48,
-    "question": "A company uses AWS Organizations with resources tagged by account. The company also uses AWS Backup to back up its AWS infrastructure resources. The company needs to back up all AWS resources.\n\nWhich solution will meet these requirements with the LEAST operational overhead?* 1 point",
+    "question": "A company uses AWS Organizations with resources tagged by account. The company also uses AWS Backup to back up its AWS infrastructure resources. The company needs to back up all AWS resources.<br>Which solution will meet these requirements with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1888,7 +1888,7 @@
   },
   {
     "id": 49,
-    "question": "A social media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable traffic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability.\n\nWhat should a solutions architect do to meet these requirements?* 1 point",
+    "question": "A social media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable traffic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability.<br>What should a solutions architect do to meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -1964,7 +1964,7 @@
   },
   {
     "id": 51,
-    "question": "A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as a solution.\n\nWhich use cases are suitable for Amazon Redshift in this scenario? (Choose three.)* 1 point",
+    "question": "A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as a solution.<br>Which use cases are suitable for Amazon Redshift in this scenario? (Choose three.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2020,7 +2020,7 @@
   },
   {
     "id": 52,
-    "question": "A company provides an API interface to customers so the customers can retrieve their financial information. Еhe company expects a larger number of requests during peak usage times of the year.\n\nThe company requires the API to respond consistently with low latency to ensure customer satisfaction. The company needs to provide a compute host for the API.\n\nWhich solution will meet these requirements with the LEAST operational overhead?* 1 point",
+    "question": "A company provides an API interface to customers so the customers can retrieve their financial information. Еhe company expects a larger number of requests during peak usage times of the year.<br>The company requires the API to respond consistently with low latency to ensure customer satisfaction. The company needs to provide a compute host for the API.<br>Which solution will meet these requirements with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2058,7 +2058,7 @@
   },
   {
     "id": 53,
-    "question": "A company wants to send all AWS Systems Manager Session Manager logs to an Amazon S3 bucket for archival purposes.\n\nWhich solution will meet this requirement with the MOST operational efficiency?* 1 point",
+    "question": "A company wants to send all AWS Systems Manager Session Manager logs to an Amazon S3 bucket for archival purposes.<br>Which solution will meet this requirement with the MOST operational efficiency?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2096,7 +2096,7 @@
   },
   {
     "id": 54,
-    "question": "An application uses an Amazon RDS MySQL DB instance. The RDS database is becoming low on disk space. A solutions architect wants to increase the disk space without downtime.\n\nWhich solution meets these requirements with the LEAST amount of effort?* 1 point",
+    "question": "An application uses an Amazon RDS MySQL DB instance. The RDS database is becoming low on disk space. A solutions architect wants to increase the disk space without downtime.<br>Which solution meets these requirements with the LEAST amount of effort?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2134,7 +2134,7 @@
   },
   {
     "id": 55,
-    "question": "A consulting company provides professional services to customers worldwide. The company provides solutions and tools for customers to expedite gathering and analyzing data on AWS. The company needs to centrally manage and deploy a common set of solutions and tools for customers to use for self-service purposes.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A consulting company provides professional services to customers worldwide. The company provides solutions and tools for customers to expedite gathering and analyzing data on AWS. The company needs to centrally manage and deploy a common set of solutions and tools for customers to use for self-service purposes.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2172,7 +2172,7 @@
   },
   {
     "id": 56,
-    "question": "A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application traffic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application traffic.\n\nWhich DynamoDB table configuration will meet these requirements MOST cost-effectively?* 1 point",
+    "question": "A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application traffic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application traffic.<br>Which DynamoDB table configuration will meet these requirements MOST cost-effectively?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2210,7 +2210,7 @@
   },
   {
     "id": 57,
-    "question": "A retail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of an organization in AWS Organizations. Each team monitors its product inventory levels in an Amazon DynamoDB table in the team's own AWS account.\n\nThe company is deploying a central inventory reporting application into a shared AWS account. The application must be able to read items from all the teams' DynamoDB tables.\n\nWhich authentication option will meet these requirements MOST securely?* 1 point",
+    "question": "A retail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of an organization in AWS Organizations. Each team monitors its product inventory levels in an Amazon DynamoDB table in the team's own AWS account.<br>The company is deploying a central inventory reporting application into a shared AWS account. The application must be able to read items from all the teams' DynamoDB tables.<br>Which authentication option will meet these requirements MOST securely?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2248,7 +2248,7 @@
   },
   {
     "id": 58,
-    "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company's workload is not consistent throughout the day. The company wants Amazon EKS to scale in and out according to the workload.\n\nWhich combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)* 1 point",
+    "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company's workload is not consistent throughout the day. The company wants Amazon EKS to scale in and out according to the workload.<br>Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2333,7 +2333,7 @@
   },
   {
     "id": 60,
-    "question": "A company wants to analyze and troubleshoot Access Denied errors and Unauthorized errors that are related to IAM permissions. The company has AWS CloudTrail turned on.\n\nWhich solution will meet these requirements with the LEAST effort?* 1 point",
+    "question": "A company wants to analyze and troubleshoot Access Denied errors and Unauthorized errors that are related to IAM permissions. The company has AWS CloudTrail turned on.<br>Which solution will meet these requirements with the LEAST effort?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2371,7 +2371,7 @@
   },
   {
     "id": 61,
-    "question": "A company wants to add its existing AWS usage cost to its operation cost dashboard. A solutions architect needs to recommend a solution that will give the company access to its usage cost programmatically. The company must be able to access cost data for the current year and forecast costs for the next 12 months.\n\nWhich solution will meet these requirements with the LEAST operational overhead?* 1 point",
+    "question": "A company wants to add its existing AWS usage cost to its operation cost dashboard. A solutions architect needs to recommend a solution that will give the company access to its usage cost programmatically. The company must be able to access cost data for the current year and forecast costs for the next 12 months.<br>Which solution will meet these requirements with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2409,7 +2409,7 @@
   },
   {
     "id": 62,
-    "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application's Amazon Aurora PostgreSQL database writer instance as part of a scaling exercise. The failover resulted in 3 minutes of downtime for the application.\n\nWhich solution will reduce the downtime for scaling exercises with the LEAST operational overhead?* 1 point",
+    "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application's Amazon Aurora PostgreSQL database writer instance as part of a scaling exercise. The failover resulted in 3 minutes of downtime for the application.<br>Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2447,7 +2447,7 @@
   },
   {
     "id": 63,
-    "question": "A company has a regional subscription-based streaming service that runs in a single AWS Region. The architecture consists of web servers and application servers on Amazon EC2 instances. The EC2 instances are in Auto Scaling groups behind Elastic Load Balancers. The architecture includes an Amazon Aurora global database cluster that extends across multiple Availability Zones.\n\nThe company wants to expand globally and to ensure that its application has minimal downtime.\n\nWhich solution will provide the MOST fault tolerance?* 1 point",
+    "question": "A company has a regional subscription-based streaming service that runs in a single AWS Region. The architecture consists of web servers and application servers on Amazon EC2 instances. The EC2 instances are in Auto Scaling groups behind Elastic Load Balancers. The architecture includes an Amazon Aurora global database cluster that extends across multiple Availability Zones.<br>The company wants to expand globally and to ensure that its application has minimal downtime.<br>Which solution will provide the MOST fault tolerance?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2485,7 +2485,7 @@
   },
   {
     "id": 64,
-    "question": "A data analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data files periodically during the day through FTP. An on-premises batch job processes the data files overnight. However, the batch job takes hours to finish running.\n\nThe company wants the AWS solution to process incoming data files as soon as possible with minimal changes to the FTP clients that send the files. The solution must delete the incoming data files after the files have been processed successfully. Processing for each file needs to take 3-8 minutes.\n\nWhich solution will meet these requirements in the MOST operationally efficient way?* 1 point",
+    "question": "A data analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data files periodically during the day through FTP. An on-premises batch job processes the data files overnight. However, the batch job takes hours to finish running.<br>The company wants the AWS solution to process incoming data files as soon as possible with minimal changes to the FTP clients that send the files. The solution must delete the incoming data files after the files have been processed successfully. Processing for each file needs to take 3-8 minutes.<br>Which solution will meet these requirements in the MOST operationally efficient way?* 1 point",
     "answers": [
       {
         "id": 1,
@@ -2517,7 +2517,7 @@
   },
   {
     "id": 65,
-    "question": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use AWS Cloud solutions to increase security and reduce operational overhead for the databases.\n\nWhich solution will meet these requirements?* 1 point",
+    "question": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use AWS Cloud solutions to increase security and reduce operational overhead for the databases.<br>Which solution will meet these requirements?* 1 point",
     "answers": [
       {
         "id": 1,
