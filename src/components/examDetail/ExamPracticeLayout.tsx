@@ -344,7 +344,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
     const isFirstQuestion = currentQuestionIndex === 0;
     const isLastQuestion = currentQuestionIndex === questions.length - 1;
-    const isLastUnansweredQuestion = questions.filter(q => !q.answered).length === 1;
 
     return (
         <div className="text-gray-900 grid grid-cols-12 -mr-4">
@@ -432,7 +431,6 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                             isFinishing={isFinishing}
                             checkingAnswer={checkingAnswer}
                             isBacking={isBacking}
-                            isLastUnansweredQuestion={isLastUnansweredQuestion ?? false}
                         />
                     </div>
                 </div>

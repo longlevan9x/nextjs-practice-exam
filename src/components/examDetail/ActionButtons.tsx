@@ -18,7 +18,6 @@ interface ActionButtonsProps {
   isFinishing?: boolean;
   checkingAnswer?: boolean;
   isBacking?: boolean;
-  isLastUnansweredQuestion?: boolean;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({
@@ -35,8 +34,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   examType,
   isFinishing,
   checkingAnswer,
-  isBacking,
-  isLastUnansweredQuestion
+  isBacking
 }) => {
   return (
     <div className="flex justify-end ">
@@ -88,7 +86,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
         )}
 
         {
-          (isLastUnansweredQuestion && ((examType === EXAM_TYPES.EXAM) || (examType === EXAM_TYPES.PRACTICE && showExplanation))) && (
+          (isLastQuestion && ((examType === EXAM_TYPES.EXAM) || (examType === EXAM_TYPES.PRACTICE && showExplanation))) && (
             <button
               onClick={onSubmitExam}
               disabled={testEnded || isFinishing}
