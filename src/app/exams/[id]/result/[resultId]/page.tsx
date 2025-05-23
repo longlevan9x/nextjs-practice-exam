@@ -235,27 +235,31 @@ const ResultOverviewPage: React.FC = () => {
             </div>
 
             {/* Domain Filter */}
-            <div className="mb-4">
-                <div className="flex flex-wrap gap-2">
-                    <button
-                        onClick={() => setSelectedDomain('all')}
-                        className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                            }`}
-                    >
-                        Tất cả lĩnh vực
-                    </button>
-                    {filterDomains.map((domain) => (
+            {
+                (filterDomains.length > 0) &&
+                <div className="mb-4">
+                    <div className="flex flex-wrap gap-2">
                         <button
-                            key={domain.name}
-                            onClick={() => setSelectedDomain(domain.name)}
-                            className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            onClick={() => setSelectedDomain('all')}
+                            className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
-                            {domain.name} ({domain.total})
+                            Tất cả lĩnh vực
                         </button>
-                    ))}
+                        {filterDomains.map((domain) => (
+                            <button
+                                key={domain.name}
+                                onClick={() => setSelectedDomain(domain.name)}
+                                className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    }`}
+                            >
+                                {domain.name} ({domain.total})
+                            </button>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            }
+
 
             {/* Quick Navigation Sidebar */}
             <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
