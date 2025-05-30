@@ -13,6 +13,8 @@ import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
 import { getExamById } from "@/services/examService";
 import { getCurrentUser } from "@/backend/services/authService";
+import { handleHttpError } from "@/services/notificationService";
+import { ApiError } from "next/dist/server/api-utils";
 
 export default function ExamDetailPage() {
   const { id } = useParams<{ id: string }>(); // Get the "id" parameter from the URL
@@ -65,6 +67,9 @@ export default function ExamDetailPage() {
       await router.push(`${id}/${mode}`);
     } catch (error) {
       console.error("Error starting exam:", error);
+      if (error instanceof ApiError) {
+        handleHttpError(error);
+      }
       setIsStarting(false);
       setSelectedMode(null);
     }
