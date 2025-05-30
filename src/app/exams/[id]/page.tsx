@@ -12,7 +12,7 @@ import { EXAM_TYPES, ExamType } from "@/constants/exam";
 import { initializeExamResult } from "@/services/examResultService";
 import { shuffleArray } from "@/services/utilService";
 import { getExamById } from "@/services/examService";
-import { getCurrentUser } from "@/backend/services/authService";
+import { getCurrentUserWithoutError } from "@/backend/services/authService";
 import { handleHttpError } from "@/services/notificationService";
 import { ApiError } from "next/dist/server/api-utils";
 
@@ -31,7 +31,7 @@ export default function ExamDetailPage() {
       setIsStarting(true);
       setSelectedMode(mode);
 
-      const user = await getCurrentUser();
+      const user = await getCurrentUserWithoutError();
       if (!user) {
         router.push('/login');
         return;
