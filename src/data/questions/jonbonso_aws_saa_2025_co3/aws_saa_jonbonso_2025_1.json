@@ -1671,7 +1671,7 @@
       },
       {
         "id": 2,
-        "answer": "<p>Use Amazon VPC endpoints to route all access to S3 and DynamoDB via private endpoints.</p>",
+        "answer": "<p>Use AWS VPN CloudHub to route all access in S3 and DynamoDB to a private endpoint.</p>",
         "correct": false
       },
       {
