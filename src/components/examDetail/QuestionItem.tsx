@@ -27,7 +27,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
     return (
         <li
             className={`flex flex-col p-3 rounded-sm transition-all duration-300 cursor-pointer
-                ${isSelected ? "bg-blue-100 text-blue-800" : "hover:bg-gray-200"}`}
+                ${isSelected ? "bg-blue-100 text-blue-800 dark:bg-slate-800 dark:text-blue-200 dark:hover:bg-slate-700" : "hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-200"}`}
             onClick={!isMobile ? onSelect : undefined}
         >
             <div className="flex items-center justify-between">
@@ -66,7 +66,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
             </div>
 
             {/* Question Content */}
-            <div className="mt-2 text-gray-700">
+            <div className="mt-2 text-gray-700 dark:text-gray-400">
                 <div
                     className="text-base leading-normal overflow-hidden max-h-[1.5em] whitespace-nowrap text-ellipsis"
                     dangerouslySetInnerHTML={{ __html: question.question }}

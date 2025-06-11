@@ -82,7 +82,7 @@ export default function ExamList() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-red-500 text-lg">Failed to load exams. Please try again later.</p>
+        <p className="text-red-500 dark:text-red-400 text-lg">Failed to load exams. Please try again later.</p>
       </div>
     );
   }
@@ -90,7 +90,7 @@ export default function ExamList() {
   return (
     <>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-100">
           Available Exam Sets
         </h2>
 
@@ -103,7 +103,7 @@ export default function ExamList() {
 
           <Link
             href={`/statistics?courseId=${selectedCourseId}`}
-            className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center justify-center gap-1 hover:bg-blue-700 transition-all duration-300"
+            className="bg-blue-600 text-white px-4 py-2 rounded-sm flex items-center justify-center gap-1 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition-all duration-300"
           >
             <span className="text-sm md:text-base whitespace-nowrap">Xem thống kê</span>
             <ChartBarIcon className="w-4 h-4" />
@@ -113,7 +113,7 @@ export default function ExamList() {
 
       {loading ? (
         <div className="flex justify-center items-center">
-          <p className="text-blue-600 text-lg">Loading exams...</p>
+          <p className="text-blue-600 dark:text-blue-400 text-lg">Loading exams...</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">

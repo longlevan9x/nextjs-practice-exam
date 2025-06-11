@@ -116,15 +116,15 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanation
   return (
     <div className="mb-4">
       <h4 className={`text-base font-semibold ${titleColor} mb-2`}>{titleText}</h4>
-      <div className="text-gray-700 space-y-1">
+      <div className="text-gray-700 dark:text-gray-400 space-y-1">
         {answerExplanations.map((answerExplanation, index) => (
           <div key={index} className="space-y-2">
             {(answerExplanation.answer) &&
-              <p className="font-bold whitespace-pre-line [&_pre]:bg-gray-100 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.answer }} />
+              <p className="font-bold whitespace-pre-line [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.answer }} />
             }
             {
               (answerExplanation.explanation && answerExplanation.explanation !== "**") &&
-              <p className="whitespace-pre-line [&_pre]:bg-gray-100 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.explanation }} />
+              <p className="whitespace-pre-line [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.explanation }} />
             }
 
             {

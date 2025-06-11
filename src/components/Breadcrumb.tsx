@@ -51,7 +51,7 @@ const Breadcrumb: React.FC = () => {
       <ul className="flex items-center flex-wrap gap-1">
         {/* Home Link */}
         <li className="flex items-center">
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="text-blue-600 dark:text-blue-100 hover:underline">
             Home
           </Link>
         </li>
@@ -70,7 +70,7 @@ const Breadcrumb: React.FC = () => {
           const urlParams = new URLSearchParams(href);
 
           let displayName = "";
-          
+
           if (pathSegments[0] === "exams" && index === 1 && exam?.name) {
             displayName = exam.name;
           } else {
@@ -90,7 +90,7 @@ const Breadcrumb: React.FC = () => {
               <li className="flex items-center">
                 {isLast ? (
                   <div className="flex items-center">
-                    <span className="text-gray-500" title={displayName}>
+                    <span className="text-gray-500 dark:text-gray-400" title={displayName}>
                       {truncatedName}
                     </span>
                     {isMobile && displayName.length > 20 && (
@@ -103,7 +103,8 @@ const Breadcrumb: React.FC = () => {
                     )}
                   </div>
                 ) : (
-                  <Link href={href} className="text-blue-600 hover:underline" title={displayName}>
+
+                  <Link href={href} className="text-blue-600 dark:text-blue-100 hover:underline" title={displayName}>
                     {truncatedName}
                   </Link>
                 )}

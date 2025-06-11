@@ -42,8 +42,8 @@ const Timer: React.FC<TimerProps> = ({ startTime, duration }) => {
   };
 
   return (
-    <div className="flex items-center text-lg font-semibold text-gray-800">
-      <ClockIcon className="w-6 h-6 mr-2 text-blue-500" />
+    <div className="flex items-center text-lg font-semibold text-gray-800 dark:text-gray-400">
+      <ClockIcon className="w-6 h-6 mr-2 text-blue-500 dark:text-blue-600" />
       {formatTime(remainingTime)}
     </div>
   );

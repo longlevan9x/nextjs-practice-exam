@@ -15,8 +15,8 @@ const AnswerExplanationGroup: React.FC<AnswerExplanationGroupProps> = ({ questio
         return <></>
     }
     return (
-        <div className={`mt-6 p-4 bg-gray-50 border border-gray-300 rounded-xs transition-all duration-300 delay-100 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">{EXPLANATION_SECTION_TITLE}</h3>
+        <div className={`mt-6 p-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xs transition-all duration-300 delay-100 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4 dark:text-gray-300">{EXPLANATION_SECTION_TITLE}</h3>
 
             {(question.correctAnswerExplanations && question.correctAnswerExplanations.length > 0) && (
                 <AnswerExplanation

@@ -173,7 +173,7 @@ const ResultOverviewPage: React.FC = () => {
             <div className="mb-4">
                 <button
                     onClick={() => window.history.back()}
-                    className="flex items-center px-1 py-2 text-blue-700 rounded-xs cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold"
+                    className="flex items-center px-1 py-2 text-blue-700 rounded-xs cursor-pointer hover:text-blue-800 hover:bg-gray-200 font-semibold dark:hover:bg-gray-800"
                 >
                     <ChevronLeftIcon className="w-5 h-5 mr-2" />
                     Quay lại phần tổng quan kết quả
@@ -187,7 +187,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('all');
                         setFilteredQuestions(mappedQuestions);
                     }}
-                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'all' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                         }`}
                 >
                     Tất cả ({totalQuestions})
@@ -197,7 +197,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('correct');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === true));
                     }}
-                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'correct' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'correct' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                         }`}
                 >
                     Chính xác ({correctQuestions})
@@ -207,7 +207,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('incorrect');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isCorrect === false));
                     }}
-                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'incorrect' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'incorrect' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                         }`}
                 >
                     Không chính xác ({incorrectQuestions})
@@ -217,7 +217,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('skipped');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.selectedAnswer === null));
                     }}
-                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'skipped' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'skipped' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                         }`}
                 >
                     Đã bỏ qua ({skippedQuestions})
@@ -227,7 +227,7 @@ const ResultOverviewPage: React.FC = () => {
                         setFilterMode('bookmarked');
                         setFilteredQuestions(mappedQuestions.filter((q) => q.question.isBookmarked));
                     }}
-                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'bookmarked' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${filterMode === 'bookmarked' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                         }`}
                 >
                     Đã đánh dấu ({bookmarkedQuestions})
@@ -241,7 +241,7 @@ const ResultOverviewPage: React.FC = () => {
                     <div className="flex flex-wrap gap-2">
                         <button
                             onClick={() => setSelectedDomain('all')}
-                            className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === 'all' ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                                 }`}
                         >
                             Tất cả lĩnh vực
@@ -250,7 +250,7 @@ const ResultOverviewPage: React.FC = () => {
                             <button
                                 key={domain.name}
                                 onClick={() => setSelectedDomain(domain.name)}
-                                className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                className={`px-4 py-2 rounded-xs cursor-pointer font-semibold ${selectedDomain === domain.name ? 'bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'
                                     }`}
                             >
                                 {domain.name} ({domain.total})
@@ -262,7 +262,7 @@ const ResultOverviewPage: React.FC = () => {
 
 
             {/* Quick Navigation Sidebar */}
-            <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
+            <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white  dark:bg-gray-800 shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
                 <div className="flex lg:flex-col gap-2 lg:max-w-none">
                     {filteredQuestions.map((question) => (
                         <button
@@ -306,7 +306,7 @@ const ResultOverviewPage: React.FC = () => {
                                 questionRefs.current.set(question.id, el);
                             }
                         }}
-                        className="border border-blue-200 p-4 rounded-xs h-auto"
+                        className="border border-blue-200 dark:border-blue-900 p-4 rounded-xs h-auto"
                         key={question.id}
                     >
                         <QuestionDetail

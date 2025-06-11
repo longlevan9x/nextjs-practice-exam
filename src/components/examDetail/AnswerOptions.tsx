@@ -32,17 +32,16 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
         return (
           <li
             key={answer.id}
-            className={`p-3 border cursor-pointer  rounded-sm flex items-center transition-all duration-300 ${
-              showExplanation
+            className={`p-3 border cursor-pointer  rounded-sm flex items-center transition-all duration-300 ${showExplanation
                 ? isCorrect
-                  ? "bg-green-100 border-green-500"
+                  ? "bg-green-100 border-green-500 dark:bg-green-950"
                   : isIncorrect
-                    ? "bg-red-100 border-red-500"
-                    : "border-gray-300"
+                    ? "bg-red-100 border-red-500 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-600"
                 : isSelected
-                  ? "bg-blue-50 border-blue-500"
-                  : "hover:bg-gray-100 border-gray-500"
-            }`}
+                  ? "bg-blue-50 border-blue-500 dark:bg-slate-900"
+                  : "hover:bg-gray-100 border-gray-500 dark:border-gray-600 dark:hover:bg-slate-800"
+              }`}
             onClick={() => onAnswerSelect(answer.id)}
           >
             <div className="flex items-center w-6 h-6 mr-3">
@@ -56,7 +55,7 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({
               />
             </div>
 
-            <span className="font-bold w-11/12 [&_pre]:bg-gray-100 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answer.answer }} />
+            <span className="font-bold w-11/12 [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answer.answer }} />
             <div>
               {isCorrect && <CheckCircleIcon className="w-7 h-7 text-green-500 ml-3" />}
               {isIncorrect && <XCircleIcon className="w-7 h-7 text-red-500 ml-3" />}

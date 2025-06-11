@@ -80,7 +80,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         {question.showExplanation && (
           <button
             onClick={handleToggle}
-            className={`relative z-10 cursor-pointer flex items-center space-x-1 text-gray-600 hover:text-gray-800 transition-colors duration-200 ${isTransitioning ? 'opacity-50' : ''}`}
+            className={`relative z-10 cursor-pointer flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-800  dark:hover:text-gray-200 transition-colors duration-200 ${isTransitioning ? 'opacity-50' : ''}`}
             disabled={isTransitioning}
           >
             <span className="text-sm">{isExpanded ? 'Thu gọn' : 'Mở rộng'}</span>
@@ -89,7 +89,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         )}
       </div>
 
-      <div className="mt-1 mb-4 [&_pre]:bg-gray-100 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_img]:max-w-full [&_img]:h-auto">
+      <div className="mt-1 mb-4 [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_img]:max-w-full [&_img]:h-auto">
         <p className="text-base" dangerouslySetInnerHTML={{ __html: question.question }} />
       </div>
 
@@ -111,7 +111,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
 
         {/* Domain Section */}
         {(question.showExplanation && question.domain) && (
-          <div className={`mt-4 p-3 border border-gray-300 rounded-xs bg-white transition-all duration-300 delay-200 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+          <div className={`mt-4 p-3 border border-gray-300 dark:border-gray-500 rounded-xs bg-white dark:bg-gray-900 transition-all duration-300 delay-200 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
             <div className="flex flex-col space-y-2">
               <span className="font-bold text-lg">
                 Lĩnh vực

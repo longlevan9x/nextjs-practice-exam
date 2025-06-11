@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/backend/lib/supabase/client";
 import { getCurrentUser } from "@/backend/services/authService";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Menu: React.FC = () => {
   interface User {
@@ -84,6 +85,8 @@ const Menu: React.FC = () => {
                 </Link>
               </>
             )}
+
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}

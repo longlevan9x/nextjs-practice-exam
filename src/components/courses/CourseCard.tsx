@@ -12,7 +12,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
 }) => {
     return (
         <Link href={`/exams?courseId=${course.id}`}>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="flex justify-center items-center">
                     <Image
                         src={course.imageUrl}
@@ -23,13 +23,13 @@ const CourseCard: React.FC<CourseCardProps> = ({
                     />
                 </div>
                 <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2 h-14">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-300 mb-2 line-clamp-2 h-14">
                         {course.name}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
                         {course.description}
                     </p>
-                    <div className="flex items-center justify-between text-sm text-gray-500">
+                    <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                         <div className="flex items-center space-x-2">
                             <ClockIcon className="w-4 h-4" />
                             <span>{course.duration} phút</span>

@@ -7,6 +7,7 @@ import ExamRedirect from "@/components/ExamRedirect";
 import NotificationContainer from '@/components/common/NotificationContainer';
 import ScrollToTop from "@/components/common/ScrollToTop";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -59,26 +60,30 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="bg-white antialiased">
-        <NotificationContainer />
-        <ExamRedirect />
-        {/* Menu */}
-        <header className="bg-blue-600 text-white shadow-md px-4">
-          <div className="mx-auto px-4 py-1">
-            <Menu />
-          </div>
-        </header>
+      <body className="bg-white dark:bg-gray-900 antialiased h-screen">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NotificationContainer />
+          <ExamRedirect />
+          {/* Menu */}
+          <header className="bg-blue-600 text-white shadow-md px-4 dark:bg-blue-900">
+            <div className="mx-auto px-4 py-1">
+              <Menu />
+            </div>
+          </header>
 
-        {/* Breadcrumb */}
-        <div className="bg-gray-100 py-2 shadow-sm">
-          <div className="mx-auto px-4">
-            <Breadcrumb />
+          {/* Breadcrumb */}
+          <div className="bg-gray-100 dark:bg-gray-800 py-2 shadow-sm">
+            <div className="mx-auto px-4">
+              <Breadcrumb />
+            </div>
           </div>
-        </div>
 
-        {/* Main Content */}
-        <main className="mx-auto px-4 py-4">{children}</main>
-        <ScrollToTop />
+          {/* Main Content */}
+          <main className="mx-auto px-4 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300">
+            {children}
+          </main>
+          <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

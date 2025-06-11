@@ -24,7 +24,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
   return (
     <div className="w-full flex items-center">
       {/* Progress Bar */}
-      <div className="w-full bg-gray-200 h-2.5 mr-4">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 h-2.5 mr-4">
         <div
           className={`${progressColor} h-2.5`}
           style={{ width: `${percentage}%` }}
@@ -32,7 +32,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
       </div>
 
       {/* Progress Text */}
-      <div className="text-sm font-medium text-gray-700 text-center whitespace-nowrap">
+      <div className="text-sm font-medium text-gray-700 text-center whitespace-nowrap dark:text-gray-400">
         {current} / {total}
       </div>
     </div>

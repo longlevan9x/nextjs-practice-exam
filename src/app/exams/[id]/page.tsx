@@ -101,7 +101,7 @@ export default function ExamDetailPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center ">
-        <p className="text-blue-600 text-lg">Loading exam details...</p>
+        <p className="text-blue-600 dark:text-blue-400 text-lg">Loading exam details...</p>
       </div>
     );
   }
@@ -109,7 +109,7 @@ export default function ExamDetailPage() {
   if (error || !exam) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-red-500 text-lg">
+        <p className="text-red-500 dark:text-red-400 text-lg">
           Failed to load exam details. Please try again later.
         </p>
       </div>
@@ -122,7 +122,7 @@ export default function ExamDetailPage() {
       <div className="mb-3 flex md:flex-row justify-between md:items-center flex-col gap-2">
         <Link
           href="/"
-          className="inline-flex items-center text-gray-600 hover:text-gray-800 transition duration-300"
+          className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition duration-300"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -134,7 +134,7 @@ export default function ExamDetailPage() {
           {/* Statistics Link */}
           <Link
             href={`/statistics?examId=${id}&courseId=${exam.courseId}`}
-            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300"
+            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
           >
             <ChartBarIcon className="w-5 h-5 mr-2" />
             <span>Thống kê</span>
@@ -142,7 +142,7 @@ export default function ExamDetailPage() {
           {/* Result Link */}
           <Link
             href={`/exams/${id}/result`}
-            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300"
+            className="inline-flex items-center px-4 py-1 md:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition duration-300"
           >
             <ChartBarIcon className="w-5 h-5 mr-2" />
             <span>Xem kết quả</span>
@@ -151,7 +151,7 @@ export default function ExamDetailPage() {
       </div>
 
       {/* Exam Details Card */}
-      <div className="w-full lg:w-4xl mx-auto bg-white rounded-xs shadow-lg p-6 md:p-8">
+      <div className="w-full lg:w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xs shadow-lg dark:shadow-gray-700 p-6 md:p-8">
         {/* Exam Logo */}
         <div className="flex justify-center mb-6">
           <Image
@@ -164,17 +164,17 @@ export default function ExamDetailPage() {
         </div>
 
         {/* Exam Name */}
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 text-center mb-4">
           {exam.name}
         </h2>
 
         {/* Exam Description */}
-        <p className="text-gray-600 text-lg text-center mb-6">
+        <p className="text-gray-600 dark:text-gray-300 text-lg text-center mb-6">
           {exam.description}
         </p>
 
         {/* Updated At */}
-        <div className="flex items-center justify-center text-sm text-gray-500 mb-6">
+        <div className="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400 mb-6">
           <UpdateIcon className="w-4 h-4 mr-1" />
           <span>Cập nhật: {exam.updatedAt}</span>
         </div>
@@ -196,13 +196,13 @@ export default function ExamDetailPage() {
         {/* Mode Selection Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8">
           {/* Exam Mode Card */}
-          <div className="bg-white rounded-xs p-4 sm:p-6 border border-blue-200 hover:border-blue-400 transition-all duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-xs p-4 sm:p-6 border border-blue-200 dark:border-blue-700 hover:border-blue-600 dark:hover:border-blue-700 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-blue-600">Chế độ thi</h3>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 sm:gap-6 text-sm text-gray-600 mb-2 sm:mb-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-6 text-sm text-gray-600 dark:text-gray-400 mb-2 sm:mb-4">
                 <div className="flex items-center">
                   <ClipboardDocumentIcon className="w-4 h-4 mr-1 text-blue-500" />
                   <span>{exam.questionCount} câu</span>
@@ -218,7 +218,7 @@ export default function ExamDetailPage() {
               </div>
 
               <div className="flex-grow">
-                <ul className="space-y-2 sm:space-y-3 text-gray-600 mb-4 sm:mb-6">
+                <ul className="space-y-2 sm:space-y-3 text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -259,13 +259,13 @@ export default function ExamDetailPage() {
           </div>
 
           {/* Practice Mode Card */}
-          <div className="bg-white rounded-xs p-4 sm:p-6 border border-green-200 hover:border-green-400 transition-all duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-xs p-4 sm:p-6 border border-green-200 hover:border-green-400 dark:border-green-600 dark:hover:border-green-700 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-green-600">Chế độ luyện tập</h3>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 sm:gap-6 text-sm text-gray-600 mb-2 sm:mb-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-6 text-sm text-gray-600 dark:text-gray-400 mb-2 sm:mb-4">
                 <div className="flex items-center">
                   <ClipboardDocumentIcon className="w-4 h-4 mr-1 text-green-500" />
                   <span>{exam.questionCount} câu</span>
@@ -281,7 +281,7 @@ export default function ExamDetailPage() {
               </div>
 
               <div className="flex-grow">
-                <ul className="space-y-2 sm:space-y-3 text-gray-600 mb-4 sm:mb-6">
+                <ul className="space-y-2 sm:space-y-3 text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />

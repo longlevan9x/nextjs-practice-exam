@@ -346,10 +346,10 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
     return (
-        <div className="text-gray-900 grid grid-cols-12 -mr-4">
+        <div className="text-gray-900 dark:text-gray-300 grid grid-cols-12 -mr-4">
             {/* Question List Section */}
             <div className="lg:col-span-4 xl:col-span-3 col-span-12">
-                <div className="lg:pr-auto pr-4 h-full lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto z-20 relative bg-white">
+                <div className="lg:pr-auto pr-4 h-full lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto z-20 relative bg-white dark:bg-gray-900">
                     <QuestionList
                         questions={questions}
                         selectedQuestionId={selectedQuestion?.id || null}
@@ -383,7 +383,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
                                 <button
                                     onClick={handleFinishTest}
                                     disabled={isFinishing}
-                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white text-gray-900 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
+                                    className={`cursor-pointer whitespace-pre border-2 border-blue-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300 px-2 py-1 lg:px-4 lg:py-2 rounded-xs transition duration-300 flex items-center justify-center ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
                                 >
                                     <span>Kết thúc bài kiểm tra</span>
                                     {isFinishing && <LoadingIcon />}
@@ -414,7 +414,7 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
 
             {/* Fixed Action Buttons */}
             {displayMode === DISPLAY_MODES.EXECUTE && (
-                <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+                <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 z-10">
                     <div className="w-full py-2 pr-4 lg:pr-16">
                         <ActionButtons
                             showExplanation={selectedQuestion?.showExplanation ?? false}
