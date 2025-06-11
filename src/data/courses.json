@@ -658,7 +658,7 @@
     {
         "name": "AWS Certified Developer - Associate DVA-C02 2025 Internet Academy",
         "questionCount": 65,
-        "domain": [],
+        "domains": [],
         "duration": 130,
         "passScore": 72,
         "imageUrl": "/images/aws-dva.png",
