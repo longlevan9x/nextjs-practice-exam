@@ -2,9 +2,15 @@
 
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import { useEffect } from 'react';
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    const storageTheme = localStorage.getItem("theme") || '';
+    setTheme(storageTheme);
+  }, [setTheme]);
 
   return (
     <button
