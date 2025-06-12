@@ -1,4 +1,3 @@
-import config from '@/configs/config'
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
@@ -8,8 +7,8 @@ export async function updateSession(request: NextRequest) {
   })
 
   const supabase = createServerClient(
-    config.DB_URL!,
-    config.DB_KEY!,
+    process.env.NPBSBU!,
+    process.env.NPLSBAK!,
     {
       cookies: {
         getAll() {
