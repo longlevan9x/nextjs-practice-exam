@@ -17,7 +17,7 @@ export const saveExamResultByResultId = (examId: number, resultId: string, data:
     } catch (error) {
         console.error("Error saving exam result to localStorage:", error);
     }
-};  
+};
 
 export const getAllExamResultsByExamId = (examId: string): ExamResult[] => {
     try {
@@ -35,7 +35,7 @@ export const getAllExamResults = (): ExamResult[] => {
     try {
         const keys = Object.keys(localStorage).filter((key) =>
             key.startsWith(`examResults-`)
-        );  
+        );
         return keys.map((key) => JSON.parse(localStorage.getItem(key) || "{}") as ExamResult);
     } catch (error) {
         console.error("Error fetching all exam results:", error);
@@ -53,3 +53,16 @@ export const getExamResultById = (examId: string, resultId: string): ExamResult 
         return null;
     }
 };
+
+/* Extension */
+export const setExtVersion = (version: string) => {
+    localStorage.setItem("gptExtVersion", version);
+}
+
+export const getExtVersion = () => {
+    return localStorage.getItem("gptExtVersion") || null;
+}
+
+export const isExtInstalled = () => {
+    return !!getExtVersion();
+}

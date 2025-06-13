@@ -8,7 +8,8 @@ import {
   HEADER_TITLE_PREFIX,
 } from "@/constants/constants";
 import { DisplayMode, ExamType } from "@/constants/exam";
-import AnswerExplanationGroup from "./AnswerExplanationGroup";
+import AnswerExplanationGroup from "@/components/examDetail/AnswerExplanationGroup";
+import ChatGPTIcon from "@/components/base/icons/ChatGPTIcon";
 
 interface QuestionDetailProps {
   question: Question;
@@ -78,14 +79,19 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
           }
         </div>
         {question.showExplanation && (
-          <button
-            onClick={handleToggle}
-            className={`relative z-10 cursor-pointer flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-800  dark:hover:text-gray-200 transition-colors duration-200 ${isTransitioning ? 'opacity-50' : ''}`}
-            disabled={isTransitioning}
-          >
-            <span className="text-sm">{isExpanded ? 'Thu gọn' : 'Mở rộng'}</span>
-            <ChevronUpIcon className={`w-5 h-5 transform transition-transform duration-300 ${isExpanded ? 'rotate-0' : 'rotate-180'}`} />
-          </button>
+          <div className="flex gap-2">
+            <div className="cursor-pointer" title="Giải thích bằng ChatGPT">
+              {/* <ChatGPTIcon className="w-5 h-5 hover:fill-amber-500" /> */}
+            </div>
+            <button
+              onClick={handleToggle}
+              className={`relative z-10 cursor-pointer flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-800  dark:hover:text-gray-200 transition-colors duration-200 ${isTransitioning ? 'opacity-50' : ''}`}
+              disabled={isTransitioning}
+            >
+              <span className="text-sm">{isExpanded ? 'Thu gọn' : 'Mở rộng'}</span>
+              <ChevronUpIcon className={`w-5 h-5 transform transition-transform duration-300 ${isExpanded ? 'rotate-0' : 'rotate-180'}`} />
+            </button>
+          </div>
         )}
       </div>
 

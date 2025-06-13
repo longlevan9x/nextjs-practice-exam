@@ -8,6 +8,8 @@ import NotificationContainer from '@/components/common/NotificationContainer';
 import ScrollToTop from "@/components/common/ScrollToTop";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import WindowMessageListener from "@/components/common/WindowMessageListener";
+import CheckExtensionInstalled from "@/components/common/CheckExtensionInstalled";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -62,6 +64,8 @@ export default function RootLayout({
       </head>
       <body className="bg-white dark:bg-gray-900 antialiased h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <WindowMessageListener />
+          <CheckExtensionInstalled/>
           <NotificationContainer />
           <ExamRedirect />
           {/* Menu */}
