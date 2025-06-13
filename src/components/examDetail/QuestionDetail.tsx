@@ -81,7 +81,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         {question.showExplanation && (
           <div className="flex gap-2">
             <div className="cursor-pointer" title="Giải thích bằng ChatGPT">
-              {/* <ChatGPTIcon className="w-5 h-5 hover:fill-amber-500" /> */}
+              <ChatGPTIcon className="w-5 h-5 hover:fill-amber-500" />
             </div>
             <button
               onClick={handleToggle}

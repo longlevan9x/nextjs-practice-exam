@@ -1,6 +1,6 @@
 // utils/messageBus.ts
 
-type Callback = (data: any) => void;
+type Callback = (data: unknown) => void;
 
 const listeners: { [action: string]: Callback[] } = {};
 
@@ -17,7 +17,7 @@ export function offMessage(action: string, callback: Callback) {
     }
 }
 
-export function emitMessage(action: string, data: any) {
+export function emitMessage(action: string, data: unknown) {
     if (listeners[action]) {
         listeners[action].forEach(cb => cb(data));
     }

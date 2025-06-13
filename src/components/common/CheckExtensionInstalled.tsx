@@ -7,7 +7,7 @@ import { EVENT_ACTION } from "@/constants/windowMessage";
 import { setExtVersion } from "@/services/localStorageService";
 
 export default function CheckExtensionInstalled() {
-    const installedPayload = useWindowMessage(EVENT_ACTION.EXT_PRESENT);
+    const installedPayload = useWindowMessage<{version: string}>(EVENT_ACTION.EXT_PRESENT);
     const [checked, setChecked] = useState<boolean>(false);
     const [checkedExtVersion, setCheckedExtVersion] = useState<string>();
 
