@@ -1,0 +1,62 @@
+.ai-content-wrapper {
+
+    /* Các thẻ con có thể tùy chỉnh */
+    p {
+        margin-bottom: 0.75rem;
+        /* 12px */
+    }
+
+    > ol {
+        list-style: auto;
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ul,
+    ol {
+        margin-left: 1.5rem;
+        /* 24px */
+        margin-bottom: 0.75rem;
+    }
+
+    li {
+        margin-bottom: 0.4rem;
+        /* 6.4px */
+    }
+
+    li::marker {
+        font-weight: 700;
+    }
+
+    /* Highlight markdown (ví dụ dấu **...**) */
+    strong {
+        font-weight: 700;
+        /* Sử dụng biến Tailwind cho màu xanh dương */
+        // color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+        /* tương đương text-blue-600 */
+    }
+
+    /* Ví dụ cho code inline */
+    code {
+        background-color: var(--color-gray-300);
+        /* bg-gray-200 */
+        color: var(--color-red-700);
+        /* text-pink-600 */
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.95em;
+    }
+
+}
+
+:where(.dark, .dark *) {
+    .ai-content-wrapper {
+        code {
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+            color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+        }
+    }
+}

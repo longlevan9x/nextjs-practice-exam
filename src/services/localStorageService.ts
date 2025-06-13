@@ -63,6 +63,6 @@ export const getExtVersion = () => {
     return localStorage.getItem("gptExtVersion") || null;
 }
 
-export const isExtInstalled = () => {
+export const checkExtInstalled = () => {
     return !!getExtVersion();
 }

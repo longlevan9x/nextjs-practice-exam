@@ -18,6 +18,9 @@ export default function PracticeModePage() {
       if (isAuthenticated) {
         setIsLoading(false);
       }
+    }).catch(err => {
+      console.log(err);
+      router.push("/login");
     });
   }, [router, currentUrl]);
 

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Question } from "@/types/question";
 import BookmarkButton from "@/components/examDetail/BookmarkButton";
 import AnswerOptions from "@/components/examDetail/AnswerOptions";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
+import { useModal } from '@/components/contexts/ModalContext';
 
 import {
   HEADER_TITLE_PREFIX,
@@ -10,6 +11,17 @@ import {
 import { DisplayMode, ExamType } from "@/constants/exam";
 import AnswerExplanationGroup from "@/components/examDetail/AnswerExplanationGroup";
 import ChatGPTIcon from "@/components/base/icons/ChatGPTIcon";
+import AskAIChatGPTModal from "@/components/askAI/AskAIChatGPTModal";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import { checkExtInstalled } from "@/services/localStorageService";
+
+const AI_SEND_OPT = {
+  EXPLAIN_QA: "explain_qa",
+  TRAN_QA: "tran_qa",
+  EXPLAIN_EXPLAIN: "explain_explain",
+  TRAN_EXPLAN: "tran_explan",
+  TRAN_ALL: "tran_all"
+}
 
 interface QuestionDetailProps {
   question: Question;
@@ -30,8 +42,32 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   onToggleBookmark,
   onAnswerSelect,
 }) => {
+  const [isExtInstalled, setIsExtInstalled] = useState<boolean>();
   const [isExpanded, setIsExpanded] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const { showModal } = useModal();
+  const aiOptions = [
+    {
+      value: "Giải thích câu hỏi và đáp án",
+      key: AI_SEND_OPT.EXPLAIN_QA
+    },
+    {
+      value: "Dịch câu hỏi và đáp án",
+      key: AI_SEND_OPT.TRAN_QA
+    },
+    {
+      value: "Phân tích nội dung giải thích",
+      key: AI_SEND_OPT.EXPLAIN_EXPLAIN
+    },
+    {
+      value: "Dịch nội dung giải thích",
+      key: AI_SEND_OPT.TRAN_EXPLAN
+    },
+    {
+      value: "Dịch tất cả",
+      key: AI_SEND_OPT.TRAN_ALL
+    }
+  ];
 
   const getQuestionStatus = () => {
     if (!question.selectedAnswer) {
@@ -53,11 +89,47 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     return "text-blue-600";
   };
 
+  useEffect(() => {
+    setIsExtInstalled(checkExtInstalled());
+  }, []);
+
   const handleToggle = () => {
     setIsTransitioning(true);
     setIsExpanded(!isExpanded);
     setTimeout(() => setIsTransitioning(false), 300); // Match transition duration
   };
+
+  const handleShowChatGptModal = (sendOption: string) => {
+    let toolType = "";
+    switch (sendOption) {
+      case AI_SEND_OPT.EXPLAIN_EXPLAIN:
+      case AI_SEND_OPT.EXPLAIN_QA:
+        toolType = "explain";
+        break;
+      case AI_SEND_OPT.TRAN_ALL:
+      case AI_SEND_OPT.TRAN_EXPLAN:
+      case AI_SEND_OPT.TRAN_QA:
+        toolType = "tran";
+      default:
+        break;
+    }
+    let content = "";
+
+    const answer = question.answers.map(a => a.answer).join("\n");
+    if (sendOption === AI_SEND_OPT.TRAN_QA || sendOption === AI_SEND_OPT.EXPLAIN_QA) {
+      content = question.question + "\n" + answer;
+    }
+    else if (sendOption === AI_SEND_OPT.TRAN_EXPLAN || sendOption === AI_SEND_OPT.EXPLAIN_EXPLAIN) {
+      content = question.explanation;
+    }
+    else if (sendOption === AI_SEND_OPT.TRAN_ALL) {
+      content = question + "\n" + answer + "\n" + question.explanation;
+    }
+
+    if (!content) return;
+
+    showModal(<AskAIChatGPTModal toolType={toolType} content={content} />);
+  }
 
   return (
     <div className="flex flex-col w-full">
@@ -80,9 +152,34 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
         </div>
         {question.showExplanation && (
           <div className="flex gap-2">
-            <div className="cursor-pointer" title="Giải thích bằng ChatGPT">
-              <ChatGPTIcon className="w-5 h-5 hover:fill-amber-500" />
-            </div>
+            <Popover>
+              <PopoverButton className="block focus:outline-none cursor-pointer active:outline-none">
+                <ChatGPTIcon className="w-5 h-5  hover:fill-amber-500" />
+              </PopoverButton>
+
+              <PopoverPanel
+                transition
+                anchor="bottom"
+                className="rounded-xs bg-white border border-gray-100 dark:border-none dark:bg-gray-800 text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0"
+              >
+                {isExtInstalled &&
+                  <div className="p-3">
+                    {aiOptions.map((item) => (
+                      <a key={item.key} className="block rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5" href="#" onClick={() => handleShowChatGptModal(item.key)}>
+                        <p className="font-normal dark:text-gray-200">{item.value}</p>
+                      </a>
+                    ))}
+                  </div>
+                }
+                {
+                  !isExtInstalled &&
+                  <a className="block rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5" href="#">
+                    <p className="font-normal dark:text-gray-200">Hãy cài extension.</p>
+                  </a>
+                }
+              </PopoverPanel>
+            </Popover>
+
             <button
               onClick={handleToggle}
               className={`relative z-10 cursor-pointer flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-800  dark:hover:text-gray-200 transition-colors duration-200 ${isTransitioning ? 'opacity-50' : ''}`}
