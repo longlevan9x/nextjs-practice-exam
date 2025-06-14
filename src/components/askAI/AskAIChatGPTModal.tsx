@@ -7,6 +7,8 @@ import { windowPostMessage } from '@/services/windowMessageService';
 import ReactMarkdown from 'react-markdown';
 import { EXT_VERSION } from '@/constants/extension';
 import { getExtVersion } from '@/services/localStorageService';
+import Link from 'next/link';
+import { EXT_RELEASE_LINK } from '@/configs/config';
 
 interface AskChatGPTModalProps {
     content?: string;
@@ -17,7 +19,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
     const { closeModal } = useModal();
     const didRun = useRef(false);
     const [isNeedUpgradeExt, setIsNeedUpgradeExt] = useState<boolean>(false);
-
+    const requireVersion = EXT_VERSION;
     const [streamText, setStreamText] = useState('');
 
     const gptPayload = useWindowMessage<{ content: string }>(EVENT_ACTION.GPT_STREAM_PART);
@@ -38,7 +40,6 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
     }, [gptPayload]);
 
     useEffect(() => {
-        const requireVersion = EXT_VERSION;
         const currentVersion = getExtVersion();
         if (requireVersion !== currentVersion) {
             setIsNeedUpgradeExt(true);
@@ -78,7 +79,10 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
                 <h2 className="text-xl font-bold">Gửi câu hỏi đến AI</h2>
                 {
                     isNeedUpgradeExt &&
-                    <p className="text-xs p-1 text-red-700 dark:text-red-300 bg-amber-100 dark:bg-amber-950">Phiên bản extension đã cũ. Cần cập nhật phiên bản mới.</p>
+                    <p className="text-xs p-1 text-red-700 dark:text-red-300 bg-amber-100 dark:bg-amber-950">
+                        Đã có phiên bản mới.
+                        <Link href={EXT_RELEASE_LINK + requireVersion} target="_blank">Cập nhật ngay</Link>
+                    </p>
                 }
             </div>
 
