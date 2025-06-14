@@ -1,0 +1,1 @@
+export const EXT_VERSION = "1.0.1";

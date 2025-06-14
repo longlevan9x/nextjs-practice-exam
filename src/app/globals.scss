@@ -1,12 +1,11 @@
 .ai-content-wrapper {
-
     /* Các thẻ con có thể tùy chỉnh */
     p {
         margin-bottom: 0.75rem;
         /* 12px */
     }
 
-    > ol {
+    >ol {
         list-style: auto;
     }
 
@@ -38,11 +37,16 @@
         /* tương đương text-blue-600 */
     }
 
+    pre {
+        margin-bottom: calc(var(--spacing) * 2);
+        padding: calc(var(--spacing ) * 2);
+        background-color: var(--color-gray-200);
+    }
+
     /* Ví dụ cho code inline */
     code {
-        background-color: var(--color-gray-300);
-        /* bg-gray-200 */
-        color: var(--color-red-700);
+        white-space: pre-wrap;
+        color: var(--color-green-800);
         /* text-pink-600 */
         padding: 2px 4px;
         border-radius: 4px;
@@ -54,8 +58,11 @@
 
 :where(.dark, .dark *) {
     .ai-content-wrapper {
+        pre {
+            background-color: var(--color-gray-800);
+        }
+
         code {
-            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
             color: rgb(248 113 113 / var(--tw-text-opacity, 1));
         }
     }

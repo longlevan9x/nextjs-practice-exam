@@ -32,10 +32,10 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
             {children}
             {content && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-                    <div className="bg-white dark:bg-gray-800 rounded-xs shadow-lg p-6 relative text-gray-900 dark:text-gray-100">
+                    <div className="bg-white dark:bg-gray-900 rounded-xs shadow-lg p-6 relative text-gray-900 dark:text-gray-100">
                         <button
                             onClick={closeModal}
-                            className="absolute top-2 right-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                            className="absolute cursor-pointer top-2 right-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                         >
                             ✕
                         </button>
