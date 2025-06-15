@@ -81,7 +81,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
                     isNeedUpgradeExt &&
                     <p className="text-xs p-1 text-red-700 dark:text-red-300 bg-amber-100 dark:bg-amber-950">
                         Đã có phiên bản mới.
-                        <Link href={EXT_RELEASE_LINK + requireVersion} target="_blank">Cập nhật ngay</Link>
+                        <Link  className="ml-2 text-blue-400 hover:underline hover:text-blue-500" href={EXT_RELEASE_LINK + requireVersion} target="_blank">Cập nhật ngay</Link>
                     </p>
                 }
             </div>

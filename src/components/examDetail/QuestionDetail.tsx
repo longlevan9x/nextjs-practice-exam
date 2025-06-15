@@ -14,6 +14,9 @@ import ChatGPTIcon from "@/components/base/icons/ChatGPTIcon";
 import AskAIChatGPTModal from "@/components/askAI/AskAIChatGPTModal";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { checkExtInstalled } from "@/services/localStorageService";
+import Link from "next/link";
+import { EXT_RELEASE_LINK } from "@/configs/config";
+import { EXT_VERSION } from "@/constants/extension";
 
 const AI_SEND_OPT = {
   EXPLAIN_QA: "explain_qa",
@@ -46,6 +49,8 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   const [isExpanded, setIsExpanded] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { showModal } = useModal();
+  const requireVersion = EXT_VERSION;
+  
   const aiOptions = [
     {
       value: "Giải thích câu hỏi và đáp án",
@@ -174,7 +179,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
                 {
                   !isExtInstalled &&
                   <a className="block rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5" href="#">
-                    <p className="font-normal dark:text-gray-200">Hãy cài extension.</p>
+                    <p className="font-normal dark:text-gray-200">Tải extension tại <Link className="text-blue-400 hover:underline hover:text-blue-500" href={EXT_RELEASE_LINK + requireVersion} target="_blank">link.</Link></p>
                   </a>
                 }
               </PopoverPanel>
