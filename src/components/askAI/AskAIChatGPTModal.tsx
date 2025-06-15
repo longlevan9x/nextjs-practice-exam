@@ -61,7 +61,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
         let prompt = "";
 
         if (toolType === "tran") {
-            prompt += "Hãy đoạn văn bản bên dưới sang tiếng việt cho tôi. Những đoạn về code hãy trả về để hiển thị định dạng code được.  \n";
+            prompt += "Hãy đoạn văn bản bên dưới sang tiếng việt cho tôi. Yêu cầu: \n1. Giữ lại các keywords. \n 2. Những đoạn về code hãy trả về để hiển thị định dạng code được.  \n";
         }
         else if (toolType === "explain") {
             prompt += "Hãy phân tích kỹ. Sử dụng dữ liệu mới nhất. Đầu tiên đưa ra đáp án đúng. Sau đó giải thích các đáp án cho tôi. Giải thích bằng tiếng việt. \n";
