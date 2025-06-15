@@ -34,7 +34,7 @@
     strong {
         font-weight: 700;
         /* Sử dụng biến Tailwind cho màu xanh dương */
-        // color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+        color: rgb(59 130 246 / var(--tw-text-opacity, 1));
         /* tương đương text-blue-600 */
     }
 
@@ -76,6 +76,10 @@
         hr {
             margin-bottom: calc(var(--spacing) * 2);
             color: var(--color-gray-700);
+        }
+
+        strong {
+            color: var(--color-red-500);
         }
     }
 }
