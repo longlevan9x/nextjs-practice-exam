@@ -1,4 +1,5 @@
 .ai-content-wrapper {
+
     /* Các thẻ con có thể tùy chỉnh */
     p {
         margin-bottom: 0.75rem;
@@ -39,7 +40,7 @@
 
     pre {
         margin-bottom: calc(var(--spacing) * 2);
-        padding: calc(var(--spacing ) * 2);
+        padding: calc(var(--spacing) * 2);
         background-color: var(--color-gray-200);
     }
 
@@ -47,6 +48,7 @@
     code {
         white-space: pre-wrap;
         color: var(--color-green-800);
+        background-color: var(--color-gray-200);
         /* text-pink-600 */
         padding: 2px 4px;
         border-radius: 4px;
@@ -68,6 +70,7 @@
 
         code {
             color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+            background-color: var(--color-gray-800);
         }
 
         hr {
