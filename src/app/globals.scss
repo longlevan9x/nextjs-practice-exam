@@ -54,6 +54,10 @@
         font-size: 0.95em;
     }
 
+    hr {
+        color: var(--color-gray-300);
+    }
+
 }
 
 :where(.dark, .dark *) {
@@ -64,6 +68,11 @@
 
         code {
             color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+        }
+
+        hr {
+            margin-bottom: calc(var(--spacing) * 2);
+            color: var(--color-gray-700);
         }
     }
 }
