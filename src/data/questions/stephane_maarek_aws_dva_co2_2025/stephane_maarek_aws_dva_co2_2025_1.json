@@ -2788,7 +2788,28 @@
     "multiple": true,
     "domain": "Troubleshooting and Optimization",
     "explanation": "<p>Correct options</p>\n\n<p><strong>The security group of the EC2 instance does not allow for traffic from the security group of the Application Load Balancer</strong></p>\n\n<p><strong>The route for the health check is misconfigured</strong></p>\n\n<p>You must ensure that your load balancer can communicate with registered targets on both the listener port and the health check port. Whenever you add a listener to your load balancer or update the health check port for a target group used by the load balancer to route requests, you must verify that the security groups associated with the load balancer allow traffic on the new port in both directions.</p>\n\n<p>Application Load Balancer Configuration for Security Groups and Health Check Routes:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q28-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q28-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>The EBS volumes have been improperly mounted</strong> - You can access the website using the IP address which means there is no issue with the EBS volumes. So this option is not correct.</p>\n\n<p><strong>Your web-app has a runtime that is not supported by the Application Load Balancer</strong> - There is no connection between a web app and the application load balancer. This option has been added as a distractor.</p>\n\n<p><strong>You need to attach Elastic IP to the EC2 instances</strong> - This option is a distractor as Elastic IPs do not need to be assigned to EC2 instances while using an Application Load Balancer.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html</a></p>\n",
-    "correctAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "",
+        "explanation": "<strong>The security group of the EC2 instance does not allow for traffic from the security group of the Application Load Balancer</strong>"
+      },
+      {
+        "answer": "",
+        "explanation": "<strong>The route for the health check is misconfigured</strong>"
+      },
+      {
+        "answer": "",
+        "explanation": "You must ensure that your load balancer can communicate with registered targets on both the listener port and the health check port. Whenever you add a listener to your load balancer or update the health check port for a target group used by the load balancer to route requests, you must verify that the security groups associated with the load balancer allow traffic on the new port in both directions."
+      },
+      {
+        "image": "https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q28-i1.jpg",
+        "answer": "",
+        "explanation": "Application Load Balancer Configuration for Security Groups and Health Check Routes:"
+      },
+      {
+        "link": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html"
+      }
+    ],
     "incorrectAnswerExplanations": [
       {
         "answer": "",
