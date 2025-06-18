@@ -116,7 +116,7 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanation
   return (
     <div className="mb-4">
       <h4 className={`text-base font-semibold ${titleColor} mb-2`}>{titleText}</h4>
-      <div className="text-gray-700 dark:text-gray-400 space-y-1">
+      <div className="text-gray-700 dark:text-gray-300 space-y-1">
         {answerExplanations.map((answerExplanation, index) => (
           <div key={index} className="space-y-2">
             {(answerExplanation.answer) &&
