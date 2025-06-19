@@ -86,7 +86,7 @@ export default function RootLayout({
             </div>
 
             {/* Main Content */}
-            <main className="mx-auto px-4 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300">
+            <main className="mx-auto px-4 py-4 pb-0 pt-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300">
               {children}
             </main>
             <ScrollToTop />
