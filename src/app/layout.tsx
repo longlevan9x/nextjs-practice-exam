@@ -72,21 +72,21 @@ export default function RootLayout({
             <NotificationContainer />
             <ExamRedirect />
             {/* Menu */}
-            <header className="bg-blue-600 text-white shadow-md px-4 dark:bg-blue-900">
-              <div className="mx-auto px-4 py-1">
+            <header className="bg-blue-600 text-white shadow-md px-2 lg:px-4 dark:bg-blue-900">
+              <div className="mx-auto lg:px-4 py-1">
                 <Menu />
               </div>
             </header>
 
             {/* Breadcrumb */}
             <div className="bg-gray-100 dark:bg-gray-800 py-2 shadow-sm">
-              <div className="mx-auto px-4">
+              <div className="mx-auto px-2 lg:px-4">
                 <Breadcrumb />
               </div>
             </div>
 
             {/* Main Content */}
-            <main className="mx-auto px-4 py-4 pb-0 pt-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300">
+            <main className="mx-auto bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300">
               {children}
             </main>
             <ScrollToTop />

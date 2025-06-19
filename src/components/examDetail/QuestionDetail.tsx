@@ -17,6 +17,7 @@ import { checkExtInstalled } from "@/services/localStorageService";
 import Link from "next/link";
 import { EXT_RELEASE_LINK } from "@/configs/config";
 import { EXT_VERSION } from "@/constants/extension";
+import SelectionPopup from "@/components/shareds/SelectionPopup";
 
 const AI_SEND_OPT = {
   EXPLAIN_QA: "explain_qa",
@@ -50,7 +51,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { showModal } = useModal();
   const requireVersion = EXT_VERSION;
-  
+
   const aiOptions = [
     {
       value: "Giải thích câu hỏi và đáp án",
@@ -137,7 +138,9 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
   }
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full relative">
+      <SelectionPopup />
+
       {/* Question Section */}
       <div className="flex flex-row sm:items-center justify-between mb-4 gap-2">
         <div className="flex items-center space-x-4">

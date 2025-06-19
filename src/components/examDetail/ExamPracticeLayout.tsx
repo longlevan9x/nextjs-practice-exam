@@ -346,10 +346,10 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
     const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
     return (
-        <div className="text-gray-900 dark:text-gray-300 grid grid-cols-12 -mr-4">
+        <div className="text-gray-900 dark:text-gray-300 grid grid-cols-12">
             {/* Question List Section */}
             <div className="lg:col-span-4 xl:col-span-3 col-span-12">
-                <div className="lg:pr-auto pr-4 h-full lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto z-20 relative bg-white dark:bg-gray-900">
+                <div className=" h-full lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto z-20 relative bg-white dark:bg-gray-900">
                     <QuestionList
                         questions={questions}
                         selectedQuestionId={selectedQuestion?.id || null}
@@ -366,8 +366,8 @@ const ExamPracticeLayout: React.FC<ExamPracticeLayoutProps> = ({ examType, displ
             </div>
 
             {/* Question Detail Section */}
-            <div className="lg:col-span-8 xl:col-span-9 col-span-12 lg:pr-auto pr-4 lg:overflow-auto lg:max-h-[calc(100vh-170px)]">
-                <div className="w-full  xl:max-w-4xl mx-auto xl:px-auto lg:px-4">
+            <div className="lg:col-span-8 xl:col-span-9 col-span-12 px-2 py-4 lg:overflow-auto lg:max-h-[calc(100vh-9rem)]">
+                <div className="w-full xl:max-w-4xl mx-auto xl:px-auto lg:px-4">
                     <div className="w-full flex items-center mb-6">
                         {displayMode === DISPLAY_MODES.EXECUTE && (
                             <div className="flex w-full items-center space-x-4 mr-4">

@@ -130,12 +130,12 @@ const QuestionList: React.FC<QuestionListProps> = ({
   return (
     <>
       <div className="flex flex-col">
-        <div className="sticky top-0 z-10 bg-white dark:bg-gray-900">
-          <div className="flex justify-between items-center mb-4">
+        <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 lg:pl-4 py-4 space-y-4 px-2">
+          <div className="flex justify-between items-center">
             <h2 className="text-xl font-bold text-gray-800 dark:text-gray-300">Danh sách câu hỏi</h2>
             <button 
               onClick={handleToggleCollapse} 
-              className="cursor-pointer lg:hidden flex items-center justify-center bg-blue-100 text-blue-800 rounded-sm px-2 py-1 min-w-[100px] active:bg-blue-200"
+              className="cursor-pointer lg:hidden flex items-center justify-center bg-blue-100 text-blue-800 rounded-xs px-2 py-1 min-w-[100px] active:bg-blue-200"
               aria-label={isCollapsed ? "Mở rộng danh sách câu hỏi" : "Thu gọn danh sách câu hỏi"}
             >
               {isCollapsed ? (
@@ -151,12 +151,12 @@ const QuestionList: React.FC<QuestionListProps> = ({
               )}
             </button>
           </div>
-          <div className={`mb-4 space-x-3 flex ${isCollapsed ? 'hidden transition-all duration-300' : 'transition-all duration-300'}`}>
+          <div className={`space-x-3 flex ${isCollapsed ? 'hidden transition-all duration-300' : 'transition-all duration-300'}`}>
             <select
               id="filter"
               value={filter}
               onChange={(e) => onFilterChange(e.target.value)}
-              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               {FILTER_OPTIONS.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -168,7 +168,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
               id="domainFilter"
               value={domainFilter}
               onChange={(e) => onDomainFilterChange(e.target.value)}
-              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="all">Tất cả lĩnh vực</option>
               {domains.map((domain) => (

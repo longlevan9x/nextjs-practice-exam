@@ -119,7 +119,7 @@ export default function ExamDetailPage() {
   return (
     <>
       {/* Back Button */}
-      <div className="mb-3 flex md:flex-row justify-between md:items-center flex-col gap-2">
+      <div className="mb-3 flex md:flex-row justify-between md:items-center flex-col gap-2 px-2 lg:p-4">
         <Link
           href="/"
           className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition duration-300"
