@@ -1562,7 +1562,10 @@
         "answer": "",
         "explanation": "YAML template for creating a Lambda function:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>Type: AWS::Lambda::Function\nProperties:\n  Code:\n    Code\n  DeadLetterConfig:\n    DeadLetterConfig\n  Description: String\n  Environment:\n    Environment\n  FileSystemConfigs:\n    - FileSystemConfig\n  FunctionName: String\n  Handler: String\n  KmsKeyArn: String\n  Layers:\n    - String\n  MemorySize: Integer\n  ReservedConcurrentExecutions: Integer\n  Role: String\n  Runtime: String\n  Tags:\n    - Tag\n  Timeout: Integer\n  TracingConfig:\n    TracingConfig\n  VpcConfig:\n    VpcConfig\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -2880,8 +2883,41 @@
     "multiple": false,
     "domain": "Troubleshooting and Optimization",
     "explanation": "<p>Correct option</p>\n\n<p><strong>Use a Lazy Loading strategy with TTL</strong></p>\n\n<p>Lazy loading is a caching strategy that loads data into the cache only when necessary. Whenever your application requests data, it first requests the ElastiCache cache. If the data exists in the cache and is current, ElastiCache returns the data to your application. If the data doesn't exist in the cache or has expired, your application requests the data from your data store. Your datastore then returns the data to your application.</p>\n\n<p>In this case, data that is actively requested by users will be cached in ElastiCache, and thanks to the TTL, we can expire that data after a minute to limit the data staleness.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt5-q42-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt5-q42-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading\">https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading</a><p></p>\n\n<p>Incorrect option:</p>\n\n<p><strong>Use a Lazy Loading strategy without TTL</strong> - This fits the read requirements, but won't help expiring stale data, so we need TTL.</p>\n\n<p><strong>Use a Write Through strategy with TTL</strong></p>\n\n<p><strong>Use a Write Through strategy without TTL</strong></p>\n\n<p>The problem with these two options for the write-through strategy is that we would fill up the cache with unnecessary data and as mentioned in the question we don't have enough space in the cache to fit all the dataset. Therefore we can't use a write-through strategy.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading\">https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading</a></p>\n",
-    "correctAnswerExplanations": [],
-    "incorrectAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "",
+        "explanation": "<strong>Use a Lazy Loading strategy with TTL</strong>"
+      },
+      {
+        "answer": "",
+        "explanation": "Lazy loading is a caching strategy that loads data into the cache only when necessary. Whenever your application requests data, it first requests the ElastiCache cache. If the data exists in the cache and is current, ElastiCache returns the data to your application. If the data doesn't exist in the cache or has expired, your application requests the data from your data store. Your datastore then returns the data to your application."
+      },
+      {
+        "answer": "",
+        "explanation": "In this case, data that is actively requested by users will be cached in ElastiCache, and thanks to the TTL, we can expire that data after a minute to limit the data staleness."
+      },
+      {
+        "link": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading"
+      }
+    ],
+    "incorrectAnswerExplanations": [
+      {
+        "answer": "",
+        "explanation": "<strong>Use a Lazy Loading strategy without TTL</strong> - This fits the read requirements, but won't help expiring stale data, so we need TTL."
+      },
+      {
+        "answer": "",
+        "explanation": "<strong>Use a Write Through strategy with TTL</strong>"
+      },
+      {
+        "answer": "",
+        "explanation": "<strong>Use a Write Through strategy without TTL</strong>"
+      },
+      {
+        "answer": "",
+        "explanation": "The problem with these two options for the write-through strategy is that we would fill up the cache with unnecessary data and as mentioned in the question we don't have enough space in the cache to fit all the dataset. Therefore we can't use a write-through strategy."
+      }
+    ],
     "references": [
       "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.LazyLoading"
     ]
@@ -3866,11 +3902,9 @@
       {
         "answer": "",
         "explanation": "If you perform heavy write activity on the table, but a global secondary index on that table has insufficient write capacity, then the write activity on the table will be throttled. To avoid potential throttling, the provisioned write capacity for a global secondary index should be equal or greater than the write capacity of the base table since new updates will write to both the base table and global secondary index."
-      },
-      {
-        "answer": "",
-        "explanation": "Incorrect options"
-      },
+      }
+    ],
+    "incorrectAnswerExplanations": [
       {
         "answer": "",
         "explanation": "<strong>The LSI is throttling so you need to provision more RCU and WCU to the LSI</strong> - LSI use the RCU and WCU of the main table, so you can't provision more RCU and WCU to the LSI."
@@ -3884,7 +3918,6 @@
         "explanation": "<strong>Metrics are lagging in your CloudWatch dashboard and you should see the RCU and WCU peaking for the main table in a few minutes</strong> - This could be a reason, but in this case, the GSI is at fault as the application has been running fine for months."
       }
     ],
-    "incorrectAnswerExplanations": [],
     "references": [
       "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html",
       "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html#GSI.ThroughputConsiderations"
@@ -4562,7 +4595,10 @@
         "answer": "",
         "explanation": "Use this example when your environment has an Application Load Balancer. The example uses options in the aws:elbv2:listener namespace to configure an HTTPS listener on port 443 with the specified certificate. The listener routes traffic to the default process."
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>option_settings:\n  aws:elbv2:listener:443:\n    ListenerEnabled: 'true'\n    Protocol: HTTPS\n    SSLCertificateArns: arn:aws:acm:us-east-2:1234567890123:certificate/####################################\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {

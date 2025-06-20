@@ -790,7 +790,10 @@
         "answer": "",
         "explanation": "You can use the following bucket policy to deny permissions to upload an object unless the request includes the x-amz-server-side-encryption header to request server-side encryption using SSE-S3:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"PutObjectPolicy\",\n  \"Statement\": [\n    {\n      \"Sid\": \"DenyIncorrectEncryptionHeader\",\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": \"s3:PutObject\",\n      \"Resource\": \"arn:aws:s3:::DOC-EXAMPLE-BUCKET/*\",\n      \"Condition\": {\n        \"StringNotEquals\": {\n          \"s3:x-amz-server-side-encryption\": \"AES256\"\n        }\n      }\n    },\n    {\n      \"Sid\": \"DenyUnencryptedObjectUploads\",\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": \"s3:PutObject\",\n      \"Resource\": \"arn:aws:s3:::DOC-EXAMPLE-BUCKET/*\",\n      \"Condition\": {\n        \"Null\": {\n          \"s3:x-amz-server-side-encryption\": \"true\"\n        }\n      }\n    }\n  ]\n}\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -1295,7 +1298,10 @@
         "answer": "",
         "explanation": "Consider the following YAML template:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>Mappings:\n  RegionMap:\n    us-east-1:\n      HVM64: \"ami-0ff8a91507f77f867\"\n      HVMG2: \"ami-0a584ac55a7631c0c\"\n    us-west-1:\n      HVM64: \"ami-0bdb828fd58c52235\"\n      HVMG2: \"ami-066ee5fd4a9ef77f1\"\n    eu-west-1:\n      HVM64: \"ami-047bb4163c506cd98\"\n      HVMG2: \"ami-31c2f645\"\n    ap-southeast-1:\n      HVM64: \"ami-08569b978cc4dfa10\"\n      HVMG2: \"ami-0be9df32ae9f92309\"\n    ap-northeast-1:\n      HVM64: \"ami-06cd52961ce9f0d85\"\n      HVMG2: \"ami-053cdd503598e4a9d\"\nResources:\n  myEC2Instance:\n    Type: \"AWS::EC2::Instance\"\n    Properties:\n      ImageId: !FindInMap\n        - RegionMap\n        - !Ref 'AWS::Region'\n        - HVM64\n      InstanceType: m1.small\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "The example template contains an AWS::EC2::Instance resource whose ImageId property is set by the FindInMap function."
@@ -2116,17 +2122,26 @@
         "answer": "",
         "explanation": "Suppose we have an API for managing fruit and vegetable inventory in the produce department of a supermarket. When a manager queries the backend for the current inventory, the server sends back the following response payload:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n  \"department\": \"produce\",\n  \"categories\": [\n    \"fruit\",\n    \"vegetables\"\n  ],\n  \"bins\": [\n    {\n      \"category\": \"fruit\",\n      \"type\": \"apples\",\n      \"price\": 1.99,\n      \"unit\": \"pound\",\n      \"quantity\": 232\n    },\n    {\n      \"category\": \"fruit\",\n      \"type\": \"bananas\",\n      \"price\": 0.19,\n      \"unit\": \"each\",\n      \"quantity\": 112\n    },\n    {\n      \"category\": \"vegetables\",\n      \"type\": \"carrots\",\n      \"price\": 1.29,\n      \"unit\": \"bag\",\n      \"quantity\": 57\n    }\n  ]\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "When the backend returns the query results shown above, the manager of the produce department might be interested in reading them, as follows:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n  \"choices\": [\n    {\n      \"kind\": \"apples\",\n      \"suggestedPrice\": \"1.99 per pound\",\n      \"available\": 232\n    },\n    {\n      \"kind\": \"bananas\",\n      \"suggestedPrice\": \"0.19 per each\",\n      \"available\": 112\n    },\n    {\n      \"kind\": \"carrots\",\n      \"suggestedPrice\": \"1.29 per bag\",\n      \"available\": 57\n    }\n  ]\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "To enable this, we need to provide API Gateway with a mapping template to translate the data from the backend format like so:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>#set($inputRoot = $input.path('$'))\n{\n  \"choices\": [\n#foreach($elem in $inputRoot.bins)\n    {\n      \"kind\": \"$elem.type\",\n      \"suggestedPrice\": \"$elem.price per $elem.unit\",\n      \"available\": $elem.quantity\n    }#if($foreach.hasNext),#end\n\n#end\n  ]\n}\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {

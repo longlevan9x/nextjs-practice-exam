@@ -759,12 +759,18 @@
         "answer": "",
         "explanation": "Here is an example of X-Ray Read-Only permissions via an IAM policy:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"xray:GetSamplingRules\",\n                \"xray:GetSamplingTargets\",\n                \"xray:GetSamplingStatisticSummaries\",\n                \"xray:BatchGetTraces\",\n                \"xray:GetServiceGraph\",\n                \"xray:GetTraceGraph\",\n                \"xray:GetTraceSummaries\",\n                \"xray:GetGroups\",\n                \"xray:GetGroup\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "Another example of write permissions for using X-Ray via an IAM policy:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"xray:PutTraceSegments\",\n                \"xray:PutTelemetryRecords\",\n                \"xray:GetSamplingRules\",\n                \"xray:GetSamplingTargets\",\n                \"xray:GetSamplingStatisticSummaries\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -1890,12 +1896,18 @@
         "answer": "",
         "explanation": "You can give EC2 instances in one account (\"account A\") permissions to assume a role from another account (\"account B\") to access resources such as S3 buckets. You need to create an IAM role in Account B and set Account A as a trusted entity. Then attach a policy to this IAM role such that it delegates access to Amazon S3 like so -"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": \"s3:*\",\n            \"Resource\": [\n                \"arn:aws:s3:::awsexamplebucket1\",\n                \"arn:aws:s3:::awsexamplebucket1/*\",\n                \"arn:aws:s3:::awsexamplebucket2\",\n                \"arn:aws:s3:::awsexamplebucket2/*\"\n            ]\n        }\n    ]\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "Then you can create another role (instance profile) in Account A and attach it to the EC2 instances in Account A and add an inline policy to this role to assume the role from Account B like so -"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": \"sts:AssumeRole\",\n            \"Resource\": \"arn:aws:iam::AccountB_ID:role/ROLENAME\"\n        }\n    ]\n}\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -2101,7 +2113,10 @@
     "domain": "Development with AWS Services",
     "explanation": "<p>Correct option:</p>\n\n<pre><code>\"HelloWorld\": {\n  \"Type\": \"Task\",\n  \"Resource\": \"arn:aws:lambda:us-east-1:123456789012:function:HelloFunction\",\n  \"Next\": \"AfterHelloWorldState\",\n  \"Comment\": \"Run the HelloWorld Lambda function\"\n}\n</code></pre>\n\n<p>A Task state (\"Type\": \"Task\") represents a single unit of work performed by a state machine.</p>\n\n<p>All work in your state machine is done by tasks. A task performs work by using an activity or an AWS Lambda function, or by passing parameters to the API actions of other services.</p>\n\n<p>AWS Step Functions can invoke Lambda functions directly from a task state. A Lambda function is a cloud-native task that runs on AWS Lambda. You can write Lambda functions in a variety of programming languages, using the AWS Management Console or by uploading code to Lambda.</p>\n\n<p>Incorrect options:</p>\n\n<pre><code>\"wait_until\" : {\n  \"Type\": \"Wait\",\n  \"Timestamp\": \"2016-03-14T01:59:00Z\",\n  \"Next\": \"NextState\"\n}\n</code></pre>\n\n<ul>\n<li>A Wait state (\"Type\": \"Wait\") delays the state machine from continuing for a specified time.</li>\n</ul>\n\n<pre><code>\"No-op\": {\n  \"Type\": \"Task\",\n  \"Result\": {\n    \"x-datum\": 0.381018,\n    \"y-datum\": 622.2269926397355\n  },\n  \"ResultPath\": \"$.coords\",\n  \"Next\": \"End\"\n}\n</code></pre>\n\n<ul>\n<li><code>Resource</code> field is a required parameter for <code>Task</code> state. This definition is not of a <code>Task</code> but of type <code>Pass</code>.</li>\n</ul>\n\n<pre><code>\"FailState\": {\n  \"Type\": \"Fail\",\n  \"Cause\": \"Invalid response.\",\n  \"Error\": \"ErrorA\"\n}\n</code></pre>\n\n<ul>\n<li>A Fail state (\"Type\": \"Fail\") stops the execution of the state machine and marks it as a failure unless it is caught by a Catch block. Because Fail states always exit the state machine, they have no Next field and don't require an End field.</li>\n</ul>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html\">https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html</a></p>\n",
     "correctAnswerExplanations": [
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>\"HelloWorld\": {\n  \"Type\": \"Task\",\n  \"Resource\": \"arn:aws:lambda:us-east-1:123456789012:function:HelloFunction\",\n  \"Next\": \"AfterHelloWorldState\",\n  \"Comment\": \"Run the HelloWorld Lambda function\"\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "A Task state (\"Type\": \"Task\") represents a single unit of work performed by a state machine."
@@ -2116,12 +2131,30 @@
       }
     ],
     "incorrectAnswerExplanations": [
-      {},
-      {},
-      {},
-      {},
-      {},
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>\"wait_until\" : {\n  \"Type\": \"Wait\",\n  \"Timestamp\": \"2016-03-14T01:59:00Z\",\n  \"Next\": \"NextState\"\n}\n</code></pre>"
+      },
+      {
+        "answer": "",
+        "explanation": "<ul>\n<li>A Wait state (\"Type\": \"Wait\") delays the state machine from continuing for a specified time.</li>\n</ul>"
+      },
+      {
+        "answer": "",
+        "explanation": "<pre><code>\"No-op\": {\n  \"Type\": \"Task\",\n  \"Result\": {\n    \"x-datum\": 0.381018,\n    \"y-datum\": 622.2269926397355\n  },\n  \"ResultPath\": \"$.coords\",\n  \"Next\": \"End\"\n}\n</code></pre>"
+      },
+      {
+        "answer": "",
+        "explanation": "<ul>\n<li><code>Resource</code> field is a required parameter for <code>Task</code> state. This definition is not of a <code>Task</code> but of type <code>Pass</code>.</li>\n</ul>"
+      },
+      {
+        "answer": "",
+        "explanation": "<pre><code>\"FailState\": {\n  \"Type\": \"Fail\",\n  \"Cause\": \"Invalid response.\",\n  \"Error\": \"ErrorA\"\n}\n</code></pre>"
+      },
+      {
+        "answer": "",
+        "explanation": "<ul>\n<li>A Fail state (\"Type\": \"Fail\") stops the execution of the state machine and marks it as a failure unless it is caught by a Catch block. Because Fail states always exit the state machine, they have no Next field and don't require an End field.</li>\n</ul>"
+      }
     ],
     "references": [
       "https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html"
@@ -4128,7 +4161,10 @@
         "answer": "",
         "explanation": "CloudFormation currently supports the following parameter types:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>String – A literal string\nNumber – An integer or float\nList&lt;Number&gt; – An array of integers or floats\nCommaDelimitedList – An array of literal strings that are separated by commas\nAWS::EC2::KeyPair::KeyName – An Amazon EC2 key pair name\nAWS::EC2::SecurityGroup::Id – A security group ID\nAWS::EC2::Subnet::Id – A subnet ID\nAWS::EC2::VPC::Id – A VPC ID\nList&lt;AWS::EC2::VPC::Id&gt; – An array of VPC IDs\nList&lt;AWS::EC2::SecurityGroup::Id&gt; – An array of security group IDs\nList&lt;AWS::EC2::Subnet::Id&gt; – An array of subnet IDs\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "<strong>DependentParameter</strong>"

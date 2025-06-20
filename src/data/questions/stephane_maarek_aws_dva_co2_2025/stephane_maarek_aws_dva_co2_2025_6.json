@@ -35,7 +35,10 @@
         "answer": "",
         "explanation": "**"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>[\n  {\n      \"Field\": \"query-string\",\n      \"QueryStringConfig\": {\n          \"Values\": [\n            {\n                \"Key\": \"version\",\n                \"Value\": \"v1\"\n            },\n            {\n                \"Value\": \"*example*\"\n            }\n          ]\n      }\n  }\n]\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "**"
@@ -62,16 +65,22 @@
         "answer": "",
         "explanation": "**"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>[\n  {\n      \"Field\": \"query-string\",\n      \"PathPatternConfig\": {\n          \"Values\": [\"/img/*\"]\n      }\n  }\n]\n</code></pre>"
+      },
+      {
+        "answer": "",
+        "explanation": "**"
+      },
       {
         "answer": "",
         "explanation": "**"
       },
       {
         "answer": "",
-        "explanation": "**"
+        "explanation": "<pre><code>[\n  {\n      \"Field\": \"query-string\",\n      \"StringHeaderConfig\": {\n          \"Values\": [\"*.example.com\"]\n      }\n  }\n]\n</code></pre>"
       },
-      {},
       {
         "answer": "",
         "explanation": "**"
@@ -84,7 +93,10 @@
         "answer": "",
         "explanation": "**"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>[\n  {\n      \"Type\": \"redirect\",\n      \"RedirectConfig\": {\n          \"Protocol\": \"HTTPS\",\n          \"Port\": \"443\",\n          \"Host\": \"#{host}\",\n          \"Path\": \"/#{path}\",\n          \"Query\": \"#{query}\",\n          \"StatusCode\": \"HTTP_301\"\n      }\n  }\n]\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "** - This action redirects an HTTP request to an HTTPS request on port 443, with the same hostname, path, and query string as the HTTP request."
@@ -4687,7 +4699,10 @@
     "domain": "Troubleshooting and Optimization",
     "explanation": "<p>Correct option:</p>\n\n<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\",\n                \"logs:DescribeLogStreams\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:*:*:*\"\n            ]\n        }\n    ]\n}\n</code></pre>\n\n<p>Before your container instances can send log data to CloudWatch Logs, you must create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to <code>ecsInstanceRole</code>.</p>\n\n<p>This policy has one statement that grants permissions to create log groups and log streams, to upload log events to log streams, and to list details about log streams.</p>\n\n<p>The wildcard character (<em>) at the end of the Resource value means that the statement allows permission for the logs:CreateLogGroup, logs:CreateLogStream, logs:PutLogEvents, and logs:DescribeLogStreams actions on any log group. To limit this permission to a specific log group, replace the wildcard character (</em>) in the resource ARN with the specific log group ARN</p>\n\n<p>Incorrect options:</p>\n\n<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:*:*:*\"\n            ]\n        }\n    ]\n}\n</code></pre>\n\n<ul>\n<li>Permission to list details of the log stream needs to be attached to this policy.</li>\n</ul>\n\n<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents,\n                \"ecs:DescribeServices\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:&lt;ARN of the Log Group&gt;\"\n            ]\n        }\n    ]\n}```\n\n- ecs:DescribeServices permission is not needed, but logs:DescribeLogStreams permissions are needed for the policy to perform as expected.\n\n</code></pre>\n\n<p>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\",\n                \"logs:DescribeLogGroups\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:<em>:</em>:*\"\n            ]\n        }\n    ]\n}\n```</p>\n\n<ul>\n<li>logs:DescribeLogGroups is an erroneous permission here.</li>\n</ul>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html\">https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html</a></p>\n",
     "correctAnswerExplanations": [
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\",\n                \"logs:DescribeLogStreams\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:*:*:*\"\n            ]\n        }\n    ]\n}\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "Before your container instances can send log data to CloudWatch Logs, you must create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to <code>ecsInstanceRole</code>."
@@ -4702,14 +4717,26 @@
       }
     ],
     "incorrectAnswerExplanations": [
-      {},
-      {},
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:*:*:*\"\n            ]\n        }\n    ]\n}\n</code></pre>"
+      },
+      {
+        "answer": "",
+        "explanation": "<ul>\n<li>Permission to list details of the log stream needs to be attached to this policy.</li>\n</ul>"
+      },
+      {
+        "answer": "",
+        "explanation": "<pre><code>{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents,\n                \"ecs:DescribeServices\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:&lt;ARN of the Log Group&gt;\"\n            ]\n        }\n    ]\n}```\n\n- ecs:DescribeServices permission is not needed, but logs:DescribeLogStreams permissions are needed for the policy to perform as expected.\n\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:CreateLogGroup\",\n                \"logs:CreateLogStream\",\n                \"logs:PutLogEvents\",\n                \"logs:DescribeLogGroups\"\n            ],\n            \"Resource\": [\n                \"arn:aws:logs:<em>:</em>:*\"\n            ]\n        }\n    ]\n}\n```"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ul>\n<li>logs:DescribeLogGroups is an erroneous permission here.</li>\n</ul>"
+      }
     ],
     "references": [
       "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html",

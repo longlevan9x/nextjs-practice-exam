@@ -258,7 +258,10 @@
         "answer": "",
         "explanation": "You can access pseudo parameters in a CloudFormation template like so:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<pre><code>Outputs:\n  MyStacksRegion:\n    Value: !Ref \"AWS::Region\"\n</code></pre>"
+      },
       {
         "answer": "",
         "explanation": "The <code>AWS::Region</code> pseudo parameter returns a string representing the Region in which the encompassing resource is being created, such as us-west-2."
@@ -4719,7 +4722,10 @@
         "answer": "",
         "explanation": "Here at every Lambda function execution, the database connection handler will be created, and then closed. These connections steps are expensive in terms of time, and thus should be moved out of the <code>handler</code> function so that they are kept in the function execution context, and re-used across function calls. This is what the function should look like in the end:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<pre><code>mysql = mysqlclient.connect()\n\ndef handler(event, context):\n    data = event['data']\n    mysql.execute(f\"INSERT INTO foo (bar) VALUES (${data});\")\n    return\n</code></pre>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
