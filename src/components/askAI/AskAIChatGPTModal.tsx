@@ -108,7 +108,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
                         />
                         <div className="flex justify-end mt-2">
                             <button
-                                className="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-base disabled:opacity-50 disabled:cursor-not-allowed"
                                 onClick={handleSendPrompt}
                                 disabled={!customPrompt.trim() || hasSentPrompt}
                             >
