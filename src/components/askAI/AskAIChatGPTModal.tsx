@@ -102,6 +102,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
                         <textarea
                             className="w-full border rounded p-2 text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-800"
                             rows={3}
+                            autoFocus
                             placeholder="Nhập prompt tùy chỉnh (hoặc để trống để dùng prompt mặc định)..."
                             value={customPrompt}
                             onChange={e => setCustomPrompt(e.target.value)}
