@@ -10,6 +10,7 @@ import { getExtVersion } from '@/services/localStorageService';
 import Link from 'next/link';
 import { EXT_RELEASE_LINK } from '@/configs/config';
 import { AI_PROMPT_TYPE } from '@/constants/ai';
+import { buildDefaultPrompt } from '@/utils/prompt';
 
 interface AskChatGPTModalProps {
     content?: string;
@@ -61,51 +62,6 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
         }
     }, [isNeedUpgradeExt, requireVersion]);
 
-    function stripHtml(html: string) {
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        return doc.body.textContent || '';
-    }
-
-    // Hàm tạo prompt mặc định
-    function buildDefaultPrompt() {
-        let prompt = "";
-        if (toolType === AI_PROMPT_TYPE.TRAN) {
-            prompt += "Tôi muốn bạn đóng vai trò là chuyên gia ngôn ngữ Anh - Việt. Hãy giúp tôi dịch đoạn tiếng Anh sau.\n";
-            prompt += "Yêu cầu:\n";
-            prompt += "1. Dịch sang tiếng Việt tự nhiên, sát nghĩa, nhưng vẫn giữ đúng sắc thái gốc.\n";
-            prompt += "2. Giữ nguyên các từ khóa tiếng Anh nếu mang nghĩa chuyên ngành.\n";
-            prompt += "Văn bản cần dịch:\n";
-        }
-        else if (toolType === AI_PROMPT_TYPE.EXPLAIN) {
-            prompt += "Hãy phân tích kỹ câu hỏi trắc nghiệm sau đây. Chủ đề liên quan đến AWS.\n";
-            prompt += "Yêu cầu:\n";
-            prompt += "1. Đưa ra đáp án đúng trước, chỉ rõ lý do chọn. (nếu có câu hỏi và đáp án, không có thì bỏ qua)\n";
-            prompt += "2. Giải thích tất cả các phương án (đúng và sai), nêu rõ vì sao đúng, vì sao sai, nếu có ví dụ minh họa thì càng tốt. (nếu có câu hỏi và đáp án, không có thì bỏ qua)\n";
-            prompt += "3. Sử dụng kiến thức cập nhật mới nhất đến năm 2025 (vui lòng áp dụng theo phiên bản mới nhất).\n";
-            prompt += "4. Trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
-            prompt += "Văn bản cần giải thích:\n";
-        }
-        else if (toolType === AI_PROMPT_TYPE.TRAN_BASIC) {
-            prompt += "Tôi muốn bạn đóng vai trò là chuyên gia ngôn ngữ Anh - Việt. Hãy giúp tôi dịch đoạn tiếng Anh sau.\n";
-            prompt += "Yêu cầu:\n";
-            prompt += "1. Dịch sang tiếng Việt tự nhiên, sát nghĩa, nhưng vẫn giữ đúng sắc thái gốc.\n";
-            prompt += "2. Giữ nguyên các từ khóa tiếng Anh nếu mang nghĩa chuyên ngành.\n";
-            prompt += "3. Không cần giải thích hay phân tích gì thêm.\n";
-            prompt += "Văn bản cần dịch:\n";
-        }
-        else if (toolType === AI_PROMPT_TYPE.EXPLAIN_BASIC) {
-            prompt += "Hãy phân tích kỹ đoạn văn bản sau.\n";
-            prompt += "Yêu cầu:\n";
-            prompt += "1. Đưa ra nội dung chính và ý nghĩa của đoạn văn.\n";
-            prompt += "2. Giải thích các thuật ngữ hoặc khái niệm quan trọng nếu có.\n";
-            prompt += "3. Trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
-            prompt += "Văn bản cần giải thích:\n";
-        }
-
-        prompt += content;
-
-        return stripHtml(prompt);
-    }
 
     // Gửi prompt khi modal mở ra
     useEffect(() => {
@@ -120,7 +76,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
 
         setStreamText('');
 
-        const prompt = buildDefaultPrompt();
+        const prompt = buildDefaultPrompt(toolType, content);
         windowPostMessage(EVENT_ACTION.SEND_PROMPT, { prompt });
     }, [content, toolType]);
 

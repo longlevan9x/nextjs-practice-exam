@@ -2,7 +2,7 @@
 
 import { ArchiveBoxArrowDownIcon, GlobeAltIcon, MagnifyingGlassCircleIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import AskAIChatGPTModal from "@/components/askAI/AskAIChatGPTModal";
 import { useModal } from "@/components/contexts/ModalContext";
 import AddNote from "@/components/shareds/AddNote";
@@ -38,7 +38,7 @@ export default function SelectionPopup() {
         return document.body; // fallback
     }
 
-    const handleMouseUp = () => {
+    const handleMouseUp = useCallback(() => {
         const selection = window.getSelection();
 
         if (!selection) {
@@ -79,7 +79,7 @@ export default function SelectionPopup() {
         setButtonPosition({ x: offsetX / 2, y: offsetY });
         setSelectedText(text);
         setShowButton(true);
-    };
+    }, []);
 
 
     const handleShowChatGptModal = (sendOption: string) => {
@@ -96,7 +96,7 @@ export default function SelectionPopup() {
         return () => {
             document.removeEventListener("mouseup", handleMouseUp);
         };
-    }, []);
+    }, [handleMouseUp]);
 
     const handleOpenAddNoteModal = () => {
         showModal(<AddNote text={selectedText} />);
