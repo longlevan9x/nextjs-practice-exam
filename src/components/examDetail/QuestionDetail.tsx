@@ -17,7 +17,8 @@ import { checkExtInstalled } from "@/services/localStorageService";
 import Link from "next/link";
 import { EXT_RELEASE_LINK } from "@/configs/config";
 import { EXT_VERSION } from "@/constants/extension";
-import SelectionPopup from "@/components/shareds/SelectionPopup";
+import SelectionPopup from "@/components/common/SelectionPopup";
+import { AI_PROMPT_TYPE } from "@/constants/ai";
 
 const AI_SEND_OPT = {
   EXPLAIN_QA: "explain_qa",
@@ -110,12 +111,13 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     switch (sendOption) {
       case AI_SEND_OPT.EXPLAIN_EXPLAIN:
       case AI_SEND_OPT.EXPLAIN_QA:
-        toolType = "explain";
+        toolType = AI_PROMPT_TYPE.EXPLAIN;
         break;
       case AI_SEND_OPT.TRAN_ALL:
       case AI_SEND_OPT.TRAN_EXPLAN:
       case AI_SEND_OPT.TRAN_QA:
-        toolType = "tran";
+        toolType = AI_PROMPT_TYPE.TRAN;
+        break;
       default:
         break;
     }
