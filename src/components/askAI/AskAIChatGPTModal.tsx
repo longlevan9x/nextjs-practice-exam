@@ -43,7 +43,7 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
     }, [gptPayload]);
 
     const handleSendPrompt = () => {
-        if (!customPrompt.trim()) {
+        if (!customPrompt.trim() || hasSentPrompt) {
             return;
         }
 
