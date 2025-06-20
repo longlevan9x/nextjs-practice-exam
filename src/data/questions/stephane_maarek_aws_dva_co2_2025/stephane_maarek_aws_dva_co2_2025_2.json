@@ -2191,7 +2191,24 @@
     "multiple": false,
     "domain": "Development with AWS Services",
     "explanation": "<p>Correct option:\n<strong>Use <code>TransactWriteItems</code> API of DynamoDB Transactions</strong></p>\n\n<p>With Amazon DynamoDB transactions, you can group multiple actions together and submit them as a single all-or-nothing <code>TransactWriteItems</code> or <code>TransactGetItems</code> operation.</p>\n\n<p><code>TransactWriteItems</code> is a synchronous and idempotent write operation that groups up to 25 write actions in a single all-or-nothing operation. These actions can target up to 25 distinct items in one or more DynamoDB tables within the same AWS account and in the same Region. The aggregate size of the items in the transaction cannot exceed 4 MB. The actions are completed atomically so that either all of them succeed or none of them succeeds.</p>\n\n<p>You can optionally include a client token when you make a TransactWriteItems call to ensure that the request is idempotent. Making your transactions idempotent helps prevent application errors if the same operation is submitted multiple times due to a connection time-out or other connectivity issue.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use <code>BatchWriteItem</code> API to update multiple tables simultaneously</strong> - A <code>TransactWriteItems</code> operation differs from a <code>BatchWriteItem</code> operation in that all the actions it contains must be completed successfully, or no changes are made at all. With a <code>BatchWriteItem</code> operation, it is possible that only some of the actions in the batch succeed while the others do not.</p>\n\n<p><strong>Capture the transactions in the players table using DynamoDB streams and then sync with the items table</strong></p>\n\n<p><strong>Capture the transactions in the items table using DynamoDB streams and then sync with the players table</strong></p>\n\n<p>Many applications benefit from capturing changes to items stored in a DynamoDB table, at the point in time when such changes occur. DynamoDB supports streaming of item-level change data capture records in near-real-time. You can build applications that consume these streams and take action based on the contents. DynamoDB streams cannot be used to capture transactions in DynamoDB, therefore both these options are incorrect.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems</a></p>\n",
-    "correctAnswerExplanations": [],
+    "correctAnswerExplanations": [
+      {
+        "answer": "Correct option:\n<strong>Use <code>TransactWriteItems</code> API of DynamoDB Transactions</strong>",
+        "explanation": ""
+      },
+      {
+        "answer": "",
+        "explanation": "With Amazon DynamoDB transactions, you can group multiple actions together and submit them as a single all-or-nothing <code>TransactWriteItems</code> or <code>TransactGetItems</code> operation."
+      },
+      {
+        "answer": "",
+        "explanation": "<code>TransactWriteItems</code> is a synchronous and idempotent write operation that groups up to 25 write actions in a single all-or-nothing operation. These actions can target up to 25 distinct items in one or more DynamoDB tables within the same AWS account and in the same Region. The aggregate size of the items in the transaction cannot exceed 4 MB. The actions are completed atomically so that either all of them succeed or none of them succeeds."
+      },
+      {
+        "answer": "",
+        "explanation": "You can optionally include a client token when you make a TransactWriteItems call to ensure that the request is idempotent. Making your transactions idempotent helps prevent application errors if the same operation is submitted multiple times due to a connection time-out or other connectivity issue."
+      }
+    ],
     "incorrectAnswerExplanations": [
       {
         "answer": "",
