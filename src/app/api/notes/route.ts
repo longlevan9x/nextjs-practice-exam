@@ -16,10 +16,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
     const supabase = await createClient();
-    const {
-        data: { user },
-    } = await supabase.auth.getUser()
-
+    
     const body = await req.json()
     const { word, explain, userId } = body
 
