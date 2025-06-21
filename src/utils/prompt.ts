@@ -45,11 +45,9 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "Từ/cụm từ: \n";
     }
     else if (toolType === AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE) {
-        prompt += "Tôi muốn bạn đóng vai trò là chuyên gia dịch thuật chuyên ngành. Hãy giúp tôi phân tích và dịch cụm từ chuyên ngành sau sang tiếng Việt:\n";
+        prompt += "Tôi muốn bạn đóng vai trò là chuyên gia trong lĩnh vực aws. Hãy giúp tôi phân tích cụm từ sau:\n";
         prompt += "Yêu cầu:\n";
-        prompt += "1. Dịch sát nghĩa chuyên ngành, giữ nguyên thuật ngữ nếu không nên dịch.\n";
-        prompt += "2. Giải thích ý nghĩa trong ngữ cảnh AWS.\n";
-        prompt += "3. Nếu cần, hãy đưa ra ví dụ minh họa hoặc mô tả thêm bằng tiếng Anh đơn giản.\n";
+        prompt += "1. Giải thích ý nghĩa trong ngữ cảnh AWS.\n";
         prompt += "Cụm từ: \n";
     }
     else if (toolType === AI_PROMPT_TYPE.CREATE_MEANING) {

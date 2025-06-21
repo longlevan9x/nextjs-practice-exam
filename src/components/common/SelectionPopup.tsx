@@ -1,6 +1,6 @@
 "use client";
 
-import { ArchiveBoxArrowDownIcon, BookOpenIcon, Cog6ToothIcon, GlobeAltIcon, MagnifyingGlassCircleIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { ArchiveBoxArrowDownIcon, BookOpenIcon, Cog8ToothIcon, GlobeAltIcon, MagnifyingGlassCircleIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 import React, { useCallback, useEffect, useState } from "react";
 import AskAIChatGPTModal from "@/components/askAI/AskAIChatGPTModal";
@@ -33,7 +33,7 @@ export default function SelectionPopup() {
         },
          {
             id: AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE,
-            icon: <Cog6ToothIcon  className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            icon: <Cog8ToothIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
             label: "Phân tích Service",
             action: () => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE),
             isVisible: true
