@@ -20,7 +20,6 @@ export async function POST(req: Request) {
         data: { user },
     } = await supabase.auth.getUser()
 
-    console.log('User:', user)
     const body = await req.json()
     const { word, explain, userId } = body
 
