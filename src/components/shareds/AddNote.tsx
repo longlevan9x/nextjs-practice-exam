@@ -123,7 +123,10 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
                     disabled={isLoading}
                 >
                     Lưu
-                    <LoadingIcon isLoading={isLoading} className="w-3 h-3 text-white"/>
+                    {
+                        isLoading &&
+                        <LoadingIcon className="w-3 h-3 text-white" />
+                    }
                 </button>
             </div>
         </div>
