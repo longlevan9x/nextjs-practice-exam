@@ -1,6 +1,6 @@
 "use client";
 
-import { ArchiveBoxArrowDownIcon, GlobeAltIcon, MagnifyingGlassCircleIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { ArchiveBoxArrowDownIcon, BookOpenIcon, Cog6ToothIcon, GlobeAltIcon, MagnifyingGlassCircleIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 import React, { useCallback, useEffect, useState } from "react";
 import AskAIChatGPTModal from "@/components/askAI/AskAIChatGPTModal";
@@ -9,6 +9,51 @@ import AddNote from "@/components/shareds/AddNote";
 import { AI_PROMPT_TYPE } from "@/constants/ai";
 
 export default function SelectionPopup() {
+    const menuList = [
+        {
+            id: AI_PROMPT_TYPE.TRAN_BASIC,
+            icon: <GlobeAltIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "Dịch nội dung",
+            action: () => handleShowChatGptModal(AI_PROMPT_TYPE.TRAN_BASIC),
+            isVisible: true
+        },
+        {
+            id: AI_PROMPT_TYPE.EXPLAIN_BASIC,
+            icon: <MagnifyingGlassCircleIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "Phân tích nội dung",
+            action: () => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_BASIC),
+            isVisible: true
+        },
+        {
+            id: AI_PROMPT_TYPE.EXPLAIN_PHRASE,
+            icon: <BookOpenIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "Phân tích từ/cụm từ",
+            action: () => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_PHRASE),
+            isVisible: true
+        },
+         {
+            id: AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE,
+            icon: <Cog6ToothIcon  className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "Phân tích Service",
+            action: () => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE),
+            isVisible: true
+        },
+        {
+            id: AI_PROMPT_TYPE.CUSTOM,
+            icon: <SparklesIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "AI Tùy chỉnh",
+            action: () => handleShowChatGptModal(AI_PROMPT_TYPE.CUSTOM),
+            isVisible: true
+        },
+        {
+            id: "add-note",
+            icon: <ArchiveBoxArrowDownIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
+            label: "Lưu ghi chú",
+            action: () => handleOpenAddNoteModal(),
+            isVisible: true
+        }
+    ];
+
     const [showButton, setShowButton] = useState(false);
     const [selectedText, setSelectedText] = useState("");
     const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
@@ -116,30 +161,18 @@ export default function SelectionPopup() {
                                 </div>
                                 {openMenuLeft && (
                                     <div className="w-44 top-0 left-9 absolute z-50 border border-gray-200 dark:border-gray-700 rounded-xs bg-white text-gray-800 dark:bg-gray-800 dark:text-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0">
-                                        <a className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
-                                            href="#"
-                                            onClick={() => handleShowChatGptModal(AI_PROMPT_TYPE.TRAN_BASIC)}>
-                                            <GlobeAltIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />
-                                            <p className="text-gray-900 dark:text-white">Dịch nội dung</p>
-                                        </a>
-                                        <a className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
-                                            href="#"
-                                            onClick={() => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_BASIC)}>
-                                            <MagnifyingGlassCircleIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />
-                                            <p className="text-gray-900 dark:text-white">Phân tích nội dung</p>
-                                        </a>
-                                        <a className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
-                                            href="#"
-                                            onClick={() => handleShowChatGptModal(AI_PROMPT_TYPE.CUSTOM)}>
-                                            <SparklesIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />
-                                            <p className="text-gray-900 dark:text-white">AI Tùy chỉnh</p>
-                                        </a>
-                                        <a className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
-                                            href="#"
-                                            onClick={() => handleOpenAddNoteModal()}>
-                                            <ArchiveBoxArrowDownIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />
-                                            <p className="text-gray-900 dark:text-white">Lưu ghi chú</p>
-                                        </a>
+                                        {menuList.filter(item => item.isVisible).map(item => (
+                                            <a key={item.id}
+                                                className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
+                                                href="#"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    item.action();
+                                                }}>
+                                                {item.icon}
+                                                <p className="text-gray-900 dark:text-white">{item.label}</p>
+                                            </a>
+                                        ))}
                                     </div>
                                 )}
                             </div>

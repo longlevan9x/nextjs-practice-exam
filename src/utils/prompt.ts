@@ -3,6 +3,7 @@ import { stripHtml } from "@/utils/util";
 
 export function buildDefaultPrompt(toolType: string, content: string): string {
     let prompt = "";
+
     if (toolType === AI_PROMPT_TYPE.TRAN) {
         prompt += "Tôi muốn bạn đóng vai trò là chuyên gia ngôn ngữ Anh - Việt. Hãy giúp tôi dịch đoạn tiếng Anh sau.\n";
         prompt += "Yêu cầu:\n";
@@ -34,6 +35,30 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "2. Giải thích các thuật ngữ hoặc khái niệm quan trọng nếu có.\n";
         prompt += "3. Trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
         prompt += "Văn bản cần giải thích:\n";
+    } else if (toolType === AI_PROMPT_TYPE.EXPLAIN_PHRASE) {
+        prompt += "Tôi muốn bạn đóng vai trò là giáo viên tiếng Anh. Hãy giúp tôi phân tích và dịch từ/cụm từ sau theo phong cách dễ hiểu và sát với ngữ cảnh người học.\n";
+        prompt += "Yêu cầu:\n";
+        prompt += "1. Dịch sang tiếng Việt tự nhiên.\n";
+        prompt += "2. Giải thích ý nghĩa và cách dùng bằng tiếng Anh đơn giản.\n";
+        prompt += "3. Cho biết từ loại.\n";
+        prompt += "4. Đưa ra 1–2 ví dụ cụ thể trong câu.\n";
+        prompt += "Từ/cụm từ: \n";
+    }
+    else if (toolType === AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE) {
+        prompt += "Tôi muốn bạn đóng vai trò là chuyên gia dịch thuật chuyên ngành. Hãy giúp tôi phân tích và dịch cụm từ chuyên ngành sau sang tiếng Việt:\n";
+        prompt += "Yêu cầu:\n";
+        prompt += "1. Dịch sát nghĩa chuyên ngành, giữ nguyên thuật ngữ nếu không nên dịch.\n";
+        prompt += "2. Giải thích ý nghĩa trong ngữ cảnh AWS.\n";
+        prompt += "3. Nếu cần, hãy đưa ra ví dụ minh họa hoặc mô tả thêm bằng tiếng Anh đơn giản.\n";
+        prompt += "Cụm từ: \n";
+    }
+    else if (toolType === AI_PROMPT_TYPE.CREATE_MEANING) {
+        prompt += `Cho tôi 1-3 nghĩa ngắn gọn, đơn giản nhất của từ bên dưới.\n`;
+        prompt += "Yêu cầu:\n";
+        prompt += "1. Cách nhau bằng dấu phẩy.\n";
+        prompt += "2. Không cần ví dụ.\n";
+        prompt += "3. Ngữ cảnh trong công nghệ, cuộc sống.\n";
+
     }
 
     prompt += content;

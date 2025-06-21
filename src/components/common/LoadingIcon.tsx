@@ -1,8 +1,11 @@
 interface LoadingIconProps {
     className?: string;
+    isLoading?: boolean;
 }
 
-const LoadingIcon: React.FC<LoadingIconProps> = ({ className = "text-blue-600" }) => {
+const LoadingIcon: React.FC<LoadingIconProps> = ({ className = "text-blue-600", isLoading }) => {
+    if (!isLoading) return null;
+
     return (
         <svg className={`animate-spin h-5 w-5 ml-2 ${className}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>

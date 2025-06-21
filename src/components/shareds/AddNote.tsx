@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useModal } from '@/components/contexts/ModalContext';
 import { addNote } from '@/services/noteService';
+import { SparklesIcon } from '@heroicons/react/24/solid';
+import { buildDefaultPrompt } from '@/utils/prompt';
+import { AI_PROMPT_TYPE } from '@/constants/ai';
+import { EVENT_ACTION } from '@/constants/windowMessage';
+import { sendPromptToExtension } from '@/services/windowMessageService';
+import { useWindowMessage } from '@/hooks/useWindowMessage';
+import LoadingIcon from '@/components/common/LoadingIcon';
 
 interface AddNoteProps {
     text: string;
@@ -11,6 +18,24 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
     const [noteExplain, setNoteExplain] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<string[]>([]);
+    const [isAIPrompting, setIsAIPrompting] = useState(false);
+
+    const gptPayload = useWindowMessage<{ content: string }>(EVENT_ACTION.GPT_STREAM_PART);
+    const fullContentRef = useRef(""); // giữ nội dung đầy đủ
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        if (gptPayload?.content) {
+            fullContentRef.current += gptPayload.content;
+
+            if (!timeoutRef.current) {
+                timeoutRef.current = setTimeout(() => {
+                    setNoteExplain(fullContentRef.current);
+                    timeoutRef.current = null;
+                }, 100); // chỉ update 10 lần mỗi giây
+            }
+        }
+    }, [gptPayload]);
 
     const handleSaveNote = async () => {
         try {
@@ -29,6 +54,19 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
         } finally {
             setIsLoading(false);
         }
+    }
+
+    const onCallAI = () => {
+        if (isAIPrompting) return; // Prevent multiple calls
+        setIsAIPrompting(true);
+        setNoteExplain(""); // Reset noteExplain before calling AI
+        fullContentRef.current = ""; // Reset full content
+        timeoutRef.current = null; // Reset timeout
+        const prompt = buildDefaultPrompt(AI_PROMPT_TYPE.CREATE_MEANING, text);
+        sendPromptToExtension({ prompt });
+        setTimeout(() => {
+            setIsAIPrompting(false);
+        }, 1500); // Reset isAIPrompting after 1.5 seconds
     }
 
     return (
@@ -52,13 +90,23 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
                     {text}
                 </p>
 
-                <input
-                    type="text"
-                    value={noteExplain}
-                    onChange={(e) => setNoteExplain(e.target.value)}
-                    placeholder="Nội dung ghi chú..."
-                    className="w-full px-3 py-2 text-sm rounded-xs border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <div className="relative w-full">
+                    <input
+                        type="text"
+                        value={noteExplain}
+                        onChange={(e) => setNoteExplain(e.target.value)}
+                        placeholder="Nội dung ghi chú..."
+                        className="w-full pr-10 px-3 py-2 text-sm rounded-xs border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <button
+                        type="button"
+                        onClick={onCallAI}
+                        className="absolute cursor-pointer right-2 top-1/2 transform -translate-y-1/2 dark:hover:text-blue-300 hover:text-blue-700 text-gray-500 dark:text-white"
+                        aria-label="Call AI"
+                    >
+                        <SparklesIcon className="h-5 w-5 " />
+                    </button>
+                </div>
             </div>
 
             {/* Nút ở cuối */}
@@ -70,11 +118,12 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
                     Đóng
                 </button>
                 <button
-                    className="cursor-pointer px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-xs"
+                    className="flex cursor-pointer px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-xs"
                     onClick={handleSaveNote}
                     disabled={isLoading}
                 >
                     Lưu
+                    <LoadingIcon isLoading={isLoading} className="w-3 h-3 text-white"/>
                 </button>
             </div>
         </div>

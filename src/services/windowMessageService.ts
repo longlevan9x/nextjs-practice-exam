@@ -1,4 +1,8 @@
-import { EVENT_TYPE } from "@/constants/windowMessage"
+import { EVENT_ACTION, EVENT_TYPE } from "@/constants/windowMessage"
+
+export const sendPromptToExtension = (payload?: unknown) => {
+    windowPostMessage(EVENT_ACTION.SEND_PROMPT, payload);
+};
 
 export const windowPostMessage = (action: string, payload?: unknown) => {
     const data = {
