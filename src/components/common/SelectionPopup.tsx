@@ -154,7 +154,7 @@ export default function SelectionPopup() {
                     <div className="relative"
                         onMouseEnter={() => setOpenMenuLeft(true)}
                         onMouseLeave={() => setOpenMenuLeft(false)}>
-                        <div className="absolute z-50 p-2" style={{ top: buttonPosition.y - 70, left: buttonPosition.x }}>
+                        <div className="absolute z-50 p-2 pb-20" style={{ top: buttonPosition.y - 70, left: buttonPosition.x }}>
                             <div className="relative">
                                 <div className="cursor-pointer p-2 rounded-full shadow-md bg-white dark:bg-neutral-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                                     <CursorArrowRaysIcon className="w-4 h-4" />
