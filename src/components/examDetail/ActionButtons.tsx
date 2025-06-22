@@ -90,7 +90,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
             <button
               onClick={onSubmitExam}
               disabled={testEnded || isFinishing}
-              className={`flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white dark:bg-gray-900 rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
+              className={`flex items-center cursor-pointer px-2 py-0 lg:px-4 lg:py-1 border-2 border-blue-600 bg-white dark:bg-neutral-900 rounded-xs hover:bg-blue-700 hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${isFinishing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
             >
               <span>Kết thúc bài kiểm tra</span>
               {isFinishing && <LoadingIcon />}

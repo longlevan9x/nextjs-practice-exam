@@ -151,7 +151,7 @@ export default function ExamDetailPage() {
       </div>
 
       {/* Exam Details Card */}
-      <div className="w-full lg:w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xs shadow-lg dark:shadow-gray-700 p-6 md:p-8">
+      <div className="w-full lg:w-4xl mx-auto bg-white dark:bg-neutral-800 rounded-xs shadow-lg dark:shadow-gray-700 p-6 md:p-8">
         {/* Exam Logo */}
         <div className="flex justify-center mb-6">
           <Image
@@ -196,7 +196,7 @@ export default function ExamDetailPage() {
         {/* Mode Selection Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8">
           {/* Exam Mode Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-xs p-4 sm:p-6 border border-blue-200 dark:border-blue-700 hover:border-blue-600 dark:hover:border-blue-700 transition-all duration-300">
+          <div className="bg-white dark:bg-neutral-800 rounded-xs p-4 sm:p-6 border border-blue-200 dark:border-blue-700 hover:border-blue-600 dark:hover:border-blue-700 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-blue-600">Chế độ thi</h3>
@@ -259,7 +259,7 @@ export default function ExamDetailPage() {
           </div>
 
           {/* Practice Mode Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-xs p-4 sm:p-6 border border-green-200 hover:border-green-400 dark:border-green-600 dark:hover:border-green-700 transition-all duration-300">
+          <div className="bg-white dark:bg-neutral-800 rounded-xs p-4 sm:p-6 border border-green-200 hover:border-green-400 dark:border-green-600 dark:hover:border-green-700 transition-all duration-300">
             <div className="flex flex-col h-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
                 <h3 className="text-xl sm:text-2xl font-bold text-green-600">Chế độ luyện tập</h3>

@@ -10,7 +10,7 @@ interface SharedExamCardProps {
 const SharedExamCard: React.FC<SharedExamCardProps> = ({ exam }) => {
   return (
     <Link href={exam.incomplete ? `/exams/${exam.id}/${exam.examType}` : `/exams/${exam.id}`}>
-      <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-gray-700 transition-shadow duration-300 p-6 cursor-pointer relative">
+      <div className="flex items-center bg-white dark:bg-neutral-800 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-gray-800 transition-shadow duration-300 p-6 cursor-pointer relative">
         {/* Status Badge */}
         {exam.incomplete && (
           <div className="absolute top-0 right-2 bg-blue-500 dark:bg-blue-600 text-white px-2 py-1 rounded-full text-xs">

@@ -170,7 +170,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
               <PopoverPanel
                 transition
                 anchor="bottom"
-                className="rounded-xs bg-white border border-gray-100 dark:border-none dark:bg-gray-800 text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0"
+                className="rounded-xs bg-white border border-gray-100 dark:border-none dark:bg-neutral-800 text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0"
               >
                 {isExtInstalled &&
                   <div className="p-3">
@@ -224,7 +224,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
 
         {/* Domain Section */}
         {(question.showExplanation && question.domain) && (
-          <div className={`mt-4 p-3 border border-gray-300 dark:border-gray-500 rounded-xs bg-white dark:bg-gray-900 transition-all duration-300 delay-200 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+          <div className={`mt-4 p-3 border border-gray-300 dark:border-gray-500 rounded-xs bg-white dark:bg-neutral-900 transition-all duration-300 delay-200 ${isExpanded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
             <div className="flex flex-col space-y-2">
               <span className="font-bold text-lg">
                 Lĩnh vực

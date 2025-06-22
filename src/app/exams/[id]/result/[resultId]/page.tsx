@@ -262,7 +262,7 @@ const ResultOverviewPage: React.FC = () => {
 
 
             {/* Quick Navigation Sidebar */}
-            <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white  dark:bg-gray-800 shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
+            <div className="fixed lg:right-4 bottom-4 right-0 left-0 lg:left-auto lg:top-1/2 lg:-translate-y-1/2 z-10 bg-white  dark:bg-neutral-800 shadow-lg p-2 lg:p-3 rounded-lg lg:max-h-[80vh] overflow-x-auto lg:overflow-y-auto lg:overflow-x-hidden max-w-2/3 mx-auto lg:max-w-none">
                 <div className="flex lg:flex-col gap-2 lg:max-w-none">
                     {filteredQuestions.map((question) => (
                         <button

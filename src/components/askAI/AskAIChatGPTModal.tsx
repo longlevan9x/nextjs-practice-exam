@@ -96,11 +96,11 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
 
             <div className="w-full border-b border-b-gray-200  dark:border-b-gray-600"></div>
 
-            <div className={`ai-content-wrapper overflow-auto h-[calc(100vh-16rem)]  border-gray-200 dark:border-gray-700 rounded-xs bg-white dark:bg-gray-900 text-sm flex-grow`}>
+            <div className={`ai-content-wrapper overflow-auto h-[calc(100vh-16rem)]  border-gray-200 dark:border-gray-700 rounded-xs bg-white dark:bg-neutral-900 text-sm flex-grow`}>
                 {toolType === AI_PROMPT_TYPE.CUSTOM && (
                     <div className="mb-4">
                         <textarea
-                            className="w-full border rounded p-2 text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-800"
+                            className="w-full border rounded p-2 text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-neutral-800"
                             rows={3}
                             autoFocus
                             placeholder="Nhập prompt tùy chỉnh (hoặc để trống để dùng prompt mặc định)..."

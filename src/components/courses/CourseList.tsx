@@ -123,7 +123,7 @@ export default function CourseList() {
             <select
               value={selectedCourseCategory}
               onChange={(e) => onCourseCategoryChange(e.target.value)}
-              className="w-full px-4 py-2 h-full bg-white dark:bg-gray-900 border border-gray-300 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 h-full bg-white dark:bg-neutral-900 border border-gray-300 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {courseCategories.map((course) => (
                 <option key={course.value} value={course.value}>

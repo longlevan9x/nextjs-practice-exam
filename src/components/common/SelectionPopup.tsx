@@ -156,11 +156,11 @@ export default function SelectionPopup() {
                         onMouseLeave={() => setOpenMenuLeft(false)}>
                         <div className="absolute z-50 p-2" style={{ top: buttonPosition.y - 70, left: buttonPosition.x }}>
                             <div className="relative">
-                                <div className="cursor-pointer p-2 rounded-full shadow-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                <div className="cursor-pointer p-2 rounded-full shadow-md bg-white dark:bg-neutral-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                                     <CursorArrowRaysIcon className="w-4 h-4" />
                                 </div>
                                 {openMenuLeft && (
-                                    <div className="w-44 top-0 left-9 absolute z-50 border border-gray-200 dark:border-gray-700 rounded-xs bg-white text-gray-800 dark:bg-gray-800 dark:text-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0">
+                                    <div className="w-44 top-0 left-9 absolute z-50 border border-gray-200 dark:border-gray-700 rounded-xs bg-white text-gray-800 dark:bg-neutral-800 dark:text-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0">
                                         {menuList.filter(item => item.isVisible).map(item => (
                                             <a key={item.id}
                                                 className="flex items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"

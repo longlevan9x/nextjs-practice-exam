@@ -12,7 +12,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
 }) => {
     return (
         <Link href={`/exams?courseId=${course.id}`}>
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:hover:shadow-gray-800">
                 <div className="flex justify-center items-center">
                     <Image
                         src={course.imageUrl}

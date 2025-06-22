@@ -130,7 +130,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
   return (
     <>
       <div className="flex flex-col">
-        <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 lg:pl-4 py-4 space-y-4 px-2">
+        <div className="sticky top-0 z-10 bg-white dark:bg-neutral-900 lg:pl-4 py-4 space-y-4 px-2">
           <div className="flex justify-between items-center">
             <h2 className="text-xl font-bold text-gray-800 dark:text-gray-300">Danh sách câu hỏi</h2>
             <button 
@@ -156,7 +156,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
               id="filter"
               value={filter}
               onChange={(e) => onFilterChange(e.target.value)}
-              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="dark:text-gray-200 dark:dark:bg-neutral-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               {FILTER_OPTIONS.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -168,7 +168,7 @@ const QuestionList: React.FC<QuestionListProps> = ({
               id="domainFilter"
               value={domainFilter}
               onChange={(e) => onDomainFilterChange(e.target.value)}
-              className="dark:text-gray-200 dark:dark:bg-gray-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="dark:text-gray-200 dark:dark:bg-neutral-900 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="all">Tất cả lĩnh vực</option>
               {domains.map((domain) => (
