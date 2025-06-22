@@ -212,8 +212,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use Enhanced Fanout feature of Kinesis Data Streams</strong></p>\n\n<p>Amazon Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service. KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events.</p>\n\n<p>By default, the 2MB/second/shard output is shared between all of the applications consuming data from the stream. You should use enhanced fan-out if you have multiple consumers retrieving data from a stream in parallel. With enhanced fan-out developers can register stream consumers to use enhanced fan-out and receive their own 2MB/second pipe of read throughput per shard, and this throughput automatically scales with the number of shards in a stream.</p>\n\n<p>Kinesis Data Streams Fanout\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q33-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q33-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/\">https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Swap out Kinesis Data Streams with Kinesis Data Firehose</strong> -  Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics tools. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security. Kinesis Data Firehose can only write to S3, Redshift, Elasticsearch or Splunk. You can't have applications consuming data streams from Kinesis Data Firehose, that's the job of Kinesis Data Streams. Therefore this option is not correct.</p>\n\n<p><strong>Swap out Kinesis Data Streams with SQS Standard queues</strong></p>\n\n<p><strong>Swap out Kinesis Data Streams with SQS FIFO queues</strong></p>\n\n<p>Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS offers two types of message queues. Standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery. SQS FIFO queues are designed to guarantee that messages are processed exactly once, in the exact order that they are sent. As multiple applications are consuming the same stream concurrently, both SQS Standard and SQS FIFO are not the right fit for the given use-case.</p>\n\n<p>Exam Alert:</p>\n\n<p>Please understand the differences between the capabilities of Kinesis Data Streams vs SQS, as you may be asked scenario-based questions on this topic in the exam.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q33-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q33-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/kinesis/data-streams/faqs/\">https://aws.amazon.com/kinesis/data-streams/faqs/</a><p></p>\n\n<p>References:</p>\n\n<p><a href=\"https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/\">https://aws.amazon.com/blogs/aws/kds-enhanced-fanout/</a></p>\n\n<p><a href=\"https://aws.amazon.com/kinesis/data-streams/faqs/\">https://aws.amazon.com/kinesis/data-streams/faqs/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use Enhanced Fanout feature of Kinesis Data Streams</strong>"
+        "answer": "<strong>Use Enhanced Fanout feature of Kinesis Data Streams</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -238,12 +238,12 @@
         "explanation": "<strong>Swap out Kinesis Data Streams with Kinesis Data Firehose</strong> -  Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics tools. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security. Kinesis Data Firehose can only write to S3, Redshift, Elasticsearch or Splunk. You can't have applications consuming data streams from Kinesis Data Firehose, that's the job of Kinesis Data Streams. Therefore this option is not correct."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Swap out Kinesis Data Streams with SQS Standard queues</strong>"
+        "answer": "<strong>Swap out Kinesis Data Streams with SQS Standard queues</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Swap out Kinesis Data Streams with SQS FIFO queues</strong>"
+        "answer": "<strong>Swap out Kinesis Data Streams with SQS FIFO queues</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -299,8 +299,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use a dead-letter queue to handle message processing failures</strong></p>\n\n<p>Dead-letter queues can be used by other queues (source queues) as a target for messages that can't be processed (consumed) successfully. Dead-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed.</p>\n\n<p>Sometimes, messages can’t be processed because of a variety of possible issues, such as when a user comments on a story but it remains unprocessed because the original story itself is deleted by the author while the comments were being posted. In such a case, the dead-letter queue can be used to handle message processing failures.</p>\n\n<p>How do dead-letter queues work?\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q31-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q31-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html</a><p></p>\n\n<p>Use-cases for dead-letter queues:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q31-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q31-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use a temporary queue to handle message processing failures</strong> - The most common use case for temporary queues is the request-response messaging pattern (for example, processing a login request), where a requester creates a temporary queue for receiving each response message. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls. Temporary queues cannot be used to handle message processing failures.</p>\n\n<p><strong>Use short polling to handle message processing failures</strong></p>\n\n<p><strong>Use long polling to handle message processing failures</strong></p>\n\n<p>Amazon SQS provides short polling and long polling to receive messages from a queue. By default, queues use short polling. With short polling, Amazon SQS sends the response right away, even if the query found no messages. With long polling, Amazon SQS sends a response after it collects at least one available message, up to the maximum number of messages specified in the request. Amazon SQS sends an empty response only if the polling wait time expires.\nNeither short polling nor long polling can be used to handle message processing failures.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use a dead-letter queue to handle message processing failures</strong>"
+        "answer": "<strong>Use a dead-letter queue to handle message processing failures</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -333,12 +333,12 @@
         "explanation": "<strong>Use a temporary queue to handle message processing failures</strong> - The most common use case for temporary queues is the request-response messaging pattern (for example, processing a login request), where a requester creates a temporary queue for receiving each response message. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls. Temporary queues cannot be used to handle message processing failures."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Use short polling to handle message processing failures</strong>"
+        "answer": "<strong>Use short polling to handle message processing failures</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Use long polling to handle message processing failures</strong>"
+        "answer": "<strong>Use long polling to handle message processing failures</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -507,8 +507,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>CodeDeploy Deployment Groups</strong></p>\n\n<p>You can specify one or more deployment groups for a CodeDeploy application. The deployment group contains settings and configurations used during the deployment. Most deployment group settings depend on the compute platform used by your application. Some settings, such as rollbacks, triggers, and alarms can be configured for deployment groups for any compute platform.</p>\n\n<p>In an EC2/On-Premises deployment, a deployment group is a set of individual instances targeted for deployment. A deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>CodeDeploy Agent</strong> - The CodeDeploy agent is a software package that, when installed and configured on an instance, makes it possible for that instance to be used in CodeDeploy deployments. The agent connects the EC2 instances to the CodeDeploy service.</p>\n\n<p><strong>CodeDeploy Hooks</strong> - Hooks are found in the AppSec file used by AWS CodeDeploy to manage deployment. Hooks correspond to lifecycle events such as ApplicationStart, ApplicationStop, etc. to which you can assign a script.</p>\n\n<p><strong>Define multiple CodeDeploy Applications</strong> - This option has been added as a distractor. Instead, you want to use deployment groups to use the same deployment and maybe separate the times when a group of instances receives the software updates.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups.html\">https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>CodeDeploy Deployment Groups</strong>"
+        "answer": "<strong>CodeDeploy Deployment Groups</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -594,8 +594,8 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>A process deletes an existing object and immediately lists keys within its bucket. The object could still be visible for few more minutes till the change propagates</strong>"
+        "answer": "<strong>A process deletes an existing object and immediately lists keys within its bucket. The object could still be visible for few more minutes till the change propagates</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -647,8 +647,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>The put data calls will be rejected with a <code>ProvisionedThroughputExceeded</code> exception</strong></p>\n\n<p>The capacity limits of an Amazon Kinesis data stream are defined by the number of shards within the data stream. The limits can be exceeded by either data throughput or the number of PUT records. While the capacity limits are exceeded, the put data call will be rejected with a ProvisionedThroughputExceeded exception. If this is due to a temporary rise of the data stream’s input data rate, retry by the data producer will eventually lead to completion of the requests. If this is due to a sustained rise of the data stream’s input data rate, you should increase the number of shards within your data stream to provide enough capacity for the put data calls to consistently succeed.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>The put data calls will be rejected with a <code>AccessDeniedException</code> exception once the limit is reached</strong> - Access Denied error is thrown when the accessing system does not have enough permissions. Since data was getting ingested into Data Streams before reaching the capacity, this error is not possible.</p>\n\n<p><strong>Data is lost unless the partition key of the data records is changed in order to write data to a different shard in the stream</strong> - Partition key is used to segregate and route records to different shards of a data stream. A partition key is specified by your data producer while adding data to an Amazon Kinesis data stream. The use case talks about provisioning only one shard. It is not possible to set up more shards by simply changing the partition key. Hence, this choice is incorrect.</p>\n\n<p><strong>Contact AWS support to request an increase in the number of shards</strong> - This is a made-up option that acts as a distractor.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://aws.amazon.com/kinesis/data-streams/faqs/\">https://aws.amazon.com/kinesis/data-streams/faqs/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>The put data calls will be rejected with a <code>ProvisionedThroughputExceeded</code> exception</strong>"
+        "answer": "<strong>The put data calls will be rejected with a <code>ProvisionedThroughputExceeded</code> exception</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -712,16 +712,16 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong>CloudFront routes all incoming requests to the primary origin, even when a previous request failed over to the secondary origin</strong></p>\n\n<p>CloudFront routes all incoming requests to the primary origin, even when a previous request failed over to the secondary origin. CloudFront only sends requests to the secondary origin after a request to the primary origin fails.</p>\n\n<p><strong>CloudFront fails over to the secondary origin only when the HTTP method of the viewer request is GET, HEAD or OPTIONS</strong></p>\n\n<p>CloudFront fails over to the secondary origin only when the HTTP method of the viewer request is GET, HEAD, or OPTIONS. CloudFront does not failover when the viewer sends a different HTTP method (for example POST, PUT, and so on).</p>\n\n<p>How origin failover works:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q41-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q41-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>When there’s a cache hit, CloudFront routes the request to the primary origin in the origin group</strong> - When there’s a cache miss, CloudFront routes the request to the primary origin in the origin group. When there’s a cache hit, CloudFront returns the requested file.</p>\n\n<p><strong>To set up origin failover, you must have a distribution with at least three origins</strong> - Two origins are enough to set up an origin failover.</p>\n\n<p><strong>In the Origin Group of your distribution, all the origins are defined as primary for automatic failover in case an origin fails</strong> - To set up origin failover, you must have a distribution with at least two origins. Next, you create an origin group for your distribution that includes two origins, setting one as the primary. Only one origin can be set as primary.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>CloudFront routes all incoming requests to the primary origin, even when a previous request failed over to the secondary origin</strong>"
+        "answer": "<strong>CloudFront routes all incoming requests to the primary origin, even when a previous request failed over to the secondary origin</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
         "explanation": "CloudFront routes all incoming requests to the primary origin, even when a previous request failed over to the secondary origin. CloudFront only sends requests to the secondary origin after a request to the primary origin fails."
       },
       {
-        "answer": "",
-        "explanation": "<strong>CloudFront fails over to the secondary origin only when the HTTP method of the viewer request is GET, HEAD or OPTIONS</strong>"
+        "answer": "<strong>CloudFront fails over to the secondary origin only when the HTTP method of the viewer request is GET, HEAD or OPTIONS</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -787,8 +787,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Deploy the new version to a separate environment via Blue/Green Deployment, and then swap Route 53 records of the two environments to redirect traffic to the new version</strong></p>\n\n<p>With deployment policies such as 'All at once', AWS Elastic Beanstalk performs an in-place update when you update your application versions and your application can become unavailable to users for a short period of time. You can avoid this downtime by performing a blue/green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs (via Route 53) of the two environments to redirect traffic to the new version instantly. In case of any deployment issues, the rollback process is very quick via swapping the URLs for the two environments.</p>\n\n<p>Overview of Elastic Beanstalk Deployment Policies:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q10-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q10-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html\">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Deploy the new application version using 'All at once' deployment policy</strong> - Although 'All at once' is the quickest deployment method, but the application may become unavailable to users (or have low availability) for a short time. So this option is not correct.</p>\n\n<p><strong>Deploy the new application version using 'Rolling' deployment policy</strong> - This policy avoids downtime and minimizes reduced availability, at a cost of a longer deployment time. However rollback process is via manual redeploy, so it's not as quick as the Blue/Green deployment.</p>\n\n<p><strong>Deploy the new application version using 'Rolling with additional batch' deployment policy</strong> - This policy avoids any reduced availability, at a cost of an even longer deployment time compared to the Rolling method. Suitable if you must maintain the same bandwidth throughout the deployment. However rollback process is via manual redeploy, so it's not as quick as the Blue/Green deployment.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html\">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Deploy the new version to a separate environment via Blue/Green Deployment, and then swap Route 53 records of the two environments to redirect traffic to the new version</strong>"
+        "answer": "<strong>Deploy the new version to a separate environment via Blue/Green Deployment, and then swap Route 53 records of the two environments to redirect traffic to the new version</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -854,8 +854,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>The IAM permissions are wrong for the CodeBuild service</strong></p>\n\n<p>You can push your Docker or Open Container Initiative (OCI) images to an Amazon ECR repository with the docker push command.</p>\n\n<p>Amazon ECR users require permission to call ecr:GetAuthorizationToken before they can authenticate to a registry and push or pull any images from any Amazon ECR repository. Amazon ECR provides several managed policies to control user access at varying levels</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>The ECR repository is stale, you must delete and re-create it</strong> - You can delete a repository when you are done using it, stale is not a concept within ECR. This option has been added as a distractor.</p>\n\n<p><strong>CodeBuild cannot talk to ECR because of security group issues</strong> - A security group acts as a virtual firewall at the instance level and it is not related to pushing Docker images, so this option does not fit the given use-case.</p>\n\n<p><strong>The ECS instances are misconfigured and must contain additional data in /etc/ecs/ecs.config</strong> - The error Authorization is an indication that there is an access issue, therefore you should not look at your configuration first but rather permissions.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html\">https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/ecr_managed_policies.html\">https://docs.aws.amazon.com/AmazonECR/latest/userguide/ecr_managed_policies.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>The IAM permissions are wrong for the CodeBuild service</strong>"
+        "answer": "<strong>The IAM permissions are wrong for the CodeBuild service</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -937,8 +937,8 @@
         "link": "https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/"
       },
       {
-        "answer": "",
-        "explanation": "<strong><code>movie_id</code></strong>"
+        "answer": "<strong><code>movie_id</code></strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -996,8 +996,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>A process replaces an existing object and immediately tries to read it. Amazon S3 always returns the latest version of the object</strong></p>\n\n<p>Amazon S3 delivers strong read-after-write consistency automatically, without changes to performance or availability, without sacrificing regional isolation for applications, and at no additional cost.</p>\n\n<p>After a successful write of a new object or an overwrite of an existing object, any subsequent read request immediately receives the latest version of the object. S3 also provides strong consistency for list operations, so after a write, you can immediately perform a listing of the objects in a bucket with any changes reflected.</p>\n\n<p>Strong read-after-write consistency helps when you need to immediately read an object after a write. For example, strong read-after-write consistency when you often read and list immediately after writing objects.</p>\n\n<p>To summarize, all S3 GET, PUT, and LIST operations, as well as operations that change object tags, ACLs, or metadata, are strongly consistent. What you write is what you will read, and the results of a LIST will be an accurate reflection of what’s in the bucket.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the previous data</strong></p>\n\n<p><strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 does not return any data</strong></p>\n\n<p><strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the new data</strong></p>\n\n<p>These three options contradict the earlier details provided in the explanation.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel\">https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel</a></p>\n\n<p><a href=\"https://aws.amazon.com/s3/faqs/\">https://aws.amazon.com/s3/faqs/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>A process replaces an existing object and immediately tries to read it. Amazon S3 always returns the latest version of the object</strong>"
+        "answer": "<strong>A process replaces an existing object and immediately tries to read it. Amazon S3 always returns the latest version of the object</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1018,16 +1018,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the previous data</strong>"
+        "answer": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the previous data</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 does not return any data</strong>"
+        "answer": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 does not return any data</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the new data</strong>"
+        "answer": "<strong>A process replaces an existing object and immediately tries to read it. Until the change is fully propagated, Amazon S3 might return the new data</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1131,8 +1131,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Increase the RAM assigned to your Lambda function</strong></p>\n\n<p>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume.</p>\n\n<p>In the AWS Lambda resource model, you choose the amount of memory you want for your function which allocates proportional CPU power and other resources. This means you will have access to more compute power when you choose one of the new larger settings. To configure the memory for your function, set a value between 128 MB and 10,240 MB in 1-MB increments. At 1,769 MB, a function has the equivalent of one vCPU (one vCPU-second of credits per second). You access these settings when you create a function or update its configuration. The settings are available using the AWS Management Console, AWS CLI, or SDKs.</p>\n\n<p>Therefore, by increasing the amount of memory available to the Lambda functions, you can run the compute-heavy workflows.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Change the instance type for your Lambda function</strong> - Instance types apply to the EC2 service and not to Lambda function as its a serverless service.</p>\n\n<p><strong>Change your Lambda function runtime to use Golang</strong> - This changes programming language which requires code changes, so this option is not correct. Besides, changing the runtime may not even address the performance issues.</p>\n\n<p><strong>Increase the Lambda function timeout</strong> - This option would increase the amount of time for which the Lambda function executes, which may help in case you have some heavy processing, but won't help with the actual performance of your Lambda function.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-console.html\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-console.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Increase the RAM assigned to your Lambda function</strong>"
+        "answer": "<strong>Increase the RAM assigned to your Lambda function</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1198,8 +1198,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong></p>\n\n<p>AWS CloudFormation gives developers and businesses an easy way to create a collection of related AWS and third-party resources and provision them in an orderly and predictable fashion.</p>\n\n<p>How CloudFormation Works:\n<img src=\"https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_CloudFormation.ad3a4c93b4fdd3366da3da0de4fb084d89a5d761.png\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_CloudFormation.ad3a4c93b4fdd3366da3da0de4fb084d89a5d761.png\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/cloudformation/\">https://aws.amazon.com/cloudformation/</a><p></p>\n\n<p>You can create a cross-stack reference to export resources from one AWS CloudFormation stack to another. For example, you might have a network stack with a VPC and subnets and a separate public web application stack. To use the security group and subnet from the network stack, you can create a cross-stack reference that allows the web application stack to reference resource outputs from the network stack. With a cross-stack reference, owners of the web application stacks don't need to create or maintain networking rules or assets.</p>\n\n<p>To create a cross-stack reference, use the Export output field to flag the value of a resource output for export. Then, use the Fn::ImportValue intrinsic function to import the value.</p>\n\n<p>You cannot use the Ref intrinsic function to import the value.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q3-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q3-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong></p>\n\n<p><strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong></p>\n\n<p><strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong></p>\n\n<p>These three options contradict the details provided in the explanation above, so these options are not correct.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://aws.amazon.com/cloudformation/\">https://aws.amazon.com/cloudformation/</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong>"
+        "answer": "<strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1231,16 +1231,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong>"
+        "answer": "<strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Fn::ImportValue intrinsic function to import the value of VPC into the web application stack</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong>"
+        "answer": "<strong>Create a cross-stack reference and use the Outputs output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong>"
+        "answer": "<strong>Create a cross-stack reference and use the Export output field to flag the value of VPC from the network stack. Then use Ref intrinsic function to reference the value of VPC into the web application stack</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1345,8 +1345,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>AWS CloudTrail</strong></p>\n\n<p>AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides an event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command-line tools, and other AWS services.</p>\n\n<p>AWS CloudTrail increases visibility into your user and resource activity by recording AWS Management Console actions and API calls. You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.</p>\n\n<p>How CloudTrail works:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt3-q25-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt3-q25-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/cloudtrail/\">https://aws.amazon.com/cloudtrail/</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Amazon CloudWatch</strong> - Amazon CloudWatch is a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources. CloudWatch can collect numbers and respond to AWS service-related events, but it does not help in user activity logging.</p>\n\n<p><strong>AWS X-Ray</strong> - AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors. X-Ray is a very important tool in troubleshooting but is not useful in logging user activity.</p>\n\n<p><strong>Amazon Inspector</strong> - Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector security assessments help you check for unintended network accessibility of your Amazon EC2 instances and for vulnerabilities on those EC2 instances. This does not log User activity at the account level.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://aws.amazon.com/xray/\">https://aws.amazon.com/xray/</a></p>\n\n<p><a href=\"https://aws.amazon.com/inspector/\">https://aws.amazon.com/inspector/</a></p>\n\n<p><a href=\"https://aws.amazon.com/cloudwatch/\">https://aws.amazon.com/cloudwatch/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>AWS CloudTrail</strong>"
+        "answer": "<strong>AWS CloudTrail</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1419,8 +1419,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong><code>ECS_ENABLE_TASK_IAM_ROLE</code></strong></p>\n\n<p>This configuration item is used to enable IAM roles for tasks for containers with the bridge and default network modes.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong><code>ECS_ENGINE_AUTH_DATA</code></strong> - This refers to the authentication data within a Docker configuration file, so this is not the correct option.</p>\n\n<p><strong><code>ECS_AVAILABLE_LOGGING_DRIVERS</code></strong> - The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with this variable. This configuration item refers to the logging driver.</p>\n\n<p><strong><code>ECS_CLUSTER</code></strong> - This refers to the ECS cluster that the ECS agent should check into. This is passed to the container instance at launch through Amazon EC2 user data.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong><code>ECS_ENABLE_TASK_IAM_ROLE</code></strong>"
+        "answer": "<strong><code>ECS_ENABLE_TASK_IAM_ROLE</code></strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1478,8 +1478,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's origin request event</strong></p>\n\n<p>When a viewer request to CloudFront results in a cache miss (the requested object is not cached at the edge location), CloudFront sends a request to the origin to retrieve the object. This is called an origin request. The origin request always includes the following information from the viewer request:</p>\n\n<p>The URL path (the path only, without URL query strings or the domain name)</p>\n\n<p>The request body (if there is one)</p>\n\n<p>The HTTP headers that CloudFront automatically includes in every origin request, including Host, User-Agent, and X-Amz-Cf-Id</p>\n\n<p>The example below shows a Lambda@Edge function with a handler that is used to change response based on user country:</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q32-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q32-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-content-based-S3-origin-request-trigger\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-content-based-S3-origin-request-trigger</a><p></p>\n\n<p>Choosing between CloudFront Functions and Lambda@Edge:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q32-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q32-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html</a><p></p>\n\n<p>We use the value of the CloudFront-Viewer-Country header to update the S3 bucket domain name to a bucket in a Region that is closer to the viewer. This can be useful in several ways:</p>\n\n<ol>\n<li><p>It reduces latencies when the Region specified is nearer to the viewer's country.</p></li>\n<li><p>It provides data sovereignty by making sure that data is served from an origin that's in the same country that the request came from.</p></li>\n</ol>\n\n<p>So, for the given use case, we need to leverage the origin request event (to address the cache miss) and trigger the Lambda@Edge function to redirect the requests on cache miss to the S3 bucket nearest to the user country.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's viewer request event</strong></p>\n\n<p>Consider the following events:</p>\n\n<p>Viewer request event: The function executes when CloudFront receives a request from a viewer before it checks to see whether the requested object is in the CloudFront cache.</p>\n\n<p>Origin request event: The function executes only when CloudFront forwards a request to your origin. When the requested object is in the CloudFront cache, the function doesn't execute.</p>\n\n<p>If you use the viewer request event, the function would be triggered on all user requests rather than only when you have a cache miss. So, this option is incorrect.</p>\n\n<p><strong>Redirect requests on cache misses to the Amazon S3 bucket nearest to the user country. Create a CloudFront function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the CloudFront function with the distribution's viewer request event</strong></p>\n\n<p>With CloudFront Functions in Amazon CloudFront, you can write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations. Your functions can manipulate the requests and responses that flow through CloudFront, perform basic authentication and authorization, generate HTTP responses at the edge, and more.</p>\n\n<p>When you associate a CloudFront function with a CloudFront distribution, CloudFront intercepts requests and responses at CloudFront edge locations and passes them to your function. You can invoke CloudFront functions when the following events occur:</p>\n\n<ol>\n<li><p>When CloudFront receives a request from a viewer (viewer request): The function executes when CloudFront receives a request from a viewer before it checks to see whether the requested object is in the CloudFront cache.</p></li>\n<li><p>Before CloudFront returns the response to the viewer (viewer response): The function executes before returning the requested file to the viewer. Note that the function executes regardless of whether the file is already in the CloudFront cache.</p></li>\n</ol>\n\n<p>If you use the viewer request event, the function would be triggered on all user requests rather than only when you have a cache miss. So, this option is incorrect.</p>\n\n<p><strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a CloudFront function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the CloudFront function with the distribution's origin request event</strong> - This option is incorrect. You can invoke CloudFront functions for only two events: When CloudFront receives a request from a viewer (viewer request) and Before CloudFront returns the response to the viewer (viewer response). Origin request and Origin response events are not supported for the CloudFront function.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-redirecting-examples\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-redirecting-examples</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-cloudfront-trigger-events.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-cloudfront-trigger-events.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html\">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's origin request event</strong>"
+        "answer": "<strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's origin request event</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1524,8 +1524,8 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's viewer request event</strong>"
+        "answer": "<strong>Redirect requests on cache misses to the S3 bucket nearest to the user country. Create a Lambda@Edge function to redirect requests based on the value of the CloudFront-Viewer-Country header. Associate the Lambda@Edge function with the distribution's viewer request event</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1666,8 +1666,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Put the two containers into a single task definition using a Fargate Launch Type</strong></p>\n\n<p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For more control over your infrastructure, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage by using the EC2 launch type.</p>\n\n<p><img src=\"https://d1.awsstatic.com/diagrams/product-page-diagrams/product-page-diagram_ECS_1.86ebd8c223ec8b55aa1903c423fbe4e672f3daf7.png\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://d1.awsstatic.com/diagrams/product-page-diagrams/product-page-diagram_ECS_1.86ebd8c223ec8b55aa1903c423fbe4e672f3daf7.png\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/ecs/\">https://aws.amazon.com/ecs/</a><p></p>\n\n<p>As the development team is looking for a serverless data store service, therefore the two containers should be launched into a single task definition using a Fargate Launch Type. Using a single task definition allows the two containers to share resources. Please see these use-cases for Fargate Launch type when you should put multiple containers into the same task definition:</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q2-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q2-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html</a><p></p>\n\n<p>For a deep-dive on understanding how Amazon ECS manages CPU and memory resources, please review this excellent blog-\n<a href=\"https://aws.amazon.com/blogs/containers/how-amazon-ecs-manages-cpu-and-memory-resources/\">https://aws.amazon.com/blogs/containers/how-amazon-ecs-manages-cpu-and-memory-resources/</a></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Put the two containers into two separate task definitions using a Fargate Launch Type</strong> - This option contradicts the details provided in the explanation above, so this option is ruled out.</p>\n\n<p><strong>Put the two containers into two separate task definitions using an EC2 Launch Type</strong></p>\n\n<p><strong>Put the two containers into a single task definition using an EC2 Launch Type</strong></p>\n\n<p>As the development team is looking for a serverless data store service, therefore EC2 Launch Type is ruled out. So both these options are incorrect.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html</a></p>\n\n<p><a href=\"https://aws.amazon.com/blogs/containers/how-amazon-ecs-manages-cpu-and-memory-resources/\">https://aws.amazon.com/blogs/containers/how-amazon-ecs-manages-cpu-and-memory-resources/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Put the two containers into a single task definition using a Fargate Launch Type</strong>"
+        "answer": "<strong>Put the two containers into a single task definition using a Fargate Launch Type</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1695,12 +1695,12 @@
         "explanation": "<strong>Put the two containers into two separate task definitions using a Fargate Launch Type</strong> - This option contradicts the details provided in the explanation above, so this option is ruled out."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Put the two containers into two separate task definitions using an EC2 Launch Type</strong>"
+        "answer": "<strong>Put the two containers into two separate task definitions using an EC2 Launch Type</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Put the two containers into a single task definition using an EC2 Launch Type</strong>"
+        "answer": "<strong>Put the two containers into a single task definition using an EC2 Launch Type</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1746,8 +1746,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>S3</strong></p>\n\n<p>If you upload a local template file, AWS CloudFormation uploads it to an Amazon Simple Storage Service (Amazon S3) bucket in your AWS account. If you don't already have an S3 bucket that was created by AWS CloudFormation, it creates a unique bucket for each region in which you upload a template file. If you already have an S3 bucket that was created by AWS CloudFormation in your AWS account, AWS CloudFormation adds the template to that bucket.</p>\n\n<p>Selecting a stack template for CloudFormation:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt5-q56-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt5-q56-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>EBS</strong> - An Amazon EBS volume is a durable, block-level storage device that you can attach to your instances. After you attach a volume to an instance, you can use it as you would use a physical hard drive. EBS volumes are flexible. Amazon EBS is a recommended storage option when data must be quickly accessible and requires long-term persistence. EBS cannot be used for selecting a stack template for CloudFormation.</p>\n\n<p><strong>EFS</strong> - EFS is a file storage service where you mount the file system on an Amazon EC2 Linux-based instance which is not an option for CloudFormation.</p>\n\n<p><strong>ECR</strong> - Amazon ECR eliminates the need to operate your container repositories or worry about scaling the underlying infrastructure which does not apply to CloudFormation.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html\">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>S3</strong>"
+        "answer": "<strong>S3</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1813,8 +1813,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Define a <code>buildspec.yml</code> file in the root directory</strong></p>\n\n<p>AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications.</p>\n\n<p>A build spec is a collection of build commands and related settings, in YAML format, that AWS CodeBuild uses to run a build. You can include a build spec as part of the source code or you can define a build spec when you create a build project.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q37-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q37-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Define an <code>appspec.yml</code> file in the root directory</strong> - The AppSpec file is used for deployment in the CodeDeploy service.</p>\n\n<p><strong>Define a <code>buildspec.yml</code> file in the codebuild/ directory</strong> - The file is correct but must be in the root directory.</p>\n\n<p><strong>Define an <code>appspec.yml</code> file in the codebuild/ directory</strong> - The AppSpec file is used for deployment in the CodeDeploy service.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Define a <code>buildspec.yml</code> file in the root directory</strong>"
+        "answer": "<strong>Define a <code>buildspec.yml</code> file in the root directory</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1888,8 +1888,8 @@
         "explanation": "via - <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html</a>"
       },
       {
-        "answer": "",
-        "explanation": "<strong>30</strong>"
+        "answer": "<strong>30</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1906,16 +1906,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>24</strong>"
+        "answer": "<strong>24</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>15</strong>"
+        "answer": "<strong>15</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>46</strong>"
+        "answer": "<strong>46</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -1959,8 +1959,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Look into the X-Forwarded-For header in the backend</strong></p>\n\n<p>The X-Forwarded-For request header helps you identify the IP address of a client when you use an HTTP or HTTPS load balancer. Because load balancers intercept traffic between clients and servers, your server access logs contain only the IP address of the load balancer. To see the IP address of the client, use the X-Forwarded-For request header. Elastic Load Balancing stores the IP address of the client in the X-Forwarded-For request header and passes the header to your server.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Modify the front-end of the website so that the users send their IP in the requests</strong> - When a user makes a request the IP address is sent with the request to the server and the load balancer intercepts it. There is no need to modify the application.</p>\n\n<p><strong>Look into the X-Forwarded-Proto header in the backend</strong> - The X-Forwarded-Proto request header helps you identify the protocol (HTTP or HTTPS) that a client used to connect to your load balancer.</p>\n\n<p><strong>Look into the client's cookie</strong> - For this, we would need to modify the client-side logic and server-side logic, which would not be efficient.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/x-forwarded-headers.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/x-forwarded-headers.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Look into the X-Forwarded-For header in the backend</strong>"
+        "answer": "<strong>Look into the X-Forwarded-For header in the backend</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -2018,8 +2018,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>System will keep running as is</strong></p>\n\n<p>You are already running at max capacity. After you have created your Auto Scaling group, the Auto Scaling group starts by launching enough EC2 instances to meet its minimum capacity (or its desired capacity, if specified). If there are no other scaling conditions attached to the Auto Scaling group, the Auto Scaling group maintains this number of running instances even if an instance becomes unhealthy.</p>\n\n<p>Setting Capacity Limits for Your Auto Scaling Group:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q34-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q34-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>The desired capacity will go up to 4 and the maximum capacity will stay at 3</strong> - The desired capacity cannot go over the maximum capacity.</p>\n\n<p><strong>The desired capacity will go up to 4 and the maximum capacity will also go up to 4</strong> - The maximum capacity cannot change on its own just because the desired capacity has been set to a higher value. You will have to make those changes to the maximum capacity manually.</p>\n\n<p><strong>System will trigger CloudWatch alarms to AWS support</strong> - This option has been added as a distractor. You already have alarms configured based on rules but AWS support will not intervene for you.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>System will keep running as is</strong>"
+        "answer": "<strong>System will keep running as is</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -2322,11 +2322,11 @@
     "correctAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"Configure an SSL/TLS certificate on an Application Load Balancer via AWS Certificate Manager (ACM)\""
+        "explanation": "<strong>Configure an SSL/TLS certificate on an Application Load Balancer via AWS Certificate Manager (ACM)</strong>"
       },
       {
         "answer": "",
-        "explanation": "\"Create an HTTPS listener on the Application Load Balancer with SSL termination\""
+        "explanation": "<strong>Create an HTTPS listener on the Application Load Balancer with SSL termination</strong>"
       },
       {
         "answer": "",
@@ -2352,11 +2352,11 @@
       },
       {
         "answer": "",
-        "explanation": "\"Create an HTTP listener on the Application Load Balancer with SSL termination\""
+        "explanation": "<strong>Create an HTTP listener on the Application Load Balancer with SSL termination</strong>"
       },
       {
         "answer": "",
-        "explanation": "\"Create an HTTP listener on the Application Load Balancer with SSL pass-through\""
+        "explanation": "<strong>Create an HTTP listener on the Application Load Balancer with SSL pass-through</strong>"
       },
       {
         "answer": "",
@@ -2530,8 +2530,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use CloudWatch Event Rules</strong></p>\n\n<p>Amazon CloudWatch Events is a web service that monitors your AWS resources and the applications you run on AWS. You can use Amazon CloudWatch Events to detect and react to changes in the state of a pipeline, stage, or action. Then, based on rules you create, CloudWatch Events invokes one or more target actions when a pipeline, stage, or action enters the state you specify in a rule.\nExamples of Amazon CloudWatch Events rules and targets:</p>\n\n<ol>\n<li><p>A rule that sends a notification when the instance state changes, where an EC2 instance is the event source, and Amazon SNS is the event target.</p></li>\n<li><p>A rule that sends a notification when the build phase changes, where a CodeBuild configuration is the event source, and Amazon SNS is the event target.</p></li>\n<li><p>A rule that detects pipeline changes and invokes an AWS Lambda function.</p></li>\n</ol>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use CloudTrail Event rules with Amazon Simple Email Service (SES)</strong> - This is an incorrect statement. There is no such thing as CloudTrail Event Rule.</p>\n\n<p><strong>Use Lambda function with Amazon Simple Notification Service (SNS)</strong> - Lambda functions can be triggered by the use of CloudWatch Event Rules as discussed above. AWS CodePipeline does not trigger Lambda functions directly.</p>\n\n<p><strong>Use Lambda Event Rules</strong> - This is an incorrect statement. There is no such thing as Lambda Event Rule.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html\">https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use CloudWatch Event Rules</strong>"
+        "answer": "<strong>Use CloudWatch Event Rules</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -2660,8 +2660,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>The load balancer is highly available and its public IP may change. The DNS name is constant</strong></p>\n\n<p>When your load balancer is created, it receives a public DNS name that clients can use to send requests. The DNS servers resolve the DNS name of your load balancer to the public IP addresses of the load balancer nodes for your load balancer. Never resolve the IP of a load balancer as it can change with time. You should always use the DNS name.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Your security groups are not stable</strong> - You security groups to allow your load balancer to work with registered instances. It is stable if set correctly. If your application is working and stops after a while, the issue is not with the security groups.</p>\n\n<p><strong>You need to enable stickiness</strong> - This enables the load balancer to bind a user's session to a specific instance, so this has no impact on the issue described in the given use-case.</p>\n\n<p><strong>You need to disable multi-AZ deployments</strong> - This has been added as a distractor and this has no bearing on the use-case. The change is happening with the IP of the load balancer.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-internet-facing-load-balancers.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-internet-facing-load-balancers.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>The load balancer is highly available and its public IP may change. The DNS name is constant</strong>"
+        "answer": "<strong>The load balancer is highly available and its public IP may change. The DNS name is constant</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -2719,8 +2719,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Set up reserved concurrency for the Lambda function B so that it throttles if it goes above a certain concurrency limit</strong></p>\n\n<p>Concurrency is the number of requests that a Lambda function is serving at any given time. If a Lambda function is invoked again while a request is still being processed, another instance is allocated, which increases the function's concurrency.</p>\n\n<p>To ensure that a function can always reach a certain level of concurrency, you can configure the function with reserved concurrency. When a function has reserved concurrency, no other function can use that concurrency. More importantly, reserved concurrency also limits the maximum concurrency for the function, and applies to the function as a whole, including versions and aliases.</p>\n\n<p>Please review this note to understand how reserved concurrency works:</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q6-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q6-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html#configuration-concurrency-reserved\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html#configuration-concurrency-reserved</a><p></p>\n\n<p>Therefore using reserved concurrency for Lambda function B would limit its maximum concurrency and allow Lambda function A to execute without getting throttled.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Set up provisioned concurrency for the Lambda function B so that it throttles if it goes above a certain concurrency limit</strong> - You should use provisioned concurrency to enable your function to scale without fluctuations in latency. By allocating provisioned concurrency before an increase in invocations, you can ensure that all requests are served by initialized instances with very low latency. Provisioned concurrency is not used to limit the maximum concurrency for a given Lambda function, so this option is incorrect.</p>\n\n<p><strong>Use an API Gateway instead of an Application Load Balancer (ALB) for Lambda function A</strong> - This has been added as a distractor as using an API Gateway for Lambda function A has no bearing on limiting the concurrency of Lambda function B, so this option is incorrect.</p>\n\n<p><strong>Use a Cloudfront Distribution instead of an Application Load Balancer (ALB) for Lambda function A</strong> - When you associate a CloudFront distribution with a Lambda function (known as Lambda@Edge), CloudFront intercepts requests and responses at CloudFront edge locations and runs the function. Again, this has no bearing on limiting the concurrency of Lambda function B, so this option is incorrect.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html#configuration-concurrency-reserved\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html#configuration-concurrency-reserved</a></p>\n\n<p><a href=\"https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/\">https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Set up reserved concurrency for the Lambda function B so that it throttles if it goes above a certain concurrency limit</strong>"
+        "answer": "<strong>Set up reserved concurrency for the Lambda function B so that it throttles if it goes above a certain concurrency limit</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -2944,8 +2944,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use the awslogs log driver to configure the containers in your tasks to send log information to CloudWatch Logs. Add the required <code>logConfiguration</code> parameters to your task definition</strong></p>\n\n<p>Using the awslogs log driver you can configure the containers in your tasks to send log information to CloudWatch Logs. If you're using the Fargate launch type for your tasks, you need to add the required logConfiguration parameters to your task definition to turn on the awslogs log driver.</p>\n\n<p>Before your containers can send logs to CloudWatch, you must specify the awslogs log driver for containers in your task definition. The example task definition JSON that follows has a logConfiguration object specified for each container. One is for the WordPress container that sends logs to a log group called awslogs-wordpress. The other is for a MySQL container that sends logs to a log group that's called awslogs-mysql. Both containers use the awslogs-example log stream. prefix.</p>\n\n<p>Specifying a log configuration in your task definition:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q26-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q26-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html#specify-log-config\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html#specify-log-config</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use the awslogs log driver to send log information to CloudWatch Logs. To turn on the awslogs log driver, your Amazon ECS container instances require at least version 1.9.0 of the container agent</strong> - This statement is incorrect. If you're using the EC2 launch type (and not Fargate) for your tasks and want to turn on the awslogs log driver, your Amazon ECS container instances require at least version 1.9.0 of the container agent.</p>\n\n<p><strong>Amazon ECS metric data is automatically sent to CloudWatch in 1-minute periods. Amazon ECS service using the Fargate launch type has CloudWatch CPU and memory utilization metrics that can be enabled from the ECS console</strong> - Indeed, Amazon ECS metric data is automatically sent to CloudWatch in 1-minute periods. Also, any Amazon ECS service using the Fargate launch type has CloudWatch CPU and memory utilization metrics automatically, so you don't need to take any manual steps. But, these are system logs and not the application logs as is needed in the current use case.</p>\n\n<p><strong>Download and install the unified CloudWatch agent on the ECS instances to collect internal system-level metrics and application logs from the instances. The logs collected by the unified CloudWatch agent are processed and stored in Amazon CloudWatch logs and can be queried for report generation</strong> - This statement is incorrect and given only as a distractor. ECS Fargate is serverless and hence the scope of downloading and installing software on the instance does not arise.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html\">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonECS/latest/userguide/cloudwatch-metrics.html#available_cloudwatch_metrics\">https://docs.aws.amazon.com/AmazonECS/latest/userguide/cloudwatch-metrics.html#available_cloudwatch_metrics</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use the awslogs log driver to configure the containers in your tasks to send log information to CloudWatch Logs. Add the required <code>logConfiguration</code> parameters to your task definition</strong>"
+        "answer": "<strong>Use the awslogs log driver to configure the containers in your tasks to send log information to CloudWatch Logs. Add the required <code>logConfiguration</code> parameters to your task definition</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3017,8 +3017,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use Kinesis Firehose to ingest data and Kinesis Data Analytics to generate leaderboard scores and time-series analytics</strong></p>\n\n<p>Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics services. It can capture, transform, and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt your data streams before loading, minimizing the amount of storage used and increasing security.</p>\n\n<p>Amazon Kinesis Data Analytics is the easiest way to transform and analyze streaming data in real-time with Apache Flink. Apache Flink is an open source framework and engine for processing data streams. Amazon Kinesis Data Analytics reduces the complexity of building, managing, and integrating Apache Flink applications with other AWS services.</p>\n\n<p>Amazon Kinesis Data Analytics provides built-in functions to filter, aggregate, and transform streaming data for advanced analytics. It processes streaming data with sub-second latencies, enabling you to analyze and respond to incoming data and events in real-time.</p>\n\n<p>Amazon Kinesis Data Analytics is serverless; there are no servers to manage. It runs your streaming applications without requiring you to provision or manage any infrastructure. Amazon Kinesis Data Analytics automatically scales the infrastructure up and down as required to process incoming data.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use Kinesis Data Streams to ingest data and Kinesis Data Analytics to generate leaderboard scores and time-series analytics</strong> - Amazon Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service. KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events. The data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more.</p>\n\n<p>Although Kinesis Data Streams supports on-demand provisioning of shards, however, the data ingestion cost along with the per hour shards cost would be more than the corresponding cost incurred while using Firehose. The use-case clearly states that the company wants a fully managed solution with the least cost, so Kinesis Firehose is a better solution.</p>\n\n<p><strong>Use Kinesis Data Streams to ingest data and Amazon Kinesis Client Library to the application logic to generate leaderboard scores and time-series analytics</strong> - The Amazon Kinesis Client Library (KCL) is a pre-built library that helps you build consumer applications for reading and processing data from an Amazon Kinesis data stream. The KCL handles complex issues such as adapting to changes in data stream volume, load balancing streaming data, coordinating distributed services, and processing data with fault-tolerance. The KCL enables you to focus on business logic while building applications.</p>\n\n<p>If you want a fully managed solution and you want to use SQL to process the data from your data stream, you should use Kinesis Data Analytics. Use KCL if you need to build a custom processing solution whose requirements are not met by Kinesis Data Analytics, and you can manage the resulting consumer application.</p>\n\n<p><strong>Use Kinesis Firehose to ingest data and Amazon Athena to generate leaderboard scores and time-series analytics</strong> - Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run. Athena is used for running analytics on S3 based data. For running analytics on real-time streaming data, Kinesis Data Analytics is the right fit.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/firehose/latest/dev/data-analysis.html\">https://docs.aws.amazon.com/firehose/latest/dev/data-analysis.html</a></p>\n\n<p><a href=\"https://aws.amazon.com/kinesis/data-analytics/faqs/\">https://aws.amazon.com/kinesis/data-analytics/faqs/</a></p>\n\n<p><a href=\"https://aws.amazon.com/kinesis/data-firehose/pricing/\">https://aws.amazon.com/kinesis/data-firehose/pricing/</a></p>\n\n<p><a href=\"https://aws.amazon.com/kinesis/data-streams/pricing/\">https://aws.amazon.com/kinesis/data-streams/pricing/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use Kinesis Firehose to ingest data and Kinesis Data Analytics to generate leaderboard scores and time-series analytics</strong>"
+        "answer": "<strong>Use Kinesis Firehose to ingest data and Kinesis Data Analytics to generate leaderboard scores and time-series analytics</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3175,12 +3175,12 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong><code>$(aws ecr get-login --no-include-email)</code></strong></p>\n\n<p><strong><code>docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest</code></strong></p>\n\n<p>The get-login command retrieves a token that is valid for a specified registry for 12 hours, and then it prints a docker login command with that authorization token. You can execute the printed command to log in to your registry with Docker, or just run it automatically using the $() command wrapper. After you have logged in to an Amazon ECR registry with this command, you can use the Docker CLI to push and pull images from that registry until the token expires. The docker pull command is used to pull an image from the ECR registry.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong><code>docker login -u $AWS_ACCESS_KEY_ID -p $AWS_SECRET_ACCESS_KEY</code></strong> - You cannot login to AWS ECR this way. AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are only used by the CLI and not by docker.</p>\n\n<p><strong><code>aws docker push 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest</code></strong> - docker push here is the wrong answer, you need to use docker pull.</p>\n\n<p><strong><code>docker build -t 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest</code></strong> - This is a docker command that is used to build Docker images from a Dockerfile.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login.html\">https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong><code>$(aws ecr get-login --no-include-email)</code></strong>"
+        "answer": "<strong><code>$(aws ecr get-login --no-include-email)</code></strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong><code>docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest</code></strong>"
+        "answer": "<strong><code>docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest</code></strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3238,8 +3238,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use Cognito Authentication via Cognito User Pools for your Application Load Balancer</strong></p>\n\n<p>Application Load Balancer can be used to securely authenticate users for accessing your applications. This enables you to offload the work of authenticating users to your load balancer so that your applications can focus on their business logic. You can use Cognito User Pools to authenticate users through well-known social IdPs, such as Amazon, Facebook, or Google, through the user pools supported by Amazon Cognito or through corporate identities, using SAML, LDAP, or Microsoft AD, through the user pools supported by Amazon Cognito. You configure user authentication by creating an authenticate action for one or more listener rules. The authenticate-cognito and authenticate-oidc action types are supported only with HTTPS listeners.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html</a><p></p>\n\n<p>Please make sure that you adhere to the following configurations while using CloudFront distribution in front of your Application Load Balancer:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html</a><p></p>\n\n<p>Exam Alert:</p>\n\n<p>Please review the following note to understand the differences between Cognito User Pools and Cognito Identity Pools:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i3.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q4-i3.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html\">https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use Cognito Authentication via Cognito Identity Pools for your Application Load Balancer</strong> - There is no such thing as using Cognito Authentication via Cognito Identity Pools for managing user authentication for the application. Application-specific user authentication can be provided via Cognito User Pools. Amazon Cognito identity pools provide temporary AWS credentials for users who are guests (unauthenticated) and for users who have been authenticated and received a token.</p>\n\n<p><strong>Use Cognito Authentication via Cognito User Pools for your CloudFront distribution</strong> - You cannot directly integrate Cognito User Pools with CloudFront distribution as you have to create a separate Lambda@Edge function to accomplish the authentication via Cognito User Pools. This involves additional development effort, so this option is not the best fit for the given use-case.</p>\n\n<p><strong>Use Cognito Authentication via Cognito Identity Pools for your CloudFront distribution</strong> - You cannot use Cognito Identity Pools for managing user authentication, so this option is not correct.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html\">https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html</a></p>\n\n<p><a href=\"https://aws.amazon.com/blogs/networking-and-content-delivery/authorizationedge-using-cookies-protect-your-amazon-cloudfront-content-from-being-downloaded-by-unauthenticated-users/\">https://aws.amazon.com/blogs/networking-and-content-delivery/authorizationedge-using-cookies-protect-your-amazon-cloudfront-content-from-being-downloaded-by-unauthenticated-users/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use Cognito Authentication via Cognito User Pools for your Application Load Balancer</strong>"
+        "answer": "<strong>Use Cognito Authentication via Cognito User Pools for your Application Load Balancer</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3323,8 +3323,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Run AWS CodeBuild locally using CodeBuild Agent</strong></p>\n\n<p>AWS CodeBuild is a fully managed build service. There are no servers to provision and scale, or software to install, configure, and operate.</p>\n\n<p>With the Local Build support for AWS CodeBuild, you just specify the location of your source code, choose your build settings, and CodeBuild runs build scripts for compiling, testing, and packaging your code. You can use the AWS CodeBuild agent to test and debug builds on a local machine.</p>\n\n<p>By building an application on a local machine you can:</p>\n\n<p>Test the integrity and contents of a buildspec file locally.</p>\n\n<p>Test and build an application locally before committing.</p>\n\n<p>Identify and fix errors quickly from your local development environment.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>SSH into the CodeBuild Docker container</strong> - It is not possible to SSH into the CodeBuild Docker container, that's why you should test and fix errors locally.</p>\n\n<p><strong>Freeze the CodeBuild during its next execution</strong> - You cannot freeze the CodeBuild process but you can stop it. Please see more details on - <a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/stop-build.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/stop-build.html</a></p>\n\n<p><strong>Enable detailed monitoring</strong> - Detailed monitoring is available for EC2 instances. You do not enable detailed monitoring but you can specify output logs to be captured via CloudTrail.</p>\n\n<p>AWS CodeBuild is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in CodeBuild. CloudTrail captures all API calls for CodeBuild as events, including calls from the CodeBuild console and from code calls to the CodeBuild APIs. If you create a trail, you can enable continuous delivery of CloudTrail events to an S3 bucket, including events for CodeBuild.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/troubleshooting.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/troubleshooting.html</a></p>\n\n<p><a href=\"https://aws.amazon.com/blogs/devops/announcing-local-build-support-for-aws-codebuild/\">https://aws.amazon.com/blogs/devops/announcing-local-build-support-for-aws-codebuild/</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/codebuild/latest/userguide/use-codebuild-agent.html\">https://docs.aws.amazon.com/codebuild/latest/userguide/use-codebuild-agent.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Run AWS CodeBuild locally using CodeBuild Agent</strong>"
+        "answer": "<strong>Run AWS CodeBuild locally using CodeBuild Agent</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3475,8 +3475,8 @@
         "explanation": "via - <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html\">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html</a>"
       },
       {
-        "answer": "",
-        "explanation": "<strong>10</strong>"
+        "answer": "<strong>10</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3501,16 +3501,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>40</strong>"
+        "answer": "<strong>40</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>20</strong>"
+        "answer": "<strong>20</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>5</strong>"
+        "answer": "<strong>5</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3560,16 +3560,16 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong>AWS Security Token Service(STS) is used by API Gateway for logging data to CloudWatch logs. Hence, AWS STS has to be enabled for the Region that you're using</strong></p>\n\n<p>API Gateway calls AWS Security Token Service to assume the IAM role, so make sure that AWS STS is enabled for the Region. If you receive an error when setting the IAM role ARN, check your AWS Security Token Service account settings to make sure that AWS STS is enabled in the Region that you're using.</p>\n\n<p><strong>To enable CloudWatch Logs for all or only some of the methods, you must also specify the ARN of an IAM role that enables API Gateway to write information to CloudWatch Logs on behalf of your user. The IAM role must also contain the following trust relationship statement</strong></p>\n\n<p>To enable CloudWatch Logs for all or only some of the methods, you must also specify the ARN of an IAM role that enables API Gateway to write information to CloudWatch Logs on behalf of your user. To do so, choose <code>Settings</code> from the APIs main navigation pane. Then enter the ARN of an IAM role in the <code>CloudWatch log role ARN</code> text field. The IAM role must also contain the trust relationship statement.</p>\n\n<p>Policy of AmazonAPIGatewayPushToCloudWatchLogs for IAM role:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q9-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q9-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html#how-to-stage-settings-console\">https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html#how-to-stage-settings-console</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>In access logging, only $context and $input variables are supported</strong> - This statement is incorrect. In access logging, you, as an API developer, want to log who has accessed your API and how the caller accessed the API. You can create your own log group or choose an existing log group that could be managed by API Gateway. To specify the access details, you select $context variables and choose a log group as the destination. Only $context variables are supported (not $input, and so on).</p>\n\n<p><strong>You are charged for accessing method-level and stage-level CloudWatch metrics, but not for API-level metrics</strong> - This statement is incorrect. Your account is charged for accessing method-level CloudWatch metrics, but not the API-level or stage-level metrics.</p>\n\n<p><strong>API Gateway API log groups or streams can only be deleted and recreated by redeploying the API</strong> - API Gateway API log groups or streams can be deleted from the CloudWatch console. But, it is not recommended.</p>\n\n<p>Do not manually delete API Gateway API log groups or streams; let API Gateway manage these resources. Manually deleting log groups or streams may cause API requests and responses not to be logged. If that happens, you can delete the entire log group for the API and redeploy the API. This is because API Gateway creates log groups or log streams for an API stage at the time when it is deployed.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html#how-to-stage-settings-console\">https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html#how-to-stage-settings-console</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#apigateway-cloudwatch-log-formats\">https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#apigateway-cloudwatch-log-formats</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/view-cloudwatch-log-events-in-cloudwatch-console.html\">https://docs.aws.amazon.com/apigateway/latest/developerguide/view-cloudwatch-log-events-in-cloudwatch-console.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>AWS Security Token Service(STS) is used by API Gateway for logging data to CloudWatch logs. Hence, AWS STS has to be enabled for the Region that you're using</strong>"
+        "answer": "<strong>AWS Security Token Service(STS) is used by API Gateway for logging data to CloudWatch logs. Hence, AWS STS has to be enabled for the Region that you're using</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
         "explanation": "API Gateway calls AWS Security Token Service to assume the IAM role, so make sure that AWS STS is enabled for the Region. If you receive an error when setting the IAM role ARN, check your AWS Security Token Service account settings to make sure that AWS STS is enabled in the Region that you're using."
       },
       {
-        "answer": "",
-        "explanation": "<strong>To enable CloudWatch Logs for all or only some of the methods, you must also specify the ARN of an IAM role that enables API Gateway to write information to CloudWatch Logs on behalf of your user. The IAM role must also contain the following trust relationship statement</strong>"
+        "answer": "<strong>To enable CloudWatch Logs for all or only some of the methods, you must also specify the ARN of an IAM role that enables API Gateway to write information to CloudWatch Logs on behalf of your user. The IAM role must also contain the following trust relationship statement</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3647,8 +3647,8 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong>Stage Variables</strong></p>\n\n<p>Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of an API. They act like environment variables and can be used in your API setup and mapping templates. With deployment stages in API Gateway, you can manage multiple release stages for each API, such as alpha, beta, and production. Using stage variables you can configure an API deployment stage to interact with different backend endpoints.</p>\n\n<p>For example, your API can pass a GET request as an HTTP proxy to the backend web host (for example, http://example.com). In this case, the backend web host is configured in a stage variable so that when developers call your production endpoint, API Gateway calls example.com. When you call your beta endpoint, API Gateway uses the value configured in the stage variable for the beta stage and calls a different web host (for example, beta.example.com).</p>\n\n<p><strong>Lambda Aliases</strong></p>\n\n<p>A Lambda alias is like a pointer to a specific Lambda function version. Users can access the function version using the alias ARN.</p>\n\n<p>Lambda Aliases allow you to create a \"mutable\" Lambda version that points to whatever version you want in the backend. This allows you to have a \"dev\", \"test\", prod\" Lambda alias that can remain stable over time.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Lambda Versions</strong> - Versions are immutable and cannot be updated over time. So this option is not correct.</p>\n\n<p><strong>Lambda X-Ray integration</strong> - This is good for tracing and debugging requests so it can be looked at as a good option for troubleshooting issues in the future. This is not the right fit for the given use-case.</p>\n\n<p><strong>Mapping Templates</strong> - Mapping template overrides provides you with the flexibility to perform many-to-one parameter mappings; override parameters after standard API Gateway mappings have been applied; conditionally map parameters based on body content or other parameter values; programmatically create new parameters on the fly, and override status codes returned by your integration endpoint. This is not the right fit for the given use-case.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/stage-variables.html\">https://docs.aws.amazon.com/apigateway/latest/developerguide/stage-variables.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html\">https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-override-request-response-parameters.html\">https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-override-request-response-parameters.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Stage Variables</strong>"
+        "answer": "<strong>Stage Variables</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3659,8 +3659,8 @@
         "explanation": "For example, your API can pass a GET request as an HTTP proxy to the backend web host (for example, http://example.com). In this case, the backend web host is configured in a stage variable so that when developers call your production endpoint, API Gateway calls example.com. When you call your beta endpoint, API Gateway uses the value configured in the stage variable for the beta stage and calls a different web host (for example, beta.example.com)."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Lambda Aliases</strong>"
+        "answer": "<strong>Lambda Aliases</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3839,8 +3839,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use launch templates to configure the EC2 Auto Scaling Group for On-Demand and spot instances. When you create a launch template use the User data field to add a configuration script that runs when the instance starts. This shell script can, in turn, install the CodeDeploy agent</strong></p>\n\n<p>A launch template specifies instance configuration information that includes the ID of the Amazon Machine Image (AMI), the instance type, a key pair, security groups, and other parameters used to launch EC2 instances. Defining a launch template instead of a launch configuration allows you to have multiple versions of a launch template.</p>\n\n<p>When you create a launch template, you can use the User data field to add a configuration script that runs when the instance starts. This shell script installs the CodeDeploy agent for all AWS Regions and supported Amazon Linux and Ubuntu distributions. You can configure CodeDeploy to auto-update on boot by setting the AUTOUPDATE variable to true.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use launch configurations to configure the EC2 Auto Scaling Group for On-Demand and spot instances. Add the shell script to the <code>Launch configuration</code> tab on the AWS console. This shell script will install the CodeDeploy agent</strong> - This statement is incorrect. Not all Amazon EC2 Auto Scaling features are available when you use launch configurations. For example, you cannot create an Auto Scaling group that launches both Spot and On-Demand Instances or that specifies multiple instance types. You must use a launch template to configure these features. AWS strongly recommends not using launch configurations anymore.</p>\n\n<p><strong>Use AWS Systems Manager for installing and updating the CodeDeploy agent automatically for Spot and On-Demand instances</strong> - AWS Systems Manager also uses launch templates to automatically deploy CodeDeploy agent. However, for this use case, SSM is not operationally efficient since SSM agent needs to be installed first on all EC2 instances and then you can install the CodeDeploy agent.</p>\n\n<p><strong>Configure AWS Resource Access Manager(RAM) to schedule the automatic installation of CodeDeploy agent on the EC2 instances. RAM automatic schedules work on only Linux machines and not on Windows operating systems</strong> - AWS RAM helps you securely share your resources across AWS accounts, within your organization or organizational units (OUs), and with IAM roles and users for supported resource types. You can use AWS RAM to share resources with other AWS accounts. This eliminates the need to provision and manage resources in every account. RAM cannot be used to install the CodeDeploy agent, so this option is incorrect.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html</a></p>\n\n<p><a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/codedeploy-agent-launch-template/\">https://aws.amazon.com/premiumsupport/knowledge-center/codedeploy-agent-launch-template/</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-configurations.html\">https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-configurations.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ssm.html\">https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ssm.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use launch templates to configure the EC2 Auto Scaling Group for On-Demand and spot instances. When you create a launch template use the User data field to add a configuration script that runs when the instance starts. This shell script can, in turn, install the CodeDeploy agent</strong>"
+        "answer": "<strong>Use launch templates to configure the EC2 Auto Scaling Group for On-Demand and spot instances. When you create a launch template use the User data field to add a configuration script that runs when the instance starts. This shell script can, in turn, install the CodeDeploy agent</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -3978,16 +3978,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>sample.com</strong>"
+        "answer": "<strong>sample.com</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>sample.test.com</strong>"
+        "answer": "<strong>sample.test.com</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>SAMPLE.COM</strong>"
+        "answer": "<strong>SAMPLE.COM</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4032,7 +4032,7 @@
     "correctAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"Using pre-signed URL\""
+        "explanation": "<strong>Using pre-signed URL</strong>"
       },
       {
         "answer": "",
@@ -4101,8 +4101,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>SSE-S3</strong></p>\n\n<p>Using Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3), each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>SSE-C</strong> - You manage the encryption keys and Amazon S3 manages the encryption as it writes to disks and decryption when you access your objects.</p>\n\n<p><strong>Client-Side Encryption</strong> - You can encrypt data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and related tools.</p>\n\n<p><strong>SSE-KMS</strong> - Similar to SSE-S3 and also provides you with an audit trail of when your key was used and by whom. Additionally, you have the option to create and manage encryption keys yourself.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html\">https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>SSE-S3</strong>"
+        "answer": "<strong>SSE-S3</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4160,8 +4160,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Enable Health Checks</strong></p>\n\n<p>To discover the availability of your EC2 instances, a load balancer periodically sends pings, attempts connections, or sends requests to test the EC2 instances. These tests are called health checks. The status of the instances that are healthy at the time of the health check is InService. The status of any instances that are unhealthy at the time of the health check is OutOfService.</p>\n\n<p>Load Balancer Health Checks:\n<img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q39-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt4-q39-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Enable Stickiness</strong> - Stickiness enables the load balancer to bind a user's session to a specific instance, it cannot be used for gauging the health of an instance.</p>\n\n<p><strong>Enable Multi-AZ deployments</strong> - It's a good practice to provision instances in more than one availability zone however you still need a way to check the health status of the instances, so this option is incorrect.</p>\n\n<p><strong>Enable SSL</strong> - This option has been added as a distractor. SSL encrypts the transmission of data between a web server and a browser.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html\">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Enable Health Checks</strong>"
+        "answer": "<strong>Enable Health Checks</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4233,12 +4233,12 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong>KMS encryption for data at rest</strong></p>\n\n<p><strong>Encryption in flight with HTTPS endpoint</strong></p>\n\n<p>Server-side encryption is a feature in Amazon Kinesis Data Streams that automatically encrypts data before it's at rest by using an AWS KMS customer master key (CMK) you specify. Data is encrypted before it's written to the Kinesis stream storage layer and decrypted after it's retrieved from storage. As a result, your data is encrypted at rest within the Kinesis Data Streams service. Also, the HTTPS protocol ensures that data inflight is encrypted as well.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>SSE-C encryption</strong> - SSE-C is functionality in Amazon S3 where S3 encrypts your data, on your behalf, using keys that you provide. This does not apply for the given use-case.</p>\n\n<p><strong>Client-Side Encryption</strong> - This involves code changes, so the option is incorrect.</p>\n\n<p><strong>Envelope Encryption</strong> - This involves code changes, so the option is incorrect.</p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/streams/latest/dev/what-is-sse.html\">https://docs.aws.amazon.com/streams/latest/dev/what-is-sse.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>KMS encryption for data at rest</strong>"
+        "answer": "<strong>KMS encryption for data at rest</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Encryption in flight with HTTPS endpoint</strong>"
+        "answer": "<strong>Encryption in flight with HTTPS endpoint</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4296,8 +4296,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>10</strong></p>\n\n<p>After you send messages to a queue, you can receive and delete them. When you request messages from a queue, you can't specify which messages to retrieve. Instead, you specify the maximum number of messages (up to 10) that you want to retrieve.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>5</strong></p>\n\n<p><strong>20</strong></p>\n\n<p><strong>100</strong></p>\n\n<p>Reference:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-using-receive-delete-message.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-using-receive-delete-message.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>10</strong>"
+        "answer": "<strong>10</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4306,16 +4306,16 @@
     ],
     "incorrectAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>5</strong>"
+        "answer": "<strong>5</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>20</strong>"
+        "answer": "<strong>20</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>100</strong>"
+        "answer": "<strong>100</strong>",
+        "explanation": ""
       }
     ],
     "references": [
@@ -4355,8 +4355,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Use ChangeMessageVisibility action to extend a message's visibility timeout</strong></p>\n\n<p>Amazon SQS uses a visibility timeout to prevent other consumers from receiving and processing the same message. The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q5-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q5-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html</a><p></p>\n\n<p>For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call ChangeMessageVisibility with a timeout of 10 minutes. You can continue to call ChangeMessageVisibility to extend the visibility timeout to the maximum allowed time. If you try to extend the visibility timeout beyond the maximum, your request is rejected. So, for the given use-case, the application can set the initial visibility timeout to 1 minute and then continue to update the ChangeMessageVisibility value if required.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q5-i2.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt1-q5-i2.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Use DelaySeconds action to delay a message's visibility timeout</strong> - Delay queues let you postpone the delivery of new messages to a queue for a number of seconds. To set delay seconds on individual messages, rather than on an entire queue, use message timers to allow Amazon SQS to use the message timer's DelaySeconds value instead of the delay queue's DelaySeconds value. You cannot use DelaySeconds to alter the visibility of a message which has been picked for processing.</p>\n\n<p><strong>Use WaitTimeSeconds action to short poll and extend a message's visibility timeout</strong></p>\n\n<p><strong>Use WaitTimeSeconds action to long poll and extend a message's visibility timeout</strong></p>\n\n<p>Amazon SQS provides short polling and long polling to receive messages from a queue. Both these options have been added as distractors as WaitTimeSeconds (via short polling or long polling) cannot be used to influence the message's visibility.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html\">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Use ChangeMessageVisibility action to extend a message's visibility timeout</strong>"
+        "answer": "<strong>Use ChangeMessageVisibility action to extend a message's visibility timeout</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4379,12 +4379,12 @@
         "explanation": "<strong>Use DelaySeconds action to delay a message's visibility timeout</strong> - Delay queues let you postpone the delivery of new messages to a queue for a number of seconds. To set delay seconds on individual messages, rather than on an entire queue, use message timers to allow Amazon SQS to use the message timer's DelaySeconds value instead of the delay queue's DelaySeconds value. You cannot use DelaySeconds to alter the visibility of a message which has been picked for processing."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Use WaitTimeSeconds action to short poll and extend a message's visibility timeout</strong>"
+        "answer": "<strong>Use WaitTimeSeconds action to short poll and extend a message's visibility timeout</strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Use WaitTimeSeconds action to long poll and extend a message's visibility timeout</strong>"
+        "answer": "<strong>Use WaitTimeSeconds action to long poll and extend a message's visibility timeout</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4516,8 +4516,8 @@
     "explanation": "<p>Correct option:</p>\n\n<p><strong>Configure a resource-based policy on the S3 bucket to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong></p>\n\n<p>If you want to prevent potential attackers from manipulating network traffic, you can use HTTPS (TLS) to only allow encrypted connections while restricting HTTP requests from accessing your bucket. To determine whether the request is HTTP or HTTPS, use the aws:SecureTransport global condition key in your S3 bucket policy. The aws:SecureTransport condition key checks whether a request was sent by using HTTP.</p>\n\n<p><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q16-i1.jpg\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q16-i1.jpg\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html</a><p></p>\n\n<p>Incorrect options:</p>\n\n<p><strong>Configure a resource-based policy on the S3 bucket to allow access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong> - This option contradicts the explanation provided above.</p>\n\n<p><strong>Configure a resource-based policy on the KMS key to allow access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong></p>\n\n<p><strong>Configure a resource-based policy on the KMS key to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong></p>\n\n<p>Since the use case is about granting permission to use the S3 GetObject operations with encryption in transit, you cannot use a Resource-based policy for KMS. So, both these options are incorrect.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://aws.amazon.com/blogs/security/how-to-use-bucket-policies-and-apply-defense-in-depth-to-help-secure-your-amazon-s3-data/\">https://aws.amazon.com/blogs/security/how-to-use-bucket-policies-and-apply-defense-in-depth-to-help-secure-your-amazon-s3-data/</a></p>\n\n<p><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html\">https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>Configure a resource-based policy on the S3 bucket to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>"
+        "answer": "<strong>Configure a resource-based policy on the S3 bucket to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4533,12 +4533,12 @@
         "explanation": "<strong>Configure a resource-based policy on the S3 bucket to allow access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong> - This option contradicts the explanation provided above."
       },
       {
-        "answer": "",
-        "explanation": "<strong>Configure a resource-based policy on the KMS key to allow access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>"
+        "answer": "<strong>Configure a resource-based policy on the KMS key to allow access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>",
+        "explanation": ""
       },
       {
-        "answer": "",
-        "explanation": "<strong>Configure a resource-based policy on the KMS key to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>"
+        "answer": "<strong>Configure a resource-based policy on the KMS key to deny access when a request has the condition <code>\"aws:SecureTransport\": \"false\"</code></strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4589,8 +4589,8 @@
     "explanation": "<p>Correct options:</p>\n\n<p><strong>ALB + ECS</strong></p>\n\n<p>Amazon Elastic Container Service (ECS) is a highly scalable, high-performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.</p>\n\n<p>How ECS Works:\n<img src=\"https://d1.awsstatic.com/diagrams/product-page-diagrams/product-page-diagram_ECS_1.86ebd8c223ec8b55aa1903c423fbe4e672f3daf7.png\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://d1.awsstatic.com/diagrams/product-page-diagrams/product-page-diagram_ECS_1.86ebd8c223ec8b55aa1903c423fbe4e672f3daf7.png\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/ecs/\">https://aws.amazon.com/ecs/</a><p></p>\n\n<p>Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones.</p>\n\n<p>When you use ECS with a load balancer such as ALB deployed across multiple Availability Zones, it helps provide a scalable and highly available REST API.</p>\n\n<p><strong>API Gateway + Lambda</strong></p>\n\n<p>Amazon API Gateway is a fully managed service that makes it easy for developers to publish, maintain, monitor, and secure APIs at any scale. Using API Gateway, you can create an API that acts as a “front door” for applications to access data, business logic, or functionality from your back-end services, such as EC2 or Lambda functions.</p>\n\n<p>How API Gateway Works:\n<img src=\"https://d1.awsstatic.com/serverless/New-API-GW-Diagram.c9fc9835d2a9aa00ef90d0ddc4c6402a2536de0d.png\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://d1.awsstatic.com/serverless/New-API-GW-Diagram.c9fc9835d2a9aa00ef90d0ddc4c6402a2536de0d.png\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/api-gateway/\">https://aws.amazon.com/api-gateway/</a><p></p>\n\n<p>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume.</p>\n\n<p>How Lambda function works:\n<img src=\"https://d1.awsstatic.com/product-marketing/Lambda/Diagrams/product-page-diagram_Lambda-HowItWorks.68a0bcacfcf46fccf04b97f16b686ea44494303f.png\" style=\"display: none;\"><span class=\"ud-component--base-components--open-full-size-image\"></span></p><div class=\"open-full-size-image--wrapper--R4gIm\" data-purpose=\"open-full-size-image\"><img src=\"https://d1.awsstatic.com/product-marketing/Lambda/Diagrams/product-page-diagram_Lambda-HowItWorks.68a0bcacfcf46fccf04b97f16b686ea44494303f.png\" alt=\"\" loading=\"eager\"><button type=\"button\" class=\"ud-btn ud-btn-medium ud-btn-link ud-heading-sm open-full-size-image--backdrop--Zor3j\"><svg aria-label=\"Larger image\" role=\"img\" focusable=\"false\" class=\"ud-icon ud-icon-large ud-icon-color-neutral\"><use xlink:href=\"#icon-search\"></use></svg></button></div>\nvia - <a href=\"https://aws.amazon.com/lambda/\">https://aws.amazon.com/lambda/</a><p></p>\n\n<p>API Gateway and Lambda help achieve the same purpose integrating some capabilities such as authentication in a serverless fashion, with fully scalable and highly available architectures.</p>\n\n<p>Incorrect options:</p>\n\n<p><strong>SES + S3</strong> - The combination of these services only provide email and object storage services.</p>\n\n<p><strong>CloudWatch + CloudFront</strong> - The combination of these services only provide monitoring and fast content delivery network (CDN) services.</p>\n\n<p><strong>EBS + RDS</strong> - The combination of these services only provide elastic block storage and database services.</p>\n\n<p>References:</p>\n\n<p><a href=\"https://aws.amazon.com/getting-started/projects/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/module-4/\">https://aws.amazon.com/getting-started/projects/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/module-4/</a></p>\n\n<p><a href=\"https://aws.amazon.com/blogs/compute/microservice-delivery-with-amazon-ecs-and-application-load-balancers/\">https://aws.amazon.com/blogs/compute/microservice-delivery-with-amazon-ecs-and-application-load-balancers/</a></p>\n",
     "correctAnswerExplanations": [
       {
-        "answer": "",
-        "explanation": "<strong>ALB + ECS</strong>"
+        "answer": "<strong>ALB + ECS</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
@@ -4613,8 +4613,8 @@
         "explanation": "When you use ECS with a load balancer such as ALB deployed across multiple Availability Zones, it helps provide a scalable and highly available REST API."
       },
       {
-        "answer": "",
-        "explanation": "<strong>API Gateway + Lambda</strong>"
+        "answer": "<strong>API Gateway + Lambda</strong>",
+        "explanation": ""
       },
       {
         "answer": "",
