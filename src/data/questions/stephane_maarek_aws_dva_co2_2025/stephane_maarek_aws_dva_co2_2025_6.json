@@ -2348,7 +2348,7 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"Create an HTTPS listener on the Application Load Balancer with SSL pass-through\" - If you use an HTTPS listener with SSL pass-through, then the EC2 instances would continue to be under heavy CPU load as they would still need to decrypt the secure traffic\nat the instance level. Hence this option is incorrect."
+        "explanation": "<strong>Create an HTTPS listener on the Application Load Balancer with SSL pass-through</strong> - If you use an HTTPS listener with SSL pass-through, then the EC2 instances would continue to be under heavy CPU load as they would still need to decrypt the secure traffic\nat the instance level. Hence this option is incorrect."
       },
       {
         "answer": "",
@@ -4052,15 +4052,15 @@
       },
       {
         "answer": "",
-        "explanation": "\"Using bucket policy\" - You can use this policy to limit users from a source IP address however for time-based constraints you are better off using a pre-signed URL."
+        "explanation": "<strong>Using bucket policy</strong> - You can use this policy to limit users from a source IP address however for time-based constraints you are better off using a pre-signed URL."
       },
       {
         "answer": "",
-        "explanation": "\"Using Routing Policy\" - This concept applies to DNS in Route 53, so this option is ruled out."
+        "explanation": "<strong>Using Routing Policy</strong> - This concept applies to DNS in Route 53, so this option is ruled out."
       },
       {
         "answer": "",
-        "explanation": "\"Using IAM policy\" - You can use IAM policy to grant access toa specific bucket however for time-based constraints you are better off using a pre-signed URL."
+        "explanation": "<strong>Using IAM policy</strong> - You can use IAM policy to grant access toa specific bucket however for time-based constraints you are better off using a pre-signed URL."
       }
     ],
     "incorrectAnswerExplanations": [],

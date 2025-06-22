@@ -2054,15 +2054,15 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"API Gateway\" - If you are processing tokens server-side and using other programming languages not supported in AWS it may be a good choice. Other than that, go with a service already providing the functionality."
+        "explanation": "<strong>API Gateway</strong> - If you are processing tokens server-side and using other programming languages not supported in AWS it may be a good choice. Other than that, go with a service already providing the functionality."
       },
       {
         "answer": "",
-        "explanation": "\"Cognito Identity Pools\" - You can use Identity pools to grant your users access to other AWS services. With an identity pool, your users can obtain temporary AWS credentials to access AWS services, such as Amazon S3 and DynamoDB. Identity pools support anonymous guest users, as well as the specific identity providers that you can use to authenticate users for identity pools."
+        "explanation": "<strong>Cognito Identity Pools</strong> - You can use Identity pools to grant your users access to other AWS services. With an identity pool, your users can obtain temporary AWS credentials to access AWS services, such as Amazon S3 and DynamoDB. Identity pools support anonymous guest users, as well as the specific identity providers that you can use to authenticate users for identity pools."
       },
       {
         "answer": "",
-        "explanation": "\"Cognito Sync\" - Amazon Cognito Sync is an AWS service and client library that enables cross-device syncing of application-related user data. You can use it to synchronize user profile data across mobile devices and the web without requiring your own backend."
+        "explanation": "<strong>Cognito Sync</strong> - Amazon Cognito Sync is an AWS service and client library that enables cross-device syncing of application-related user data. You can use it to synchronize user profile data across mobile devices and the web without requiring your own backend."
       },
       {
         "answer": "",
@@ -3498,15 +3498,15 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"IAM permissions with sigv4\" - Signature Version 4 is the process to add authentication information to AWS requests sent by HTTP. You will still need to provide permissions but our requirements have a need for 3rd party authentication which is where Lambda Authorizer comes in to play."
+        "explanation": "<strong>IAM permissions with sigv4</strong> - Signature Version 4 is the process to add authentication information to AWS requests sent by HTTP. You will still need to provide permissions but our requirements have a need for 3rd party authentication which is where Lambda Authorizer comes in to play."
       },
       {
         "answer": "",
-        "explanation": "\"Cognito User Pools\" - A Cognito user pool is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito, or federate through a third-party identity provider (IdP). Whether your users sign-in directly or through a third party, all members of the user pool have a directory profile that you can access through an SDK. This is managed by AWS, therefore, does not meet our requirements."
+        "explanation": "<strong>Cognito User Pools</strong> - A Cognito user pool is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito, or federate through a third-party identity provider (IdP). Whether your users sign-in directly or through a third party, all members of the user pool have a directory profile that you can access through an SDK. This is managed by AWS, therefore, does not meet our requirements."
       },
       {
         "answer": "",
-        "explanation": "\"API Gateway User Pools\" - This is a made-up option, added as a distractor."
+        "explanation": "<strong>API Gateway User Pools</strong> - This is a made-up option, added as a distractor."
       }
     ],
     "references": [

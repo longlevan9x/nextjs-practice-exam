@@ -1179,15 +1179,15 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"--page-size\" - You can use the <code>--page-size</code> option to specify that the AWS CLI requests a smaller number of items from each call to the AWS service. The CLI still retrieves the full list but performs a larger number of service API calls in the background and retrieves a smaller number of items with each call."
+        "explanation": "<strong>--page-size</strong> - You can use the <code>--page-size</code> option to specify that the AWS CLI requests a smaller number of items from each call to the AWS service. The CLI still retrieves the full list but performs a larger number of service API calls in the background and retrieves a smaller number of items with each call."
       },
       {
         "answer": "",
-        "explanation": "\"--next-token\" - This is a made-up option and has been added as a distractor."
+        "explanation": "<strong>--next-token</strong> - This is a made-up option and has been added as a distractor."
       },
       {
         "answer": "",
-        "explanation": "\"--limit\" - This is a made-up option and has been added as a distractor."
+        "explanation": "<strong>--limit</strong> - This is a made-up option and has been added as a distractor."
       }
     ],
     "references": [

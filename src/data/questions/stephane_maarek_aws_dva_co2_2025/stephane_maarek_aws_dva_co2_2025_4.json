@@ -1603,15 +1603,15 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"Cognito User Pools\" - AWS Cognito User Pools is there to authenticate users for your applications which looks similar to Cognito Identity Pools. The difference is that Identity Pools allows a way to authorize your users to use the various AWS services and User Pools is not about authorizing to AWS services but to provide add sign-up and sign-in functionality to web and mobile applications."
+        "explanation": "<strong>Cognito User Pools</strong> - AWS Cognito User Pools is there to authenticate users for your applications which looks similar to Cognito Identity Pools. The difference is that Identity Pools allows a way to authorize your users to use the various AWS services and User Pools is not about authorizing to AWS services but to provide add sign-up and sign-in functionality to web and mobile applications."
       },
       {
         "answer": "",
-        "explanation": "\"Cognito Sync\" - You can use it to synchronize user profile data across mobile devices and the web without requiring your own backend. The client libraries cache data locally so your app can read and write data regardless of device connectivity status."
+        "explanation": "<strong>Cognito Sync</strong> - You can use it to synchronize user profile data across mobile devices and the web without requiring your own backend. The client libraries cache data locally so your app can read and write data regardless of device connectivity status."
       },
       {
         "answer": "",
-        "explanation": "\"IAM\" - This is not a good solution because it would require you to have an IAM user for each mobile device which is not a good practice or manageable way of handling deployment."
+        "explanation": "<strong>IAM</strong> - This is not a good solution because it would require you to have an IAM user for each mobile device which is not a good practice or manageable way of handling deployment."
       },
       {
         "answer": "",
@@ -2727,15 +2727,15 @@
     "incorrectAnswerExplanations": [
       {
         "answer": "",
-        "explanation": "\"Extract RAM statistics using the instance metadata\" - Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, hostname, events, and security groups. The instance metadata can only provide the ID of the RAM disk specified at launch time. So this option is incorrect."
+        "explanation": "<strong>Extract RAM statistics using the instance metadata</strong> - Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, hostname, events, and security groups. The instance metadata can only provide the ID of the RAM disk specified at launch time. So this option is incorrect."
       },
       {
         "answer": "",
-        "explanation": "\"Extract RAM statistics from the standard CloudWatch metrics for EC2 instances\" - Amazon EC2 sends metrics to Amazon CloudWatch. By default, each data point covers the 5 minutes that follow the start time of activity for the instance. If you've enabled detailed monitoring, each data point covers the next minute of activity from the start time. The standard CloudWatch metrics don't have any metrics for memory utilization details."
+        "explanation": "<strong>Extract RAM statistics from the standard CloudWatch metrics for EC2 instances</strong> - Amazon EC2 sends metrics to Amazon CloudWatch. By default, each data point covers the 5 minutes that follow the start time of activity for the instance. If you've enabled detailed monitoring, each data point covers the next minute of activity from the start time. The standard CloudWatch metrics don't have any metrics for memory utilization details."
       },
       {
         "answer": "",
-        "explanation": "\"Extract RAM statistics using X-Ray\" - AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors. X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of your application’s underlying components."
+        "explanation": "<strong>Extract RAM statistics using X-Ray</strong> - AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors. X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of your application’s underlying components."
       },
       {
         "image": "https://d1.awsstatic.com/Products/product-name/Images/product-page-diagram_AWS-X-Ray_how-it-works.2922edd4bfe011e997dbf32fdf8bd520bcbc85fb.png",
