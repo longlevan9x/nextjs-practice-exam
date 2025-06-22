@@ -65,7 +65,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
           <button
             onClick={onCheckAnswer}
             disabled={testEnded || checkingAnswer}
-            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${checkingAnswer ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700 hover:text-white'}`}
+            className={`flex items-center cursor-pointer px-2 py-1 lg:px-4 lg:py-2 bg-blue-600 text-white rounded-xs hover:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 ${checkingAnswer ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 hover:text-white'}`}
           >
             <span>Kiểm tra đáp án</span>
             {checkingAnswer && <LoadingIcon />}
