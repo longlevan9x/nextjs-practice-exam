@@ -2387,7 +2387,10 @@
         "answer": "",
         "explanation": "Functions with Provisioned Concurrency differ from on-demand functions in some important ways:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Initialization code does not need to be optimized. Since this happens long before the invocation, lengthy initialization does not impact the latency of invocations. If you are using runtimes that typically take longer to initialize, like Java, the performance of these can benefit from using Provisioned Concurrency.</p></li>\n<li><p>Initialization code is run more frequently than the total number of invocations. Since Lambda is highly available, for every one unit of Provisioned Concurrency, there are a minimum of two execution environments prepared in separate Availability Zones. This is to ensure that your code is available in the event of a service disruption. As environments are reaped and load balancing occurs, Lambda over-provisions environments to ensure availability. You are not charged for this activity. If your code initializer implements logging, you will see additional log files anytime that this code is run, even though the main handler is not invoked.</p></li>\n<li><p>Provisioned Concurrency cannot be used with the $LATEST version. This feature can only be used with published versions and aliases of a function. If you see cold starts for functions configured to use Provisioned Concurrency, you may be invoking the $LATEST version, instead of the version or alias with Provisioned Concurrency configured.</p></li>\n</ol>"
+      },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt5-q14-i1.jpg",
         "answer": "",
@@ -3809,7 +3812,10 @@
         "answer": "",
         "explanation": "Broadly, you can set up two types of caching strategies:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Lazy Loading</p></li>\n<li><p>Write-Through</p></li>\n</ol>"
+      },
       {
         "link": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html"
       },
@@ -3973,7 +3979,10 @@
         "answer": "",
         "explanation": "You can collect metrics and logs from Amazon EC2 instances and on-premises servers with the CloudWatch agent. The unified CloudWatch agent enables you to do the following:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Collect internal system-level metrics from Amazon EC2 instances across operating systems. The metrics can include in-guest metrics, in addition to the metrics for EC2 instances.</p></li>\n<li><p>Collect system-level metrics from on-premises servers. These can include servers in a hybrid environment as well as servers not managed by AWS.</p></li>\n<li><p>Retrieve custom metrics from your applications or services using the StatsD and collectd protocols. StatsD is supported on both Linux servers and servers running Windows Server. collectd is supported only on Linux servers.</p></li>\n<li><p>Collect logs from Amazon EC2 instances and on-premises servers, running either Linux or Windows Server.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "You can store and view the metrics that you collect with the CloudWatch agent in CloudWatch just as you can with any other CloudWatch metrics. The default namespace for metrics collected by the CloudWatch agent is CWAgent, although you can specify a different namespace when you configure the agent."

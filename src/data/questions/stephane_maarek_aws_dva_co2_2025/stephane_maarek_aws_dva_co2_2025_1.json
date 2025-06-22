@@ -722,7 +722,10 @@
         "answer": "",
         "explanation": "The standard AWS CDK development workflow is similar to the workflow you're already familiar as a developer. There are a few extra steps:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Create the app from a template provided by AWS CDK - Each AWS CDK app should be in its own directory, with its own local module dependencies. Create a new directory for your app. Now initialize the app using the <code>cdk init</code> command, specifying the desired template (\"app\") and programming language. The <code>cdk init</code> command creates a number of files and folders inside the created home directory to help you organize the source code for your AWS CDK app.</p></li>\n<li><p>Add code to the app to create resources within stacks - Add custom code as is needed for your application.</p></li>\n<li><p>Build the app (optional) - In most programming environments, after making changes to your code, you'd build (compile) it. This isn't strictly necessary with the AWS CDK—the Toolkit does it for you so you can't forget. But you can still build manually whenever you want to catch syntax and type errors.</p></li>\n<li><p>Synthesize one or more stacks in the app to create an AWS CloudFormation template - Synthesize one or more stacks in the app to create an AWS CloudFormation template. The synthesis step catches logical errors in defining your AWS resources. If your app contains more than one stack, you'd need to specify which stack(s) to synthesize.</p></li>\n<li><p>Deploy one or more stacks to your AWS account - It is optional (though good practice) to synthesize before deploying. The AWS CDK synthesizes your stack before each deployment. If your code has security implications, you'll see a summary of these and need to confirm them before deployment proceeds. <code>cdk deploy</code> is used to deploy the stack using CloudFormation templates. This command displays progress information as your stack is deployed. When it's done, the command prompt reappears.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -4394,7 +4397,10 @@
         "answer": "",
         "explanation": "Some policies replace all instances during the deployment or update. This causes all accumulated Amazon EC2 burst balances to be lost. It happens in the following cases:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Managed platform updates with instance replacement enabled</li>\n<li>Immutable updates</li>\n<li>Deployments with immutable updates or traffic splitting enabled</li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {

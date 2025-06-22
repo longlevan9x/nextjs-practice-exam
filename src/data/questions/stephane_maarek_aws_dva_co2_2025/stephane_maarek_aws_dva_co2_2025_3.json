@@ -1351,12 +1351,18 @@
         "answer": "",
         "explanation": "To encrypt data outside of AWS KMS:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Use the <code>GenerateDataKey</code> operation to get a data key.</p></li>\n<li><p>Use the plaintext data key (in the Plaintext field of the response) to encrypt your data outside of AWS KMS. Then erase the plaintext data key from memory.</p></li>\n<li><p>Store the encrypted data key (in the CiphertextBlob field of the response) with the encrypted data.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "To decrypt data outside of AWS KMS:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Use the Decrypt operation to decrypt the encrypted data key. The operation returns a plaintext copy of the data key.</p></li>\n<li><p>Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext data key from memory.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -1367,7 +1373,10 @@
         "answer": "",
         "explanation": "<strong>Make an <code>Encrypt</code> API call to encrypt the plaintext data as ciphertext using a customer master key (CMK) with imported key material</strong> - <code>Encrypt</code> API is used to encrypt plaintext into ciphertext by using a customer master key (CMK). The Encrypt operation has two primary use cases:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>To encrypt small amounts of arbitrary data, such as a personal identifier or database password, or other sensitive information.</p></li>\n<li><p>To move encrypted data from one AWS Region to another.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "Neither of the two is useful for the given scenario."
@@ -1565,7 +1574,10 @@
         "answer": "",
         "explanation": "<strong>Correct the policy of the IAM user to allow the <code>kms:GenerateDataKey</code> action</strong> - You can protect data at rest in Amazon S3 by using three different modes of server-side encryption: SSE-S3, SSE-C, or SSE-KMS. SSE-KMS requires that AWS manage the data key but you manage the customer master key (CMK) in AWS KMS. You can choose a customer managed CMK or the AWS managed CMK for Amazon S3 in your account. If you choose to encrypt your data using the standard features, AWS KMS and Amazon S3 perform the following actions:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Amazon S3 requests a plaintext data key and a copy of the key encrypted under the specified CMK.</p></li>\n<li><p>AWS KMS generates a data key, encrypts it under the CMK, and sends both the plaintext data key and the encrypted data key to Amazon S3.</p></li>\n<li><p>Amazon S3 encrypts the data using the data key and removes the plaintext key from memory as soon as possible after use.</p></li>\n<li><p>Amazon S3 stores the encrypted data key as metadata with the encrypted data.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "The error message indicates that your IAM user or role needs permission for the <code>kms:GenerateDataKey</code> action. This permission is required for buckets that use default encryption with a custom AWS KMS key."
@@ -1723,12 +1735,18 @@
         "answer": "",
         "explanation": "You can use API Gateway WebSocket APIs to build secure, real-time communication applications without having to provision or manage any servers to manage connections or large-scale data exchanges. Targeted use cases include real-time applications such as the following:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Chat applications</li>\n<li>Real-time dashboards such as stock tickers</li>\n<li>Real-time alerts and notifications</li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "API Gateway provides WebSocket API management functionality such as the following:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>Monitoring and throttling of connections and messages</li>\n<li>Using AWS X-Ray to trace messages as they travel through the APIs to backend services</li>\n<li>Easy integration with HTTP/HTTPS endpoints</li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -1861,7 +1879,10 @@
         "answer": "",
         "explanation": "<strong>Opt for Blue/Green deployment</strong> - A Blue/Green deployment is used to update your applications while minimizing interruptions caused by the changes of a new application version. CodeDeploy provisions your new application version alongside the old version before rerouting your production traffic. The behavior of your deployment depends on which compute platform you use:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>AWS Lambda: Traffic is shifted from one version of a Lambda function to a new version of the same Lambda function.</li>\n<li>Amazon ECS: Traffic is shifted from a task set in your Amazon ECS service to an updated, replacement task set in the same Amazon ECS service.</li>\n<li>EC2/On-Premises: Traffic is shifted from one set of instances in the original environment to a replacement set of instances.</li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -3318,7 +3339,10 @@
         "answer": "",
         "explanation": "Amazon EBS works with AWS KMS to encrypt and decrypt your EBS volume. You can encrypt both the boot and data volumes of an EC2 instance. When you create an encrypted EBS volume and attach it to a supported instance type, the following types of data are encrypted:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Data at rest inside the volume</p></li>\n<li><p>All data moving between the volume and the instance</p></li>\n<li><p>All snapshots created from the volume</p></li>\n<li><p>All volumes created from those snapshots</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "<strong>EBS volumes support both in-flight encryption and encryption at rest using KMS</strong> - This is a correct statement. Encryption operations occur on the servers that host EC2 instances, ensuring the security of both data-at-rest and data-in-transit between an instance and its attached EBS storage."

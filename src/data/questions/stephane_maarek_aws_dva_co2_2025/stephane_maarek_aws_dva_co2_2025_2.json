@@ -1133,12 +1133,18 @@
         "answer": "",
         "explanation": "Here's an overview of how you configure CloudFront for signed URLs and how CloudFront responds when a user uses a signed URL to request a file:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>In your CloudFront distribution, specify one or more trusted key groups, which contain the public keys that CloudFront can use to verify the URL signature. You use the corresponding private keys to sign the URLs.</p></li>\n<li><p>Develop your application to determine whether a user should have access to your content and to create signed URLs for the files or parts of your application that you want to restrict access to.</p></li>\n<li><p>A user requests a file for which you want to require signed URLs. Your application verifies that the user is entitled to access the file: they've signed in, they've paid for access to the content, or they've met some other requirement for access.</p></li>\n<li><p>Your application creates and returns a signed URL to the user. The signed URL allows the user to download or stream the content.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "This step is automatic; the user usually doesn't have to do anything additional to access the content. For example, if a user is accessing your content in a web browser, your application returns the signed URL to the browser. The browser immediately uses the signed URL to access the file in the CloudFront edge cache without any intervention from the user."
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li>CloudFront uses the public key to validate the signature and confirm that the URL hasn't been tampered with. If the signature is invalid, the request is rejected. If the request meets the requirements in the policy statement, CloudFront does the standard operations: determines whether the file is already in the edge cache, forwards the request to the origin if necessary, and returns the file to the user.</li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -1331,7 +1337,10 @@
         "answer": "",
         "explanation": "To create a flow log, you specify:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>The resource for which to create the flow log</p></li>\n<li><p>The type of traffic to capture (accepted traffic, rejected traffic, or all traffic)</p></li>\n<li><p>The destinations to which you want to publish the flow log data</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -4106,7 +4115,10 @@
         "answer": "",
         "explanation": "Here is the correct way of reusing SSH keys in your AWS Regions:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Generate a public SSH key (.pub) file from the private SSH key (.pem) file.</p></li>\n<li><p>Set the AWS Region you wish to import to.</p></li>\n<li><p>Import the public SSH key into the new Region.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {

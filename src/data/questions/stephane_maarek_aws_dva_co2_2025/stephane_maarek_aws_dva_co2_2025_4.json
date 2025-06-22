@@ -927,7 +927,10 @@
         "answer": "",
         "explanation": "When you create a target group, you specify its target type, which determines the type of target you specify when registering targets with this target group. After you create a target group, you cannot change its target type. The following are the possible target types:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><code>Instance</code> - The targets are specified by instance ID</li>\n<li><code>IP</code> - The targets are IP addresses</li>\n<li><code>Lambda</code> - The target is a Lambda function</li>\n</ol>"
+      },
       {
         "answer": "<strong>You can not specify publicly routable IP addresses to an ALB</strong>",
         "explanation": ""
@@ -1144,7 +1147,10 @@
         "answer": "",
         "explanation": "While using Redis with cluster mode enabled, there are some limitations:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>You cannot manually promote any of the replica nodes to primary.</p></li>\n<li><p>Multi-AZ is required.</p></li>\n<li><p>You can only change the structure of a cluster, the node type, and the number of nodes by restoring from a backup.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -3602,7 +3608,10 @@
         "answer": "",
         "explanation": "To grant cross-account permissions, you need to attach an identity-based permissions policy to an IAM role. For example, the AWS account A administrator can create a role to grant cross-account permissions to AWS account B as follows:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>The account A administrator creates an IAM role and attaches a permissions policy—that grants permissions on resources in account A—to the role.</p></li>\n<li><p>The account A administrator attaches a trust policy to the role that identifies account B as the principal who can assume the role.</p></li>\n<li><p>The account B administrator delegates the permission to assume the role to any users in account B. This allows users in account B to create or access queues in account A.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -4023,7 +4032,10 @@
         "answer": "",
         "explanation": "The client that initiates the request chooses the ephemeral port range. The range varies depending on the client's operating system. Requests originating from Elastic Load Balancing use ports 1024-65535. List of ephemeral port ranges:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>Many Linux kernels (including the Amazon Linux kernel) use ports 32768-61000.</p></li>\n<li><p>Requests originating from Elastic Load Balancing use ports 1024-65535.</p></li>\n<li><p>Windows operating systems through Windows Server 2003 use ports 1025-5000.</p></li>\n<li><p>Windows Server 2008 and later versions use ports 49152-65535.</p></li>\n<li><p>A NAT gateway uses ports 1024-65535.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "AWS Lambda functions use ports 1024-65535."

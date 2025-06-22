@@ -1516,7 +1516,10 @@
         "answer": "",
         "explanation": "We use the value of the CloudFront-Viewer-Country header to update the S3 bucket domain name to a bucket in a Region that is closer to the viewer. This can be useful in several ways:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>It reduces latencies when the Region specified is nearer to the viewer's country.</p></li>\n<li><p>It provides data sovereignty by making sure that data is served from an origin that's in the same country that the request came from.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "So, for the given use case, we need to leverage the origin request event (to address the cache miss) and trigger the Lambda@Edge function to redirect the requests on cache miss to the S3 bucket nearest to the user country."
@@ -1555,7 +1558,10 @@
         "answer": "",
         "explanation": "When you associate a CloudFront function with a CloudFront distribution, CloudFront intercepts requests and responses at CloudFront edge locations and passes them to your function. You can invoke CloudFront functions when the following events occur:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>When CloudFront receives a request from a viewer (viewer request): The function executes when CloudFront receives a request from a viewer before it checks to see whether the requested object is in the CloudFront cache.</p></li>\n<li><p>Before CloudFront returns the response to the viewer (viewer response): The function executes before returning the requested file to the viewer. Note that the function executes regardless of whether the file is already in the CloudFront cache.</p></li>\n</ol>"
+      },
       {
         "answer": "",
         "explanation": "If you use the viewer request event, the function would be triggered on all user requests rather than only when you have a cache miss. So, this option is incorrect."
@@ -2537,7 +2543,10 @@
         "answer": "",
         "explanation": "Amazon CloudWatch Events is a web service that monitors your AWS resources and the applications you run on AWS. You can use Amazon CloudWatch Events to detect and react to changes in the state of a pipeline, stage, or action. Then, based on rules you create, CloudWatch Events invokes one or more target actions when a pipeline, stage, or action enters the state you specify in a rule.\nExamples of Amazon CloudWatch Events rules and targets:"
       },
-      {}
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>A rule that sends a notification when the instance state changes, where an EC2 instance is the event source, and Amazon SNS is the event target.</p></li>\n<li><p>A rule that sends a notification when the build phase changes, where a CodeBuild configuration is the event source, and Amazon SNS is the event target.</p></li>\n<li><p>A rule that detects pipeline changes and invokes an AWS Lambda function.</p></li>\n</ol>"
+      }
     ],
     "incorrectAnswerExplanations": [
       {
@@ -2872,7 +2881,10 @@
         "answer": "",
         "explanation": "There are two types of Lambda authorizers:"
       },
-      {},
+      {
+        "answer": "",
+        "explanation": "<ol>\n<li><p>A token-based Lambda authorizer (also called a TOKEN authorizer) receives the caller's identity in a bearer token, such as a JSON Web Token (JWT) or an OAuth token.</p></li>\n<li><p>A request parameter-based Lambda authorizer (also called a REQUEST authorizer) receives the caller's identity in a combination of headers, query string parameters, state variables, and $context variables.</p></li>\n</ol>"
+      },
       {
         "image": "https://assets-pt.media.datacumulus.com/aws-dva-pt/assets/pt6-q55-i1.jpg",
         "answer": "",
