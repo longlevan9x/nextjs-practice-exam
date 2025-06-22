@@ -1,5 +1,5 @@
 .ai-content-wrapper {
-    line-height: var(--spacing * 7);
+    line-height: calc(var(--spacing) * 7);
 
     /* Các thẻ con có thể tùy chỉnh */
     p {
