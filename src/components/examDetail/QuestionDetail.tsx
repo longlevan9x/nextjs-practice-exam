@@ -203,7 +203,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
       </div>
 
       <div className="mt-1 mb-4 [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_img]:max-w-full [&_img]:h-auto">
-        <p className="text-base" dangerouslySetInnerHTML={{ __html: question.question }} />
+        <p className="text-base leading-7" dangerouslySetInnerHTML={{ __html: question.question }} />
       </div>
 
       <div className={`transition-all duration-300 ease-in-out relative z-0 ${isExpanded ? 'opacity-100' : 'opacity-0 h-0'}`}>
