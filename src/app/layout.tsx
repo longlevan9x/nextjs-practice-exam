@@ -22,7 +22,7 @@ import { ModalProvider } from "@/components/contexts/ModalContext";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
-  
+
 export const metadata: Metadata = {
   title: "DevCloudly",
   description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   authors: [{ name: "DevCloudly Team" }],
   openGraph: {
     title: "DevCloudly - Luyện thi trực tuyến",
-  description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
+    description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
     type: "website",
     locale: "vi_VN",
     siteName: "DevCloudly",
@@ -62,7 +62,8 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo/logo_ico.png" />
+        <link rel="icon" href="/logo/logo_ico.png" type="image/png" />
+        <link rel="icon" href="/logo/logo.ico" type="image/x-icon" />
       </head>
       <body className="bg-white dark:bg-neutral-900 antialiased h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
