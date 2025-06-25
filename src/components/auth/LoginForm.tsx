@@ -78,6 +78,31 @@ export default function LoginForm() {
         }
     };
 
+
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        setError(null);
+
+        try {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: `${window.location.origin}/auth/callback`
+                }
+            });
+
+            if (error) throw error;
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError('An unknown error occurred');
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
@@ -156,6 +181,25 @@ export default function LoginForm() {
                             </svg>
                             {loading ? 'Đang đăng nhập...' : 'Đăng nhập với GitHub'}
                         </button>
+
+                        <div className="flex flex-col space-y-4">
+                            <button
+                                type="button"
+                                onClick={handleGoogleLogin}
+                                disabled={loading}
+                                className="cursor-pointer group relative w-full flex justify-center py-2 px-4 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            >
+                                <svg className="w-5 h-5 mr-2" viewBox="0 0 48 48">
+                                    <g>
+                                        <path fill="#4285F4" d="M44.5,20H24v8.5h11.7C34.7,33.1,29.8,36,24,36c-6.6,0-12-5.4-12-12s5.4-12,12-12c3.1,0,5.9,1.1,8.1,2.9l6.4-6.4C34.6,6.1,29.6,4,24,4C12.9,4,4,12.9,4,24s8.9,20,20,20c11,0,19.7-8,19.7-20C44.7,22.7,44.6,21.3,44.5,20z" />
+                                        <path fill="#34A853" d="M6.3,14.7l7,5.1C15.7,16.1,19.5,13,24,13c3.1,0,5.9,1.1,8.1,2.9l6.4-6.4C34.6,6.1,29.6,4,24,4C15.6,4,8.1,9.7,6.3,14.7z" />
+                                        <path fill="#FBBC05" d="M24,44c5.6,0,10.6-1.9,14.5-5.1l-6.7-5.5C29.8,36,24,36,24,36c-5.8,0-10.7-2.9-13.7-7.5l-7,5.4C8.1,38.3,15.6,44,24,44z" />
+                                        <path fill="#EA4335" d="M44.5,20H24v8.5h11.7c-1.2,3.1-4.2,5.5-7.7,6.4l6.7,5.5C41.6,38.3,44.7,32.7,44.7,24C44.7,22.7,44.6,21.3,44.5,20z" />
+                                    </g>
+                                </svg>
+                                {loading ? 'Đang đăng nhập...' : 'Đăng nhập với Google'}
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
