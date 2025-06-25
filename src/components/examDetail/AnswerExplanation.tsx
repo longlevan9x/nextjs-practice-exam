@@ -124,7 +124,7 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ answerExplanation
             }
             {
               (answerExplanation.explanation && answerExplanation.explanation !== "**") &&
-              <p className="whitespace-pre-line [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.explanation }} />
+              <p className="[&_ol]:list-[auto] [&_ol]:whitespace-normal [&_ol]:pl-8 [&_ul]:list-disc [&_ul]:whitespace-normal [&_ul]:pl-8 whitespace-pre-line [&_pre]:bg-gray-100 dark:[&_pre]:bg-gray-700 [&_pre]:p-4 [&_pre]:rounded-md [&_pre]:overflow-x-auto [&_pre]:my-2 [&_pre]:font-mono [&_pre]:text-sm [&_code]:bg-gray-100 dark:[&_code]:bg-gray-700 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_strong]:font-bold" dangerouslySetInnerHTML={{ __html: answerExplanation.explanation }} />
             }
 
             {
