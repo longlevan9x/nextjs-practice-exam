@@ -22,25 +22,25 @@ import { ModalProvider } from "@/components/contexts/ModalContext";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
-
+  
 export const metadata: Metadata = {
-  title: "Exam Practice - Luyện thi trực tuyến",
-  description: 'Hệ thống luyện thi chứng chỉ Cloud với các bài thi thực hành chất lượng cao',
-  keywords: ['luyện thi', 'chứng chỉ', 'AWS', 'GCP', 'Cloud', 'bài thi', 'thực hành'],
-  authors: [{ name: "Exam Practice Team" }],
+  title: "DevCloudly - Luyện thi chứng chỉ Cloud chuyên sâu",
+  description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
+  keywords: ['DevCloudly', 'luyện thi cloud', 'chứng chỉ AWS', 'GCP', 'Azure', 'cloud computing', 'thực hành', 'thi thử'],
+  authors: [{ name: "DevCloudly Team" }],
   openGraph: {
-    title: "Exam Practice - Luyện thi trực tuyến",
-    description: 'Hệ thống luyện thi chứng chỉ Cloud với các bài thi thực hành chất lượng cao',
+    title: "DevCloudly - Luyện thi trực tuyến",
+  description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
     type: "website",
     locale: "vi_VN",
-    siteName: "Exam Practice",
-    url: 'https://nextjs-practice-exam.vercel.app',
+    siteName: "DevCloudly",
+    url: 'https://devcloudly.vercel.app',
     images: [
       {
-        url: 'https://nextjs-practice-exam.vercel.app/images/aws-saa.png',
+        url: 'https://devcloudly.vercel.app/logo/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Exam Practice - Luyện thi trực tuyến',
+        alt: 'DevCloudly - Luyện thi trực tuyến',
       },
     ],
   },
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo/logo_ico.png" />
       </head>
       <body className="bg-white dark:bg-neutral-900 antialiased h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

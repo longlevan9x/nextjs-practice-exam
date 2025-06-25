@@ -5,6 +5,7 @@ import Link from "next/link";
 import { supabase } from "@/backend/lib/supabase/client";
 import { getCurrentUser } from "@/backend/services/authService";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import LogoIcon from "./icons/Logo";
 
 const Menu: React.FC = () => {
   interface User {
@@ -46,8 +47,10 @@ const Menu: React.FC = () => {
       <div>
         <div className="flex justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold ">
-              Exam Practice
+            {/* Logo bên trái */}
+            <Link href="/" className="flex items-center gap-1 text-xl font-bold">
+              <LogoIcon className="h-8 w-8 fill-white" />
+              DevCloudly
             </Link>
           </div>
 
