@@ -24,7 +24,7 @@ import { ModalProvider } from "@/components/contexts/ModalContext";
 // });
   
 export const metadata: Metadata = {
-  title: "DevCloudly - Luyện thi chứng chỉ Cloud chuyên sâu",
+  title: "DevCloudly",
   description: "Nền tảng luyện thi chứng chỉ Cloud (AWS, GCP, Azure) với các bài thực hành chất lượng cao và trải nghiệm sát đề thi thực tế",
   keywords: ['DevCloudly', 'luyện thi cloud', 'chứng chỉ AWS', 'GCP', 'Azure', 'cloud computing', 'thực hành', 'thi thử'],
   authors: [{ name: "DevCloudly Team" }],
