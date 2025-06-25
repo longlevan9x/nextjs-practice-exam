@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
       <p>
         Chúng tôi chỉ sử dụng thông tin đăng nhập Facebook để xác thực người dùng. Dữ liệu cá nhân của bạn không được lưu trữ hoặc chia sẻ với bên thứ ba.<br />
         Mọi thông tin đăng nhập đều do Facebook cung cấp và được bảo mật theo chính sách của Facebook.<br />
-        Mọi thắc mắc, vui lòng liên hệ: <a href="mailto:kivie9x@gmail.com" className="text-blue-600 underline">vanlong121996@gmail.com</a>
+        Mọi thắc mắc, vui lòng liên hệ: <a href="mailto:kivie9x@gmail.com" className="text-blue-600 underline">kivie9x@gmail.com</a>
       </p>
     </div>
   );
