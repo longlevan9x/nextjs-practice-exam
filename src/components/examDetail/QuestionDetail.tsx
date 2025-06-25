@@ -127,7 +127,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     if (sendOption === AI_SEND_OPT.TRAN_QA || sendOption === AI_SEND_OPT.EXPLAIN_QA) {
       content = question.question + "\n" + answer;
       if (sendOption === AI_SEND_OPT.EXPLAIN_QA) {
-        content += "\n" + "Các án đúng: " + question.corrects.join(", ");
+        content += "\n" + "Các án đúng: " + question.answers.filter(a => a.correct).map(a => a.answer).join(", ");
       }
     }
     else if (sendOption === AI_SEND_OPT.TRAN_EXPLAN || sendOption === AI_SEND_OPT.EXPLAIN_EXPLAIN) {
