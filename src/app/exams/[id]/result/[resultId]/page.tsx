@@ -271,10 +271,10 @@ const ResultOverviewPage: React.FC = () => {
                             className={`cursor-pointer w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 relative flex-shrink-0 ${activeQuestion === question.id
                                 ? 'bg-blue-600 text-white scale-110'
                                 : question.question.isCorrect
-                                    ? 'bg-green-100 text-green-800 hover:bg-green-200'
+                                    ? 'bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-800 dark:text-green-100 dark:hover:bg-green-700'
                                     : question.question.selectedAnswer === null
-                                        ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                                        : 'bg-red-100 text-red-800 hover:bg-red-200'
+                                        ? 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700'
+                                        : 'bg-red-100 text-red-800 hover:bg-red-200 dark:bg-red-800 dark:text-red-100 dark:hover:bg-red-700'
                                 }`}
                             title={`Câu ${(question.question.questionIndex ?? 0) + 1}: ${question.question.isCorrect
                                 ? 'Chính xác'
