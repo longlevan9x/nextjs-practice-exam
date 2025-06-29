@@ -18,7 +18,7 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "2. Đưa ra đáp án đúng trước, chỉ rõ lý do chọn. (nếu có câu hỏi và đáp án, không có thì bỏ qua)\n";
         prompt += "3. Giải thích tất cả các phương án (đúng và sai), nêu rõ vì sao đúng, vì sao sai, nếu có ví dụ minh họa thì càng tốt. (nếu có câu hỏi và đáp án, không có thì bỏ qua)\n";
         prompt += "4. Sử dụng kiến thức cập nhật mới nhất đến năm 2025 (vui lòng áp dụng theo phiên bản mới nhất).\n";
-        prompt += "5. Phần nội dung đáp án không cần dịch. Ngoài ra thì trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
+        prompt += "5.  Với đáp án giữ nguyên không dịch. Phần còn lại thì trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
         prompt += "6. Đưa ra các ví dụ minh họa cụ thể nếu có thể.\n";
         prompt += "Văn bản cần giải thích:\n";
     }
