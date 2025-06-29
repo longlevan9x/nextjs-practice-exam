@@ -178,17 +178,18 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
                 {isExtInstalled &&
                   <div className="p-3">
                     {aiOptions.map((item) => (
-                      <a key={item.key} className="block rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5" href="#" onClick={() => handleShowChatGptModal(item.key)}>
+                      <div key={item.key} className="block cursor-pointer rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
+                        onClick={() => handleShowChatGptModal(item.key)}>
                         <p className="font-normal dark:text-gray-200">{item.value}</p>
-                      </a>
+                      </div>
                     ))}
                   </div>
                 }
                 {
                   !isExtInstalled &&
-                  <a className="block rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5" href="#">
+                  <div className="block cursor-pointer rounded-xs px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5">
                     <p className="font-normal dark:text-gray-200">Tải extension tại <Link className="text-blue-400 hover:underline hover:text-blue-500" href={EXT_RELEASE_LINK + requireVersion} target="_blank">link.</Link></p>
-                  </a>
+                  </div>
                 }
               </PopoverPanel>
             </Popover>
