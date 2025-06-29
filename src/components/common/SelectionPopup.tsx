@@ -31,7 +31,7 @@ export default function SelectionPopup() {
             action: () => handleShowChatGptModal(AI_PROMPT_TYPE.EXPLAIN_PHRASE),
             isVisible: true
         },
-         {
+        {
             id: AI_PROMPT_TYPE.EXPLAIN_CLOUD_SERVICE,
             icon: <Cog8ToothIcon className="w-4 h-4 text-gray-500 dark:text-white mr-1" />,
             label: "Phân tích Service",
@@ -162,7 +162,7 @@ export default function SelectionPopup() {
                                 {openMenuLeft && (
                                     <div className="w-44 top-0 left-9 absolute z-50 border border-gray-200 dark:border-gray-700 rounded-xs bg-white text-gray-800 dark:bg-neutral-800 dark:text-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0">
                                         {menuList.filter(item => item.isVisible).map(item => (
-                                            <div key={item.id}
+                                            <button key={item.id}
                                                 className="flex cursor-pointer items-center px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-white/5"
                                                 onClick={(e) => {
                                                     e.preventDefault();
@@ -170,7 +170,7 @@ export default function SelectionPopup() {
                                                 }}>
                                                 {item.icon}
                                                 <p className="text-gray-900 dark:text-white">{item.label}</p>
-                                            </div>
+                                            </button>
                                         ))}
                                     </div>
                                 )}
