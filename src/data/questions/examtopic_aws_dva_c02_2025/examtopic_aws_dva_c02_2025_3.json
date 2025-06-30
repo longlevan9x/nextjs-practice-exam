@@ -273,7 +273,7 @@
       {
         "id": 4,
         "answer": "Instrument the application by using the AWS X-Ray SDK. Update the application to communicate with the X-Ray daemon.",
-        "correct": false
+        "correct": true
       },
       {
         "id": 5,
@@ -282,9 +282,9 @@
       }
     ],
     "corrects": [
-      1
+      1, 4
     ],
-    "multiple": false,
+    "multiple": true,
     "domain": "",
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
