@@ -62,6 +62,8 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "1. Cách nhau bằng dấu phẩy.\n";
         prompt += "2. Không cần ví dụ.\n";
         prompt += "3. Ngữ cảnh trong công nghệ, cuộc sống.\n";
+        prompt += "4. Nghĩa của từ trong tiếng Việt.\n";
+        prompt += "Từ cần lấy nghĩa: \n";
     }
 
     prompt += content;
