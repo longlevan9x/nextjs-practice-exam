@@ -9,6 +9,7 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "Yêu cầu:\n";
         prompt += "1. Dịch sang tiếng Việt tự nhiên, sát nghĩa, nhưng vẫn giữ đúng sắc thái gốc.\n";
         prompt += "2. Giữ nguyên các từ khóa tiếng Anh nếu mang nghĩa chuyên ngành.\n";
+        prompt += "3. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.";
         prompt += "Văn bản cần dịch:\n";
     }
     else if (toolType === AI_PROMPT_TYPE.EXPLAIN) {
@@ -20,6 +21,7 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "4. Sử dụng kiến thức cập nhật mới nhất đến năm 2025 (vui lòng áp dụng theo phiên bản mới nhất).\n";
         prompt += "5. Các đáp án giữ nguyên không dịch. Phần còn lại thì trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
         prompt += "6. Đưa ra các ví dụ minh họa cụ thể nếu có thể.\n";
+        prompt += "7. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.";
         prompt += "Văn bản cần giải thích:\n";
     }
     else if (toolType === AI_PROMPT_TYPE.TRAN_BASIC) {
@@ -36,6 +38,7 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "1. Đưa ra nội dung chính và ý nghĩa của đoạn văn.\n";
         prompt += "2. Giải thích các thuật ngữ hoặc khái niệm quan trọng nếu có.\n";
         prompt += "3. Trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
+        prompt += "4. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.";
         prompt += "Văn bản cần giải thích:\n";
     } else if (toolType === AI_PROMPT_TYPE.EXPLAIN_PHRASE) {
         prompt += "Tôi muốn bạn đóng vai trò là giáo viên tiếng Anh. Hãy giúp tôi phân tích và dịch từ/cụm từ sau theo phong cách dễ hiểu và sát với ngữ cảnh người học.\n";
@@ -50,6 +53,7 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "Tôi muốn bạn đóng vai trò là chuyên gia trong lĩnh vực aws. Hãy giúp tôi phân tích cụm từ sau:\n";
         prompt += "Yêu cầu:\n";
         prompt += "1. Giải thích ý nghĩa trong ngữ cảnh AWS.\n";
+        prompt += "2. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.";
         prompt += "Cụm từ: \n";
     }
     else if (toolType === AI_PROMPT_TYPE.CREATE_MEANING) {
@@ -58,7 +62,6 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "1. Cách nhau bằng dấu phẩy.\n";
         prompt += "2. Không cần ví dụ.\n";
         prompt += "3. Ngữ cảnh trong công nghệ, cuộc sống.\n";
-
     }
 
     prompt += content;
