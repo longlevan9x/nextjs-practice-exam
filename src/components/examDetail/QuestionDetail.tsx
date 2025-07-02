@@ -123,18 +123,18 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     }
     let content = "";
 
-    const answer = question.answers.map(a => a.answer).join("\n");
+    const answer = question.answers.map((a, i) => (i + 1) + ". " + a.answer).join("\n\n");
     if (sendOption === AI_SEND_OPT.TRAN_QA || sendOption === AI_SEND_OPT.EXPLAIN_QA) {
-      content = question.question + "\n" + answer;
+      content = question.question + "\n\n" + answer;
       if (sendOption === AI_SEND_OPT.EXPLAIN_QA) {
-        content += "\n" + "Các đáp án đúng: \n" + question.answers.filter(a => a.correct).map(a => a.answer).join("\n");
+        content += "\n\n" + "Các đáp án đúng: \n\n" + question.answers.filter(a => a.correct).map(a => a.answer).join("\n\n");
       }
     }
     else if (sendOption === AI_SEND_OPT.TRAN_EXPLAN || sendOption === AI_SEND_OPT.EXPLAIN_EXPLAIN) {
       content = question.explanation;
     }
     else if (sendOption === AI_SEND_OPT.TRAN_ALL) {
-      content = question + "\n" + answer + "\n" + question.explanation;
+      content = question + "\n\n" + answer + "\n\n" + question.explanation;
     }
 
     if (!content) return;
