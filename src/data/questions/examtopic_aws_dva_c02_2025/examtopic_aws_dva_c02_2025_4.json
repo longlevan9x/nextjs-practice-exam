@@ -401,8 +401,7 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/122628-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-failure-options.html",
-      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-failure-options.html#stack-failure-options-cli",
-      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-failure-options.html"
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-failure-options.html#stack-failure-options-cli"
     ]
   },
   {
@@ -665,9 +664,7 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/124780-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#vpc-permissions)",
-      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#vpc-permissions",
-      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#vpc-permissions",
-      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#vpc-permissions)"
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#vpc-permissions"
     ]
   },
   {
@@ -1631,8 +1628,7 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/124826-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication",
-      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html",
-      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication"
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html"
     ]
   },
   {
@@ -1791,7 +1787,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/124747-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html",
       "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html"
     ]
   },
@@ -1871,7 +1866,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/124831-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/cdk/v2/guide/testing.html",
       "https://docs.aws.amazon.com/cdk/v2/guide/testing.html"
     ]
   },
@@ -2207,7 +2201,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/124865-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local-test-sm-exec.html",
       "https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local-test-sm-exec.html"
     ]
   },

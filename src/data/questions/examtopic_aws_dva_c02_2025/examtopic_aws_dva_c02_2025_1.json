@@ -72,7 +72,6 @@
       "https://www.examtopics.com/discussions/amazon/view/102782-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instance-state-changes.html",
       "https://docs.aws.amazon.com/us_en/eventbridge/latest/userguide/eb-cross-account.html#:~:text=You%20can%20configure%20EventBridge%20to%20send%20and%20receive,events%20from%20the%20event%20bus%20in%20your%20account.",
-      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html",
       "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html"
     ]
   },
@@ -299,7 +298,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/102786-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html",
       "https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html"
     ]
   },
@@ -484,7 +482,6 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103442-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html",
-      "https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html",
       "https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html"
     ]
   },
@@ -598,8 +595,6 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103444-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/lambda/latest/operatorguide/computing-power.html",
-      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console",
-      "https://docs.aws.amazon.com/lambda/latest/operatorguide/computing-power.html",
       "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
     ]
   },
@@ -638,11 +633,8 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/102743-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server",
-      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server",
       "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html",
-      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server:~:text=a%20load%20balancer.-,Lifecycle%20event%20hook%20availability,-The%20following%20table",
-      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html",
-      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server"
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server:~:text=a%20load%20balancer.-,Lifecycle%20event%20hook%20availability,-The%20following%20table"
     ]
   },
   {
@@ -1236,9 +1228,7 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103664-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html",
-      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html",
-      "https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html",
-      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html"
+      "https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html"
     ]
   },
   {
@@ -1428,8 +1418,7 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103522-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html",
-      "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html",
-      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html"
+      "https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"
     ]
   },
   {
@@ -1657,7 +1646,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103916-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html",
       "https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html"
     ]
   },
@@ -1698,8 +1686,7 @@
       "https://docs.aws.amazon.com/us_en/lambda/latest/dg/python-context.html",
       "https://docs.aws.amazon.com/lambda/latest/dg/nodejs-context.html",
       "https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html",
-      "https://docs.aws.amazon.com/lambda/latest/dg/java-context.html",
-      "https://docs.aws.amazon.com/us_en/lambda/latest/dg/python-context.html"
+      "https://docs.aws.amazon.com/lambda/latest/dg/java-context.html"
     ]
   },
   {
@@ -1853,7 +1840,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103919-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html",
       "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html"
     ]
   },
@@ -1891,7 +1877,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103619-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-mock-integration.html",
       "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-mock-integration.html"
     ]
   },
@@ -1929,8 +1914,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/103772-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html",
-      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html",
       "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
     ]
   },
@@ -2342,7 +2325,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/104016-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html",
       "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html"
     ]
   },

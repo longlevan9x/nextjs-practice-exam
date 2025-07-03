@@ -38,7 +38,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/95570-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/95570-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html"
     ]
   },
   {
@@ -122,7 +123,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/95573-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/95573-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GeneratingCustomErrorResponses.html#custom-error-pages-procedure"
     ]
   },
   {
@@ -158,7 +160,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/95574-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/95574-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html"
     ]
   },
   {
@@ -230,7 +233,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/95494-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/95494-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"
     ]
   },
   {
@@ -338,7 +342,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97671-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97671-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-app-layer-protections.html"
     ]
   },
   {
@@ -380,7 +385,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97684-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97684-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
     ]
   },
   {
@@ -488,7 +494,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97689-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97689-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html",
+      "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/in-transit-encryption.html"
     ]
   },
   {
@@ -524,7 +532,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97695-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97695-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html#use-attribute-based-instance-type-selection-prerequisites"
     ]
   },
   {
@@ -632,7 +641,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97664-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97664-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.alb-accelerator.html"
     ]
   },
   {
@@ -680,7 +690,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/97939-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/97939-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/controltower/latest/userguide/controls.html"
     ]
   },
   {
@@ -758,7 +769,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99148-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99148-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#ec2-metrics-analyzed",
+      "https://docs.aws.amazon.com/awssupport/latest/user/cost-optimization-checks.html",
+      "https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html"
     ]
   },
   {
@@ -794,7 +808,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99150-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99150-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/automate-event-driven-backups-from-codecommit-to-amazon-s3-using-codebuild-and-cloudwatch-events.html",
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/deploy-code-in-multiple-aws-regions-using-aws-codepipeline-aws-codecommit-and-aws-codebuild.html"
     ]
   },
   {
@@ -866,7 +882,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99152-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99152-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-analyzer.html",
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-eventbridge.html",
+      "https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/access-control-block-public-access.html"
     ]
   },
   {
@@ -938,7 +957,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99154-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99154-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"
     ]
   },
   {
@@ -974,7 +994,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99155-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99155-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-two-way.html"
     ]
   },
   {
@@ -1010,7 +1031,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/99304-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/99304-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html"
     ]
   },
   {
@@ -1046,7 +1068,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107088-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/107088-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/redshift/latest/dg/adx-getting-started.html"
     ]
   },
   {
@@ -1082,7 +1105,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107090-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/107090-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-using-sqs-queue.html"
     ]
   },
   {
@@ -1298,7 +1322,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110405-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110405-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-identity-based-policies.html"
     ]
   },
   {
@@ -1346,7 +1371,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110403-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110403-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRequestRouting.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
     ]
   },
   {
@@ -1430,7 +1457,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110345-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110345-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/snowball/latest/developer-guide/whatisedge.html#edge-related"
     ]
   },
   {
@@ -1508,7 +1536,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110393-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110393-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/creating-custom-error-pages.html"
     ]
   },
   {
@@ -1580,7 +1609,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110391-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110391-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/load-balancer-stickiness/target-group-stickiness.html"
     ]
   },
   {
@@ -1616,7 +1646,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110340-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110340-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-type.html",
+      "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/updating-storage-type.html",
+      "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-configuration.html#managing-storage-type"
     ]
   },
   {
@@ -1778,7 +1811,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110347-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110347-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/logging-with-S3.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html#LogDeliveryBestEffort"
     ]
   },
   {
@@ -1820,7 +1855,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110379-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110379-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html",
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-direct-connect-for-amazon-connect/virtual-interfaces-vif.html",
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-site-to-site-vpn.html"
     ]
   },
   {
@@ -2211,7 +2249,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/110297-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/110297-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
     ]
   },
   {
@@ -2355,7 +2394,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112681-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112681-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-lambda-tutorial.html"
     ]
   },
   {
@@ -2391,7 +2431,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112862-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112862-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-workspace-content-migration.html"
     ]
   },
   {
@@ -2427,7 +2468,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112716-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112716-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_turn-on-for-other.html#rotate-secrets_turn-on-for-other_step1"
     ]
   },
   {
@@ -2541,7 +2583,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112768-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112768-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/waf/latest/developerguide/logging-kinesis.html"
     ]
   },
   {
@@ -2613,7 +2656,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112850-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112850-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html"
     ]
   },
   {
@@ -2661,7 +2705,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112851-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112851-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
     ]
   },
   {
@@ -2745,7 +2790,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112972-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112972-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html"
     ]
   },
   {
@@ -2817,7 +2863,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112772-exam-aws-certified-solutions-architect-professional-sap-c02/"
+      "https://www.examtopics.com/discussions/amazon/view/112772-exam-aws-certified-solutions-architect-professional-sap-c02/",
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"
     ]
   },
   {

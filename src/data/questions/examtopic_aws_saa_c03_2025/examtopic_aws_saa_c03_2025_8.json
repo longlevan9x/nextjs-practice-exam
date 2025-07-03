@@ -68,7 +68,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/transfer/latest/userguide/custom-identity-provider-users.html"
     ]
   },
   {
@@ -146,7 +147,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109440-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109440-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html",
+      "https://docs.aws.amazon.com/ja_jp/awsaccountbilling/latest/aboutv2/activating-tags.html"
     ]
   },
   {
@@ -182,7 +185,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109525-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109525-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html",
+      "https://docs.aws.amazon.com/appflow/latest/userguide/salesforce.html"
     ]
   },
   {
@@ -326,7 +331,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109449-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109449-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html#Concepts.MultiAZ.Migrating"
     ]
   },
   {
@@ -362,7 +368,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html#:~:text=Multi%2DAttach%20is%20supported%20exclusively%20on%20Provisioned%20IOPS%20SSD%20(io1%20and%20io2)%20volumes.",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"
     ]
   },
   {
@@ -434,7 +442,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109485-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109485-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html",
+      "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html#:~:text=choose%20Save.-,Turning%20on%20shared%20reserved%20instances%20and%20Savings%20Plans%20discounts,-You%20can%20use"
     ]
   },
   {
@@ -470,7 +480,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109451-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109451-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vpc-links.html",
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-private-integration.html"
     ]
   },
   {
@@ -542,7 +554,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
     ]
   },
   {
@@ -758,7 +771,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109458-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109458-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_attach-policy.html"
     ]
   },
   {
@@ -830,7 +844,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109725-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109725-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
     ]
   },
   {
@@ -938,7 +953,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109462-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109462-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html#Strategies.WriteThrough"
     ]
   },
   {
@@ -1160,7 +1176,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-helper-direct.html"
     ]
   },
   {
@@ -1232,7 +1249,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109637-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109637-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/sns/latest/dg/sns-configure-dead-letter-queue.html",
+      "https://docs.aws.amazon.com/sns/latest/dg/sns-dead-letter-queues.html"
     ]
   },
   {
@@ -1304,7 +1323,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109513-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109513-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+      "https://docs.aws.amazon.com/zh_tw/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-least-privilege-policy.html"
     ]
   },
   {
@@ -1424,7 +1445,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109727-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109727-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_deny-ip.html"
     ]
   },
   {
@@ -1574,7 +1596,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109668-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109668-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html"
     ]
   },
   {
@@ -1610,7 +1633,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109515-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109515-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html"
     ]
   },
   {
@@ -1874,7 +1898,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109692-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109692-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html"
     ]
   },
   {
@@ -1910,7 +1936,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109608-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109608-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/multi-region-strong-consistency-gt.html",
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/aurora-replication-options/compare-solutions.html"
     ]
   },
   {
@@ -2024,7 +2052,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109708-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109708-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html"
     ]
   },
   {
@@ -2168,7 +2197,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html"
     ]
   },
   {
@@ -2216,7 +2246,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/redshift/latest/mgmt/security-encryption.html"
     ]
   },
   {
@@ -2252,7 +2283,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109719-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109719-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html#:~:text=for%20a%20function.-,Provisioned%20concurrency,-%E2%80%93%20Provisioned%20concurrency%20is"
     ]
   },
   {
@@ -2288,7 +2320,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109536-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109536-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-logging.html#session-manager-logging-s3",
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-logging.html",
+      "https://docs.aws.amazon.com/systems-manager/latest/userguide/distributor-working-with-packages-deploy.html"
     ]
   },
   {
@@ -2360,7 +2395,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109722-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109722-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
     ]
   },
   {
@@ -2396,7 +2432,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109539-exam-aws-certified-solutions-architect-associate-saa-c03/"
+      "https://www.examtopics.com/discussions/amazon/view/109539-exam-aws-certified-solutions-architect-associate-saa-c03/",
+      "https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/capacity.html",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"
     ]
   }
 ]

@@ -1029,7 +1029,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/134287-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html",
       "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html"
     ]
   },

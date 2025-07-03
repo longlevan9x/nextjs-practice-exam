@@ -106,7 +106,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/117335-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html",
       "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html"
     ]
   },
@@ -1476,7 +1475,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/122590-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-integration-async.html",
       "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-integration-async.html"
     ]
   },
@@ -1970,7 +1968,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/122606-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html",
       "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html"
     ]
   },

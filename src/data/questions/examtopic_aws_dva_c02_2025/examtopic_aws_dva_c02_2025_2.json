@@ -777,8 +777,6 @@
       "https://www.examtopics.com/discussions/amazon/view/106939-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk-testing.html",
       "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-invoke.html",
-      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk-testing.html",
-      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-local-invoke.html",
       "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-local-invoke.html"
     ]
   },
@@ -925,7 +923,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/109208-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html",
       "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html"
     ]
   },
@@ -2160,7 +2157,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/107059-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/cfn-example_reference-secret.html",
       "https://docs.aws.amazon.com/secretsmanager/latest/userguide/cfn-example_reference-secret.html"
     ]
   },
@@ -2235,7 +2231,6 @@
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/107062-exam-aws-certified-developer-associate-dva-c02-topic-1/",
       "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-restrictions.html",
-      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-how-it-works-tutorial.html",
       "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-how-it-works-tutorial.html"
     ]
   },
@@ -2419,8 +2414,6 @@
     "incorrectAnswerExplanations": [],
     "references": [
       "https://www.examtopics.com/discussions/amazon/view/111831-exam-aws-certified-developer-associate-dva-c02-topic-1/",
-      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
-      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
       "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html"
     ]
   }
