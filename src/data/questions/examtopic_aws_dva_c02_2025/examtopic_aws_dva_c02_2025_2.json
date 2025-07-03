@@ -104,7 +104,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106484-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106484-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events",
+      "https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html"
     ]
   },
   {
@@ -182,7 +184,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106488-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106488-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-newfeature.html"
     ]
   },
   {
@@ -254,7 +257,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106491-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106491-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html"
     ]
   },
   {
@@ -362,7 +366,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106717-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106717-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/codecommit/latest/userguide/monitoring-events.html#pullRequestSourceBranchUpdated"
     ]
   },
   {
@@ -398,7 +403,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/108728-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/108728-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html",
+      "https://docs.aws.amazon.com/codecommit/latest/userguide/monitoring-events.html#pullRequestSourceBranchUpdated"
     ]
   },
   {
@@ -506,7 +513,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/108734-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/108734-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html"
     ]
   },
   {
@@ -542,7 +550,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/108735-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/108735-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html"
     ]
   },
   {
@@ -728,7 +737,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/108738-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/108738-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html"
     ]
   },
   {
@@ -764,7 +774,12 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106939-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106939-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk-testing.html",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-invoke.html",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk-testing.html",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-local-invoke.html",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-local-invoke.html"
     ]
   },
   {
@@ -872,7 +887,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/111295-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/111295-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html"
     ]
   },
   {
@@ -908,7 +924,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109208-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/109208-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html"
     ]
   },
   {
@@ -1016,7 +1034,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106941-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106941-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html"
     ]
   },
   {
@@ -1088,7 +1107,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/108742-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/108742-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
     ]
   },
   {
@@ -1160,7 +1180,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106947-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106947-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-lambda-function-trigger.html"
     ]
   },
   {
@@ -1304,7 +1325,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106980-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106980-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"
     ]
   },
   {
@@ -1340,7 +1362,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106981-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106981-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html"
     ]
   },
   {
@@ -1412,7 +1435,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106987-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106987-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/macie/latest/user/findings-types.html",
+      "https://docs.aws.amazon.com/zh_tw/macie/latest/user/findings-types.html"
     ]
   },
   {
@@ -1490,7 +1515,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/106992-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/106992-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html",
+      "https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSLambdaVPCAccessExecutionRole.html"
     ]
   },
   {
@@ -1598,7 +1625,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/109399-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/109399-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html"
     ]
   },
   {
@@ -1826,7 +1854,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107041-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107041-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.htmlhttps://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html"
     ]
   },
   {
@@ -1934,7 +1965,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107052-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107052-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
     ]
   },
   {
@@ -2090,7 +2122,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107057-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107057-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/create-signed-request.html"
     ]
   },
   {
@@ -2126,7 +2159,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107059-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107059-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/cfn-example_reference-secret.html",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/cfn-example_reference-secret.html"
     ]
   },
   {
@@ -2198,7 +2233,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107062-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107062-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-restrictions.html",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-how-it-works-tutorial.html",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-how-it-works-tutorial.html"
     ]
   },
   {
@@ -2270,7 +2308,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/107064-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/107064-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"
     ]
   },
   {
@@ -2342,7 +2381,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/112424-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/112424-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/testing-guide.html"
     ]
   },
   {
@@ -2378,7 +2418,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/111831-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/111831-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html"
     ]
   }
 ]

@@ -722,7 +722,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/152950-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/152950-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-delete-key-material.html"
     ]
   },
   {
@@ -794,7 +795,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/152952-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/152952-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/whitepapers/latest/amazon-aurora-mysql-db-admin-handbook/dns-caching.html"
     ]
   },
   {
@@ -908,7 +910,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/152955-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/152955-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.rolling-version-deploy.html#environments-cfg-trafficsplitting-method"
     ]
   },
   {
@@ -1022,7 +1025,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/156656-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/156656-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-mock-integration.html",
+      "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-mock-integration.html"
     ]
   },
   {
@@ -1274,7 +1279,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/153147-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/153147-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html"
     ]
   },
   {
@@ -1676,7 +1682,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/152773-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/152773-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-cloudfront-headers.html"
     ]
   },
   {

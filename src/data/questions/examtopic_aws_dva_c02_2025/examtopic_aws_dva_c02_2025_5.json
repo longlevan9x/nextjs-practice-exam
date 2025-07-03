@@ -104,7 +104,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134263-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134263-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html#:~:text=For%20example%2C%20you%20might%20want%20to%20include%20resources%20that%20aren%27t%20available%20as%20AWS%20CloudFormation%20resource%20types.%20You%20can%20include%20those%20resources%20by%20using%20custom%20resources.%20That%20way%20you%20can%20still%20manage%20all%20your%20related%20resources%20in%20a%20single%20stack."
     ]
   },
   {
@@ -248,7 +249,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134267-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134267-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html"
     ]
   },
   {
@@ -692,7 +694,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134278-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134278-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html"
     ]
   },
   {
@@ -800,7 +803,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134281-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134281-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
     ]
   },
   {
@@ -836,7 +840,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134282-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134282-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html#:~:text=Call%20API%20operations%20that%20access%20resources%20in%20the%20same%20or,to%20restrict%20access%20to%20resources%20protected%20by%20resource%2Dbased%20policies."
     ]
   },
   {
@@ -950,7 +955,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134285-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134285-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html#:~:text=Task%2C%20Parallel,the%20Retry%20field."
     ]
   },
   {
@@ -1022,7 +1028,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134287-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134287-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html"
     ]
   },
   {
@@ -1094,7 +1102,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134289-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134289-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency"
     ]
   },
   {
@@ -1172,7 +1181,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134291-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134291-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
     ]
   },
   {
@@ -1280,7 +1290,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134294-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134294-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html"
     ]
   },
   {
@@ -1358,7 +1369,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134296-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134296-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/efs/latest/ug/efs-onpremises.html"
     ]
   },
   {
@@ -1394,7 +1406,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134297-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134297-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
     ]
   },
   {
@@ -1430,7 +1443,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134298-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134298-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html"
     ]
   },
   {
@@ -1502,7 +1516,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134337-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134337-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html#:~:text=Task%2C%20Parallel%2C%20and%20Map%20states%20can%20have%20a%20field%20named%20Retry%2C%20whose%20value%20must%20be%20an%20array%20of%20objects%20known%20as%20retriers.%20An%20individual%20retrier%20represents%20a%20certain%20number%20of%20retries%2C%20usually%20at%20increasing%20time%20intervals.",
+      "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html#error-handling-examples"
     ]
   },
   {
@@ -1538,7 +1554,9 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134124-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134124-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html)",
+      "https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_rotation-alternating.html#:~:text=This%20strategy%20is%20a%20good%20choice%20if%20you%20need%20high%20availability%20for%20your%20secret%2C%20because%20one%20of%20the%20alternating%20users%20has%20current%20credentials%20to%20the%20database%20while%20the%20other%20one%20is%20being%20updated.%20For%20more"
     ]
   },
   {
@@ -1574,7 +1592,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134339-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134339-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/operatorguide/general-approach.html#:~:text=Use%20X%2DRay%20to%20find%20all%20the%20services%20involved%20in%20a%20request.%20For%20larger%20serverless%20applications%2C%20this%20is%20the%20fastest%20way%20to%20locate%20all%20of%20the%20interactions%20involved%20in%20the%20request.%20From%20X%2DRay%2C%20isolate%20the%20service%20where%20latency%20or%20errors%20are%20occurring%20then%20drill%20down%20further."
     ]
   },
   {
@@ -1646,7 +1665,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134341-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134341-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#:~:text=A%20map%20(string,key%2Dvalue%20map."
     ]
   },
   {
@@ -1718,7 +1738,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134126-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134126-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html"
     ]
   },
   {
@@ -1754,7 +1775,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134342-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134342-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#:~:text=ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS%3A%20The%20rule,User%20Guide."
     ]
   },
   {
@@ -1790,7 +1812,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/133607-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/133607-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/codecatalyst/latest/userguide/deploy-tut-lambda.html#:~:text=AWSTemplateFormatVersion%3A%20%272010%2D09%2D09%27%0ATransform%3A%20AWS%3A%3AServerless%2D2016%2D10%2D31"
     ]
   },
   {
@@ -1826,7 +1849,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/133608-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/133608-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html#:~:text=You%20can%20configure%20a%20dead%2Dletter%20queue%20on%20the%20function%20to%20capture%20events%20that%20weren%27t%20successfully%20processed."
     ]
   },
   {
@@ -1970,7 +1994,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/133612-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/133612-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-deploy.html"
     ]
   },
   {
@@ -2150,7 +2175,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134344-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134344-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
     ]
   },
   {
@@ -2186,7 +2212,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/134139-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/134139-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html"
     ]
   },
   {
@@ -2336,7 +2363,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/133634-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/133634-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/security-secrets-management.html#:~:text=Use%20AWS%20Secrets%20Manager%20or%20Amazon%20EC2%20Systems%20Manager%20Parameter%20Store%20for%20storing%20secret%20materials"
     ]
   },
   {

@@ -146,7 +146,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/143083-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/143083-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/integrations.html#integrations-kinesis"
     ]
   },
   {
@@ -290,7 +291,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/143357-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/143357-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-ddb"
     ]
   },
   {
@@ -662,7 +664,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/143936-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/143936-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/time-to-live-ttl-streams.html"
     ]
   },
   {
@@ -740,7 +743,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/143937-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/143937-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs.html"
     ]
   },
   {
@@ -848,7 +852,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/144609-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/144609-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-integration-lambda-extensions.html"
     ]
   },
   {
@@ -884,7 +889,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/144610-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/144610-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html"
     ]
   },
   {
@@ -992,7 +998,10 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/146743-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/146743-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-integration-ec2.html",
+      "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html",
+      "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-integration-containers-agent.html"
     ]
   },
   {
@@ -1136,7 +1145,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/146859-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/146859-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/cdk/v2/guide/troubleshooting.html"
     ]
   },
   {
@@ -1214,7 +1224,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/146861-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/146861-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#:~:text=When%20you%20create%20a%20pipeline,commit%20a%20source%20code%20change."
     ]
   },
   {
@@ -1700,7 +1711,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/151546-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/151546-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html"
     ]
   },
   {
@@ -1772,7 +1784,8 @@
     "correctAnswerExplanations": [],
     "incorrectAnswerExplanations": [],
     "references": [
-      "https://www.examtopics.com/discussions/amazon/view/150938-exam-aws-certified-developer-associate-dva-c02-topic-1/"
+      "https://www.examtopics.com/discussions/amazon/view/150938-exam-aws-certified-developer-associate-dva-c02-topic-1/",
+      "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html"
     ]
   },
   {
