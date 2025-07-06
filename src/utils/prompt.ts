@@ -21,7 +21,8 @@ export function buildDefaultPrompt(toolType: string, content: string): string {
         prompt += "4. Sử dụng kiến thức cập nhật mới nhất đến năm 2025 (vui lòng áp dụng theo phiên bản mới nhất).\n";
         prompt += "5. Các đáp án giữ nguyên không dịch. Phần còn lại thì trình bày hoàn toàn bằng tiếng Việt, rõ ràng, dễ hiểu.\n";
         prompt += "6. Đưa ra các ví dụ minh họa cụ thể nếu có thể.\n";
-        prompt += "7. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.\n";
+        prompt += "7. Dẫn nguồn về các đáp án đúng cho tôi (nếu có).\n";
+        prompt += "8. Trong phần trình bày, hãy sử dụng emoji sinh động (như ✅, ❌, 🧩, 🛠️, 📘...) để làm nổi bật ý chính, tạo cảm giác dễ đọc và dễ hiểu.\n";
         prompt += "Văn bản cần giải thích:\n";
     }
     else if (toolType === AI_PROMPT_TYPE.TRAN_BASIC) {
