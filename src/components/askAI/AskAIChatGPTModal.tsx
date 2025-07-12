@@ -27,19 +27,23 @@ const AskAIChatGPTModal: React.FC<AskChatGPTModalProps> = ({ toolType, content =
     const [hasSentPrompt, setHasSentPrompt] = useState(false);
 
     const gptPayload = useWindowMessage<{ content: string }>(EVENT_ACTION.GPT_STREAM_PART);
-    const fullContentRef = useRef(""); // giữ nội dung đầy đủ
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    // const fullContentRef = useRef(""); // giữ nội dung đầy đủ
+    // const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    // const [contents, setContents] = useState<string[]>([]);
 
     useEffect(() => {
         if (gptPayload?.content) {
-            fullContentRef.current += gptPayload.content;
+            // setContents(prev => [...prev, gptPayload.content]);
+            setStreamText(prev => prev + gptPayload.content);
+            // fullContentRef.current += gptPayload.content;
 
-            if (!timeoutRef.current) {
-                timeoutRef.current = setTimeout(() => {
-                    setStreamText(fullContentRef.current);
-                    timeoutRef.current = null;
-                }, 100); // chỉ update 10 lần mỗi giây
-            }
+            // if (!timeoutRef.current) {
+            //     timeoutRef.current = setTimeout(() => {
+            //         setStreamText(fullContentRef.current);
+            //         timeoutRef.current = null;
+            //     }, 100); // chỉ update 10 lần mỗi giây
+            // }
         }
     }, [gptPayload]);
 
