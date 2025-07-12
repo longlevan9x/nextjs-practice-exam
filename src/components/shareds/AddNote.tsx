@@ -21,19 +21,20 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
     const [isAIPrompting, setIsAIPrompting] = useState(false);
 
     const gptPayload = useWindowMessage<{ content: string }>(EVENT_ACTION.GPT_STREAM_PART);
-    const fullContentRef = useRef(""); // giữ nội dung đầy đủ
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    // const fullContentRef = useRef(""); // giữ nội dung đầy đủ
+    // const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         if (gptPayload?.content) {
-            fullContentRef.current += gptPayload.content;
+            setNoteExplain((prev) => prev + gptPayload.content);
+            // fullContentRef.current += gptPayload.content;
 
-            if (!timeoutRef.current) {
-                timeoutRef.current = setTimeout(() => {
-                    setNoteExplain(fullContentRef.current);
-                    timeoutRef.current = null;
-                }, 100); // chỉ update 10 lần mỗi giây
-            }
+            // if (!timeoutRef.current) {
+                // timeoutRef.current = setTimeout(() => {
+                    // setNoteExplain(fullContentRef.current);
+                    // timeoutRef.current = null;
+                // }, 100); // chỉ update 10 lần mỗi giây
+            // }
         }
     }, [gptPayload]);
 
@@ -60,8 +61,8 @@ const AddNote: React.FC<AddNoteProps> = ({ text }) => {
         if (isAIPrompting) return; // Prevent multiple calls
         setIsAIPrompting(true);
         setNoteExplain(""); // Reset noteExplain before calling AI
-        fullContentRef.current = ""; // Reset full content
-        timeoutRef.current = null; // Reset timeout
+        // fullContentRef.current = ""; // Reset full content
+        // timeoutRef.current = null; // Reset timeout
         const prompt = buildDefaultPrompt(AI_PROMPT_TYPE.CREATE_MEANING, text);
         sendPromptToExtension({ prompt });
         setTimeout(() => {
