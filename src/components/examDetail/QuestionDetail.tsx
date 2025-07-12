@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Question } from "@/types/question";
+import { Answer, Question } from "@/types/question";
 import BookmarkButton from "@/components/examDetail/BookmarkButton";
 import AnswerOptions from "@/components/examDetail/AnswerOptions";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
@@ -123,7 +123,7 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     }
     let content = "";
 
-    let _answers = [...question.answers];
+    let _answers: Answer[] = JSON.parse(JSON.stringify(question.answers));
     _answers = _answers.map((a, i) => {
       a.answer = (i + 1) + ". " + a.answer;
       return a;
