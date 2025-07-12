@@ -123,7 +123,8 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({
     }
     let content = "";
 
-    const _answers = question.answers.map((a, i) => {
+    let _answers = [...question.answers];
+    _answers = _answers.map((a, i) => {
       a.answer = (i + 1) + ". " + a.answer;
       return a;
     });
